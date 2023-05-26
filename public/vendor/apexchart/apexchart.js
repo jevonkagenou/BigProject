@@ -2941,7 +2941,7 @@
         seriesIndex: 0,
         marker: {
           size: 4,
-          fillColor: '#fff',
+          fillColor: '#F72B50',
           strokeWidth: 2,
           strokeColor: '#333',
           shape: 'circle',
@@ -3497,18 +3497,18 @@
             },
             background: {
               enabled: true,
-              foreColor: '#fff',
+              foreColor: '#F72B50',
               borderRadius: 2,
               padding: 4,
               opacity: 0.9,
               borderWidth: 1,
-              borderColor: '#fff',
+              borderColor: '#F72B50',
               dropShadow: {
                 enabled: false,
                 top: 1,
                 left: 1,
                 blur: 1,
-                color: '#000',
+                color: '#F72B50',
                 opacity: 0.45
               }
             },
@@ -3615,7 +3615,7 @@
               height: 12,
               strokeWidth: 0,
               fillColors: undefined,
-              strokeColor: '#fff',
+              strokeColor: '#F72B50',
               radius: 12,
               customHTML: undefined,
               offsetX: 0,
@@ -3638,7 +3638,7 @@
             size: 0,
             colors: undefined,
             //strokeColor: '#fff', // TODO: deprecate in major version 4.0
-            strokeColors: '#fff',
+            strokeColors: '#F72B50',
             strokeWidth: 2,
             strokeOpacity: 0.9,
             strokeDashArray: 0,
@@ -5155,7 +5155,7 @@
         var width = coords.width;
         var height = coords.height;
         var graphics = new Graphics(this.ctx);
-        var elRect = graphics.drawRect(coords.x - paddingH, coords.y - paddingV / 2, width + paddingH * 2, height + paddingV, bCnf.borderRadius, w.config.chart.background === 'transparent' ? '#fff' : w.config.chart.background, bCnf.opacity, bCnf.borderWidth, bCnf.borderColor);
+        var elRect = graphics.drawRect(coords.x - paddingH, coords.y - paddingV / 2, width + paddingH * 2, height + paddingV, bCnf.borderRadius, w.config.chart.background === 'transparent' ? '#F72B50' : w.config.chart.background, bCnf.opacity, bCnf.borderWidth, bCnf.borderColor);
 
         if (bCnf.dropShadow.enabled) {
           var filters = new Filters(this.ctx);
@@ -7641,7 +7641,7 @@
           },
           dataLabels: {
             style: {
-              colors: ['#fff']
+              colors: ['#F72B50']
             },
             background: {
               enabled: false
@@ -7835,7 +7835,7 @@
               enabled: false
             },
             style: {
-              colors: ['#fff']
+              colors: ['#F72B50']
             }
           },
           tooltip: {
@@ -7988,7 +7988,7 @@
         return {
           dataLabels: {
             style: {
-              colors: ['#fff']
+              colors: ['#F72B50']
             }
           },
           tooltip: {
@@ -8044,11 +8044,11 @@
           },
           dataLabels: {
             style: {
-              colors: ['#fff']
+              colors: ['#F72B50']
             }
           },
           stroke: {
-            colors: ['#fff']
+            colors: ['#F72B50']
           },
           tooltip: {
             followCursor: true,
@@ -8087,13 +8087,13 @@
             style: {
               fontSize: 14,
               fontWeight: 600,
-              colors: ['#fff']
+              colors: ['#F72B50']
             }
           },
           stroke: {
             show: true,
             width: 2,
-            colors: ['#fff']
+            colors: ['#F72B50']
           },
           legend: {
             show: false
@@ -8148,7 +8148,7 @@
               return val.toFixed(1) + '%';
             },
             style: {
-              colors: ['#fff']
+              colors: ['#F72B50']
             },
             background: {
               enabled: false
@@ -8158,7 +8158,7 @@
             }
           },
           stroke: {
-            colors: ['#fff']
+            colors: ['#F72B50']
           },
           fill: {
             opacity: 1,
@@ -8190,7 +8190,7 @@
               return val.toFixed(1) + '%';
             },
             style: {
-              colors: ['#fff']
+              colors: ['#F72B50']
             },
             background: {
               enabled: false
@@ -8200,7 +8200,7 @@
             }
           },
           stroke: {
-            colors: ['#fff']
+            colors: ['#F72B50']
           },
           fill: {
             opacity: 1,
@@ -10818,11 +10818,11 @@
           }
         }
 
-        gl.dom.elGridRect = graphics.drawRect(-strokeSize / 2 - barWidthLeft - 2, -strokeSize / 2, gl.gridWidth + strokeSize + barWidthRight + barWidthLeft + 4, gl.gridHeight + strokeSize, 0, '#fff');
+        gl.dom.elGridRect = graphics.drawRect(-strokeSize / 2 - barWidthLeft - 2, -strokeSize / 2, gl.gridWidth + strokeSize + barWidthRight + barWidthLeft + 4, gl.gridHeight + strokeSize, 0, '#F72B50');
         var coreUtils = new CoreUtils(this);
         coreUtils.getLargestMarkerSize();
         var markerSize = w.globals.markers.largestSize + 1;
-        gl.dom.elGridRectMarker = graphics.drawRect(-markerSize * 2, -markerSize * 2, gl.gridWidth + markerSize * 4, gl.gridHeight + markerSize * 4, 0, '#fff');
+        gl.dom.elGridRectMarker = graphics.drawRect(-markerSize * 2, -markerSize * 2, gl.gridWidth + markerSize * 4, gl.gridHeight + markerSize * 4, 0, '#F72B50');
         gl.dom.elGridRectMask.appendChild(gl.dom.elGridRect.node);
         gl.dom.elGridRectMarkerMask.appendChild(gl.dom.elGridRectMarker.node);
         var defs = gl.dom.baseEl.querySelector('defs');
@@ -22377,7 +22377,7 @@
             var y1 = r[1];
             var x2 = r[2];
             var y2 = r[3];
-            var elRect = graphics.drawRect(x1, y1, x2 - x1, y2 - y1, 0, '#fff', 1, _this.strokeWidth, w.config.plotOptions.treemap.useFillColorAsStroke ? color : w.globals.stroke.colors[i]);
+            var elRect = graphics.drawRect(x1, y1, x2 - x1, y2 - y1, 0, '#F72B50', 1, _this.strokeWidth, w.config.plotOptions.treemap.useFillColorAsStroke ? color : w.globals.stroke.colors[i]);
             elRect.attr({
               cx: x1,
               cy: y1,
@@ -26865,25 +26865,25 @@
       inherit: SVG.Shape,
       // Add class methods
       extend: {
-        // (re)load image	
+        // (re)load image
         load: function load(url) {
           if (!url) return this;
           var self = this,
-              img = new window.Image(); // preload image	
+              img = new window.Image(); // preload image
 
           SVG.on(img, 'load', function () {
             SVG.off(img);
             var p = self.parent(SVG.Pattern);
-            if (p === null) return; // ensure image size	
+            if (p === null) return; // ensure image size
 
             if (self.width() == 0 && self.height() == 0) {
               self.size(img.width, img.height);
-            } // ensure pattern size if not set	
+            } // ensure pattern size if not set
 
 
             if (p && p.width() == 0 && p.height() == 0) {
               p.size(self.width(), self.height());
-            } // callback	
+            } // callback
 
 
             if (typeof self._loaded === 'function') {
@@ -26904,7 +26904,7 @@
           });
           return this.attr('href', img.src = this.src = url, SVG.xlink);
         },
-        // Add loaded callback	
+        // Add loaded callback
         loaded: function loaded(_loaded) {
           this._loaded = _loaded;
           return this;
@@ -26916,7 +26916,7 @@
       },
       // Add parent method
       construct: {
-        // create image element, load image and set its size	
+        // create image element, load image and set its size
         image: function image(source, width, height) {
           return this.put(new SVG.Image()).load(source).size(width || 0, height || width || 0);
         }
@@ -27614,10 +27614,10 @@
     } // Create matrix array for looping
 
 
-    var abcdef = 'abcdef'.split(''); // Add CustomEvent to IE9 and IE10	
+    var abcdef = 'abcdef'.split(''); // Add CustomEvent to IE9 and IE10
 
     if (typeof window.CustomEvent !== 'function') {
-      // Code from: https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent	
+      // Code from: https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent
       var CustomEventPoly = function CustomEventPoly(event, options) {
         options = options || {
           bubbles: false,
@@ -30302,7 +30302,10 @@
           dimensions: dim
         };
       }
-    }, {
+    },
+
+    // Gradient Bar Chart
+    {
       key: "mount",
       value: function mount() {
         var _this2 = this;

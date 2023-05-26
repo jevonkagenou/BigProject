@@ -36,6 +36,11 @@
 </head>
 
 <body>
+	<style>
+		.dropdown-toggle::after{
+			color: white
+		}
+	</style>
 
     <!--*******************
         Preloader start
@@ -600,6 +605,7 @@
         ***********************************-->
         <div class="header">
             <div class="header-content">
+<<<<<<< Updated upstream
                 <nav class="navbar navbar-expand ">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
@@ -768,6 +774,26 @@
 								<a href="javascript:void(0);" class="btn d-sm-inline-block d-none">Generate Report<i class="las la-signal ms-3 scale5"></i></a>
 							</li>
                         </ul>
+=======
+                <nav class="navbar navbar-expand">
+                    <div class="card navbar-collapse bg-danger">
+                        <div class="header-left" style="margin-left: 90%;">
+                            <ul class="navbar-nav header-right">
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										<svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+											<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+											<circle cx="12" cy="7" r="4"></circle>
+										</svg>
+									</a>
+									<ul class="dropdown-menu">
+									  <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#969ba0" viewBox="0 0 512 512" style="margin-left: 10px; margin-bottom: 7px; padding-right:5px"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/></svg> Profil</a></li>
+									  <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#969ba0" viewBox="0 0 448 512" style="margin-left: 10px; margin-bottom: 5px; padding-right:5px"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg> Keluar</a></li>
+									</ul>
+								</li>
+                            </ul>
+                        </div>
+>>>>>>> Stashed changes
                     </div>
 				</nav>
 			</div>
