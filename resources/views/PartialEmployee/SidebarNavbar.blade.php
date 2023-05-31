@@ -29,75 +29,7 @@
 
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-    <style>
-		.image-container {
-		  position: relative;
-		  display: inline-block;
-		}
-  
-		.image-overlay {
-		  position: absolute;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  background-color: rgba(
-			0,
-			0,
-			0,
-			0.5
-		  ); /* Adjust the color and opacity as desired */
-		  opacity: 0;
-		  transition: opacity 0.3s ease;
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  /* cursor: pointer; */
-		  overflow: hidden;
-		}
-  
-		.image-overlay:hover {
-		  background-color: rgba(
-			0,
-			0,
-			0,
-			0.7
-		  ); /* Adjust the hover color and opacity as desired */
-		}
-  
-		.image-container:hover .image-overlay {
-		  opacity: 1;
-		}
-  
-		.options {
-		  position: absolute;
-		  top: 70%;
-		  left: 50%;
-		  transform: translate(-50%, -50%);
-		  display: none;
-		  background-color: #ffffff;
-		  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-		  padding: 10px;
-		  border-radius: 5px;
-		  margin-top: 7%;
-		}
-  
-		.profil .options ul {
-		  list-style-type: none;
-		  padding: 0;
-		}
-  
-		.profil .options ul li {
-		  cursor: pointer;
-		  margin-bottom: 5px;
-		}
-		/* Additional styling for the pencil icon */
-		.pencil-icon {
-		  color: #fff;
-		  font-size: 24px;
-		  cursor: pointer;
-		}
-	  </style>
+
 
 
 
@@ -114,8 +46,6 @@
             left: 50% !important;
             transform: translateX(-50%) !important;
         }
-    </style>
-
     </style>
 
     <!--*******************
@@ -149,7 +79,7 @@
             Nav header start
         ***********************************-->
 
-        <div class="nav-header bg-danger">
+        <div class="nav-header">
             <a href="index.html" class="brand-logo">
                 <svg class="logo-abbr" width="53" height="53" viewBox="0 0 53 53">
                     <path
@@ -830,36 +760,45 @@
                                 Dashboard
                             </div>
                         </div>
-                        <ul class="navbar-nav header-right">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30"
-                                        height="30" viewBox="0 0 24 24" fill="none" stroke="black"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="feather feather-user">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                    <li><a class="dropdown-item" href="#"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="#969ba0" viewBox="0 0 448 512"
-                                                style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
-                                                <path
-                                                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
-                                            </svg> Profil</a></li>
-                                    <li><a class="dropdown-item" href="#"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="#969ba0" viewBox="0 0 512 512"
-                                                style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
-                                                <path
-                                                    d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
-                                            </svg> Keluar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div class="justify-content-end">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown notification_dropdown mx-2">
+                                    <a class="nav-link bell bell-link" href="#">
+                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M27 7.88883C27 5.18897 24.6717 3 21.8 3C17.4723 3 10.5277 3 6.2 3C3.3283 3 1 5.18897 1 7.88883V23.7776C1 24.2726 1.31721 24.7174 1.80211 24.9069C2.28831 25.0963 2.8473 24.9912 3.2191 24.6417C3.2191 24.6417 5.74629 22.2657 7.27769 20.8272C7.76519 20.3688 8.42561 20.1109 9.11591 20.1109H21.8C24.6717 20.1109 27 17.922 27 15.2221V7.88883ZM24.4 7.88883C24.4 6.53951 23.2365 5.44441 21.8 5.44441C17.4723 5.44441 10.5277 5.44441 6.2 5.44441C4.7648 5.44441 3.6 6.53951 3.6 7.88883V20.8272L5.4382 19.0989C6.4132 18.1823 7.73661 17.6665 9.11591 17.6665H21.8C23.2365 17.6665 24.4 16.5726 24.4 15.2221V7.88883ZM7.5 15.2221H17.9C18.6176 15.2221 19.2 14.6745 19.2 13.9999C19.2 13.3252 18.6176 12.7777 17.9 12.7777H7.5C6.7824 12.7777 6.2 13.3252 6.2 13.9999C6.2 14.6745 6.7824 15.2221 7.5 15.2221ZM7.5 10.3333H20.5C21.2176 10.3333 21.8 9.7857 21.8 9.11104C21.8 8.43638 21.2176 7.88883 20.5 7.88883H7.5C6.7824 7.88883 6.2 8.43638 6.2 9.11104C6.2 9.7857 6.7824 10.3333 7.5 10.3333Z" fill="black"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30"
+                                            height="30" viewBox="0 0 24 24" fill="none" stroke="black"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-user">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
+                                        <li><a class="dropdown-item" href="#"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="#969ba0" viewBox="0 0 448 512"
+                                                    style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
+                                                    <path
+                                                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                                                </svg> Profil</a></li>
+                                        <li><a class="dropdown-item" href="#"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="#969ba0" viewBox="0 0 512 512"
+                                                    style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
+                                                    <path
+                                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+                                                </svg> Keluar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -909,51 +848,43 @@
                         </div>
                     </li>
                     <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="fa-sharp fa-solid fa-house fa-beat text-white"></i>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" fill="white"/></svg></i>
                             <span class="nav-text text-white">Dashboard</span>
                         </a>
 
 
                     </li>
                     <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-013-checkmark text-white"></i>
-                            <span class="nav-text text-white">Approval</span>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z" fill="white"/></svg></i>
+                            <span class="nav-text text-white">Presensi</span>
                         </a>
 
                     </li>
                     <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="bi bi-book text-white"></i>
-                            <span class="nav-text text-white">Laporan</span>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z" fill="white"/></svg></i>
+                            <span class="nav-text text-white">Izin Cuti</span>
                         </a>
 
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="fa-solid fa-book fa-beat text-white"></i>
-                            <span class="nav-text text-white">Kehadiran</span>
+                    <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z" fill="white"/></svg></i>
+                            <span class="nav-text text-white">Approval</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li><a href="ui-accordion.html" class="text-white">Approval Presensi</a></li>
-                            <li><a href="ui-alert.html" class="text-white">Jadwal Kerja</a></li>
-                            <li><a href="ui-badge.html" class="text-white">Presensi</a></li>
-                            <li><a href="ui-button.html" class="text-white">Izin Cuti</a></li>
-
-
-                        </ul>
                     </li>
                     <li><a class=" ai-icon" href="/karyawan" aria-expanded="false">
-                            <i class="fa-solid fa-user-group fa-beat text-white"></i>
-                            <span class="nav-text text-white">Karyawan</span>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-120v-720h390v165h410v555H80Zm60-60h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm330 495h350v-435H470v435Zm80-270v-60h165v60H550Zm0 165v-60h165v60H550Z" fill="white"/></svg></i>
+                            <span class="nav-text text-white">Perusahaan</span>
                         </a>
 
                     </li>
                     <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-                            <i class="fa-solid fa-circle-dollar-to-slot fa-beat text-white"></i>
-                            <span class="nav-text text-white">Payroll</span>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z" fill="white"/></svg></i>
+                            <span class="nav-text text-white">Gaji</span>
                         </a>
                     </li>
                     <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="bi bi-gear text-white"></i>
-                            <span class="nav-text text-white">Pengaturan</span>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z" fill="white"/></svg></i>
+                            <span class="nav-text text-white">Kalender</span>
                         </a>
 
                     </li>
@@ -966,6 +897,69 @@
                 </div>
             </div>
         </div>
+
+        {{-- Chatbox --}}
+        <div class="chatbox">
+			<div class="chatbox-close"></div>
+			<div class="custom-tab-1">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="tab" href="#alerts">Alerts</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade active show" id="alerts" role="tabpanel">
+						<div class="card mb-sm-3 mb-md-0 contacts_card">
+							<div class="card-header chat-list-header text-center">
+								<div>
+									<h6 class="mb-1">Pengumunam</h6>
+								</div>
+							</div>
+							<div class="card-body contacts_body p-0 dlab-scroll" id="dlab_W_Contacts_Body1">
+								<ul class="contacts">
+									<li class="name-first-letter">30/05/2023</li>
+									<li class="active">
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>David Nester Birthday</span>
+												<p class="text-danger">Today</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">30/05/2023</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>Perfection Simplified</span>
+												<p class="text-danger">Jame Smith commented on your status</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">30/05/2023</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>AharlieKane</span>
+												<p class="text-danger">Sami is online</p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>Athan Jacoby</span>
+												<p class="text-danger">Nargis left 30 mins ago</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="card-footer"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
         <!--**********************************
             Sidebar end
         ***********************************-->
