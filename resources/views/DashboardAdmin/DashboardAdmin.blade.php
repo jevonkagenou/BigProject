@@ -24,25 +24,46 @@
         }
     }
 
+    @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+    body {
+        font-family: Roboto, sans-serif;
+    }
+
+    #chart {
+        max-width: 650px;
+        margin: 35px auto;
+    }
+
+
     .border-secondary {
-        border-color: #969ba0 !important;
+        color: #969ba0 !important;
         width: 100%;
     }
 
     .text {
         margin-top: 12px !important;
     }
+
+    .profile-tab .nav-item .nav-link.active {
+        border: 0;
+        background: transparent;
+        background: transparent;
+        border-bottom: 0.0125rem solid #F72B50 !important;
+        color: #F72B50 !important;
+    }
 </Style>
 
 <div class="content-body">
     <!-- row -->
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding:-5;">
         <div class="row">
             <div class="col-xl-9 col-xxl-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="row align-items-center">
-                            <div class="col-xl-6 md-6 col-12 d-flex justify-content-center align-items-center text-center">
+                            <div
+                                class="col-xl-6 md-6 col-12 d-flex justify-content-center align-items-center text-center">
                                 <div class="card-bx bg-white">
                                     <img class="" style="height : 240px; width : 246px;"
                                         src="images/dashboardadmin.svg" alt="">
@@ -50,7 +71,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-6 md-6 col-12 d-flex justify-content-center align-items-center text-center">
+                            <div
+                                class="col-xl-6 md-6 col-12 d-flex justify-content-center align-items-center text-center">
                                 <div>
                                     <div class="col-md-12">
                                         <h4 class="card-title">Selamat Datang Admin!</h4>
@@ -265,7 +287,7 @@
                                     <h4 class="card-title">Jumlah Karyawan Per Jabatan</h4>
                                 </div>
                                 <div class="card-body">
-                                    <canvas id="barChart_2"></canvas>
+                                    <div id="chart"></div>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +297,7 @@
                                     <h4 class="card-title">Perbandingan Gaji Per Jabatan</h4>
                                 </div>
                                 <div class="card-body">
-                                    <canvas id="pie_chart"></canvas>
+                                    <div id="chart_pie"></div>
                                 </div>
                             </div>
                         </div>
@@ -304,25 +326,80 @@
 <script src="{{ asset('js/demo.js') }}"></script>
 <script src="{{ asset('js/styleSwitcher.js') }}"></script>
 
-{{-- <!-- Required vendors -->
-<script src="{{ asset('vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script> --}}
-<!-- Apex Chart -->
-<script src="{{ asset('vendor/apexchart/apexchart.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-<script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
+<script>
+    var options = {
+          series: [{
+          data: [21, 22, 10, 28, 16, 21, 13, 30]
+        }],
+          chart: {
+          height: 350,
+          type: 'bar',
+          events: {
+            click: function(chart, w, e) {
+            }
+          }
+        },
+        colors: ['#B70404', '#DB005B', '#F79327', '#FFE569'],
+        plotOptions: {
+          bar: {
+            columnWidth: '45%',
+            distributed: true,
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        legend: {
+          show: false
+        },
+        xaxis: {
+          categories: [
+            'John',
+            'Joe',
+            'Jake',
+            'Amber',
+            'Peter',
+            'Mary',
+            'David',
+            'Lily'
+          ],
+          labels: {
+            style: {
+                // Dalam Code ini Length: 8 berfungsi untuk mengulangi warna sebanyak jumlah data dalam Categories //
+                colors: Array.from({ length: 8 }, (_, index) => ['#B70404', '#DB005B', '#F79327', '#FFE569'][index % 4]),
+              fontSize: '12px'
+            }
+          }
+        }
+        };
 
-<!-- Chart ChartJS plugin files -->
-<script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
-<script src="{{ asset('js/plugins-init/chartjs-init.js') }}"></script>
-{{--
-<script src="{{ asset('js/custom.min.js') }}"></script>
-<script src="{{ asset('js/dlabnav-init.js') }}"></script>
-<script src="{{ asset('js/demo.js') }}"></script>
-<script src="{{ asset('js/styleSwitcher.js') }}"></script> --}}
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+</script>
 
-</body>
+<script>
+    var options = {
+          series: [44, 55, 13, 43, 22],
+          chart: {
+          width: 380,
+          type: 'pie',
+        },
+        labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+        };
 
-<!-- Mirrored from dompet.dexignlab.com/xhtml/index.html?theme=3 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:00 GMT -->
-
-</html>
+        var chart = new ApexCharts(document.querySelector("#chart_pie"), options);
+        chart.render();
+</script>
