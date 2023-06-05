@@ -34,7 +34,7 @@
 		  position: relative;
 		  display: inline-block;
 		}
-  
+
 		.image-overlay {
 		  position: absolute;
 		  top: 0;
@@ -55,7 +55,7 @@
 		  /* cursor: pointer; */
 		  overflow: hidden;
 		}
-  
+
 		.image-overlay:hover {
 		  background-color: rgba(
 			0,
@@ -64,11 +64,11 @@
 			0.7
 		  ); /* Adjust the hover color and opacity as desired */
 		}
-  
+
 		.image-container:hover .image-overlay {
 		  opacity: 1;
 		}
-  
+
 		.options {
 		  position: absolute;
 		  top: 70%;
@@ -81,12 +81,12 @@
 		  border-radius: 5px;
 		  margin-top: 7%;
 		}
-  
+
 		.profil .options ul {
 		  list-style-type: none;
 		  padding: 0;
 		}
-  
+
 		.profil .options ul li {
 		  cursor: pointer;
 		  margin-bottom: 5px;
@@ -895,7 +895,7 @@
                                 <span class="ms-2 text-white">Profile </span>
                             </a>
 
-                            <a href="page-error-404.html" class="dropdown-item ai-icon">
+                            <a href="/Login" class="dropdown-item ai-icon">
                                 <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
                                     width="18" height="18" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -915,43 +915,43 @@
 
 
                     </li>
-                    <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="ai-icon" href="/ApprovalAdmin" aria-expanded="false">
                             <i class="flaticon-013-checkmark text-white"></i>
                             <span class="nav-text text-white">Approval</span>
                         </a>
 
                     </li>
-                    <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class=" ai-icon" href="/AdminReport" aria-expanded="false">
                             <i class="bi bi-book text-white"></i>
                             <span class="nav-text text-white">Laporan</span>
                         </a>
 
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="/Presence" aria-expanded="false">
                             <i class="fa-solid fa-book fa-beat text-white"></i>
                             <span class="nav-text text-white">Kehadiran</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="ui-accordion.html" class="text-white">Approval Presensi</a></li>
-                            <li><a href="ui-alert.html" class="text-white">Jadwal Kerja</a></li>
-                            <li><a href="ui-badge.html" class="text-white">Presensi</a></li>
-                            <li><a href="ui-button.html" class="text-white">Izin Cuti</a></li>
+                            <li><a href="/ApprovalPresence" class="text-white">Approval Presensi</a></li>
+                            <li><a href="/WorkSchedule" class="text-white">Jadwal Kerja</a></li>
+                            <li><a href="/Attendance" class="text-white">Presensi</a></li>
+                            <li><a href="/AnnualLeave" class="text-white">Izin Cuti</a></li>
 
 
                         </ul>
                     </li>
-                    <li><a class=" ai-icon" href="/karyawan" aria-expanded="false">
+                    <li><a class=" ai-icon" href="/EmployeeAdmin" aria-expanded="false">
                             <i class="fa-solid fa-user-group fa-beat text-white"></i>
                             <span class="nav-text text-white">Karyawan</span>
                         </a>
 
                     </li>
-                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
+                    <li><a href="/Payroll" class="ai-icon" aria-expanded="false">
                             <i class="fa-solid fa-circle-dollar-to-slot fa-beat text-white"></i>
                             <span class="nav-text text-white">Payroll</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class=" ai-icon" href="/Setting" aria-expanded="false">
                             <i class="bi bi-gear text-white"></i>
                             <span class="nav-text text-white">Pengaturan</span>
                         </a>

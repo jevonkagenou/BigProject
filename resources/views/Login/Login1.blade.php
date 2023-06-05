@@ -17,7 +17,7 @@
 	<meta name="format-detection" content="telephone=no">
 
     <title>Payroll Kalopsia</title>
-    
+
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <link href="css/style.css" rel="stylesheet">
     <style>
@@ -72,7 +72,7 @@
       }
 
       /* .card {
-          height: 400px; 
+          height: 400px;
           width: max-content !important;
           margin-left: 50px;
           margin-top: 0%;
@@ -134,14 +134,14 @@
                                 </div>
                             </div>
 
-          
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
- 
+
 
     <!--**********************************
         Scripts

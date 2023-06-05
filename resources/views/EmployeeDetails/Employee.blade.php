@@ -1,13 +1,15 @@
 @include('PartialAdmin.SidebarNavbar')
 
 <style>
-    .btn-check:checked + .btn-outline-danger{
-        color:white !important;
+    .btn-check:checked+.btn-outline-danger {
+        color: white !important;
     }
+
     .hoverbtn {
         color: #f72b50 !important;
     }
-    .hoverbtn:hover{
+
+    .hoverbtn:hover {
         color: white !important;
     }
 </style>
@@ -42,273 +44,276 @@
                                 <div class="container">
                                     <div class="row justify-content-center"
                                         aria-label="Basic radio toggle button group">
-                                        <input type="radio" class="btn-check" name="btnradio1a" id="btnradio1a" checked>
-                                        <a href="/PayrolEmployee" type="button" class="btn btn-outline-danger hoverbtn mb-2">Personal</a>
+                                        <input type="radio" class="btn-check" name="btnradio1a" id="btnradio1a"
+                                            checked>
+                                        <a href="/PayrolEmployee" type="button"
+                                            class="btn btn-outline-danger hoverbtn mb-2">Personal</a>
 
                                         <input type="radio" class="btn-check" name="btnradio1a" id="btnradio2a">
-                                        <a href="/PayrolEmployee" type="button" class="btn btn-outline-danger hoverbtn">Payroll</a>
+                                        <a href="/PayrolEmployee" type="button"
+                                            class="btn btn-outline-danger hoverbtn">Payroll</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                            <div class="card-body tab-pane fade active show col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
-                                <div class="row">
-                                    <div class="col-lg-12 order-lg-1">
-                                        <h4 class="mb-1 text-md-start text-center">Profil Karyawan</h4>
-                                        <form class="needs-validation" novalidate="">
+                        <div class="card-body tab-pane fade active show col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+                            <div class="row">
+                                <div class="col-lg-12 order-lg-1">
+                                    <h4 class="mb-1 text-md-start text-center">Profil Karyawan</h4>
+                                    <form class="needs-validation" novalidate="">
 
-                                            <hr class="mb-2 ">
-                                            <div class="form-check custom-checkbox mb-1">
-                                                <label class="form-check-label text-black text-strong"
-                                                    for="same-address">Informasi Pribadi</label>
-                                            </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Nama Lengkap</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-8">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">Ananda
-                                                            Harfiana</label>
-                                                    </div>
+                                        <hr class="mb-2 ">
+                                        <div class="form-check custom-checkbox mb-1">
+                                            <label class="form-check-label text-black text-strong"
+                                                for="same-address">Informasi Pribadi</label>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Nama Lengkap</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Tempat Lahir</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">Perancis</label>
-                                                    </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Tanggal
-                                                            Lahir</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">08 Mei 2005</label>
-                                                    </div>
+                                            <div class="col-8">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">Ananda
+                                                        Harfiana</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Status
-                                                            Perkawinan</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">Belum
-                                                            Menikah</label>
-                                                    </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Tempat Lahir</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Golongan
-                                                            Darah</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">B</label>
-                                                    </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Agama</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">Islam</label>
-                                                    </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">Perancis</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="form-check custom-checkbox mb-1">
-                                                <label class="form-check-label  text-black text-strong"
-                                                    for="save-info">Informasi Kontak</label>
-                                            </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Email</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label"
-                                                            for="save-info">anandaharfiana@gmail.com</label>
-                                                    </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Tanggal
+                                                        Lahir</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">No. Hp</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label"
-                                                            for="save-info">085794335045</label>
-                                                    </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Alamat</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">Jl. Kemiri
-                                                            City/Tokyo</label>
-                                                    </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">08 Mei 2005</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="form-check custom-checkbox mb-1">
-                                                <label class="form-check-label  text-black text-strong"
-                                                    for="save-info">Pendidikan Terakhir</label>
-                                            </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Jenjang Pendidikan
-                                                            Terakhir</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">S.Kom.,
-                                                            S.Psi.</label>
-                                                    </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Status
+                                                        Perkawinan</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Program
-                                                            Studi</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">Rekayasa Perangkat
-                                                            Lunak</label>
-                                                    </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
                                                 </div>
                                             </div>
-                                            <hr class="mb-2">
-                                            <div class="row mb-1">
-                                                <div class="col-3">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">Nama Institusi
-                                                            Pendidikan</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-1">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <label class="form-check-label" for="save-info">:</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="form-check custom-checkbox ml-8 ">
-                                                        <label class="form-check-label" for="save-info">SMKN 1
-                                                            Purwosari</label>
-                                                    </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">Belum
+                                                        Menikah</label>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Golongan
+                                                        Darah</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">B</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Agama</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">Islam</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="form-check custom-checkbox mb-1">
+                                            <label class="form-check-label  text-black text-strong"
+                                                for="save-info">Informasi Kontak</label>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label"
+                                                        for="save-info">anandaharfiana@gmail.com</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">No. Hp</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label"
+                                                        for="save-info">085794335045</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Alamat</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">Jl. Kemiri
+                                                        City/Tokyo</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="form-check custom-checkbox mb-1">
+                                            <label class="form-check-label  text-black text-strong"
+                                                for="save-info">Pendidikan Terakhir</label>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Jenjang Pendidikan
+                                                        Terakhir</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">S.Kom.,
+                                                        S.Psi.</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Program
+                                                        Studi</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">Rekayasa Perangkat
+                                                        Lunak</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="mb-2">
+                                        <div class="row mb-1">
+                                            <div class="col-3">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">Nama Institusi
+                                                        Pendidikan</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-check custom-checkbox ">
+                                                    <label class="form-check-label" for="save-info">:</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <div class="form-check custom-checkbox ml-8 ">
+                                                    <label class="form-check-label" for="save-info">SMKN 1
+                                                        Purwosari</label>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
-                                        </form>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

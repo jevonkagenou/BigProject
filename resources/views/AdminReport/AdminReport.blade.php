@@ -15,19 +15,19 @@
 	<meta property="og:description" content="Dompet : Payment Admin Template" />
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Payroll-Kalopsia</title>
-	
+
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-	
+
 	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 	<link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
 	<!-- Style css -->
     <link href="css/style.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-	
+
 </head>
 <body>
 
@@ -82,7 +82,7 @@
         <!--**********************************
             Nav header end
         ***********************************-->
-		
+
 		<!--**********************************
             Chat box start
         ***********************************-->
@@ -309,7 +309,7 @@
 								<div>
 									<h6 class="mb-1">Chat with Khelesh</h6>
 									<p class="mb-0 text-success">Online</p>
-								</div>							
+								</div>
 								<div class="dropdown">
 									<a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
 									<ul class="dropdown-menu dropdown-menu-end">
@@ -584,7 +584,7 @@
 		<!--**********************************
             Chat box End
         ***********************************-->
-		
+
 		<!--**********************************
             Header start
         ***********************************-->
@@ -594,10 +594,10 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 							<div class="dashboard_bar">
-                                Laporan 
+                                Laporan
                             </div>
                         </div>
-                       
+
                     </div>
 				</nav>
 			</div>
@@ -646,7 +646,7 @@
 							<li><a href="page-invoices.html">Invoices</a></li>
 							<li><a href="cards-center.html">Cards Center</a></li>
 							<li><a href="page-transaction.html">Transaction</a></li>
-							<li><a href="transaction-details.html">Transaction Details</a></li>	
+							<li><a href="transaction-details.html">Transaction Details</a></li>
 						</ul>
 
                     </li>
@@ -785,7 +785,7 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-		
+
 		<!--**********************************
             Content body start
         ***********************************-->
@@ -795,10 +795,10 @@
 				<div class="row">
 					<cent class="col-xl- col-xl-12">
 						<center><div class="card">
-							
+
 							<div class="card-body tab-content p-0">
 								<div class="tab-pane active show fade" id="monthly" role="tabpanel">
-									
+
 								</div>
 								<div class="tab-pane" id="Weekly" role="tabpanel">
 									<div class="table-responsive">
@@ -1004,14 +1004,14 @@
         <!--**********************************
             Content body end
         ***********************************-->
-		
-		
-		
+
+
+
         <!--**********************************
             Footer start
         ***********************************-->
         <div class="footer">
-		
+
             <div class="copyright">
                 <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2022</p>
             </div>
@@ -1020,7 +1020,7 @@
             Footer end
         ***********************************-->
 
-		
+
 
 
 	</div>
@@ -1035,12 +1035,12 @@
     <script src="vendor/global/global.min.js"></script>
 	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-	
+
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
 	<script src="vendor/nouislider/nouislider.min.js"></script>
 	<script src="vendor/wnumb/wNumb.js"></script>
-	
+
 	<!-- Dashboard 1 -->
 	<script src="js/dashboard/dashboard-1.js"></script>
 
@@ -1049,7 +1049,7 @@
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-	
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:06 GMT -->

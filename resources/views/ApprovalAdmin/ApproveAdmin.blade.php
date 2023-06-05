@@ -1,46 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:32 GMT -->
-<head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="keywords" content="admin, dashboard" />
-	<meta name="author" content="DexignZone" />
-	<meta name="robots" content="index, follow" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Dompet : Payment Admin Template" />
-	<meta property="og:title" content="Dompet : Payment Admin Template" />
-	<meta property="og:description" content="Dompet : Payment Admin Template" />
-	<meta property="og:image" content="social-image.png" />
-	<meta name="format-detection" content="telephone=no">
-	
-	<!-- PAGE TITLE HERE -->
-	<title>Dompet : Payment Admin Template</title>
-	
-	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-    <!-- Datatable -->
-    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!-- Custom Stylesheet -->
-	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-</head>
-
-<body>
+@include('PartialAdmin.SidebarNavbar')
 
     <style>
         .responsive-button {
           padding: 5px;
         }
-      
+
         .search-area {
           padding: 5px;
         }
       </style>
-      
+
 
     <!--*******************
         Preloader start
@@ -94,7 +63,7 @@
         <!--**********************************
             Nav header end
         ***********************************-->
-		
+
 		<!--**********************************
             Chat box start
         ***********************************-->
@@ -321,7 +290,7 @@
 								<div>
 									<h6 class="mb-1">Chat with Khelesh</h6>
 									<p class="mb-0 text-success">Online</p>
-								</div>							
+								</div>
 								<div class="dropdown">
 									<a href="#" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
 									<ul class="dropdown-menu dropdown-menu-end">
@@ -598,8 +567,8 @@
         ***********************************-->
 
 
-		
-		
+
+
         <!--**********************************
             Header start
         ***********************************-->
@@ -621,7 +590,7 @@
 							</li>
 							<li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link" href="javascript:void(0);" data-bs-toggle="dropdown">
-									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M3.88552 6.2921C1.95571 6.54135 0.439911 8.19656 0.439911 10.1896V10.7253C0.439911 12.8874 2.21812 14.6725 4.38019 14.6725H12.7058V24.9768H7.01104C5.77451 24.9768 4.82009 24.0223 4.82009 22.7858V18.4039C4.84523 16.6262 2.16581 16.6262 2.19096 18.4039V22.7858C2.19096 25.4334 4.36345 27.6059 7.01104 27.6059H21.0331C23.6807 27.6059 25.8532 25.4334 25.8532 22.7858V13.9981C26.9064 13.286 27.6042 12.0802 27.6042 10.7253V10.1896C27.6042 8.17115 26.0501 6.50077 24.085 6.28526C24.0053 0.424609 17.6008 -1.28785 13.9827 2.48534C10.3936 -1.60185 3.7545 1.06979 3.88552 6.2921ZM12.7058 5.68103C12.7058 5.86287 12.7033 6.0541 12.7058 6.24246H6.50609C6.55988 2.31413 11.988 1.90765 12.7058 5.68103ZM21.4559 6.24246H15.3383C15.3405 6.05824 15.3538 5.87664 15.3383 5.69473C15.9325 2.04532 21.3535 2.18829 21.4559 6.24246ZM4.38019 8.87502H12.7058V12.0382H4.38019C3.62918 12.0382 3.06562 11.4764 3.06562 10.7253V10.1896C3.06562 9.43859 3.6292 8.87502 4.38019 8.87502ZM15.3383 8.87502H23.6656C24.4166 8.87502 24.9785 9.43859 24.9785 10.1896V10.7253C24.9785 11.4764 24.4167 12.0382 23.6656 12.0382H15.3383V8.87502ZM15.3383 14.6725H23.224V22.7858C23.224 24.0223 22.2696 24.9768 21.0331 24.9768H15.3383V14.6725Z" fill="#4f7086"/> 
+									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M3.88552 6.2921C1.95571 6.54135 0.439911 8.19656 0.439911 10.1896V10.7253C0.439911 12.8874 2.21812 14.6725 4.38019 14.6725H12.7058V24.9768H7.01104C5.77451 24.9768 4.82009 24.0223 4.82009 22.7858V18.4039C4.84523 16.6262 2.16581 16.6262 2.19096 18.4039V22.7858C2.19096 25.4334 4.36345 27.6059 7.01104 27.6059H21.0331C23.6807 27.6059 25.8532 25.4334 25.8532 22.7858V13.9981C26.9064 13.286 27.6042 12.0802 27.6042 10.7253V10.1896C27.6042 8.17115 26.0501 6.50077 24.085 6.28526C24.0053 0.424609 17.6008 -1.28785 13.9827 2.48534C10.3936 -1.60185 3.7545 1.06979 3.88552 6.2921ZM12.7058 5.68103C12.7058 5.86287 12.7033 6.0541 12.7058 6.24246H6.50609C6.55988 2.31413 11.988 1.90765 12.7058 5.68103ZM21.4559 6.24246H15.3383C15.3405 6.05824 15.3538 5.87664 15.3383 5.69473C15.9325 2.04532 21.3535 2.18829 21.4559 6.24246ZM4.38019 8.87502H12.7058V12.0382H4.38019C3.62918 12.0382 3.06562 11.4764 3.06562 10.7253V10.1896C3.06562 9.43859 3.6292 8.87502 4.38019 8.87502ZM15.3383 8.87502H23.6656C24.4166 8.87502 24.9785 9.43859 24.9785 10.1896V10.7253C24.9785 11.4764 24.4167 12.0382 23.6656 12.0382H15.3383V8.87502ZM15.3383 14.6725H23.224V22.7858C23.224 24.0223 22.2696 24.9768 21.0331 24.9768H15.3383V14.6725Z" fill="#4f7086"/>
 									</svg>
 									<span class="badge light text-white bg-primary rounded-circle">2</span>
                                 </a>
@@ -777,7 +746,7 @@
 				</nav>
 			</div>
 		</div>
-                    
+
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -822,7 +791,7 @@
 							<li><a href="page-invoices.html">Invoices</a></li>
 							<li><a href="cards-center.html">Cards Center</a></li>
 							<li><a href="page-transaction.html">Transaction</a></li>
-							<li><a href="transaction-details.html">Transaction Details</a></li>	
+							<li><a href="transaction-details.html">Transaction Details</a></li>
 						</ul>
 
                     </li>
@@ -979,10 +948,10 @@
                             <div class="card-header">
                                 <h4 class="card-title">Approve</h4>
                             </div>
-                            
+
                             <div class="card-body">
 								<div class="row">
-									<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-15 btn-group btn-xs">                                
+									<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-15 btn-group btn-xs">
 										<div class="btn-group responsive-button">
 											<button type="button" class="btn btn-outline-danger btn-xs">Menunggu Persetujuan</button>
 											<button type="button" class="btn btn-outline-light btn-xs" >Disetujui</button>
@@ -992,14 +961,14 @@
 								<div class="col-xl-3 col-lg-4 col-md-12 col-sm-6 col-12 mt-1">
 									<div class="input-group responsive-button">
 										<button type="button" class="btn btn-outline-danger btn-xs " >Atur Kebijakan Presensi</button>
-									</div> 
+									</div>
 								</div>
 								</div>
 								<div class="input-group responsive-button search-area">
                                     <input type="text" class="form-control" placeholder="Cari Disini...">
                                     <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
                                 </div>
-                                  
+
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
@@ -1029,7 +998,7 @@
                                                 <td>Amel</td>
                                                 <td>Tiger Nixon</td>
                                                 <td>Dr. Cedric</td>
-                                                
+
                                                 <td>
                                                     <span>
                                                         <a href="javascript:void()" class="me-4" data-bs-toggle="tooltip"
@@ -1037,7 +1006,7 @@
                                                         <a href="javascript:void()" data-bs-toggle="tooltip"
                                                             data-placement="top" title="Tolak"><i class="bi bi-person-x-fill text-danger"></i></a>
                                                     </span>
-                                                </td>										
+                                                </td>
                                             </tr>
                                             <tr>
 												<td>
@@ -1050,7 +1019,7 @@
                                                 <td>Momo</td>
 												<td>Garrett Winters</td>
                                                 <td>Dr. Cedric</td>
-												
+
                                                 <td>
                                                     <span>
                                                         <a href="javascript:void()" class="me-4" data-bs-toggle="tooltip"
@@ -1071,7 +1040,7 @@
                                                 <td>Lisa</td>
 												<td>Ashton Cox</td>
                                                 <td>Dr. Rhona</td>
-												
+
                                                 <td>
                                                     <span>
                                                         <a href="javascript:void()" class="me-4" data-bs-toggle="tooltip"
@@ -1081,7 +1050,7 @@
                                                     </span>
                                                 </td>
                                             </tr>
-                                         
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -1097,7 +1066,7 @@
                                       <button type="button" class="btn btn-danger btn-sm">Tolak Data yang Dipilih</button>
                                     </div>
                                 </div>
-                                  
+
                             </div>
                         </div>
                     </div>
@@ -1107,11 +1076,11 @@
                             <div class="card-header" >
                                 <h4 class="card-title">Approve</h4>
                             </div>
-                            
+
                             <div class="card-body" name="setuju" id="#btn2">
-                                
+
                                     <div class="row" >
-										<div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-15 btn-group btn-xs">                                
+										<div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-15 btn-group btn-xs">
 											<div class="btn-group responsive-button">
 												<button type="button" class="btn btn-outline-light btn-xs">Menunggu Persetujuan</button>
 												<button type="button" class="btn btn-outline-danger btn-xs">Disetujui</button>
@@ -1121,56 +1090,56 @@
 									<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mt-1">
 										<div class="input-group responsive-button">
 											<button type="button" class="btn btn-outline-danger btn-xs " >Atur Kebijakan Presensi</button>
-										</div> 
+										</div>
 									</div>
 									</div>
 									<div class="input-group responsive-button search-area">
 										<input type="text" class="form-control" placeholder="Cari Disini...">
 										<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
 									</div>
-                                  
-                                  
+
+
                                 <div class="table-responsive">
                                     <table id="example6" name="" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
-                                               
+
                                                 <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Tipe</th>
                                                 <th>Tanggal Pengajuan</th>
-                                                
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                
+
                                                 <td>1</td>
                                                 <td>Amel</td>
                                                 <td>Tiger Nixon</td>
                                                 <td>Dr. Cedric</td>
-                                                
-                                                										
+
+
                                             </tr>
                                             <tr>
-												
+
                                                 <td>2</td>
                                                 <td>Momo</td>
 												<td>Garrett Winters</td>
                                                 <td>Dr. Cedric</td>
-												
-                                                
+
+
                                             </tr>
                                             <tr>
-												
+
                                                 <td>3</td>
                                                 <td>Lisa</td>
 												<td>Ashton Cox</td>
                                                 <td>Dr. Rhona</td>
-												
-                                                
+
+
                                             </tr>
-                                         
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -1194,10 +1163,10 @@
                             <div class="card-header">
                                 <h4 class="card-title">Approve</h4>
                             </div>
-                            
+
                             <div class="card-body">
                                 <div class="row">
-									<div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-15 btn-group btn-xs">                                
+									<div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-15 btn-group btn-xs">
 										<div class="btn-group responsive-button">
 											<button type="button" class="btn btn-outline-light btn-xs">Menunggu Persetujuan</button>
 											<button type="button" class="btn btn-outline-light btn-xs">Disetujui</button>
@@ -1207,55 +1176,55 @@
 								<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mt-1" >
 									<div class="input-group responsive-button">
 										<button type="button" class="btn btn-outline-danger btn-xs " >Atur Kebijakan Presensi</button>
-									</div> 
+									</div>
 								</div>
 								</div>
 								<div class="input-group responsive-button search-area">
                                     <input type="text" class="form-control" placeholder="Cari Disini...">
                                     <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
                                 </div>
-                                  
+
                                 <div class="table-responsive">
                                     <table id="example7" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
-                                               
+
                                                 <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Tipe</th>
                                                 <th>Tanggal Pengajuan</th>
-                                                
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                
+
                                                 <td>1</td>
                                                 <td>Amel</td>
                                                 <td>Tiger Nixon</td>
                                                 <td>Dr. Cedric</td>
-                                                
-                                                									
+
+
                                             </tr>
                                             <tr>
-												
+
                                                 <td>2</td>
                                                 <td>Momo</td>
 												<td>Garrett Winters</td>
                                                 <td>Dr. Cedric</td>
-												
-                                                
+
+
                                             </tr>
                                             <tr>
-												
+
                                                 <td>3</td>
                                                 <td>Lisa</td>
 												<td>Ashton Cox</td>
                                                 <td>Dr. Rhona</td>
-												
-                                                
+
+
                                             </tr>
-                                         
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -1269,7 +1238,7 @@
                                       <button type="button" class="btn btn-danger btn-sm">Tolak Data yang Dipilih</button>
                                     </div>
                                   </div> -->
-                                  
+
                             </div>
                         </div>
                     </div>
@@ -1301,7 +1270,7 @@
            Support ticket button end
         ***********************************-->
 
-        
+
     </div>
     <!--**********************************
         Main wrapper end
@@ -1315,7 +1284,7 @@
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
-	
+
     <!-- Datatable -->
     <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins-init/datatables.init.js"></script>
