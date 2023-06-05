@@ -1,6 +1,5 @@
 @include('PartialAdmin.SidebarNavbar')
 
-
 <div class="content-body">
     <div class="row page-titles">
         <ol class="breadcrumb" style="font-size: 15px;">
