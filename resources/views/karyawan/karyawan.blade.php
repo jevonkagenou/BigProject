@@ -1059,30 +1059,30 @@
                                 <h4 class="card-title">Karyawan</h4>
                             </div>
                             <div class="card-body">
-                                <div class="mb-2 row g-0 justify-content-end align-items-end">
-                                    <div class="col-sm-2 ">
+                                <div class="mb-2 row g-0 d-flex justify-content-end">
+                                    <div class="col-sm-2 col-md-4 col-lg-3">
                                         <button class="btn btn-danger btn-sm " ><i class="bi bi-plus-square"></i> Tambahkan Karyawan</button>
 
                                     </div>
-                                    <div class="col-sm-1"  style="white-space: nowrap;">
+                                    <div class="col-sm-1 col-md-2 col-lg-2 me-1"  style="white-space: nowrap;">
                                         <div class="basic-dropdown">
                                             <button class="btn btn-outline-light btn-sm ms-1" data-bs-toggle="dropdown"><i class="bi bi-download"></i> Export</button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">CSV</a>   
+                                                <a class="dropdown-item" href="#">CSV</a>
                                                 <a class="dropdown-item" href="#">XLSX</a>
-                                                
+
                                             </div>
 
                                     </div>
 
                                     </div>
-                                    <div class="col-sm-1">
+                                    <div class="col-sm-1 col-md-2 col-lg-1">
                                         <button class="btn btn-outline-light btn-sm ms-1" style="white-space: nowrap;"><i class="bi bi-upload"></i> Import</button>
 
                                     </div>
 
                                 </div>
-                                        
+
                             <div class="table-responsive">
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
@@ -1142,7 +1142,7 @@
     <!--**********************************
             Footer start
         ***********************************-->
-    
+
     <!--**********************************
             Footer end
         ***********************************-->
