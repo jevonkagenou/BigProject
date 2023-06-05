@@ -999,7 +999,7 @@
 								<div class="row">
 									<div class="btn-group ">
 										<div class="" style="margin-right: 3%; ">
-											<button type="button" class="btn btn-danger btn-xs"><i class="fa fa-plus color-info"></i>
+											<button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target=".modal-6"><i class="fa fa-plus color-info"></i>
 												<span class="text-center">
 												Pengumuman
 												</span>
@@ -1159,6 +1159,42 @@
                         </div>
                     </div> -->
 				</div>
+
+				<div class="modal modal-6 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Tambah Pengumuman</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="row g-0">
+									<h6 class="modal-title">Isi Pengumuman</h6><br>
+									<div class="col">
+										<input type="text" class="form-control btn-xs" placeholder="Nama" >
+									</div>
+												
+								</div>
+								<br>
+								<div class="row g-0">
+									<h6 class="modal-title">Lampiran</h6><br>
+									<div class="col">
+										<input type="file" class="form-control btn-xs" value="Upload" placeholder="Nama"  multiple>
+									</div>
+												
+								</div>
+											
+								<br>
+											
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger light btn-xs" data-bs-dismiss="modal">Batal</button>
+								<button type="button" class="btn btn-success btn-xs">Simpan</button>
+							</div>
+						</div>
+					</div>
+				 </div>
             </div>
         </div>
         <!--**********************************
