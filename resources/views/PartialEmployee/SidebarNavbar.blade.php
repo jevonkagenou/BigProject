@@ -897,7 +897,6 @@
                 </div>
             </div>
         </div>
-
         {{-- Chatbox --}}
         <div class="chatbox">
 			<div class="chatbox-close"></div>

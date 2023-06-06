@@ -30,7 +30,6 @@
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <style>
-<<<<<<< Updated upstream
 		.image-container {
 		  position: relative;
 		  display: inline-block;
@@ -99,75 +98,6 @@
 		  cursor: pointer;
 		}
 	  </style>
-=======
-        .image-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,
-                    0,
-                    0,
-                    0.5);
-            /* Adjust the color and opacity as desired */
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* cursor: pointer; */
-            overflow: hidden;
-        }
-
-        .image-overlay:hover {
-            background-color: rgba(0,
-                    0,
-                    0,
-                    0.7);
-            /* Adjust the hover color and opacity as desired */
-        }
-
-        .image-container:hover .image-overlay {
-            opacity: 1;
-        }
-
-        .options {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 7%;
-        }
-
-        .profil .options ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .profil .options ul li {
-            cursor: pointer;
-            margin-bottom: 5px;
-        }
-
-        /* Additional styling for the pencil icon */
-        .pencil-icon {
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-        }
-    </style>
->>>>>>> Stashed changes
 
 
 
