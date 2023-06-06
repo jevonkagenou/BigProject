@@ -3891,8 +3891,8 @@ textarea.form-control {
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(91, 207, 197, 0.25); }
 
-/* .page-item:not(:first-child) .page-link {
-  margin-left: -1px; } */
+.page-item:not(:first-child) .page-link {
+  margin-left: -1px; }
 
 .page-item.active .page-link {
   z-index: 3;
@@ -11963,10 +11963,10 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
         .dlabnav .metismenu > li:hover > a g [fill], .dlabnav .metismenu > li:focus > a g [fill] {
           fill: var(--primary); }
       .dlabnav .metismenu > li.mm-active > a {
-        color: var(--primary);
+        color:#EE3232;
         font-weight: 400;
         box-shadow: none;
-        background: var(--rgba-primary-1); }
+        background: rgba(247, 43, 80, 0.1); }
         .dlabnav .metismenu > li.mm-active > a i {
           font-weight: 100; }
         .dlabnav .metismenu > li.mm-active > a g [fill] {
@@ -24250,7 +24250,7 @@ button {
   font-family: 'FONT AWESOME 5 FREE';
   border: 0;
   vertical-align: middle;
-  margin-left: 0.5em;
+  margin-left: 0.25em;
   line-height: 1;
   font-weight: 900; }
 
@@ -24555,8 +24555,8 @@ code {
   color: #fff; }
 
 .pagination .page-item.active .page-link {
-  background: var(--bs-red);
-  border-color: var(--bs-red);
+  background: var(--primary);
+  border-color: var(--primary);
   color: #fff; }
 
 .pagination {
@@ -24584,12 +24584,12 @@ code {
       outline: 0;
       box-shadow: none; }
     .pagination .page-item .page-link:hover {
-      background: var(--bs-red);
+      background: var(--primary);
       color: #fff;
-      border-color: var(--bs-red); }
+      border-color: var(--primary); }
   .pagination .page-item.active .page-link {
-    background-color: var(--bs-red);
-    border-color: var(--bs-red);
+    background-color: var(--primary);
+    border-color: var(--primary);
     color: #fff;
     box-shadow: 0 10px 20px 0px var(--rgba-primary-2); }
     [data-theme-version="dark"] .pagination .page-item.active .page-link {
@@ -24607,11 +24607,11 @@ code {
     background: transparent;
     border-color: transparent; }
   .pagination.no-bg.pagination-primary li:not(.page-indicator):not(.active):hover .page-link {
-    background: var(--bs-red);
-    border-color: var(--bs-red); }
+    background: var(--primary);
+    border-color: var(--primary); }
     [data-theme-version="dark"] .pagination.no-bg.pagination-primary li:not(.page-indicator):not(.active):hover .page-link {
-      background: var(--bs-red);
-      border-color: var(--bs-red); }
+      background: var(--primary);
+      border-color: var(--primary); }
   .pagination.no-bg.pagination-danger li:not(.page-indicator):not(.active):hover .page-link {
     background: #f72b50;
     border-color: #f72b50; }
@@ -26154,7 +26154,7 @@ table.dataTable tbody tr, table.dataTable tbody td {
   background: transparent !important; }
 
 table.dataTable thead th {
-  color: #6a6a6a;
+  color: #000;
   white-space: nowrap;
   font-size: 18px;
   text-transform: capitalize;
