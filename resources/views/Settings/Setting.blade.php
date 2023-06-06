@@ -4,7 +4,7 @@
     <div class="container-fluid align-items-center">
         <div class="row">
             <div class="col-xl-12 col-xxl-4">
-                <a href="">
+                <a href="/Company">
                     <div class="card">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -24,7 +24,7 @@
                 </a>
             </div>
             <div class="col-xl-12 col-xxl-4">
-                <a href="">
+                <a href="/PayrollSalarySlip">
                     <div class="card">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -44,7 +44,7 @@
                 </a>
             </div>
             <div class="col-xl-12 col-xxl-4">
-                <a href="">
+                <a href="/WorkSchedule">
                     <div class="card">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -64,7 +64,7 @@
                 </a>
             </div>
             <div class="col-xl-12 col-xxl-4">
-                <a href="">
+                <a href="/Announcement">
                     <div class="card">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -84,7 +84,7 @@
                 </a>
             </div>
             <div class="col-xl-12 col-xxl-4">
-                <a href="">
+                <a href="/AccountsUsers">
                     <div class="card">
                         <div class="card-body">
                             <div class="row align-items-center">

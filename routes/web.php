@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ViewEmployeeController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\RouteKaryawanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +20,30 @@ Route::get('/DashboardEmployee', [ViewEmployeeController::class, 'DashboardEmplo
 Route::get('/ApprovalEmployee', [ViewEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
 Route::get('/EmployeePresence', [ViewEmployeeController::class, 'EmployeePresence'])->name('EmployeePresence');
 Route::get('/PermitEmployee', [ViewEmployeeController::class, 'PermitEmployee'])->name('PermitEmployee');
+
+
+Route::view('/', 'Pengaturan.Perusahaan');
+Route::view('/','Admin.EmployeeAdmin');
+Route::get('/DashboardAdmin', [RouteController::class, 'DashboardAdmin'])->name('DashboardAdmin');
+Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
+Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
+Route::get('/SalarySummary', [RouteController::class, 'SalarySummary'])->name('SalarySummary');
+Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
+Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
+Route::get('/WorkSchedule', [RouteController::class, 'WorkSchedule'])->name('WorkSchedule');
+Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
+Route::get('/Announcement', [RouteController::class, 'Announcement'])->name('Announcement');
+Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
+Route::get('/PayrolEmployee', [RouteController::class, 'PayrolEmployee'])->name('PayrolEmployee');
+Route::get('/PresenceApproval', [RouteController::class, 'PresenceApproval'])->name('PresenceApproval');
+Route::get('/Presence', [RouteController::class, 'Presence'])->name('Presence');
+Route::get('/Setting', [RouteController::class, 'Setting'])->name('Setting');
+Route::get('/Company', [RouteController::class, 'Company'])->name('Company');
+Route::get('/PayrollSalarySlip', [RouteController::class, 'PayrollSalarySlip'])->name('PayrollSalarySlip');
+Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
+
+Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
+Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
+// Sidebar
+Route::get('/DashboardAdmin', [RouteController::class, 'DashboardAdmin'])->name('DashboardAdmin');
 
