@@ -70,4 +70,7 @@ class RouteController extends Controller
     public function AddEmployee(){
         return view('Admin.AddEmployee');
     }
+    public function StartPayroll(){
+        return view('Admin.StartPayroll');
+    }
 }

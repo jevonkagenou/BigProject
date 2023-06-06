@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="table-responsive">
+                        <div class="table-responsive text-center">
                             <table id="example5" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>
@@ -126,7 +126,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="table-responsive">
+                        <div class="table-responsive text-center">
                             <table id="example6" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>
@@ -207,7 +207,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="table-responsive">
+                        <div class="table-responsive text-center    ">
                             <table id="example7" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>

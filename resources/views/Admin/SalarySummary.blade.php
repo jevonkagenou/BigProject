@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="table-responsive">
+                        <div class="table-responsive text-center">
                             <table id="example7" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>
@@ -92,7 +92,7 @@
                                         <td>34.767.988</td>
                                     </tr>
                                     <tr>
-                                        <td>Juli</td>
+                                        <td>Juli 2023</td>
                                         <td>Gaji Bulanan</td>
                                         <td>12.097.567</td>
                                         <td>1.876.435</td>
@@ -172,6 +172,8 @@
 <script src="{{ asset('js/dlabnav-init.js') }}"></script>
 <script src="{{ asset('js/demo.js') }}"></script>
 <script src="{{ asset('js/styleSwitcher.js') }}"></script>
+<script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/plugins-init/datatables.init.js')}}"></script>
 <script src="https://kit.fontawesome.com/399218ad26.js" crossorigin="anonymous"></script>
 
 

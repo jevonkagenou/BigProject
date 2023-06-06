@@ -1,49 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:32 GMT -->
-<head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="keywords" content="admin, dashboard" />
-	<meta name="author" content="DexignZone" />
-	<meta name="robots" content="index, follow" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Dompet : Payment Admin Template" />
-	<meta property="og:title" content="Dompet : Payment Admin Template" />
-	<meta property="og:description" content="Dompet : Payment Admin Template" />
-	<meta property="og:image" content="social-image.png" />
-	<meta name="format-detection" content="telephone=no">
-	
-	<!-- PAGE TITLE HERE -->
-	<title>Dompet : Payment Admin Template</title>
-	
-	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-    <!-- Datatable -->
-    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!-- Custom Stylesheet -->
-	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-</head>
+@include('PartialAdmin.SidebarNavbar')
 
 <body>
-
-    <style>
-        .responsive-button {
-          padding: 5px;
-        }
-      
-        .search-area {
-          padding: 5px;
-        }
-		.paging_simple_numbers.dataTables_paginate{
-			background: transparent !important;
-		}
-      </style>
-      
 
     <!--*******************
         Preloader start
@@ -75,7 +32,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-       <div class="nav-header">
+        <div class="nav-header">
             <a href="index.html" class="brand-logo">
 				<svg class="logo-abbr" width="53" height="53" viewBox="0 0 53 53">
 					<path d="M21.6348 8.04782C21.6348 5.1939 23.9566 2.87204 26.8105 2.87204H28.6018L28.0614 1.37003C27.7576 0.525342 26.9616 0 26.1132 0C25.8781 0 25.639 0.0403711 25.4052 0.125461L7.3052 6.7133C6.22916 7.105 5.67535 8.29574 6.06933 9.37096L7.02571 11.9814H21.6348V8.04782Z" fill="#759DD9"/>
@@ -599,9 +556,26 @@
 		<!--**********************************
             Chat box End
         ***********************************-->
+
+
+		
+		
         <!--**********************************
             Header start
         ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                Tab 
+                            </div>
+                        </div>
+                    </div>
+				</nav>
+			</div>
+		</div>
                     
         <!--**********************************
             Header end ti-comment-alt
@@ -792,242 +766,86 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-                <!-- row -->
-
                 <div class="row">
-					<div class="col-12">
+                    <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Payroll Siap bayar</h4>
+                                <h4 class="card-title">Validasi Presensi</h4>
                             </div>
-                            
                             <div class="card-body">
-								<div class="row">
-									<div class="col-xl-10 col-lg-10 col-md-4 col-sm-1 mt-2">
-									  <div class="">
-										<div class="button-container">
-										  <button type="button" class="btn btn-danger btn-xs">
-											<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-											  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-											</svg>
-											Bayar Gaji
-										  </button>
-										</div>
-									  </div>
-									</div>
-										<div class="col-md-3 col-lg-2 col-sm-2 mt-2 ms-auto"> 
-										  <button type="button" class="btn btn-outline-light btn-xs">
-											<span>
-											  <i class="bi bi-download px-1"></i>
-											</span>
-											Import
-										  </button>
-										</div>
-								</div>
-								  <!-- baris dua -->
-								  <div class="row mt-2">
-									<div class="col-md-10 col-12 col-sm-2">
-									  <button type="button" class="btn btn-outline-light btn-xs mr-3">
-										Bulan ini
-									  </button>
-									  <button type="button" class="btn btn-outline-light btn-xs dropdown-toggle" data-bs-toggle="dropdown">
-										Mei
-									  </button>
-									  <div class="dropdown-menu">
-										<a class="dropdown-item" href="#">Juni</a>
-										<a class="dropdown-item" href="#">Juli</a>
-									  </div>
-									</div>
-									
-								  </div>
-								  <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 mt-2">
-									<div class="input-group responsive-button search-area">
-									  <input type="text" class="form-control" placeholder="Cari Disini...">
-									  <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-									</div>
-								</div>
-								
-                                  
-                                <div class="table-responsive">
-                                    <table id="example5" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th style="text-align: center;">Nama</th>
-                                                <th style="text-align: center;">Bank</th>
-                                                <th style="text-align: center;">Status</th>
-                                                <th style="text-align: center;">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td style="text-align: center;">Tina</td>
-                                                <td style="text-align: center;">BNI</td>
-                                                <td style="text-align: center;">
-													<div class="default-tab">
-														<form>
-													<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-													<input type="radio" class="btn-check" name="btnradio" id="btnradio11" checked>
-													<label class="btn btn-outline-danger btn-xs" for="btnradio11" > Belum Siap</label>
+                                <!-- Nav tabs -->
+                                <div class="default-tab">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-bs-toggle="tab" href="#presensi">Presensi</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#lembur">Lembur</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="lembur" role="tabpanel">
+                                            <div class="pt-4">
+                                                <h6>Apakah selalu diperlukan approval saat lembur?</h6>
+                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+													<input type="radio" class="btn-check" name="btnradio1a" id="btnradio1" checked>
+													<label class="btn btn-outline-danger btn-xs" for="btnradio1">Ya</label>
 													
-													<input type="radio" class="btn-check" name="btnradio" id="btnradio12">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio12">Siap Bayar</label>
-
-													<input type="radio" class="btn-check" name="btnradio" id="btnradio13">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio13">Sudah Bayar</label>
+													<input type="radio" class="btn-check" name="btnradio1a" id="btnradio2">
+													<label class="btn btn-outline-danger btn-xs" for="btnradio2">Tidak</label>
 												</div>
-											</form>
+												<h6>Apakah karyawan harus lembur dari dalam radius GPS yang ditentukan ?</h6>
+                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+													<input type="radio" class="btn-check" name="btnradio2a" id="btnradio3" checked>
+													<label class="btn btn-outline-danger btn-xs" for="btnradio3">Ya</label>
+
+													<input type="radio" class="btn-check" name="btnradio2a" id="btnradio4">
+													<label class="btn btn-outline-danger btn-xs" for="btnradio4">Tidak</label>
 												</div>
-                                                <td style="text-align: center;">00.00</td>
-                                            </tr>										
-                                             </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Payroll Belum Siap bayar</h4>
-                            </div>
-                            
-                            <div class="card-body">
-								<div class="row">
-									<div class="btn-group">
-										<div class="col-md-6 col-12 d-flex justify-content-start" style="margin-right: 3%;">
-											<button type="button" class="btn btn-outline-light btn-xs mr-3">
-											  Bulan ini
-											</button>
-											<div style="margin-left: 2%;"></div>
-											<div class="dropdown">
-											  <button
-												type="button"
-												class="btn btn-outline-light btn-xs dropdown-toggle"
-												data-bs-toggle="dropdown"
-											  >
-												Mei
-											  </button>
-											  <div class="dropdown-menu">
-												<a class="dropdown-item" href="#">Juni</a>
-												<a class="dropdown-item" href="#">Juli</a>
-											  </div>
-											</div>
-										  </div>
-									</div>
-								</div>
-								
-								<div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 mt-2">
-									<div class="input-group responsive-button search-area">
-									  <input type="text" class="form-control" placeholder="Cari Disini...">
-									  <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-									</div>
-								</div>
-                                  
-                                <div class="table-responsive">
-                                    <table id="example6" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th style="text-align: center;">Nama</th>
-                                                <th style="text-align: center;">Bank</th>
-                                                <th style="text-align: center;">Status</th>
-                                                <th style="text-align: center;">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td style="text-align: center;">Tina</td>
-                                                <td style="text-align: center;">BNI</td>
-                                                <td style="text-align: center;">
-													<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-													<input type="radio" class="btn-check" name="btnradio1" id="btnradio14" checked>
-													<label class="btn btn-outline-danger btn-xs" for="btnradio14">Belum Siap</label>
-													
-													<input type="radio" class="btn-check" name="btnradio1" id="btnradio15">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio15">Siap Bayar</label>
+												<h6>Apakah karyawan harus lembur dari dalam radius GPS yang ditentukan ?</h6>
+                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+													<input type="radio" class="btn-check" name="btnradio3a" id="btnradio5" checked>
+													<label class="btn btn-outline-danger btn-xs" for="btnradio5">Ya</label>
 
-													<input type="radio" class="btn-check" name="btnradio1" id="btnradio16">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio16">Sudah Bayar</label>
-													</div>
-                                                <td style="text-align: center;">00.00</td>
-                                            </tr>										
-                                             </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Payroll Sudah Bayar</h4>
-                            </div>
-                            <div class="card-body">
-								<div class="row">
-									<div class="btn-group">
-										<div class="col-md-6 col-12 d-flex justify-content-start" style="margin-right: 3%;">
-											<button type="button" class="btn btn-outline-light btn-xs mr-3">
-											  Bulan ini
-											</button>
-											<div style="margin-left: 2%;"></div>
-											<div class="dropdown">
-											  <button
-												type="button"
-												class="btn btn-outline-light btn-xs dropdown-toggle"
-												data-bs-toggle="dropdown"
-											  >
-												Mei
-											  </button>
-											  <div class="dropdown-menu">
-												<a class="dropdown-item" href="#">Juni</a>
-												<a class="dropdown-item" href="#">Juli</a>
-											  </div>
-											</div>
-										  </div>
-									</div>
-								</div>
-									<div class="input-group responsive-button search-area">
-									  <input type="text" class="form-control" placeholder="Cari Disini...">
-									  <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-									</div>
-                                <div class="table-responsive">
-                                    <table id="example8" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th style="text-align: center;">Nama</th>
-                                                <th style="text-align: center;">Bank</th>
-                                                <th style="text-align: center;">Status</th>
-                                                <th style="text-align: center;">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td style="text-align: center;">Tina</td>
-                                                <td style="text-align: center;">BNI</td>
-                                                <td style="text-align: center;">
-													<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-													<input type="radio" class="btn-check" name="btnradio6b" id="btnradio17" checked>
-													<label class="btn btn-outline-danger btn-xs" for="btnradio17">Belum Siap</label>
-													
-													<input type="radio" class="btn-check" name="btnradio6b" id="btnradio18">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio18">Siap Bayar</label>
+													<input type="radio" class="btn-check" name="btnradio3a" id="btnradio6">
+													<label class="btn btn-outline-danger btn-xs" for="btnradio6">Tidak</label>
+												</div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="presensi">
+                                            <div class="pt-4">
+                                                <h6>Apakah selalu diperlukan approval saat presensi ?</h6>
+												<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+													<input type="radio" class="btn-check" name="btnradio1b" id="btnradio7" checked>
+													<label class="btn btn-outline-danger btn-xs" for="btnradio7">Ya</label>
 
-													<input type="radio" class="btn-check" name="btnradio6b" id="btnradio19">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio19">Sudah Bayar</label>
-													</div>
-                                                <td style="text-align: center;">00.00</td>
-                                            </tr>										
-                                             </tbody>
-                                    </table>
+													<input type="radio" class="btn-check" name="btnradio1b" id="btnradio8">
+													<label class="btn btn-outline-danger btn-xs" for="btnradio8">Tidak</label>
+												</div>
+												<h6>Apakah karyawan harus presensi dari dalam radius GPS yang ditentukan?</h6>
+                                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+													<input type="radio" class="btn-check" name="btnradio2b" id="btnradio9" checked>
+													<label class="btn btn-outline-danger btn-xs" for="btnradio9">Ya</label>
+
+													<input type="radio" class="btn-check" name="btnradio2b" id="btnradio10">
+													<label class="btn btn-outline-danger btn-xs" for="btnradio10">Tidak</label>
+												</div>
+												<h6>Apakah diperlukan approval untuk presensi di luar radius GPS ?</h6>
+                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+													<input type="radio" class="btn-check" name="btnradio3b" id="btnradio11" checked>
+													<label class="btn btn-outline-danger btn-xs" for="btnradio11">Ya</label>
+
+													<input type="radio" class="btn-check" name="btnradio3b" id="btnradio12">
+													<label class="btn btn-outline-danger btn-xs" for="btnradio12">Tidak</label>
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+				</div>
             </div>
         </div>
         <!--**********************************
@@ -1066,21 +884,12 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="vendor/global/global.min.js"></script>
-    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
-	<!-- Apex Chart -->
-	<script src="vendor/apexchart/apexchart.js"></script>
-	
-    <!-- Datatable -->
-    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="js/plugins-init/datatables.init.js"></script>
-
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-
-    <script src="js/custom.min.js"></script>
+	<script src="js/custom.min.js"></script>
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
 </body>
 
-<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
+<!-- Mirrored from dompet.dexignlab.com/xhtml/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:42 GMT -->
 </html>

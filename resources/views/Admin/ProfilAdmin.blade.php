@@ -19,7 +19,7 @@
                                                     <span class="pencil-icon">&#9998</span>
                                                 </div>
                                             </div>
-                                            <div class="options">
+                                            <div class="options"></div>
                                                 <ul>
                                                     <li class="mb-1">Edit Profil</li>
                                                     <li class="mb-1">Ganti Foto</li>

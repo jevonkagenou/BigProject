@@ -1,35 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:32 GMT -->
-<head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="keywords" content="admin, dashboard" />
-	<meta name="author" content="DexignZone" />
-	<meta name="robots" content="index, follow" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Dompet : Payment Admin Template" />
-	<meta property="og:title" content="Dompet : Payment Admin Template" />
-	<meta property="og:description" content="Dompet : Payment Admin Template" />
-	<meta property="og:image" content="social-image.png" />
-	<meta name="format-detection" content="telephone=no">
-	
-	<!-- PAGE TITLE HERE -->
-	<title>Dompet : Payment Admin Template</title>
-	
-	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-    <!-- Datatable -->
-    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!-- Custom Stylesheet -->
-	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-</head>
+@include('PartialAdmin.SidebarNavbar')
 
 <body>
+
+    <style>
+        .responsive-button {
+          padding: 5px;
+        }
+      
+        .search-area {
+          padding: 5px;
+        }
+      </style>
+      
 
     <!--*******************
         Preloader start
@@ -598,7 +580,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 							<div class="dashboard_bar">
-                                Datatable 
+                                Pengumuman
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -959,106 +941,231 @@
 				
 				
                 <!-- row -->
+                <div class="row">
+				
+					<style>
+					.custom-btn {
+						border-radius: 1;
+						height: 40px;
+						padding: 12px 8px;
+						background: #fff;
+						border: 1px solid #464444; 
+						text-align: center;
+					}
+					.hover-icon:hover{
+						color: #f72b50 !important;
+					}
+					.paging_simple_numbers.dataTables_paginate{
+						background: transparent !important;
+					}
+					</style>
 
-				
-				
-				<!-- payroll slip gaji -->
-				<div class="row">
 					<div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Slip Gaji</h4>
+                                <h4 class="card-title">Pengumuman</h4>
                             </div>
+                            
                             <div class="card-body">
 								<div class="row">
-									<div class="col-xl-9 col-lg-8 col-md-7 col-sm-1  btn-group btn-xs">                                
-										<div class="btn-group responsive-button">
-											<button type="button" class="btn btn-outline-danger btn-xs">Slip Gaji</button>
-											<button type="button" class="btn btn-outline-light btn-xs">Tambah Rekening</button>
+									<div class="btn-group ">
+										<div class="" style="margin-right: 3%; ">
+											<button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target=".modal-6"><i class="fa fa-plus color-info"></i>
+												<span class="text-center">
+												Pengumuman
+												</span>
+											</button>
 										</div>
-									</div>
-									<div class="col-xl-3 col-lg-4 col-md-5 col-sm-3 mt-8 btn-xs">                                
-										<div class="responsive-button">
-											<button type="button" class="btn btn-danger btn-xs"><i class="bi bi-plus me-1"></i>Tambah Slip Gaji</button>
-											<button type="button" class="btn btn-outline-light btn-xs" ><i class="bi bi-download me-2"></i>Print </button>
-											
+										<div class="" style="margin-left: -2%;" >
+											<input type="date" class="form-control btn-xm" >
 										</div>
 									</div>
 								</div>
-							<div class="col-xl-12 col-lg-4 col-md-12 col-sm-6  mt-8">
-								
-								<div class="input-group search-area">
-									<input type="text" class="form-control" placeholder="Cari Disini...">
-									<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-								</div> 
-							</div>
-							
-								<br>
-                                
-                                <div class="table-responsive mb-4">
-                                    <table id="example9" class="display" style="min-width: 845px">
-										<thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Periode</th>
-                                                <th>Lama Periode</th>
-                                            </tr>
-                                        </thead>
+									<div class="table-responsive">
+										<table id="example8" class="display" style="min-width: 845px">
+											<thead>
+												<tr>
+													
+													<th>No</th>
+													<th>Waktu</th>
+													<th>Pengumuman</th>
+													<th>Dibaca</th>
+													<th>Jumlah</th>
+													<th>Aksi</th>
+													
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													
+													<td>1</td>
+													<td>Amel</td>
+													<td>Tiger Nixon</td>
+													<td>
+														<div class="progress" style="background: rgba(255, 87, 34, .1)">
+															<div class="progress-bar bg-danger" style="width: 70%;" role="progressbar"><span class="sr-only">70% Complete</span>
+															</div>
+														</div>
+														<!-- <span class="badge badge-danger">70%</span> -->
+													</td>
+													<td><span class="badge badge-danger light">70%</span>
+													</td>
+													<td>
+														<span>
+															<a
+														href="javascript:void()" data-bs-toggle="tooltip"
+														data-placement="top" title="btn-close"><i
+															class="fa fa-trash hover-icon"></i></a>
+														</span>
+													</td>
+													
+																						
+												</tr>
+												<tr>
+													
+													<td>2</td>
+													<td>Momo</td>
+													<td>Garrett Winters</td>
+													<td>
+														<div class="progress" style="background: rgba(255, 87, 34, .1)">
+															<div class="progress-bar bg-danger" style="width: 70%;" role="progressbar"><span class="sr-only">70% Complete</span>
+															</div>
+														</div>
+													</td>
+													<td><span class="badge badge-danger light">70%</span>
+													</td>
+													<td>
+														<span>
+															<a
+														href="javascript:void()" data-bs-toggle="tooltip"
+														data-placement="top" title="btn-close"><i
+															class="fa fa-trash hover-icon"></i></a>
+														</span>
+													</td>
+													
+													
+												</tr>
+												<tr>
+													
+													<td>3</td>
+													<td>Lisa</td>
+													<td>Ashton Cox</td>
+													<td>
+														<div class="progress" style="background: rgba(255, 87, 34, .1)">
+															<div class="progress-bar bg-danger" style="width: 70%;" role="progressbar"><span class="sr-only">70% Complete</span>
+															</div>
+														</div>
+													</td>
+													<td><span class="badge badge-danger light">70%</span>
+													</td>
+													<td>
+														<span >
+															<a
+														href="javascript:void()" data-bs-toggle="tooltip"
+														data-placement="top" title="btn-close"><i
+															class="fa fa-trash hover-icon"></i></a>
+														</span>
+													</td>
+													
+													
+												</tr>
+											
+											</tbody>
+										</table>
+									</div>
+                                </div>
+                        	</div>
+                    </div>
+
+					<!-- <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Pengumuman</h4>
+                            </div>
+                            
+                            <div class="card-body">
+                                  
+                                <div class="table-responsive">
+                                    <table id="example8" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
-                                                <td>01</td>
-                                                <td>Gaji Bulanan</td>
-                                                <td>Tetap</td>
-                                                <td>1 Bulan</td>											
+                                                <th>No</th>
+                                                <th>Waktu</th>
+                                                <th>Pengumuman</th>
+                                                <th>Dibaca</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>02</td>
-                                                <td>Gaji Bulanan</td>
-                                                <td>Tetap</td>
-                                                <td>2 Bulan</td>
+                                                <td>1</td>
+                                                <td>Amel</td>
+                                                <td>Tiger Nixon</td>
+                                                <td>
+													<div class="row col-12">
+													<div class="progress" style="background: rgba(127, 99, 244, .1)">
+                                                        <div class="progress-bar" style="width: 70%;" role="progressbar"><span class="sr-only">70% Complete</span>
+                                                        </div>
+                                                    </div>
+													<span class="badge badge-primary light">70%</span>
+													</div>
+												</td>								
                                             </tr>
                                             <tr>
-                                                <td>03</td>
-                                                <td>Gaji Bulanan</td>
-                                                <td>Tetap</td>
-                                                <td>3 Bulan</td>		
+                                                <td>2</td>
+                                                <td>Momo</td>
+												<td>Garrett Winters</td>
+                                                <td>Dr. Cedric</td>
                                             </tr>
-										
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Lisa</td>
+												<td>Ashton Cox</td>
+                                                <td>Dr. Rhona</td>
+                                            </tr>
                                         </tbody>
                                     </table>
-									
-								</div>
-								<nav>
-										
-									<ul class="pagination pagination-xs" style="float: right;">
-										<li class="page-item page-indicator">
-											<a class="page-link" href="javascript:void(0)">
-												<i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-										</li>
-										<li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a>
-										</li>
-										<li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
-										
-										<li class="page-item page-indicator">
-											<a class="page-link" href="javascript:void(0)">
-												<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-										</li>
-									</ul>
-									
-								</nav> 	
-								
-						
+                                </div>
                             </div>
                         </div>
-						
-                    </div>
-					
-                    
-                    
+                    </div> -->
 				</div>
+
+				<div class="modal modal-6 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Tambah Pengumuman</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="row g-0">
+									<h6 class="modal-title">Isi Pengumuman</h6><br>
+									<div class="col">
+										<input type="text" class="form-control btn-xs" placeholder="Nama" >
+									</div>
+												
+								</div>
+								<br>
+								<div class="row g-0">
+									<h6 class="modal-title">Lampiran</h6><br>
+									<div class="col">
+										<input type="file" class="form-control btn-xs" value="Upload" placeholder="Nama"  multiple>
+									</div>
+												
+								</div>
+											
+								<br>
+											
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger light btn-xs" data-bs-dismiss="modal">Batal</button>
+								<button type="button" class="btn btn-success btn-xs">Simpan</button>
+							</div>
+						</div>
+					</div>
+				 </div>
             </div>
         </div>
         <!--**********************************
