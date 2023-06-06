@@ -67,4 +67,7 @@ class RouteController extends Controller
     public function AccountsUsers(){
         return view('Settings.AccountsUsers');
     }
+    public function AddEmployee(){
+        return view('Admin.AddEmployee');
+    }
 }

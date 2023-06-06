@@ -20858,13 +20858,13 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   border: 0.0625rem solid #f5f5f5;
   padding: 0.3125rem 1.25rem;
   color: #6e6e6e;
-  height: 3.5rem;
-  border-radius: 0.5rem; }
+  /* height: 3.5rem; */
+  border-radius: 13px; }
   @media only screen and (max-width: 1400px) {
     .form-control {
       height: 2.5rem; } }
   .form-control:hover, .form-control:focus, .form-control.active {
-    box-shadow: none;
+    box-shadow: active;
     background: #fff;
     color: #6e6e6e; }
   .form-control:focus {
@@ -20975,7 +20975,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   color: #ffa755; }
 
 .input-group-text {
-  background: #d7dae3;
+  background: #e9ecef;
   border: 0.0625rem solid #f5f5f5;
   min-width: 3.125rem;
   display: flex;

@@ -25,6 +25,7 @@ Route::get('/PermitEmployee', [ViewEmployeeController::class, 'PermitEmployee'])
 Route::view('/', 'Pengaturan.Perusahaan');
 Route::view('/','Admin.EmployeeAdmin');
 Route::get('/DashboardAdmin', [RouteController::class, 'DashboardAdmin'])->name('DashboardAdmin');
+Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
 Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
 Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
 Route::get('/SalarySummary', [RouteController::class, 'SalarySummary'])->name('SalarySummary');
