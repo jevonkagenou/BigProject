@@ -1,20 +1,31 @@
-@include('PartialAdmin.SidebarNavbar')
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="admin, dashboard" />
+	<meta name="author" content="DexignZone" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Dompet : Payment Admin Template" />
+	<meta property="og:title" content="Dompet : Payment Admin Template" />
+	<meta property="og:description" content="Dompet : Payment Admin Template" />
+	<meta property="og:image" content="social-image.png" />
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>Dompet : Payment Admin Template</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
+    <!-- Datatable -->
+    <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+	<link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <style>
-        .responsive-button {
-          padding: 5px;
-        }
+</head>
 
-        .search-area {
-          padding: 5px;
-        }
-      </style>
-
-
-    <!--*******************
-        Preloader start
-    ********************-->
-    <div id="preloader">
+<body>
+<div id="preloader">
         <div class="waviy">
 		   <span style="--i:1">L</span>
 		   <span style="--i:2">o</span>
@@ -28,20 +39,10 @@
 		   <span style="--i:10">.</span>
 		</div>
     </div>
-    <!--*******************
-        Preloader end
-    ********************-->
-
-
     <!--**********************************
-        Main wrapper start
-    ***********************************-->
-    <div id="main-wrapper">
-
-        <!--**********************************
             Nav header start
         ***********************************-->
-       <div class="nav-header">
+        <div class="nav-header">
             <a href="index.html" class="brand-logo">
 				<svg class="logo-abbr" width="53" height="53" viewBox="0 0 53 53">
 					<path d="M21.6348 8.04782C21.6348 5.1939 23.9566 2.87204 26.8105 2.87204H28.6018L28.0614 1.37003C27.7576 0.525342 26.9616 0 26.1132 0C25.8781 0 25.639 0.0403711 25.4052 0.125461L7.3052 6.7133C6.22916 7.105 5.67535 8.29574 6.06933 9.37096L7.02571 11.9814H21.6348V8.04782Z" fill="#759DD9"/>
@@ -63,8 +64,8 @@
         <!--**********************************
             Nav header end
         ***********************************-->
-
-		<!--**********************************
+		
+         <!--**********************************
             Chat box start
         ***********************************-->
 		<div class="chatbox">
@@ -290,7 +291,7 @@
 								<div>
 									<h6 class="mb-1">Chat with Khelesh</h6>
 									<p class="mb-0 text-success">Online</p>
-								</div>
+								</div>							
 								<div class="dropdown">
 									<a href="#" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
 									<ul class="dropdown-menu dropdown-menu-end">
@@ -567,8 +568,8 @@
         ***********************************-->
 
 
-
-
+		
+		
         <!--**********************************
             Header start
         ***********************************-->
@@ -590,7 +591,7 @@
 							</li>
 							<li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link" href="javascript:void(0);" data-bs-toggle="dropdown">
-									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M3.88552 6.2921C1.95571 6.54135 0.439911 8.19656 0.439911 10.1896V10.7253C0.439911 12.8874 2.21812 14.6725 4.38019 14.6725H12.7058V24.9768H7.01104C5.77451 24.9768 4.82009 24.0223 4.82009 22.7858V18.4039C4.84523 16.6262 2.16581 16.6262 2.19096 18.4039V22.7858C2.19096 25.4334 4.36345 27.6059 7.01104 27.6059H21.0331C23.6807 27.6059 25.8532 25.4334 25.8532 22.7858V13.9981C26.9064 13.286 27.6042 12.0802 27.6042 10.7253V10.1896C27.6042 8.17115 26.0501 6.50077 24.085 6.28526C24.0053 0.424609 17.6008 -1.28785 13.9827 2.48534C10.3936 -1.60185 3.7545 1.06979 3.88552 6.2921ZM12.7058 5.68103C12.7058 5.86287 12.7033 6.0541 12.7058 6.24246H6.50609C6.55988 2.31413 11.988 1.90765 12.7058 5.68103ZM21.4559 6.24246H15.3383C15.3405 6.05824 15.3538 5.87664 15.3383 5.69473C15.9325 2.04532 21.3535 2.18829 21.4559 6.24246ZM4.38019 8.87502H12.7058V12.0382H4.38019C3.62918 12.0382 3.06562 11.4764 3.06562 10.7253V10.1896C3.06562 9.43859 3.6292 8.87502 4.38019 8.87502ZM15.3383 8.87502H23.6656C24.4166 8.87502 24.9785 9.43859 24.9785 10.1896V10.7253C24.9785 11.4764 24.4167 12.0382 23.6656 12.0382H15.3383V8.87502ZM15.3383 14.6725H23.224V22.7858C23.224 24.0223 22.2696 24.9768 21.0331 24.9768H15.3383V14.6725Z" fill="#4f7086"/>
+									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M3.88552 6.2921C1.95571 6.54135 0.439911 8.19656 0.439911 10.1896V10.7253C0.439911 12.8874 2.21812 14.6725 4.38019 14.6725H12.7058V24.9768H7.01104C5.77451 24.9768 4.82009 24.0223 4.82009 22.7858V18.4039C4.84523 16.6262 2.16581 16.6262 2.19096 18.4039V22.7858C2.19096 25.4334 4.36345 27.6059 7.01104 27.6059H21.0331C23.6807 27.6059 25.8532 25.4334 25.8532 22.7858V13.9981C26.9064 13.286 27.6042 12.0802 27.6042 10.7253V10.1896C27.6042 8.17115 26.0501 6.50077 24.085 6.28526C24.0053 0.424609 17.6008 -1.28785 13.9827 2.48534C10.3936 -1.60185 3.7545 1.06979 3.88552 6.2921ZM12.7058 5.68103C12.7058 5.86287 12.7033 6.0541 12.7058 6.24246H6.50609C6.55988 2.31413 11.988 1.90765 12.7058 5.68103ZM21.4559 6.24246H15.3383C15.3405 6.05824 15.3538 5.87664 15.3383 5.69473C15.9325 2.04532 21.3535 2.18829 21.4559 6.24246ZM4.38019 8.87502H12.7058V12.0382H4.38019C3.62918 12.0382 3.06562 11.4764 3.06562 10.7253V10.1896C3.06562 9.43859 3.6292 8.87502 4.38019 8.87502ZM15.3383 8.87502H23.6656C24.4166 8.87502 24.9785 9.43859 24.9785 10.1896V10.7253C24.9785 11.4764 24.4167 12.0382 23.6656 12.0382H15.3383V8.87502ZM15.3383 14.6725H23.224V22.7858C23.224 24.0223 22.2696 24.9768 21.0331 24.9768H15.3383V14.6725Z" fill="#4f7086"/> 
 									</svg>
 									<span class="badge light text-white bg-primary rounded-circle">2</span>
                                 </a>
@@ -746,7 +747,7 @@
 				</nav>
 			</div>
 		</div>
-
+                    
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -791,7 +792,7 @@
 							<li><a href="page-invoices.html">Invoices</a></li>
 							<li><a href="cards-center.html">Cards Center</a></li>
 							<li><a href="page-transaction.html">Transaction</a></li>
-							<li><a href="transaction-details.html">Transaction Details</a></li>
+							<li><a href="transaction-details.html">Transaction Details</a></li>	
 						</ul>
 
                     </li>
@@ -931,11 +932,15 @@
             Sidebar end
         ***********************************-->
 
-        <!--**********************************
-            Content body start
-        ***********************************-->
-		<style>
-			.paging_simple_numbers.dataTables_paginate{
+    <style>
+        .responsive-button {
+          padding: 5px;
+        }
+
+        .search-area {
+          padding: 5px;
+        }
+     .paging_simple_numbers.dataTables_paginate{
 				background: transparent !important;
 			}
 		</style>
@@ -960,7 +965,7 @@
 									</div>
 								<div class="col-xl-3 col-lg-4 col-md-12 col-sm-6 col-12 mt-1">
 									<div class="input-group responsive-button">
-										<button type="button" class="btn btn-outline-danger btn-xs " >Atur Kebijakan Presensi</button>
+										<a href="/Validation" type="button" class="btn btn-outline-danger btn-xs " >Atur Kebijakan Presensi</a>
 									</div>
 								</div>
 								</div>
@@ -1054,9 +1059,36 @@
                                         </tbody>
                                     </table>
                                 </div>
-								<!-- <button type="button" class="btn btn-success btn-xs">Konfirmasi Data yang Dipilih   </button>
-								<button type="button" class="btn btn-danger btn-xs" >Tolak Data yang Dipilih   </button> -->
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 ">
+                                <nav class="mt-3">
+                                    <ul class="pagination pagination-xs" style="float: right">
+                                    <li class="page-item page-indicator">
+                                        <a class="page-link" href="javascript:void(0)">
+                                        <i
+                                            class="fa fa-angle-double-left"
+                                            aria-hidden="true"
+                                        ></i
+                                        ></a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="javascript:void(0)">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0)">2</a>
+                                    </li>
+                
+                                    <li class="page-item page-indicator">
+                                        <a class="page-link" href="javascript:void(0)">
+                                        <i
+                                            class="fa fa-angle-double-right"
+                                            aria-hidden="true"
+                                        ></i
+                                        ></a>
+                                    </li>
+                                    </ul>
+                                </nav>
+								<button type="button" class="btn btn-success btn-xs">Konfirmasi Data yang Dipilih   </button>
+								<button type="button" class="btn btn-danger btn-xs" >Tolak Data yang Dipilih   </button>
+                                <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 ">
                                     <div class="btn-group d-flex responsive-button">
                                       <button type="button" class="btn btn-success btn-sm">Konfirmasi Data yang Dipilih</button>
                                     </div>
@@ -1065,7 +1097,7 @@
                                     <div class="btn-group d-flex responsive-button">
                                       <button type="button" class="btn btn-danger btn-sm">Tolak Data yang Dipilih</button>
                                     </div>
-                                </div>
+                                </div> -->
 
                             </div>
                         </div>
@@ -1143,6 +1175,33 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <nav class="mt-3">
+                        <ul class="pagination pagination-xs" style="float: right">
+                          <li class="page-item page-indicator">
+                            <a class="page-link" href="javascript:void(0)">
+                              <i
+                                class="fa fa-angle-double-left"
+                                aria-hidden="true"
+                              ></i
+                            ></a>
+                          </li>
+                          <li class="page-item active">
+                            <a class="page-link" href="javascript:void(0)">1</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="javascript:void(0)">2</a>
+                          </li>
+      
+                          <li class="page-item page-indicator">
+                            <a class="page-link" href="javascript:void(0)">
+                              <i
+                                class="fa fa-angle-double-right"
+                                aria-hidden="true"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </nav>
                                 <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mt-2">
                                     <div class="btn-group d-flex responsive-button">
                                       <button type="button" class="btn btn-success btn-sm">Konfirmasi Data yang Dipilih</button>
@@ -1228,6 +1287,33 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <nav class="mt-3 ">
+                        <ul class="pagination pagination-xs" style="float: right">
+                          <li class="page-item page-indicator">
+                            <a class="page-link" href="javascript:void(0)">
+                              <i
+                                class="fa fa-angle-double-left"
+                                aria-hidden="true"
+                              ></i
+                            ></a>
+                          </li>
+                          <li class="page-item active">
+                            <a class="page-link" href="javascript:void(0)">1</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="javascript:void(0)">2</a>
+                          </li>
+      
+                          <li class="page-item page-indicator">
+                            <a class="page-link" href="javascript:void(0)">
+                              <i
+                                class="fa fa-angle-double-right"
+                                aria-hidden="true"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </nav>
                                 <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mt-2">
                                     <div class="btn-group d-flex responsive-button">
                                       <button type="button" class="btn btn-success btn-sm">Konfirmasi Data yang Dipilih</button>
@@ -1271,7 +1357,7 @@
         ***********************************-->
 
 
-    </div>
+    
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -1280,21 +1366,22 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="vendor/global/global.min.js"></script>
-    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="{{ asset('vendor/global/global.min.js') }}"></script>
+    <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
 	<!-- Apex Chart -->
-	<script src="vendor/apexchart/apexchart.js"></script>
+	<script src="{{ asset('vendor/apexchart/apexchart.js') }}"></script>
 
     <!-- Datatable -->
-    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="js/plugins-init/datatables.init.js"></script>
+    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/plugins-init/datatables.init.js') }}"></script>
 
-	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
 
-    <script src="js/custom.min.js"></script>
-	<script src="js/dlabnav-init.js"></script>
-	<script src="js/demo.js"></script>
-    <script src="js/styleSwitcher.js"></script>
+    <script src="{{ asset('js/custom.min.js')}}"></script>
+	<script src="{{ asset('js/dlabnav-init.js')}}"></script>
+	<script src="{{ asset('js/demo.js')}}"></script>
+	<script src="{{ asset('js/styleSwitcher.js')}}"></script>
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
