@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ViewEmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/DashboardEmployee', [ViewEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
+Route::get('/ApprovalEmployee', [ViewEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
+Route::get('/EmployeePresence', [ViewEmployeeController::class, 'EmployeePresence'])->name('EmployeePresence');
+Route::get('/PermitEmployee', [ViewEmployeeController::class, 'PermitEmployee'])->name('PermitEmployee');
 
-// Route::get('/', [DashboardController::class, 'index']);
-// Route::view('/', 'Pengaturan.Pengaturan');
-Route::view('/', 'Pengaturan.Perusahaan');
