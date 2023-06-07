@@ -43,16 +43,8 @@
                                     </div>
                                     <div class="col-sm-1 col-md-2 col-lg-1 text-end">
                                         <button class="btn btn-outline-light btn-xs ms-1" style="white-space: nowrap;"><i class="bi bi-upload"></i> Import</button>
-
                                     </div>
-
                                 </div>
-                                <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 mt-2">
-                                    <div class="input-group responsive-button search-area rounded-4 border border-light" style="border-radius: 12px;">
-                                      <input type="text" class="form-control" placeholder="Cari Disini...">
-                                      <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-                                    </div>
-                                  </div>
                             <div class="table-responsive text-center mt-3">
                                 <table id="example7" class="display" style="min-width: 845px">
                                     <thead>
