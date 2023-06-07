@@ -11959,7 +11959,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
         .dlabnav .metismenu > li > a g [fill] {
           fill: #8088a1; }
       .dlabnav .metismenu > li:hover > a, .dlabnav .metismenu > li:focus > a {
-        color: var(--primary); }
+        color: var(--bs-red); }
         .dlabnav .metismenu > li:hover > a g [fill], .dlabnav .metismenu > li:focus > a g [fill] {
           fill: var(--primary); }
       .dlabnav .metismenu > li.mm-active > a {
@@ -11999,7 +11999,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
             font-size: 14px; } }
         .dlabnav .metismenu ul a:hover, .dlabnav .metismenu ul a:focus, .dlabnav .metismenu ul a.mm-active {
           text-decoration: none;
-          color: var(--primary); }
+          color: var(--bs-red); }
         .dlabnav .metismenu ul a:before {
           position: absolute;
           content: none;
@@ -13646,23 +13646,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     font-size: 1rem; }
   [direction="rtl"] .sidebar-right .slimScrollDiv {
     overflow: visible !important; }
-  .sidebar-right .sidebar-right-trigger {
-    position: fixed;
-    z-index: 9;
-    top: 8.75rem;
-    right: 0;
-    background-color: var(--primary);
-    color: #fff;
-    display: inline-block;
-    height: 3rem;
-    width: 3rem;
-    text-align: center;
-    font-size: 1.75rem;
-    line-height: 3rem;
-    border-radius: 5px 0 0 5px;
-    box-shadow: -5px 3px 5px 0px rgba(119, 119, 119, 0.15); }
-    [data-theme-version="dark"] .sidebar-right .sidebar-right-trigger {
-      color: #fff; }
+ 
     @media only screen and (max-width: 1024px) {
       .sidebar-right .sidebar-right-trigger {
         display: none; } }
@@ -14174,21 +14158,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     height: 38px;
     padding: 0;
     margin-top: 6px; }
-  .chatbox .video_cam {
-    margin-left: 15px; }
-    .chatbox .video_cam span {
-      width: 35px;
-      height: 35px;
-      background: #10ca93;
-      text-align: center;
-      line-height: 35px;
-      border-radius: 35px;
-      color: #fff;
-      margin-right: 5px;
-      align-self: center;
-      font-size: 16px;
-      padding: 0 3px;
-      display: inline-block; }
+  
   .chatbox .note_card .contacts li {
     padding: 12px 1rem; }
 
@@ -14214,21 +14184,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     padding: 20px;
     font-size: 12px;
     background-color: #fff; }
-  .dlab-demo-panel .dlab-demo-trigger {
-    position: absolute;
-    z-index: 9;
-    top: 12.75rem;
-    right: 100%;
-    background-color: #709fba;
-    color: #fff;
-    display: inline-block;
-    height: 3rem;
-    width: 3rem;
-    text-align: center;
-    font-size: 1.75rem;
-    line-height: 3rem;
-    border-radius: 5px 0 0 5px;
-    box-shadow: -5px 3px 5px 0px rgba(119, 119, 119, 0.15); }
+  
     @media only screen and (max-width: 1024px) {
       .dlab-demo-panel .dlab-demo-trigger {
         display: none; } }
