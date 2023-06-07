@@ -16,12 +16,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Admin Route
 Route::get('/DashboardEmployee', [ViewEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
 Route::get('/ApprovalEmployee', [ViewEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
 Route::get('/EmployeePresence', [ViewEmployeeController::class, 'EmployeePresence'])->name('EmployeePresence');
 Route::get('/PermitEmployee', [ViewEmployeeController::class, 'PermitEmployee'])->name('PermitEmployee');
+Route::get('/CompanyEmployee', [ViewEmployeeController::class, 'CompanyEmployee'])->name('CompanyEmployee');
+Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
+Route::get('/Calendar', [ViewEmployeeController::class, 'Calendar'])->name('Calendar');
 
-
+// Karyawan Route
 Route::view('/', 'Pengaturan.Perusahaan');
 Route::view('/','Admin.EmployeeAdmin');
 Route::get('/DashboardAdmin', [RouteController::class, 'DashboardAdmin'])->name('DashboardAdmin');
