@@ -131,7 +131,7 @@ let dataSet = [
 	
 	// dataTable5
 	var table = $('#example5').DataTable({
-		searching: false,
+		searching: true,
 		paging:false,
 		select: false,
 		info: false,         
@@ -148,7 +148,7 @@ let dataSet = [
 	// dataTable6
 		var table = $('#example6').DataTable({
 			searching: false,
-			paging:true,
+			paging:false,
 			select: false,
 			info: false,         
 			lengthChange:false ,
