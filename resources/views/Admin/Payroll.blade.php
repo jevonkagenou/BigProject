@@ -32,6 +32,14 @@
 <body>
 
     <style>
+		.btn-check:checked+.btn-outline-danger,
+        .btn-
+        e+.btn-outline-danger,
+        .btn-outline-danger:active,
+        .btn-outline-danger.active,
+        .btn-outline-danger.dropdown-toggle.show {
+            color: white !important;
+}
         .responsive-button {
           padding: 5px;
         }
@@ -41,6 +49,9 @@
         }
 		.paging_simple_numbers.dataTables_paginate{
 			background: transparent !important;
+		}
+		.btn-outline-danger:checked{
+            color:white !important;
 		}
       </style>
       
@@ -796,346 +807,706 @@
 
                 <div class="row">
 					<div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Payroll Siap bayar</h4>
-                            </div>
-                            
-                            <div class="card-body">
-								<div class="row">
-									<div class="col-xl-10 col-lg-10 col-md-4 col-sm-1 mt-2">
-									  <div class="">
-										<div class="button-container">
-										  <button type="button" class="btn btn-danger btn-xs">
-											<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-											  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-											</svg>
-											Bayar Gaji
-										  </button>
-										</div>
-									  </div>
-									</div>
-										<div class="col-md-3 col-lg-2 col-sm-2 mt-2 ms-auto"> 
-										  <button type="button" class="btn btn-outline-light btn-xs">
-											<span>
-											  <i class="bi bi-download px-1"></i>
-											</span>
-											Import
-										  </button>
-										</div>
+						<div class="card">
+						  <div class="card-header">
+							<h4 class="card-title">Payroll</h4>
+						  </div>
+						  <div class="card-body">
+							<!-- baris satu -->
+							<div class="row">
+							  <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-6">
+								<div class="responsive-button">
+								  <a href="/PayrollStep" class="btn btn-danger btn-xs">
+									<svg
+									  xmlns="http://www.w3.org/2000/svg"
+									  width="15"
+									  height="15"
+									  fill="white"
+									  class="bi bi-caret-right-fill"
+									  viewBox="0 0 16 16"
+									>
+									  <path
+										d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+									  />
+									</svg>
+									Bayar Gaji
+								</a>
 								</div>
-								  <!-- baris dua -->
-								  <div class="row mt-2">
-									<div class="col-md-10 col-12 col-sm-2">
-									  <button type="button" class="btn btn-outline-light btn-xs mr-3">
-										Bulan ini
-									  </button>
-									  <button type="button" class="btn btn-outline-light btn-xs dropdown-toggle" data-bs-toggle="dropdown">
-										Mei
-									  </button>
-									  <div class="dropdown-menu">
-										<a class="dropdown-item" href="#">Juni</a>
-										<a class="dropdown-item" href="#">Juli</a>
-									  </div>
-									</div>
-									
-								  </div>
-								  <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 mt-2">
-									<div class="input-group responsive-button search-area">
-									  <input type="text" class="form-control" placeholder="Cari Disini...">
-									  <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-									</div>
+							  </div>
+							  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-6">
+								<div class="responsive-button text-end">
+								  <button
+									type="button"
+									class="btn btn-outline-light btn-xs"
+								  >
+									<span>
+									  <i class="bi bi-download px-1"></i>
+									</span>
+									Import
+								  </button>
 								</div>
-								
-                                  
-                                <div class="table-responsive">
-                                    <table id="example5" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th style="text-align: center;">Nama</th>
-                                                <th style="text-align: center;">Bank</th>
-                                                <th style="text-align: center;">Status</th>
-                                                <th style="text-align: center;">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td style="text-align: center;">Tina</td>
-                                                <td style="text-align: center;">BNI</td>
-                                                <td style="text-align: center;">
-													<div class="default-tab">
-														<form>
-													<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-													<input type="radio" class="btn-check" name="btnradio" id="btnradio11" checked>
-													<label class="btn btn-outline-danger btn-xs" for="btnradio11" > Belum Siap</label>
-													
-													<input type="radio" class="btn-check" name="btnradio" id="btnradio12">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio12">Siap Bayar</label>
-
-													<input type="radio" class="btn-check" name="btnradio" id="btnradio13">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio13">Sudah Bayar</label>
-												</div>
-											</form>
-												</div>
-                                                <td style="text-align: center;">00.00</td>
-                                            </tr>										
-                                             </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Payroll Belum Siap bayar</h4>
-                            </div>
-                            
-                            <div class="card-body">
-								<div class="row">
-									<div class="btn-group">
-										<div class="col-md-6 col-12 d-flex justify-content-start" style="margin-right: 3%;">
-											<button type="button" class="btn btn-outline-light btn-xs mr-3">
-											  Bulan ini
-											</button>
-											<div style="margin-left: 2%;"></div>
-											<div class="dropdown">
-											  <button
-												type="button"
-												class="btn btn-outline-light btn-xs dropdown-toggle"
-												data-bs-toggle="dropdown"
-											  >
-												Mei
-											  </button>
-											  <div class="dropdown-menu">
-												<a class="dropdown-item" href="#">Juni</a>
-												<a class="dropdown-item" href="#">Juli</a>
-											  </div>
-											</div>
-										  </div>
-									</div>
-								</div>
-								
-								<div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 mt-2">
-									<div class="input-group responsive-button search-area">
-									  <input type="text" class="form-control" placeholder="Cari Disini...">
-									  <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-									</div>
-								</div>
-                                  
-                                <div class="table-responsive">
-                                    <table id="example6" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th style="text-align: center;">Nama</th>
-                                                <th style="text-align: center;">Bank</th>
-                                                <th style="text-align: center;">Status</th>
-                                                <th style="text-align: center;">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td style="text-align: center;">Tina</td>
-                                                <td style="text-align: center;">BNI</td>
-                                                <td style="text-align: center;">
-													<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-													<input type="radio" class="btn-check" name="btnradio1" id="btnradio14" checked>
-													<label class="btn btn-outline-danger btn-xs" for="btnradio14">Belum Siap</label>
-													
-													<input type="radio" class="btn-check" name="btnradio1" id="btnradio15">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio15">Siap Bayar</label>
-
-													<input type="radio" class="btn-check" name="btnradio1" id="btnradio16">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio16">Sudah Bayar</label>
-													</div>
-                                                <td style="text-align: center;">00.00</td>
-                                            </tr>										
-                                             </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Payroll Sudah Bayar</h4>
-                            </div>
-                            <div class="card-body">
-								<div class="row">
-									<div class="btn-group">
-										<div class="col-md-6 col-12 d-flex justify-content-start" style="margin-right: 3%;">
-											<button type="button" class="btn btn-outline-light btn-xs mr-3">
-											  Bulan ini
-											</button>
-											<div style="margin-left: 2%;"></div>
-											<div class="dropdown">
-											  <button
-												type="button"
-												class="btn btn-outline-light btn-xs dropdown-toggle"
-												data-bs-toggle="dropdown"
-											  >
-												Mei
-											  </button>
-											  <div class="dropdown-menu">
-												<a class="dropdown-item" href="#">Juni</a>
-												<a class="dropdown-item" href="#">Juli</a>
-											  </div>
-											</div>
-										  </div>
-									</div>
-								</div>
-									<div class="input-group responsive-button search-area">
-									  <input type="text" class="form-control" placeholder="Cari Disini...">
-									  <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-									</div>
-                                <div class="table-responsive">
-                                    <table id="example8" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th style="text-align: center;">Nama</th>
-                                                <th style="text-align: center;">Bank</th>
-                                                <th style="text-align: center;">Status</th>
-                                                <th style="text-align: center;">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td style="text-align: center;">Tina</td>
-                                                <td style="text-align: center;">BNI</td>
-                                                <td style="text-align: center;">
-													<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-													<input type="radio" class="btn-check" name="btnradio6b" id="btnradio17" checked>
-													<label class="btn btn-outline-danger btn-xs" for="btnradio17">Belum Siap</label>
-													
-													<input type="radio" class="btn-check" name="btnradio6b" id="btnradio18">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio18">Siap Bayar</label>
-
-													<input type="radio" class="btn-check" name="btnradio6b" id="btnradio19">
-													<label class="btn btn-outline-danger btn-xs" for="btnradio19">Sudah Bayar</label>
-													</div>
-                                                <td style="text-align: center;">00.00</td>
-                                            </tr>										
-                                             </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">
-                                   Presensi
-                                </h4>
-                            </div>
-                            
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6 mt-2">
-										<div class="button-container">
-											<a href="ui-tab.html" class="btn btn-outline-primary btn-xs">Atur Kebijakan Presensi</a>
-										</div>
-										
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mt-2">
-										<div class="button-group">
-											<button type="button" class="btn btn-outline-light custom-btn btn-xs">
-												05/05/2023<span style="margin-left: 10px;"><i class="bi bi-calendar-check"></i></span>
-											</button>
-											<button type="button" class="btn btn-primary btn-xs">
-												<i class="fas fa-chevron-left"></i>
-											</button>
-											<button type="button" class="btn btn-primary btn-xs">
-												<i class="fas fa-chevron-right"></i>
-											</button>
-										</div>
-                                    </div>
-                                    <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 mt-2">
-                                      <div class="input-group responsive-button search-area">
-                                        <input type="text" class="form-control" placeholder="Cari Disini...">
-                                        <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  
-                                <div class="table-responsive" >
-                                    <table id="example7" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-												<th>No</th>
-												<th class="text-center">Nama</th>
-												<th class="text-center">Shift</th>
-												<th class="text-center">Status</th>
-												<th class="text-center">Masuk</th>
-												<th class="text-center">Keluar</th>
-												<th class="text-center">Masuk Lembur</th>
-												<th class="text-center">Keluar Lembur</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-											<tr>
-												<td>1</td>
-												<td class="text-center">Tina</td>
-												<td class="text-start">
-													<div class="btn-group" role="group">
-													<button type="button" class="btn btn-secondary dropdown-toggle btn-xs" data-bs-toggle="dropdown">Jam Kantor</button>
-													<div class="dropdown-menu">
-														<a class="dropdown-item" href="javascript:void()">Shift Pagi</a>
-														<a class="dropdown-item" href="javascript:void()">Jam Kantor</a>
-													</div>
-												</div></td>
-												<td class="text-start">
-													<div class="btn-group" role="group">
-													<button type="button" class="btn btn-warning dropdown-toggle btn-xs text-start" data-bs-toggle="dropdown">Belum ada status</button>
-													<div class="dropdown-menu">
-														<a class="dropdown-item" href="javascript:void()">Belum ada status</a>
-														<a class="dropdown-item" href="javascript:void()">Sudah Presensi</a>
-													</div>
-												</div></td>
-												<td class="text-center">00.00</td>
-												<td class="text-center">00.00</td>
-												<td class="text-center">00.00</td>
-												<td class="text-center">00.00</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td class="text-center">Jihan</td>
-												<td class="text-center">
-													<div class="btn-group" role="group">
-													<button type="button" class="btn btn-success dropdown-toggle btn-xs" data-bs-toggle="dropdown">Shift Pagi</button>
-													<div class="dropdown-menu">
-														<a class="dropdown-item" href="javascript:void()">Shift Pagi</a>
-														<a class="dropdown-item" href="javascript:void()">Jam Kantor</a>
-													</div>
-												</div></td>
-												<td class="text-center">
-													<div class="btn-group" role="group">
-													<button type="button" class="btn btn-success dropdown-toggle btn-xs" data-bs-toggle="dropdown">Sudah Presensi</button>
-													<div class="dropdown-menu">
-														<a class="dropdown-item" href="javascript:void()">Dropdown link</a>
-														<a class="dropdown-item" href="javascript:void()">Dropdown link</a>
-													</div>
-												</div></td>
-												<td class="text-center">00.00</td>
-												<td class="text-center">00.00</td>
-												<td class="text-center">00.00</td>
-												<td class="text-center">00.00</td>
-											</tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+							  </div>
 							</div>
-                        </div>
-                    </div>
+							<!-- baris dua -->
+							<div class="row mt-2">
+							  <div class="col-md-2 col-sm-3 col-4">
+								<button class="btn btn-outline-light btn-xs">
+								  Bulan ini
+								</button>
+							  </div>
+							  <div
+								class="col-md-1 col-sm-5 col-3"
+								style="margin-left: -8%"
+							  >
+								<div class="dropdown-basic">
+								  <button
+									class="btn btn-outline-light btn-xs dropdown-toggle"
+									data-bs-toggle="dropdown"
+								  >
+									Mei
+								  </button>
+								  <div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Juni</a>
+									<a class="dropdown-item" href="#">Juli</a>
+								  </div>
+								</div>
+							  </div>
+							  <div
+								class="col-xl-4 col-lg-9 col-md-9 col-sm-6 col-5 ms-auto"
+							  >
+								<div class="input-group search-area">
+								  <input
+									type="text"
+									class="form-control"
+									placeholder="Cari Disini..."
+								  />
+								  <span class="input-group-text"
+									><a href="javascript:void(0)"
+									  ><i class="flaticon-381-search-2"></i></a
+								  ></span>
+								</div>
+							  </div>
+							</div>
+				
+							<div class="accordion" id="accordion-eleven">
+							  <div class="table-responsive mb-2">
+								<table
+								  id="example8"
+								  class="display align-content-end"
+								  style="min-width: 845px"
+								  data-paging="false"
+								>
+								  <thead>
+									<tr class="text-center">
+									  <th>No</th>
+									  <th>Nama</th>
+									  <th>Bank</th>
+									  <th>Status</th>
+									  <th>Total</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr class="text-center" >
+									  <td>1</td>
+									  <td
+										class="accordion"
+										id="accord-11One"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapse11One"
+										aria-controls="collapse11One"
+										aria-expanded="true"
+										role="button"
+									  >
+										Tina
+									  </td>
+									  <td>BCA</td>
+									  <td style="text-align: center;">
+										<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio14" checked>
+										<label class="btn btn-outline-danger btn-xs" for="btnradio14" >Belum Siap</label>
+										
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio15">
+										<label class="btn btn-outline-danger btn-xs" for="btnradio15">Siap Bayar</label>
+
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio16">
+										<label class="btn btn-outline-danger btn-xs" for="btnradio16">Sudah Bayar</label>
+										</div>
+									</td>
+									  <td>2.434.678</td>
+									</tr>
+									<tr>
+									<td colspan="5">
+										  <div
+											id="collapse11One"
+											class="collapse accordion__body"
+											aria-labelledby="accord-11One"
+											data-bs-parent="#accordion-eleven"
+										  >
+											<div class="accordion-body-text">
+											  <div
+												id="collapse11One"
+												class="collapse accordion__body"
+												aria-labelledby="accord-11One"
+												data-bs-parent="#accordion-eleven"
+											  >
+												<div class="accordion-body-text">
+												  <div class="row mb-2">
+													<div class="col-xl-6 col-12 mb-2">
+													  <div
+														class="card-body"
+														style="
+														  border: 1px solid
+															rgb(181, 178, 178);
+														  border-radius: 1rem;
+														"
+													  >
+														<h5
+														  class="strong text-center"
+														  data-bs-toggle="tab"
+														>
+														  Pendapatan
+														</h5>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Gaji Pokok</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<p>Rp. 4.500.000</p>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-3 col-3">
+															<p>Uang Lembur</p>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<p>Jam x 26.001</p>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<p>0</p>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Tunjangan Pulsa</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Tunjangan Lainnya</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-5 col-12">
+															<p>Masukkan Nama Pendapatan</p>
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														  <div class="col-xl-5 col-12">
+															<p>
+															  Masukkan Jumlah Pendapatan
+															</p>
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														  <div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">
+															<a href=""
+															  ><i
+																class="fa fa-trash font-18 align-middle me-2"
+															  ></i
+															></a>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-lg-9 col-12">
+															<a href="" class="text-red"
+															  ><i
+																class="bi bi-plus px-1"
+															  ></i
+															  >Pendapatan</a
+															>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-lg-9 col-8">
+															<p class="strong">
+																Total Pendapatan
+															  </p>
+														  </div>
+														  <div class="col-lg-3 col-4">
+														  <p class="strong">Rp. 5.000.000</p>
+														  </div>
+														</div>
+													  </div>
+													</div>
+				  
+													<div class="col-xl-6 col-12 ms-auto">
+													  <div
+														class="card-body"
+														style="
+														  border: 1px solid
+															rgb(181, 178, 178);
+														  border-radius: 1rem;
+														"
+													  >
+														<h5
+														  class="strong text-center"
+														  data-bs-toggle="tab"
+														>
+														  Potongan
+														</h5>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Koperasi</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<p>Rp. 450.000</p>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-3 col-3">
+															<p>Denda Keterlambatan</p>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<p>Jam x 26.001</p>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<p>0</p>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Potongan Lainnya</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-lg-9 col-12">
+															<a href="" class="text-red"
+															  ><i
+																class="bi bi-plus px-1"
+															  ></i
+															  >Potongan</a
+															>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-lg-9 col-8"><p class="strong">
+																Total Potongan
+															  </p>
+														  </div>
+														  <div class="col-lg-3 col-4">
+															<p>Rp. 500.000</p>
+														  </div>
+														</div>
+													  </div>
+													</div>
+												  </div>
+												</div>
+											  </div>
+											</div>
+										  </div>
+									  </td>
+									</tr>
+									<tr class="text-center">
+									  <td>2</td>
+									  <td
+										class="accordion collapsed"
+										id="accord-11Two"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapse11Two"
+										aria-controls="collapse11Two"
+										aria-expanded="true"
+										role="button"
+									  >
+										Dwi
+									  </td>
+									  <td>BCA</td>
+									  <td style="text-align: center;">
+										<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio14" checked>
+										<label class="btn btn-outline-danger btn-xs" for="btnradio14">Belum Siap</label>
+										
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio15">
+										<label class="btn btn-outline-danger btn-xs" for="btnradio15">Siap Bayar</label>
+
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio16">
+										<label class="btn btn-outline-danger btn-xs" for="btnradio16">Sudah Bayar</label>
+										</div>
+									</td>
+									  <td>2.434.678</td>
+									</tr>
+									<tr>
+									  <td colspan="5">
+										<div
+										  id="collapse11Two"
+										  class="collapse accordion__body"
+										  aria-labelledby="accord-11Two"
+										  data-bs-parent="#accordion-eleven"
+										>
+										  <div class="accordion-body-text">
+											<div
+											  id="collapse11Two"
+											  class="collapse accordion__body"
+											  aria-labelledby="accord-11Two"
+											  data-bs-parent="#accordion-eleven"
+											>
+											  <div class="accordion-body-text">
+												<div class="row mb-2">
+												  <div class="col-xl-6 col-12 mb-2">
+													<div
+													  class="card-body"
+													  style="
+														border: 1px solid
+														  rgb(181, 178, 178);
+														border-radius: 1rem;
+													  "
+													>
+													  <h5
+														class="strong text-center"
+														data-bs-toggle="tab"
+													  >
+														Pendapatannnnn
+													  </h5>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Gaji Pokok</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <p>Rp. 4.500.000</p>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-3 col-3">
+														  <p>Uang Lembur</p>
+														</div>
+														<div class="col-xl-3 col-3">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div class="col-xl-3 col-3">
+														  <p>Jam x 26.001</p>
+														</div>
+														<div class="col-xl-3 col-3">
+														  <p>0</p>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Tunjangan Pulsa</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Tunjangan Lainnya</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-5 col-12">
+														  <p>Masukkan Nama Pendapatan</p>
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div class="col-xl-5 col-12">
+														  <p>
+															Masukkan Jumlah Pendapatan
+														  </p>
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div
+														  class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2"
+														>
+														  <a href=""
+															><i
+															  class="fa fa-trash font-18 align-middle me-2"
+															></i
+														  ></a>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-lg-9 col-12">
+														  <a href="" class="text-red"
+															><i
+															  class="bi bi-plus px-1"
+															></i
+															>Pendapatan</a
+														  >
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-lg-9 col-8"><p class="strong">
+															  Total Pendapatan
+															</p>
+														</div>
+														<div class="col-lg-3 col-4">
+														  <p>Rp. 5.000.000</p>
+														</div>
+													  </div>
+													</div>
+												  </div>
+				
+												  <div class="col-xl-6 col-12 ms-auto">
+													<div
+													  class="card-body"
+													  style="
+														border: 1px solid
+														  rgb(181, 178, 178);
+														border-radius: 1rem;
+													  "
+													>
+													  <h5
+														class="strong text-center"
+														data-bs-toggle="tab"
+													  >
+														Potongan
+													  </h5>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Koperasi</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <p>Rp. 450.000</p>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-3 col-3">
+														  <p>Denda Keterlambatan</p>
+														</div>
+														<div class="col-xl-3 col-3">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div class="col-xl-3 col-3">
+														  <p>Jam x 26.001</p>
+														</div>
+														<div class="col-xl-3 col-3">
+														  <p>0</p>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Potongan Lainnya</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-lg-9 col-12">
+														  <a href="" class="text-red"
+															><i
+															  class="bi bi-plus px-1"
+															></i
+															>Potongan</a
+														  >
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-lg-9 col-8"><p class="strong">
+															  Total Potongan
+															</p>
+														</div>
+														<div class="col-lg-3 col-4">
+														  <p>Rp. 500.000</p>
+														</div>
+													  </div>
+													</div>
+												  </div>
+												</div>
+											  </div>
+											</div>
+										  </div>
+										</div>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+							  </div>
+							</div>
+							<nav>
+							  <ul class="pagination pagination-xs" style="float: right">
+								<li class="page-item page-indicator">
+								  <a class="page-link" href="javascript:void(0)">
+									<i
+									  class="fa fa-angle-double-left"
+									  aria-hidden="true"
+									></i
+								  ></a>
+								</li>
+								<li class="page-item active">
+								  <a class="page-link" href="javascript:void(0)">1</a>
+								</li>
+								<li class="page-item">
+								  <a class="page-link" href="javascript:void(0)">2</a>
+								</li>
+				  
+								<li class="page-item page-indicator">
+								  <a class="page-link" href="javascript:void(0)">
+									<i
+									  class="fa fa-angle-double-right"
+									  aria-hidden="true"
+									></i
+								  ></a>
+								</li>
+							  </ul>
+							</nav>
+						  </div>
+				
+						</div>
+					  </div>
             </div>
         </div>
+	</div>
         <!--**********************************
             Content body end
         ***********************************-->
@@ -1162,7 +1533,6 @@
         ***********************************-->
 
         
-    </div>
     <!--**********************************
         Main wrapper end
     ***********************************-->
