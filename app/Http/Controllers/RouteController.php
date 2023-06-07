@@ -76,4 +76,7 @@ class RouteController extends Controller
     public function StartPayroll(){
         return view('Admin.StartPayroll');
     }
+    public function PayrollStep(){
+        return view('Admin.PayrollStep');
+    }
 }

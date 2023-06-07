@@ -45,6 +45,7 @@ Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('A
 Route::get('/StartPayroll', [RouteController::class, 'StartPayroll'])->name('StartPayroll');
 Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
 Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
+Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
 
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
