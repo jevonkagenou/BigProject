@@ -52,6 +52,11 @@
         border-bottom: 0.0125rem solid #F72B50 !important;
         color: #F72B50 !important;
     }
+
+    .hover-red:hover {
+        color: #EE3232 !important;
+        border-color: #EE3232 !important;
+    }
 </Style>
 
 <div class="content-body">
@@ -146,9 +151,10 @@
                                 <h4 class="card-title mb-2">Kehadiran Karyawan</h4>
                                 <ul class="nav nav-tabs">
                                     <li class="nav-item"><a href="#terlambat" data-bs-toggle="tab"
-                                            class="nav-link active show">Terlambat</a>
+                                            class="nav-link active show hover-red">Terlambat</a>
                                     </li>
-                                    <li class="nav-item"><a href="#izin" data-bs-toggle="tab" class="nav-link">Izin &
+                                    <li class="nav-item"><a href="#izin" data-bs-toggle="tab"
+                                            class="nav-link hover-red">Izin &
                                             Cuti</a>
                                     </li>
                                 </ul>
@@ -297,7 +303,7 @@
                                     <h4 class="card-title">Perbandingan Gaji Per Jabatan</h4>
                                 </div>
                                 <div class="card-body">
-                                    <div id="chart_pie"></div>
+                                    <div class="d-flex justify-content-center" id="chart_pie"></div>
                                 </div>
                             </div>
                         </div>
@@ -330,76 +336,77 @@
 
 <script>
     var options = {
-          series: [{
-          data: [21, 22, 10, 28, 16, 21, 13, 30]
+        series: [{
+            data: [21, 22, 10, 28, 16, 21, 13, 30]
         }],
-          chart: {
-          height: 350,
-          type: 'bar',
-          events: {
-            click: function(chart, w, e) {
+        chart: {
+            height: 350,
+            type: 'bar',
+            events: {
+                click: function(chart, w, e) {}
             }
-          }
         },
         colors: ['#B70404', '#DB005B', '#F79327', '#FFE569'],
         plotOptions: {
-          bar: {
-            columnWidth: '45%',
-            distributed: true,
-          }
+            bar: {
+                columnWidth: '45%',
+                distributed: true,
+            }
         },
         dataLabels: {
-          enabled: false
+            enabled: false
         },
         legend: {
-          show: false
+            show: false
         },
         xaxis: {
-          categories: [
-            'John',
-            'Joe',
-            'Jake',
-            'Amber',
-            'Peter',
-            'Mary',
-            'David',
-            'Lily'
-          ],
-          labels: {
-            style: {
-                // Dalam Code ini Length: 8 berfungsi untuk mengulangi warna sebanyak jumlah data dalam Categories //
-                colors: Array.from({ length: 8 }, (_, index) => ['#B70404', '#DB005B', '#F79327', '#FFE569'][index % 4]),
-              fontSize: '12px'
+            categories: [
+                'John',
+                'Joe',
+                'Jake',
+                'Amber',
+                'Peter',
+                'Mary',
+                'David',
+                'Lily'
+            ],
+            labels: {
+                style: {
+                    // Dalam Code ini Length: 8 berfungsi untuk mengulangi warna sebanyak jumlah data dalam Categories //
+                    colors: Array.from({
+                        length: 8
+                    }, (_, index) => ['#B70404', '#DB005B', '#F79327', '#FFE569'][index % 4]),
+                    fontSize: '12px'
+                }
             }
-          }
         }
-        };
+    };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
 </script>
 
 <script>
     var options = {
-          series: [44, 55, 13, 43, 22],
-          chart: {
-          width: 380,
-          type: 'pie',
+        series: [44, 55, 13, 43, 22],
+        chart: {
+            width: 380,
+            type: 'pie',
         },
         labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+        legend: {
+            position: 'bottom'
+        },
         responsive: [{
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              position: 'bottom'
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                }
             }
-          }
         }]
-        };
+    };
 
-        var chart = new ApexCharts(document.querySelector("#chart_pie"), options);
-        chart.render();
+    var chart = new ApexCharts(document.querySelector("#chart_pie"), options);
+    chart.render();
 </script>
