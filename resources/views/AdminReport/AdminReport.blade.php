@@ -176,7 +176,7 @@
 								</a>
 							</div>
 							<div class="col-md-4"  >
-								<a href="/Payroll">
+								<a href="/SalaryPaymentReport">
 									<div class="card progress-card">
 									  <p>
 										<div class="img_cont">

@@ -32,7 +32,7 @@ Route::get('/SalarySummary', [RouteController::class, 'SalarySummary'])->name('S
 Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
 Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
 Route::get('/WorkSchedule', [RouteController::class, 'WorkSchedule'])->name('WorkSchedule');
-Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
+Route::get('/SalaryPaymentReport', [RouteController::class, 'SalaryPaymentReport'])->name('SalaryPaymentReport');
 Route::get('/Announcement', [RouteController::class, 'Announcement'])->name('Announcement');
 Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
 Route::get('/PayrolEmployee', [RouteController::class, 'PayrolEmployee'])->name('PayrolEmployee');
@@ -43,6 +43,8 @@ Route::get('/Company', [RouteController::class, 'Company'])->name('Company');
 Route::get('/PayrollSalarySlip', [RouteController::class, 'PayrollSalarySlip'])->name('PayrollSalarySlip');
 Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
 Route::get('/StartPayroll', [RouteController::class, 'StartPayroll'])->name('StartPayroll');
+Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
+Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
 
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');

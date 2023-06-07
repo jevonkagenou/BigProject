@@ -162,24 +162,24 @@
                                                             <tr>
                                                                 <th>#</th>
                                                                 <th>Nama</th>
-                                                                <th>Waktu Terlambat</th>
+                                                                <th class="text-center">Waktu Terlambat</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
                                                                 <th>#</th>
                                                                 <td>Shido</td>
-                                                                <td>5 menit</td>
+                                                                <td class="text-center">5 menit</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>#</th>
                                                                 <td>Shun</td>
-                                                                <td>10 menit</td>
+                                                                <td class="text-center">10 menit</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>#</th>
                                                                 <td>Kamijou Touma</td>
-                                                                <td>15 menit</td>
+                                                                <td class="text-center">15 menit</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -203,17 +203,17 @@
                                                             <tr>
                                                                 <th>#</th>
                                                                 <td>Shido</td>
-                                                                <td>Cuti</td>
+                                                                <td class="text-center">Cuti</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>#</th>
                                                                 <td>Shun</td>
-                                                                <td>Izin</td>
+                                                                <td class="text-center">Izin</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>#</th>
                                                                 <td>Kamijou Touma</td>
-                                                                <td>Cuti</td>
+                                                                <td class="text-center">Cuti</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>

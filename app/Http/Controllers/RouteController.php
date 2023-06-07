@@ -22,8 +22,8 @@ class RouteController extends Controller
     public function WorkSchedule(){
         return view('Admin.WorkSchedule');
     }
-    public function Payroll(){
-        return view('Admin.Payroll');
+    public function SalaryPaymentReport(){
+        return view('Admin.SalaryPaymentReport');
     }
     public function Announcement(){
         return view('Admin.Announcement');
@@ -33,6 +33,9 @@ class RouteController extends Controller
     }
     public function AddPayslips(){
         return view('Admin.AddPayslips');
+    }
+    public function Payroll(){
+        return view('Admin.Payroll');
     }
     public function Validation(){
         return view('Admin.Validation');
