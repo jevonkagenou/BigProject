@@ -24250,7 +24250,7 @@ button {
   font-family: 'FONT AWESOME 5 FREE';
   border: 0;
   vertical-align: middle;
-  margin-left: 0.25em;
+  margin-left: 0.5em;
   line-height: 1;
   font-weight: 900; }
 
@@ -24550,13 +24550,13 @@ code {
   z-index: 10 !important; }
 
 .pagination .page-item .page-link:hover {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: var(--bs-red);
+  border-color: var(--bs-red);
   color: #fff; }
 
 .pagination .page-item.active .page-link {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: var(--bs-red);
+  border-color: var(--bs-red);
   color: #fff; }
 
 .pagination {
@@ -27878,7 +27878,7 @@ table.dataTable.display tbody td {
     width: 80px; } }
 
 .nice-select.default-select {
-  line-height: 2.6rem; }
+  line-height: 1.8rem; }
   @media only screen and (max-width: 575px) {
     .nice-select.default-select {
       line-height: 1.6rem; } }
