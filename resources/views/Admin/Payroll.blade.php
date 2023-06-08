@@ -29,10 +29,10 @@
 	<meta property="og:description" content="Dompet : Payment Admin Template" />
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Kalopsia</title>
-	
+
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Datatable -->
@@ -61,6 +61,9 @@
     <style>
         .hover-red:hover {
             color: #EE3232 !important;
+        }
+        .dlabnav .metismenu a{
+            color: #9FA4A6;
         }
     </style>
     <div class="nav-header ">
@@ -801,7 +804,7 @@
                         </a>
                     </div>
                 </li>
-                <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
+                <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important" height="100"
                             viewBox="0 -960 960 960" width="100">
                             <path
@@ -1432,7 +1435,7 @@
 													  </div>
 													</div>
 												  </div>
-				
+
 												  <div class="col-xl-6 col-12 ms-auto">
 													<div
 													  class="card-body"

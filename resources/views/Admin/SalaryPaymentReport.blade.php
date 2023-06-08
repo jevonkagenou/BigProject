@@ -10,10 +10,10 @@
 	<meta property="og:description" content="Dompet : Payment Admin Template" />
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Kalopsia</title>
-	
+
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
     <!-- Datatable -->
@@ -43,12 +43,15 @@
 		.hover-red:hover{
             color: #EE3232 !important;
         }
+        .dlabnav .metismenu a{
+            color: #9FA4A6;
+        }
 	</style>
 		<div class="nav-header ">
             <a href="index.html" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
             </a>
-            
+
             <div class="nav-control">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
@@ -60,7 +63,7 @@
             Nav header end
         ***********************************-->
 
-   
+
         <!--**********************************
             Chat box start
         ***********************************-->
@@ -788,7 +791,7 @@
                             </a>
                         </div>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -860,26 +863,26 @@
         .responsive-button {
           padding: 5px;
         }
-      
+
         .search-area {
           padding: 5px;
         }
       </style>
- 
+
         <div class="content-body">
             <div class="container-fluid">
-				
-				
+
+
                 <!-- row -->
                 <div class="row">
-				
+
 					<style>
 						.custom-btn {
     border-radius: 1;
     height: 40px;
     padding: 12px 8px;
     background: #fff;
-    border: 1px solid #464444; 
+    border: 1px solid #464444;
 	text-align: center;
 }
 .paging_simple_numbers.dataTables_paginate{
@@ -892,7 +895,7 @@
                             <div class="card-header">
                                 <h4 class="card-title">Pembayaran Gaji</h4>
                             </div>
-                            
+
                             <div class="card-body">
 								<div class="row">
 									<div class="btn-group">
@@ -905,7 +908,7 @@
 										<table id="example5" class="display" style="min-width: 845px">
 											<thead>
 												<tr>
-													
+
 													<th>No</th>
 													<th>Bulan</th>
 													<th>Bank</th>
@@ -916,7 +919,7 @@
 											</thead>
 											<tbody>
 												<tr>
-													
+
 													<td>1</td>
 													<td>Mei</td>
 													<td>BCA</td>
@@ -925,16 +928,16 @@
 
 												</tr>
 												<tr>
-													
+
 													<td>2</td>
 													<td>Juni</td>
 													<td>BRI</td>
 													<td>4</td>
 													<td>5.600.00</td>
-													
+
 												</tr>
 												<tr>
-													
+
 													<td>3</td>
 													<td>Juli</td>
 													<td>BCA</td>
@@ -942,7 +945,7 @@
 													<td>5.750.000</td>
 
 												</tr>
-											
+
 											</tbody>
 										</table>
 									</div>
@@ -962,7 +965,7 @@
                                       <li class="page-item">
                                         <a class="page-link" href="javascript:void(0)">2</a>
                                       </li>
-                  
+
                                       <li class="page-item page-indicator">
                                         <a class="page-link" href="javascript:void(0)">
                                           <i
@@ -982,9 +985,9 @@
                             <div class="card-header">
                                 <h4 class="card-title">Pengumuman</h4>
                             </div>
-                            
+
                             <div class="card-body">
-                                  
+
                                 <div class="table-responsive">
                                     <table id="example8" class="display" style="min-width: 845px">
                                         <thead>
@@ -1009,7 +1012,7 @@
                                                     </div>
 													<span class="badge badge-primary light">70%</span>
 													</div>
-												</td>								
+												</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
@@ -1057,7 +1060,7 @@
            Support ticket button end
         ***********************************-->
 
-        
+
     </div>
     <!--**********************************
         Main wrapper end
@@ -1071,7 +1074,7 @@
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
-	
+
     <!-- Datatable -->
     <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins-init/datatables.init.js"></script>

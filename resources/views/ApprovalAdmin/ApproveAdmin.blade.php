@@ -10,10 +10,10 @@
 	<meta property="og:description" content="Dompet : Payment Admin Template" />
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Dompet : Payment Admin Template</title>
-	
+
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
     <!-- Datatable -->
@@ -43,12 +43,15 @@
 		.hover-red:hover{
             color: #EE3232 !important;
         }
+        .dlabnav .metismenu a{
+            color: #9FA4A6;
+        }
 	</style>
 		<div class="nav-header ">
             <a href="index.html" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
             </a>
-            
+
             <div class="nav-control">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
@@ -60,7 +63,7 @@
             Nav header end
         ***********************************-->
 
-   
+
         <!--**********************************
             Chat box start
         ***********************************-->
@@ -788,7 +791,7 @@
                             </a>
                         </div>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -866,7 +869,7 @@
      .paging_simple_numbers.dataTables_paginate{
 				background: transparent !important;
 			}
-			
+
 		</style>
         <div class="content-body">
             <div class="container-fluid">
@@ -880,14 +883,14 @@
 
                             <div class="card-body">
 								<div class="row">
-									
+
 								<div class="col-xl-12 col-lg-4 col-md-12 col-sm-6 col-12 text-end">
 									<div class="responsive-button">
 										<a href="/Validation" type="button" class="btn btn-outline-danger btn-xs " >Atur Kebijakan Presensi</a>
 									</div>
 								</div>
 								</div>
-								
+
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
@@ -989,7 +992,7 @@
                                       <li class="page-item">
                                         <a class="page-link" href="javascript:void(0)">2</a>
                                       </li>
-                  
+
                                       <li class="page-item page-indicator">
                                         <a class="page-link" href="javascript:void(0)">
                                           <i
@@ -1000,7 +1003,7 @@
                                       </li>
                                     </ul>
                                 </nav>
-								
+
 								<button type="button" class="btn btn-success btn-xs">Konfirmasi Data yang Dipilih   </button>
 								<button type="button" class="btn btn-danger btn-xs" >Tolak Data yang Dipilih   </button>
                                 <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 ">
@@ -1047,7 +1050,7 @@
         ***********************************-->
 
 
-    
+
     <!--**********************************
         Main wrapper end
     ***********************************-->

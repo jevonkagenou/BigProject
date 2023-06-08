@@ -10,10 +10,10 @@
 	<meta property="og:description" content="Dompet : Payment Admin Template" />
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Kalopsia</title>
-	
+
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
     <!-- Datatable -->
@@ -46,12 +46,15 @@
 		.hover-red:hover{
             color: #EE3232 !important;
         }
+        .dlabnav .metismenu a{
+            color: #9FA4A6;
+        }
 	</style>
 		<div class="nav-header ">
             <a href="index.html" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
             </a>
-            
+
             <div class="nav-control">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
@@ -63,7 +66,7 @@
             Nav header end
         ***********************************-->
 
-   
+
         <!--**********************************
             Chat box start
         ***********************************-->
@@ -791,7 +794,7 @@
                             </a>
                         </div>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -860,12 +863,12 @@
 
         <div class="content-body">
             <div class="container-fluid">
-				
-				
+
+
                 <!-- row -->
 
-			
-				
+
+
 				<!-- ringkasan gaji perkomponen -->
 				<div class="row">
 					<div class="col-12">
@@ -875,11 +878,11 @@
                             </div>
                             <div class="card-body">
 								<div class="row">
-									<div class="btn-xs ms-auto text-end">                                
+									<div class="btn-xs ms-auto text-end">
 										<div class="responsive-button">
 											<button type="button" class="btn btn-outline-light btn-xs">05/2022 - 05/2023<i class="bi bi-calendar-check px-2"></i></button>
 											<button type="button" class="btn btn-outline-light btn-xs" ><i class="bi bi-arrow-bar-up px-2"></i>Ekspor<i class="bi bi-chevron-down px-2"></i> </button>
-											
+
 										</div>
 									</div>
 								</div>
@@ -898,7 +901,7 @@
 												<th>Total Tunjagan</th>
 												<th>Total Potongan</th>
 												<th>Take Home Pay</th>
-                                                
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -914,8 +917,8 @@
 												<td>20.765.437</td>
 												<td>20.765.437</td>
 												<td>20.765.437</td>
-												
-                                                												
+
+
                                             </tr>
                                             <tr class="text-center">
                                                 <td>02</td>
@@ -929,8 +932,8 @@
 												<td>20.765.437</td>
 												<td>20.765.437</td>
 												<td>20.765.437</td>
-												
-                                                												
+
+
                                             </tr>
 											<tr class="text-center">
                                                 <td>03</td>
@@ -944,12 +947,12 @@
 												<td>20.765.437</td>
 												<td>20.765.437</td>
 												<td>20.765.437</td>
-												
-                                                												
+
+
                                             </tr>
                                         </tbody>
                                     </table>
-									
+
 								</div>
                                 <nav class="mt-3">
                                     <ul class="pagination pagination-xs" style="float: right">
@@ -967,7 +970,7 @@
                                       <li class="page-item">
                                         <a class="page-link" href="javascript:void(0)">2</a>
                                       </li>
-                  
+
                                       <li class="page-item page-indicator">
                                         <a class="page-link" href="javascript:void(0)">
                                           <i
@@ -978,17 +981,17 @@
                                       </li>
                                     </ul>
                                   </nav>
-								
+
                             </div>
                         </div>
-						
+
                     </div>
-					
-                    
-                    
+
+
+
 				</div>
 
-				
+
             </div>
 
             @extends('PartialAdmin.footer')
