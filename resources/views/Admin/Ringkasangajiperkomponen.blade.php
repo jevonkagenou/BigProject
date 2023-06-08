@@ -53,7 +53,7 @@
         <!--**********************************
             Nav header end
         ***********************************-->
-		
+
 		<!--**********************************
             Chat box start
         ***********************************-->
@@ -280,7 +280,7 @@
 								<div>
 									<h6 class="mb-1">Chat with Khelesh</h6>
 									<p class="mb-0 text-success">Online</p>
-								</div>							
+								</div>
 								<div class="dropdown">
 									<a href="#" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
 									<ul class="dropdown-menu dropdown-menu-end">
@@ -557,8 +557,8 @@
         ***********************************-->
 
 
-		
-		
+
+
         <!--**********************************
             Header start
         ***********************************-->
@@ -568,7 +568,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 							<div class="dashboard_bar">
-                                Form Pickers 
+                                Form Pickers
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -580,7 +580,7 @@
 							</li>
 							<li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link" href="javascript:void(0);" data-bs-toggle="dropdown">
-									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M3.88552 6.2921C1.95571 6.54135 0.439911 8.19656 0.439911 10.1896V10.7253C0.439911 12.8874 2.21812 14.6725 4.38019 14.6725H12.7058V24.9768H7.01104C5.77451 24.9768 4.82009 24.0223 4.82009 22.7858V18.4039C4.84523 16.6262 2.16581 16.6262 2.19096 18.4039V22.7858C2.19096 25.4334 4.36345 27.6059 7.01104 27.6059H21.0331C23.6807 27.6059 25.8532 25.4334 25.8532 22.7858V13.9981C26.9064 13.286 27.6042 12.0802 27.6042 10.7253V10.1896C27.6042 8.17115 26.0501 6.50077 24.085 6.28526C24.0053 0.424609 17.6008 -1.28785 13.9827 2.48534C10.3936 -1.60185 3.7545 1.06979 3.88552 6.2921ZM12.7058 5.68103C12.7058 5.86287 12.7033 6.0541 12.7058 6.24246H6.50609C6.55988 2.31413 11.988 1.90765 12.7058 5.68103ZM21.4559 6.24246H15.3383C15.3405 6.05824 15.3538 5.87664 15.3383 5.69473C15.9325 2.04532 21.3535 2.18829 21.4559 6.24246ZM4.38019 8.87502H12.7058V12.0382H4.38019C3.62918 12.0382 3.06562 11.4764 3.06562 10.7253V10.1896C3.06562 9.43859 3.6292 8.87502 4.38019 8.87502ZM15.3383 8.87502H23.6656C24.4166 8.87502 24.9785 9.43859 24.9785 10.1896V10.7253C24.9785 11.4764 24.4167 12.0382 23.6656 12.0382H15.3383V8.87502ZM15.3383 14.6725H23.224V22.7858C23.224 24.0223 22.2696 24.9768 21.0331 24.9768H15.3383V14.6725Z" fill="#4f7086"/> 
+									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M3.88552 6.2921C1.95571 6.54135 0.439911 8.19656 0.439911 10.1896V10.7253C0.439911 12.8874 2.21812 14.6725 4.38019 14.6725H12.7058V24.9768H7.01104C5.77451 24.9768 4.82009 24.0223 4.82009 22.7858V18.4039C4.84523 16.6262 2.16581 16.6262 2.19096 18.4039V22.7858C2.19096 25.4334 4.36345 27.6059 7.01104 27.6059H21.0331C23.6807 27.6059 25.8532 25.4334 25.8532 22.7858V13.9981C26.9064 13.286 27.6042 12.0802 27.6042 10.7253V10.1896C27.6042 8.17115 26.0501 6.50077 24.085 6.28526C24.0053 0.424609 17.6008 -1.28785 13.9827 2.48534C10.3936 -1.60185 3.7545 1.06979 3.88552 6.2921ZM12.7058 5.68103C12.7058 5.86287 12.7033 6.0541 12.7058 6.24246H6.50609C6.55988 2.31413 11.988 1.90765 12.7058 5.68103ZM21.4559 6.24246H15.3383C15.3405 6.05824 15.3538 5.87664 15.3383 5.69473C15.9325 2.04532 21.3535 2.18829 21.4559 6.24246ZM4.38019 8.87502H12.7058V12.0382H4.38019C3.62918 12.0382 3.06562 11.4764 3.06562 10.7253V10.1896C3.06562 9.43859 3.6292 8.87502 4.38019 8.87502ZM15.3383 8.87502H23.6656C24.4166 8.87502 24.9785 9.43859 24.9785 10.1896V10.7253C24.9785 11.4764 24.4167 12.0382 23.6656 12.0382H15.3383V8.87502ZM15.3383 14.6725H23.224V22.7858C23.224 24.0223 22.2696 24.9768 21.0331 24.9768H15.3383V14.6725Z" fill="#4f7086"/>
 									</svg>
 									<span class="badge light text-white bg-primary rounded-circle">2</span>
                                 </a>
@@ -736,7 +736,7 @@
 				</nav>
 			</div>
 		</div>
-                    
+
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -748,28 +748,14 @@
             <div class="dlabnav-scroll">
 				<ul class="metismenu" id="menu">
 					<li class="dropdown header-profile">
-						<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-							<img src="images/profile/pic1.jpg" width="20" alt=""/>
-							<div class="header-info ms-3">
-								<span class="font-w600 ">Hi,<b>William</b></span>
-								<small class="text-end font-w400">william@gmail.com</small>
-							</div>
-						</a>
-						<div class="dropdown-menu dropdown-menu-end">
-							<a href="app-profile.html" class="dropdown-item ai-icon">
-								<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-								<span class="ms-2">Profile </span>
-							</a>
-							<a href="email-inbox.html" class="dropdown-item ai-icon">
-								<svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-								<span class="ms-2">Inbox </span>
-							</a>
-							<a href="page-error-404.html" class="dropdown-item ai-icon">
-								<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-								<span class="ms-2">Logout </span>
-							</a>
-						</div>
-					</li>
+                        <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
+                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <div class="header-info ms-3">
+                                <span class="font-w600 ">Hi,<b>Admin</b></span>
+                                <small class="text-end font-w400 ">admin@gmail.com</small>
+                            </div>
+                        </a>
+                    </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-025-dashboard"></i>
 							<span class="nav-text">Dashboard</span>
@@ -781,7 +767,7 @@
 							<li><a href="page-invoices.html">Invoices</a></li>
 							<li><a href="cards-center.html">Cards Center</a></li>
 							<li><a href="page-transaction.html">Transaction</a></li>
-							<li><a href="transaction-details.html">Transaction Details</a></li>	
+							<li><a href="transaction-details.html">Transaction Details</a></li>
 						</ul>
 
                     </li>
@@ -940,7 +926,7 @@
                                 <h4 class="card-title">Tambah Slip Gaji</h4>
                             </div>
                             <div class="card-body">
-                                
+
 								<div class="row">
 									<div class="col-md-6 mb-3">
 										<label for="firstName" class="form-label">Nama</label>
@@ -955,7 +941,7 @@
 											<option selected >Tetap(Gaji Bulanan, Mingguan, per Sekian Gaji)</option>
 											<option value="1">Tetap(Gaji Bulanan, Mingguan, per Sekian Gaji)</option>
 											<option value="2">Tidak Tetap(THR, Bonus Lebih Dari 1 Bulan)</option>
-											
+
 										</select>
 										<div class="invalid-feedback">
 											Please select a valid country.
@@ -979,14 +965,14 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="mb-3">
 									<label for="address2"  class="form-label">Untuk komponen pendapatan tergantung kehadiran, berapa hari absensi terakhir yang masuk hitungan<span
 											class="text-muted"></span></label>
 									<input type="text" class="form-control" id="address2" placeholder="Masukkan jumlah hari (Masukkan sebelum akhir periode)">
 								</div>
                             </div>
-							
+
 							<div class="card-header">
 								<h4 class="card-title">Tambah Slip Gaji</h4>
 							</div>
@@ -1049,12 +1035,12 @@
 									</div>
 									<button class="btn btn-danger btn-sm btn-block"  type="submit" >Simpan</button>
 								</div>
-								
+
 							</div>
                         </div>
                     </div>
                 </div>
-				
+
 				<div class="modal modal-5 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered modal-lg">
 						<div class="modal-content">
@@ -1069,7 +1055,7 @@
 									<div class="col">
 										<input type="text" class="form-control btn-xs" placeholder="Nama">
 									</div>
-									
+
 								</div>
 								<br>
 								<div class="row g-0">
@@ -1079,14 +1065,14 @@
 										<option selected >Manual</option>
 										<option value="1">Manual</option>
 										<option value="2">Berdasarkan Kehadiran</option>
-										
+
 									</select>
 									<div class="invalid-feedback">
 										Please select a valid country.
 									</div>
 								</div>
 								<br>
-								
+
 							 </div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-danger light btn-xs" data-bs-dismiss="modal">Batal</button>
@@ -1110,7 +1096,7 @@
 									<div class="col">
 										<input type="text" class="form-control btn-xs" placeholder="Nama">
 									</div>
-									
+
 								</div>
 								<br>
 								<div class="row g-0">
@@ -1120,14 +1106,14 @@
 										<option selected >Manual</option>
 										<option value="1">Manual</option>
 										<option value="2">Berdasarkan Kehadiran</option>
-										
+
 									</select>
 									<div class="invalid-feedback">
 										Please select a valid country.
 									</div>
 								</div>
 								<br>
-								
+
 							 </div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-danger light btn-xs" data-bs-dismiss="modal">Batal</button>
@@ -1163,7 +1149,7 @@
            Support ticket button end
         ***********************************-->
 
-        
+
     </div>
     <!--**********************************
         Main wrapper end
@@ -1178,7 +1164,7 @@
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
-    
+
 
 
     <!-- Daterangepicker -->

@@ -15,10 +15,10 @@
 	<meta property="og:description" content="Dompet : Payment Admin Template" />
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Dompet : Payment Admin Template</title>
-	
+
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Datatable -->
@@ -43,7 +43,7 @@
         .responsive-button {
           padding: 5px;
         }
-      
+
         .search-area {
           padding: 5px;
         }
@@ -54,7 +54,7 @@
             color:white !important;
 		}
       </style>
-      
+
 
     <!--*******************
         Preloader start
@@ -108,7 +108,7 @@
         <!--**********************************
             Nav header end
         ***********************************-->
-		
+
 		<!--**********************************
             Chat box start
         ***********************************-->
@@ -335,7 +335,7 @@
 								<div>
 									<h6 class="mb-1">Chat with Khelesh</h6>
 									<p class="mb-0 text-success">Online</p>
-								</div>							
+								</div>
 								<div class="dropdown">
 									<a href="#" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
 									<ul class="dropdown-menu dropdown-menu-end">
@@ -613,7 +613,7 @@
         <!--**********************************
             Header start
         ***********************************-->
-                    
+
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -625,28 +625,14 @@
             <div class="dlabnav-scroll">
 				<ul class="metismenu" id="menu">
 					<li class="dropdown header-profile">
-						<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-							<img src="images/profile/pic1.jpg" width="20" alt=""/>
-							<div class="header-info ms-3">
-								<span class="font-w600 ">Hi,<b>William</b></span>
-								<small class="text-end font-w400">william@gmail.com</small>
-							</div>
-						</a>
-						<div class="dropdown-menu dropdown-menu-end">
-							<a href="app-profile.html" class="dropdown-item ai-icon">
-								<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-								<span class="ms-2">Profile </span>
-							</a>
-							<a href="email-inbox.html" class="dropdown-item ai-icon">
-								<svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-								<span class="ms-2">Inbox </span>
-							</a>
-							<a href="page-error-404.html" class="dropdown-item ai-icon">
-								<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-								<span class="ms-2">Logout </span>
-							</a>
-						</div>
-					</li>
+                        <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
+                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <div class="header-info ms-3">
+                                <span class="font-w600 ">Hi,<b>Admin</b></span>
+                                <small class="text-end font-w400 ">admin@gmail.com</small>
+                            </div>
+                        </a>
+                    </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-025-dashboard"></i>
 							<span class="nav-text">Dashboard</span>
@@ -658,7 +644,7 @@
 							<li><a href="page-invoices.html">Invoices</a></li>
 							<li><a href="cards-center.html">Cards Center</a></li>
 							<li><a href="page-transaction.html">Transaction</a></li>
-							<li><a href="transaction-details.html">Transaction Details</a></li>	
+							<li><a href="transaction-details.html">Transaction Details</a></li>
 						</ul>
 
                     </li>
@@ -887,7 +873,7 @@
 								</div>
 							  </div>
 							</div>
-				
+
 							<div class="accordion" id="accordion-eleven">
 							  <div class="table-responsive mb-2">
 								<table
@@ -924,7 +910,7 @@
 										<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
 										<input type="radio" class="btn-check" name="btnradio1" id="btnradio14" checked>
 										<label class="btn btn-outline-danger btn-xs" for="btnradio14" >Belum Siap</label>
-										
+
 										<input type="radio" class="btn-check" name="btnradio1" id="btnradio15">
 										<label class="btn btn-outline-danger btn-xs" for="btnradio15">Siap Bayar</label>
 
@@ -1092,7 +1078,7 @@
 														</div>
 													  </div>
 													</div>
-				  
+
 													<div class="col-xl-6 col-12 ms-auto">
 													  <div
 														class="card-body"
@@ -1205,7 +1191,7 @@
 										<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
 										<input type="radio" class="btn-check" name="btnradio1" id="btnradio14" checked>
 										<label class="btn btn-outline-danger btn-xs" for="btnradio14">Belum Siap</label>
-										
+
 										<input type="radio" class="btn-check" name="btnradio1" id="btnradio15">
 										<label class="btn btn-outline-danger btn-xs" for="btnradio15">Siap Bayar</label>
 
@@ -1374,7 +1360,7 @@
 													  </div>
 													</div>
 												  </div>
-				
+
 												  <div class="col-xl-6 col-12 ms-auto">
 													<div
 													  class="card-body"
@@ -1489,7 +1475,7 @@
 								<li class="page-item">
 								  <a class="page-link" href="javascript:void(0)">2</a>
 								</li>
-				  
+
 								<li class="page-item page-indicator">
 								  <a class="page-link" href="javascript:void(0)">
 									<i
@@ -1501,7 +1487,7 @@
 							  </ul>
 							</nav>
 						  </div>
-				
+
 						</div>
 					  </div>
             </div>
@@ -1532,7 +1518,7 @@
            Support ticket button end
         ***********************************-->
 
-        
+
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -1545,7 +1531,7 @@
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
-	
+
     <!-- Datatable -->
     <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins-init/datatables.init.js"></script>
