@@ -1,13 +1,7 @@
 @include('PartialAdmin.SidebarNavbar')
-
         <div class="content-body">
             <div class="container-fluid">
-				
-				
                 <!-- row -->
-
-				
-				
 				<!-- payroll slip gaji -->
 				<div class="row">
 					<div class="col-12">
@@ -17,13 +11,20 @@
                             </div>
                             <div class="card-body">
 								<div class="row">
-									<div class="col-xl-9 col-lg-8 col-md-7 col-sm-1  btn-group btn-xs">                                
-										<div class="btn-group responsive-button">
-											<button type="button" class="btn btn-outline-danger btn-xs">Slip Gaji</button>
-											<button type="button" class="btn btn-outline-light btn-xs">Tambah Rekening</button>
-										</div>
+									<div class="col-xl-6 col-lg-8 col-md-7 col-sm-1  btn-group btn-xs">                                
+										<div class="btn-group btn-xs">
+                                            <div class="size-filter">
+                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
+                                                    <label class="btn btn-xs btn-outline-danger" for="btnradio1">Slip Gaji</label>
+
+                                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
+                                                    <label class="btn btn-xs btn-outline-danger" for="btnradio2">Tambah Rekening</label>
+                                                </div>
+                                            </div>
+                                        </div>
 									</div>
-									<div class="col-xl-3 col-lg-4 col-md-5 col-sm-3 mt-8 btn-xs">                                
+									<div class="col-xl-6 col-lg-4 col-md-5 col-sm-3 mt-8 btn-xs text-end">                                
 										<div class="responsive-button">
 											<button type="button" class="btn btn-danger btn-xs"><i class="bi bi-plus me-1"></i>Tambah Slip Gaji</button>
 											<button type="button" class="btn btn-outline-light btn-xs" ><i class="bi bi-download me-2"></i>Print </button>
@@ -31,42 +32,30 @@
 										</div>
 									</div>
 								</div>
-							<div class="col-xl-12 col-lg-4 col-md-12 col-sm-6  mt-8">
-								
-								<div class="input-group search-area">
-									<input type="text" class="form-control" placeholder="Cari Disini...">
-									<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-								</div> 
-							</div>
-							
-								<br>
-                                
                                 <div class="table-responsive mb-4">
-                                    <table id="example9" class="display" style="min-width: 845px">
+                                    <table id="example5" class="display" style="min-width: 845px">
 										<thead>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Periode</th>
                                                 <th>Lama Periode</th>
                                             </tr>
                                         </thead>
-                                        <thead>
-                                            <tr>
+                                        <tbody>
+                                            <tr class="text-center">
                                                 <td>01</td>
                                                 <td>Gaji Bulanan</td>
                                                 <td>Tetap</td>
                                                 <td>1 Bulan</td>											
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td>02</td>
                                                 <td>Gaji Bulanan</td>
                                                 <td>Tetap</td>
                                                 <td>2 Bulan</td>
                                             </tr>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td>03</td>
                                                 <td>Gaji Bulanan</td>
                                                 <td>Tetap</td>

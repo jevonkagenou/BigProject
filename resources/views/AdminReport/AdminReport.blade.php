@@ -164,7 +164,7 @@
 									<div class="card progress-card">
 									  <p>
 										<div class="img_cont">
-										  <center><img src="https://i.postimg.cc/XNRVjhkV/laporan2.png" class="rounded-circle user_img" alt="width=30%" /></center>
+										  <center><img src="https://i.postimg.cc/tRKhxKnV/ringkasangaji.png" class="rounded-circle user_img" alt="width=30%" /></center>
 										  <span class="online_icon"></span>
 										</div>
 										<div class="card-body d-flex; justify-content: center;">
@@ -196,7 +196,7 @@
 									<div class="card progress-card">
 									  <p>
 										<div class="img_cont">
-										  <center><img src="https://i.postimg.cc/XNRVjhkV/laporan2.png" class="rounded-circle user_img" alt="width=30%" /></center>
+										  <center><img src="https://i.postimg.cc/sxxGFJLS/komponen.png" class="rounded-circle user_img" alt="width=30%" /></center>
 										  <span class="online_icon"></span>
 										</div>
 										<div class="card-body d-flex; justify-content: center;">
