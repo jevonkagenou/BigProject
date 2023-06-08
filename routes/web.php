@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\ViewEmployeeController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\RouteKaryawanController;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +29,7 @@ Route::get('/Calendar', [ViewEmployeeController::class, 'Calendar'])->name('Cale
 
 // Karyawan Route
 // Route::view('/', 'Pengaturan.Perusahaan');
-Route::view('/', 'DashboardAdmin.DashboardAdmin');
+Route::get('/DashboardAdmin', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
 Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
 Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
 Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
@@ -52,8 +52,8 @@ Route::get('/StartPayroll', [RouteController::class, 'StartPayroll'])->name('Sta
 Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
 Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
 Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
+Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
 
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
 
-Route::view('/', 'Admin.Karyawan');

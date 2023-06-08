@@ -849,7 +849,7 @@
 
                     </ul>
                 </li>
-                <li><a class=" ai-icon hover-red" href="/" aria-expanded="false">
+                <li><a class=" ai-icon hover-red" href="/EmployeeAdmin" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                             width="48">
                             <path
@@ -868,7 +868,7 @@
                         <span class="nav-text ">Payroll</span>
                     </a>
                 </li>
-                <li><a class=" ai-icon" href="/Setting hover-red" aria-expanded="false">
+                <li><a class=" ai-icon  hover-red" href="/Setting" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                             width="48">
                             <path

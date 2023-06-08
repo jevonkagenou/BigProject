@@ -140,6 +140,7 @@
 	<script src="{{ asset('js/demo.js') }}"></script>
     <script src="{{ asset('js/styleSwitcher.js') }}"></script>
     <script src="https://kit.fontawesome.com/399218ad26.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('vendor/fullcalendar/js/main.min.js')}}"></script>
 
 
 </body>
