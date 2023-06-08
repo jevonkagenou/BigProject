@@ -1,4 +1,44 @@
-@include('PartialEmployee.SidebarNavbar')
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from dompet.dexignlab.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:06 GMT -->
+<head>
+
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="admin, dashboard" />
+	<meta name="author" content="DexignZone" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Dompet : Payment Admin Template" />
+	<meta property="og:title" content="Dompet : Payment Admin Template" />
+	<meta property="og:description" content="Dompet : Payment Admin Template" />
+	<meta property="og:image" content="social-image.png" />
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- PAGE TITLE HERE -->
+	<title>Payroll-Kalopsia</title>
+
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+	<link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+	<!-- Style css -->
+    <link href="css/style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+</head>
+<style>
+    .red-hover:hover{
+            color:#EE3232 !important;
+        }
+        .btn-outline-danger:checked{
+            color:white !important;
+        }
+</style>
+
 <body>
 
     <!--*******************
@@ -52,7 +92,7 @@
         <!--**********************************
             Nav header end
         ***********************************-->
-		
+
 		<!--**********************************
             Chat box start
         ***********************************-->
@@ -279,7 +319,7 @@
 								<div>
 									<h6 class="mb-1">Chat with Khelesh</h6>
 									<p class="mb-0 text-success">Online</p>
-								</div>							
+								</div>
 								<div class="dropdown">
 									<a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
 									<ul class="dropdown-menu dropdown-menu-end">
@@ -554,7 +594,7 @@
 		<!--**********************************
             Chat box End
         ***********************************-->
-		
+
 		<!--**********************************
             Header start
         ***********************************-->
@@ -563,15 +603,54 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
-							<div class="dashboard_bar">
-                                Nota gaji
+                            <div class="dashboard_bar">
+                                {{ $title }}
                             </div>
                         </div>
-                       
+                        <div class="justify-content-end">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown notification_dropdown mx-2">
+                                    <a class="nav-link bell bell-link" href="#">
+                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M27 7.88883C27 5.18897 24.6717 3 21.8 3C17.4723 3 10.5277 3 6.2 3C3.3283 3 1 5.18897 1 7.88883V23.7776C1 24.2726 1.31721 24.7174 1.80211 24.9069C2.28831 25.0963 2.8473 24.9912 3.2191 24.6417C3.2191 24.6417 5.74629 22.2657 7.27769 20.8272C7.76519 20.3688 8.42561 20.1109 9.11591 20.1109H21.8C24.6717 20.1109 27 17.922 27 15.2221V7.88883ZM24.4 7.88883C24.4 6.53951 23.2365 5.44441 21.8 5.44441C17.4723 5.44441 10.5277 5.44441 6.2 5.44441C4.7648 5.44441 3.6 6.53951 3.6 7.88883V20.8272L5.4382 19.0989C6.4132 18.1823 7.73661 17.6665 9.11591 17.6665H21.8C23.2365 17.6665 24.4 16.5726 24.4 15.2221V7.88883ZM7.5 15.2221H17.9C18.6176 15.2221 19.2 14.6745 19.2 13.9999C19.2 13.3252 18.6176 12.7777 17.9 12.7777H7.5C6.7824 12.7777 6.2 13.3252 6.2 13.9999C6.2 14.6745 6.7824 15.2221 7.5 15.2221ZM7.5 10.3333H20.5C21.2176 10.3333 21.8 9.7857 21.8 9.11104C21.8 8.43638 21.2176 7.88883 20.5 7.88883H7.5C6.7824 7.88883 6.2 8.43638 6.2 9.11104C6.2 9.7857 6.7824 10.3333 7.5 10.3333Z" fill="black"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30"
+                                            height="30" viewBox="0 0 24 24" fill="none" stroke="black"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-user">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
+                                        <li><a class="dropdown-item" href="#"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="#969ba0" viewBox="0 0 448 512"
+                                                    style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
+                                                    <path
+                                                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                                                </svg> Profil</a></li>
+                                        <li><a class="dropdown-item" href="#"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="#969ba0" viewBox="0 0 512 512"
+                                                    style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
+                                                    <path
+                                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+                                                </svg> Keluar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-				</nav>
-			</div>
-		</div>
+                </nav>
+            </div>
+        </div>
+
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -581,181 +660,94 @@
         ***********************************-->
         <div class="dlabnav">
             <div class="dlabnav-scroll">
-				<ul class="metismenu" id="menu">
-					<li class="dropdown header-profile">
-						<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-							<img src="images/profile/pic1.jpg" width="20" alt=""/>
-							<div class="header-info ms-3">
-								<span class="font-w600 ">Hi,<b>William</b></span>
-								<small class="text-end font-w400">william@gmail.com</small>
-							</div>
-						</a>
-						<div class="dropdown-menu dropdown-menu-end">
-							<a href="app-profile.html" class="dropdown-item ai-icon">
-								<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-								<span class="ms-2">Profile </span>
-							</a>
-							<a href="email-inbox.html" class="dropdown-item ai-icon">
-								<svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-								<span class="ms-2">Inbox </span>
-							</a>
-							<a href="page-error-404.html" class="dropdown-item ai-icon">
-								<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-								<span class="ms-2">Logout </span>
-							</a>
-						</div>
-					</li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-025-dashboard"></i>
-							<span class="nav-text">Dashboard</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="index.html">Dashboard Light</a></li>
-							<li><a href="index-2.html">Dashboard Dark</a></li>
-							<li><a href="my-wallet.html">My Wallet</a></li>
-							<li><a href="page-invoices.html">Invoices</a></li>
-							<li><a href="cards-center.html">Cards Center</a></li>
-							<li><a href="page-transaction.html">Transaction</a></li>
-							<li><a href="transaction-details.html">Transaction Details</a></li>	
-						</ul>
+                <ul class="metismenu" id="menu">
+                    <li class="dropdown header-profile">
+                        <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <div class="header-info ms-3">
+                                <span class="font-w600 ">Hi,<b>Admin</b></span>
+                                <small class="text-end font-w400">admin@gmail.com</small>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a href="app-profile.html" class="dropdown-item ai-icon">
+                                <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                    width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <span class="ms-2">Profile </span>
+                            </a>
+
+                            <a href="page-error-404.html" class="dropdown-item ai-icon">
+                                <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
+                                    width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                                <span class="ms-2">Logout </span>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" fill="black"/></svg></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+
 
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-						<i class="flaticon-050-info"></i>
-							<span class="nav-text">Apps</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="app-profile.html">Profile</a></li>
-							<li><a href="post-details.html">Post Details</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="email-compose.html">Compose</a></li>
-                                    <li><a href="email-inbox.html">Inbox</a></li>
-                                    <li><a href="email-read.html">Read</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="app-calender.html">Calendar</a></li>
-							<li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="ecom-product-grid.html">Product Grid</a></li>
-									<li><a href="ecom-product-list.html">Product List</a></li>
-									<li><a href="ecom-product-detail.html">Product Details</a></li>
-									<li><a href="ecom-product-order.html">Order</a></li>
-									<li><a href="ecom-checkout.html">Checkout</a></li>
-									<li><a href="ecom-invoice.html">Invoice</a></li>
-									<li><a href="ecom-customers.html">Customers</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-041-graph"></i>
-							<span class="nav-text">Charts</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="chart-flot.html">Flot</a></li>
-                            <li><a href="chart-morris.html">Morris</a></li>
-                            <li><a href="chart-chartjs.html">Chartjs</a></li>
-                            <li><a href="chart-chartist.html">Chartist</a></li>
-                            <li><a href="chart-sparkline.html">Sparkline</a></li>
-                            <li><a href="chart-peity.html">Peity</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-086-star"></i>
-							<span class="nav-text">Bootstrap</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="ui-accordion.html">Accordion</a></li>
-                            <li><a href="ui-alert.html">Alert</a></li>
-                            <li><a href="ui-badge.html">Badge</a></li>
-                            <li><a href="ui-button.html">Button</a></li>
-                            <li><a href="ui-modal.html">Modal</a></li>
-                            <li><a href="ui-button-group.html">Button Group</a></li>
-                            <li><a href="ui-list-group.html">List Group</a></li>
-                            <li><a href="ui-card.html">Cards</a></li>
-                            <li><a href="ui-carousel.html">Carousel</a></li>
-                            <li><a href="ui-dropdown.html">Dropdown</a></li>
-                            <li><a href="ui-popover.html">Popover</a></li>
-                            <li><a href="ui-progressbar.html">Progressbar</a></li>
-                            <li><a href="ui-tab.html">Tab</a></li>
-                            <li><a href="ui-typography.html">Typography</a></li>
-                            <li><a href="ui-pagination.html">Pagination</a></li>
-                            <li><a href="ui-grid.html">Grid</a></li>
+                    <li><a class="ai-icon red-hover" href="/EmployeePresence" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z" fill="black"/></svg></i>
+                            <span class="nav-text">Presensi</span>
+                        </a>
 
-                        </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-045-heart"></i>
-							<span class="nav-text">Plugins</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="uc-select2.html">Select 2</a></li>
-                            <li><a href="uc-nestable.html">Nestedable</a></li>
-                            <li><a href="uc-noui-slider.html">Noui Slider</a></li>
-                            <li><a href="uc-sweetalert.html">Sweet Alert</a></li>
-                            <li><a href="uc-toastr.html">Toastr</a></li>
-                            <li><a href="map-jqvmap.html">Jqv Map</a></li>
-							<li><a href="uc-lightgallery.html">Light Gallery</a></li>
-                        </ul>
+                    <li><a class=" ai-icon red-hover" href="/PermitEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z" fill="black"/></svg></i>
+                            <span class="nav-text">Izin Cuti</span>
+                        </a>
+
                     </li>
-                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-							<i class="flaticon-013-checkmark"></i>
-							<span class="nav-text">Widget</span>
-						</a>
-					</li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-072-printer"></i>
-							<span class="nav-text">Forms</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="form-element.html">Form Elements</a></li>
-                            <li><a href="form-wizard.html">Wizard</a></li>
-                            <li><a href="form-ckeditor.html">CkEditor</a></li>
-                            <li><a href="form-pickers.html">Pickers</a></li>
-                            <li><a href="form-validation.html">Form Validate</a></li>
-                        </ul>
+                    <li><a class="ai-icon red-hover" href="/ApprovalEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z" fill="black"/></svg></i>
+                            <span class="nav-text">Approval</span>
+                        </a>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-043-menu"></i>
-							<span class="nav-text">Table</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                            <li><a href="table-datatable-basic.html">Datatable</a></li>
-                        </ul>
+                    <li><a class=" ai-icon red-hover" href="/CompanyEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-120v-720h390v165h410v555H80Zm60-60h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm330 495h350v-435H470v435Zm80-270v-60h165v60H550Zm0 165v-60h165v60H550Z" fill="black"/></svg></i>
+                            <span class="nav-text">Perusahaan</span>
+                        </a>
+
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-022-copy"></i>
-							<span class="nav-text">Pages</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="page-login.html">Login</a></li>
-                            <li><a href="page-register.html">Register</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="page-error-400.html">Error 400</a></li>
-                                    <li><a href="page-error-403.html">Error 403</a></li>
-                                    <li><a href="page-error-404.html">Error 404</a></li>
-                                    <li><a href="page-error-500.html">Error 500</a></li>
-                                    <li><a href="page-error-503.html">Error 503</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-lock-screen.html">Lock Screen</a></li>
-                            <li><a href="empty-page.html">Empty Page</a></li>
-                        </ul>
+                    <li><a href="/SalaryEmployee" class="ai-icon red-hover" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z" fill="black"/></svg></i>
+                            <span class="nav-text">Gaji</span>
+                        </a>
                     </li>
+                    <li><a class=" ai-icon red-hover" href="/Calendar" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z" fill="black"/></svg></i>
+                            <span class="nav-text">Kalender</span>
+                        </a>
+
+                    </li>
+
                 </ul>
-				<div class="copyright">
-					<p><strong>Dompet Payment Admin Dashboard</strong> © 2022 All Rights Reserved</p>
-					<p class="fs-12">Made with <span class="heart"></span> by DexignLab</p>
-				</div>
-			</div>
+                <div class="copyright">
+                    <p><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
+                    <p class="fs-12">Made with <span class="heart"></span> by
+                        Kalopsia</p>
+                </div>
+            </div>
         </div>
         <!--**********************************
             Sidebar end
         ***********************************-->
-		
+
 		<!--**********************************
             Content body start
         ***********************************-->
@@ -763,12 +755,12 @@
             <!-- row -->
 			<div class="container-fluid">
 				<div class="row">
-					<cent class="col-xl- col-xl-12">
+					<div class="col-xl- col-xl-12">
 						<center><div class="card">
-							
+
 							<div class="card-body tab-content p-0">
 								<div class="tab-pane active show fade" id="monthly" role="tabpanel">
-									
+
 								</div>
 								<div class="tab-pane" id="Weekly" role="tabpanel">
 									<div class="table-responsive">
@@ -912,7 +904,7 @@
 							</div>
 						</div></center>
 					</div>
-					
+
 						<div class="row">
 							<div class="col-md-4 mb-4" name="ellipsis-vertical-outline;" style="margin-bottom: 20px;">
 								<div class="card progress-card">
@@ -959,7 +951,7 @@
                                         <div class="hitam">
                                             <span>Take Home Pay</span>
 										</div>
-										
+
 											<p class="THP">Rp. 2.450.000</p>
 											<button type="button" class="btn btn-rounded btn-danger" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl" style="font-size: 14px;">Cetak Bukti pembayaran</button>
 											<!-- Modal -->
@@ -1276,14 +1268,14 @@
         <!--**********************************
             Content body end
         ***********************************-->
-		
-		
-		
+
+
+
         <!--**********************************
             Footer start
         ***********************************-->
         <div class="footer">
-		
+
             <div class="copyright">
                 <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2022</p>
             </div>
@@ -1292,7 +1284,7 @@
             Footer end
         ***********************************-->
 
-		
+
 
 
 	</div>
@@ -1307,12 +1299,12 @@
     <script src="vendor/global/global.min.js"></script>
 	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-	
+
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
 	<script src="vendor/nouislider/nouislider.min.js"></script>
 	<script src="vendor/wnumb/wNumb.js"></script>
-	
+
 	<!-- Dashboard 1 -->
 	<script src="js/dashboard/dashboard-1.js"></script>
 
@@ -1321,7 +1313,7 @@
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-	
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:06 GMT -->

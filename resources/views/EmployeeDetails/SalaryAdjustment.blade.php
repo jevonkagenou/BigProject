@@ -1,4 +1,35 @@
-@include('PartialAdmin.SidebarNavbar')
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:32 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="admin, dashboard" />
+    <meta name="author" content="DexignZone" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dompet : Payment Admin Template" />
+    <meta property="og:title" content="Dompet : Payment Admin Template" />
+    <meta property="og:description" content="Dompet : Payment Admin Template" />
+    <meta property="og:image" content="social-image.png" />
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- PAGE TITLE HERE -->
+    <title>Dompet : Payment Admin Template</title>
+
+    <!-- FAVICONS ICON -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <!-- Datatable -->
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
 
 <style>
     .btn-check:checked+.btn-outline-danger {
@@ -76,6 +107,12 @@
     .slider.round:before {
         border-radius: 50%;
     }
+    .red-hover:hover{
+            color:#EE3232 !important;
+        }
+        .btn-outline-danger:checked{
+            color:white !important;
+        }
 </style>
 
 <div class="content-body">

@@ -7,30 +7,44 @@ use Illuminate\Http\Request;
 class ViewEmployeeController extends Controller
 {
     public function DashboardEmployee(){
-        return view ('DashboardEmployee.DashboardEmployee');
+        return view ('DashboardEmployee.DashboardEmployee',[
+            'title'=>'Dashboard'
+        ]);
     }
 
     public function EmployeePresence(){
-        return view ('EmployeePresence.EmployeePresence');
+        return view ('EmployeePresence.EmployeePresence',[
+            'title'=>'Presensi'
+        ]);
     }
 
     public function PermitEmployee(){
-        return view ('PermitEmployee.PermitEmployee');
+        return view ('PermitEmployee.PermitEmployee',[
+            'title'=>'Izin Cuti'
+        ]);
     }
 
     public function ApprovalEmployee(){
-        return view ('ApprovalEmployee.ApprovalEmployee');
+        return view ('ApprovalEmployee.ApprovalEmployee',[
+            'title'=>'Approval'
+        ]);
     }
 
     public function CompanyEmployee(){
-        return view ('');
+        return view ('karyawan.ProfilPerusahaan',[
+            'title'=>'Profil Perusahaan'
+        ]);
     }
 
     public function SalaryEmployee(){
-        return view ('');
+        return view ('karyawan.NotaGaji',[
+            'title'=>'Riwayat Gaji'
+        ]);
     }
 
     public function Calendar(){
-        return view ('');
+        return view ('karyawan.KalenderKaryawan',[
+            'title'=>'Kalender'
+        ]);
     }
 }

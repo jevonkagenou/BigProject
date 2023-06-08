@@ -1,4 +1,46 @@
-@include('PartialEmployee.SidebarNavbar')
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from dompet.dexignlab.com/xhtml/ecom-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:29 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="admin, dashboard" />
+	<meta name="author" content="DexignZone" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Dompet : Payment Admin Template" />
+	<meta property="og:title" content="Dompet : Payment Admin Template" />
+	<meta property="og:description" content="Dompet : Payment Admin Template" />
+	<meta property="og:image" content="social-image.png" />
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- PAGE TITLE HERE -->
+	<title>Dompet : Payment Admin Template</title>
+
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('vendor/fullcalendar/css/main.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('vendor/fullcalendar/js/main.min.js') }}"></script>
+
+</head>
+<style>
+        .fc-button-active{
+            background-color:#EE3232 !important ;
+        }
+        .fc-button:hover{
+            background-color:#EE3232 !important ;
+        }
+        .red-hover:hover{
+            color:#EE3232 !important;
+        }
+        .btn-outline-danger:checked{
+            color:white !important;
+        }
+</style>
 
 <body>
 
@@ -32,7 +74,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header" style="background-color: #f72b50">
+        <div class="nav-header">
             <a href="index.html" class="brand-logo">
                 <svg class="logo-abbr" width="53" height="53" viewBox="0 0 53 53">
                     <path
@@ -709,194 +751,48 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                Kalender
+                                {{ $title }}
                             </div>
                         </div>
-                        <ul class="navbar-nav header-right">
-                            <li class="nav-item">
-                                <div class="input-group search-area">
-                                    <input type="text" class="form-control" placeholder="Search here...">
-                                    <span class="input-group-text"><a href="javascript:void(0)"><i
-                                                class="flaticon-381-search-2"></i></a></span>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link" href="javascript:void(0);" data-bs-toggle="dropdown">
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M3.88552 6.2921C1.95571 6.54135 0.439911 8.19656 0.439911 10.1896V10.7253C0.439911 12.8874 2.21812 14.6725 4.38019 14.6725H12.7058V24.9768H7.01104C5.77451 24.9768 4.82009 24.0223 4.82009 22.7858V18.4039C4.84523 16.6262 2.16581 16.6262 2.19096 18.4039V22.7858C2.19096 25.4334 4.36345 27.6059 7.01104 27.6059H21.0331C23.6807 27.6059 25.8532 25.4334 25.8532 22.7858V13.9981C26.9064 13.286 27.6042 12.0802 27.6042 10.7253V10.1896C27.6042 8.17115 26.0501 6.50077 24.085 6.28526C24.0053 0.424609 17.6008 -1.28785 13.9827 2.48534C10.3936 -1.60185 3.7545 1.06979 3.88552 6.2921ZM12.7058 5.68103C12.7058 5.86287 12.7033 6.0541 12.7058 6.24246H6.50609C6.55988 2.31413 11.988 1.90765 12.7058 5.68103ZM21.4559 6.24246H15.3383C15.3405 6.05824 15.3538 5.87664 15.3383 5.69473C15.9325 2.04532 21.3535 2.18829 21.4559 6.24246ZM4.38019 8.87502H12.7058V12.0382H4.38019C3.62918 12.0382 3.06562 11.4764 3.06562 10.7253V10.1896C3.06562 9.43859 3.6292 8.87502 4.38019 8.87502ZM15.3383 8.87502H23.6656C24.4166 8.87502 24.9785 9.43859 24.9785 10.1896V10.7253C24.9785 11.4764 24.4167 12.0382 23.6656 12.0382H15.3383V8.87502ZM15.3383 14.6725H23.224V22.7858C23.224 24.0223 22.2696 24.9768 21.0331 24.9768H15.3383V14.6725Z"
-                                            fill="#4f7086" />
-                                    </svg>
-                                    <span class="badge light text-white bg-primary rounded-circle">2</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <div id="dlab_W_TimeLine02"
-                                        class="widget-timeline dlab-scroll style-1 ps ps--active-y p-3 height370">
-                                        <ul class="timeline">
-                                            <li>
-                                                <div class="timeline-badge primary"></div>
-                                                <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                    <span>10 minutes ago</span>
-                                                    <h6 class="mb-0">Youtube, a video-sharing website, goes live
-                                                        <strong class="text-primary">$500</strong>.
-                                                    </h6>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-badge info">
-                                                </div>
-                                                <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                    <span>20 minutes ago</span>
-                                                    <h6 class="mb-0">New order placed <strong
-                                                            class="text-info">#XF-2356.</strong></h6>
-                                                    <p class="mb-0">Quisque a consequat ante Sit amet magna at
-                                                        volutapt...</p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-badge danger">
-                                                </div>
-                                                <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                    <span>30 minutes ago</span>
-                                                    <h6 class="mb-0">john just buy your product <strong
-                                                            class="text-warning">Sell $250</strong></h6>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-badge success">
-                                                </div>
-                                                <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                    <span>15 minutes ago</span>
-                                                    <h6 class="mb-0">StumbleUpon is acquired by eBay. </h6>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-badge warning">
-                                                </div>
-                                                <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                    <span>20 minutes ago</span>
-                                                    <h6 class="mb-0">Mashable, a news website and blog, goes live.
-                                                    </h6>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-badge dark">
-                                                </div>
-                                                <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                    <span>20 minutes ago</span>
-                                                    <h6 class="mb-0">Mashable, a news website and blog, goes live.
-                                                    </h6>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link  ai-icon" href="javascript:void(0);" role="button"
-                                    data-bs-toggle="dropdown">
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M12.638 4.9936V2.3C12.638 1.5824 13.2484 1 14.0006 1C14.7513 1 15.3631 1.5824 15.3631 2.3V4.9936C17.3879 5.2718 19.2805 6.1688 20.7438 7.565C22.5329 9.2719 23.5384 11.5872 23.5384 14V18.8932L24.6408 20.9966C25.1681 22.0041 25.1122 23.2001 24.4909 24.1582C23.8709 25.1163 22.774 25.7 21.5941 25.7H15.3631C15.3631 26.4176 14.7513 27 14.0006 27C13.2484 27 12.638 26.4176 12.638 25.7H6.40705C5.22571 25.7 4.12888 25.1163 3.50892 24.1582C2.88759 23.2001 2.83172 22.0041 3.36039 20.9966L4.46268 18.8932V14C4.46268 11.5872 5.46691 9.2719 7.25594 7.565C8.72068 6.1688 10.6119 5.2718 12.638 4.9936ZM14.0006 7.5C12.1924 7.5 10.4607 8.1851 9.18259 9.4045C7.90452 10.6226 7.18779 12.2762 7.18779 14V19.2C7.18779 19.4015 7.13739 19.6004 7.04337 19.7811C7.04337 19.7811 6.43703 20.9381 5.79662 22.1588C5.69171 22.3603 5.70261 22.6008 5.82661 22.7919C5.9506 22.983 6.16996 23.1 6.40705 23.1H21.5941C21.8298 23.1 22.0492 22.983 22.1732 22.7919C22.2972 22.6008 22.3081 22.3603 22.2031 22.1588C21.5627 20.9381 20.9564 19.7811 20.9564 19.7811C20.8624 19.6004 20.8133 19.4015 20.8133 19.2V14C20.8133 12.2762 20.0953 10.6226 18.8172 9.4045C17.5391 8.1851 15.8073 7.5 14.0006 7.5Z"
-                                            fill="#4f7086" />
-                                    </svg>
-                                    <span class="badge light text-white bg-primary rounded-circle">12</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <div id="dlab_W_Notification1" class="widget-media dlab-scroll p-3"
-                                        style="height:380px;">
-                                        <ul class="timeline">
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media me-2">
-                                                        <img alt="image" width="50" src="images/avatar/1.jpg">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Dr sultads Send you Photo</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media me-2 media-info">
-                                                        KG
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Resport created successfully</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media me-2 media-success">
-                                                        <i class="fa fa-home"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Reminder : Treatment Time!</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media me-2">
-                                                        <img alt="image" width="50" src="images/avatar/1.jpg">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Dr sultads Send you Photo</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media me-2 media-danger">
-                                                        KG
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Resport created successfully</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media me-2 media-primary">
-                                                        <i class="fa fa-home"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Reminder : Treatment Time!</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <a class="all-notification" href="javascript:void(0);">See all notifications <i
-                                            class="ti-arrow-end"></i></a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link bell bell-link" href="javascript:void(0);">
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M27 7.88883C27 5.18897 24.6717 3 21.8 3C17.4723 3 10.5277 3 6.2 3C3.3283 3 1 5.18897 1 7.88883V23.7776C1 24.2726 1.31721 24.7174 1.80211 24.9069C2.28831 25.0963 2.8473 24.9912 3.2191 24.6417C3.2191 24.6417 5.74629 22.2657 7.27769 20.8272C7.76519 20.3688 8.42561 20.1109 9.11591 20.1109H21.8C24.6717 20.1109 27 17.922 27 15.2221V7.88883ZM24.4 7.88883C24.4 6.53951 23.2365 5.44441 21.8 5.44441C17.4723 5.44441 10.5277 5.44441 6.2 5.44441C4.7648 5.44441 3.6 6.53951 3.6 7.88883V20.8272L5.4382 19.0989C6.4132 18.1823 7.73661 17.6665 9.11591 17.6665H21.8C23.2365 17.6665 24.4 16.5726 24.4 15.2221V7.88883ZM7.5 15.2221H17.9C18.6176 15.2221 19.2 14.6745 19.2 13.9999C19.2 13.3252 18.6176 12.7777 17.9 12.7777H7.5C6.7824 12.7777 6.2 13.3252 6.2 13.9999C6.2 14.6745 6.7824 15.2221 7.5 15.2221ZM7.5 10.3333H20.5C21.2176 10.3333 21.8 9.7857 21.8 9.11104C21.8 8.43638 21.2176 7.88883 20.5 7.88883H7.5C6.7824 7.88883 6.2 8.43638 6.2 9.11104C6.2 9.7857 6.7824 10.3333 7.5 10.3333Z"
-                                            fill="#4f7086" />
-                                    </svg>
-                                    <span class="badge light text-white bg-primary rounded-circle">5</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript:void(0);"
-                                    class="btn btn-primary d-sm-inline-block d-none">Generate Report<i
-                                        class="las la-signal ms-3 scale5"></i></a>
-                            </li>
-                        </ul>
+                        <div class="justify-content-end">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown notification_dropdown mx-2">
+                                    <a class="nav-link bell bell-link" href="#">
+                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M27 7.88883C27 5.18897 24.6717 3 21.8 3C17.4723 3 10.5277 3 6.2 3C3.3283 3 1 5.18897 1 7.88883V23.7776C1 24.2726 1.31721 24.7174 1.80211 24.9069C2.28831 25.0963 2.8473 24.9912 3.2191 24.6417C3.2191 24.6417 5.74629 22.2657 7.27769 20.8272C7.76519 20.3688 8.42561 20.1109 9.11591 20.1109H21.8C24.6717 20.1109 27 17.922 27 15.2221V7.88883ZM24.4 7.88883C24.4 6.53951 23.2365 5.44441 21.8 5.44441C17.4723 5.44441 10.5277 5.44441 6.2 5.44441C4.7648 5.44441 3.6 6.53951 3.6 7.88883V20.8272L5.4382 19.0989C6.4132 18.1823 7.73661 17.6665 9.11591 17.6665H21.8C23.2365 17.6665 24.4 16.5726 24.4 15.2221V7.88883ZM7.5 15.2221H17.9C18.6176 15.2221 19.2 14.6745 19.2 13.9999C19.2 13.3252 18.6176 12.7777 17.9 12.7777H7.5C6.7824 12.7777 6.2 13.3252 6.2 13.9999C6.2 14.6745 6.7824 15.2221 7.5 15.2221ZM7.5 10.3333H20.5C21.2176 10.3333 21.8 9.7857 21.8 9.11104C21.8 8.43638 21.2176 7.88883 20.5 7.88883H7.5C6.7824 7.88883 6.2 8.43638 6.2 9.11104C6.2 9.7857 6.7824 10.3333 7.5 10.3333Z" fill="black"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30"
+                                            height="30" viewBox="0 0 24 24" fill="none" stroke="black"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-user">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
+                                        <li><a class="dropdown-item" href="#"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="#969ba0" viewBox="0 0 448 512"
+                                                    style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
+                                                    <path
+                                                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                                                </svg> Profil</a></li>
+                                        <li><a class="dropdown-item" href="#"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="#969ba0" viewBox="0 0 512 512"
+                                                    style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
+                                                    <path
+                                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+                                                </svg> Keluar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -909,15 +805,15 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="dlabnav bg-danger text-white">
+        <div class="dlabnav">
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                            <img src="images/profile/pic1.jpg" width="20" alt="" />
+                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 text-white">Hi,<b>Admin</b></span>
-                                <small class="text-end font-w400 text-white">admin@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>Admin</b></span>
+                                <small class="text-end font-w400">admin@gmail.com</small>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
@@ -929,7 +825,7 @@
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>
-                                <span class="ms-2 text-white">Profile </span>
+                                <span class="ms-2">Profile </span>
                             </a>
 
                             <a href="page-error-404.html" class="dropdown-item ai-icon">
@@ -941,64 +837,57 @@
                                     <polyline points="16 17 21 12 16 7"></polyline>
                                     <line x1="21" y1="12" x2="9" y2="12"></line>
                                 </svg>
-                                <span class="ms-2 text-white">Logout </span>
+                                <span class="ms-2">Logout </span>
                             </a>
                         </div>
                     </li>
-                    <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="fa-sharp fa-solid fa-house fa-beat text-white"></i>
-                            <span class="nav-text text-white">Dashboard</span>
+                    <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" fill="black"/></svg></i>
+                            <span class="nav-text">Dashboard</span>
                         </a>
 
 
                     </li>
-                    <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-013-checkmark text-white"></i>
-                            <span class="nav-text text-white">Approval</span>
+                    <li><a class="ai-icon red-hover" href="/EmployeePresence" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z" fill="black"/></svg></i>
+                            <span class="nav-text">Presensi</span>
                         </a>
 
                     </li>
-                    <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="bi bi-book text-white"></i>
-                            <span class="nav-text text-white">Laporan</span>
+                    <li><a class=" ai-icon red-hover" href="/PermitEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z" fill="black"/></svg></i>
+                            <span class="nav-text">Izin Cuti</span>
                         </a>
 
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="fa-solid fa-book fa-beat text-white"></i>
-                            <span class="nav-text text-white">Kehadiran</span>
+                    <li><a class="ai-icon red-hover" href="/ApprovalEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z" fill="black"/></svg></i>
+                            <span class="nav-text">Approval</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li><a href="ui-accordion.html" class="text-white">Approval Presensi</a></li>
-                            <li><a href="ui-alert.html" class="text-white">Jadwal Kerja</a></li>
-                            <li><a href="ui-badge.html" class="text-white">Presensi</a></li>
-                            <li><a href="ui-button.html" class="text-white">Izin Cuti</a></li>
-
-
-                        </ul>
                     </li>
-                    <li><a class=" ai-icon" href="/karyawan" aria-expanded="false">
-                            <i class="fa-solid fa-user-group fa-beat text-white"></i>
-                            <span class="nav-text text-white">Karyawan</span>
+                    <li><a class=" ai-icon red-hover" href="/CompanyEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-120v-720h390v165h410v555H80Zm60-60h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm330 495h350v-435H470v435Zm80-270v-60h165v60H550Zm0 165v-60h165v60H550Z" fill="black"/></svg></i>
+                            <span class="nav-text">Perusahaan</span>
                         </a>
 
                     </li>
-                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-                            <i class="fa-solid fa-circle-dollar-to-slot fa-beat text-white"></i>
-                            <span class="nav-text text-white">Payroll</span>
+                    <li><a href="/SalaryEmployee" class="ai-icon red-hover" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z" fill="black"/></svg></i>
+                            <span class="nav-text">Gaji</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="bi bi-gear text-white"></i>
-                            <span class="nav-text text-white">Pengaturan</span>
+                    <li><a class=" ai-icon red-hover" href="/Calendar" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z" fill="black"/></svg></i>
+                            <span class="nav-text">Kalender</span>
                         </a>
 
                     </li>
 
                 </ul>
                 <div class="copyright">
-                    <p class="text-white"><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12 text-white">Made with <i class="bi bi-heart-fill"></i> by Kalopsia</p>
+                    <p><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
+                    <p class="fs-12">Made with <span class="heart"></span> by
+                        Kalopsia</p>
                 </div>
             </div>
         </div>
@@ -1030,9 +919,9 @@
                         </div>
 
 
-                    
 
-                            
+
+
                         </div>
                     </div>
                     <!-- BEGIN MODAL -->
@@ -1091,7 +980,7 @@
 
 
             </div>
-       
+
 
          <!--**********************************
         Scripts

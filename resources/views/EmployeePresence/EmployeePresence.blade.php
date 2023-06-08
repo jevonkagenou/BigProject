@@ -21,7 +21,7 @@
     <title>Dompet : Payment Admin Template</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" >
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -39,6 +39,9 @@
 
         .search-area {
             padding: 5px;
+        }
+        .red-hover:hover{
+            color:#EE3232 !important;
         }
     </style>
 
@@ -110,7 +113,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                Dashboard
+                                {{ $title }}
                             </div>
                         </div>
                         <div class="justify-content-end">
@@ -158,17 +161,21 @@
         </div>
 
         <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="dlabnav text-black">
+        <div class="dlabnav">
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 text-white">Hi,<b>Admin</b></span>
-                                <small class="text-end font-w400 text-white">admin@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>Admin</b></span>
+                                <small class="text-end font-w400">admin@gmail.com</small>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
@@ -180,7 +187,7 @@
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>
-                                <span class="ms-2 text-white">Profile </span>
+                                <span class="ms-2">Profile </span>
                             </a>
 
                             <a href="page-error-404.html" class="dropdown-item ai-icon">
@@ -192,47 +199,47 @@
                                     <polyline points="16 17 21 12 16 7"></polyline>
                                     <line x1="21" y1="12" x2="9" y2="12"></line>
                                 </svg>
-                                <span class="ms-2 text-white">Logout </span>
+                                <span class="ms-2">Logout </span>
                             </a>
                         </div>
                     </li>
-                    <li><a class="ai-icon" href="/DashboardEmployee" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" fill="#9FA4A6"/></svg></i>
+                    <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" fill="black"/></svg></i>
                             <span class="nav-text">Dashboard</span>
                         </a>
 
 
                     </li>
-                    <li><a class="ai-icon" href="/EmployeePresence" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z" fill="#9FA4A6"/></svg></i>
+                    <li><a class="ai-icon red-hover" href="/EmployeePresence" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z" fill="black"/></svg></i>
                             <span class="nav-text">Presensi</span>
                         </a>
 
                     </li>
-                    <li><a class=" ai-icon" href="/PermitEmployee" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z" fill="#9FA4A6"/></svg></i>
+                    <li><a class=" ai-icon red-hover" href="/PermitEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z" fill="black"/></svg></i>
                             <span class="nav-text">Izin Cuti</span>
                         </a>
 
                     </li>
-                    <li><a class="ai-icon" href="/ApprovalEmployee" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z" fill="#9FA4A6"/></svg></i>
+                    <li><a class="ai-icon red-hover" href="/ApprovalEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z" fill="black"/></svg></i>
                             <span class="nav-text">Approval</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon" href="/CompanyEmployee" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-120v-720h390v165h410v555H80Zm60-60h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm330 495h350v-435H470v435Zm80-270v-60h165v60H550Zm0 165v-60h165v60H550Z" fill="#9FA4A6"/></svg></i>
+                    <li><a class=" ai-icon red-hover" href="/CompanyEmployee" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-120v-720h390v165h410v555H80Zm60-60h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm330 495h350v-435H470v435Zm80-270v-60h165v60H550Zm0 165v-60h165v60H550Z" fill="black"/></svg></i>
                             <span class="nav-text">Perusahaan</span>
                         </a>
 
                     </li>
-                    <li><a href="/SalaryEmployee" class="ai-icon" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z" fill="#9FA4A6"/></svg></i>
+                    <li><a href="/SalaryEmployee" class="ai-icon red-hover" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z" fill="black"/></svg></i>
                             <span class="nav-text">Gaji</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon" href="/Calendar" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z" fill="#9FA4A6"/></svg></i>
+                    <li><a class=" ai-icon red-hover" href="/Calendar" aria-expanded="false">
+                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z" fill="black"/></svg></i>
                             <span class="nav-text">Kalender</span>
                         </a>
 
@@ -240,8 +247,8 @@
 
                 </ul>
                 <div class="copyright">
-                    <p class="text-white"><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12 text-white">Made with <span class="heart" style="color: white"></span> by
+                    <p><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
+                    <p class="fs-12">Made with <span class="heart"></span> by
                         Kalopsia</p>
                 </div>
             </div>
@@ -326,10 +333,10 @@
                             <div class="card-header">
                                 <h4 class="card-title">Presensi Karyawan</h4>
                             </div>
-                            <div class="col-11 mt-4">
+                            <div class="mt-4 container-fluid">
                                 <div class="button-container d-flex justify-content-end">
                                      <!-- Button trigger modal -->
-									 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal">Tambah Presensi</button>
+									 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#basicModal"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path fill="white" d="M480.5-260q76.5 0 129-52.5T662-441q0-76-52.5-128.5t-129-52.5Q404-622 352-569.5T300-441q0 76 52 128.5T480.5-260Zm0-84q-41.5 0-69-28.183t-27.5-69Q384-482 411.5-510q27.5-28 69-28t69.5 28.183q28 28.183 28 69T550-372q-28 28-69.5 28ZM164-120q-34.65 0-59.325-24.675Q80-169.35 80-204v-473q0-34.65 24.675-59.325Q129.35-761 164-761h122l73-79h241.529L675-761h121q34.65 0 59.325 24.675Q880-711.65 880-677v473q0 34.65-24.675 59.325Q830.65-120 796-120H164Zm632-84v-473H639l-74-79H396l-74 79H164v473h632ZM480-441Z"/></svg> Tambah Presensi</button>
 									 <!-- Modal -->
 									 <div class="modal fade" id="basicModal">
 										 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -342,7 +349,7 @@
 													<div class="row">
 														<div class="col-md-6 col-6">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
-																<center><img src="images/foto1.png" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<center><img src="{{ asset('images/foto1.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
 																<span class="online_icon"></span>
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
@@ -353,7 +360,7 @@
 														  </div>
 														  <div class="col-md-6 col-6">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
-																<center><img src="images/foto2.png" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<center><img src="{{ asset('images/foto2.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
 																<span class="online_icon"></span>
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
@@ -364,7 +371,7 @@
 														  </div>
 														  <div class="col-md-6 col-6">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
-																<center><img src="images/foto3.png" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<center><img src="{{ asset('images/foto3.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
 																<span class="online_icon"></span>
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
@@ -375,7 +382,7 @@
 														  </div>
 														  <div class="col-md-6 col-6">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
-																<center><img src="images/foto4.png" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<center><img src="{{ asset('images/foto4.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
 																<span class="online_icon"></span>
 															  </div>
 															  <div class="card-body d-flex justify-content-center mb-3">
@@ -399,7 +406,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th style="text-align: center;">Nama</th>
+
                                                 <th style="text-align: center;">Tipe</th>
                                                 <th style="text-align: center;">Waktu</th>
                                                 <th style="text-align: center;">Status</th>
@@ -408,21 +415,37 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td style="text-align: center;">Adi</td>
+
                                                 <td style="text-align: center;">Absen Masuk</td>
                                                 <td style="text-align: center;">08/05/2023 07:45</td>
-                                                <td style="text-align: center;"><button class="btn btn-primary btn-xs">Disetujui</button></td>
+                                                <td style="text-align: center;"><span class="badge badge-lg light badge-danger">Ditolak</span></td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td style="text-align: center;">Nanda</td>
+
                                                 <td style="text-align: center;">Absen Keluar</td>
                                                 <td style="text-align: center;">08/05/2023 07:45</td>
-                                                <td style="text-align: center;"><button class="btn btn-primary btn-xs">Disetujui</button></td>
+                                                <td style="text-align: center;"><span class="badge badge-lg light badge-success">Disetujui</span></td>
 
                                             </tr>
                                              </tbody>
                                     </table>
+                                    <nav class="mt-4">
+                                        <ul class="pagination pagination-xs" style="float: right">
+                                            <li class="page-item page-indicator">
+                                                <a class="page-link" href="javascript:void(0)">
+                                                    <i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="javascript:void(0)">1</a>
+                                            </li>
+                                            <li class="page-item page-indicator">
+                                                <a class="page-link" href="javascript:void(0)">
+                                                    <i class="fa fa-angle-double-right"
+                                                        aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
                         </div>
