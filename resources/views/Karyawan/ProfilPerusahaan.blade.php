@@ -1001,44 +1001,44 @@
                                                     <h4 class="mb-4">Informasi Perusahaan</h4><hr>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Nama Perusahaan <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Nama Perusahaan
                                                             </h5>
                                                         </div>
-                                                        <div class="col-sm-9 col-7"><span>Kalopsia</span>
+                                                        <div class="col-sm-9 col-7"><span>: Kalopsia</span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Nama Pimpinan <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Nama Pimpinan
                                                             </h5>
                                                         </div>
-                                                        <div class="col-sm-9 col-7"><span>Bapak dan Ibu</span>
+                                                        <div class="col-sm-9 col-7"><span>: Bapak dan Ibu</span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Email <span class="pull-end">:</span></h5>
+                                                            <h5 class="f-w-500">Email </h5>
                                                         </div>
-                                                        <div class="col-sm-9 col-7"><span>Kalopsia@gmail.com</span>
+                                                        <div class="col-sm-9 col-7"><span>: Kalopsia@gmail.com</span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Alamat <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Alamat
                                                             </h5>
                                                         </div>
-                                                        <div class="col-sm-9 col-7"><span>Malang, Jawa Timur, Indonesia</span>
+                                                        <div class="col-sm-9 col-7"><span>: Malang, Jawa Timur, Indonesia</span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">No Telpon <span class="pull-end">:</span></h5>
+                                                            <h5 class="f-w-500">No Telpon </h5>
                                                         </div>
-                                                        <div class="col-sm-9 col-7"><span>+62 897 678 000</span>
+                                                        <div class="col-sm-9 col-7"><span>: +62 897 678 000</span>
                                                         </div>
                                                     </div>
-													<h5>Latar Belakang Perusahaan :</h5>
-													<p>Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
+													<h5>Latar Belakang Perusahaan : </h5>
+													<p>: Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
 														metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit,
 														 sit amet feugiat lectus. </p>
                                                 </div>

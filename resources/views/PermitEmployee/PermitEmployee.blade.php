@@ -173,37 +173,14 @@
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
-                        <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+                        <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Admin</b></span>
-                                <small class="text-end font-w400">admin@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
+                                <small class="text-end font-w400">Anggie@gmail.com</small>
                             </div>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <a href="app-profile.html" class="dropdown-item ai-icon">
-                                <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
-                                    width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                                <span class="ms-2">Profile </span>
-                            </a>
 
-                            <a href="page-error-404.html" class="dropdown-item ai-icon">
-                                <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
-                                    width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                    <polyline points="16 17 21 12 16 7"></polyline>
-                                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                                </svg>
-                                <span class="ms-2">Logout </span>
-                            </a>
-                        </div>
                     </li>
                     <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
                             <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" fill="black"/></svg></i>
@@ -363,7 +340,7 @@
 
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="row mb-2">
+                                    <div class="mb-2 d-flex">
                                         <!-- <div class="btn-group col-12"> -->
                                         <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 btn-group btn-xs">
                                             <!-- <div class="btn-group  col-lg-8  col-12"> -->
@@ -381,7 +358,7 @@
 
                                                 </div>
                                         </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mt-2">
+                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mt-2 text-end">
                                             <!-- <div class="col-lg-4 col-12  text-end"> -->
                                             <button type="button" class="btn btn-danger btn-xs"
                                                 data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg"><i

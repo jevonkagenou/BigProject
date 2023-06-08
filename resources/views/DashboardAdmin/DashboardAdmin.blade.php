@@ -92,57 +92,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <h4 class="card-title mb-2">Kehadiran Karyawan</h4>
-                            <div class="card-tabs mt-3 mt-sm-0">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#"
-                                            role="tab">Terlambat</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#" role="tab">Izin &
-                                            Cuti</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nama</th>
-                                        <th>Waktu Terlambat</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>#</th>
-                                        <td>Shido</td>
-                                        <td>5 menit</td>
-                                    </tr>
-                                    <tr>
-                                        <th>#</th>
-                                        <td>Shun</td>
-                                        <td>10 menit</td>
-                                    </tr>
-                                    <tr>
-                                        <th>#</th>
-                                        <td>Kamijou Touma</td>
-                                        <td>15 menit</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+           
             <div class="col-xl-6">
                 <div class="card">
                     <div class="card-body">

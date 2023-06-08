@@ -29,7 +29,7 @@ Route::get('/Calendar', [ViewEmployeeController::class, 'Calendar'])->name('Cale
 
 // Karyawan Route
 // Route::view('/', 'Pengaturan.Perusahaan');
-Route::get('/DashboardAdmin', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
+Route::get('/', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
 Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
 Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
 Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');

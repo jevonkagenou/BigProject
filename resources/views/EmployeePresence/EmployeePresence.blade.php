@@ -332,11 +332,11 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Presensi Karyawan</h4>
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#basicModal"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path fill="white" d="M480.5-260q76.5 0 129-52.5T662-441q0-76-52.5-128.5t-129-52.5Q404-622 352-569.5T300-441q0 76 52 128.5T480.5-260Zm0-84q-41.5 0-69-28.183t-27.5-69Q384-482 411.5-510q27.5-28 69-28t69.5 28.183q28 28.183 28 69T550-372q-28 28-69.5 28ZM164-120q-34.65 0-59.325-24.675Q80-169.35 80-204v-473q0-34.65 24.675-59.325Q129.35-761 164-761h122l73-79h241.529L675-761h121q34.65 0 59.325 24.675Q880-711.65 880-677v473q0 34.65-24.675 59.325Q830.65-120 796-120H164Zm632-84v-473H639l-74-79H396l-74 79H164v473h632ZM480-441Z"/></svg> Tambah Presensi</button>
                             </div>
                             <div class="mt-4 container-fluid">
                                 <div class="button-container d-flex justify-content-end">
                                      <!-- Button trigger modal -->
-									 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#basicModal"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path fill="white" d="M480.5-260q76.5 0 129-52.5T662-441q0-76-52.5-128.5t-129-52.5Q404-622 352-569.5T300-441q0 76 52 128.5T480.5-260Zm0-84q-41.5 0-69-28.183t-27.5-69Q384-482 411.5-510q27.5-28 69-28t69.5 28.183q28 28.183 28 69T550-372q-28 28-69.5 28ZM164-120q-34.65 0-59.325-24.675Q80-169.35 80-204v-473q0-34.65 24.675-59.325Q129.35-761 164-761h122l73-79h241.529L675-761h121q34.65 0 59.325 24.675Q880-711.65 880-677v473q0 34.65-24.675 59.325Q830.65-120 796-120H164Zm632-84v-473H639l-74-79H396l-74 79H164v473h632ZM480-441Z"/></svg> Tambah Presensi</button>
 									 <!-- Modal -->
 									 <div class="modal fade" id="basicModal">
 										 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -400,7 +400,7 @@
                             </div>
 
 
-                            <div class="card-body">
+                            <div class="card-body" style="margin-top: -6%;">
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
