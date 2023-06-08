@@ -12,7 +12,7 @@
 	<meta name="format-detection" content="telephone=no">
 	
 	<!-- PAGE TITLE HERE -->
-	<title>Dompet : Payment Admin Template</title>
+	<title>Kalopsia</title>
 	
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
@@ -707,7 +707,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                Dashboard
+                                {{$tittle}}
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
