@@ -40,6 +40,9 @@
 		</div>
     </div>
 	<style>
+        .fa{
+            line-height: 1.5rem !important;
+            }
 		.hover-red:hover{
             color: #EE3232 !important;
         }
@@ -879,15 +882,11 @@
 											
 										</div>
 									</div>
-							
 								</div>
-								
-								
-                                
                                 <div class="table-responsive text-center">
                                     <table id="example7" class="display" style="min-width: 845px">
 										<thead>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <th>No</th>
                                                 <th>Bulan</th>
                                                 <th>Slip</th>
@@ -903,7 +902,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td>01</td>
                                                 <td>Mei 2023</td>
                                                 <td>Gaji Bulanan</td>
@@ -918,7 +917,7 @@
 												
                                                 												
                                             </tr>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td>02</td>
                                                 <td>Juni 2023</td>
                                                 <td>Gaji Bulanan</td>
@@ -933,7 +932,7 @@
 												
                                                 												
                                             </tr>
-											<tr>
+											<tr class="text-center">
                                                 <td>03</td>
                                                 <td>Juli 2023</td>
                                                 <td>Gaji Bulanan</td>

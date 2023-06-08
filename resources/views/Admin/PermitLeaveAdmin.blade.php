@@ -26,7 +26,7 @@
                                                     <label class="btn btn-xs btn-outline-danger" for="btnradio3">Sakit</label>
                                                 </div>
                                             </div>
-                              </div>
+                                </div>
                                     </div>
                                 </div>
                                 <div class="table-responsive">

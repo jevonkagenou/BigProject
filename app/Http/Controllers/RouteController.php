@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class RouteController extends Controller
 {
-    
     public function AdminReport(){
         return view('AdminReport.AdminReport');
     }
@@ -41,16 +40,13 @@ class RouteController extends Controller
         return view('Admin.Validation');
     }
     public function EmployeeAdmin(){
-        return view('EmployeeAdmin.EmployeeAdmin');
+        return view('Admin.EmployeeAdmin');
     }
     public function PayrolEmployee(){
         return view('EmployeeDetails.PayrolEmployee');
     }
     public function SummaryofComponentSalary(){
         return view('Admin.SummaryofComponentSalary');
-    }
-    public function DashboardAdmin(){
-        return view('DashboardAdmin.DashboardAdmin');
     }
     public function PresenceApproval(){
         return view('Admin.PresenceApproval');
