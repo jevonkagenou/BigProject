@@ -74,7 +74,7 @@
 @import url(../vendor/perfect-scrollbar/css/perfect-scrollbar.css);
 @import url(../vendor/metismenu/css/metisMenu.min.css);
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -12344,7 +12344,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   width: 50vw; }
 
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -12538,7 +12538,7 @@ The smaller device rules always should write below the bigger device rules
 Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Component
 */
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -12763,7 +12763,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     transform: rotate(-45deg) translateY(-50%); } }
 
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -18811,7 +18811,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   font-family: 'HelveticaNeue'; }
 
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -18948,7 +18948,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     border-color: transparent transparent rgba(0, 0, 0, 0.15) transparent; }
 
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -21007,7 +21007,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   height: auto; }
 
 :root {
-  --primary: #5bcfc5;
+  --primary:#f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -21475,7 +21475,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   color: #969ba0; }
 
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -21725,7 +21725,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   border-bottom-right-radius: 0; }
 
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -21770,7 +21770,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     font-weight: 700; }
 
 :root {
-  --primary: #5bcfc5;
+  --primary:#f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -21827,7 +21827,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   font-size: 2rem; }
 
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
@@ -30319,7 +30319,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   padding-right: 9.375rem; }
 
 :root {
-  --primary: #5bcfc5;
+  --primary: #f72b50;
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
