@@ -7,55 +7,80 @@ use Illuminate\Http\Request;
 class RouteController extends Controller
 {
     public function AdminReport(){
-        return view('AdminReport.AdminReport');
+        return view('AdminReport.AdminReport',[
+        'tittle'=>'Laporan']);
     }
     public function ApprovalAdmin(){
         return view('ApprovalAdmin.ApproveAdmin');
     }
     public function SalarySummary(){
-        return view('Admin.SalarySummary');
+        return view('Admin.SalarySummary',[
+            'tittle'=>'Ringkasan Gaji'
+        ]);
     }
     public function PermitLeaveAdmin(){
-        return view('Admin.PermitLeaveAdmin');
+        return view('Admin.PermitLeaveAdmin',[
+            'tittle'=>'Izin Cuti Admin'
+        ]);
     }
     public function WorkSchedule(){
-        return view('Admin.WorkSchedule');
+        return view('Admin.WorkSchedule',[
+            'tittle'=>'Jawal Kerja'
+        ]);
     }
     public function SalaryPaymentReport(){
-        return view('Admin.SalaryPaymentReport');
+        return view('Admin.SalaryPaymentReport',[
+            'tittle'=>'Pembayaran Gaji'
+        ]);
     }
     public function Announcement(){
-        return view('Admin.Announcement');
+        return view('Admin.Announcement',[
+            'tittle'=>'Pengumuman'
+        ]);
     }
     public function AdminProfile(){
-        return view('Admin.ProfilAdmin');
+        return view('Admin.ProfilAdmin',[
+            'tittle'=>'Profil Admin'
+        ]);
     }
     public function AddPayslips(){
-        return view('Admin.AddPayslips');
+        return view('Admin.AddPayslips',[
+            'tittle'=>'Tambah Slip Gaji'
+        ]);
     }
     public function Payroll(){
         return view('Admin.Payroll');
     }
     public function Validation(){
-        return view('Admin.Validation');
+        return view('Admin.Validation',[
+            'tittle'=>'Validation'
+        ]);
     }
     public function EmployeeAdmin(){
-        return view('Admin.EmployeeAdmin');
+        return view('Admin.EmployeeAdmin',[
+            'tittle'=>'Karyawan'
+        ]);
     }
     public function PayrolEmployee(){
         return view('EmployeeDetails.PayrolEmployee');
     }
     public function SummaryofComponentSalary(){
-        return view('Admin.SummaryofComponentSalary');
+        return view('Admin.SummaryofComponentSalary',[
+            'tittle'=>'Ringkasan Gaji Perkomponen'
+        ]);
     }
     public function PresenceApproval(){
-        return view('Admin.PresenceApproval');
+        return view('Admin.PresenceApproval',[
+            'tittle'=>'Approval Presensi'
+        ]);
     }
     public function Presence(){
         return view('PresenceAdmin.Presence');
     }
     public function Setting(){
-        return view('Settings.Setting');
+        return view('Settings.Setting',[
+            'tittle'=>'Pengaturan'
+        ]);
     }
     public function Company(){
         return view('Settings.Company');
@@ -67,12 +92,18 @@ class RouteController extends Controller
         return view('Settings.AccountsUsers');
     }
     public function AddEmployee(){
-        return view('Admin.AddEmployee');
+        return view('Admin.AddEmployee',[
+            'tittle'=>'Tambah Karyawan'
+        ]);
     }
     public function StartPayroll(){
-        return view('Admin.StartPayroll');
+        return view('Admin.StartPayroll',[
+            'tittle'=>'Siap Bayar'
+        ]);
     }
     public function PayrollStep(){
-        return view('Admin.PayrollStep');
+        return view('Admin.PayrollStep',[
+            'tittle'=>'Langkah Langkah Pembayaran Gaji'
+        ]);
     }
 }
