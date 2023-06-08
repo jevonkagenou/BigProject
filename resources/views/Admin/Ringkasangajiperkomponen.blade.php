@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+@include('PartialAdmin.SidebarNavbar')
 
-
-<!-- Mirrored from dompet.dexignlab.com/xhtml/ui-popover.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:41 GMT -->
-<head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="keywords" content="admin, dashboard" />
-	<meta name="author" content="DexignZone" />
-	<meta name="robots" content="index, follow" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Dompet : Payment Admin Template" />
-	<meta property="og:title" content="Dompet : Payment Admin Template" />
-	<meta property="og:description" content="Dompet : Payment Admin Template" />
-	<meta property="og:image" content="social-image.png" />
-	<meta name="format-detection" content="telephone=no">
-	
-	<!-- PAGE TITLE HERE -->
-	<title>Dompet : Payment Admin Template</title>
-	
-	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-</head>
-
-<body>
 
     <!--*******************
         Preloader start
@@ -58,7 +31,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
+       <div class="nav-header">
             <a href="index.html" class="brand-logo">
 				<svg class="logo-abbr" width="53" height="53" viewBox="0 0 53 53">
 					<path d="M21.6348 8.04782C21.6348 5.1939 23.9566 2.87204 26.8105 2.87204H28.6018L28.0614 1.37003C27.7576 0.525342 26.9616 0 26.1132 0C25.8781 0 25.639 0.0403711 25.4052 0.125461L7.3052 6.7133C6.22916 7.105 5.67535 8.29574 6.06933 9.37096L7.02571 11.9814H21.6348V8.04782Z" fill="#759DD9"/>
@@ -595,7 +568,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 							<div class="dashboard_bar">
-                                Approval Presensi
+                                Form Pickers 
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -951,152 +924,218 @@
         <!--**********************************
             Content body start
         ***********************************-->
-		<div class="content-body">
+		<style>
+			.card-cd {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+		</style>
+        <div class="content-body">
             <div class="container-fluid">
-				<!-- <div class="row page-titles">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Bootstrap</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Popover</a></li>
-					</ol>
-                </div> -->
                 <!-- row -->
-
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
+                        <div class="card" style="padding-bottom: 20px;">
                             <div class="card-header">
-                                <h4 class="card-title">Approval Presensi</h4>
+                                <h4 class="card-title">Tambah Slip Gaji</h4>
                             </div>
-							<div class="card-body">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-outline-danger btn-xs">Menunggu Persetujuan</button>
-                                    <button type="button" class="btn btn-outline-light btn-xs">Disetujui</button>
-                                    <button type="button" class="btn btn-outline-light btn-xs">Ditolak</button>
-                                </div>
-                            </div>
-							<div style="margin-top: -6%; margin-left: 85%">
-								<button type="button" class="btn btn-outline-light btn-xs">Cari &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;<i class="flaticon-381-search-2"></i></a></span></button>
-							
+                            <div class="card-body">
+                                
+								<div class="row">
+									<div class="col-md-6 mb-3">
+										<label for="firstName" class="form-label">Nama</label>
+										<input type="text" class="form-control" id="tempatlahir" placeholder="Nama" value="" required="">
+										<div class="invalid-feedback">
+											Valid first name is required.
+										</div>
+									</div>
+									<div class="col-md-6 mb-3">
+										<label class="form-label">Periode</label>
+										<select class="default-select form-control wide w-100">
+											<option selected >Tetap(Gaji Bulanan, Mingguan, per Sekian Gaji)</option>
+											<option value="1">Tetap(Gaji Bulanan, Mingguan, per Sekian Gaji)</option>
+											<option value="2">Tidak Tetap(THR, Bonus Lebih Dari 1 Bulan)</option>
+											
+										</select>
+										<div class="invalid-feedback">
+											Please select a valid country.
+										</div>
+									</div>
+								</div>
 
-							</div>
-							
-                            <div class="table-responsive">
-								<table class="table table-responsive-md">
-								</table>
-								</div><br>
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table table-responsive-md">
-											<thead>
-												<tr>
-													<th style="width:50px;">
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="checkAll" required="">
-															<label class="form-check-label" for="checkAll"></label>
-														</div>
-													</th>
-													<th><strong>No</strong></th>
-													<th><strong>Nama</strong></th>
-													<th><strong>Waktu</strong></th>
-													<th><strong>Lokasi</strong></th>
-													<th><strong>IP</strong></th>
-													<th><strong>Tipe</strong></th>
-													<th><strong>Aksi</strong></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
-															<label class="form-check-label" for="customCheckBox2"></label>
-														</div>
-													</td>
-													<td><strong>1</strong></td>
-													<td><div class="d-flex align-items-center"><img src="images/avatar/1.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Tina</span></div></td>
-													<td>08/05/2023 07:45</td>
-													<td>Luar Kantor</td>
-													<td><div class="d-flex align-items-center"><i class="fa fa-circle text-success me-1"></i> 8547</div></td>
-													<td>Presensi Masuk</td>
-													<td>
-														<div class="d-flex">
-															<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-															<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="customCheckBox3" required="">
-															<label class="form-check-label" for="customCheckBox3"></label>
-														</div>
-													</td>
-													<td><strong>2</strong></td>
-													<td><div class="d-flex align-items-center"><img src="images/avatar/2.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Dr. Jackson</span></div></td>
-													<td>10/25/2023	</td>
-													<td>Luar Kantor</td>
-													<td><div class="d-flex align-items-center"><i class="fa fa-circle text-danger me-1"></i> 777</div></td>
-													<td>Presensi Masuk</td>
-													<td>
-														<div class="d-flex">
-															<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-															<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="customCheckBox4" required="">
-															<label class="form-check-label" for="customCheckBox4"></label>
-														</div>
-													</td>
-													<td><strong>3</strong></td>
-													<td><div class="d-flex align-items-center"><img src="images/avatar/3.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Nanda</span></div></td>
-													<td>07/05/2023	</td>
-													<td>Dalam Kantor</td>
-													<td><div class="d-flex align-items-center"><i class="fa fa-circle text-warning me-1"></i> 0204</div></td>
-													<td> Presensi Masuk</td>
-													
-													<td>
-														<div class="d-flex">
-															<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-															<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-														</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-										<nav>
-
-											<ul class="pagination pagination gutter pagination-danger" style="margin-left: 45%">
-												
-												<li class="page-item page-indicator">
-													<a class="page-link" href="javascript:void(0)">
-														<i class=" la la-angle-left"></i></a>
-												</li>
-												<li class="page-item active "><a class="page-link " href="javascript:void(0)">1</a>
-												</li>
-												<li class="page-item "><a class="page-link" href="javascript:void(0)">2</a></li>
-												<li class="page-item page-indicator">
-													<a class="page-link" href="javascript:void(0)">
-														<i class="la la-angle-right"></i></a>
-												</li>
-											</ul>
-											<div style="margin-left:65%">
-											<button type="button" class="btn btn-primary mb-2 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalLong">Konfirmasi data yang dipilihhh</button>
-											<button type="button" class="btn btn-primary mb-2 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalLong">Tolak data yang dipilih</button>
-											</div>
-
-										</nav>
+								<div class="row">
+									<div class="col-md-6 mb-3">
+										<label for="firstName" class="form-label">Lama Periode</label>
+										<input type="text" class="form-control" id="tempatlahir" placeholder="Lama Periode" value="" required="">
+										<div class="invalid-feedback">
+											Valid first name is required.
+										</div>
+									</div>
+									<div class="col-md-6 mb-3">
+										<label for="firstName" class="form-label">Periode Dimulai</label>
+										<input type="date" class="form-control" id="tempatlahir" placeholder="" value="" required="">
+										<div class="invalid-feedback">
+											Valid first name is required.
+										</div>
 									</div>
 								</div>
 								
+								<div class="mb-3">
+									<label for="address2"  class="form-label">Untuk komponen pendapatan tergantung kehadiran, berapa hari absensi terakhir yang masuk hitungan<span
+											class="text-muted"></span></label>
+									<input type="text" class="form-control" id="address2" placeholder="Masukkan jumlah hari (Masukkan sebelum akhir periode)">
+								</div>
                             </div>
+							
+							<div class="card-header">
+								<h4 class="card-title">Tambah Slip Gaji</h4>
+							</div>
+							<div class="container-fluid">
+								<div class="row form-material">
+									<div class="col-lg-6">
+										<div class="card card-cd">
+											<div class="card-header d-block">
+												<h4 class="card-title" style="text-align: center;">Komponen Pendapatan</h4>
+											</div>
+											<div class="card-body ">
+												<div class="d-flex  justify-content-start">
+													<div class="bootstrap-badge">
+														<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Gaji Pokok</a>
+														<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Uang Lembur</a>
+														<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Tunjangan Pulsa</a><br>
+														<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Tunjangan Komputer</a>
+														<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Tunjangan Transportasi</a>
+														<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Tunjangan Makan</a><br>
+														<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Pendapatan Berdasarkan Durasi Kerja</a>
+														<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Bonus Tunjangan</a>
+														<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Tunjangan Lainnya</a>
+													</div>
+													<br>
+												</div>
+												<!-- <div class="card-footer mt-2" > -->
+													<hr>
+													<button type="button" class="btn btn-danger btn-xs"  data-bs-toggle="modal" data-bs-target=".modal-5"><i class="fa fa-plus color-info"></i>
+														<span class="text-center">
+														Tambah Komponen Pendapatan
+														</span>
+													</button>
+												<!-- </div> -->
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="card card-cd" >
+											<div class="card-header d-block">
+												<b><h4 class="card-title" style="text-align: center;">Komponen Pemotongan</h4></b>
+											</div>
+											<div class="card-body">
+												<div class="bootstrap-badge">
+													<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Potongan Ketidak Hadiran</a>
+													<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Denda Keterlambatan</a>
+													<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Koperasi</a><br>
+													<a href="javascript:void(0)" class="badge badge-rounded badge-outline-dark" style="margin-right: 1%;margin-top: 1%;">Potongan Lainnya</a>
+												</div>
+												<br>
+												<!-- <div class="card-footer mt-auto" > -->
+												<hr>
+												<button type="button" class="btn btn-danger btn-xs"  data-bs-toggle="modal" data-bs-target=".modal-6"><i class="fa fa-plus color-info"></i>
+													<span class="text-center">
+													Tambah Komponen Pemotongan
+													</span>
+												</button>
+												<!-- </div> -->
+											</div>
+										</div>
+									</div>
+									<button class="btn btn-danger btn-sm btn-block"  type="submit" >Simpan</button>
+								</div>
+								
+							</div>
                         </div>
                     </div>
                 </div>
+				
+				<div class="modal modal-5 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Tambah Komponen Pendapatan</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="row g-0">
+									<h6 class="modal-title">Nama</h6><br>
+									<div class="col">
+										<input type="text" class="form-control btn-xs" placeholder="Nama">
+									</div>
+									
+								</div>
+								<br>
+								<div class="row g-0">
+									<!-- <label class="form-label">Periode</label> -->
+									<h6 class="modal-title">Tipe Komponen</h6><br>
+									<select class="default-select form-control wide w-100">
+										<option selected >Manual</option>
+										<option value="1">Manual</option>
+										<option value="2">Berdasarkan Kehadiran</option>
+										
+									</select>
+									<div class="invalid-feedback">
+										Please select a valid country.
+									</div>
+								</div>
+								<br>
+								
+							 </div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger light btn-xs" data-bs-dismiss="modal">Batal</button>
+								<button type="button" class="btn btn-success btn-xs">Simpan</button>
+							</div>
+						</div>
+					</div>
+				 </div>
+
+				 <div class="modal modal-6 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Tambah Komponen Pendapatan</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="row g-0">
+									<h6 class="modal-title">Nama</h6><br>
+									<div class="col">
+										<input type="text" class="form-control btn-xs" placeholder="Nama">
+									</div>
+									
+								</div>
+								<br>
+								<div class="row g-0">
+									<!-- <label class="form-label">Periode</label> -->
+									<h6 class="modal-title">Tipe Komponen</h6><br>
+									<select class="default-select form-control wide w-100">
+										<option selected >Manual</option>
+										<option value="1">Manual</option>
+										<option value="2">Berdasarkan Kehadiran</option>
+										
+									</select>
+									<div class="invalid-feedback">
+										Please select a valid country.
+									</div>
+								</div>
+								<br>
+								
+							 </div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger light btn-xs" data-bs-dismiss="modal">Batal</button>
+								<button type="button" class="btn btn-success btn-xs">Simpan</button>
+							</div>
+						</div>
+					</div>
+				 </div>
             </div>
         </div>
         <!--**********************************
@@ -1135,12 +1174,50 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+    
+
+
+    <!-- Daterangepicker -->
+    <!-- momment js is must -->
+    <script src="vendor/moment/moment.min.js"></script>
+    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- clockpicker -->
+    <script src="vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+    <!-- asColorPicker -->
+    <script src="vendor/jquery-asColor/jquery-asColor.min.js"></script>
+    <script src="vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
+    <script src="vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+    <!-- Material color picker -->
+    <script src="vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <!-- pickdate -->
+    <script src="vendor/pickadate/picker.js"></script>
+    <script src="vendor/pickadate/picker.time.js"></script>
+    <script src="vendor/pickadate/picker.date.js"></script>
+
+
+
+    <!-- Daterangepicker -->
+    <script src="js/plugins-init/bs-daterange-picker-init.js"></script>
+    <!-- Clockpicker init -->
+    <script src="js/plugins-init/clock-picker-init.js"></script>
+    <!-- asColorPicker init -->
+    <script src="js/plugins-init/jquery-asColorPicker.init.js"></script>
+    <!-- Material color picker init -->
+    <script src="js/plugins-init/material-date-picker-init.js"></script>
+    <!-- Pickdate -->
+    <script src="js/plugins-init/pickadate-init.js"></script>
+
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
     <script src="js/custom.min.js"></script>
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
 </body>
 
-<!-- Mirrored from dompet.dexignlab.com/xhtml/ui-popover.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:42 GMT -->
+<!-- Mirrored from dompet.dexignlab.com/xhtml/form-pickers.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:32 GMT -->
 </html>

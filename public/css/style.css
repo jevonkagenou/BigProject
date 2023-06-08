@@ -420,10 +420,10 @@ sup {
   top: -.5em; }
 
 a {
-  color: #5bcfc5;
+  color: #f72b50;
   text-decoration: underline; }
   a:hover {
-    color: #49a69e; }
+    color: #f72b50; }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
@@ -2616,14 +2616,14 @@ textarea.form-control {
   color: #5bcfc5;
   border-color: #5bcfc5; }
   .btn-outline-primary:hover {
-    color: #000;
+    color: #fff;
     background-color: #5bcfc5;
     border-color: #5bcfc5; }
   .btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
     box-shadow: 0 0 0 0.25rem rgba(91, 207, 197, 0.5); }
   .btn-check:checked + .btn-outline-primary,
   .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
-    color: #000;
+    color: #fff;
     background-color: #5bcfc5;
     border-color: #5bcfc5; }
     .btn-check:checked + .btn-outline-primary:focus,
@@ -2728,7 +2728,7 @@ textarea.form-control {
     box-shadow: 0 0 0 0.25rem rgba(247, 43, 80, 0.5); }
   .btn-check:checked + .btn-outline-danger,
   .btn-check:active + .btn-outline-danger, .btn-outline-danger:active, .btn-outline-danger.active, .btn-outline-danger.dropdown-toggle.show {
-    color: #000;
+    color: #fff;
     background-color: #f72b50;
     border-color: #f72b50; }
     .btn-check:checked + .btn-outline-danger:focus,
@@ -23947,7 +23947,7 @@ button {
   box-shadow: 0 0 0 0.25rem var(--rgba-primary-5); }
 
 .btn-close:focus {
-  box-shadow: 0 0 0 0.25rem var(--rgba-primary-5); }
+  box-shadow: 0 0 0 0.25rem var(--primary); }
 
 .card {
   margin-bottom: 1.875rem;

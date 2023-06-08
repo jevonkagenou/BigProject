@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from dompet.dexignlab.com/xhtml/ui-popover.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:41 GMT -->
+<!-- Mirrored from dompet.dexignlab.com/xhtml/transaction-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:22 GMT -->
 <head>
+
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="keywords" content="admin, dashboard" />
@@ -21,11 +21,21 @@
 	
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+	<link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+	<link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Style css -->
     <link href="css/style.css" rel="stylesheet">
-
+	
+	<style>
+		.card-cd {
+border: 1px solid #ccc;
+border-radius: 10px;
+}
+	</style>
 </head>
-
 <body>
 
     <!--*******************
@@ -48,7 +58,6 @@
     <!--*******************
         Preloader end
     ********************-->
-
 
     <!--**********************************
         Main wrapper start
@@ -102,12 +111,12 @@
 					<div class="tab-pane fade active show" id="chat" role="tabpanel">
 						<div class="card mb-sm-3 mb-md-0 contacts_card dlab-chat-user-box">
 							<div class="card-header chat-list-header text-center">
-								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
+								<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
 								<div>
 									<h6 class="mb-1">Chat List</h6>
 									<p class="mb-0">Show All</p>
 								</div>
-								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
+								<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
 							</div>
 							<div class="card-body contacts_body p-0 dlab-scroll  " id="dlab_W_Contacts_Body">
 								<ul class="contacts">
@@ -301,7 +310,7 @@
 						</div>
 						<div class="card chat dlab-chat-history-box d-none">
 							<div class="card-header chat-list-header text-center">
-								<a href="#" class="dlab-chat-history-back">
+								<a href="javascript:void(0);" class="dlab-chat-history-back">
 									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"/><rect fill="#000000" opacity="0.3" transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) " x="14" y="7" width="2" height="10" rx="1"/><path d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) "/></g></svg>
 								</a>
 								<div>
@@ -309,7 +318,7 @@
 									<p class="mb-0 text-success">Online</p>
 								</div>							
 								<div class="dropdown">
-									<a href="#" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
+									<a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
 									<ul class="dropdown-menu dropdown-menu-end">
 										<li class="dropdown-item"><i class="fa fa-user-circle text-primary me-2"></i> View profile</li>
 										<li class="dropdown-item"><i class="fa fa-users text-primary me-2"></i> Add to btn-close friends</li>
@@ -459,12 +468,12 @@
 					<div class="tab-pane fade" id="alerts" role="tabpanel">
 						<div class="card mb-sm-3 mb-md-0 contacts_card">
 							<div class="card-header chat-list-header text-center">
-								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
+								<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
 								<div>
 									<h6 class="mb-1">Notications</h6>
 									<p class="mb-0">Show All</p>
 								</div>
-								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/></g></svg></a>
+								<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/></g></svg></a>
 							</div>
 							<div class="card-body contacts_body p-0 dlab-scroll" id="dlab_W_Contacts_Body1">
 								<ul class="contacts">
@@ -515,12 +524,12 @@
 					<div class="tab-pane fade" id="notes">
 						<div class="card mb-sm-3 mb-md-0 note_card">
 							<div class="card-header chat-list-header text-center">
-								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
+								<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
 								<div>
 									<h6 class="mb-1">Notes</h6>
 									<p class="mb-0">Add New Nots</p>
 								</div>
-								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/></g></svg></a>
+								<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/></g></svg></a>
 							</div>
 							<div class="card-body contacts_body p-0 dlab-scroll" id="dlab_W_Contacts_Body2">
 								<ul class="contacts">
@@ -531,8 +540,8 @@
 												<p>10 Aug 2020</p>
 											</div>
 											<div class="ms-auto">
-												<a href="#" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-												<a href="#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+												<a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+												<a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
 											</div>
 										</div>
 									</li>
@@ -543,8 +552,8 @@
 												<p>10 Aug 2020</p>
 											</div>
 											<div class="ms-auto">
-												<a href="#" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-												<a href="#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+												<a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+												<a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
 											</div>
 										</div>
 									</li>
@@ -555,8 +564,8 @@
 												<p>10 Aug 2020</p>
 											</div>
 											<div class="ms-auto">
-												<a href="#" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-												<a href="#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+												<a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+												<a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
 											</div>
 										</div>
 									</li>
@@ -567,8 +576,8 @@
 												<p>10 Aug 2020</p>
 											</div>
 											<div class="ms-auto">
-												<a href="#" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-												<a href="#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+												<a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+												<a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
 											</div>
 										</div>
 									</li>
@@ -582,11 +591,8 @@
 		<!--**********************************
             Chat box End
         ***********************************-->
-
-
 		
-		
-        <!--**********************************
+		<!--**********************************
             Header start
         ***********************************-->
         <div class="header">
@@ -594,13 +600,20 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
-							<div class="dashboard_bar">
-                                Approval Presensi
-                            </div>
+							<a href="page-transaction.html" class="back-icon"><i class="las la-arrow-left"></i></a>
+							<div>
+								<div class="dashboard_bar sub-bar">
+									Transaction History
+								</div>
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item active"><a href="javascript:void(0)">Transactions</a></li>
+									<li class="breadcrumb-item"><a href="javascript:void(0)">#123412451</a></li>
+								</ol>
+							</div>
                         </div>
                         <ul class="navbar-nav header-right">
 							<li class="nav-item">
-								<div class="input-group search-area">
+								<div class="input-group search-area d-xl-inline-flex d-none">
 									<input type="text" class="form-control" placeholder="Search here...">
 									<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
 								</div>
@@ -763,7 +776,6 @@
 				</nav>
 			</div>
 		</div>
-                    
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -947,167 +959,169 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-
-        <!--**********************************
+		
+		<!--**********************************
             Content body start
         ***********************************-->
 		<div class="content-body">
-            <div class="container-fluid">
-				<!-- <div class="row page-titles">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Bootstrap</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Popover</a></li>
-					</ol>
-                </div> -->
-                <!-- row -->
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Approval Presensi</h4>
-                            </div>
+			<!-- row -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="card">
 							<div class="card-body">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-outline-danger btn-xs">Menunggu Persetujuan</button>
-                                    <button type="button" class="btn btn-outline-light btn-xs">Disetujui</button>
-                                    <button type="button" class="btn btn-outline-light btn-xs">Ditolak</button>
-                                </div>
-                            </div>
-							<div style="margin-top: -6%; margin-left: 85%">
-								<button type="button" class="btn btn-outline-light btn-xs">Cari &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;<i class="flaticon-381-search-2"></i></a></span></button>
-							
-
+								<div class="d-xl-flex d-block align-items-start description-bx">
+									<div class="col-xl-4 card-info text-white d-flex justify-content-center">
+										<img src="https://i.postimg.cc/jjKwr4TP/dashboard.png" class="" alt="">
+		
+									</div>
+									<div class="col-xl-8 mt-5" style="margin-top: 5%;">
+										<h6 class="card-title" style="font-weight: bold; font-size: 25px;">Selamat Datang
+											Anggie!</h6>
+										<span class="" style="font-size: 16px;">Bekerja lebih mudah dan cepat bersama
+											kami. Jangan lupa ikuti trainingnya.....</span>
+									</div>
+		
+								</div>
 							</div>
-							
-                            <div class="table-responsive">
-								<table class="table table-responsive-md">
-								</table>
-								</div><br>
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table table-responsive-md">
-											<thead>
-												<tr>
-													<th style="width:50px;">
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="checkAll" required="">
-															<label class="form-check-label" for="checkAll"></label>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-12">
+					<div class="card">
+						<div class="card-body">
+							<div class="row justify-content-center">
+								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
+									<a href="" class="bg-success text-white d-flex flex-column align-items-center p-2"
+										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 30px; ">
+				
+										<i class="bi bi-stopwatch d-flex justify-content-center"
+											style="font-size: 22px; margin-top: 5px;"></i>
+										<span style="font-size: 12px; color: black; width: 90px;"
+											class="text-center mt-3">Presensi</span>
+				
+									</a>
+				
+								</div>
+								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
+									<a href="" class="bg-danger text-white d-flex flex-column align-items-center p-2"
+										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px;">
+				
+										<i class="bi bi-briefcase d-flex justify-content-center"
+											style="font-size: 22px; margin-top: 5px;"></i>
+										<span style="font-size: 12px; color: black; width: 90px;" class="text-center mt-3">Izin
+											Cuti</span>
+				
+									</a>
+				
+								</div>
+								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
+									<a href="" class=" text-white d-flex flex-column align-items-center p-2"
+										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #60D394;">
+				
+										<i class="bi bi-wallet2 d-flex justify-content-center"
+											style="font-size: 22px; margin-top: 5px;"></i>
+										<span style="font-size: 12px; color: black; width: 200px;"
+											class="text-center mt-3">Gaji</span>
+				
+									</a>
+				
+								</div>
+				
+				
+				
+								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
+									<a href="" class=" text-white d-flex flex-column align-items-center p-2"
+										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #FFD97D;">
+				
+										<i class="bi bi-building d-flex justify-content-center"
+											style="font-size: 22px; margin-top: 5px;"></i>
+										<span style="font-size: 12px; color: black; width: 200px;"
+											class="text-center mt-3">Perusahaan</span>
+				
+									</a>
+				
+								</div>
+								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
+									<a href="" class=" text-white d-flex flex-column align-items-center p-2"
+										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #FF9B85;">
+				
+										<i class="bi bi-clipboard-check d-flex justify-content-center"
+											style="font-size: 22px; margin-top: 5px;"></i>
+										<span style="font-size: 12px; color: black; width: 200px;"
+											class="text-center mt-3">Approval</span>
+				
+									</a>
+				
+								</div>
+				
+								<div class="col-4 col-xl-1 col-lg-1 col-sm-3 col-md-2 mt-4">
+									<a href="" class=" text-white d-flex flex-column align-items-center p-2"
+										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #146C94;">
+				
+										<i class="bi bi-calendar-event d-flex justify-content-center"
+											style="font-size: 22px; margin-top: 5px;"></i>
+										<span style="font-size: 12px; color: black; width: 200px;"
+											class="text-center mt-3">Kalender</span>
+				
+									</a>
+								</div>
+							</div>
+							<div class="row form-material">
+								<div class="col-xl-12 mt-5">
+									<div class="card card-cd" style="border-top-color: red;">
+										<div class="card-header d-block">
+											<h4 class="card-title" style="text-align: center; font-weight: bold;">Pengumuman</h4>
+											<div class="row">
+												<div class="col-xl-6 mt-3">
+													<div class="alert alert-warning alert-dismissible fade show">
+				
+														<div class="media">
+															<div class="media-body" style="color: black;">
+																<h5 class="mt-1 mb-1">Pengumuman</h5>
+																<hr>
+																<p class="mb-0">Hari ini di karenakan perusahaan...</p>
+																<p class="mb-0" style="color: red; text-align: right;">Lihat</p>
+				
+															</div>
 														</div>
-													</th>
-													<th><strong>No</strong></th>
-													<th><strong>Nama</strong></th>
-													<th><strong>Waktu</strong></th>
-													<th><strong>Lokasi</strong></th>
-													<th><strong>IP</strong></th>
-													<th><strong>Tipe</strong></th>
-													<th><strong>Aksi</strong></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
-															<label class="form-check-label" for="customCheckBox2"></label>
+													</div>
+												</div>
+												<div class="col-xl-6 mt-3">
+													<div class="alert alert-warning alert-dismissible fade show">
+				
+														<div class="media">
+															<div class="media-body" style="color: black;">
+																<h5 class="mt-1 mb-1">Pengumuman</h5>
+																<hr>
+																<p class="mb-0">Hari ini di karenakan perusahaan...</p>
+																<p class="mb-0" style="color: red; text-align: right;">Lihat</p>
+															</div>
 														</div>
-													</td>
-													<td><strong>1</strong></td>
-													<td><div class="d-flex align-items-center"><img src="images/avatar/1.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Tina</span></div></td>
-													<td>08/05/2023 07:45</td>
-													<td>Luar Kantor</td>
-													<td><div class="d-flex align-items-center"><i class="fa fa-circle text-success me-1"></i> 8547</div></td>
-													<td>Presensi Masuk</td>
-													<td>
-														<div class="d-flex">
-															<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-															<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="customCheckBox3" required="">
-															<label class="form-check-label" for="customCheckBox3"></label>
-														</div>
-													</td>
-													<td><strong>2</strong></td>
-													<td><div class="d-flex align-items-center"><img src="images/avatar/2.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Dr. Jackson</span></div></td>
-													<td>10/25/2023	</td>
-													<td>Luar Kantor</td>
-													<td><div class="d-flex align-items-center"><i class="fa fa-circle text-danger me-1"></i> 777</div></td>
-													<td>Presensi Masuk</td>
-													<td>
-														<div class="d-flex">
-															<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-															<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="customCheckBox4" required="">
-															<label class="form-check-label" for="customCheckBox4"></label>
-														</div>
-													</td>
-													<td><strong>3</strong></td>
-													<td><div class="d-flex align-items-center"><img src="images/avatar/3.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Nanda</span></div></td>
-													<td>07/05/2023	</td>
-													<td>Dalam Kantor</td>
-													<td><div class="d-flex align-items-center"><i class="fa fa-circle text-warning me-1"></i> 0204</div></td>
-													<td> Presensi Masuk</td>
-													
-													<td>
-														<div class="d-flex">
-															<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-															<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-														</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-										<nav>
-
-											<ul class="pagination pagination gutter pagination-danger" style="margin-left: 45%">
-												
-												<li class="page-item page-indicator">
-													<a class="page-link" href="javascript:void(0)">
-														<i class=" la la-angle-left"></i></a>
-												</li>
-												<li class="page-item active "><a class="page-link " href="javascript:void(0)">1</a>
-												</li>
-												<li class="page-item "><a class="page-link" href="javascript:void(0)">2</a></li>
-												<li class="page-item page-indicator">
-													<a class="page-link" href="javascript:void(0)">
-														<i class="la la-angle-right"></i></a>
-												</li>
-											</ul>
-											<div style="margin-left:65%">
-											<button type="button" class="btn btn-primary mb-2 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalLong">Konfirmasi data yang dipilihhh</button>
-											<button type="button" class="btn btn-primary mb-2 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalLong">Tolak data yang dipilih</button>
+													</div>
+												</div>
 											</div>
-
-										</nav>
+										</div>
 									</div>
 								</div>
-								
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
         <!--**********************************
             Content body end
         ***********************************-->
-
-
+		
+		
+		
         <!--**********************************
             Footer start
         ***********************************-->
         <div class="footer">
+		
             <div class="copyright">
                 <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2022</p>
             </div>
@@ -1116,16 +1130,16 @@
             Footer end
         ***********************************-->
 
-        <!--**********************************
+		<!--**********************************
            Support ticket button start
         ***********************************-->
-
+		
         <!--**********************************
            Support ticket button end
         ***********************************-->
 
-        
-    </div>
+
+	</div>
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -1135,12 +1149,21 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+	<script src="js/dashboard/transaction-details.js"></script>
+	<!-- Datatable -->
+	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="js/plugins-init/datatables.init.js"></script>
+
     <script src="js/custom.min.js"></script>
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
+	
 </body>
 
-<!-- Mirrored from dompet.dexignlab.com/xhtml/ui-popover.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:42 GMT -->
+<!-- Mirrored from dompet.dexignlab.com/xhtml/transaction-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:23 GMT -->
 </html>

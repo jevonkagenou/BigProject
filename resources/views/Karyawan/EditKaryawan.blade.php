@@ -278,7 +278,7 @@
                             <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-12 order-lg-2 mb-4">
+                                    <div class="col-lg-12 order-lg-2 mb-4">nama
                                         <h4 class="mb-3">Edit Profile</h4>
 										<hr>
                                         <form class="needs-validation" novalidate="">

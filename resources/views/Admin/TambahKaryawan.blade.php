@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<!-- Mirrored from dompet.dexignlab.com/xhtml/ui-popover.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:41 GMT -->
+<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:32 GMT -->
 <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,12 +21,40 @@
 	
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <!-- Datatable -->
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
 	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+
+    <style>
+		.btn-check:checked+.btn-outline-danger,
+        .btn-
+        e+.btn-outline-danger,
+        .btn-outline-danger:active,
+        .btn-outline-danger.active,
+        .btn-outline-danger.dropdown-toggle.show {
+            color: white !important;
+}
+        .responsive-button {
+          padding: 5px;
+        }
+      
+        .search-area {
+          padding: 5px;
+        }
+		.paging_simple_numbers.dataTables_paginate{
+			background: transparent !important;
+		}
+		.btn-outline-danger:checked{
+            color:white !important;
+		}
+      </style>
+      
 
     <!--*******************
         Preloader start
@@ -58,7 +86,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
+       <div class="nav-header">
             <a href="index.html" class="brand-logo">
 				<svg class="logo-abbr" width="53" height="53" viewBox="0 0 53 53">
 					<path d="M21.6348 8.04782C21.6348 5.1939 23.9566 2.87204 26.8105 2.87204H28.6018L28.0614 1.37003C27.7576 0.525342 26.9616 0 26.1132 0C25.8781 0 25.639 0.0403711 25.4052 0.125461L7.3052 6.7133C6.22916 7.105 5.67535 8.29574 6.06933 9.37096L7.02571 11.9814H21.6348V8.04782Z" fill="#759DD9"/>
@@ -582,187 +610,9 @@
 		<!--**********************************
             Chat box End
         ***********************************-->
-
-
-		
-		
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-							<div class="dashboard_bar">
-                                Approval Presensi
-                            </div>
-                        </div>
-                        <ul class="navbar-nav header-right">
-							<li class="nav-item">
-								<div class="input-group search-area">
-									<input type="text" class="form-control" placeholder="Search here...">
-									<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-								</div>
-							</li>
-							<li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link" href="javascript:void(0);" data-bs-toggle="dropdown">
-									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M3.88552 6.2921C1.95571 6.54135 0.439911 8.19656 0.439911 10.1896V10.7253C0.439911 12.8874 2.21812 14.6725 4.38019 14.6725H12.7058V24.9768H7.01104C5.77451 24.9768 4.82009 24.0223 4.82009 22.7858V18.4039C4.84523 16.6262 2.16581 16.6262 2.19096 18.4039V22.7858C2.19096 25.4334 4.36345 27.6059 7.01104 27.6059H21.0331C23.6807 27.6059 25.8532 25.4334 25.8532 22.7858V13.9981C26.9064 13.286 27.6042 12.0802 27.6042 10.7253V10.1896C27.6042 8.17115 26.0501 6.50077 24.085 6.28526C24.0053 0.424609 17.6008 -1.28785 13.9827 2.48534C10.3936 -1.60185 3.7545 1.06979 3.88552 6.2921ZM12.7058 5.68103C12.7058 5.86287 12.7033 6.0541 12.7058 6.24246H6.50609C6.55988 2.31413 11.988 1.90765 12.7058 5.68103ZM21.4559 6.24246H15.3383C15.3405 6.05824 15.3538 5.87664 15.3383 5.69473C15.9325 2.04532 21.3535 2.18829 21.4559 6.24246ZM4.38019 8.87502H12.7058V12.0382H4.38019C3.62918 12.0382 3.06562 11.4764 3.06562 10.7253V10.1896C3.06562 9.43859 3.6292 8.87502 4.38019 8.87502ZM15.3383 8.87502H23.6656C24.4166 8.87502 24.9785 9.43859 24.9785 10.1896V10.7253C24.9785 11.4764 24.4167 12.0382 23.6656 12.0382H15.3383V8.87502ZM15.3383 14.6725H23.224V22.7858C23.224 24.0223 22.2696 24.9768 21.0331 24.9768H15.3383V14.6725Z" fill="#4f7086"/> 
-									</svg>
-									<span class="badge light text-white bg-primary rounded-circle">2</span>
-                                </a>
-								<div class="dropdown-menu dropdown-menu-end">
-									<div id="dlab_W_TimeLine02" class="widget-timeline dlab-scroll style-1 ps ps--active-y p-3 height370">
-                                    <ul class="timeline">
-                                        <li>
-                                            <div class="timeline-badge primary"></div>
-                                            <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                <span>10 minutes ago</span>
-                                                <h6 class="mb-0">Youtube, a video-sharing website, goes live <strong class="text-primary">$500</strong>.</h6>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-badge info">
-                                            </div>
-                                            <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                <span>20 minutes ago</span>
-                                                <h6 class="mb-0">New order placed <strong class="text-info">#XF-2356.</strong></h6>
-												<p class="mb-0">Quisque a consequat ante Sit amet magna at volutapt...</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-badge danger">
-                                            </div>
-                                            <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                <span>30 minutes ago</span>
-                                                <h6 class="mb-0">john just buy your product <strong class="text-warning">Sell $250</strong></h6>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-badge success">
-                                            </div>
-                                            <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                <span>15 minutes ago</span>
-                                                <h6 class="mb-0">StumbleUpon is acquired by eBay. </h6>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-badge warning">
-                                            </div>
-                                            <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                <span>20 minutes ago</span>
-                                                <h6 class="mb-0">Mashable, a news website and blog, goes live.</h6>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-badge dark">
-                                            </div>
-                                            <a class="timeline-panel text-muted" href="javascript:void(0);">
-                                                <span>20 minutes ago</span>
-                                                <h6 class="mb-0">Mashable, a news website and blog, goes live.</h6>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-								</div>
-							</li>
-                            <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link  ai-icon" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.638 4.9936V2.3C12.638 1.5824 13.2484 1 14.0006 1C14.7513 1 15.3631 1.5824 15.3631 2.3V4.9936C17.3879 5.2718 19.2805 6.1688 20.7438 7.565C22.5329 9.2719 23.5384 11.5872 23.5384 14V18.8932L24.6408 20.9966C25.1681 22.0041 25.1122 23.2001 24.4909 24.1582C23.8709 25.1163 22.774 25.7 21.5941 25.7H15.3631C15.3631 26.4176 14.7513 27 14.0006 27C13.2484 27 12.638 26.4176 12.638 25.7H6.40705C5.22571 25.7 4.12888 25.1163 3.50892 24.1582C2.88759 23.2001 2.83172 22.0041 3.36039 20.9966L4.46268 18.8932V14C4.46268 11.5872 5.46691 9.2719 7.25594 7.565C8.72068 6.1688 10.6119 5.2718 12.638 4.9936ZM14.0006 7.5C12.1924 7.5 10.4607 8.1851 9.18259 9.4045C7.90452 10.6226 7.18779 12.2762 7.18779 14V19.2C7.18779 19.4015 7.13739 19.6004 7.04337 19.7811C7.04337 19.7811 6.43703 20.9381 5.79662 22.1588C5.69171 22.3603 5.70261 22.6008 5.82661 22.7919C5.9506 22.983 6.16996 23.1 6.40705 23.1H21.5941C21.8298 23.1 22.0492 22.983 22.1732 22.7919C22.2972 22.6008 22.3081 22.3603 22.2031 22.1588C21.5627 20.9381 20.9564 19.7811 20.9564 19.7811C20.8624 19.6004 20.8133 19.4015 20.8133 19.2V14C20.8133 12.2762 20.0953 10.6226 18.8172 9.4045C17.5391 8.1851 15.8073 7.5 14.0006 7.5Z" fill="#4f7086"/>
-									</svg>
-                                    <span class="badge light text-white bg-primary rounded-circle">12</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <div id="dlab_W_Notification1" class="widget-media dlab-scroll p-3" style="height:380px;">
-										<ul class="timeline">
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2">
-														<img alt="image" width="50" src="images/avatar/1.jpg">
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Dr sultads Send you Photo</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-info">
-														KG
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Resport created successfully</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-success">
-														<i class="fa fa-home"></i>
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Reminder : Treatment Time!</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											 <li>
-												<div class="timeline-panel">
-													<div class="media me-2">
-														<img alt="image" width="50" src="images/avatar/1.jpg">
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Dr sultads Send you Photo</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-danger">
-														KG
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Resport created successfully</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-primary">
-														<i class="fa fa-home"></i>
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Reminder : Treatment Time!</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-                                    <a class="all-notification" href="javascript:void(0);">See all notifications <i class="ti-arrow-end"></i></a>
-                                </div>
-                            </li>
-							<li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link bell bell-link" href="javascript:void(0);">
-                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M27 7.88883C27 5.18897 24.6717 3 21.8 3C17.4723 3 10.5277 3 6.2 3C3.3283 3 1 5.18897 1 7.88883V23.7776C1 24.2726 1.31721 24.7174 1.80211 24.9069C2.28831 25.0963 2.8473 24.9912 3.2191 24.6417C3.2191 24.6417 5.74629 22.2657 7.27769 20.8272C7.76519 20.3688 8.42561 20.1109 9.11591 20.1109H21.8C24.6717 20.1109 27 17.922 27 15.2221V7.88883ZM24.4 7.88883C24.4 6.53951 23.2365 5.44441 21.8 5.44441C17.4723 5.44441 10.5277 5.44441 6.2 5.44441C4.7648 5.44441 3.6 6.53951 3.6 7.88883V20.8272L5.4382 19.0989C6.4132 18.1823 7.73661 17.6665 9.11591 17.6665H21.8C23.2365 17.6665 24.4 16.5726 24.4 15.2221V7.88883ZM7.5 15.2221H17.9C18.6176 15.2221 19.2 14.6745 19.2 13.9999C19.2 13.3252 18.6176 12.7777 17.9 12.7777H7.5C6.7824 12.7777 6.2 13.3252 6.2 13.9999C6.2 14.6745 6.7824 15.2221 7.5 15.2221ZM7.5 10.3333H20.5C21.2176 10.3333 21.8 9.7857 21.8 9.11104C21.8 8.43638 21.2176 7.88883 20.5 7.88883H7.5C6.7824 7.88883 6.2 8.43638 6.2 9.11104C6.2 9.7857 6.7824 10.3333 7.5 10.3333Z" fill="#4f7086"/>
-									</svg>
-									<span class="badge light text-white bg-primary rounded-circle">5</span>
-                                </a>
-							</li>
-                            <li class="nav-item">
-								<a href="javascript:void(0);" class="btn btn-primary d-sm-inline-block d-none">Generate Report<i class="las la-signal ms-3 scale5"></i></a>
-							</li>
-                        </ul>
-                    </div>
-				</nav>
-			</div>
-		</div>
                     
         <!--**********************************
             Header end ti-comment-alt
@@ -951,154 +801,712 @@
         <!--**********************************
             Content body start
         ***********************************-->
-		<div class="content-body">
+        <div class="content-body">
             <div class="container-fluid">
-				<!-- <div class="row page-titles">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Bootstrap</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Popover</a></li>
-					</ol>
-                </div> -->
                 <!-- row -->
 
                 <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Approval Presensi</h4>
-                            </div>
-							<div class="card-body">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-outline-danger btn-xs">Menunggu Persetujuan</button>
-                                    <button type="button" class="btn btn-outline-light btn-xs">Disetujui</button>
-                                    <button type="button" class="btn btn-outline-light btn-xs">Ditolak</button>
-                                </div>
-                            </div>
-							<div style="margin-top: -6%; margin-left: 85%">
-								<button type="button" class="btn btn-outline-light btn-xs">Cari &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;<i class="flaticon-381-search-2"></i></a></span></button>
-							
-
-							</div>
-							
-                            <div class="table-responsive">
-								<table class="table table-responsive-md">
-								</table>
-								</div><br>
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table table-responsive-md">
-											<thead>
-												<tr>
-													<th style="width:50px;">
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="checkAll" required="">
-															<label class="form-check-label" for="checkAll"></label>
-														</div>
-													</th>
-													<th><strong>No</strong></th>
-													<th><strong>Nama</strong></th>
-													<th><strong>Waktu</strong></th>
-													<th><strong>Lokasi</strong></th>
-													<th><strong>IP</strong></th>
-													<th><strong>Tipe</strong></th>
-													<th><strong>Aksi</strong></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
-															<label class="form-check-label" for="customCheckBox2"></label>
-														</div>
-													</td>
-													<td><strong>1</strong></td>
-													<td><div class="d-flex align-items-center"><img src="images/avatar/1.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Tina</span></div></td>
-													<td>08/05/2023 07:45</td>
-													<td>Luar Kantor</td>
-													<td><div class="d-flex align-items-center"><i class="fa fa-circle text-success me-1"></i> 8547</div></td>
-													<td>Presensi Masuk</td>
-													<td>
-														<div class="d-flex">
-															<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-															<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="customCheckBox3" required="">
-															<label class="form-check-label" for="customCheckBox3"></label>
-														</div>
-													</td>
-													<td><strong>2</strong></td>
-													<td><div class="d-flex align-items-center"><img src="images/avatar/2.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Dr. Jackson</span></div></td>
-													<td>10/25/2023	</td>
-													<td>Luar Kantor</td>
-													<td><div class="d-flex align-items-center"><i class="fa fa-circle text-danger me-1"></i> 777</div></td>
-													<td>Presensi Masuk</td>
-													<td>
-														<div class="d-flex">
-															<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-															<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check custom-checkbox checkbox-success check-lg me-3">
-															<input type="checkbox" class="form-check-input" id="customCheckBox4" required="">
-															<label class="form-check-label" for="customCheckBox4"></label>
-														</div>
-													</td>
-													<td><strong>3</strong></td>
-													<td><div class="d-flex align-items-center"><img src="images/avatar/3.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Nanda</span></div></td>
-													<td>07/05/2023	</td>
-													<td>Dalam Kantor</td>
-													<td><div class="d-flex align-items-center"><i class="fa fa-circle text-warning me-1"></i> 0204</div></td>
-													<td> Presensi Masuk</td>
-													
-													<td>
-														<div class="d-flex">
-															<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-															<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-														</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-										<nav>
-
-											<ul class="pagination pagination gutter pagination-danger" style="margin-left: 45%">
-												
-												<li class="page-item page-indicator">
-													<a class="page-link" href="javascript:void(0)">
-														<i class=" la la-angle-left"></i></a>
-												</li>
-												<li class="page-item active "><a class="page-link " href="javascript:void(0)">1</a>
-												</li>
-												<li class="page-item "><a class="page-link" href="javascript:void(0)">2</a></li>
-												<li class="page-item page-indicator">
-													<a class="page-link" href="javascript:void(0)">
-														<i class="la la-angle-right"></i></a>
-												</li>
-											</ul>
-											<div style="margin-left:65%">
-											<button type="button" class="btn btn-primary mb-2 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalLong">Konfirmasi data yang dipilihhh</button>
-											<button type="button" class="btn btn-primary mb-2 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalLong">Tolak data yang dipilih</button>
-											</div>
-
-										</nav>
-									</div>
+					<div class="col-12">
+						<div class="card">
+						  <div class="card-header">
+							<h4 class="card-title">Payroll</h4>
+						  </div>
+						  <div class="card-body">
+							<!-- baris satu -->
+							<div class="row">
+							  <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-6">
+								<div class="responsive-button">
+								  <a href="/PayrollStep" class="btn btn-danger btn-xs">
+									<svg
+									  xmlns="http://www.w3.org/2000/svg"
+									  width="15"
+									  height="15"
+									  fill="white"
+									  class="bi bi-caret-right-fill"
+									  viewBox="0 0 16 16"
+									>
+									  <path
+										d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+									  />
+									</svg>
+									Bayar Gaji
+								</a>
 								</div>
-								
-                            </div>
-                        </div>
-                    </div>
-                </div>
+							  </div>
+							  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-6">
+								<div class="responsive-button text-end">
+								  <button
+									type="button"
+									class="btn btn-outline-light btn-xs"
+								  >
+									<span>
+									  <i class="bi bi-download px-1"></i>
+									</span>
+									Import
+								  </button>
+								</div>
+							  </div>
+							</div>
+							<!-- baris dua -->
+							<div class="row mt-2">
+							  <div class="col-md-2 col-sm-3 col-4">
+								<button class="btn btn-outline-light btn-xs">
+								  Bulan ini
+								</button>
+							  </div>
+							  <div
+								class="col-md-1 col-sm-5 col-3"
+								style="margin-left: -8%"
+							  >
+								<div class="dropdown-basic">
+								  <button
+									class="btn btn-outline-light btn-xs dropdown-toggle"
+									data-bs-toggle="dropdown"
+								  >
+									Mei
+								  </button>
+								  <div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Juni</a>
+									<a class="dropdown-item" href="#">Juli</a>
+								  </div>
+								</div>
+							  </div>
+							  <div
+								class="col-xl-4 col-lg-9 col-md-9 col-sm-6 col-5 ms-auto"
+							  >
+								<div class="input-group search-area">
+								  <input
+									type="text"
+									class="form-control"
+									placeholder="Cari Disini..."
+								  />
+								  <span class="input-group-text"
+									><a href="javascript:void(0)"
+									  ><i class="flaticon-381-search-2"></i></a
+								  ></span>
+								</div>
+							  </div>
+							</div>
+				
+							<div class="accordion" id="accordion-eleven">
+							  <div class="table-responsive mb-2">
+								<table
+								  id="example8"
+								  class="display align-content-end"
+								  style="min-width: 845px"
+								  data-paging="false"
+								>
+								  <thead>
+									<tr class="text-center">
+									  <th>No</th>
+									  <th>Nama</th>
+									  <th>Bank</th>
+									  <th>Status</th>
+									  <th>Total</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr class="text-center" >
+									  <td>1</td>
+									  <td
+										class="accordion"
+										id="accord-11One"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapse11One"
+										aria-controls="collapse11One"
+										aria-expanded="true"
+										role="button"
+									  >
+										Tina
+									  </td>
+									  <td>BCA</td>
+									  <td style="text-align: center;">
+										<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio14" checked>
+										<label class="btn btn-outline-danger btn-xs" for="btnradio14" >Belum Siap</label>
+										
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio15">
+										<label class="btn btn-outline-danger btn-xs" for="btnradio15">Siap Bayar</label>
+
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio16">
+										<label class="btn btn-outline-danger btn-xs" for="btnradio16">Sudah Bayar</label>
+										</div>
+									</td>
+									  <td>2.434.678</td>
+									</tr>
+									<tr>
+									<td colspan="5">
+										  <div
+											id="collapse11One"
+											class="collapse accordion__body"
+											aria-labelledby="accord-11One"
+											data-bs-parent="#accordion-eleven"
+										  >
+											<div class="accordion-body-text">
+											  <div
+												id="collapse11One"
+												class="collapse accordion__body"
+												aria-labelledby="accord-11One"
+												data-bs-parent="#accordion-eleven"
+											  >
+												<div class="accordion-body-text">
+												  <div class="row mb-2">
+													<div class="col-xl-6 col-12 mb-2">
+													  <div
+														class="card-body"
+														style="
+														  border: 1px solid
+															rgb(181, 178, 178);
+														  border-radius: 1rem;
+														"
+													  >
+														<h5
+														  class="strong text-center"
+														  data-bs-toggle="tab"
+														>
+														  Pendapatan
+														</h5>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Gaji Pokok</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<p>Rp. 4.500.000</p>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-3 col-3">
+															<p>Uang Lembur</p>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<p>Jam x 26.001</p>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<p>0</p>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Tunjangan Pulsa</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Tunjangan Lainnya</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-5 col-12">
+															<p>Masukkan Nama Pendapatan</p>
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														  <div class="col-xl-5 col-12">
+															<p>
+															  Masukkan Jumlah Pendapatan
+															</p>
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														  <div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">
+															<a href=""
+															  ><i
+																class="fa fa-trash font-18 align-middle me-2"
+															  ></i
+															></a>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-lg-9 col-12">
+															<a href="" class="text-red"
+															  ><i
+																class="bi bi-plus px-1"
+															  ></i
+															  >Pendapatan</a
+															>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-lg-9 col-8">
+															<p class="strong">
+																Total Pendapatan
+															  </p>
+														  </div>
+														  <div class="col-lg-3 col-4">
+														  <p class="strong">Rp. 5.000.000</p>
+														  </div>
+														</div>
+													  </div>
+													</div>
+				  
+													<div class="col-xl-6 col-12 ms-auto">
+													  <div
+														class="card-body"
+														style="
+														  border: 1px solid
+															rgb(181, 178, 178);
+														  border-radius: 1rem;
+														"
+													  >
+														<h5
+														  class="strong text-center"
+														  data-bs-toggle="tab"
+														>
+														  Potongan
+														</h5>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Koperasi</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<p>Rp. 450.000</p>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-3 col-3">
+															<p>Denda Keterlambatan</p>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<p>Jam x 26.001</p>
+														  </div>
+														  <div class="col-xl-3 col-3">
+															<p>0</p>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-xl-9 col-8">
+															<p>Potongan Lainnya</p>
+														  </div>
+														  <div class="col-xl-3 col-4">
+															<input
+															  type="text"
+															  class="form-control"
+															  placeholder=""
+															  style="
+																border: 0.035rem solid
+																  rgb(195, 195, 195);
+															  "
+															/>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-lg-9 col-12">
+															<a href="" class="text-red"
+															  ><i
+																class="bi bi-plus px-1"
+															  ></i
+															  >Potongan</a
+															>
+														  </div>
+														</div>
+														<hr />
+														<div class="row">
+														  <div class="col-lg-9 col-8"><p class="strong">
+																Total Potongan
+															  </p>
+														  </div>
+														  <div class="col-lg-3 col-4">
+															<p>Rp. 500.000</p>
+														  </div>
+														</div>
+													  </div>
+													</div>
+												  </div>
+												</div>
+											  </div>
+											</div>
+										  </div>
+									  </td>
+									</tr>
+									<tr class="text-center">
+									  <td>2</td>
+									  <td
+										class="accordion collapsed"
+										id="accord-11Two"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapse11Two"
+										aria-controls="collapse11Two"
+										aria-expanded="true"
+										role="button"
+									  >
+										Dwi
+									  </td>
+									  <td>BCA</td>
+									  <td style="text-align: center;">
+										<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio14" checked>
+										<label class="btn btn-outline-danger btn-xs" for="btnradio14">Belum Siap</label>
+										
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio15">
+										<label class="btn btn-outline-danger btn-xs" for="btnradio15">Siap Bayar</label>
+
+										<input type="radio" class="btn-check" name="btnradio1" id="btnradio16">
+										<label class="btn btn-outline-danger btn-xs" for="btnradio16">Sudah Bayar</label>
+										</div>
+									</td>
+									  <td>2.434.678</td>
+									</tr>
+									<tr>
+									  <td colspan="5">
+										<div
+										  id="collapse11Two"
+										  class="collapse accordion__body"
+										  aria-labelledby="accord-11Two"
+										  data-bs-parent="#accordion-eleven"
+										>
+										  <div class="accordion-body-text">
+											<div
+											  id="collapse11Two"
+											  class="collapse accordion__body"
+											  aria-labelledby="accord-11Two"
+											  data-bs-parent="#accordion-eleven"
+											>
+											  <div class="accordion-body-text">
+												<div class="row mb-2">
+												  <div class="col-xl-6 col-12 mb-2">
+													<div
+													  class="card-body"
+													  style="
+														border: 1px solid
+														  rgb(181, 178, 178);
+														border-radius: 1rem;
+													  "
+													>
+													  <h5
+														class="strong text-center"
+														data-bs-toggle="tab"
+													  >
+														Pendapatannnnn
+													  </h5>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Gaji Pokok</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <p>Rp. 4.500.000</p>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-3 col-3">
+														  <p>Uang Lembur</p>
+														</div>
+														<div class="col-xl-3 col-3">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div class="col-xl-3 col-3">
+														  <p>Jam x 26.001</p>
+														</div>
+														<div class="col-xl-3 col-3">
+														  <p>0</p>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Tunjangan Pulsa</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Tunjangan Lainnya</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-5 col-12">
+														  <p>Masukkan Nama Pendapatan</p>
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div class="col-xl-5 col-12">
+														  <p>
+															Masukkan Jumlah Pendapatan
+														  </p>
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div
+														  class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2"
+														>
+														  <a href=""
+															><i
+															  class="fa fa-trash font-18 align-middle me-2"
+															></i
+														  ></a>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-lg-9 col-12">
+														  <a href="" class="text-red"
+															><i
+															  class="bi bi-plus px-1"
+															></i
+															>Pendapatan</a
+														  >
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-lg-9 col-8"><p class="strong">
+															  Total Pendapatan
+															</p>
+														</div>
+														<div class="col-lg-3 col-4">
+														  <p>Rp. 5.000.000</p>
+														</div>
+													  </div>
+													</div>
+												  </div>
+				
+												  <div class="col-xl-6 col-12 ms-auto">
+													<div
+													  class="card-body"
+													  style="
+														border: 1px solid
+														  rgb(181, 178, 178);
+														border-radius: 1rem;
+													  "
+													>
+													  <h5
+														class="strong text-center"
+														data-bs-toggle="tab"
+													  >
+														Potongan
+													  </h5>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Koperasi</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <p>Rp. 450.000</p>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-3 col-3">
+														  <p>Denda Keterlambatan</p>
+														</div>
+														<div class="col-xl-3 col-3">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div class="col-xl-3 col-3">
+														  <p>Jam x 26.001</p>
+														</div>
+														<div class="col-xl-3 col-3">
+														  <p>0</p>
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-xl-9 col-8">
+														  <p>Potongan Lainnya</p>
+														</div>
+														<div class="col-xl-3 col-4">
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-lg-9 col-12">
+														  <a href="" class="text-red"
+															><i
+															  class="bi bi-plus px-1"
+															></i
+															>Potongan</a
+														  >
+														</div>
+													  </div>
+													  <hr />
+													  <div class="row">
+														<div class="col-lg-9 col-8"><p class="strong">
+															  Total Potongan
+															</p>
+														</div>
+														<div class="col-lg-3 col-4">
+														  <p>Rp. 500.000</p>
+														</div>
+													  </div>
+													</div>
+												  </div>
+												</div>
+											  </div>
+											</div>
+										  </div>
+										</div>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+							  </div>
+							</div>
+							<nav>
+							  <ul class="pagination pagination-xs" style="float: right">
+								<li class="page-item page-indicator">
+								  <a class="page-link" href="javascript:void(0)">
+									<i
+									  class="fa fa-angle-double-left"
+									  aria-hidden="true"
+									></i
+								  ></a>
+								</li>
+								<li class="page-item active">
+								  <a class="page-link" href="javascript:void(0)">1</a>
+								</li>
+								<li class="page-item">
+								  <a class="page-link" href="javascript:void(0)">2</a>
+								</li>
+				  
+								<li class="page-item page-indicator">
+								  <a class="page-link" href="javascript:void(0)">
+									<i
+									  class="fa fa-angle-double-right"
+									  aria-hidden="true"
+									></i
+								  ></a>
+								</li>
+							  </ul>
+							</nav>
+						  </div>
+				
+						</div>
+					  </div>
             </div>
         </div>
+	</div>
         <!--**********************************
             Content body end
         ***********************************-->
@@ -1125,7 +1533,6 @@
         ***********************************-->
 
         
-    </div>
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -1135,12 +1542,21 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+	
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
     <script src="js/custom.min.js"></script>
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
 </body>
 
-<!-- Mirrored from dompet.dexignlab.com/xhtml/ui-popover.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:42 GMT -->
+<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
 </html>

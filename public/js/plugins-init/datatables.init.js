@@ -179,7 +179,7 @@ let dataSet = [
 		
 		// dataTable8
 		var table = $('#example8').DataTable({
-			searching: false,
+			searching: true,
 			paging:true,
 			select: false,
 			info: false,         
