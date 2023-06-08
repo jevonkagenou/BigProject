@@ -27,10 +27,10 @@ Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])
 Route::get('/Calendar', [ViewEmployeeController::class, 'Calendar'])->name('Calendar');
 
 // Karyawan Route
-Route::view('/', 'Pengaturan.Perusahaan');
-Route::view('/','Admin.EmployeeAdmin');
-Route::get('/DashboardAdmin', [RouteController::class, 'DashboardAdmin'])->name('DashboardAdmin');
+// Route::view('/', 'Pengaturan.Perusahaan');
+Route::view('/', 'DashboardAdmin.DashboardAdmin');
 Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
+Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
 Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
 Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
 Route::get('/SalarySummary', [RouteController::class, 'SalarySummary'])->name('SalarySummary');
@@ -54,6 +54,4 @@ Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('Payro
 
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
-// Sidebar
-Route::get('/DashboardAdmin', [RouteController::class, 'DashboardAdmin'])->name('DashboardAdmin');
 

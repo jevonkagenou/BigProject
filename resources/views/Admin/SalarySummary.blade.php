@@ -853,7 +853,11 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-
+<style>
+    .fa{
+        line-height: 1.5rem !important;
+    }
+</style>
 
 <div class="content-body">
    

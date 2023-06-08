@@ -13646,7 +13646,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     font-size: 1rem; }
   [direction="rtl"] .sidebar-right .slimScrollDiv {
     overflow: visible !important; }
- 
+
     @media only screen and (max-width: 1024px) {
       .sidebar-right .sidebar-right-trigger {
         display: none; } }
@@ -14158,7 +14158,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     height: 38px;
     padding: 0;
     margin-top: 6px; }
-  
+
   .chatbox .note_card .contacts li {
     padding: 12px 1rem; }
 
@@ -14184,7 +14184,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     padding: 20px;
     font-size: 12px;
     background-color: #fff; }
-  
+
     @media only screen and (max-width: 1024px) {
       .dlab-demo-panel .dlab-demo-trigger {
         display: none; } }
@@ -19212,7 +19212,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   color: #fff;
   text-shadow: none; }
   [data-theme-version="dark"] .app-fullcalendar .fc-button:hover, [data-theme-version="dark"] .app-fullcalendar .fc-button.fc-stat-hover {
-    background-color: var(--primary); }
+    background-color: var(--bs-red); }
 
 [data-theme-version="dark"] .swal2-popup .swal2-styled:focus {
   outline: 0;
@@ -22378,20 +22378,20 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
   .fc .fc-button-group > .fc-button:focus, .fc .fc-button-group > .fc-button:active, .fc .fc-button-group > .fc-button:hover, .fc .fc-button-group > .fc-button.fc-button-active {
-    background: var(--primary);
+    background: var(--bs-danger);
     color: #fff;
-    border-color: var(--primary); }
+    border-color: var(--bs-danger); }
 
 .fc-button.fc-button-primary.fc-today-button {
-  background: var(--primary);
+  background: var(--bs-danger);
   color: #fff;
   border: 0;
   opacity: 1; }
 
 .fc-unthemed .fc-toolbar .fc-button.fc-button-active, .fc-unthemed .fc-toolbar .fc-button:active, .fc-unthemed .fc-toolbar .fc-button:focus {
-  background: var(--primary);
+  background: var(--bs-danger);
   color: #fff;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--bs-danger);
   -webkit-box-shadow: none;
   box-shadow: none;
   text-shadow: none; }
@@ -30583,7 +30583,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   color: #fff;
   text-shadow: none; }
   [data-theme-version="dark"] .app-fullcalendar .fc-button:hover, [data-theme-version="dark"] .app-fullcalendar .fc-button.fc-stat-hover {
-    background-color: var(--primary); }
+    background-color: var(--bs-red); }
 
 [data-theme-version="dark"] .swal2-popup .swal2-styled:focus {
   outline: 0;

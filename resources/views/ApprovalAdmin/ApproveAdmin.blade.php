@@ -999,7 +999,7 @@
                                         ></a>
                                       </li>
                                     </ul>
-                                  </nav>
+                                </nav>
 								
 								<button type="button" class="btn btn-success btn-xs">Konfirmasi Data yang Dipilih   </button>
 								<button type="button" class="btn btn-danger btn-xs" >Tolak Data yang Dipilih   </button>
