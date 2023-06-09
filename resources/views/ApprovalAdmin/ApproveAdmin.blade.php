@@ -918,8 +918,8 @@
 												</td>
                                                 <td>1</td>
                                                 <td>Amel</td>
-                                                <td>Tiger Nixon</td>
-                                                <td>Dr. Cedric</td>
+                                                <td>Izin</td>
+                                                <td>2 Juni 2023</td>
 
                                                 <td>
                                                     <span>
@@ -939,8 +939,8 @@
 												</td>
                                                 <td>2</td>
                                                 <td>Momo</td>
-												<td>Garrett Winters</td>
-                                                <td>Dr. Cedric</td>
+												<td>Cuti</td>
+                                                <td>30 Mei 2023</td>
 
                                                 <td>
                                                     <span>
@@ -960,8 +960,8 @@
 												</td>
                                                 <td>3</td>
                                                 <td>Lisa</td>
-												<td>Ashton Cox</td>
-                                                <td>Dr. Rhona</td>
+												<td>Cuti</td>
+                                                <td>8 Juni 2023</td>
 
                                                 <td>
                                                     <span>
