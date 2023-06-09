@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-danger">Simpan</button>
+                                        <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
                                     </div>
                                 </div>
                             </form>
