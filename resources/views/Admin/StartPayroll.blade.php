@@ -15,7 +15,7 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- PAGE TITLE HERE -->
-	<title>Dompet : Payment Admin Template</title>
+	<title>Kalopsia</title>
 
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
@@ -35,7 +35,7 @@
     <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="posti/favicon.png" />
     <!-- Datatable -->
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -869,7 +869,7 @@
                                     <div class="col-xl-10 col-lg-10 col-md-4 col-sm-1 mt-2">
                                         <div class="">
                                             <div class="button-container">
-                                                <button type="button" class="btn btn-danger btn-xs"><i
+                                                <button type="button" class="btn btn-danger btn-xs"  data-bs-toggle="modal" data-bs-target=".modal-6"><i
                                                         class="fa fa-plus color-info px-1"></i>
                                                     <span class="text-center">
                                                         Tambah Slip Tidak Tetap
@@ -940,6 +940,50 @@
                     </div>
 
                 </div>
+                <div class="modal modal-6 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Tambah Slip Tidak Tetap</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="row g-0">
+									<!-- <h6 class="modal-title">Nama Slip Tidak Tetap</h6><br> -->
+                                    <label for="firstName" class="form-label">Nama Slip Tidak Tetap</label>
+									<div class="col">
+										<input type="text" class="form-control btn-xs" placeholder="Nama">
+									</div>
+									
+								</div>
+								<br>
+								<div class="row">
+                                    
+                                     <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">Awal Pweiode</label>
+                                        <input type="date" class="form-control" id="Golongan Darah" placeholder="Tempat Lahir" value="" required="">
+                                        <div class="invalid-feedback">
+                                            Valid first name is required.
+                                        </div>
+                                    </div>
+                                     <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">Akhir Periode</label>
+                                        <input type="date" class="form-control" id="Golongan Darah" placeholder="Tempat Lahir" value="" required="">
+                                        <div class="invalid-feedback">
+                                            Valid first name is required.
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                            </div>
+							<div class="modal-footer">
+								<!-- <button type="button" class="btn btn-danger light btn-xs" data-bs-dismiss="modal">Batal</button> -->
+								<button type="button" class="btn btn-danger btn-xs">Simpan</button>
+							</div>
+						</div>
+					</div>
+				 </div>
             </div>
 		</div>
             <!--**********************************

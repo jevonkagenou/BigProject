@@ -12,7 +12,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Dompet : Payment Admin Template</title>
+    <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
@@ -763,7 +763,7 @@
                         </div>
                     </a>
                 </li>
-                <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
+                <li><a class="ai-icon hover-red" href="/ " aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important" height="100"
                             viewBox="0 -960 960 960" width="100">
                             <path

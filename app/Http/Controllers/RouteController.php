@@ -114,4 +114,15 @@ class RouteController extends Controller
             'tittle'=>'Langkah Langkah Pembayaran Gaji'
         ]);
     }
+    public function Detailkaryawan(){
+        return view('Admin.Detailkaryawan',[
+                'tittle'=>'Detail Karyawan'
+        ]);
+    }
+
+    public function Employee(){
+        return view('EmployeeDetails.Employee',[
+            'tittle'=>'Detail Karyawan'
+    ]);
+    }
 }

@@ -865,10 +865,10 @@
                                 <div class="default-tab">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-bs-toggle="tab" style="color: #f72b50;" href="#presensi">Presensi</a>
+                                            <a class="nav-link active" data-bs-toggle="tab"href="#presensi">Presensi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-bs-toggle="tab" style="color: #f72b50;" href="#lembur">Lembur</a>
+                                            <a class="nav-link" data-bs-toggle="tab"href="#lembur">Lembur</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content">
