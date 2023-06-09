@@ -889,7 +889,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr onclick="window.location='/Detailkaryawan'" class="text-center">
+                                        <tr onclick="window.location='/Employee'" class="text-center">
                                             <td> Bayu</td>
                                             <td>Laki-Laki</td>
                                             <td>Malang</td>

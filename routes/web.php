@@ -54,6 +54,7 @@ Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
 Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
 Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
 Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
+Route::get('/Employee', [RouteController::class, 'Employee'])->name('Employee');
 
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');

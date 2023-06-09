@@ -119,4 +119,10 @@ class RouteController extends Controller
                 'tittle'=>'Detail Karyawan'
         ]);
     }
+
+    public function Employee(){
+        return view('EmployeeDetails.Employee',[
+            'tittle'=>'Detail Karyawan'
+    ]);
+    }
 }
