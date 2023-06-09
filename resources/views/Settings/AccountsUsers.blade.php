@@ -29,7 +29,7 @@
                     <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-lg-12 order-lg-2 mb-4">
+                            <div class="col-lg-12 order-lg-2">
                                 <h4 class="mb-3">Edit Profile</h4>
                                 <hr>
                                 <form class="needs-validation" novalidate="">
@@ -43,14 +43,14 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6 mb-3">
+                                        <div class="mb-3">
                                             <label for="firstName" class="form-label">Nama Admin</label>
                                             <input type="text" class="form-control" id="namaadmin" placeholder="Nama Lengkap" value="" required="">
                                             <div class="invalid-feedback">
                                                 Valid first name is required.
                                             </div>
                                         </div>
-                                        <div class="col-md-6 mb-3">
+                                        <div class="mb-3">
                                             <label for="lastName"  class="form-label">No Telepon</label>
                                             <input type="number" class="form-control" id="notelp" placeholder="" value="" required="">
                                             <div class="invalid-feedback">
@@ -70,26 +70,26 @@
                     <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-lg-12 order-lg-2 mb-4">
+                            <div class="col-lg-12 order-lg-2">
                                 <h4 class="mb-3">Ganti Password</h4>
                                 <hr>
                                 <form class="needs-validation" novalidate="">
                                     <div class="row">
-                                        <div class="col-md-6 mb-3">
+                                        <div class="mb-3">
                                             <label for="firstName" class="form-label">Password Lama</label>
                                             <input type="text" class="form-control" id="lama" placeholder="Password Lama" value="" required="">
                                             <div class="invalid-feedback">
                                                 Valid first name is required.
                                             </div>
                                         </div>
-                                        <div class="col-md-6 mb-3">
+                                        <div class="mb-3">
                                             <label for="firstName" class="form-label">Password Baru</label>
                                             <input type="text" class="form-control" id="baru" placeholder="Password Baru" value="" required="">
                                             <div class="invalid-feedback">
                                                 Valid first name is required.
                                             </div>
                                         </div>
-                                        <div class="col-mb-3">
+                                        <div class="mb-3">
                                             <label for="lastName"  class="form-label">Konfirmasi Password Baru</label>
                                             <input type="text" class="form-control" id="konfirmasi" placeholder="Konfirmasi Password Baru" value="" required="">
                                             <div class="invalid-feedback">

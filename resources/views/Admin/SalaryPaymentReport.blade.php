@@ -883,7 +883,7 @@
 									<div class="table-responsive text-center">
 										<table id="example5" class="display" style="min-width: 845px">
 											<thead>
-												<tr>
+												<tr class="text-center">
 
 													<th>No</th>
 													<th>Bulan</th>
@@ -894,7 +894,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
+												<tr  class="text-center">
 
 													<td>1</td>
 													<td>Mei</td>
@@ -903,7 +903,7 @@
 													<td>5.876.000</td>
 
 												</tr>
-												<tr>
+												<tr  class="text-center">
 
 													<td>2</td>
 													<td>Juni</td>
@@ -912,7 +912,7 @@
 													<td>5.600.00</td>
 
 												</tr>
-												<tr>
+												<tr  class="text-center">
 
 													<td>3</td>
 													<td>Juli</td>

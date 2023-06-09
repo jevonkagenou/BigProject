@@ -169,8 +169,8 @@
 								
 							 </div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-danger light btn-xs" data-bs-dismiss="modal">Batal</button>
-								<button type="button" class="btn btn-success btn-xs">Simpan</button>
+								<button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+								<button type="button" class="btn btn-danger btn-xs">Simpan</button>
 							</div>
 						</div>
 					</div>
@@ -210,8 +210,8 @@
 								
 							 </div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-danger light btn-xs" data-bs-dismiss="modal">Batal</button>
-								<button type="button" class="btn btn-success btn-xs">Simpan</button>
+								<button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+								<button type="button" class="btn btn-danger btn-xs">Simpan</button>
 							</div>
 						</div>
 					</div>

@@ -11,7 +11,9 @@ class RouteController extends Controller
         'tittle'=>'Laporan']);
     }
     public function ApprovalAdmin(){
-        return view('ApprovalAdmin.ApproveAdmin');
+        return view('ApprovalAdmin.ApproveAdmin',[
+            'tittle'=>'Approval'
+        ]);
     }
     public function SalarySummary(){
         return view('Admin.SalarySummary',[
@@ -25,7 +27,7 @@ class RouteController extends Controller
     }
     public function WorkSchedule(){
         return view('Admin.WorkSchedule',[
-            'tittle'=>'Jawal Kerja'
+            'tittle'=>'Jadwal Kerja'
         ]);
     }
     public function SalaryPaymentReport(){
@@ -83,13 +85,19 @@ class RouteController extends Controller
         ]);
     }
     public function Company(){
-        return view('Settings.Company');
+        return view('Settings.Company',[
+            'tittle'=>'Perusahaan'
+        ]);
     }
     public function PayrollSalarySlip(){
-        return view('Settings.PayrollSalarySlip');
+        return view('Settings.PayrollSalarySlip',[
+            'tittle'=>'Slip Gaji'
+        ]);
     }
     public function AccountsUsers(){
-        return view('Settings.AccountsUsers');
+        return view('Settings.AccountsUsers',[
+            'tittle'=>'Akun dan Pengguna'
+        ]);
     }
     public function AddEmployee(){
         return view('Admin.AddEmployee',[

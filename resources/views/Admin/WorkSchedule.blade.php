@@ -22,11 +22,11 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-intro-title">Calendar</h4>
+                                    <h4 class="card-intro-title">Kalender</h4>
 
                                     <div class="">
                                         <div id="external-events" class="my-3">
-                                            <p>Drag and drop your event or click in the calendar</p>
+                                            <p>Seret dan lepas acara Anda atau klik di kalender</p>
                                             <div class="external-event btn-success light" data-class="bg-success"><i class="fa fa-move"></i><span>Hari Kerja</span></div>
                                             <div class="external-event btn-warning light" data-class="bg-warning"><i class="fa fa-move"></i>Hari Libur
                                             </div>
@@ -34,12 +34,12 @@
 
                                         </div>
                                         <!-- checkbox -->
-                                        <div class="checkbox form-check checkbox-event custom-checkbox pt-3 pb-5">
+                                        {{-- <div class="checkbox form-check checkbox-event custom-checkbox pt-3 pb-5">
                                             <input type="checkbox" class="form-check-input" id="drop-remove">
                                             <label class="form-check-label" for="drop-remove">Remove After Drop</label>
-                                        </div>
-                                        <a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#add-category" class="btn btn-danger btn-event w-100">
-                                            <span class="align-middle"><i class="ti-plus"></i></span> Create New
+                                        </div> --}}
+                                        <a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#add-category" class="btn btn-danger btn-event btn-sm w-100">
+                                            <span class="align-middle"><i class="ti-plus"></i></span> Tambah
                                         </a>
                                     </div>
                                 </div>
@@ -93,8 +93,8 @@
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default waves-effect" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-bs-toggle="modal">Submit</button>
+                                    <button type="button" class="btn btn-default btn-xs waves-effect" data-bs-dismiss="modal">Tutup</button>
+                                    <button type="button" class="btn btn-danger btn-xs waves-effect waves-light save-category" data-bs-toggle="modal">Simpan</button>
                                 </div>
                             </div>
                         </div>

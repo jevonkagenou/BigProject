@@ -889,7 +889,7 @@
                         <div class="table-responsive text-center">
                             <table id="example7" class="display" style="min-width: 845px">
                                 <thead>
-                                    <tr>
+                                    <tr class="text-center">
                                         <th>Bulan</th>
                                         <th>Slip</th>
                                         <th>Gaji Pokok</th>
@@ -899,7 +899,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr class="text-center">
                                         <td>Mei 2023</td>
                                         <td>Gaji Bulanan</td>
                                         <td>24.736.474</td>
@@ -907,7 +907,7 @@
                                         <td>2.434.678</td>
                                         <td>25.087.567</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="text-center">
                                         <td>Juni 2023</td>
                                         <td>Gaji Bulanan</td>
                                         <td>34.427.234</td>
@@ -915,7 +915,7 @@
                                         <td>1.098.768</td>
                                         <td>34.767.988</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="text-center">
                                         <td>Juli 2023</td>
                                         <td>Gaji Bulanan</td>
                                         <td>12.097.567</td>
