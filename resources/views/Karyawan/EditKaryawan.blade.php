@@ -85,7 +85,68 @@
 		<!--**********************************
             Chat box start
         ***********************************-->
-
+            {{-- Chatbox --}}
+        <div class="chatbox">
+			<div class="chatbox-close"></div>
+			<div class="custom-tab-1">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="tab" href="#alerts">Alerts</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade active show" id="alerts" role="tabpanel">
+						<div class="card mb-sm-3 mb-md-0 contacts_card">
+							<div class="card-header chat-list-header text-center">
+								<div>
+									<h6 class="mb-1">Pengumunam</h6>
+								</div>
+							</div>
+							<div class="card-body contacts_body p-0 dlab-scroll" id="dlab_W_Contacts_Body1">
+								<ul class="contacts">
+									<li class="name-first-letter">30/05/2023</li>
+									<li class="active">
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>David Nester Birthday</span>
+												<p class="text-danger">Today</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">30/05/2023</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>Perfection Simplified</span>
+												<p class="text-danger">Jame Smith commented on your status</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">30/05/2023</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>AharlieKane</span>
+												<p class="text-danger">Sami is online</p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>Athan Jacoby</span>
+												<p class="text-danger">Nargis left 30 mins ago</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="card-footer"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!--**********************************
             Chat box End
         ***********************************-->
