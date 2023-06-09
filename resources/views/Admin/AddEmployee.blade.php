@@ -125,7 +125,7 @@
 												<div class="col-md-6 mb-3">
 													<label for="lastName"  class="form-label">Jenis Kelamin</label>
 													<div class="form-check custom-radio mb-2">
-														<input id="credit" name="paymentMethod" type="radio" class="" checked required>
+														<input id="credit" name="paymentMethod" type="radio" class="" required>
 														<label class="form-check-label" for="credit">Laki-Laki</label>
 													</div>
 													<div class="form-check custom-radio mb-2">
@@ -134,8 +134,8 @@
 													</div>
 												</div>
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="firstName" class="form-label">Setatus Perkawinan</label>
-                                                    <input type="text" class="form-control" id="Setatus" placeholder="Setatus Perkawinan" value="" required="">
+                                                    <label for="firstName" class="form-label">Status Perkawinan</label>
+                                                    <input type="text" class="form-control" id="Setatus" placeholder="Status Perkawinan" value="" required="">
                                                     <div class="invalid-feedback">
                                                         Valid first name is required.
                                                     </div>
@@ -169,7 +169,7 @@
 											<h4 class="mb-3">Informasi Tambahan</h4>
 
 											<div class="mb-3">
-                                                <label for="email"  class="form-label">Email <span
+                                                <label for="email"  class="form-label">E-mail <span
                                                         class="text-muted">(Optional)</span></label>
                                                 <input type="email" class="form-control" id="email" placeholder="you@example.com">
                                                 <div class="invalid-feedback">
@@ -198,23 +198,25 @@
                                             <div class="mb-3">
                                                 <label for="address2"  class="form-label">Pendidikan Terakhir <span
                                                         class="text-muted"></span></label>
-                                                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                                                <input type="text" class="form-control" id="address2" placeholder="Pendidikan Terakhir">
                                             </div>
 
                                             <div class="mb-3">
                                                 <label for="address2"  class="form-label">Nama Institusi Pendidikan<span
                                                         class="text-muted"></span></label>
-                                                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                                                <input type="text" class="form-control" id="address2" placeholder="Nama Institusi Pendidikan">
                                             </div>
 
                                             <div class="mb-3">
                                                 <label for="address2"  class="form-label">Program Studi<span
                                                         class="text-muted"></span></label>
-                                                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                                                <input type="text" class="form-control" id="address2" placeholder="Program Studi">
                                             </div>
 
-                                            <hr class="mb-4">
-                                            <button class="btn btn-success btn-lg btn-block" type="submit">Simpan</button>
+                                            <hr class="mb-2">
+                                            <button class="btn btn-danger btn-xs" type="submit" style="width: 100%;">
+                                                <span style="display: inline-block; vertical-align: middle;">Simpan</span>
+                                              </button>
                                         </form>
                                     </div>
                                 </div>

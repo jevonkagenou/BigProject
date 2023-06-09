@@ -21,6 +21,11 @@
     <!-- Custom Stylesheet -->
 	<link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <style>
+        tr:hover{
+            cursor: pointer;
+        }
+        </style>
 
 </head>
 
@@ -884,8 +889,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="text-center">
-                                            <td>Bayu</td>
+                                        <tr onclick="window.location='/Detailkaryawan'" class="text-center">
+                                            <td> Bayu</td>
                                             <td>Laki-Laki</td>
                                             <td>Malang</td>
                                             <td>25 Agustus 2000</td>

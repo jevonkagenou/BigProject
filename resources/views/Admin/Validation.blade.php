@@ -1,4 +1,4 @@
-@include('PartialAdmin.SidebarNavbar')\
+@include('PartialAdmin.SidebarNavbar')
 
     <style>
        .btn-check:checked+.btn-outline-danger,
