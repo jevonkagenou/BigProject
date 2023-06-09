@@ -312,7 +312,7 @@
 						<div class="card-body">
 							<div class="row justify-content-center">
 								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="" class="bg-success text-white d-flex flex-column align-items-center p-2"
+									<a href="/EmployeePresence" class="bg-success text-white d-flex flex-column align-items-center p-2"
 										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 30px; ">
 
 										<i class="bi bi-stopwatch d-flex justify-content-center"
@@ -324,7 +324,7 @@
 
 								</div>
 								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="" class="bg-danger text-white d-flex flex-column align-items-center p-2"
+									<a href="/PermitEmployee" class="bg-danger text-white d-flex flex-column align-items-center p-2"
 										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px;">
 
 										<i class="bi bi-briefcase d-flex justify-content-center"
@@ -336,7 +336,7 @@
 
 								</div>
 								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="" class=" text-white d-flex flex-column align-items-center p-2"
+									<a href="/SalaryEmployee" class=" text-white d-flex flex-column align-items-center p-2"
 										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #60D394;">
 
 										<i class="bi bi-wallet2 d-flex justify-content-center"
@@ -351,7 +351,7 @@
 
 
 								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="" class=" text-white d-flex flex-column align-items-center p-2"
+									<a href="/CompanyEmployee" class=" text-white d-flex flex-column align-items-center p-2"
 										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #FFD97D;">
 
 										<i class="bi bi-building d-flex justify-content-center"
@@ -363,7 +363,7 @@
 
 								</div>
 								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="" class=" text-white d-flex flex-column align-items-center p-2"
+									<a href="/ApprovalEmployee" class=" text-white d-flex flex-column align-items-center p-2"
 										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #FF9B85;">
 
 										<i class="bi bi-clipboard-check d-flex justify-content-center"
@@ -376,7 +376,7 @@
 								</div>
 
 								<div class="col-4 col-xl-1 col-lg-1 col-sm-3 col-md-2 mt-4">
-									<a href="" class=" text-white d-flex flex-column align-items-center p-2"
+									<a href="/Calendar" class=" text-white d-flex flex-column align-items-center p-2"
 										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #146C94;">
 
 										<i class="bi bi-calendar-event d-flex justify-content-center"
@@ -401,7 +401,7 @@
 																<h5 class="mt-1 mb-1">Pengumuman</h5>
 																<hr>
 																<p class="mb-0">Hari ini di karenakan perusahaan...</p>
-																<p class="mb-0" style="color: red; text-align: right;">Lihat</p>
+																<a href="" class="text-red d-flex justify-content-end">Lihat</a>
 
 															</div>
 														</div>
@@ -415,7 +415,7 @@
 																<h5 class="mt-1 mb-1">Pengumuman</h5>
 																<hr>
 																<p class="mb-0">Hari ini di karenakan perusahaan...</p>
-																<p class="mb-0" style="color: red; text-align: right;">Lihat</p>
+																<a href="" class="text-red d-flex justify-content-end">Lihat</a>
 															</div>
 														</div>
 													</div>
