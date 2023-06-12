@@ -17,7 +17,7 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- PAGE TITLE HERE -->
-	<title>Dompet : Payment Admin Template</title>
+	<title>Kalopsia</title>
 
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
@@ -39,6 +39,10 @@
         }
         .btn-outline-danger:checked{
             color:white !important;
+        }
+		.brand-logo img {
+			max-width: 100%;
+			height: auto;
         }
 </style>
 
@@ -230,8 +234,8 @@
                         <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Admin</b></span>
-                                <small class="text-end font-w400">admin@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
+                                <small class="text-end font-w400">Anggie@gmail.com</small>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
@@ -302,11 +306,7 @@
                     </li>
 
                 </ul>
-                <div class="copyright">
-                    <p><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12">Made with <span class="heart"></span> by
-                        Kalopsia</p>
-                </div>
+               
             </div>
         </div>
         <!--**********************************
@@ -314,41 +314,38 @@
         ***********************************-->
         <div class="content-body">
 			<div class="container-fluid">
-
-						<div class="row">
-							<div class="col-md-4 mb-4" class="ellipsis-vertical-outline;" style="margin-bottom: 20px;">
-								<div class="card progress-card">
-
-									<div class="card-body d-flex; justify-content: center;" >
-										<div class="me-auto">
-                                            <i class="bi bi-calendar-check"></i>
-                                            <span>7 Mei 2023</span>
-										</div>
-                                        <div class="jihan-fira" style="margin-top: 2%;"  >
-                                            <p class="gray-text">Total Pendapatan : 2.500.000</p>
-                                            <p class="gray-text">Total Potongan   : 50.000</p>
-                                        </div>
-                                        <hr>
-                                        <div class="hitam">
-                                            <span>Take Home Pay</span>
-										</div>
-										<p class="THP">Rp. 2.450.000</p>
-										<button type="button" class="btn btn-rounded btn-danger btn-xs" style="font-size: 14px;">Cetak Bukti Pembayaran</button>
-									</div>
+				<div class="row">
+					<div class="col-md-4 mb-4" class="ellipsis-vertical-outline;" style="margin-bottom: 20px;">
+						<div class="card progress-card">
+							<div class="card-body d-flex; justify-content: center;" >
+								<div class="me-auto">
+                                    <i class="bi bi-calendar-check"></i>
+                                    <span>7 Mei 2023</span>
 								</div>
+                                <div class="jihan-fira" style="margin-top: 2%;"  >
+                                    <p class="gray-text">Total Pendapatan : 2.500.000</p>
+                                    <p class="gray-text">Total Potongan   : 50.000</p>
+                                </div>
+                                <hr>
+                                <div class="hitam">
+                                    <span>Take Home Pay</span>
+								</div>
+								<p class="THP">Rp. 2.450.000</p>
+								<button type="button" class="btn btn-rounded btn-danger btn-xs" style="font-size: 14px;">Cetak Bukti Pembayaran</button>
 							</div>
-							<div class="col-md-4 mb-4" class="ellipsis-vertical-outline;" style="margin-bottom: 20px;">
-								<div class="card progress-card">
-
-									<div class="card-body d-flex; justify-content: center;" >
-										<div class="me-auto">
-                                            <i class="bi bi-calendar-check"></i>
-                                            <span>7 Juni 2023</span>
-										</div>
-                                        <div class="jihan-fira" style="margin-top: 2%;"  >
-                                            <p class="gray-text">Total Pendapatan : 2.500.000</p>
-                                            <p class="gray-text">Total Potongan   : 50.000</p>
-                                        </div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4" class="ellipsis-vertical-outline;" style="margin-bottom: 20px;">
+						<div class="card progress-card">
+							<div class="card-body d-flex; justify-content: center;" >
+								<div class="me-auto">
+                                    <i class="bi bi-calendar-check"></i>
+                                    <span>7 Juni 2023</span>
+								</div>
+                                <div class="jihan-fira" style="margin-top: 2%;"  >
+                                    <p class="gray-text">Total Pendapatan : 2.500.000</p>
+                                    <p class="gray-text">Total Potongan   : 50.000</p>
+                                </div>
                                         <hr>
                                         <div class="hitam">
                                             <span>Take Home Pay</span>
@@ -362,83 +359,83 @@
 													<div class="modal-content">
 														<div class="modal-header">
 															<div class="img_cont">
-																<img src="images/logokalopsia.png" class="rounded-circle user_img" alt="Logo Kalopsia" style="width: 50%;">
+																<img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png" class="rounded-circle user_img" alt="Logo Kalopsia" style="width: 50%;">
 																<span class="online_icon"></span>
 															</div>
 															<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 														</div>
-														<div class="modal-body">
-															<h6 class="text-secondary">PT. Freeport</h6>
+														<div class="modal-body" >
+															<h6 class="text-muted">PT. Freeport</h6>
 															<hr>
-															<h6 class="text-secondary">Slip gaji</h6>
-															<h6 class="text-secondary">Periode : 1 Mei 2023 - 31 Mei 2023</h6>
+															<h6 class="text-muted">Slip gaji</h6>
+															<h6 class="text-muted">Periode : 1 Mei 2023 - 31 Mei 2023</h6>
 															<hr>
 															<div class="row">
 															<div class="col-md-6">
 																<div class="row">
 																	<div class="col-4">
-																<div class="form-check custom-checkbox text-secondary">
+																<div class="form-check custom-checkbox text-muted">
 																	<label class="form-check-label" for="save-info">Nama</label>
 																</div>
 															</div>
 															<div class="col-1">
-																<div class="form-check custom-checkbox text-secondary ">
+																<div class="form-check custom-checkbox text-muted ">
 																	<label class="form-check-label" for="save-info">:</label>
 																</div>
 															</div>
 															<div class="col-7">
-																<div class="form-check custom-checkbox ml-8 text-secondary">
+																<div class="form-check custom-checkbox ml-8 text-muted">
 																	<label class="form-check-label" for="save-info">Huda</label>
 																</div>
 															</div>
 															</div>
 															<div class="row">
 																<div class="col-4">
-															<div class="form-check custom-checkbox text-secondary">
+															<div class="form-check custom-checkbox text-muted">
 																<label class="form-check-label" for="save-info">ID Karyawan</label>
 															</div>
 														</div>
 														<div class="col-1">
-															<div class="form-check custom-checkbox text-secondary ">
+															<div class="form-check custom-checkbox text-muted ">
 																<label class="form-check-label" for="save-info">:</label>
 															</div>
 														</div>
 														<div class="col-7">
-															<div class="form-check custom-checkbox ml-8 text-secondary">
+															<div class="form-check custom-checkbox ml-8 text-muted">
 																<label class="form-check-label" for="save-info">098765432</label>
 															</div>
 														</div>
 														</div>
 														<div class="row">
 															<div class="col-4">
-														<div class="form-check custom-checkbox text-secondary">
+														<div class="form-check custom-checkbox text-muted">
 															<label class="form-check-label" for="save-info">Bagian</label>
 														</div>
 													</div>
 													<div class="col-1">
-														<div class="form-check custom-checkbox text-secondary ">
+														<div class="form-check custom-checkbox text-muted ">
 															<label class="form-check-label" for="save-info">:</label>
 														</div>
 													</div>
 													<div class="col-7">
-														<div class="form-check custom-checkbox ml-8 text-secondary">
+														<div class="form-check custom-checkbox ml-8 text-muted">
 															<label class="form-check-label" for="save-info">IT Division</label>
 														</div>
 													</div>
 													</div>
 													<div class="row">
 														<div class="col-4">
-													<div class="form-check custom-checkbox text-secondary ">
+													<div class="form-check custom-checkbox text-muted ">
 														<label class="form-check-label" for="save-info">Job Title</label>
 													</div>
 												</div>
 												<div class="col-1">
-													<div class="form-check custom-checkbox text-secondary">
+													<div class="form-check custom-checkbox text-muted">
 														<label class="form-check-label" for="save-info">:</label>
 													</div>
 												</div>
 												<div class="col-7">
-													<div class="form-check custom-checkbox ml-8 text-secondary">
+													<div class="form-check custom-checkbox ml-8 text-muted">
 														<label class="form-check-label" for="save-info">Anggota Divisi</label>
 													</div>
 												</div>
@@ -447,34 +444,34 @@
 													<div class="col-md-6">
 														<div class="row">
 														<div class="col-4">
-														<div class="form-check custom-checkbox text-secondary">
+														<div class="form-check custom-checkbox text-muted">
 															<label class="form-check-label" for="save-info">Status Karyawan</label>
 														</div>
 														</div>
 															<div class="col-1">
-																<div class="form-check custom-checkbox text-secondary">
+																<div class="form-check custom-checkbox text-muted">
 																	<label class="form-check-label" for="save-info">:</label>
 																</div>
 															</div>
 															<div class="col-7">
-																<div class="form-check custom-checkbox ml-8 text-secondary">
+																<div class="form-check custom-checkbox ml-8 text-muted">
 																	<label class="form-check-label" for="save-info">Karyawan tetap</label>
 																</div>
 															</div>
 														</div>
 															<div class="row">
 																<div class="col-4">
-															<div class="form-check custom-checkbox text-secondary">
+															<div class="form-check custom-checkbox text-muted">
 																<label class="form-check-label" for="save-info">Tanggal Bergabung</label>
 															</div>
 														</div>
 														<div class="col-1">
-															<div class="form-check custom-checkbox text-secondary">
+															<div class="form-check custom-checkbox text-muted">
 																<label class="form-check-label" for="save-info">:</label>
 															</div>
 														</div>
 														<div class="col-7">
-															<div class="form-check custom-checkbox ml-8 text-secondary">
+															<div class="form-check custom-checkbox ml-8 text-muted">
 																<label class="form-check-label" for="save-info">20 April 2023</label>
 															</div>
 														</div>
@@ -487,30 +484,30 @@
 																		<table class="table table-responsive-sm" style="overflow: hidden;">
 																			<thead>
 																				<tr>
-																					<th class="text-secondary">Komponen Pendapatan</th>
-																					<th class="text-secondary">Jumlah</th>
+																					<th class="text-muted">Komponen Pendapatan</th>
+																					<th class="text-muted">Jumlah</th>
 																				</tr>
 																			</thead>
 																			<tbody>
 																				<tr>
-																					<th class="text-secondary">Gaji Pokok</th>
-																					<td class="text-secondary">Rp.430.000</td>
+																					<th class="text-muted">Gaji Pokok</th>
+																					<td class="text-muted">Rp.430.000</td>
 																				</tr>
 																				<tr>
-																					<th class="text-secondary">Uang Lembur</th>
-																					<td class="text-secondary">Rp.0</td>
+																					<th class="text-muted">Uang Lembur</th>
+																					<td class="text-muted">Rp.0</td>
 																				</tr>
 																				<tr>
-																					<th class="text-secondary">Tunjangan Pulsa</th>
-																					<td class="text-secondary">Rp.42.857</td>
+																					<th class="text-muted">Tunjangan Pulsa</th>
+																					<td class="text-muted">Rp.42.857</td>
 																				</tr>
 																				<tr>
-																					<th class="text-secondary">Tunjangan lainnya</th>
-																					<td class="text-secondary">Rp.250.000</td>
+																					<th class="text-muted">Tunjangan lainnya</th>
+																					<td class="text-muted">Rp.250.000</td>
 																				</tr>
 																				<tr>
-																					<th class="text-secondary">Total Pendapatan</th>
-																					<td class="text-secondary">Rp.478.786</td>
+																					<th class="text-muted">Total Pendapatan</th>
+																					<td class="text-muted">Rp.478.786</td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -521,30 +518,30 @@
 																		<table class="table table-responsive-sm" style="overflow: hidden;">
 																			<thead>
 																				<tr style="font-size: 14px;">
-																					<th class="text-secondary">Komponen Potongan</th>
-																					<th class="text-secondary">Jumlah</th>
+																					<th class="text-muted">Komponen Potongan</th>
+																					<th class="text-muted">Jumlah</th>
 																				</tr>
 																			</thead>
 																			<tbody>
 																				<tr>
-																					<th class="text-secondary">Koperasi</th>
-																					<td class="text-secondary">Rp.17.423</td>
+																					<th class="text-muted">Koperasi</th>
+																					<td class="text-muted">Rp.17.423</td>
 																				</tr>
 																				<tr>
-																					<th class="text-secondary">Denda Keterlambatan</th>
-																					<td class="text-secondary">Rp.5.523</td>
+																					<th class="text-muted">Denda Keterlambatan</th>
+																					<td class="text-muted">Rp.5.523</td>
 																				</tr>
 																				<tr>
-																					<th class="text-secondary">Potongan Lainnya</th>
-																					<td class="text-secondary">Rp.0</td>
+																					<th class="text-muted">Potongan Lainnya</th>
+																					<td class="text-muted">Rp.0</td>
 																				</tr>
 																				<tr>
-																					<th class="text-secondary">-</th>
-																					<td class="text-secondary">-</td>
+																					<th class="text-muted">-</th>
+																					<td class="text-muted">-</td>
 																				</tr>
 																				<tr>
-																					<th class="text-secondary">Total Potongan</th>
-																					<td class="text-secondary">Rp. 23.765</td>
+																					<th class="text-muted">Total Potongan</th>
+																					<td class="text-muted">Rp. 23.765</td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -554,51 +551,51 @@
 															<div class="col-xl-6">
 															<div class="row col-12">
 																	<div class="col-5">
-																<div class="form-check custom-checkbox text-secondary ">
+																<div class="form-check custom-checkbox text-muted ">
 																	<label class="form-check-label" for="save-info">Nama Bank</label>
 																</div>
 															</div>
 															<div class="col-1">
-																<div class="form-check custom-checkbox text-secondary">
+																<div class="form-check custom-checkbox text-muted">
 																	<label class="form-check-label" for="save-info">:</label>
 																</div>
 															</div>
 															<div class="col-6">
-																<div class="form-check custom-checkbox ml-8 text-secondary ">
+																<div class="form-check custom-checkbox ml-8 text-muted ">
 																	<label class="form-check-label" for="save-info">BRI</label>
 																</div>
 															</div>
 															</div>
 															<div class="row col-12">
 																<div class="col-5">
-															<div class="form-check custom-checkbox text-secondary">
+															<div class="form-check custom-checkbox text-muted">
 																<label class="form-check-label" for="save-info">No Rekenening </label>
 															</div>
 														</div>
 														<div class="col-1">
-															<div class="form-check custom-checkbox text-secondary">
+															<div class="form-check custom-checkbox text-muted">
 																<label class="form-check-label" for="save-info">:</label>
 															</div>
 														</div>
 														<div class="col-6">
-															<div class="form-check custom-checkbox ml-6 text-secondary">
+															<div class="form-check custom-checkbox ml-6 text-muted">
 																<label class="form-check-label" for="save-info">0987687654123</label>
 															</div>
 														</div>
 															</div>
 															<div class="row col-12">
 															<div class="col-5">
-														<div class="form-check custom-checkbox text-secondary">
+														<div class="form-check custom-checkbox text-muted">
 															<label class="form-check-label" for="save-info">Nama Pemilik Rekening</label>
 														</div>
 													</div>
 													<div class="col-1">
-														<div class="form-check custom-checkbox text-secondary">
+														<div class="form-check custom-checkbox text-muted">
 															<label class="form-check-label" for="save-info">:</label>
 														</div>
 													</div>
 													<div class="col-6">
-														<div class="form-check custom-checkbox ml-6 text-secondary">
+														<div class="form-check custom-checkbox ml-6 text-muted">
 															<label class="form-check-label" for="save-info">0987687654123</label>
 														</div>
 													</div>
@@ -607,17 +604,17 @@
 														<div class="col-xl-6">
 															<div class="row col-12">
 																<div class="col-5">
-															<div class="form-check custom-checkbox text-secondary">
+															<div class="form-check custom-checkbox text-muted">
 																<label class="form-check-label" for="save-info">Take home pay</label>
 															</div>
 														</div>
 														<div class="col-1">
-															<div class="form-check custom-checkbox text-secondary">
+															<div class="form-check custom-checkbox text-muted">
 																<label class="form-check-label" for="save-info">:</label>
 															</div>
 														</div>
 														<div class="col-6">
-															<div class="form-check custom-checkbox ml-8 text-secondary">
+															<div class="form-check custom-checkbox ml-8 text-muted">
 																<label class="form-check-label" for="save-info">Rp. 456.000</label>
 															</div>
 														</div>
@@ -661,6 +658,7 @@
 
 					</div>
 				</div>
+				
 
              <!--**********************************
             Footer start

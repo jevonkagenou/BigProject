@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Dompet : Payment Admin Template</title>
+    <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" >
@@ -42,6 +42,10 @@
         }
         .red-hover:hover{
             color:#EE3232 !important;
+        }
+        .brand-logo img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 
@@ -206,11 +210,7 @@
                     </li>
 
                 </ul>
-                <div class="copyright">
-                    <p><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12">Made with <span class="heart"></span> by
-                        Kalopsia</p>
-                </div>
+               
             </div>
         </div>
 
@@ -417,18 +417,7 @@
         ***********************************-->
 
 
-        <!--**********************************
-            Footer start
-        ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2022</p>
-            </div>
-        </div>
-        <!--**********************************
-            Footer end
-        ***********************************-->
-
+       
         <!--**********************************
            Support ticket button start
         ***********************************-->
@@ -442,6 +431,17 @@
     <!--**********************************
         Main wrapper end
     ***********************************-->
+    <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2022</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
 
     <!--**********************************
         Scripts
