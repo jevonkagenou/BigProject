@@ -63,7 +63,12 @@
 		.hover-red:hover{
             color: #EE3232 !important;
         }
+        .brand-logo img {
+        max-width: 80%;
+        height: auto;
+        }
 	</style>
+    <div id="main-wrapper">
 		<div class="nav-header ">
             <a href="index.html" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
@@ -985,7 +990,7 @@
 				Content body end
 				***********************************-->
 
-
+            </div>
         <!--**********************************
             Footer start
    ***********************************-->

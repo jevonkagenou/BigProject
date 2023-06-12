@@ -65,7 +65,12 @@
         .dlabnav .metismenu a{
             color: #9FA4A6;
         }
+        .brand-logo img {
+        max-width: 80%;
+        height: auto;
+        }
     </style>
+    <div id="main-wrapper">
     <div class="nav-header ">
         <a href="index.html" class="brand-logo">
             <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
@@ -1531,6 +1536,7 @@
             </div>
         </div>
     </div>
+</div>
     <!--**********************************
             Content body end
         ***********************************-->
