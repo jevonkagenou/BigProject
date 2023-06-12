@@ -46,7 +46,12 @@
         .dlabnav .metismenu a{
             color: #9FA4A6;
         }
+        .brand-logo img {
+        max-width: 80%;
+        height: auto;
+        }
 	</style>
+     <div id="main-wrapper">
 		<div class="nav-header ">
             <a href="index.html" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
@@ -1036,6 +1041,7 @@
     <!--**********************************
         Scripts
     ***********************************-->
+    </div>
     <div class="footer">
         <div class="copyright">
             <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a> 2022</p>
