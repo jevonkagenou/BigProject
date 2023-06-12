@@ -18,10 +18,10 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Dompet : Payment Admin Template</title>
+    <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png" />
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -50,6 +50,10 @@
         max-width: 100%;
         height: auto;
         }
+        .brand-logo img {
+        max-width: 80%;
+        height: auto;
+        }
     </style>
 
 
@@ -294,26 +298,26 @@
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <th>No</th>
-                                                <th style="text-align: center;">Tipe</th>
-                                                <th style="text-align: center;">Waktu</th>
-                                                <th style="text-align: center;">Status</th>
+                                                <th>Tipe</th>
+                                                <th>Waktu</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td>1</td>
-                                                <td style="text-align: center;">Cuti</td>
-                                                <td style="text-align: center;">08/05/2023 07:45</td>
-                                                <td style="text-align: center;"><span
+                                                <td>Cuti</td>
+                                                <td>08/05/2023 07:45</td>
+                                                <td><span
                                                         class="badge light badge-warning">Proses</span></td>
                                             </tr>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td>2</td>
-                                                <td style="text-align: center;">Izin Sakit</td>
-                                                <td style="text-align: center;">08/05/2023 07:45</td>
-                                                <td style="text-align: center;"><span
+                                                <td>Izin Sakit</td>
+                                                <td>08/05/2023 07:45</td>
+                                                <td><span
                                                         class="badge light badge-warning">Proses</span></td>
 
                                             </tr>
@@ -349,7 +353,7 @@
         <div class="footer">
             <div class="copyright">
                 <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/"
-                        target="_blank">DexignLab</a> 2022</p>
+                        target="_blank">Kalopsia</a> 2022</p>
             </div>
         </div>
 
