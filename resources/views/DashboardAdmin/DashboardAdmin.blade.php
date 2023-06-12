@@ -993,7 +993,7 @@
                                                             <tr>
                                                                 <th>#</th>
                                                                 <th>Nama</th>
-                                                                <th>Jenis Izin</th>
+                                                                <th class="text-center">Jenis Izin</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
