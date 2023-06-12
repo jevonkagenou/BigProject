@@ -1787,7 +1787,7 @@ progress {
     background-color: #f6f6f6;
     border-color: #ade7e2;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(91, 207, 197, 0.25); }
+    box-shadow: 0 0 0 0.25rem rgba(247, 43, 80, 0.1); }
   .form-control::-webkit-date-and-time-value {
     height: 1.5em; }
   .form-control::placeholder {
