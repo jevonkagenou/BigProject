@@ -17,13 +17,13 @@
 	<!-- PAGE TITLE HERE -->
 	<title>Kalopsia</title>
 
-	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
+    <!-- FAVICONS ICON -->
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png" />
     <!-- Datatable -->
-    <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{asset('vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
     <!-- Custom Stylesheet -->
-	<link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{asset('vendor/jquery-nice-select/css/nice-select.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -54,19 +54,25 @@
         .dlabnav .metismenu{
             padding: 0 30px !important;
         }
+        .brand-logo img {
+        max-width: 80%;
+        height: auto;
+        }
 	</style>
-		<div class="nav-header ">
-            <a href="index.html" class="brand-logo">
-                <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
-            </a>
 
+    <div id="main-wrapper">
+
+		<div class="nav-header">
+            <a href="index.html" class="brand-logo">
+			<img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
+            </a>
             <div class="nav-control">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
                 </div>
             </div>
         </div>
-
+    
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -830,17 +836,12 @@
                     </li>
 
                 </ul>
-                <div class="copyright">
-                    <p class=""><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12 ">Made with <span class="heart" style="color: white"></span> by
-                        Kalopsia</p>
-                </div>
             </div>
         </div>
         <!--**********************************
             Sidebar end
         ***********************************-->
-
+    </div>
 <Style>
     .border {
         display: inline-block;

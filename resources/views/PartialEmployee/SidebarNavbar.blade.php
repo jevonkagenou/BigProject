@@ -20,7 +20,7 @@
     <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png" />
 
     <link href="{{ asset('vendor/fullcalendar/css/main.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
@@ -45,6 +45,10 @@
         <style>.dropdown-menu.center {
             left: 50% !important;
             transform: translateX(-50%) !important;
+        }
+        .brand-logo img {
+        max-width: 100%;
+        height: auto;
         }
     </style>
 
