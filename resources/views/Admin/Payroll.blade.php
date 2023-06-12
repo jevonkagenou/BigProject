@@ -34,7 +34,7 @@
 	<title>Kalopsia</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png"  />
     <!-- Datatable -->
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -1539,12 +1539,7 @@
     <!--**********************************
             Footer start
         ***********************************-->
-    <div class="footer">
-        <div class="copyright">
-            <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/"
-                    target="_blank">DexignLab</a> 2022</p>
-        </div>
-    </div>
+   
     <!--**********************************
             Footer end
         ***********************************-->
@@ -1565,6 +1560,12 @@
     <!--**********************************
         Scripts
     ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/"
+                    target="_blank">Kalopsia</a> 2022</p>
+        </div>
+    </div>
     <!-- Required vendors -->
     <script src="vendor/global/global.min.js"></script>
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>

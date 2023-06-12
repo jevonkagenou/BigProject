@@ -127,7 +127,12 @@
     </div>
 </div>
 
-
+<div class="footer">
+    <div class="copyright">
+        <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/"
+                target="_blank">Kalopsia</a> 2022</p>
+    </div>
+</div>
 <script src="{{ asset('vendor/global/global.min.js') }}"></script>
 <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>

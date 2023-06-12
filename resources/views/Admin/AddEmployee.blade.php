@@ -1068,11 +1068,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2022</p>
-            </div>
-        </div>
+       
         <!--**********************************
             Footer end
         ***********************************-->
@@ -1094,6 +1090,11 @@
     <!--**********************************
         Scripts
     ***********************************-->
+     <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a> 2022</p>
+            </div>
+        </div>
     <!-- Required vendors -->
 <script src="{{ asset('vendor/global/global.min.js') }}"></script>
 <script src="{{ asset('vendor/moment/moment.min.js') }}"></script>
