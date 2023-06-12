@@ -15,7 +15,7 @@
 	<title>Kalopsia</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png"  />
+	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png"  />
     <!-- Datatable -->
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
