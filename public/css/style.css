@@ -9009,7 +9009,7 @@ label {
   z-index: 999; }
 
 .hamburger .line {
-  background: white;
+  background: black;
   display: block;
   height: 3px;
   border-radius: 3px;

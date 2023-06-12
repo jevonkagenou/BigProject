@@ -85,10 +85,10 @@
             <a href="index.html" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
             </a>
+            <div class="hamburger">
+                <span class="line"></span><span class="line"></span><span class="line"></span>
+            </div>
             <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
             </div>
         </div>
         <!--**********************************
@@ -357,6 +357,16 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Izin & Cuti</h4>
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mt-2 text-end">
+                                    <!-- <div class="col-lg-4 col-12  text-end"> -->
+                                    <button type="button" class="btn btn-danger btn-xs"
+                                        data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg"><i
+                                            class="fa fa-plus color-info"></i>
+                                        <span class="text-center">
+                                            Tambah Pengajuan
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -499,13 +509,13 @@
                                     </div>
                                     <hr>
                                     <h6 class="modal-title">Keterangan</h6><br>
-                                    <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                                    <textarea class="form-control" name="" id="editor" cols="30" rows="10"></textarea>
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger light btn-xs"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-success btn-xs">Save changes</button>
+                                    <button type="button" class="btn btn-default btn-xs"
+                                        data-bs-dismiss="modal">Batal</button>
+                                    <button type="button" class="btn btn-danger btn-xs">Simpan</button>
                                 </div>
                             </div>
                         </div>
@@ -703,6 +713,11 @@
     <script src="js/dlabnav-init.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
+
+    <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace('editor');
+    </script>
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
