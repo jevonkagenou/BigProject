@@ -18,7 +18,7 @@
     <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png"  />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png"  />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="keywords" content="admin, dashboard" />
 	<meta name="author" content="DexignZone" />

@@ -18,10 +18,10 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Dompet : Payment Admin Template</title>
+    <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png"  />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png " />
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -46,6 +46,10 @@
         .announcement{
             color: #EE3232 !important;
         }
+        .brand-logo img {
+        max-width: 80%;
+        height: auto;
+        }
     </style>
 
 
@@ -99,7 +103,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                {{ $title }}
+                                Beranda
                             </div>
                         </div>
                         <div class="justify-content-end">
@@ -168,7 +172,7 @@
                     </li>
                     <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
                             <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" fill="black"/></svg></i>
-                            <span class="nav-text">Dashboard</span>
+                            <span class="nav-text">Beranda</span>
                         </a>
 
 
@@ -441,7 +445,7 @@
         <div class="footer">
 
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2022</p>
+                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a> 2022</p>
             </div>
         </div>
         <!--**********************************

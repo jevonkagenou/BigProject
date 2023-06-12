@@ -12479,7 +12479,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .dlabnav .metismenu > li > a.has-arrow:after {
         display: none; }
     [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .dlabnav .metismenu > li.mm-active > a {
-      background: var(--rgba-primary-1);
+      background: rgba(247, 43, 80, 0.1);
       border-radius: 3rem; }
       [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .dlabnav .metismenu > li.mm-active > a i {
         color: var(--primary);
@@ -12489,7 +12489,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       top: auto; }
     [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .dlabnav .metismenu > li:hover > a {
       border-radius: 3rem;
-      background: var(--rgba-primary-1);
+      background: rgba(247, 43, 80, 0.1);
       color: var(--primary); }
       [data-theme-version="dark"][data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .dlabnav .metismenu > li:hover > a {
         background: #212130; }

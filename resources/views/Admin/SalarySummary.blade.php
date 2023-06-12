@@ -18,7 +18,7 @@
 	<title>Kalopsia</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png"  />
+	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png"  />
     <!-- Datatable -->
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -54,7 +54,12 @@
         .dlabnav .metismenu{
             padding: 0 30px !important;
         }
+        .brand-logo img {
+        max-width: 80%;
+        height: auto;
+        }
 	</style>
+    <div id="main-wrapper">
 		<div class="nav-header ">
             <a href="index.html" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
@@ -990,6 +995,7 @@
 <!--**********************************
             Footer start
         ***********************************-->
+    </div>
 @extends('PartialAdmin.footer')
 <!--**********************************
             Footer end

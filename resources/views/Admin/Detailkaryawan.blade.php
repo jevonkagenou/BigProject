@@ -20,7 +20,7 @@
 	<title>Kalopsia</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png" />
 	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 	<style>

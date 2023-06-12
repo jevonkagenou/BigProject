@@ -21,7 +21,7 @@
     <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" >
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png" >
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -44,7 +44,7 @@
             color:#EE3232 !important;
         }
         .brand-logo img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
         }
     </style>
@@ -212,7 +212,7 @@
                 </ul>
                
             </div>
-        </div>
+    </div>
 
         {{-- Chatbox --}}
         <div class="chatbox">
@@ -364,28 +364,28 @@
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <th>No</th>
 
-                                                <th style="text-align: center;">Tipe</th>
-                                                <th style="text-align: center;">Waktu</th>
-                                                <th style="text-align: center;">Status</th>
+                                                <th>Tipe</th>
+                                                <th>Waktu</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td>1</td>
 
-                                                <td style="text-align: center;">Absen Masuk</td>
-                                                <td style="text-align: center;">08/05/2023 07:45</td>
-                                                <td style="text-align: center;"><span class="badge badge-sm light badge-danger">Ditolak</span></td>
+                                                <td>Absen Masuk</td>
+                                                <td>08/05/2023 07:45</td>
+                                                <td><span class="badge badge-sm light badge-danger">Ditolak</span></td>
                                             </tr>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td>2</td>
 
-                                                <td style="text-align: center;">Absen Keluar</td>
-                                                <td style="text-align: center;">08/05/2023 07:45</td>
-                                                <td style="text-align: center;"><span class="badge badge-sm light badge-success">Disetujui</span></td>
+                                                <td>Absen Keluar</td>
+                                                <td>08/05/2023 07:45</td>
+                                                <td><span class="badge badge-sm light badge-success">Disetujui</span></td>
 
                                             </tr>
                                              </tbody>
@@ -436,7 +436,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2022</p>
+                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a> 2022</p>
             </div>
         </div>
         <!--**********************************
