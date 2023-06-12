@@ -103,6 +103,26 @@
                     </div>
                 </a>
             </div>
+            <div class="col-xl-12 col-xxl-4">
+                <a href="/Validation">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-xl-12">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img class="img-responsive" src="images/foto5.png" alt="">
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <strong>
+                                            <h4>Validasi</h4>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
