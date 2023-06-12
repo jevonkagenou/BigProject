@@ -18,10 +18,10 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Dompet : Payment Admin Template</title>
+    <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png" />
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -48,6 +48,10 @@
         .btn-outline-danger:checked {
             color: white !important;
         }
+        .brand-logo img {
+        max-width: 80%;
+        height: auto;
+        }
     </style>
 
 
@@ -85,10 +89,10 @@
             <a href="index.html" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
             </a>
-            <div class="hamburger">
-                <span class="line"></span><span class="line"></span><span class="line"></span>
-            </div>
             <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
             </div>
         </div>
         <!--**********************************
@@ -245,14 +249,10 @@
                     </li>
 
                 </ul>
-                <div class="copyright">
-                    <p><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12">Made with <span class="heart"></span> by
-                        Kalopsia</p>
-                </div>
             </div>
 
         </div>
+    
 
         {{-- Chatbox --}}
         <div class="chatbox">
@@ -670,10 +670,11 @@
         <!--**********************************
             Footer start
         ***********************************-->
+    </div>
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/"
-                        target="_blank">DexignLab</a> 2022</p>
+                <p>Copyright © Kalopsia &amp; Developed by <a href="https://dexignlab.com/"
+                        target="_blank">Kalopsia</a> 2023</p>
             </div>
         </div>
         <!--**********************************
@@ -689,7 +690,7 @@
         ***********************************-->
 
 
-    </div>
+    
     <!--**********************************
         Main wrapper end
     ***********************************-->
