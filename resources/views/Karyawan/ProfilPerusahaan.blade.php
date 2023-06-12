@@ -53,7 +53,7 @@
             color: #EE3232 !important;
         }
         .brand-logo img {
-        max-width: 100%;
+        max-width: 80%;
         height: auto;
         }
     </style>
