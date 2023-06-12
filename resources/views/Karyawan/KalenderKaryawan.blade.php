@@ -40,6 +40,10 @@
         .btn-outline-danger:checked{
             color:white !important;
         }
+        .brand-logo img {
+        max-width: 100%;
+        height: auto;
+        }
 </style>
 
 <body>
@@ -230,8 +234,8 @@
                         <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Admin</b></span>
-                                <small class="text-end font-w400">admin@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
+                                <small class="text-end font-w400">Anggie@gmail.com</small>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
@@ -302,11 +306,7 @@
                     </li>
 
                 </ul>
-                <div class="copyright">
-                    <p><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12">Made with <span class="heart"></span> by
-                        Kalopsia</p>
-                </div>
+                
             </div>
         </div>
         <!--**********************************

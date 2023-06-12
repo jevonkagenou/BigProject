@@ -52,7 +52,10 @@
         .red-hover:hover{
             color: #EE3232 !important;
         }
-
+        .brand-logo img {
+        max-width: 100%;
+        height: auto;
+        }
     </style>
 
     <!--*******************
@@ -857,11 +860,7 @@
                     </li>
 
                 </ul>
-                <div class="copyright">
-                    <p><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12">Made with <span class="heart"></span> by
-                        Kalopsia</p>
-                </div>
+                
             </div>
         </div>
         {{-- Chatbox --}}
@@ -1048,11 +1047,6 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a> 2022</p>
-            </div>
-        </div>
         <!--**********************************
             Footer end
         ***********************************-->
@@ -1076,6 +1070,11 @@
     <!--**********************************
         Scripts
     ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a> 2022</p>
+        </div>
+    </div>
     <!-- Required vendors -->
     <script src="{{ asset('vendor/global/global.min.js') }}"></script>
 	<script src="{{ asset('vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>

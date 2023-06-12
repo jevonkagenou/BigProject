@@ -1252,7 +1252,7 @@
                                                 </td>
                                                 <td>2.434.678</td>
                                             </tr>
-                                            {{-- <tr>
+                                            <tr>
 									  <td colspan="5">
 										<div
 										  id="collapse11Two"
@@ -1505,7 +1505,7 @@
 										  </div>
 										</div>
 									  </td>
-									</tr> --}}
+									</tr>
                                         </tbody>
                                     </table>
                                 </div>

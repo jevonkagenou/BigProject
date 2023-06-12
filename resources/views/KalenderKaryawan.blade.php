@@ -949,8 +949,8 @@
                         <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                             <img src="images/profile/pic1.jpg" width="20" alt="" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 text-white">Hi,<b>Admin</b></span>
-                                <small class="text-end font-w400 text-white">admin@gmail.com</small>
+                                <span class="font-w600 text-white">Hi,<b>Anggie</b></span>
+                                <small class="text-end font-w400 text-white">Anggie@gmail.com</small>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
