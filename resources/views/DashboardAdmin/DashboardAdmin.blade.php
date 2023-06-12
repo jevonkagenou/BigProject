@@ -64,7 +64,7 @@
 
 		<div class="nav-header">
             <a href="index.html" class="brand-logo" >
-                <img id="logo" src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
+                <img id="logo" src="https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg">
             </a>
             <div class="nav-control" onclick="changeLogo()">
                 <div class="hamburger">
@@ -1210,7 +1210,7 @@
 </script>
 <script>
     var isAlternateLogo = false;
-    var originalLogoSrc = "https://i.postimg.cc/ncJBxjjX/logokalopsia.png";
+    var originalLogoSrc = "https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg";
     var alternateLogoSrc = "https://i.postimg.cc/HW5s0YJf/kbaru.png";
 
     function changeLogo() {
