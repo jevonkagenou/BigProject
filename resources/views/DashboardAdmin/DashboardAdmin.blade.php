@@ -18,7 +18,7 @@
 	<title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png" />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/HW5s0YJf/kbaru.png"/>
     <!-- Datatable -->
     <link href="{{asset('vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -63,10 +63,10 @@
     <div id="main-wrapper">
 
 		<div class="nav-header">
-            <a href="index.html" class="brand-logo">
-			<img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
+            <a href="index.html" class="brand-logo" >
+                <img id="logo" src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
             </a>
-            <div class="nav-control">
+            <div class="nav-control" onclick="changeLogo()">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
                 </div>
@@ -1143,7 +1143,7 @@
                 click: function(chart, w, e) {}
             }
         },
-        colors: ['#CF0000', '#890596', '#1CC5DC'],
+        colors: ['#EE3232'],
         plotOptions: {
             bar: {
                 columnWidth: '45%',
@@ -1169,10 +1169,11 @@
             ],
             labels: {
                 style: {
+                    colors: ['#000000'],
                     // Dalam Code ini Length: 8 berfungsi untuk mengulangi warna sebanyak jumlah data dalam Categories //
-                    colors: Array.from({
-                        length: 8
-                    }, (_, index) => ['#CF0000', '#890596', '#1CC5DC'][index % 3]),
+                    // colors: Array.from({
+                    //     length: 8
+                    // }, (_, index) => ['#CF0000', '#890596', '#1CC5DC'][index % 3]),
                     fontSize: '12px'
                 }
             }
@@ -1206,4 +1207,21 @@
 
     var chart = new ApexCharts(document.querySelector("#chart_pie"), options);
     chart.render();
+</script>
+<script>
+    var isAlternateLogo = false;
+    var originalLogoSrc = "https://i.postimg.cc/ncJBxjjX/logokalopsia.png";
+    var alternateLogoSrc = "https://i.postimg.cc/HW5s0YJf/kbaru.png";
+
+    function changeLogo() {
+        var logo = document.getElementById("logo");
+
+        if (isAlternateLogo) {
+            logo.src = originalLogoSrc;
+            isAlternateLogo = false;
+        } else {
+            logo.src = alternateLogoSrc;
+            isAlternateLogo = true;
+        }
+    }
 </script>
