@@ -17,7 +17,7 @@
 	<title>Dompet : Payment Admin Template</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
+	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png"  />
     <!-- Datatable -->
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -48,7 +48,12 @@
         .dlabnav .metismenu a{
             color: #9FA4A6;
         }
+        .brand-logo img {
+        max-width: 100%;
+        height: auto;
+        }
 	</style>
+    <div id="main-wrapper">
 		<div class="nav-header ">
             <a href="index.html" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
@@ -848,17 +853,12 @@
                     </li>
 
                 </ul>
-                <div class="copyright">
-                    <p class=""><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12 ">Made with <span class="heart" style="color: white"></span> by
-                        Kalopsia</p>
-                </div>
             </div>
         </div>
         <!--**********************************
             Sidebar end
         ***********************************-->
-
+    </div>
 
     <style>
         .responsive-button {
@@ -895,7 +895,7 @@
 
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
-                                        <thead>
+                                        <thead class="text-center">
                                             <tr>
                                                 <th>
 													<div class="form-check custom-checkbox ms-2">
@@ -910,9 +910,9 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="text-center">
                                             <tr>
-                                                <td>
+                                                <td style="width: 5%">
 													<div class="form-check custom-checkbox ms-2">
 														<input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
 														<label class="form-check-label" for="customCheckBox2"></label>
@@ -1022,8 +1022,7 @@
                             </div>
                         </div>
                     </div>
-
-					</div>
+				</div>
             </div>
         </div>
         <!--**********************************

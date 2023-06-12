@@ -21,7 +21,7 @@
     <title>Dompet : Payment Admin Template</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/ncJBxjjX/logokalopsia.png"  />
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -209,13 +209,8 @@
                     </li>
 
                 </ul>
-                <div class="copyright">
-                    <p><strong>Kalopsia</strong> © 2022 All Rights Reserved</p>
-                    <p class="fs-12">Made with <span class="heart"></span> by
-                        Kalopsia</p>
-                </div>
             </div>
-        </div>
+</div>
 
         {{-- Chatbox --}}
         <div class="chatbox">
