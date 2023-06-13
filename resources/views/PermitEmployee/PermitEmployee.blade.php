@@ -48,10 +48,15 @@
         .btn-outline-danger:checked {
             color: white !important;
         }
+
         .brand-logo img {
-        max-width: 80%;
-        height: auto;
-        }
+            max-width: 80%;
+            height: auto;
+        }
+
+        .icon:active {
+            fill: #EE3232 !important;
+        }
     </style>
 
 
@@ -86,7 +91,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <a href="javascript:void(0)" style="cursor: auto;" class="brand-logo">
                 <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
             </a>
             <div class="nav-control">
@@ -195,8 +200,8 @@
 
                     </li>
                     <li><a class=" ai-icon red-hover" href="/PermitEmployee" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                                    width="48">
+                            <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" height="48"
+                                    viewBox="0 -960 960 960" width="48">
                                     <path
                                         d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z"
                                         fill="black" />
@@ -252,7 +257,7 @@
             </div>
 
         </div>
-    
+
 
         {{-- Chatbox --}}
         <div class="chatbox">
@@ -359,9 +364,8 @@
                                 <h4 class="card-title">Izin & Cuti</h4>
                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mt-2 text-end">
                                     <!-- <div class="col-lg-4 col-12  text-end"> -->
-                                    <button type="button" class="btn btn-danger btn-xs"
-                                        data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg"><i
-                                            class="fa fa-plus color-info"></i>
+                                    <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal"
+                                        data-bs-target=".bd-example-modal-lg"><i class="fa fa-plus color-info"></i>
                                         <span class="text-center">
                                             Tambah Pengajuan
                                         </span>
@@ -372,10 +376,10 @@
                                 <div class="row">
                                     <div class="mb-2">
                                         <!-- <div class="btn-group col-12"> -->
-                                        <div class="d-flex justify-content-between"
-                                            style="margin-left: -3.5%;">
+                                        <div class="d-flex justify-content-between" style="margin-left: -3.5%;">
                                             <!-- <div class="btn-group  col-lg-8  col-12"> -->
-                                            <div class="size-filter col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 btn-group btn-xs ">
+                                            <div
+                                                class="size-filter col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 btn-group btn-xs ">
                                                 <div class="btn-group btn-xs" role="group"
                                                     aria-label="Basic radio toggle button group">
                                                     <input type="radio" class="btn-check" name="btnradio"
@@ -394,7 +398,7 @@
                                                         for="btnradio3">Sakit</label>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-3 btn-xs" style="margin-left: 2%;">
+                                            <div class="col-xl-3 col-12 btn-xs justify-content-end">
                                                 <select class="default-select form-control wide align-items-center ">
                                                     <option>Semua</option>
                                                     <option>Menunggu</option>
@@ -420,7 +424,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr>    
 
                                                 <td>1</td>
                                                 <td>26/02/2020</td>
@@ -671,26 +675,26 @@
             Footer start
         ***********************************-->
     </div>
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright © Kalopsia &amp; Developed by <a href="https://dexignlab.com/"
-                        target="_blank">Kalopsia</a> 2023</p>
-            </div>
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright © Kalopsia &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a>
+                2023</p>
         </div>
-        <!--**********************************
+    </div>
+    <!--**********************************
             Footer end
         ***********************************-->
 
-        <!--**********************************
+    <!--**********************************
            Support ticket button start
         ***********************************-->
 
-        <!--**********************************
+    <!--**********************************
            Support ticket button end
         ***********************************-->
 
 
-    
+
     <!--**********************************
         Main wrapper end
     ***********************************-->

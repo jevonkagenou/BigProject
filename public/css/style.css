@@ -12473,7 +12473,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     transition: all 0.4s ease-in-out;
     padding: 0 18px; }
     [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .dlabnav .metismenu > li > a {
-      padding: 20px 18px;
+      padding: 15px 18px;
       text-align: center;
       border-radius: 3rem; }
       [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .dlabnav .metismenu > li > a.has-arrow:after {
