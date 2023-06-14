@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +22,7 @@
     <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png " />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
     <!-- Datatable -->
     <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -84,10 +85,10 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-			<img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
+            <a href="index.html" class="brand-logo" >
+                <img id="logo" src="https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg">
             </a>
-            <div class="nav-control">
+            <div class="nav-control" onclick="changeLogo()">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
                 </div>
@@ -470,6 +471,7 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
+   
     <script src="vendor/global/global.min.js"></script>
 	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
@@ -484,7 +486,23 @@
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
-
+    <script>
+        var isAlternateLogo = false;
+        var originalLogoSrc = "https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg";
+        var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
+    
+        function changeLogo() {
+            var logo = document.getElementById("logo");
+    
+            if (isAlternateLogo) {
+                logo.src = originalLogoSrc;
+                isAlternateLogo = false;
+            } else {
+                logo.src = alternateLogoSrc;
+                isAlternateLogo = true;
+            }
+        }
+    </script>
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/transaction-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:23 GMT -->
