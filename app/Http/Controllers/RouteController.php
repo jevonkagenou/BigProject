@@ -64,7 +64,9 @@ class RouteController extends Controller
         ]);
     }
     public function PayrolEmployee(){
-        return view('EmployeeDetails.PayrolEmployee');
+        return view('EmployeeDetails.PayrolEmployee',[
+            'tittle'=>'Detail Karyawan'
+        ]);
     }
     public function SummaryofComponentSalary(){
         return view('Admin.SummaryofComponentSalary',[
@@ -122,6 +124,11 @@ class RouteController extends Controller
 
     public function Employee(){
         return view('EmployeeDetails.Employee',[
+            'tittle'=>'Detail Karyawan'
+    ]);
+    }
+    public function SalaryAdjustment(){
+        return view('EmployeeDetails.SalaryAdjustment',[
             'tittle'=>'Detail Karyawan'
     ]);
     }
