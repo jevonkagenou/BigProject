@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,8 +84,8 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo" >
-                <img id="logo" src="https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg">
+            <a href="index.html" class="brand-logo">
+			<img id="logo" src="https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg">
             </a>
             <div class="nav-control" onclick="changeLogo()">
                 <div class="hamburger">
@@ -471,21 +470,6 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-   
-    <script src="vendor/global/global.min.js"></script>
-	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
-	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-	<!-- Apex Chart -->
-	<script src="vendor/apexchart/apexchart.js"></script>
-	<script src="js/dashboard/transaction-details.js"></script>
-	<!-- Datatable -->
-	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="js/plugins-init/datatables.init.js"></script>
-
-    <script src="js/custom.min.js"></script>
-	<script src="js/dlabnav-init.js"></script>
-	<script src="js/demo.js"></script>
-    <script src="js/styleSwitcher.js"></script>
     <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg";
@@ -503,6 +487,21 @@
             }
         }
     </script>
+    <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+	<script src="js/dashboard/transaction-details.js"></script>
+	<!-- Datatable -->
+	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="js/plugins-init/datatables.init.js"></script>
+
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/transaction-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:23 GMT -->
