@@ -18,7 +18,7 @@
 	<title>Kalopsia</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png"  />
+	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png"  />
     <!-- Datatable -->
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -54,13 +54,17 @@
         .dlabnav .metismenu{
             padding: 0 30px !important;
         }
+        .brand-logo img {
+        max-width: 80%;
+        height: auto;
+        }
 	</style>
+    <div id="main-wrapper">
 		<div class="nav-header ">
             <a href="index.html" class="brand-logo">
-                <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
+                <img id="logo" src="https://i.postimg.cc/MpM0gDDQ/Logo-kal.png">
             </a>
-
-            <div class="nav-control">
+            <div class="nav-control" onclick="changeLogo()">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
                 </div>
@@ -973,6 +977,23 @@
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
+    <script>
+    var isAlternateLogo = false;
+    var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
+    var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
+
+    function changeLogo() {
+        var logo = document.getElementById("logo");
+
+        if (isAlternateLogo) {
+            logo.src = originalLogoSrc;
+            isAlternateLogo = false;
+        } else {
+            logo.src = alternateLogoSrc;
+            isAlternateLogo = true;
+        }
+    }
+</script>
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:42 GMT -->
