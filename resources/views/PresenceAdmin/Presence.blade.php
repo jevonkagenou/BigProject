@@ -797,7 +797,7 @@
                                                 style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
                                                 <path
                                                     d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
-                                            </svg> Keluar</a></li>
+                                            </svg> Pulang</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -961,17 +961,12 @@
                                                 05/05/2023<span style="margin-left: 10px;"><i
                                                         class="bi bi-calendar-check"></i></span>
                                             </button>
-                                            <button type="button" class="btn btn-primary btn-xs">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-primary btn-xs">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </button>
+                                         
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="table-responsive">
+                                <div class="table-responsive mt-3">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
@@ -1016,42 +1011,22 @@
                                                     </div>
                                                 </td>
                                                 <td class="text-center">00.00 <span class="px-1">
-                                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="14" height="14" fill="currentColor"
-                                                                class="bi bi-pencil" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                                            </svg></a>
+                                                        
                                                     </span>
                                                 </td>
                                                 <td class="text-center">00.00
                                                     <span class="px-1">
-                                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="14" height="14" fill="currentColor"
-                                                                class="bi bi-pencil" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                                            </svg></a>
+                                                        
                                                     </span>
                                                 </td>
                                                 <td class="text-center">00.00
                                                     <span class="px-1">
-                                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="14" height="14" fill="currentColor"
-                                                                class="bi bi-pencil" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                                            </svg></a>
+                                                        
                                                     </span>
                                                 </td>
                                                 <td class="text-center">00.00
                                                     <span class="px-1">
-                                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="14" height="14" fill="currentColor"
-                                                                class="bi bi-pencil" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                                            </svg></a>
+                                                        
                                                     </span>
                                                 </td>
                                             </tr>
@@ -1086,42 +1061,22 @@
                                                 </td>
                                                 <td class="text-center">00.00
                                                     <span class="px-1">
-                                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="14" height="14" fill="currentColor"
-                                                                class="bi bi-pencil" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                                            </svg></a>
+                                                        
                                                     </span>
                                                 </td>
                                                 <td class="text-center">00.00
                                                     <span class="px-1">
-                                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="14" height="14" fill="currentColor"
-                                                                class="bi bi-pencil" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                                            </svg></a>
+                                                        
                                                     </span>
                                                 </td>
                                                 <td class="text-center">00.00
                                                     <span class="px-1">
-                                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="14" height="14" fill="currentColor"
-                                                                class="bi bi-pencil" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                                            </svg></a>
+                                                        
                                                     </span>
                                                 </td>
                                                 <td class="text-center">00.00
                                                     <span class="px-1">
-                                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="14" height="14" fill="currentColor"
-                                                                class="bi bi-pencil" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                                            </svg></a>
+                                                        
                                                     </span>
                                                 </td>
                                             </tr>

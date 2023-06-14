@@ -923,32 +923,32 @@
                                             <div class="bootstrap-badge">
                                                 <a href="javascript:void(0)"
                                                     class="badge badge-rounded badge-outline-dark"
-                                                    style="margin-right: 1%;margin-top: 1%;">Gaji Pokok</a>
+                                                    style="margin-right: 1%;margin-top: 2%;">Gaji Pokok</a>
                                                 <a href="javascript:void(0)"
                                                     class="badge badge-rounded badge-outline-dark"
-                                                    style="margin-right: 1%;margin-top: 1%;">Uang Lembur</a>
+                                                    style="margin-right: 1%;margin-top: 2%;">Uang Lembur</a>
                                                 <a href="javascript:void(0)"
                                                     class="badge badge-rounded badge-outline-dark"
-                                                    style="margin-right: 1%;margin-top: 1%;">Tunjangan Pulsa</a><br>
+                                                    style="margin-right: 1%;margin-top: 2%;">Tunjangan Pulsa</a><br>
                                                 <a href="javascript:void(0)"
                                                     class="badge badge-rounded badge-outline-dark"
-                                                    style="margin-right: 1%;margin-top: 1%;">Tunjangan Komputer</a>
+                                                    style="margin-right: 1%;margin-top: 2%;">Tunjangan Komputer</a>
                                                 <a href="javascript:void(0)"
                                                     class="badge badge-rounded badge-outline-dark"
-                                                    style="margin-right: 1%;margin-top: 1%;">Tunjangan Transportasi</a>
+                                                    style="margin-right: 1%;margin-top: 2%;">Tunjangan Transportasi</a>
                                                 <a href="javascript:void(0)"
                                                     class="badge badge-rounded badge-outline-dark"
-                                                    style="margin-right: 1%;margin-top: 1%;">Tunjangan Makan</a><br>
+                                                    style="margin-right: 1%;margin-top: 2%;">Tunjangan Makan</a><br>
                                                 <a href="javascript:void(0)"
                                                     class="badge badge-rounded badge-outline-dark"
-                                                    style="margin-right: 1%;margin-top: 1%;">Pendapatan Berdasarkan
+                                                    style="margin-right: 1%;margin-top: 2%;">Pendapatan Berdasarkan
                                                     Durasi Kerja</a>
                                                 <a href="javascript:void(0)"
                                                     class="badge badge-rounded badge-outline-dark"
-                                                    style="margin-right: 1%;margin-top: 1%;">Bonus Tunjangan</a>
+                                                    style="margin-right: 1%;margin-top: 2%;">Bonus Tunjangan</a>
                                                 <a href="javascript:void(0)"
                                                     class="badge badge-rounded badge-outline-dark"
-                                                    style="margin-right: 1%;margin-top: 1%;">Tunjangan Lainnya</a>
+                                                    style="margin-right: 1%;margin-top: 2%;">Tunjangan Lainnya</a>
                                             </div>
                                             <br>
                                         </div>
@@ -976,16 +976,16 @@
                                         <div class="bootstrap-badge">
                                             <a href="javascript:void(0)"
                                                 class="badge badge-rounded badge-outline-dark"
-                                                style="margin-right: 1%;margin-top: 1%;">Potongan Ketidak Hadiran</a>
+                                                style="margin-right: 1%;margin-top: 2%;">Potongan Ketidak Hadiran</a>
                                             <a href="javascript:void(0)"
                                                 class="badge badge-rounded badge-outline-dark"
-                                                style="margin-right: 1%;margin-top: 1%;">Denda Keterlambatan</a>
+                                                style="margin-right: 1%;margin-top: 2%;">Denda Keterlambatan</a>
                                             <a href="javascript:void(0)"
                                                 class="badge badge-rounded badge-outline-dark"
-                                                style="margin-right: 1%;margin-top: 1%;">Koperasi</a><br>
+                                                style="margin-right: 1%;margin-top: 2%;">Koperasi</a><br>
                                             <a href="javascript:void(0)"
                                                 class="badge badge-rounded badge-outline-dark"
-                                                style="margin-right: 1%;margin-top: 1%;">Potongan Lainnya</a>
+                                                style="margin-right: 1%;margin-top: 2%;">Potongan Lainnya</a>
                                         </div>
                                         <br>
                                         <!-- <div class="card-footer mt-auto" > -->
