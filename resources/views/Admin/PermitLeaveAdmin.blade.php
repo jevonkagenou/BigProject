@@ -51,7 +51,7 @@
                                                 <td>Cuti Khusus</td>
                                                 <td>5 Januari 2023</td>												
 												<td>
-													<span class="badge badge-success">Diterima
+													<span class="badge badge-warning">Menunggu
 													</span>
 												</td>
                                             </tr>
@@ -63,7 +63,7 @@
 												<td>Cuti Khusus</td>
                                                 <td>10 Januari 2023</td>
                                                 <td>
-													<span class="badge badge-success">Diterima
+													<span class="badge badge-warning">Menunggu
 													</span>
 												</td>
                                             </tr>
@@ -75,7 +75,7 @@
 												<td>Cuti Khusus</td>
                                                 <td>22 Februari 2023</td>
                                                 <td>
-													<span class="badge badge-success">Diterima
+													<span class="badge badge-warning">Menunggu
 													</span>
 												</td>
                                             </tr>
