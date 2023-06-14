@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:32 GMT -->
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="admin, dashboard" />
-    <meta name="author" content="DexignZone" />
-    <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Dompet : Payment Admin Template" />
-    <meta property="og:title" content="Dompet : Payment Admin Template" />
-    <meta property="og:description" content="Dompet : Payment Admin Template" />
-    <meta property="og:image" content="social-image.png" />
-    <meta name="format-detection" content="telephone=no">
-
-    <!-- PAGE TITLE HERE -->
-    <title>Kalopsia</title>
-
-    <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/TwBt9Z0Q/K.png" />
-    <!-- Datatable -->
-    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!-- Custom Stylesheet -->
-    <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-</head>
-
+@include('PartialAdmin.SidebarNavbar')
 
 <style>
     .btn-check:checked+.btn-outline-danger {
@@ -43,19 +12,26 @@
     .hoverbtn:hover {
         color: white !important;
     }
-
-    .btn-check:hover {
-        color: white !important;
+    .btn {
+      padding: 5px 10px;
+      font-size: 12px;
     }
-    @media (max-width: 320px) {
-        .card-title {
-            font-size: 16px;
-        }
-        .btn {
-            font-size: 12px;
-        }
+    .card-title {
+      margin-bottom: 0;
+    }
+
+    .card-header .btn {
+      margin-left: 10px;
+    }
+    .card-title {
+      font-size: 16px;
+    }
+
+    .table {
+      font-size: 12px;
     }
 </style>
+
 
 <div class="content-body">
     <div class="container-fluid">
@@ -89,13 +65,12 @@
                                     <div class="row justify-content-center"
                                         aria-label="Basic radio toggle button group">
                                         <input type="radio" class="btn-check" name="btnradio1a" id="btnradio1a">
-                                        <a href="/" type="button"
-                                            class="btn btn-outline-danger hoverbtn mb-2">Personal</a>
+                                        <a href="/Employee" type="button" class="btn btn-outline-danger btn-xs hoverbtn mb-2" style="width: 200px;">Personal</a>
 
                                         <input type="radio" class="btn-check" name="btnradio1a" id="btnradio2a"
                                             checked>
                                         <a href="/PayrolEmployee" type="button"
-                                            class="btn btn-outline-danger hoverbtn">Payroll</a>
+                                            class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a>
                                     </div>
                                 </div>
                             </div>
@@ -187,16 +162,15 @@
                                     <h4 class="card-title">Riwayat</h4>
 
                                     <a type="button" class="btn btn-rounded btn-danger text-white" href="/SalaryAdjustment"><span
-                                        class="btn-icon-start text-danger xxl-auto"><i class="fa fa-plus color-danger"></i>
+                                        class="btn-icon-start text-danger btn-sm"><i class="fa fa-plus color-danger"></i>
                                     </span>Penyesuaian</a>
                                     </div>
-                                </div>
-                                <div class="card-body">
+                                
                                     <div class="table-responsive">
                                         <table class="table table-responsive-sm">
                                             <thead>
                                                 <tr>
-                                                    <th>#</th>
+                                                    <th>No</th>
                                                     <th>Tanggal Efektif</th>
                                                     <th>Slip Gaji</th>
                                                     <th>THP</th>

@@ -55,7 +55,7 @@ class RouteController extends Controller
     }
     public function Validation(){
         return view('Admin.Validation',[
-            'tittle'=>'Validation'
+            'tittle'=>'Validasi'
         ]);
     }
     public function EmployeeAdmin(){

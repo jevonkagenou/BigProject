@@ -224,8 +224,8 @@ a.fc-event:hover {
 .fc .fc-button-primary:not(:disabled):active {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
-    background-color: #1a252f;
-    background-color: var(--fc-button-active-bg-color, #1a252f);
+    /* background-color: #1a252f; */
+    /* background-color: var(--fc-button-active-bg-color, #1a252f); */
     border-color: #EE3232;
     border-color: var(--fc-button-active-border-color, #EE3232)
 }
