@@ -1037,23 +1037,23 @@
         <script src="js/dlabnav-init.js"></script>
         <script src="js/demo.js"></script>
         <script src="js/styleSwitcher.js"></script>
-    <script>
-        var isAlternateLogo = false;
-        var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
-        var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-
-        function changeLogo() {
-            var logo = document.getElementById("logo");
-
-            if (isAlternateLogo) {
-                logo.src = originalLogoSrc;
-                isAlternateLogo = false;
-            } else {
-                logo.src = alternateLogoSrc;
-                isAlternateLogo = true;
+        <script>
+            var isAlternateLogo = false;
+            var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
+            var alternateLogoSrc =  "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
+        
+            function changeLogo() {
+                var logo = document.getElementById("logo");
+        
+                if (isAlternateLogo) {
+                    logo.src = originalLogoSrc;
+                    isAlternateLogo = false;
+                } else {
+                    logo.src = alternateLogoSrc;
+                    isAlternateLogo = true;
+                }
             }
-        }
-    </script>
+        </script>
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
