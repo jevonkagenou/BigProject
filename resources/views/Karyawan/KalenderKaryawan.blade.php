@@ -80,7 +80,7 @@
         ***********************************-->
         <div class="nav-header">
             <a href="index.html" class="brand-logo" >
-                <img id="logo" src="https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg">
+                <img id="logo" src="https://i.postimg.cc/MpM0gDDQ/Logo-kal.png">
             </a>
             <div class="nav-control" onclick="changeLogo()">
                 <div class="hamburger">
@@ -433,7 +433,7 @@
     <script src="https://kit.fontawesome.com/399218ad26.js" crossorigin="anonymous"></script>
     <script>
         var isAlternateLogo = false;
-        var originalLogoSrc = "https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg";
+        var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
     
         function changeLogo() {

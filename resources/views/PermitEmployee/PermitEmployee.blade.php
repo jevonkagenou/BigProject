@@ -92,7 +92,7 @@
         ***********************************-->
         <div class="nav-header">
             <a href="index.html" class="brand-logo" >
-                <img id="logo" src="https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg">
+                <img id="logo" src="https://i.postimg.cc/MpM0gDDQ/Logo-kal.png">
             </a>
             <div class="nav-control" onclick="changeLogo()">
                 <div class="hamburger">
@@ -362,7 +362,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Izin & Cuti</h4>
-                                <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6 mt-2">
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 mt-2 text-end">
                                     <!-- <div class="col-lg-4 col-12  text-end"> -->
                                     <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal"
                                         data-bs-target=".bd-example-modal-lg"><i class="fa fa-plus color-info"></i>
@@ -374,9 +374,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="mb-2">
                                         <!-- <div class="btn-group col-12"> -->
-                                        <div class="d-flex justify-content-between" style="margin-left: -3.5%;">
                                             <!-- <div class="btn-group  col-lg-8  col-12"> -->
                                             <div
                                                 class="size-filter col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 btn-group btn-xs ">
@@ -398,32 +396,30 @@
                                                         for="btnradio3">Sakit</label>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-3 col-12 btn-xs justify-content-end">
+                                            {{-- <div class="col-xl-3 col-12 btn-xs justify-content-end">
                                                 <select class="default-select form-control wide align-items-center ">
                                                     <option>Semua</option>
                                                     <option>Menunggu</option>
                                                     <option>Ditolak</option>
                                                     <option>Diterima</option>
                                                 </select>
+                                            </div> --}}
+                                            <div class="col-md-3 col-12 text-end">
+                                              <div class="d-flex">
+                                                <div class="flex-grow-1"></div>
+                                                <select class="form-select">
+                                                  <option>Semua</option>
+                                                  <option>Menunggu</option>
+                                                  <option>Ditolak</option>
+                                                  <option>Diterima</option>
+                                                </select>
+                                              </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-12 text-end">
-                                      <div class="d-flex">
-                                        <div class="flex-grow-1"></div>
-                                        <select class="form-select">
-                                          <option>Semua</option>
-                                          <option>Menunggu</option>
-                                          <option>Ditolak</option>
-                                          <option>Diterima</option>
-                                        </select>
-                                      </div>
-                                    </div>
                                   </div>
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
-                                            <tr>
+                                            <tr class="text-center">
 
                                                 <th>No</th>
                                                 <th>Tanggal Pengajuan</th>
@@ -434,7 +430,7 @@
 
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="text-center">
                                             <tr>    
 
                                                 <td>1</td>
@@ -736,7 +732,7 @@
     </script>
      <script>
         var isAlternateLogo = false;
-        var originalLogoSrc = "https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg";
+        var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
     
         function changeLogo() {
