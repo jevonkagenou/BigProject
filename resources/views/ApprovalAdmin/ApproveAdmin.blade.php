@@ -55,10 +55,10 @@
 	</style>
     <div id="main-wrapper">
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png">
+            <a href="index.html" class="brand-logo" >
+                <img id="logo" src="https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg">
             </a>
-            <div class="nav-control">
+            <div class="nav-control" onclick="changeLogo()">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
                 </div>
@@ -1062,6 +1062,23 @@
         </div>
     </div>
     <!-- Required vendors -->
+    <script>
+        var isAlternateLogo = false;
+        var originalLogoSrc = "https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg";
+        var alternateLogoSrc = "https://i.postimg.cc/HW5s0YJf/kbaru.png";
+    
+        function changeLogo() {
+            var logo = document.getElementById("logo");
+    
+            if (isAlternateLogo) {
+                logo.src = originalLogoSrc;
+                isAlternateLogo = false;
+            } else {
+                logo.src = alternateLogoSrc;
+                isAlternateLogo = true;
+            }
+        }
+    </script>
     <script src="{{ asset('vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
 	<!-- Apex Chart -->

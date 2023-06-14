@@ -1202,7 +1202,7 @@
 <script>
     var isAlternateLogo = false;
     var originalLogoSrc = "https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg";
-    var alternateLogoSrc = "https://i.postimg.cc/HW5s0YJf/kbaru.png";
+    var alternateLogoSrc = "https://i.postimg.cc/P55dtZjM/Logo-A-1.png";
 
     function changeLogo() {
         var logo = document.getElementById("logo");
