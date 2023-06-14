@@ -44,6 +44,10 @@
 			max-width: 80%;
 			height: auto;
         }
+		.gambar img {
+        max-width: 80%;
+        height: auto;
+        }
 </style>
 
 <body>
@@ -358,8 +362,8 @@
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<div class="img_cont">
-																<img src="https://i.postimg.cc/ncJBxjjX/logokalopsia.png" class="rounded-circle user_img" alt="Logo Kalopsia" style="width: 50%;">
+															<div class="img_cont gambar">
+																<img src="https://i.postimg.cc/MpM0gDDQ/Logo-kal.png" style="max-width: 200px; height: auto;" class="rounded-circle user_img" alt="Logo Kalopsia" style="width: 50%;">
 																<span class="online_icon"></span>
 															</div>
 															<button type="button" class="btn-close" data-bs-dismiss="modal"></button>

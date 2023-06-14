@@ -345,13 +345,13 @@
                                         alt="">
                                 </div>
                                 <br>
-                                <div class="d-flex justify-content-center">
+                                <!-- <div class="d-flex justify-content-center">
                                     <div class="input-group" style="width: 240px;">
                                         <div class="form-file">
                                             <input type="file" class="form-file-input form-control">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <br>
                                 <div style="text-align: center;">
                                     <h4><a href="post-details.html" class="text-black">Arya Kurniawan</a></h4>
@@ -382,7 +382,7 @@
                                     Tambah Payroll
                                 </h5>
                                 <hr />
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-xl-9 col-8">
                                         <p class="mb-2">Tanggal Efektif</p>
                                     </div>
@@ -390,7 +390,7 @@
                                         <input type="date" class="form-control" placeholder=""
                                             style="border: 0.035rem solid rgb(195, 195, 195)" />
                                     </div>
-                                </div>
+                                </div> -->
                                 <hr />
                                 <div class="row align-items-center">
                                     <div class="col-xl-9 col-8 ">

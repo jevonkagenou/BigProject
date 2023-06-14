@@ -866,13 +866,13 @@
                                         alt="">
                                 </div>
                                 <br>
-                                <div class="d-flex justify-content-center">
+                                <!-- <div class="d-flex justify-content-center">
                                     <div class="input-group" style="width: 240px;">
                                         <div class="form-file">
                                             <input type="file" class="form-file-input form-control">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <br>
                                 <div style="text-align: center;">
                                     <h4><a href="post-details.html" class="text-black">Arya Kurniawan</a></h4>
