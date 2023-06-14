@@ -362,7 +362,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Izin & Cuti</h4>
-                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mt-2 text-end">
+                                <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6 mt-2">
                                     <!-- <div class="col-lg-4 col-12  text-end"> -->
                                     <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal"
                                         data-bs-target=".bd-example-modal-lg"><i class="fa fa-plus color-info"></i>
@@ -408,7 +408,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="col-md-3 col-12 text-end">
+                                      <div class="d-flex">
+                                        <div class="flex-grow-1"></div>
+                                        <select class="form-select">
+                                          <option>Semua</option>
+                                          <option>Menunggu</option>
+                                          <option>Ditolak</option>
+                                          <option>Diterima</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>

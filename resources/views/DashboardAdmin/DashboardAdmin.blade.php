@@ -841,7 +841,7 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-    </div>
+    
 <Style>
     .border {
         display: inline-block;
@@ -908,29 +908,19 @@
             <div class="col-xl-9 col-xxl-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="row align-items-center">
-                            <div
-                                class="col-xl-6 md-6 col-12 d-flex justify-content-center align-items-center text-center">
-                                <div class="card-bx bg-white">
-                                    <img class="" style="height : 240px; width : 246px;"
-                                        src="images/dashboardadmin.svg" alt="">
-                                    <div class="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="col-xl-6 md-6 col-12 d-flex justify-content-center align-items-center text-center">
-                                <div>
-                                    <div class="col-md-12">
-                                        <h4 class="card-title">Selamat Datang Admin!</h4>
-                                        <span>Bekerja lebih mudah dan cepat bersama
-                                            kami. Jangan lupa ikuti trainingnya.....</span>
+                        <div class="d-xl-flex d-block align-items-start description-bx">
+									<div class="col-xl-4 card-info text-white d-flex justify-content-center">
+										<img src="https://i.postimg.cc/jjKwr4TP/dashboard.png" class="" alt="">
 
-                                    </div>
+									</div>
+									<div class="col-xl-8 mt-5" style="margin-top: 5%;">
+										<h6 class="card-title" style="font-weight: bold; font-size: 25px;">Selamat Datang
+											Anggie!</h6>
+										<span class="" style="font-size: 16px;">Bekerja lebih mudah dan cepat bersama
+											kami. Jangan lupa ikuti trainingnya.....</span>
+									</div>
 
-                                </div>
-                            </div>
-                        </div>
+								</div>
                     </div>
                 </div>
             </div>
@@ -1104,6 +1094,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <div class="footer">
 
