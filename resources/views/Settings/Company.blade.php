@@ -841,25 +841,70 @@
             Sidebar end
         ***********************************-->
      </div>
-
+     <style>
+        .profile-photo {
+            position: relative;
+            display: inline-block;
+        }
+    
+        .profile-photo .icon-pen {
+            position: absolute;
+            top: 90%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+            color: black;
+        }
+        
+    </style>
 <div class="content-body">
     <div class="container-fluid">
         <div class="row">
-            {{-- Profile --}}
             <div class="col-lg-12">
-                <div class="profile card-body px-3 pt-3 pb-0">
+                <div class="profile card card-body px-3 pt-3 pb-0">
                     <div class="profile-head">
                         <div class="photo-content">
                             <div class="cover-photo rounded"></div>
                         </div>
                         <div class="profile-info">
-                            <div class="profile-photo">
-                                <img src="images/profile/profile.png" class="img-fluid rounded-circle" alt="">
+                            <div class="profile-info">
+                                <div class="profile-photo">
+                                    <img src="images/profile/user.png" style="width: 512px; float: left;" class="img-fluid rounded-circle" alt="">
+                                    <button>
+                                        <i class="fas fa-pen" data-bs-toggle="modal" data-bs-target="#basicModal"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                            
+                        </div>  
+                        <div class="modal fade" id="basicModal">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                       <div class="row">
+                                             <div class="col-md-6 col-6">
+                                                 <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+                                                   <center><img src="{{ asset('images/foto4.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+                                                   <span class="online_icon"></span>
+                                                 </div>
+                                                 <div class="card-body d-flex justify-content-center mb-3">
+                                                   <div class="me-auto">
+                                                     <center><h4 class="card-title">Presensi keluar Lembur</h4></center>
+                                                   </div>
+                                                 </div>
+                                             </div>
+                                       </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>          
                     </div>
                 </div>
             </div>
+        </div>
             {{-- End Profile --}}
 
             {{-- Input Form --}}

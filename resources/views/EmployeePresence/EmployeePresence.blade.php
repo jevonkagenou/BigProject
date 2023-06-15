@@ -315,7 +315,7 @@
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
 																<div class="me-auto">
-																  <center><h4 class="card-title">Presensi Keluar</h4></center>
+																  <center><h4 class="card-title">Presensi Masuk</h4></center>
 																</div>
 															  </div>
 														  </div>
@@ -326,7 +326,7 @@
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
 																<div class="me-auto">
-																  <center><h4 class="card-title">Presensi Keluar</h4></center>
+																  <center><h4 class="card-title">Presensi Pulang</h4></center>
 																</div>
 															  </div>
 														  </div>
@@ -348,7 +348,7 @@
 															  </div>
 															  <div class="card-body d-flex justify-content-center mb-3">
 																<div class="me-auto">
-																  <center><h4 class="card-title">Presensi keluar Lembur</h4></center>
+																  <center><h4 class="card-title">Presensi Pulang Lembur</h4></center>
 																</div>
 															  </div>
 														  </div>
@@ -378,15 +378,15 @@
                                                 <td>1</td>
 
                                                 <td>Absen Masuk</td>
-                                                <td>08/05/2023 07:45</td>
-                                                <td><span class="badge badge-sm light badge-danger">Ditolak</span></td>
+                                                <td>08/05/2023 08:45</td>
+                                                <td><span class="badge badge-sm light badge-danger">Terlambat</span></td>
                                             </tr>
                                             <tr class="text-center">
                                                 <td>2</td>
 
                                                 <td>Absen Keluar</td>
                                                 <td>08/05/2023 07:45</td>
-                                                <td><span class="badge badge-sm light badge-success">Disetujui</span></td>
+                                                <td><span class="badge badge-sm light badge-success">Masuk</span></td>
 
                                             </tr>
                                              </tbody>

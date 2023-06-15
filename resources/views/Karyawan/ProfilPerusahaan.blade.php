@@ -950,6 +950,64 @@
 										<img src="{{asset('images/profile/profile.png')  }}" class="img-fluid rounded-circle" alt="">
 									</div>
                                 </div>
+                                 <div class="modal fade" id="basicModal">
+										 <div class="modal-dialog modal-dialog-centered" role="document">
+											 <div class="modal-content">
+												 <div class="modal-header">
+													 <button type="button" class="btn-close" data-bs-dismiss="modal">
+													 </button>
+												 </div>
+												 <div class="modal-body">
+													<div class="row">
+														<div class="col-md-6 col-6">
+															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+																<center><img src="{{ asset('images/foto1.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<span class="online_icon"></span>
+															  </div>
+															  <div class="card-body d-flex justify-content-center">
+																<div class="me-auto">
+																  <center><h4 class="card-title">Presensi Keluar</h4></center>
+																</div>
+															  </div>
+														  </div>
+														  <div class="col-md-6 col-6">
+															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+																<center><img src="{{ asset('images/foto2.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<span class="online_icon"></span>
+															  </div>
+															  <div class="card-body d-flex justify-content-center">
+																<div class="me-auto">
+																  <center><h4 class="card-title">Presensi Keluar</h4></center>
+																</div>
+															  </div>
+														  </div>
+														  <div class="col-md-6 col-6">
+															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+																<center><img src="{{ asset('images/foto3.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<span class="online_icon"></span>
+															  </div>
+															  <div class="card-body d-flex justify-content-center">
+																<div class="me-auto">
+																  <center><h4 class="card-title">Presensi Masuk Lembur</h4></center>
+																</div>
+															  </div>
+														  </div>
+														  <div class="col-md-6 col-6">
+															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+																<center><img src="{{ asset('images/foto4.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<span class="online_icon"></span>
+															  </div>
+															  <div class="card-body d-flex justify-content-center mb-3">
+																<div class="me-auto">
+																  <center><h4 class="card-title">Presensi keluar Lembur</h4></center>
+																</div>
+															  </div>
+														  </div>
+													</div>
+												  </div>
+											 </div>
+										 </div>
+									 </div>
                             </div>
                         </div>
                     </div>
