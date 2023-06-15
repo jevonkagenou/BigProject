@@ -865,8 +865,6 @@
                                                 <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Waktu</th>
-                                                <th>Lokasi</th>
-                                                <th>IP</th>
                                                 <th>Tipe</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -882,8 +880,6 @@
 												<td>01</td>
 												<td>Lisa</td>
 												<td>26/02/2020, 12:42 AM</td>
-												<td>Luar Kantor</td>
-												<td>8547</td>
 												<td>Presensi Masuk</td>
 												<td>
 													<span >
@@ -904,8 +900,6 @@
                                                 <td>02</td>
                                                 <td>janna</td>
                                                 <td>26/02/2020, 12:42 AM</td>
-                                                <td>Luar Kantor</td>
-                                                <td>1717</td>
                                                 <td>Presensi Masuk</td>
                                                 <td>
 													<span >
@@ -926,8 +920,6 @@
                                                 <td>03</td>
                                                 <td>Nanda</td>
                                                 <td>26/02/2020, 12:42 AM</td>
-                                                <td>Luar Kantor</td>
-                                                <td>9898</td>
                                                 <td>Presensi Masuk</td>
                                                 <td>
 													<span >

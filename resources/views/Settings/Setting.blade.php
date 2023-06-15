@@ -3,7 +3,7 @@
 <div class="content-body">
     <div class="container-fluid align-items-center">
         <div class="row">
-            <div class="col-xl-12 col-xxl-4">
+            {{-- <div class="col-xl-12 col-xxl-4">
                 <a href="/Company">
                     <div class="card">
                         <div class="card-body">
@@ -22,27 +22,29 @@
                         </div>
                     </div>
                 </a>
-            </div>
-            <div class="col-xl-12 col-xxl-4">
-                <a href="/PayrollSalarySlip">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <div class="col-xl-12">
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <img class="img-responsive" src="images/payroll2.svg" alt="">
-                                    </div>
-                                    <div class="text-center mt-4">
-                                        <strong>
-                                            <h4>Payroll</h4>
-                                        </strong>
-                                    </div>
-                                </div>
-                            </div>
+            </div> --}}
+<div class="col-xl-12 col-xxl-4">
+    <a href="/PayrollSalarySlip">
+        <div class="card">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-xl-12">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img class="img-responsive" src="images/payroll2.svg" alt="">
                         </div>
+                        <div class="text-center" style="margin-top: 58;">
+                            <strong>
+                                <h4>Payroll</h4>
+                            </strong>
+                        </div>
+                        
                     </div>
-                </a>
+                </div>
             </div>
+        </div>
+    </a>
+</div>
+
            
             <div class="col-xl-12 col-xxl-4">
                 <a href="/Announcement">
