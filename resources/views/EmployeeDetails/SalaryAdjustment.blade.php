@@ -936,21 +936,26 @@
                                         </label>
                                     </div>
                                 </div> -->
-                                <div class="col-form-label col-sm-3 pt-0">
-									<label for="lastName"  class="form-label">Sistem Penggajian</label>
-									<div class="form-check custom-radio mb-2">
-										<input id="credit" name="paymentMethod" type="radio" class="" required>
-										<label class="form-check-label" for="credit">Gaji Bulanan</label>
-									</div>
-									<div class="form-check custom-radio mb-2">
-										<input id="debit" name="paymentMethod" type="radio" class="" required>
-										<label class="form-check-label" for="debit">Gaji Mingguan</label>
-									</div>
-									<div class="form-check custom-radio mb-2">
-										<input id="debit" name="paymentMethod" type="radio" class="" required>
-										<label class="form-check-label" for="debit">Gaji Harian</label>
-									</div>
-								</div>
+                                <div class="basic-form">
+                                    <form>
+                                        <div class="mb-3">
+                                            <div class="form-check mb-2">
+                                                <input type="checkbox" class="form-check-input checkoption" id="check1" value="" onclick="checkedOnClick(this);">
+                                                <label class="form-check-label" for="check1">Gaji Bulanan</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input type="checkbox" class="form-check-input checkoption" id="check2" value="" onclick="checkedOnClick(this);">
+                                                <label class="form-check-label" for="check2">Gaji Mingguan</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input type="checkbox" class="form-check-input checkoption" id="check2" value="" onclick="checkedOnClick(this);">
+                                                <label class="form-check-label" for="check2">Gaji Harian</label>
+                                            </div>
+                                            
+                                        </div>
+                                    </form>
+                                </div>
+                            
                                 <hr />
                             </div>
                             <div class="card-body">
@@ -1141,6 +1146,19 @@
         }
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+<script type="text/javascript">
+   function checkedOnClick(el){
+
+      // Select all checkboxes by class
+      var checkboxesList = document.getElementsByClassName("checkoption");
+      for (var i = 0; i < checkboxesList.length; i++) {
+         checkboxesList.item(i).checked = false; // Uncheck all checkboxes
+      }
+
+      el.checked = true; // Checked clicked checkbox
+   }
+   </script>
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
