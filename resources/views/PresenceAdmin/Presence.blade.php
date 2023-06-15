@@ -949,10 +949,10 @@
                             <div class="card-body">
                                 <div class="row mb-1">
                                     <div class="col-xl-3 col-lg-9 col-md-6 col-sm-1 mt-2">
-                                        <div class="button-group text-start">
+                                        {{-- <div class="button-group text-start">
                                             <a href="/Validation" class="btn w-100 btn-outline-danger btn-xs">Atur
                                                 Kebijakan Presensi</a>
-                                        </div>
+                                        </div> --}}
 
                                     </div>
                                     <div class="col-xl-9 col-lg-3 col-md-6 col-sm- mt-2 me-auto">

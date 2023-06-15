@@ -850,6 +850,79 @@
     .hoverbtn:hover {
         color: white !important;
     }
+    .profile-photo {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.edit-overlay {
+    position: relative;
+    display: inline-block;
+}
+
+.edit-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.edit-overlay:hover .edit-icon {
+    opacity: 1;
+}
+
+.edit-image {
+    width: 100%;
+    height: auto;
+}
+
+.edit-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 50%;
+}
+
+.edit-overlay:hover::before {
+    opacity: 1;
+}
+.dropdown-container .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 131px;
+  left: 50;
+  width: 125px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dropdown-container .dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-container .dropdown-content a:hover {
+  background-color: #f9f9f9;
+}
+
+.dropdown-container.active .dropdown-content {
+  display: block;
+}
 </style>
 
 <div class="content-body">
@@ -861,10 +934,21 @@
 
                         <div class="card-body col-xl-3 col-lg-4 col-md-4 col-sm-4 ml-8">
                             <div style="">
-                                <div class="profile-photo d-flex justify-content-center">
-                                    <img src="images/profile/profile.png" class="img-fluid rounded-circle "
-                                        alt="">
-                                </div>
+                                <div class="dropdown-container d-flex justify-content-center">
+                                    <div class="edit-overlay">
+                                      <div class="edit-icon">
+                                        <i class="fas fa-pencil-alt"></i>
+                                      </div>
+                                      <img src="images/profile/user.png" class="edit-image" style="width: 120px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
+                                    </div>
+                                    <div class="dropdown-content">
+                                        <a href="#">Ganti Foto Profil</a>
+                                        <a href="#">Edit Foto Profil</a>
+                                        <a href="#">Hapus Foto Profil</a>
+                                    </div>
+                                  </div>
+                                  
+                                
                                 <br>
                                 <!-- <div class="d-flex justify-content-center">
                                     <div class="input-group" style="width: 240px;">
@@ -1203,4 +1287,20 @@
             isAlternateLogo = true;
         }
     }
+</script>
+
+<script>
+    var dropdownContainer = document.querySelector('.dropdown-container');
+var editIcon = document.querySelector('.edit-icon');
+
+editIcon.addEventListener('click', function() {
+  dropdownContainer.classList.toggle('active');
+});
+
+// Menutup dropdown saat mengklik di luar dropdown
+document.addEventListener('click', function(event) {
+  if (!dropdownContainer.contains(event.target)) {
+    dropdownContainer.classList.remove('active');
+  }
+});
 </script>

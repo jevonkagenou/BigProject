@@ -885,11 +885,11 @@
                             <div class="card-body">
 								<div class="row">
 
-								<div class="col-xl-12 col-lg-4 col-md-12 col-sm-6 col-12 text-end">
+								{{-- <div class="col-xl-12 col-lg-4 col-md-12 col-sm-6 col-12 text-end">
 									<div class="responsive-button">
 										<a href="/Validation" type="button" class="btn btn-outline-danger btn-xs " >Atur Kebijakan Presensi</a>
 									</div>
-								</div>
+								</div> --}}
 								</div>
 
                                 <div class="table-responsive">
