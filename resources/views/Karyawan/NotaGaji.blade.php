@@ -335,7 +335,7 @@
                                     <span>Take Home Pay</span>
 								</div>
 								<p class="THP">Rp. 2.450.000</p>
-								<button type="button" class="btn btn-rounded btn-danger btn-xs" style="font-size: 14px;">Cetak Bukti Pembayaran</button>
+								<button type="button" class="btn btn-rounded btn-danger btn-xs" style="font-size: 14px;">Cetak Slip Gaji</button>
 							</div>
 						</div>
 					</div>
@@ -356,7 +356,7 @@
 										</div>
 
 											<p class="THP">Rp. 2.450.000</p>
-											<button type="button" class="btn btn-rounded btn-danger btn-xs" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl" style="font-size: 14px;">Cetak Bukti pembayaran</button>
+											<button type="button" class="btn btn-rounded btn-danger btn-xs" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl" style="font-size: 14px;">Cetak Slip Gaji</button>
 											<!-- Modal -->
 											<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
 												<div class="modal-dialog modal-xl">
@@ -654,7 +654,7 @@
                                             <span>Take Home Pay</span>
 										</div>
 										<p class="THP">Rp. 2.450.000</p>
-										<button type="button" class="btn btn-rounded btn-danger btn-xs" style="font-size: 14px;">Cetak Bukti Pembayaran</button>
+										<button type="button" class="btn btn-rounded btn-danger btn-xs" style="font-size: 14px;">Cetak Slip Gaji</button>
 									</div>
 								</div>
 							</div>
