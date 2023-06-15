@@ -936,16 +936,16 @@
                             <div style="">
                                 <div class="dropdown-container d-flex justify-content-center">
                                     <div class="edit-overlay">
-                                      {{-- <div class="edit-icon">
+                                      <div class="edit-icon">
                                         <i class="fas fa-pencil-alt"></i>
-                                      </div> --}}
+                                      </div>
                                       <img src="images/profile/user.png" class="edit-image" style="width: 120px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
                                     </div>
-                                    {{-- <div class="dropdown-content">
+                                    <div class="dropdown-content">
                                         <a href="#">Ganti Foto Profil</a>
                                         <a href="#">Edit Foto Profil</a>
                                         <a href="#">Hapus Foto Profil</a>
-                                    </div> --}}
+                                    </div>
                                   </div>
                                   
                                 
@@ -1289,7 +1289,7 @@
     }
 </script>
 
-{{-- <script>
+<script>
 var dropdownContainer = document.querySelector('.dropdown-container');
 var editIcon = document.querySelector('.edit-icon');
 
@@ -1303,4 +1303,4 @@ document.addEventListener('click', function(event) {
     dropdownContainer.classList.remove('active');
   }
 });
-</script> --}}
+</script>

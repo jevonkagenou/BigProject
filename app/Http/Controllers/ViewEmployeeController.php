@@ -31,8 +31,8 @@ class ViewEmployeeController extends Controller
     }
 
     public function CompanyEmployee(){
-        return view ('karyawan.ProfilPerusahaan',[
-            'title'=>'Profil Perusahaan'
+        return view ('karyawan.ProfileEmployee',[
+            'tittle'=>'Profil Karyawan'
         ]);
     }
 

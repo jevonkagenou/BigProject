@@ -870,6 +870,11 @@
                         </a>
 
                     </li>
+                    <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
+                        <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
+                            <span class="nav-text ">Izin Cuti</span>
+                        </a>
+                    </li>
                     <li><a class=" ai-icon hover-red" href="AdminReport" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                                 width="48">
@@ -892,7 +897,6 @@
                             <li><a href="/PresenceApproval" class="hover-red">Approval Presensi</a></li>
                             <li><a href="/WorkSchedule" class="hover-red">Jadwal Kerja</a></li>
                             <li><a href="/Presence" class="hover-red">Presensi</a></li>
-                            <li><a href="/PermitLeaveAdmin" class="hover-red">Izin Cuti</a></li>
 
 
                         </ul>
