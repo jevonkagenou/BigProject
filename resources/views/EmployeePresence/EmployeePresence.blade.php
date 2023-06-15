@@ -185,12 +185,7 @@
                             <span class="nav-text">Approval</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon red-hover" href="/CompanyEmployee" aria-expanded="false">
-                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-120v-720h390v165h410v555H80Zm60-60h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm330 495h350v-435H470v435Zm80-270v-60h165v60H550Zm0 165v-60h165v60H550Z" fill="black"/></svg></i>
-                            <span class="nav-text">Perusahaan</span>
-                        </a>
-
-                    </li>
+                   
                     <li><a href="/SalaryEmployee" class="ai-icon red-hover" aria-expanded="false">
                             <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z" fill="black"/></svg></i>
                             <span class="nav-text">Gaji</span>
@@ -301,7 +296,7 @@
 
                                                 <th>Tipe</th>
                                                 <th>Waktu</th>
-                                                <th>Status</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -310,14 +305,12 @@
 
                                                 <td>Absen Masuk</td>
                                                 <td>08/05/2023 08:45</td>
-                                                <td><span class="badge badge-sm light badge-danger">Terlambat</span></td>
                                             </tr>
                                             <tr class="text-center">
                                                 <td>2</td>
 
                                                 <td>Absen Keluar</td>
                                                 <td>08/05/2023 07:45</td>
-                                                <td><span class="badge badge-sm light badge-success">Masuk</span></td>
 
                                             </tr>
                                              </tbody>
