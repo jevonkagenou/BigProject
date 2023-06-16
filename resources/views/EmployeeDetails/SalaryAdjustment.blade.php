@@ -17,13 +17,13 @@
 	<!-- PAGE TITLE HERE -->
 	<title>Kalopsia</title>
 
-	<!-- FAVICONS ICON -->
+    <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png"  />
     <!-- Datatable -->
-    <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{asset('vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
     <!-- Custom Stylesheet -->
-	<link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{asset('vendor/jquery-nice-select/css/nice-select.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -43,21 +43,25 @@
 		</div>
     </div>
 	<style>
-        .fa{
-            line-height: 1.5rem !important;
-            }
 		.hover-red:hover{
             color: #EE3232 !important;
         }
-        .dlabnav .metismenu a{
+         .dlabnav .metismenu a{
             color: #9FA4A6;
+        }
+        [data-sidebar-style="full"]
+        [data-layout=":vertical"]
+        .dlabnav .metismenu{
+            padding: 0 30px !important;
         }
         .brand-logo img {
         max-width: 80%;
         height: auto;
         }
 	</style>
-     <div id="main-wrapper">
+
+    <div id="main-wrapper">
+
 		<div class="nav-header">
             <a href="index.html" class="brand-logo" >
                 <img id="logo" src="https://i.postimg.cc/MpM0gDDQ/Logo-kal.png">
@@ -720,7 +724,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                {{$tittle}}
+                               {{$tittle}}
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -752,6 +756,7 @@
                                             </svg> Keluar</a></li>
                                 </ul>
                             </li>
+
                         </ul>
                     </div>
                 </nav>
@@ -777,7 +782,7 @@
                             </div>
                         </a>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                    <li ><a class="ai-icon hover-red" href="/" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -794,9 +799,14 @@
                         </a>
 
                     </li>
+                    <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
+                        <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
+                            <span class="nav-text ">Izin Cuti</span>
+                        </a>
+                    </li>
                     <li><a class=" ai-icon hover-red" href="AdminReport" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M349-250h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-310H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-250Zm0-170h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-480H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-420ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.444 0 23.722 5T599-862l183 183q8 8 13 19.278 5 11.278 5 23.722v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.375-8.625T551-664ZM220-820v186-186 680-680Z"/></svg>
-                            <span class="nav-text ">Laporan</span>
+                            <span class="nav-text">Laporan</span>
                         </a>
 
                     </li>
@@ -808,12 +818,11 @@
                             <li><a href="/PresenceApproval" class="hover-red">Approval Presensi</a></li>
                             <li><a href="/WorkSchedule" class="hover-red">Jadwal Kerja</a></li>
                             <li><a href="/Presence" class="hover-red">Presensi</a></li>
-                            <li><a href="/PermitLeaveAdmin" class="hover-red">Izin Cuti</a></li>
 
 
                         </ul>
                     </li>
-                    <li class="mm-active"><a class=" ai-icon hover-red  mm-active" href="/EmployeeAdmin" aria-expanded="false">
+                    <li><a class=" ai-icon hover-red" href="/EmployeeAdmin" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M68-160q-13 0-21.5-8.5T38-190v-64q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v64q0 13-8.5 21.5T648-160H68Zm648 0q10-2 16-10.5t6-21.5v-62q0-63-32-103.5T622-423q69 8 130 23.5t99 35.5q33 19 52 47t19 63v64q0 13-8.5 21.5T892-160H716ZM358-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42Zm360-150q0 66-42 108t-108 42q-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm260-321q39 0 64.5-25.5T448-631q0-39-25.5-64.5T358-721q-39 0-64.5 25.5T268-631q0 39 25.5 64.5T358-541Zm0-90Zm0 271Z"/></svg>
                             <span class="nav-text ">Karyawan</span>
                         </a>
@@ -824,9 +833,9 @@
                             <span class="nav-text ">Payroll</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon hover-red" href="/Setting " aria-expanded="false">
+                    <li><a class=" ai-icon hover-red" href="/Setting " aria-expanded="true">
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M546-80H414q-11 0-19.5-7T384-105l-16-101q-19-7-40-19t-37-25l-93 43q-11 5-22 1.5T159-220L93-337q-6-10-3-21t12-18l86-63q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521l-86-63q-9-7-12-18t3-21l66-117q6-11 17-14.5t22 1.5l93 43q16-13 37-25t40-18l16-102q2-11 10.5-18t19.5-7h132q11 0 19.5 7t10.5 18l16 101q19 7 40.5 18.5T669-710l93-43q11-5 22-1.5t17 14.5l66 116q6 10 3.5 21.5T858-584l-86 61q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l86 62q9 7 12 18t-3 21l-66 117q-6 11-17 14.5t-22-1.5l-93-43q-16 13-36.5 25.5T592-206l-16 101q-2 11-10.5 18T546-80Zm-66-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-60q-29 0-49.5-20.5T410-480q0-29 20.5-49.5T480-550q29 0 49.5 20.5T550-480q0 29-20.5 49.5T480-410Zm0-70Zm-44 340h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Z"/></svg>
-                            <span class="nav-text ">Pengaturan</span>
+                            <span class="nav-text">Pengaturan</span>
                         </a>
 
                     </li>
@@ -838,301 +847,437 @@
             Sidebar end
         ***********************************-->
 
+        <Style>
+            .border {
+                display: inline-block;
+                width: 5rem;
+                height: 5rem;
+                margin: 0.25rem;
+                background-color: transparent;
+                margin: -5%;
+                margin-top: 8%;
+                width: 433px;
+                height: 147px;
+                border-radius: 10px;
+            }
 
-<div class="content-body">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card">
+            @media (max-width: 768px) {
+                .border {
+                    width: 100%;
+                    height: auto;
+                    margin: 0.5rem 0;
+                    margin-left: 0;
+                    margin-top: 0;
+                }
+            }
+
+            @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+            body {
+                font-family: Roboto, sans-serif;
+            }
+
+            #chart {
+                max-width: 650px;
+                margin: 35px auto;
+            }
+
+
+            .border-secondary {
+                color: #969ba0 !important;
+                width: 100%;
+            }
+
+            .text {
+                margin-top: 12px !important;
+            }
+
+            .profile-tab .nav-item .nav-link.active {
+                border: 0;
+                background: transparent;
+                background: transparent;
+                border-bottom: 0.0125rem solid #F72B50 !important;
+                color: #F72B50 !important;
+            }
+
+            .hover-red:hover {
+                color: #EE3232 !important;
+                border-color: #EE3232 !important;
+            }
+        </Style>
+
+        <div class="content-body">
+                <div class="container-fluid">
+                <div class="row">
+                        <div class="col-xl-12">
+                        <div class="card">
+                                <div class="row">
+
+                                    {{-- Button --}}
+                                    <div class="card-body col-xl-3 col-lg-4 col-md-4 col-sm-4 ml-8">
+                                        <div style="">
+                                            <div class="profile-photo d-flex justify-content-center">
+                                                <img src="images/profile/profile.png" class="img-fluid rounded-circle "
+                                                    alt="">
+                                            </div>
+                                            <br>
+                                            <!-- <div class="d-flex justify-content-center">
+                                                <div class="input-group" style="width: 240px;">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control">
+                                            </div>
+                                                </div>
+                                            </div> -->
+                                            <br>
+                                            <div style="text-align: center;">
+                                                <h4><a href="post-details.html" class="text-black">Arya Kurniawan</a></h4>
+                                                <p class="mb-0">IT Manager</p>
+                                            </div>
+                                            <br>
+                                            <div class="container">
+                                                <div class="row justify-content-center"
+                                                    aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="btn-check" name="btnradio1a" id="btnradio1a"
+                                                        >
+                                                        <a href="/PayrolEmployee" type="button" class="btn btn-outline-danger btn-xs hoverbtn mb-2"
+                                                        style="width: 200px;">Personal</a>
+
+                                                    <input type="radio" class="btn-check" name="btnradio1a" id="btnradio2a" checked>
+                                                    <a href="/PayrolEmployee" type="button"
+                                                        class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                                    {{-- End --}}
+
+                                    {{-- Add Payrol --}}
+                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+                            <div class="card-body">
+                                            <h5 class="strong text-center" data-bs-toggle="tab">
+                                            Setting Gaji
+                                            </h5>
+                                            <hr />
+                                            <!-- <div class="row">
+                                                <div class="col-xl-9 col-8">
+                                                    <p class="mb-2">Tanggal Efektif</p>
+                                                        </div>
+                                                <div class="col-xl-3 col-3">
+                                                    <input type="date" class="form-control" placeholder=""
+                                                        style="border: 0.035rem solid rgb(195, 195, 195)" />
+                                                    </div>
+                                            </div> -->
+                                            <!-- <hr />
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-9 col-8 ">
+                                                    <p class="mb-2">Gaji Bulanan</p>
+                                                </div>
+                                                <div class="col-xl-3 col-4 text-end">
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                            </div>
+                                                        </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-xl-9 col-8">
+                                                    <p class="mb-2">Gaji Mingguan</p>
+                                                    </div>
+                                                <div class="col-xl-3 col-4 text-end">
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-xl-9 col-8">
+                                                    <p class="mb-2">Gaji Harian</p>
+                                        </div>
+                                                <div class="col-xl-3 col-4 text-end">
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                    </div>
+                                            </div> -->
+                                            <div class="basic-form">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <div class="form-check mb-2">
+                                                            <input type="checkbox" class="form-check-input checkoption" id="check1" value="" onclick="checkedOnClick(this);">
+                                                            <label class="form-check-label" for="check1">Gaji Bulanan</label>
+                                </div>
+                                                        <div class="form-check mb-2">
+                                                            <input type="checkbox" class="form-check-input checkoption" id="check2" value="" onclick="checkedOnClick(this);">
+                                                            <label class="form-check-label" for="check2">Gaji Mingguan</label>
+                            </div>
+                                                        <div class="form-check mb-2">
+                                                            <input type="checkbox" class="form-check-input checkoption" id="check2" value="" onclick="checkedOnClick(this);">
+                                                            <label class="form-check-label" for="check2">Gaji Harian</label>
+                        </div>
+
+                                                    </div>
+                                                </form>
+                    </div>
+
+                                            <hr />
+                                        </div>
+                            <div class="card-body">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Gaji Bulanan</h4>
+                                        </div>
+                                        </div>
+                                            <div class="card-body">
+                                                <h5 class="strong text-center" data-bs-toggle="tab">
+                                                    Pendapatan
+                                                </h5>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-6">
+                                                        <p>Gaji Pokok</p>
+                                                    </div>
+                                                    <div class="col-xl-6 col-6">
+                                                        <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-xl-3 col-3">
+                                                        <p>Uang Lembur</p>
+                                                    </div>
+                                                    <div class="col-xl-3 col-3">
+                                                        <p>0</p>
+                                        </div>
+                                                    <div class="col-xl-6 col-6">
+                                                        <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                    </div>
+                                </div>
+                                                <div class="col-xl-5 col-5 ms-auto">
+                                                    <p>(Berapa Kali Lembur x Uang Lembur)</p>
+                            </div>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-6">
+                                                        <p>Tunjangan Pulsa</p>
+                        </div>
+                                                    <div class="col-xl-6 col-6">
+                                                        <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                    </div>
+                </div>
+                                                <hr />
                     <div class="row">
-
-                        {{-- Button --}}
-                        <div class="card-body col-xl-3 col-lg-4 col-md-4 col-sm-4 ml-8">
-                            <div style="">
-                                <div class="profile-photo d-flex justify-content-center">
-                                    <img src="images/profile/profile.png" class="img-fluid rounded-circle "
-                                        alt="">
-                                </div>
-                                <br>
-                                <!-- <div class="d-flex justify-content-center">
-                                    <div class="input-group" style="width: 240px;">
-                                        <div class="form-file">
-                                            <input type="file" class="form-file-input form-control">
+                                                    <div class="col-xl-6 col-6">
+                                                        <p>Tunjangan Lainnya</p>
+                                                    </div>
+                                                    <div class="col-xl-6 col-6">
+                                                        <p>Dimasukkan ketika melakukan pembayaran</p>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                            <div class="row">
+                                                    <div class="col-lg-9 col-6">
+                                                        <b>
+                                                        <p class="strong">Total</p>
+                                                        </b>
+                                                    </div>
+                                                    <div class="col-lg-3 col-4">
+                                                        <b>
+                                                        <p class="strong">Rp. 6.000.000</p>
+                                                        </b>
+                                                    </div>
+                                                </div>
                                         </div>
-                                    </div>
-                                </div> -->
-                                <br>
-                                <div style="text-align: center;">
-                                    <h4><a href="post-details.html" class="text-black">Arya Kurniawan</a></h4>
-                                    <p class="mb-0">IT Manager</p>
-                                </div>
-                                <br>
-                                <div class="container">
-                                    <div class="row justify-content-center"
-                                        aria-label="Basic radio toggle button group">
-                                        <input type="radio" class="btn-check" name="btnradio1a" id="btnradio1a"
-                                            >
-                                            <a href="/PayrolEmployee" type="button" class="btn btn-outline-danger btn-xs hoverbtn mb-2"
-                                            style="width: 200px;">Personal</a>
-                                         
-                                        <input type="radio" class="btn-check" name="btnradio1a" id="btnradio2a" checked>
-                                        <a href="/PayrolEmployee" type="button"
-                                            class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a> 
+                                        <div class="card-body">
+                                                <h5 class="strong text-center" data-bs-toggle="tab">
+                                                    Potongan
+                                                </h5>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-6">
+                                                        <p>Gaji Pokok</p>
+                                        </div>
+                                                    <div class="col-xl-6 col-6">
+                                                        <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        {{-- End --}}
-
-                        {{-- Add Payrol --}}
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
-                            <div class="card-body">
-                                <h5 class="strong text-center" data-bs-toggle="tab">
-                                   Setting Gaji
-                                </h5>
-                                <hr />
-                                <!-- <div class="row">
-                                    <div class="col-xl-9 col-8">
-                                        <p class="mb-2">Tanggal Efektif</p>
-                                    </div>
-                                    <div class="col-xl-3 col-3">
-                                        <input type="date" class="form-control" placeholder=""
-                                            style="border: 0.035rem solid rgb(195, 195, 195)" />
-                                    </div>
-                                </div> -->
-                                <!-- <hr />
-                                <div class="row align-items-center">
-                                    <div class="col-xl-9 col-8 ">
-                                        <p class="mb-2">Gaji Bulanan</p>
-                                    </div>
-                                    <div class="col-xl-3 col-4 text-end">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-xl-9 col-8">
-                                        <p class="mb-2">Gaji Mingguan</p>
-                                    </div>
-                                    <div class="col-xl-3 col-4 text-end">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-xl-9 col-8">
-                                        <p class="mb-2">Gaji Harian</p>
-                                    </div>
-                                    <div class="col-xl-3 col-4 text-end">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div> -->
-                                <div class="basic-form">
-                                    <form>
-                                        <div class="mb-3">
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input checkoption" id="check1" value="" onclick="checkedOnClick(this);">
-                                                <label class="form-check-label" for="check1">Gaji Bulanan</label>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-xl-3 col-3">
+                                                        <p>Keterlambatan</p>
+                                                    </div>
+                                                    <div class="col-xl-3 col-3">
+                                                        <p>0</p>
+                                                    </div>
+                                                    <div class="col-xl-6 col-6">
+                                                        <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-5 col-5 ms-auto">
+                                                    <p>(Berapa Kali Terlambat x Uang Denda)</p>
+                                                </div>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-6">
+                                                        <p>Potongan Lainnya</p>
+                                                    </div>
+                                                    <div class="col-xl-6 col-6">
+                                                        <p>Dimasukkan ketika melakukan pembayaran</p>
+                                                    </div>
+                                        </div>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-lg-9 col-6">
+                                                        <p>Total</p>
+                                                    </div>
+                                                    <div class="col-lg-3 col-4">
+                                                        <p>Rp. 6.000.000</p>
+                                                    </div>
+                                                    <hr />
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-lg-9 col-6">
+                                                        <b>
+                                                            <p class="strong">Total Home Pay</p>
+                                                        </b>
+                                                    </div>
+                                                    <div class="col-lg-3 col-4">
+                                                        <b>
+                                                            <p class="strong">Rp. 6.000.000</p>
+                                                        </b>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input checkoption" id="check2" value="" onclick="checkedOnClick(this);">
-                                                <label class="form-check-label" for="check2">Gaji Mingguan</label>
-                                            </div>
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input checkoption" id="check2" value="" onclick="checkedOnClick(this);">
-                                                <label class="form-check-label" for="check2">Gaji Harian</label>
-                                            </div>
-                                            
-                                        </div>
-                                    </form>
-                                </div>
-                            
-                                <hr />
-                            </div>
-                            <div class="card-body">
-                                <div class="card-header">
-                                    <h4 class="card-title">Gaji Bulanan</h4>
-                                </div>
-                            </div>
-                                <div class="card-body">
-                                    <h5 class="strong text-center" data-bs-toggle="tab">
-                                        Pendapatan
-                                    </h5>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-xl-6 col-6">
-                                            <p>Gaji Pokok</p>
-                                        </div>
-                                        <div class="col-xl-6 col-6">
-                                            <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                        </div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-xl-3 col-3">
-                                            <p>Uang Lembur</p>
-                                        </div>
-                                        <div class="col-xl-3 col-3">
-                                            <p>0</p>
-                                        </div>
-                                        <div class="col-xl-6 col-6">
-                                            <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-5 col-5 ms-auto">
-                                        <p>(Berapa Kali Lembur x Uang Lembur)</p>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-xl-6 col-6">
-                                            <p>Tunjangan Pulsa</p>
-                                        </div>
-                                        <div class="col-xl-6 col-6">
-                                            <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                        </div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-xl-6 col-6">
-                                            <p>Tunjangan Lainnya</p>
-                                        </div>
-                                        <div class="col-xl-6 col-6">
-                                            <p>Dimasukkan ketika melakukan pembayaran</p>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-lg-9 col-6">
-                                            <b>
-                                            <p class="strong">Total</p>
-                                            </b>
-                                        </div>
-                                        <div class="col-lg-3 col-4">
-                                            <b>
-                                            <p class="strong">Rp. 6.000.000</p>
-                                            </b>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="strong text-center" data-bs-toggle="tab">
-                                        Potongan
-                                    </h5>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-xl-6 col-6">
-                                            <p>Gaji Pokok</p>
-                                        </div>
-                                        <div class="col-xl-6 col-6">
-                                            <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                        </div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-xl-3 col-3">
-                                            <p>Keterlambatan</p>
-                                        </div>
-                                        <div class="col-xl-3 col-3">
-                                            <p>0</p>
-                                        </div>
-                                        <div class="col-xl-6 col-6">
-                                            <input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-5 col-5 ms-auto">
-                                        <p>(Berapa Kali Terlambat x Uang Denda)</p>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-xl-6 col-6">
-                                            <p>Potongan Lainnya</p>
-                                        </div>
-                                        <div class="col-xl-6 col-6">
-                                            <p>Dimasukkan ketika melakukan pembayaran</p>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-lg-9 col-6">
-                                            <p>Total</p>
-                                        </div>
-                                        <div class="col-lg-3 col-4">
-                                            <p>Rp. 6.000.000</p>
-                                        </div>
-                                        <hr />
-                                    </div>
-                                    <div class="row mt-2">
-                                        <div class="col-lg-9 col-6">
-                                            <b>
-                                                <p class="strong">Total Home Pay</p>
-                                            </b>
-                                        </div>
-                                        <div class="col-lg-3 col-4">
-                                            <b>
-                                                <p class="strong">Rp. 6.000.000</p>
-                                            </b>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-                    {{-- End --}}
-                    <div class="row justify-content-end">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="card-body">
+                                {{-- End --}}
                                 <div class="row justify-content-end">
-                                    <div class="col-lg-8 col-12 text-end">
-                                        <a href="/PayrolEmployee" class="NoRepeat "><button type="button" class="btn btn-rounded btn-danger btn-xs">Simpan Perubahan</button></a>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="card-body">
+                                            <div class="row justify-content-end">
+                                                <div class="col-lg-8 col-12 text-end">
+                                                    <a href="/PayrolEmployee" class="NoRepeat "><button type="button" class="btn btn-rounded btn-danger btn-xs">Simpan Perubahan</button></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 </div>
-
-</div>
-
 <div class="footer">
+
     <div class="copyright">
-        <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/"
-                target="_blank">Kalopsia</a> 2022</p>
+        <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a> 2022</p>
     </div>
 </div>
-
 <!-- Required vendors -->
-<script src="vendor/global/global.min.js"></script>
-<script src="vendor/chart.js/Chart.bundle.min.js"></script>
+<script src="{{ asset('vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
+<script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
+
 <!-- Apex Chart -->
-<script src="vendor/apexchart/apexchart.js"></script>
+<script src="{{ asset('vendor/apexchart/apexchart.js') }}"></script>
+<script src="{{ asset('vendor/nouislider/nouislider.min.js') }}"></script>
+<script src="{{ asset('vendor/wnumb/wNumb.js') }}"></script>
 
-<!-- Datatable -->
-<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="js/plugins-init/datatables.init.js"></script>
+<!-- Dashboard 1 -->
+<script src="{{ asset('js/dashboard/dashboard-1.js') }}"></script>
 
-<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<script src="{{ asset('js/custom.min.js') }}"></script>
+<script src="{{ asset('js/dlabnav-init.js') }}"></script>
+<script src="{{ asset('js/demo.js') }}"></script>
+<script src="{{ asset('js/styleSwitcher.js') }}"></script>
 
-<script src="js/custom.min.js"></script>
-<script src="js/dlabnav-init.js"></script>
-<script src="js/demo.js"></script>
-<script src="js/styleSwitcher.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+<script>
+    var options = {
+        series: [{
+            data: [21, 22, 10, 28, 16, 21, 13, 30]
+        }],
+        chart: {
+            height: 350,
+            type: 'bar',
+            events: {
+                click: function(chart, w, e) {}
+            }
+        },
+        colors: ['#EE3232'],
+        plotOptions: {
+            bar: {
+                columnWidth: '45%',
+                distributed: true,
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        legend: {
+            show: false
+        },
+        xaxis: {
+            categories: [
+                'John',
+                'Joe',
+                'Jake',
+                'Amber',
+                'Peter',
+                'Mary',
+                'David',
+                'Lily'
+            ],
+            labels: {
+                style: {
+                    colors: ['#000000'],
+                    // Dalam Code ini Length: 8 berfungsi untuk mengulangi warna sebanyak jumlah data dalam Categories //
+                    // colors: Array.from({
+                    //     length: 8
+                    // }, (_, index) => ['#CF0000', '#890596', '#1CC5DC'][index % 3]),
+                    fontSize: '12px'
+                }
+            }
+        }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+</script>
+
+<script>
+    var options = {
+        series: [44, 55, 13, 43, 22],
+        chart: {
+            width: 380,
+            type: 'pie',
+        },
+        labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+        legend: {
+            position: 'bottom'
+        },
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                }
+            }
+        }]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart_pie"), options);
+    chart.render();
+</script>
 <script>
     var isAlternateLogo = false;
-    var originalLogoSrc = "https://i.postimg.cc/k4bDT4Pz/kalopsia.jpg";
-    var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
+    var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
+    var alternateLogoSrc =  "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
 
     function changeLogo() {
         var logo = document.getElementById("logo");
@@ -1146,21 +1291,3 @@
         }
     }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
-<script type="text/javascript">
-   function checkedOnClick(el){
-
-      // Select all checkboxes by class
-      var checkboxesList = document.getElementsByClassName("checkoption");
-      for (var i = 0; i < checkboxesList.length; i++) {
-         checkboxesList.item(i).checked = false; // Uncheck all checkboxes
-      }
-
-      el.checked = true; // Checked clicked checkbox
-   }
-   </script>
-</body>
-
-<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
-
-</html>
