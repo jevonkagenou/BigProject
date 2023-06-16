@@ -28,6 +28,12 @@
     <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    {{-- css toastr --}}
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css"> --}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+
 </head>
 
 <body>
@@ -40,16 +46,19 @@
         .search-area {
             padding: 5px;
         }
-        .red-hover:hover{
-            color:#EE3232 !important;
-        }
-        .announcement{
+
+        .red-hover:hover {
             color: #EE3232 !important;
         }
+
+        .announcement {
+            color: #EE3232 !important;
+        }
+
         .brand-logo img {
-        max-width: 80%;
-        height: auto;
-        }
+            max-width: 80%;
+            height: auto;
+        }
     </style>
 
 
@@ -85,7 +94,7 @@
         ***********************************-->
         <div class="nav-header">
             <a href="index.html" class="brand-logo">
-			<img id="logo" src="https://i.postimg.cc/MpM0gDDQ/Logo-kal.png">
+                <img id="logo" src="https://i.postimg.cc/MpM0gDDQ/Logo-kal.png">
             </a>
             <div class="nav-control" onclick="changeLogo()">
                 <div class="hamburger">
@@ -106,14 +115,87 @@
                                 Beranda
                             </div>
                         </div>
-                        <div class="justify-content-end">
-                            <ul class="navbar-nav">
-                                <li class="nav-item dropdown notification_dropdown mx-2">
-                                    <a class="nav-link bell bell-link" href="javascript:void(0)">
-                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M27 7.88883C27 5.18897 24.6717 3 21.8 3C17.4723 3 10.5277 3 6.2 3C3.3283 3 1 5.18897 1 7.88883V23.7776C1 24.2726 1.31721 24.7174 1.80211 24.9069C2.28831 25.0963 2.8473 24.9912 3.2191 24.6417C3.2191 24.6417 5.74629 22.2657 7.27769 20.8272C7.76519 20.3688 8.42561 20.1109 9.11591 20.1109H21.8C24.6717 20.1109 27 17.922 27 15.2221V7.88883ZM24.4 7.88883C24.4 6.53951 23.2365 5.44441 21.8 5.44441C17.4723 5.44441 10.5277 5.44441 6.2 5.44441C4.7648 5.44441 3.6 6.53951 3.6 7.88883V20.8272L5.4382 19.0989C6.4132 18.1823 7.73661 17.6665 9.11591 17.6665H21.8C23.2365 17.6665 24.4 16.5726 24.4 15.2221V7.88883ZM7.5 15.2221H17.9C18.6176 15.2221 19.2 14.6745 19.2 13.9999C19.2 13.3252 18.6176 12.7777 17.9 12.7777H7.5C6.7824 12.7777 6.2 13.3252 6.2 13.9999C6.2 14.6745 6.7824 15.2221 7.5 15.2221ZM7.5 10.3333H20.5C21.2176 10.3333 21.8 9.7857 21.8 9.11104C21.8 8.43638 21.2176 7.88883 20.5 7.88883H7.5C6.7824 7.88883 6.2 8.43638 6.2 9.11104C6.2 9.7857 6.7824 10.3333 7.5 10.3333Z" fill="black"/>
+                            <ul class="navbar-nav header-right">
+                                <li class="nav-item dropdown notification_dropdown">
+                                    <a class="nav-link  ai-icon" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+                                       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.638 4.9936V2.3C12.638 1.5824 13.2484 1 14.0006 1C14.7513 1 15.3631 1.5824 15.3631 2.3V4.9936C17.3879 5.2718 19.2805 6.1688 20.7438 7.565C22.5329 9.2719 23.5384 11.5872 23.5384 14V18.8932L24.6408 20.9966C25.1681 22.0041 25.1122 23.2001 24.4909 24.1582C23.8709 25.1163 22.774 25.7 21.5941 25.7H15.3631C15.3631 26.4176 14.7513 27 14.0006 27C13.2484 27 12.638 26.4176 12.638 25.7H6.40705C5.22571 25.7 4.12888 25.1163 3.50892 24.1582C2.88759 23.2001 2.83172 22.0041 3.36039 20.9966L4.46268 18.8932V14C4.46268 11.5872 5.46691 9.2719 7.25594 7.565C8.72068 6.1688 10.6119 5.2718 12.638 4.9936ZM14.0006 7.5C12.1924 7.5 10.4607 8.1851 9.18259 9.4045C7.90452 10.6226 7.18779 12.2762 7.18779 14V19.2C7.18779 19.4015 7.13739 19.6004 7.04337 19.7811C7.04337 19.7811 6.43703 20.9381 5.79662 22.1588C5.69171 22.3603 5.70261 22.6008 5.82661 22.7919C5.9506 22.983 6.16996 23.1 6.40705 23.1H21.5941C21.8298 23.1 22.0492 22.983 22.1732 22.7919C22.2972 22.6008 22.3081 22.3603 22.2031 22.1588C21.5627 20.9381 20.9564 19.7811 20.9564 19.7811C20.8624 19.6004 20.8133 19.4015 20.8133 19.2V14C20.8133 12.2762 20.0953 10.6226 18.8172 9.4045C17.5391 8.1851 15.8073 7.5 14.0006 7.5Z" fill="#4f7086"/>
                                         </svg>
+                                        <span class="badge light text-white bg-primary rounded-circle">12</span>
                                     </a>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <div id="dlab_W_Notification1" class="widget-media dlab-scroll p-3" style="height:380px;">
+                                            <ul class="timeline">
+                                                <li>
+                                                    <div class="timeline-panel">
+                                                        <div class="media me-2">
+                                                            <img alt="image" width="50" src="images/avatar/1.jpg">
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h6 class="mb-1">Dr sultads Send you Photo</h6>
+                                                            <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="timeline-panel">
+                                                        <div class="media me-2 media-info">
+                                                            KG
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h6 class="mb-1">Resport created successfully</h6>
+                                                            <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="timeline-panel">
+                                                        <div class="media me-2 media-success">
+                                                            <i class="fa fa-home"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h6 class="mb-1">Reminder : Treatment Time!</h6>
+                                                            <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                 <li>
+                                                    <div class="timeline-panel">
+                                                        <div class="media me-2">
+                                                            <img alt="image" width="50" src="images/avatar/1.jpg">
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h6 class="mb-1">Dr sultads Send you Photo</h6>
+                                                            <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="timeline-panel">
+                                                        <div class="media me-2 media-danger">
+                                                            KG
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h6 class="mb-1">Resport created successfully</h6>
+                                                            <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="timeline-panel">
+                                                        <div class="media me-2 media-primary">
+                                                            <i class="fa fa-home"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h6 class="mb-1">Reminder : Treatment Time!</h6>
+                                                            <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a class="all-notification" href="javascript:void(0);">See all notifications <i class="ti-arrow-end"></i></a>
+                                    </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
@@ -144,7 +226,6 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </div>
                     </div>
                 </nav>
             </div>
@@ -171,42 +252,66 @@
 
                     </li>
                     <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
-                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" fill="black"/></svg></i>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                                    width="48">
+                                    <path
+                                        d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"
+                                        fill="black" />
+                                </svg></i>
                             <span class="nav-text">Beranda</span>
                         </a>
 
 
                     </li>
                     <li><a class="ai-icon red-hover" href="/EmployeePresence" aria-expanded="false">
-                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z" fill="black"/></svg></i>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                                    width="48">
+                                    <path
+                                        d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z"
+                                        fill="black" />
+                                </svg></i>
                             <span class="nav-text">Presensi</span>
                         </a>
 
                     </li>
                     <li><a class=" ai-icon red-hover" href="/PermitEmployee" aria-expanded="false">
-                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z" fill="black"/></svg></i>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                                    width="48">
+                                    <path
+                                        d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z"
+                                        fill="black" />
+                                </svg></i>
                             <span class="nav-text">Izin Cuti</span>
                         </a>
 
                     </li>
                     <li><a class="ai-icon red-hover" href="/ApprovalEmployee" aria-expanded="false">
-                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z" fill="black"/></svg></i>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                                    width="48">
+                                    <path
+                                        d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z"
+                                        fill="black" />
+                                </svg></i>
                             <span class="nav-text">Approval</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon red-hover" href="/CompanyEmployee" aria-expanded="false">
-                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-120v-720h390v165h410v555H80Zm60-60h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm0-165h270v-105H140v105Zm330 495h350v-435H470v435Zm80-270v-60h165v60H550Zm0 165v-60h165v60H550Z" fill="black"/></svg></i>
-                            <span class="nav-text">Perusahaan</span>
-                        </a>
-
-                    </li>
                     <li><a href="/SalaryEmployee" class="ai-icon red-hover" aria-expanded="false">
-                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z" fill="black"/></svg></i>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                                    width="48">
+                                    <path
+                                        d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z"
+                                        fill="black" />
+                                </svg></i>
                             <span class="nav-text">Gaji</span>
                         </a>
                     </li>
                     <li><a class=" ai-icon red-hover" href="/Calendar" aria-expanded="false">
-                            <i><svg  xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z" fill="black"/></svg></i>
+                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                                    width="48">
+                                    <path
+                                        d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"
+                                        fill="black" />
+                                </svg></i>
                             <span class="nav-text">Kalender</span>
                         </a>
 
@@ -214,225 +319,222 @@
 
                 </ul>
             </div>
-</div>
+        </div>
 
-        {{-- Chatbox --}}
-        <div class="chatbox">
-			<div class="chatbox-close"></div>
-			<div class="custom-tab-1">
-				<ul class="nav nav-tabs">
-					<li class="nav-item">
-						<a class="nav-link" data-bs-toggle="tab" href="#alerts">Alerts</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane fade active show" id="alerts" role="tabpanel">
-						<div class="card mb-sm-3 mb-md-0 contacts_card">
-							<div class="card-header chat-list-header text-center">
-								<div>
-									<h6 class="mb-1">Pengumunam</h6>
-								</div>
-							</div>
-							<div class="card-body contacts_body p-0 dlab-scroll" id="dlab_W_Contacts_Body1">
-								<ul class="contacts">
-									<li class="name-first-letter">30/05/2023</li>
-									<li class="active">
-										<div class="d-flex bd-highlight">
-											<div class="user_info">
-												<span>David Nester Birthday</span>
-												<p class="text-danger">Today</p>
-											</div>
-										</div>
-									</li>
-									<li class="name-first-letter">30/05/2023</li>
-									<li>
-										<div class="d-flex bd-highlight">
-											<div class="user_info">
-												<span>Perfection Simplified</span>
-												<p class="text-danger">Jame Smith commented on your status</p>
-											</div>
-										</div>
-									</li>
-									<li class="name-first-letter">30/05/2023</li>
-									<li>
-										<div class="d-flex bd-highlight">
-											<div class="user_info">
-												<span>AharlieKane</span>
-												<p class="text-danger">Sami is online</p>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="d-flex bd-highlight">
-											<div class="user_info">
-												<span>Athan Jacoby</span>
-												<p class="text-danger">Nargis left 30 mins ago</p>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div class="card-footer"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
         <!--**********************************
             Sidebar end
         ***********************************-->
 
-		<!--**********************************
+        <!--**********************************
             Content body start
         ***********************************-->
-		<div class="content-body">
-			<!-- row -->
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-xl-12">
-						<div class="card">
-							<div class="card-body">
-								<div class="d-xl-flex d-block align-items-start description-bx">
-									<div class="col-xl-4 card-info text-white d-flex justify-content-center">
-										<img src="https://i.postimg.cc/jjKwr4TP/dashboard.png" class="" alt="">
+        <div class="content-body">
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-xl-flex d-block align-items-start description-bx">
+                                    <div class="col-xl-4 card-info text-white d-flex justify-content-center">
+                                        <img src="https://i.postimg.cc/jjKwr4TP/dashboard.png" class=""
+                                            alt="">
 
-									</div>
-									<div class="col-xl-8 mt-5" style="margin-top: 5%;">
-										<h6 class="card-title" style="font-weight: bold; font-size: 25px;">Selamat Datang
-											Anggie!</h6>
-										<span class="" style="font-size: 16px;">Bekerja lebih mudah dan cepat bersama
-											kami. Jangan lupa ikuti trainingnya.....</span>
-									</div>
+                                    </div>
+                                    <div class="col-xl-8 mt-5" style="margin-top: 5%;">
+                                        <h6 class="card-title" style="font-weight: bold; font-size: 25px;">Selamat
+                                            Datang
+                                            Anggie!</h6>
+                                        <span class="" style="font-size: 16px;">Bekerja lebih mudah dan cepat
+                                            bersama
+                                            kami. Jangan lupa ikuti trainingnya.....</span>
+                                    </div>
 
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-12">
-					<div class="card">
-						<div class="card-body">
-							<div class="row justify-content-center">
-								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="/EmployeePresence" class="bg-success text-white d-flex flex-column align-items-center p-2"
-										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 30px; ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="row form-material">
+                            <div class="col-xl-12">
+                                <div class="" style="border-top-color: red;">
+                                    <div class="card-header d-block">
+                                        <h4 class="card-title" style="text-align: center; font-weight: bold;">
+                                            Pengumuman</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-xl-6 mt-3">
+                                                <div class="alert alert-warning alert-dismissible fade show">
 
-										<i class="bi bi-stopwatch d-flex justify-content-center"
-											style="font-size: 22px; margin-top: 5px;"></i>
-										<span style="font-size: 12px; color: black; width: 90px;"
-											class="text-center mt-3">Presensi</span>
+                                                    <div class="media">
+                                                        <div class="media-body" style="color: black;">
+                                                            <div class="row">
+                                                                <div class="col-7 mt-1">
+                                                                    <h5 class="">Pengumuman</h5>
+                                                                </div>
+                                                                <div class="col-5 text-end mt-1">
+                                                                    <span style="color: gray;">21/06/23</span>
+                                                                </div>
+                                                            </div>
 
-									</a>
+                                                            <hr>
+                                                            <p class="mb-0">Hari ini di karenakan perusahaan...</p>
+                                                            <a data-bs-toggle="modal"
+                                                                data-bs-target="#lihat-pengumuman"
+                                                                class="text-red d-flex justify-content-end"
+                                                                type="button">Lihat</a>
 
-								</div>
-								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="/PermitEmployee" class="bg-danger text-white d-flex flex-column align-items-center p-2"
-										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 mt-3">
+                                                <div class="alert alert-warning alert-dismissible fade show">
 
-										<i class="bi bi-briefcase d-flex justify-content-center"
-											style="font-size: 22px; margin-top: 5px;"></i>
-										<span style="font-size: 12px; color: black; width: 90px;" class="text-center mt-3">Izin
-											Cuti</span>
+                                                    <div class="media">
+                                                        <div class="media-body" style="color: black;">
+                                                            <div class="row">
+                                                                <div class="col-7 mt-1">
+                                                                    <h5 class="">Pengumuman</h5>
+                                                                </div>
+                                                                <div class="col-5 text-end mt-1">
+                                                                    <span style="color: gray;">21/06/23</span>
+                                                                </div>
+                                                            </div>
+                                                            <hr>
+                                                            <p class="mb-0">Hari ini di karenakan perusahaan...</p>
+                                                            <a data-bs-toggle="modal"
+                                                                data-bs-target="#lihat-pengumuman"
+                                                                class="text-red d-flex justify-content-end"
+                                                                type="button">Lihat</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-									</a>
-
-								</div>
-								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="/SalaryEmployee" class=" text-white d-flex flex-column align-items-center p-2"
-										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #60D394;">
-
-										<i class="bi bi-wallet2 d-flex justify-content-center"
-											style="font-size: 22px; margin-top: 5px;"></i>
-										<span style="font-size: 12px; color: black; width: 200px;"
-											class="text-center mt-3">Gaji</span>
-
-									</a>
-
-								</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 
-								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="/CompanyEmployee" class=" text-white d-flex flex-column align-items-center p-2"
-										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #FFD97D;">
+                        <div class="modal fade" id="lihat-pengumuman">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Cuti Idhul Fitri</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="mb-0 text-red">21/06/23</p>
+                                        <div class="row g-0">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, odio,
+                                                repellendus magnam culpa corrupti placeat cupiditate alias id assumenda,
+                                                aspernatur ab corporis sunt! Earum sunt quibusdam perspiciatis eum culpa
+                                                illum veritatis, labore animi, quos incidunt saepe? Inventore mollitia
+                                                dolor quae?</p>
+                                        </div>
+                                        <div class="row g-0">
+                                            {{-- <h6 class="modal-title">Lampiran</h6><br> --}}
+                                            <a href="" target="_blank">Lampiran</a>
 
-										<i class="bi bi-building d-flex justify-content-center"
-											style="font-size: 22px; margin-top: 5px;"></i>
-										<span style="font-size: 12px; color: black; width: 200px;"
-											class="text-center mt-3">Perusahaan</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-									</a>
+                    {{-- chart rekap gaji --}}
+                    <div class="container-fluid" style="padding-right: 0px; padding-left: 0px;">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-xl-8 col-lg-8 col-sm-8">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Statistik Gaji Per Bulan</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="chart"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-xxl-4 col-lg-4">
+                                        <div class="card">
+                                            <div class="card-header border-0 pb-0">
+                                                <h4 class="card-title">Jam Kerja</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="dlab_W_TimeLine" class="widget-timeline dlab-scroll height370">
+                                                    <ul class="timeline">
+                                                        <li>
+                                                            <div class="timeline-badge danger">
+                                                            </div>
+                                                            <a class="timeline-panel text-muted" href="#">
+                                                                <span>Senin</span>
+                                                                <h6 class="mb-0">07.00 - 12.00</h6>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="timeline-badge danger">
+                                                            </div>
+                                                            <a class="timeline-panel text-muted" href="#">
+                                                                <span>Senin</span>
+                                                                <h6 class="mb-0">07.00 - 12.00</h6>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="timeline-badge danger">
+                                                            </div>
+                                                            <a class="timeline-panel text-muted" href="#">
+                                                                <span>Senin</span>
+                                                                <h6 class="mb-0">07.00 - 12.00</h6>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="timeline-badge danger">
+                                                            </div>
+                                                            <a class="timeline-panel text-muted" href="#">
+                                                                <span>Senin</span>
+                                                                <h6 class="mb-0">07.00 - 12.00</h6>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="timeline-badge danger">
+                                                            </div>
+                                                            <a class="timeline-panel text-muted" href="#">
+                                                                <span>Senin</span>
+                                                                <h6 class="mb-0">07.00 - 12.00</h6>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="timeline-badge danger">
+                                                            </div>
+                                                            <a class="timeline-panel text-muted" href="#">
+                                                                <span>Senin</span>
+                                                                <h6 class="mb-0">07.00 - 12.00</h6>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-								</div>
-								<div class="col-4 col-xl-1 col-lg-1 col-sm-2 col-md-2 mt-4">
-									<a href="/ApprovalEmployee" class=" text-white d-flex flex-column align-items-center p-2"
-										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #FF9B85;">
-
-										<i class="bi bi-clipboard-check d-flex justify-content-center"
-											style="font-size: 22px; margin-top: 5px;"></i>
-										<span style="font-size: 12px; color: black; width: 200px;"
-											class="text-center mt-3">Approval</span>
-
-									</a>
-
-								</div>
-
-								<div class="col-4 col-xl-1 col-lg-1 col-sm-3 col-md-2 mt-4">
-									<a href="/Calendar" class=" text-white d-flex flex-column align-items-center p-2"
-										style="border-radius: 8px; width: 50px; height: 50px; margin-right: 20px; background-color: #146C94;">
-
-										<i class="bi bi-calendar-event d-flex justify-content-center"
-											style="font-size: 22px; margin-top: 5px;"></i>
-										<span style="font-size: 12px; color: black; width: 200px;"
-											class="text-center mt-3">Kalender</span>
-
-									</a>
-								</div>
-							</div>
-							<div class="row form-material">
-								<div class="col-xl-12 mt-5">
-									<div class="card card-cd" style="border-top-color: red;">
-										<div class="card-header d-block">
-											<h4 class="card-title" style="text-align: center; font-weight: bold;">Pengumuman</h4>
-											<div class="row">
-												<div class="col-xl-6 mt-3">
-													<div class="alert alert-warning alert-dismissible fade show">
-
-														<div class="media">
-															<div class="media-body" style="color: black;">
-																<h5 class="mt-1 mb-1">Pengumuman</h5>
-																<hr>
-																<p class="mb-0">Hari ini di karenakan perusahaan...</p>
-																<a href="javascript:void(0)" class="text-red d-flex justify-content-end nav-link bell bell-link announcement red-hover">Lihat</a>
-
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-xl-6 mt-3">
-													<div class="alert alert-warning alert-dismissible fade show">
-
-														<div class="media">
-															<div class="media-body" style="color: black;">
-																<h5 class="mt-1 mb-1">Pengumuman</h5>
-																<hr>
-																<p class="mb-0">Hari ini di karenakan perusahaan...</p>
-																<a href="javascript:void(0)" class="text-red d-flex justify-content-end nav-link bell bell-link announcement red-hover">Lihat</a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
+            </div>
+        </div>
         <!--**********************************
             Content body end
         ***********************************-->
@@ -445,14 +547,15 @@
         <div class="footer">
 
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a> 2022</p>
+                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/"
+                        target="_blank">Kalopsia</a> 2022</p>
             </div>
         </div>
         <!--**********************************
             Footer end
         ***********************************-->
 
-		<!--**********************************
+        <!--**********************************
            Support ticket button start
         ***********************************-->
 
@@ -461,7 +564,7 @@
         ***********************************-->
 
 
-	</div>
+    </div>
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -470,14 +573,38 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
+
+        {{-- cdn toastr --}}
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    {{-- toastr --}}
+    @if (Session::has('warning'))
+    <script>
+        toastr.options = {
+            "progressBar" : true,
+            "closeButton" : true,
+        }
+
+        toastr.warning("{{Session::get('warning') }}",'Warning!', {timeOut:12000});
+    </script>
+@endif
+
+    
+
     <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-    
+
         function changeLogo() {
             var logo = document.getElementById("logo");
-    
+
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;
                 isAlternateLogo = false;
@@ -488,21 +615,84 @@
         }
     </script>
     <script src="vendor/global/global.min.js"></script>
-	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
-	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-	<!-- Apex Chart -->
-	<script src="vendor/apexchart/apexchart.js"></script>
-	<script src="js/dashboard/transaction-details.js"></script>
-	<!-- Datatable -->
-	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="js/plugins-init/datatables.init.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <!-- Apex Chart -->
+    <script src="vendor/apexchart/apexchart.js"></script>
+    <script src="js/dashboard/transaction-details.js"></script>
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
 
     <script src="js/custom.min.js"></script>
-	<script src="js/dlabnav-init.js"></script>
-	<script src="js/demo.js"></script>
+    <script src="js/dlabnav-init.js"></script>
+    <script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+
+    {{-- chart --}}
+    <script>
+        var options = {
+            series: [{
+                data: [21, 22, 10, 28, 16, 21, 13, 30, 50, 21, 10, 25]
+            }],
+            chart: {
+                height: 350,
+                type: 'bar',
+                events: {
+                    click: function(chart, w, e) {}
+                }
+            },
+            colors: ['#EE3232'],
+            plotOptions: {
+                bar: {
+                    columnWidth: '40%',
+                    distributed: true,
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            legend: {
+                show: false
+            },
+            xaxis: {
+                categories: [
+                    'Januari',
+                    'Februari',
+                    'Maret',
+                    'April',
+                    'Mei',
+                    'Juni',
+                    'Juli',
+                    'Agustus',
+                    'September',
+                    'Oktober',
+                    'November',
+                    'Desember',
+                ],
+                labels: {
+                    style: {
+                        colors: ['#000000'],
+                        // Dalam Code ini Length: 8 berfungsi untuk mengulangi warna sebanyak jumlah data dalam Categories //
+                        // colors: Array.from({
+                        //     length: 8
+                        // }, (_, index) => ['#CF0000', '#890596', '#1CC5DC'][index % 3]),
+                        fontSize: '12px'
+                    }
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    </script>
+
 
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/transaction-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:23 GMT -->
+
 </html>
