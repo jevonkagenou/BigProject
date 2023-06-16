@@ -910,7 +910,7 @@
 												</span>
 											</button>
 										</div>
-										<div class="" style="margin-left: 71%;" >
+										<div class="" style="margin-left: 68%;" >
 											<input type="date" class="form-control btn-xm" >
 										</div>
 									</div>

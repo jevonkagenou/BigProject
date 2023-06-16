@@ -321,14 +321,15 @@
                                                 </select>
                                             </div> --}}
                                             <div class="col-md-3 col-12 text-end">
-                                              <div class="d-flex">
-                                                <div class="flex-grow-1"></div>
+                                              <div class="d-flex mt-3">
+                                                <div class="flex-grow-1">
                                                 <select class="form-select">
                                                   <option>Semua</option>
                                                   <option>Menunggu</option>
                                                   <option>Ditolak</option>
                                                   <option>Diterima</option>
                                                 </select>
+                                            </div>
                                               </div>
                                             </div>
                                   </div>
