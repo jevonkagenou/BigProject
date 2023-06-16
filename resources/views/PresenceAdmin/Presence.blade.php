@@ -62,7 +62,9 @@
             background-color: var(--primary);
             border-color: var(--primary);
         }
-
+        .nepibaik:hover{
+            color: #fff !important
+        }
         .dlabnav .metismenu a {
             color: #9FA4A6;
         }
@@ -70,6 +72,57 @@
             max-width: 80%;
             height: auto;
         }
+    .default-select {
+        background-color: #1bbfe0;
+        color: #fff;
+    }
+    .default-select2 {
+        background-color: #09e568;
+        color: #fff;
+    }
+    .form-control2:hover, .form-control2:focus, .form-control2.active {
+    box-shadow: active;
+    background: #09e568;
+    color: #000; }
+
+    /* .default-select {
+        background-color: #eefd4c;
+        color: #fff;
+    } */
+    .default-select1 {
+        background-color: #e4c129;
+        color: #fff;
+    }
+    .form-control1:hover, .form-control1:focus, .form-control1.active {
+    box-shadow: active;
+    background: #e4c129;
+    color: #000; }
+    
+    /* .default-select {
+        background-color: #da3b38;
+        color: #fff;
+    } */
+    .default-select3 {
+        background-color: #ff0000;
+        color: #fff;
+    }
+    .form-control3:hover, .form-control3:focus, .form-control1.active {
+    box-shadow: active;
+    background: #ff0000;
+    color: #000; }
+    
+    /* .default-select {
+        background-color: #a8aeab;
+        color: #fff;
+    } */
+    .default-select4 {
+        background-color: #a8aeab;
+        color: #fff;
+    }
+    .form-control4:hover, .form-control4:focus, .form-control1.active {
+    box-shadow: active;
+    background: #a8aeab;
+    color: #000; }
     </style>
 </head>
 
@@ -974,43 +1027,41 @@
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
                                                 <th class="text-center">Nama</th>
                                                 <th class="text-center">Shift</th>
                                                 <th class="text-center">Status</th>
                                                 <th class="text-center">Masuk</th>
-                                                <th class="text-center">Keluar</th>
-                                                <th class="text-center">Masuk Lembur</th>
-                                                <th class="text-center">Keluar Lembur</th>
+                                                <th class="text-center">Pulang</th>
+                                                <th class="text-center">Lembur Masuk</th>
+                                                <th class="text-center">Lembur Pulang</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
                                                 <td class="text-center">Tina</td>
                                                 <td class="text-center">
-                                                    <div class="btn-group" role="group">
-                                                        <button type="button"
-                                                            class="btn btn-secondary dropdown-toggle btn-xs"
-                                                            data-bs-toggle="dropdown">Jam Kantor</button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void()">Shift
-                                                                Pagi</a>
-                                                            <a class="dropdown-item" href="javascript:void()">Jam
-                                                                Kantor</a>
+                                                    <div class="card-body">
+                                                        <div class="basic-form">
+                                                            <form>
+                                                                <select class="default-select form-control wide mb-3">
+                                                                    <option>Jam Kantor</option>
+                                                                    <option>Shift Pagi</option>
+                                                                </select>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="btn-group" role="group">
-                                                        <button type="button"
-                                                            class="btn btn-warning dropdown-toggle btn-xs text-start"
-                                                            data-bs-toggle="dropdown">Belum ada status</button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void()">Belum
-                                                                ada status</a>
-                                                            <a class="dropdown-item" href="javascript:void()">Sudah
-                                                                Presensi</a>
+                                                    <div class="card-body">
+                                                        <div class="basic-form">
+                                                            <form>
+                                                                <select class="default-select default-select1 form-control form-control1 wide mb-3">
+                                                                    <option>Belum Presensi</option>
+                                                                    <option>Sudah Presensi</option>
+                                                                    <option>Izin</option>
+                                                                    <option>Sakit</option>
+                                                                </select>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -1035,31 +1086,128 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
-                                                <td class="text-center">Jihan</td>
+                                                <td class="text-center">Nanda</td>
                                                 <td class="text-center">
-                                                    <div class="btn-group" role="group">
-                                                        <button type="button"
-                                                            class="btn btn-success dropdown-toggle btn-xs"
-                                                            data-bs-toggle="dropdown">Shift Pagi</button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void()">Shift
-                                                                Pagi</a>
-                                                            <a class="dropdown-item" href="javascript:void()">Jam
-                                                                Kantor</a>
+                                                    <div class="card-body">
+                                                        <div class="basic-form">
+                                                            <form>
+                                                                <select class="default-select form-control  wide mb-3">
+                                                                    <option>Jam Kantor</option>
+                                                                    <option>Shift Pagi</option>
+                                                                </select>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="btn-group" role="group">
-                                                        <button type="button"
-                                                            class="btn btn-success dropdown-toggle btn-xs"
-                                                            data-bs-toggle="dropdown">Sudah Presensi</button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void()">Dropdown
-                                                                link</a>
-                                                            <a class="dropdown-item" href="javascript:void()">Dropdown
-                                                                link</a>
+                                                    <div class="card-body">
+                                                        <div class="basic-form">
+                                                            <form>
+                                                                <select class="nepibaik default-select default-select2 form-control form-control2 wide mb-3">
+                                                                    <option >Sudah Presensi</option>
+                                                                    <option>Belum Presensi</option>
+                                                                    <option>Izin</option>
+                                                                    <option>Sakit</option>
+                                                                </select>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">00.00
+                                                    <span class="px-1">
+                                                        
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">00.00
+                                                    <span class="px-1">
+                                                        
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">00.00
+                                                    <span class="px-1">
+                                                        
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">00.00
+                                                    <span class="px-1">
+                                                        
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">Fira</td>
+                                                <td class="text-center">
+                                                    <div class="card-body">
+                                                        <div class="basic-form">
+                                                            <form>
+                                                                <select class="default-select form-control  wide mb-3">
+                                                                    <option>Jam Kantor</option>
+                                                                    <option>Shift Pagi</option>
+                                                                </select>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="card-body">
+                                                        <div class="basic-form">
+                                                            <form>
+                                                                <select class="default-select default-select4 form-control form-control4 wide mb-3">
+                                                                    <option>Izin</option>
+                                                                    <option>Sudah Presensi</option>
+                                                                    <option>Belum Presensi</option>
+                                                                    <option>Sakit</option>
+                                                                </select>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">00.00
+                                                    <span class="px-1">
+                                                        
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">00.00
+                                                    <span class="px-1">
+                                                        
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">00.00
+                                                    <span class="px-1">
+                                                        
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">00.00
+                                                    <span class="px-1">
+                                                        
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">Nevi</td>
+                                                <td class="text-center">
+                                                    <div class="card-body">
+                                                        <div class="basic-form">
+                                                            <form>
+                                                                <select class="default-select form-control  wide mb-3">
+                                                                    <option>Jam Kantor</option>
+                                                                    <option>Shift Pagi</option>
+                                                                </select>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="card-body">
+                                                        <div class="basic-form">
+                                                            <form>
+                                                                <select class="default-select default-select3 form-control form-control3 wide mb-3">
+                                                                    <option>Sakit</option>
+                                                                    <option>Sudah Presensi</option>
+                                                                    <option>Belum Presensi</option>
+                                                                    <option>Izin</option>
+                                                                </select>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </td>

@@ -20821,14 +20821,14 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       height: 2.5rem; } }
   .form-control:hover, .form-control:focus, .form-control.active {
     box-shadow: active;
-    background: #fff;
-    color: #6e6e6e; }
+    background: #1bbfe0;
+    color: #000; }
   .form-control:focus {
     border-color: var(--primary); }
   .form-control.solid {
     background: #f6f6f6;
     border-color: #ececec;
-    color: #000; }
+    color: #fff; }
     .form-control.solid[type="file"] {
       padding: 6px 10px; }
 
