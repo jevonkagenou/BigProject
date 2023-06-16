@@ -857,13 +857,14 @@
 
 								<div class="row">
 									<div class="col-xl-3 col-lg-5 col-md-4 col-sm-4 col-12 mb-2">
-								<img src="https://i.postimg.cc/bvfJYQw0/bankmega.png" alt="" width="100%" height="auto" class="rectangle">
+                                        <a data-bs-toggle="modal" data-bs-target="#bayargaji" type="button">
+                                        <img src="https://i.postimg.cc/bvfJYQw0/bankmega.png" alt="" width="100%" height="auto" style="border:solid black 1px"></a>
 							</div>
 							<div class="col-xl-3 col-lg-5 col-md-4 col-sm-4 col-12 mb-2">
-								<img src="https://i.postimg.cc/bvfJYQw0/bankmega.png" alt="" width="100%" height="auto" class="rectangle">
+								<img src="https://i.postimg.cc/bvfJYQw0/bankmega.png" alt="" width="100%" height="auto" style="border:solid black 1px">
 							</div>
 							<div class="col-xl-3 col-lg-5 col-md-4 col-sm-4 col-12 mb-2">
-								<img src="https://i.postimg.cc/bvfJYQw0/bankmega.png" alt="" width="100%" height="auto" class="rectangle">
+								<img src="https://i.postimg.cc/bvfJYQw0/bankmega.png" alt="" width="100%" height="auto" style="border:solid black 1px">
 							</div>
 							</div>
                                 <p>Langkah pembayaran gaji:
@@ -879,6 +880,54 @@
                 </div>
             </div>
         </div>
+        {{-- modal bayar gaji --}}
+				 <div class="modal fade" id="bayargaji">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Konfirmasi Bayar Gaji</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="row g-0">
+									<p>Setelah dikonfirmasi, slip gaji tidak dapat diubah atau dihapus kembali.</p>
+								</div>
+                                <hr>
+								<div class="row">
+                                    <div class="col-xl-8 col-8">
+                                      <p>Total Pembayaran</p>
+                                    </div>
+                                    <div class="col-xl-4 col-4">
+                                      <p>Rp. 4.320.000</p>
+                                    </div>
+                                  </div>
+                                  <hr>
+                                  <div class="row">
+                                    <div class="col-xl-8 col-8">
+                                      <p>Total Karyawan</p>
+                                    </div>
+                                    <div class="col-xl-4 col-4">
+                                      <p class=" text-center">1</p>
+                                    </div>
+                                  </div>
+                                  <hr>
+                                  <div class="row g-0">
+									<p>Apakah anda yakin mengkonfirmasi pembayaran gaji tersebut?</p>
+								</div>
+                                <div class="row">
+                                <div class="col-sm-2 col-md-2 col-lg-2">
+                                    <button class="btn btn-outline-light btn-xs ms-3" style="white-space: nowrap;">Tolak</button>
+                                </div>
+                                    <div class="col-sm-1 col-md-2 col-lg-2">
+                                        <button class="btn btn-outline-danger btn-xs ms-1" style="white-space: nowrap;">Ya</button>
+                                    </div>
+                               
+                            </div>
+							</div>
+						</div>
+					</div>
+				</div>
         <!--**********************************
             Content body end
         ***********************************-->

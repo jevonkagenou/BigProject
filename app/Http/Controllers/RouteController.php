@@ -132,4 +132,9 @@ class RouteController extends Controller
             'tittle'=>'Detail Karyawan'
     ]);
     }
+    public function AddAccount(){
+        return view('Settings.AddAccount',[
+            'tittle'=>'Tambah Rekening'
+        ]);
+    }
 }

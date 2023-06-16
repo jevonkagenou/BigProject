@@ -810,11 +810,6 @@
                         </a>
 
                     </li>
-                    <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                        <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
-                            <span class="nav-text ">Izin Cuti</span>
-                        </a>
-                    </li>
                     <li><a class=" ai-icon hover-red" href="AdminReport" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M349-250h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-310H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-250Zm0-170h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-480H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-420ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.444 0 23.722 5T599-862l183 183q8 8 13 19.278 5 11.278 5 23.722v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.375-8.625T551-664ZM220-820v186-186 680-680Z"/></svg>
                             <span class="nav-text ">Laporan</span>
@@ -829,15 +824,18 @@
                             <li><a href="/PresenceApproval" class="hover-red">Approval Presensi</a></li>
                             <li><a href="/WorkSchedule" class="hover-red">Jadwal Kerja</a></li>
                             <li><a href="/Presence" class="hover-red">Presensi</a></li>
+                            <li><a href="/PermitLeaveAdmin" class="hover-red">Izin Cuti</a></li>
+
+
                         </ul>
                     </li>
-                    <li><a class=" ai-icon hover-red" href="/" aria-expanded="false">
+                    <li><a class=" ai-icon hover-red" href="/EmployeeAdmin" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M68-160q-13 0-21.5-8.5T38-190v-64q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v64q0 13-8.5 21.5T648-160H68Zm648 0q10-2 16-10.5t6-21.5v-62q0-63-32-103.5T622-423q69 8 130 23.5t99 35.5q33 19 52 47t19 63v64q0 13-8.5 21.5T892-160H716ZM358-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42Zm360-150q0 66-42 108t-108 42q-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm260-321q39 0 64.5-25.5T448-631q0-39-25.5-64.5T358-721q-39 0-64.5 25.5T268-631q0 39 25.5 64.5T358-541Zm0-90Zm0 271Z"/></svg>
                             <span class="nav-text ">Karyawan</span>
                         </a>
 
                     </li>
-                    <li><a href="/Payroll" class="ai-icon hover-red" aria-expanded="false">
+                    <li><a href="/StartPayroll" class="ai-icon hover-red" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M324-358q21 46 51.5 72.5T451-247v27q0 11 8.5 19t19.5 8q11 0 19-8.5t8-19.5v-24q61-7 95-37.5t34-81.5q0-51-29-83t-98-61q-58-24-84-43t-26-51q0-31 22.5-49t61.5-18q30 0 52 14t37 42l48-23q-17-35-45-55t-66-24v-24q0-11-8-19t-19-8q-11 0-19.5 8t-8.5 19v24q-51 7-80.5 37.5T343-602q0 49 30 78t90 54q67 28 92 50.5t25 55.5q0 32-26.5 51.5T487-293q-39 0-69.5-22T375-375l-51 17ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z"/></svg>
                             <span class="nav-text ">Payroll</span>
                         </a>
@@ -858,102 +856,105 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-                <!-- row -->
-				<!-- payroll slip gaji -->
-				<div class="row">
-					<div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Slip Gaji</h4>
+
+				<div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Tambah Rekening</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-1  btn-group btn-xs">                                
+                                <div class="btn-group btn-xs">
+                                    <div class="size-filter">
+                                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" >
+                                            <a href="/PayrollSalarySlip" class="btn btn-xs btn-outline-danger" role="button" aria-pressed="true">Slip Gaji</a>
+
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" checked>
+                                            <a class="btn btn-xs btn-outline-danger" for="btnradio1">Tambah Rekening</a>
+
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-								<div class="row">
-									<div class="col-xl-6 col-lg-8 col-md-7 col-sm-1  btn-group btn-xs">                                
-                                        <div class="btn-group btn-xs">
-                                            <div class="size-filter">
-                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
-                                                    <a class="btn btn-xs btn-outline-danger" for="btnradio1">Slip Gaji</a>
-        
-                                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
-                                                    <a href="/AddAccount" class="btn btn-xs btn-outline-danger" role="button" aria-pressed="true">Tambah Rekening</a>
-        
-                                                </div>
+                <!-- row -->
+                        <div class="row">
+
+                    <div class="container-fluid">
+
+                                <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12 mb-2 text-center" style="border: solid black 1px; padding: 2px;" >
+                                    <a data-bs-toggle="modal" data-bs-target="#tambahrekening" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  width="80" height="80" fill="currentColor"  class="bi bi-plus-lg mt-3" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/><p>Tambah Rekening</p>
+                                      </svg>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 mt-3 ms-auto mb-5">
+                                    <div class="alert alert bg-danger alert-dismissible fade show">
+
+                                        <div class="media">
+                                            <div class="media-body" style="color: white;">
+                                                <p class="mb-0">Masukkan nomor rekening bank sesuai dengan perusahaan, guna untuk membayar gaji kepada karyawan.</p>
+                                                <p class="mb-0">Disarankan menggunakan satu rekening untuk melakukan penggajian.</p>
+                                                <p class="mb-0">Bank yang saat ini digunakan adalah BCA, BTN, Mandiri, BRI, dan BNI</p>
                                             </div>
                                         </div>
                                     </div>
-									<div class="col-xl-6 col-lg-4 col-md-5 col-sm-3 mt-8 btn-xs text-end">                                
-										<div class="responsive-button">
-											<a href="AddPaySlips" type="button" class="btn btn-danger btn-xs"><i class="bi bi-plus me-1"></i>Tambah Slip Gaji</a>
-											<button type="button" class="btn btn-outline-light btn-xs" ><i class="bi bi-download me-2"></i>Print </button>
-											
-										</div>
-									</div>
-								</div>
-                                <div class="table-responsive mb-4">
-                                    <table id="example5" class="display" style="min-width: 845px">
-										<thead>
-                                            <tr class="text-center">
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Periode</th>
-                                                <th>Lama Periode</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="text-center">
-                                                <td>01</td>
-                                                <td>Gaji Bulanan</td>
-                                                <td>Tetap</td>
-                                                <td>1 Bulan</td>											
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>02</td>
-                                                <td>Gaji Bulanan</td>
-                                                <td>Tetap</td>
-                                                <td>2 Bulan</td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>03</td>
-                                                <td>Gaji Bulanan</td>
-                                                <td>Tetap</td>
-                                                <td>3 Bulan</td>		
-                                            </tr>
-										
-                                        </tbody>
-                                    </table>
-									
-								</div>
-								<nav>
-										
-									<ul class="pagination pagination-xs" style="float: right;">
-										<li class="page-item page-indicator">
-											<a class="page-link" href="javascript:void(0)">
-												<i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-										</li>
-										<li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a>
-										</li>
-										<li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
-										
-										<li class="page-item page-indicator">
-											<a class="page-link" href="javascript:void(0)">
-												<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-										</li>
-									</ul>
-									
-								</nav> 	
-								
-						
-                            </div>
+                                </div>
                         </div>
-						
                     </div>
-					
-                    
-                    
-				</div>
+                   
+
+
             </div>
+             {{-- modal tambahrekening --}}
+				 <div class="modal fade" id="tambahrekening">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Tambah Rekening</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="mb-3">
+                                    <label for="address"  class="form-label">Nama Bank</label>
+                                    <input type="text" class="form-control" id="nama bank" placeholder="Nama Bank" required="">
+                                    <div class="invalid-feedback">
+                                        Nama Bank
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address"  class="form-label">Nama Rekening Bank</label>
+                                    <input type="text" class="form-control" id="nama rekening bank" placeholder="Nama Rekening Bank" required="">
+                                    <div class="invalid-feedback">
+                                        Nama Rekening Bank
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address"  class="form-label">Nama Pemegang Rekening</label>
+                                    <input type="text" class="form-control" id="nama pemegang rekening" placeholder="Nama Pemegang Rekening" required="">
+                                    <div class="invalid-feedback">
+                                        Nama Pemegang Rekening
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-sm-2 col-md-2 col-lg-2">
+                                    <button class="btn btn-outline-light btn-xs ms-3" style="white-space: nowrap;">Batal</button>
+                                </div>
+                                    <div class="col-sm-1 col-md-2 col-lg-2">
+                                        <button class="btn btn-outline-danger btn-xs ms-1" style="white-space: nowrap;">Simpan</button>
+                                    </div>
+                               
+                            </div>
+							</div>
+						</div>
+					</div>
+				</div>
+                   
         </div>
+                </div>
         <!--**********************************
             Content body end
         ***********************************-->
@@ -977,6 +978,7 @@
 
         
     </div>
+        </div>
     <!--**********************************
         Main wrapper end
     ***********************************-->

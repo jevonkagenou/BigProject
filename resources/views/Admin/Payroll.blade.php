@@ -999,10 +999,10 @@
                                                                                 </h5>
                                                                                 <hr />
                                                                                 <div class="row">
-                                                                                    <div class="col-xl-9 col-8">
+                                                                                    <div class="col-xl-8 col-8">
                                                                                         <p>Gaji Pokok</p>
                                                                                     </div>
-                                                                                    <div class="col-xl-3 col-4">
+                                                                                    <div class="col-xl-4 col-4">
                                                                                         <p>Rp. 4.500.000</p>
                                                                                     </div>
                                                                                 </div>
@@ -1059,6 +1059,15 @@
                                                                                 </div>
                                                                                 <hr />
                                                                                 <div class="row">
+                                                                                    <div class="col-lg-9 col-12">
+                                                                                        <a
+                                                                                            class="text-red"><i
+                                                                                                class="bi bi-plus px-1"></i>Pendapatan</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                                <hr>
+                                                                                <div class="row">
                                                                                     <div class="col-xl-5 col-12">
                                                                                         <p>Masukkan Nama Pendapatan</p>
                                                                                         <input type="text"
@@ -1087,22 +1096,15 @@
                                                                                                 class="fa fa-trash font-18 align-middle me-2"></i></a>
                                                                                     </div>
                                                                                 </div>
+                                                                               
                                                                                 <hr />
                                                                                 <div class="row">
-                                                                                    <div class="col-lg-9 col-12">
-                                                                                        <a href=""
-                                                                                            class="text-red"><i
-                                                                                                class="bi bi-plus px-1"></i>Pendapatan</a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-9 col-8">
+                                                                                    <div class="col-lg-8 col-8">
                                                                                         <p class="strong">
                                                                                             Total Pendapatan
                                                                                         </p>
                                                                                     </div>
-                                                                                    <div class="col-lg-3 col-4">
+                                                                                    <div class="col-lg-4 col-4">
                                                                                         <p class="strong">Rp. 5.000.000
                                                                                         </p>
                                                                                     </div>
@@ -1123,10 +1125,10 @@
                                                                                 </h5>
                                                                                 <hr />
                                                                                 <div class="row">
-                                                                                    <div class="col-xl-9 col-8">
+                                                                                    <div class="col-xl-8 col-8">
                                                                                         <p>Koperasi</p>
                                                                                     </div>
-                                                                                    <div class="col-xl-3 col-4">
+                                                                                    <div class="col-xl-4 col-4">
                                                                                         <p>Rp. 450.000</p>
                                                                                     </div>
                                                                                 </div>
@@ -1168,6 +1170,14 @@
                                                                                 </div>
                                                                                 <hr />
                                                                                 <div class="row">
+                                                                                    <div class="col-lg-9 col-12">
+                                                                                        <a href=""
+                                                                                            class="text-red"><i
+                                                                                                class="bi bi-plus px-1"></i>Potongan</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr>
+                                                                                <div class="row">
                                                                                     <div class="col-xl-5 col-12">
                                                                                         <p>Masukkan Nama Potongan</p>
                                                                                         <input type="text"
@@ -1198,20 +1208,12 @@
                                                                                 </div>
                                                                                 <hr>
                                                                                 <div class="row">
-                                                                                    <div class="col-lg-9 col-12">
-                                                                                        <a href=""
-                                                                                            class="text-red"><i
-                                                                                                class="bi bi-plus px-1"></i>Potongan</a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-9 col-8">
+                                                                                    <div class="col-lg-8 col-8">
                                                                                         <p class="strong">
                                                                                             Total Potongan
                                                                                         </p>
                                                                                     </div>
-                                                                                    <div class="col-lg-3 col-4">
+                                                                                    <div class="col-lg-4 col-4">
                                                                                         <p>Rp. 500.000</p>
                                                                                     </div>
                                                                                 </div>
@@ -1284,14 +1286,14 @@
 														class="strong text-center"
 														data-bs-toggle="tab"
 													  >
-														Pendapatannnnn
+														Pendapatan
 													  </h5>
 													  <hr />
 													  <div class="row">
-														<div class="col-xl-9 col-8">
+														<div class="col-xl-8 col-8">
 														  <p>Gaji Pokok</p>
 														</div>
-														<div class="col-xl-3 col-4">
+														<div class="col-xl-4 col-4">
 														  <p>Rp. 4.500.000</p>
 														</div>
 													  </div>
@@ -1353,6 +1355,17 @@
 														</div>
 													  </div>
 													  <hr />
+                                                      <div class="row">
+														<div class="col-lg-9 col-12">
+														  <a href="" class="text-red"
+															><i
+															  class="bi bi-plus px-1"
+															></i
+															>Pendapatan</a
+														  >
+														</div>
+													  </div>
+                                                      <hr>
 													  <div class="row">
 														<div class="col-xl-5 col-12">
 														  <p>Masukkan Nama Pendapatan</p>
@@ -1391,23 +1404,14 @@
 														</div>
 													  </div>
 													  <hr />
+													  
+											
 													  <div class="row">
-														<div class="col-lg-9 col-12">
-														  <a href="" class="text-red"
-															><i
-															  class="bi bi-plus px-1"
-															></i
-															>Pendapatan</a
-														  >
-														</div>
-													  </div>
-													  <hr />
-													  <div class="row">
-														<div class="col-lg-9 col-8"><p class="strong">
+														<div class="col-lg-8 col-8"><p class="strong">
 															  Total Pendapatan
 															</p>
 														</div>
-														<div class="col-lg-3 col-4">
+														<div class="col-lg-4 col-4">
 														  <p>Rp. 5.000.000</p>
 														</div>
 													  </div>
@@ -1431,10 +1435,10 @@
 													  </h5>
 													  <hr />
 													  <div class="row">
-														<div class="col-xl-9 col-8">
+														<div class="col-xl-8 col-8">
 														  <p>Koperasi</p>
 														</div>
-														<div class="col-xl-3 col-4">
+														<div class="col-xl-4 col-4">
 														  <p>Rp. 450.000</p>
 														</div>
 													  </div>
@@ -1463,10 +1467,10 @@
 													  </div>
 													  <hr />
 													  <div class="row">
-														<div class="col-xl-9 col-8">
+														<div class="col-xl-8 col-8">
 														  <p>Potongan Lainnya</p>
 														</div>
-														<div class="col-xl-3 col-4">
+														<div class="col-xl-4 col-4">
 														  <input
 															type="text"
 															class="form-control"
@@ -1489,13 +1493,51 @@
 														  >
 														</div>
 													  </div>
+                                                      <hr>
+                                                      <div class="row">
+														<div class="col-xl-5 col-12">
+														  <p>Masukkan Nama Potongan</p>
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div class="col-xl-5 col-12">
+														  <p>
+															Masukkan Jumlah Potongan
+														  </p>
+														  <input
+															type="text"
+															class="form-control"
+															placeholder=""
+															style="
+															  border: 0.035rem solid
+																rgb(195, 195, 195);
+															"
+														  />
+														</div>
+														<div
+														  class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2"
+														>
+														  <a href=""
+															><i
+															  class="fa fa-trash font-18 align-middle me-2"
+															></i
+														  ></a>
+														</div>
+													  </div>
 													  <hr />
 													  <div class="row">
-														<div class="col-lg-9 col-8"><p class="strong">
+														<div class="col-lg-8 col-8"><p class="strong">
 															  Total Potongan
 															</p>
 														</div>
-														<div class="col-lg-3 col-4">
+														<div class="col-lg-4 col-4">
 														  <p>Rp. 500.000</p>
 														</div>
 													  </div>
