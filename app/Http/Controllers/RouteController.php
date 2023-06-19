@@ -137,4 +137,9 @@ class RouteController extends Controller
             'tittle'=>'Tambah Rekening'
         ]);
     }
+    public function ProfilAdmin(){
+        return view('Admin.ProfilAdmin',[
+            'tittle'=>'Profil'
+        ]);
+    }
 }
