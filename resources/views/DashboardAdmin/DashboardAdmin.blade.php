@@ -744,7 +744,7 @@
                                     </svg>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                    <li><a class="dropdown-item" href="#"><svg
+                                    <li><a class="dropdown-item" href="/ProfilAdmin"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 fill="#969ba0" viewBox="0 0 448 512"
                                                 style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
@@ -956,24 +956,24 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th>#</th>
+                                                                <th>No.</th>
                                                                 <th>Nama</th>
                                                                 <th class="text-center">Waktu Terlambat</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <th>#</th>
+                                                                <th>1</th>
                                                                 <td>Shido</td>
                                                                 <td class="text-center">5 menit</td>
                                                             </tr>
                                                             <tr>
-                                                                <th>#</th>
+                                                                <th>2</th>
                                                                 <td>Shun</td>
                                                                 <td class="text-center">10 menit</td>
                                                             </tr>
                                                             <tr>
-                                                                <th>#</th>
+                                                                <th>3</th>
                                                                 <td>Kamijou Touma</td>
                                                                 <td class="text-center">15 menit</td>
                                                             </tr>
