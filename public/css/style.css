@@ -20821,7 +20821,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       height: 2.5rem; } }
   .form-control:hover, .form-control:focus, .form-control.active {
     box-shadow: active;
-    background: #1bbfe0;
+    background: #fff;
     color: #000; }
   .form-control:focus {
     border-color: var(--primary); }
