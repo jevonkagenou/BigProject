@@ -50,7 +50,7 @@ class ViewEmployeeController extends Controller
 
     public function ProfileEmployee(){
         return view ('Karyawan.ProfileEmployee',[
-            'title'=>'Profil'
+            'tittle'=>'Profil Karyawan'
         ]);
     }
 }

@@ -49,6 +49,10 @@
 
         .red-hover:hover {
             color: #EE3232 !important;
+            fill:red !important
+        }
+        .red-icon path {
+            fill: red;
         }
 
         .announcement {
@@ -188,7 +192,7 @@
                                         </svg>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                        <li><a class="dropdown-item" href="#"><svg
+                                        <li><a class="dropdown-item" href="/ProfileEmployee"><svg
                                                     xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="#969ba0" viewBox="0 0 448 512"
                                                     style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
@@ -231,11 +235,11 @@
 
                     </li>
                     <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            <svg class="red-icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                                     width="48">
                                     <path
                                         d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"
-                                        fill="black" />
+                                        />
                                 </svg></i>
                             <span class="nav-text">Beranda</span>
                         </a>
@@ -243,53 +247,53 @@
 
                     </li>
                     <li><a class="ai-icon red-hover" href="/EmployeePresence" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                                     width="48">
                                     <path
                                         d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z"
-                                        fill="black" />
+                                        />
                                 </svg></i>
                             <span class="nav-text">Presensi</span>
                         </a>
 
                     </li>
                     <li><a class=" ai-icon red-hover" href="/PermitEmployee" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                                     width="48">
                                     <path
                                         d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z"
-                                        fill="black" />
+                                        />
                                 </svg></i>
                             <span class="nav-text">Izin Cuti</span>
                         </a>
 
                     </li>
                     <li><a class="ai-icon red-hover" href="/ApprovalEmployee" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                                     width="48">
                                     <path
                                         d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z"
-                                        fill="black" />
+                                        />
                                 </svg></i>
                             <span class="nav-text">Approval</span>
                         </a>
                     </li>
                     <li><a href="/SalaryEmployee" class="ai-icon red-hover" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                                     width="48">
                                     <path
                                         d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z"
-                                        fill="black" />
+                                        />
                                 </svg></i>
                             <span class="nav-text">Gaji</span>
                         </a>
                     </li>
                     <li><a class=" ai-icon red-hover" href="/Calendar" aria-expanded="false">
-                            <i><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                                     width="48">
                                     <path
                                         d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"
-                                        fill="black" />
+                                        />
                                 </svg></i>
                             <span class="nav-text">Kalender</span>
                         </a>

@@ -85,6 +85,13 @@
 .dropdown-container.active .dropdown-content {
   display: block;
 }
+.red-hover:hover {
+            color: #EE3232 !important;
+            fill:red !important
+        }
+        .red-icon path {
+            fill: red;
+        }
 </style>
 <div class="content-body">
     <div class="container-fluid">
