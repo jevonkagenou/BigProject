@@ -812,7 +812,6 @@
                             <span class="nav-text ">Kehadiran</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/PresenceApproval" class="hover-red">Approval Presensi</a></li>
                             <li><a href="/WorkSchedule" class="hover-red">Jadwal Kerja</a></li>
                             <li><a href="/Presence" class="hover-red">Presensi</a></li>
                             <li><a href="/PermitLeaveAdmin" class="hover-red">Izin Cuti</a></li>

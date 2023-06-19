@@ -744,7 +744,7 @@
                                     </svg>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                    <li><a class="dropdown-item" href="#"><svg
+                                    <li><a class="dropdown-item" href="/ProfilAdmin"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 fill="#969ba0" viewBox="0 0 448 512"
                                                 style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
@@ -819,7 +819,6 @@
                             <span class="nav-text ">Kehadiran</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/PresenceApproval" class="hover-red">Approval Presensi</a></li>
                             <li><a href="/WorkSchedule" class="hover-red">Jadwal Kerja</a></li>
                             <li><a href="/Presence" class="hover-red">Presensi</a></li>
 
