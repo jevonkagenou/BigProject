@@ -32,6 +32,7 @@
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css"> --}}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="{{ asset('css/marquee.css') }}">        
 
 
 </head>
@@ -63,6 +64,34 @@
             max-width: 80%;
             height: auto;
         }
+        .marquee {
+         width: 100%;
+         overflow: hidden;
+         white-space: nowrap;
+        }
+
+        .marquee {
+        animation: scroll 20s linear infinite;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+        @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+        }
+        marquee {
+         width: 100%;
+         color: white;
+         overflow: hidden;
+         white-space: nowrap;
+         background-color: #EE3232; /* Ubah dengan warna latar belakang yang diinginkan */
+        }
+        marquee {
+            display: flex;
+            justify-content: space-between;
+        }
+
     </style>
 
 
@@ -212,7 +241,15 @@
                     </div>
                 </nav>
             </div>
+            {{-- <div class="container"> --}}
+                <marquee behavior="scroll" direction="left" scrollamount="4" style="font-size: 15px; font-family: Arial; margin-left:3px">
+                   <span> SISA CUTI ANDA TINGGAL 4 HARI LAGI</span> |
+                    <span style="color: yellow; font-size: 15px; font-family: Arial;">JANGAN LUPA PRESENSI UNTUK HARI INI!!</span>
+                </marquee>
+                
+        {{-- </div> --}}
         </div>
+        
 
         <!--**********************************
             Header end ti-comment-alt
@@ -311,6 +348,9 @@
         <!--**********************************
             Content body start
         ***********************************-->
+        <div class="marquee">
+            <span>Ini adalah teks yang bergerak dari kanan ke kiri.</span>
+        </div>
         <div class="content-body">
             <!-- row -->
             <div class="container-fluid">
