@@ -53,4 +53,9 @@ class ViewEmployeeController extends Controller
             'tittle'=>'Profil Karyawan'
         ]);
     }
+    public function Schedule(){
+        return view ('Admin.Schedule',[
+            'tittle'=>'Profil Karyawan'
+        ]);
+    }
 }
