@@ -45,7 +45,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
          .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -773,8 +773,8 @@
             Sidebar start
         ***********************************-->
         <div class="dlabnav">
-            <div class="dlabnav-scroll mm-active ps ps--active-y">
-                <ul class="metismenu mm-show" id="menu">
+            <div class="dlabnav-scroll">
+                <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
@@ -801,9 +801,14 @@
                         </a>
 
                     </li>
+                    <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
+                        <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
+                            <span class="nav-text ">Izin Cuti</span>
+                        </a>
+                    </li>
                     <li><a class=" ai-icon hover-red" href="AdminReport" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M349-250h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-310H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-250Zm0-170h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-480H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-420ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.444 0 23.722 5T599-862l183 183q8 8 13 19.278 5 11.278 5 23.722v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.375-8.625T551-664ZM220-820v186-186 680-680Z"/></svg>
-                            <span class="nav-text">Laporan</span>
+                            <span class="nav-text ">Laporan</span>
                         </a>
 
                     </li>
@@ -814,9 +819,6 @@
                         <ul aria-expanded="false">
                             <li><a href="/WorkSchedule" class="hover-red">Jadwal Kerja</a></li>
                             <li><a href="/Presence" class="hover-red">Presensi</a></li>
-                            <li><a href="/PermitLeaveAdmin" class="hover-red">Izin Cuti</a></li>
-
-
                         </ul>
                     </li>
                     <li><a class=" ai-icon hover-red" href="/EmployeeAdmin" aria-expanded="false">
@@ -825,14 +827,14 @@
                         </a>
 
                     </li>
-                    <li class="mm-active"><a href="/StartPayroll" class="ai-icon hover-red  mm-active" aria-expanded="false">
+                    <li class="mm-active"><a href="/StartPayroll" class="ai-icon hover-red" aria-expanded="false">
                         <svg class="red-icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M324-358q21 46 51.5 72.5T451-247v27q0 11 8.5 19t19.5 8q11 0 19-8.5t8-19.5v-24q61-7 95-37.5t34-81.5q0-51-29-83t-98-61q-58-24-84-43t-26-51q0-31 22.5-49t61.5-18q30 0 52 14t37 42l48-23q-17-35-45-55t-66-24v-24q0-11-8-19t-19-8q-11 0-19.5 8t-8.5 19v24q-51 7-80.5 37.5T343-602q0 49 30 78t90 54q67 28 92 50.5t25 55.5q0 32-26.5 51.5T487-293q-39 0-69.5-22T375-375l-51 17ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z"/></svg>
                             <span class="nav-text ">Payroll</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon hover-red" href="/Setting " aria-expanded="true">
+                    <li><a class=" ai-icon hover-red" href="/Setting" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M546-80H414q-11 0-19.5-7T384-105l-16-101q-19-7-40-19t-37-25l-93 43q-11 5-22 1.5T159-220L93-337q-6-10-3-21t12-18l86-63q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521l-86-63q-9-7-12-18t3-21l66-117q6-11 17-14.5t22 1.5l93 43q16-13 37-25t40-18l16-102q2-11 10.5-18t19.5-7h132q11 0 19.5 7t10.5 18l16 101q19 7 40.5 18.5T669-710l93-43q11-5 22-1.5t17 14.5l66 116q6 10 3.5 21.5T858-584l-86 61q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l86 62q9 7 12 18t-3 21l-66 117q-6 11-17 14.5t-22-1.5l-93-43q-16 13-36.5 25.5T592-206l-16 101q-2 11-10.5 18T546-80Zm-66-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-60q-29 0-49.5-20.5T410-480q0-29 20.5-49.5T480-550q29 0 49.5 20.5T550-480q0 29-20.5 49.5T480-410Zm0-70Zm-44 340h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Z"/></svg>
-                            <span class="nav-text">Pengaturan</span>
+                            <span class="nav-text ">Pengaturan</span>
                         </a>
 
                     </li>
@@ -925,7 +927,7 @@
                                     <div class="col-sm-1 col-md-2 col-lg-2">
                                         <button class="btn btn-outline-danger btn-xs ms-1" style="white-space: nowrap;">Ya</button>
                                     </div>
-                               
+
                             </div>
 							</div>
 						</div>
@@ -939,7 +941,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        
+
         <!--**********************************
             Footer end
         ***********************************-->
