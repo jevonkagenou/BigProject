@@ -47,4 +47,10 @@ class ViewEmployeeController extends Controller
             'title'=>'Kalender'
         ]);
     }
+
+    public function ProfileEmployee(){
+        return view ('Karyawan.ProfileEmployee',[
+            'title'=>'Profil'
+        ]);
+    }
 }
