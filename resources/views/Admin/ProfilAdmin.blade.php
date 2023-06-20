@@ -102,11 +102,53 @@
                                   <img src="images/profile/user.png" class="edit-image" style="width: 90px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <div class="dropdown-content">
-                                    <a href="#">Ganti Foto Profil</a>
-                                    <a href="#">Edit Foto Profil</a>
+                                    <a data-bs-toggle="modal"
+                                    data-bs-target="#editprofilkaryawan"
+                                    class="text-red d-flex"
+                                    type="button">Edit Foto Profil</a>
                                     <a href="#">Hapus Foto Profil</a>
                                 </div>
                               </div>
+                              <div class="modal fade" id="editprofilkaryawan">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Edit Foto Profil</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            
+                                            <div class="row g-0 mb-3">
+                                                <img src="images/profile/user.png" class="edit-image" style="width: 90px; display: block; margin: 0 auto; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
+
+                                            </div>
+                                            <div class="row g-0">
+
+                                                <br>
+                                                <div class="profile-statistics mb-3">
+                                                    <div class="input-group">
+                                                        <div class="form-file">
+                                                            <input type="file" class="form-file-input form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+    
+                                                    </div>
+                                                        <div class="d-flex justify-content-end ">
+                                                            <button type="submit" class="btn btn-danger btn-xs ms-auto mb-3" style="
+                                                            margin-left: auto !important">
+                                                                Simpan
+                                                            </button>
+
+                                                        </div>
+                                                    
+                                                   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                                 <p></p>
                                 <div class="profile-statistics">
                                     <div class="text-center">
@@ -204,7 +246,7 @@
                                     <hr class="mb-2" />
                                     <div class="row">
                                         <div class="d-flex justify-content-end">
-                                            <button type="submit" class="btn btn-danger btn-sm">
+                                            <button type="submit" class="btn btn-danger btn-xs">
                                                 Simpan
                                             </button>
                                         </div>

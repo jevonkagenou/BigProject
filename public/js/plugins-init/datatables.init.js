@@ -163,7 +163,7 @@ let dataSet = [
 
 		// dataTable7
 		var table = $('#example7').DataTable({
-			searching: false,
+			searching: true,
 			paging:false,
 			select: false,
 			info: false,

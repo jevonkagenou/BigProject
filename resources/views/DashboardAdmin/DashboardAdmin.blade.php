@@ -392,24 +392,24 @@
                                                             <table class="table">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th>#</th>
+                                                                        <th>No</th>
                                                                         <th>Nama</th>
                                                                         <th class="text-center">Jenis Izin</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
-                                                                        <th>#</th>
+                                                                        <th>1</th>
                                                                         <td>Shido</td>
                                                                         <td class="text-center">Cuti</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th>#</th>
+                                                                        <th>2</th>
                                                                         <td>Shun</td>
                                                                         <td class="text-center">Izin</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th>#</th>
+                                                                        <th>3</th>
                                                                         <td>Kamijou Touma</td>
                                                                         <td class="text-center">Cuti</td>
                                                                     </tr>

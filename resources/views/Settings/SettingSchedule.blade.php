@@ -919,7 +919,7 @@ tr:hover {
                             <div class="card-body">
 								<div class="row mb-3">
                                         <div class="col-sm-1 col-md-2 col-lg-12 text-end">
-                                                <button class="btn btn-danger btn-xs" href=""><i class="bi bi-plus"></i>Tambah</button>
+                                                <button class="btn btn-danger btn-xs" href=""><i class="bi bi-plus"></i>Tambah Jadwal Kerja</button>
                                         </div>
 								</div>
                                 <div class="table-responsive">
