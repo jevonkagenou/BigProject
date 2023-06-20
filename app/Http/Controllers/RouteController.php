@@ -142,4 +142,9 @@ class RouteController extends Controller
             'tittle'=>'Profil'
         ]);
     }
+    public function AddWorkSchedule(){
+        return view('Admin.AddWorkSchedule',[
+            'tittle'=>'Tambah Jadwal Kerja'
+        ]);
+    }
 }

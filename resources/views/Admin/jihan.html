@@ -1,0 +1,31 @@
+<script>
+    $(document).ready(function() {
+      $('.tambah-baris').click(function() {
+        tambahBaris();
+      });
+
+      function tambahBaris() {
+        var jumlahBaris = $('.baris').length + 0;
+        if (jumlahBaris >= 8) {
+        // Mencapai batas maksimal hari ke-7
+        return;
+      }
+        var htmlBaris =
+        '<div class="baris" style="display: flex; justify-content: align-items: center;">' +
+  '<span>Hari ke ' + jumlahBaris + '</span>' +
+  '<select class="shift" style="width: 200px;">' +
+    '<option>Pagi        06.00-07.00</option>'+
+    '<option>Siang       12.00-21.00</option>' +
+    '<option>Malam       21.00-06.00</option>' +
+  '</select>' +
+  '<i class="fa fa-trash hapus-baris"></i>' +
+'</div>';
+
+        $('#container').append(htmlBaris);
+
+        $('.hapus-baris').off().click(function() {
+          $(this).closest('.baris').remove();
+        });
+      }
+    });
+  </script>

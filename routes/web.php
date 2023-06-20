@@ -58,6 +58,7 @@ Route::get('/Employee', [RouteController::class, 'Employee'])->name('Employee');
 Route::get('/SalaryAdjustment', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
 Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
 Route::get('/ProfilAdmin', [RouteController::class, 'ProfilAdmin'])->name('ProfilAdmin');
+Route::get('/AddWorkSchedule', [RouteController::class, 'AddWorkSchedule'])->name('AddWorkSchedule');
 Route::get('/ProfileEmployee', [ViewEmployeeController::class, 'ProfileEmployee'])->name('ProfileEmployee');
 Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
