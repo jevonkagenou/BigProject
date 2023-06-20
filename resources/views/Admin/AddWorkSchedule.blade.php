@@ -23,7 +23,24 @@
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <!-- Daterange picker -->
+    <link href="vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Clockpicker -->
+    <link href="vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+    <!-- asColorpicker -->
+    <link href="vendor/jquery-asColorPicker/css/asColorPicker.min.css" rel="stylesheet">
+    <!-- Material color picker -->
+    <link href="vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+	
+    <!-- Pick date -->
+    <link rel="stylesheet" href="vendor/pickadate/themes/default.css">
+    <link rel="stylesheet" href="vendor/pickadate/themes/default.date.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,13 +83,11 @@
   }
   
   .tambah-baris {
-    margin-bottom: 20px;
-    color: red; /* Jarak antara tombol "Tambah Baris" dan baris pertama */
+    margin-bottom: 20px;/* Jarak antara tombol "Tambah Baris" dan baris pertama */
   }
   .shift {
     margin-left: 10px; /* Menambahkan jarak ke kiri pada elemen dropdown */
     margin-top: -1px;
-    color: red;
   }
 
   .hapus-baris {
@@ -240,39 +255,100 @@
                                               <i class="fa fa-arrow-left"></i> Keluar
                                             </button>
                                           </div>
-                                          
-                                        <div class="mb-3">
-                                          <label for="address" class="form-label">Nama Jadwal</label>
-                                          <input type="text" class="form-control" id="nama_lengkap" placeholder="Nama Lengkap" required="">
-                                          <div class="invalid-feedback">
-                                            Nama
-                                          </div>
+                                          <div class="" style="margin-right: 3%; ">
+											<button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#tambahpengajuan"data-bs-toggle="modal" data-bs-target=".modal-6"><i class="fa fa-plus color-info"></i>
+												<span class="text-center px-1">
+												Tambah Pengajuan
+												</span>
+											</button>
+										</div>
+                                        {{-- Modal --}}
+                                        <div class="modal fade" id="tambahpengajuan">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Ubah Pengajuan Cuti Khusus</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row g-0">
+                                                            <p>Nama karyawan</p>
+                                                        </div>
+                                                        <label for="jenis-cuti">Jenis Cuti</label>
+                                                        <div>
+                                                            <select class="form-control" id="jenis-cuti">
+                                                                <option value="cuti-mengkhitankan-anak">Cuti Mengkhitankan Anak</option>
+                                                                <option value="cuti-lainnya">Cuti Lainnya</option>
+                                                            </select>
+                                                        </div>
+                                                        <label class="">Tanggal Pengajuan</label>
+                                                        <div class="">
+                                                            <input type="date" class="form-control" placeholder="20/6/2023">
+                                                        </div>
+                                                        <label class="mb-2">Tanggal Izin</label>
+                                                        <div class="row">
+                                                            <div class="col-xl-9 mb-3">
+                                                                <div class="example">
+                                                                    <input class="form-control input-daterange-datepicker" type="text" name="daterange" id="tanggal">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-6 text-end">
+                                                                <button class="btn btn-outline-danger btn-xs" id="btn-1-hari" type="button">1 Hari</button>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <hr>
+                                                        <label class="mb-2">Keterangan Cuti</label>
+                                                        <div class="">
+                                                            <textarea class="form-control" placeholder="Mohon Izin"></textarea>
+                                                        </div>
+                                                        <label class="mb-2">Keterangan Persetujuan/Penolakan</label>
+                                                        <div class="">
+                                                            <textarea class="form-control" placeholder="Undangan jangan lupa"></textarea>
+                                                        </div>
+                                                        <div class="row g-0">
+                                                            <a href="" target="_blank">Lampiran</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger">Batalkan Persetujuan</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div id="container">
-                                          <!-- Baris pertama -->
-                                          <div class="baris">
-                                            <button type="button" class="btn btn-outline-danger btn-xs tambah-baris">
-                                              <i class="fa fa-plus"></i> Tambah Baris
-                                            </button>
-                                          </div>
-                                          
-                                          <div class="baris " style="display: flex; justify-content: align-items: center;">
-                                            <span>Hari ke 1</span>
-                                            <select class="shift " style="width: 200px;>
-                                              <option value="Pagi">Pagi        06.00-07.00</option>
-                                              <option value="Siang">Siang       12.00-21.00</option>
-                                              <option value="Malam">Malam       21.00-06.00</option>
-                                            </select>
-                                            <i class="fa fa-trash hapus-baris"></i>
-                                          </div>
-
-                                        </div>
+                                        
                                         <p></p>
-                                        <div class="text-center d-flex justify-content-center">
-                                          <button type="button" class="btn btn-danger btn-xs">Simpan</button>
+                                        
+                                        <div class="mb-3">
+                                            <label for="address" class="form-label">Nama Jadwal</label>
+                                            <input type="text" class="form-control" id="nama_lengkap" placeholder="Nama Lengkap" required="">
+                                            <div class="invalid-feedback">Nama</div>
                                         </div>
-                                      </div>
-                                    </div>
+                                        
+                                        <div id="container">
+                                            <div class="baris">
+                                                <button type="button" class="btn btn-outline-danger btn-xs tambah-baris">
+                                                    <i class="fa fa-plus"></i> Tambah Baris
+                                                </button>
+                                            </div>
+                                        
+                                            <div class="baris " style="display: flex; justify-content: align-items: center;">
+                                                <span>Hari ke 1</span>
+                                                <select class="shift" style="width: 200px;">
+                                                    <option value="Pagi">Pagi 06.00-07.00</option>
+                                                    <option value="Siang">Siang 12.00-21.00</option>
+                                                    <option value="Malam">Malam 21.00-06.00</option>
+                                                </select>
+                                                <i class="fa fa-trash hapus-baris"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <p></p>
+                                        
+                                        <div class="text-center d-flex justify-content-center">
+                                            <button type="button" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        
                             </div>
                         </div>
                     </div>
@@ -371,6 +447,66 @@
       }
     });
   </script>
+<script>
+    // Mendapatkan elemen input tanggal
+    const inputTanggal = document.getElementById('tanggal');
+
+    // Mendapatkan tombol 1 Hari
+    const tombol1Hari = document.getElementById('btn-1-hari');
+
+    // Menambahkan event listener pada tombol 1 Hari    
+    inputTanggal.addEventListener('change', function() {
+        // Mendapatkan tanggal awal dan akhir dari input
+        const tanggalArray = inputTanggal.value.split(' - ');
+        const tanggalAwal = new Date(tanggalArray[0]);
+        const tanggalAkhir = new Date(tanggalArray[1]);
+
+        // Menghitung selisih dalam milidetik
+        const selisihHari = Math.round((tanggalAkhir - tanggalAwal) / (1000 * 60 * 60 * 24)) + 1;
+
+        // Mengubah teks pada tombol menjadi jumlah hari
+        tombol1Hari.textContent = selisihHari + ' Hari';
+    });
+</script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker"></script>
+
+
+<!-- Daterangepicker -->
+    <!-- momment js is must -->
+    <script src="vendor/moment/moment.min.js"></script>
+    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- clockpicker -->
+    <script src="vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+    <!-- asColorPicker -->
+    <script src="vendor/jquery-asColor/jquery-asColor.min.js"></script>
+    <script src="vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
+    <script src="vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+    <!-- Material color picker -->
+    <script src="vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <!-- pickdate -->
+    <script src="vendor/pickadate/picker.js"></script>
+    <script src="vendor/pickadate/picker.time.js"></script>
+    <script src="vendor/pickadate/picker.date.js"></script>
+
+
+
+    <!-- Daterangepicker -->
+    <script src="js/plugins-init/bs-daterange-picker-init.js"></script>
+    <!-- Clockpicker init -->
+    <script src="js/plugins-init/clock-picker-init.js"></script>
+    <!-- asColorPicker init -->
+    <script src="js/plugins-init/jquery-asColorPicker.init.js"></script>
+    <!-- Material color picker init -->
+    <script src="js/plugins-init/material-date-picker-init.js"></script>
+    <!-- Pickdate -->
+    <script src="js/plugins-init/pickadate-init.js"></script>
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/ecom-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:29 GMT -->
