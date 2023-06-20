@@ -32,7 +32,7 @@
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css"> --}}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <link rel="stylesheet" href="{{ asset('css/marquee.css') }}">        
+    <link rel="stylesheet" href="{{ asset('css/marquee.css') }}">
 
 
 </head>
@@ -85,7 +85,8 @@
          color: white;
          overflow: hidden;
          white-space: nowrap;
-         background-color: #EE3232; /* Ubah dengan warna latar belakang yang diinginkan */
+         background-color: #EE3232;
+         font: 'Cairo' , sans-serif;
         }
         marquee {
             display: flex;
@@ -242,14 +243,14 @@
                 </nav>
             </div>
             {{-- <div class="container"> --}}
-                <marquee behavior="scroll" direction="left" scrollamount="4" style="font-size: 15px; font-family: Arial; margin-left:3px">
-                   <span> SISA CUTI ANDA TINGGAL 4 HARI LAGI</span> |
-                    <span style="color: yellow; font-size: 15px; font-family: Arial;">JANGAN LUPA PRESENSI UNTUK HARI INI!!</span>
+                <marquee behavior="scroll" direction="left" scrollamount="4" style="font-size: 15px; font: 'Cairo' , sans-serif; margin-left:3px">
+                   <span> SISA CUTI ANDA TINGGAL 4 HARI LAGI </span> |
+                    <span style="color: yellow; font-size: 15px; font: 'Cairo' , sans-serif;"> JANGAN LUPA PRESENSI UNTUK HARI INI!!</span>
                 </marquee>
-                
+
         {{-- </div> --}}
         </div>
-        
+
 
         <!--**********************************
             Header end ti-comment-alt
@@ -618,7 +619,7 @@
     </script>
 @endif
 
-    
+
 
     <script>
         var isAlternateLogo = false;
