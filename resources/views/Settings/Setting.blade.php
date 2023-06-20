@@ -3,18 +3,18 @@
 <div class="content-body">
     <div class="container-fluid align-items-center">
         <div class="row">
-            {{-- <div class="col-xl-12 col-xxl-4">
-                <a href="/Company">
+            <div class="col-xl-12 col-xxl-4">
+                <a href="/SettingSchedule">
                     <div class="card">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-xl-12">
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <img class="img-responsive" src="images/perusahaan.svg" alt="">
+                                    <div class="d-flex align-items-center justify-content-center mt-4">
+                                        <img class="img-responsive" src="https://i.postimg.cc/bJp0sZdX/jadwalkerja.png" alt="" width="180">
                                     </div>
-                                    <div class="text-center mt-4">
+                                    <div class="text-center" style="margin-top: 50;">
                                         <strong>
-                                            <h4>Perusahaan</h4>
+                                            <h4>Jadwal Kerja</h4>
                                         </strong>
                                     </div>
                                 </div>
@@ -22,28 +22,28 @@
                         </div>
                     </div>
                 </a>
-            </div> --}}
-<div class="col-xl-12 col-xxl-4">
-    <a href="/PayrollSalarySlip">
-        <div class="card">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-xl-12">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <img class="img-responsive" src="images/payroll2.svg" alt="">
-                        </div>
-                        <div class="text-center" style="margin-top: 58;">
-                            <strong>
-                                <h4>Payroll</h4>
-                            </strong>
-                        </div>
-                        
-                    </div>
-                </div>
             </div>
-        </div>
-    </a>
-</div>
+            <div class="col-xl-12 col-xxl-4">
+                <a href="/PayrollSalarySlip">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-xl-12">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img class="img-responsive" src="images/payroll2.svg" alt="">
+                                    </div>
+                                    <div class="text-center" style="margin-top: 58;">
+                                        <strong>
+                                            <h4>Payroll</h4>
+                                        </strong>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
             <div class="col-xl-12 col-xxl-4">
                 <a href="/Announcement">
@@ -85,15 +85,15 @@
                     </div>
                 </a>
             </div>
-           
+
         </div>
     </div>
 </div>
 
 <div class="footer">
     <div class="copyright">
-        <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/"
-                target="_blank">Kalopsia</a> 2022</p>
+        <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a> 2022
+        </p>
     </div>
 </div>
 <script src="{{ asset('vendor/global/global.min.js') }}"></script>

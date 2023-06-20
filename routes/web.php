@@ -64,3 +64,8 @@ Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Sche
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
 
+
+Route::get('/SettingSchedule', [RouteController::class, 'SettingSchedule'])->name('SettingSchedule');
+Route::get('/DetileSchedule', [RouteController::class, 'DetileSchedule'])->name('DetileSchedule');
+Route::get('/AnnualLeave', [RouteController::class, 'AnnualLeave'])->name('AnnualLeave');
+Route::get('/EditSchedule', [RouteController::class, 'EditSchedule'])->name('EditSchedule');

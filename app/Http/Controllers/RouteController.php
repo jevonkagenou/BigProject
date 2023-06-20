@@ -147,4 +147,25 @@ class RouteController extends Controller
             'tittle'=>'Tambah Jadwal Kerja'
         ]);
     }
+    public function SettingSchedule(){
+        return view('Settings.SettingSchedule',[
+            'tittle'=>'Jadwal Kerja'
+        ]);
+    }
+    public function DetileSchedule(){
+        return view('Settings.DetileSchedule',[
+            'tittle'=>'Detail Jadwal Kerja'
+        ]);
+    }
+
+    public function AnnualLeave(){
+        return view('Admin.AnnualLeave',[
+            'tittle'=>'Cuti Tahunan'
+        ]);
+    }
+    public function EditSchedule(){
+        return view('Settings.EditSchedule',[
+            'tittle'=>'Edit Jadwal Kerja'
+        ]);
+    }
 }

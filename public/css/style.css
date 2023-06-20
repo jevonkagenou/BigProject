@@ -3858,7 +3858,7 @@ textarea.form-control {
     float: left;
     padding-right: 0.5rem;
     color: #6c757d;
-    content: var(--bs-breadcrumb-divider, "https://dompet.dexignlab.com/") /* rtl: var(--bs-breadcrumb-divider, "/") */; }
+   /* content: var(--bs-breadcrumb-divider, "https://dompet.dexignlab.com/")  rtl: var(--bs-breadcrumb-divider, "/") */; }
 
 .breadcrumb-item.active {
   color: #6c757d; }
@@ -23147,17 +23147,17 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     margin-right: 0; }
 
 .breadcrumb {
-  font-size: 1.1875rem; }
+  font-size: 0.8rem; }
   .breadcrumb .breadcrumb-item.active a {
     color: var(--primary); }
   .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
     color: var(--primary); }
 
 .page-titles {
-  padding: 15px 40px;
+  padding: 8px 40px;
   background: #fff;
   margin-bottom: 30px;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   margin-top: 0;
   margin-left: 0;
   margin-right: 0; }
