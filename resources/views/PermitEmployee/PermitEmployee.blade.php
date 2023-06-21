@@ -502,7 +502,6 @@
                                             <input type="date" class="form-control btn-xs">
                                         </div>
                                         <div class="col-xl-6 col-6 d-flex justify-content-end">
-                                            <h6 class="modal-title ">Maks 2 Hari</h6><br>
                                         </div>
                                     </div>
                                     <hr>

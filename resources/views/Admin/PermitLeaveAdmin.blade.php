@@ -17,7 +17,7 @@
                                     <div class="size-filter">
                                         <div class="btn-group" role="group"
                                             aria-label="Basic radio toggle button group">
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1">
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
                                             <label class="btn btn-xs btn-outline-danger" for="btnradio1">Izin</label>
 
                                             <input type="radio" class="btn-check" name="btnradio" id="btnradio2">

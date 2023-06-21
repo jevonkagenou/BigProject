@@ -41,9 +41,9 @@
         </div>
     </div>
     <style>
-		.hover-red:hover .svg{
+		.red-hover:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .red-icon path {
             fill:red;
@@ -54,6 +54,10 @@
         .brand-logo img {
         max-width: 80%;
         height: auto;
+        }
+        .red-hover:hover {
+            color: #EE3232 !important;
+            fill:red !important
         }
     </style>
     <div id="main-wrapper">
@@ -67,7 +71,7 @@
                 </div>
             </div>
         </div>
-    
+
 
     <!--**********************************
             Nav header end
@@ -760,8 +764,8 @@
             Sidebar start
         ***********************************-->
     <div class="dlabnav">
-        <div class="dlabnav-scroll">
-            <ul class="metismenu" id="menu">
+        <div class="dlabnav-scroll  mm-active ps ps--active-y">
+            <ul class="metismenu  mm-show" id="menu">
                 <li class="dropdown header-profile">
                     <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
                         <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
@@ -771,7 +775,7 @@
                         </div>
                     </a>
                 </li>
-                <li><a class="ai-icon hover-red" href="/ " aria-expanded="false">
+                <li><a class="ai-icon red-hover" href="/ " aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important" height="100"
                             viewBox="0 -960 960 960" width="100">
                             <path
@@ -782,7 +786,7 @@
 
 
                 </li>
-                <li><a class="ai-icon hover-red" href="/ApprovalAdmin" aria-expanded="false">
+                <li><a class="ai-icon red-hover" href="/ApprovalAdmin" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                             width="48">
                             <path
@@ -792,12 +796,22 @@
                     </a>
 
                 </li>
-                <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
-                        <span class="nav-text ">Izin Cuti</span>
+                @if ($tittle == "Izin Cuti Admin")
+                <li class="mm-active"><a class="ai-icon red-hover " href="/PermitLeaveAdmin" aria-expanded="false">
+                    <svg class="svg red-icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
+                    <span class="nav-text ">Izin Cuti</span>
                     </a>
                 </li>
-                <li><a class=" ai-icon hover-red" href="AdminReport" aria-expanded="false">
+                @endif
+                @if ($tittle !== "Izin Cuti Admin")
+                <li><a class="ai-icon red-hover" href="/PermitLeaveAdmin" aria-expanded="false">
+                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
+                    <span class="nav-text ">Izin Cuti</span>
+                    </a>
+                </li>
+
+                @endif
+                <li><a class=" ai-icon red-hover" href="AdminReport" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                             width="48">
                             <path
@@ -807,7 +821,7 @@
                     </a>
 
                 </li>
-                <li><a class="has-arrow ai-icon hover-red" href="javascript:void()" aria-expanded="false">
+                <li><a class="has-arrow ai-icon red-hover" href="javascript:void()" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                             width="48">
                             <path
@@ -816,11 +830,11 @@
                         <span class="nav-text ">Kehadiran</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="/WorkSchedule" class="hover-red">Jadwal Kerja</a></li>
-                        <li><a href="/Presence" class="hover-red">Presensi</a></li>
+                        <li><a href="/WorkSchedule" class="red-hover">Jadwal Kerja</a></li>
+                        <li><a href="/Presence" class="red-hover">Presensi</a></li>
                     </ul>
                 </li>
-                <li><a class=" ai-icon hover-red" href="/EmployeeAdmin" aria-expanded="false">
+                <li><a class=" ai-icon red-hover" href="/EmployeeAdmin" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                             width="48">
                             <path
@@ -830,7 +844,7 @@
                     </a>
 
                 </li>
-                <li><a href="/StartPayroll" class="ai-icon hover-red" aria-expanded="false">
+                <li><a href="/StartPayroll" class="ai-icon red-hover" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                             width="48">
                             <path
@@ -839,7 +853,7 @@
                         <span class="nav-text ">Payroll</span>
                     </a>
                 </li>
-                <li><a class=" ai-icon  hover-red" href="/Setting" aria-expanded="false">
+                <li><a class=" ai-icon  red-hover" href="/Setting" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                             width="48">
                             <path
@@ -861,10 +875,10 @@
             var isAlternateLogo = false;
             var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
             var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-        
+
             function changeLogo() {
                 var logo = document.getElementById("logo");
-        
+
                 if (isAlternateLogo) {
                     logo.src = originalLogoSrc;
                     isAlternateLogo = false;

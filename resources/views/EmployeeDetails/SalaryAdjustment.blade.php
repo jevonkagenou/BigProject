@@ -45,7 +45,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
          .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -1197,6 +1197,8 @@
 <script src="{{ asset('js/dlabnav-init.js') }}"></script>
 <script src="{{ asset('js/demo.js') }}"></script>
 <script src="{{ asset('js/styleSwitcher.js') }}"></script>
+<script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
