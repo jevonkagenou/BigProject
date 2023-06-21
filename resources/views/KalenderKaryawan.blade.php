@@ -1041,11 +1041,11 @@
         <div class="content-body">
             <div class="container-fluid">
 
-				<div class="row page-titles">
+				{{-- <div class="row page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item active"><a href="">Kalender</a></li>
 					</ol>
-                </div>
+                </div> --}}
                 <!-- row -->
                         <div class="row">
                             <div class="card">
