@@ -63,7 +63,7 @@
             border-color: var(--primary);
         }
         .nepibaik:hover{
-            color: #fff !important
+            color: #000 !important
         }
         .dlabnav .metismenu a {
             color: #9FA4A6;
