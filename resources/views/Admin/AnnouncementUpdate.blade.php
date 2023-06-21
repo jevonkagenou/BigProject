@@ -907,210 +907,34 @@
 					<div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Pengumuman</h4>
+                                <h4 class="card-title">Edit Pengumuman</h4>
                             </div>
                             
                             <div class="card-body">
 								<div class="row">
 									<div class="btn-group ">
-										<div class="" style="margin-right: 3%; ">
-											<button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target=".modal-6"><i class="fa fa-plus color-info"></i>
-												<span class="text-center px-1">
-												Pengumuman
-												</span>
-											</button>
-										</div>
-										<div class="" style="margin-left: 63%;" >
-											<input type="date" class="form-control btn-xm" >
-										</div>
+										<div class="row g-0">
+                                            <h6 class="modal-title">Isi Pengumuman</h6><br>
+                                            <div class="col-12">
+                                                <textarea class="form-control " id="editor" name="isi" cols="30"
+                                                rows="10">Pengumuman Tanggal 29 Juni 2023 Libur bagi seluruh Karyawan. Karna Ada Hari Raya Idul Adha</textarea>
+                                            </div>   
+                                        </div>
 									</div>
 								</div>
-									<div class="table-responsive text-center">
-										<table id="example6" class="display" style="min-width: 845px">
-											<thead>
-												<tr class="text-center">
-													
-													<th>No</th>
-													<th>Waktu</th>
-													<th>Pengumuman</th>
-													<th>Dibaca</th>
-													<th>Aksi</th>
-													
-												</tr>
-											</thead>
-											<tbody>
-												<tr class="text-center">
-													
-													<td>1</td>
-													<td>Amel</td>
-													<td><a data-bs-toggle="modal" data-bs-target="#lihat-pengumuman" type="button">Cuti Idhul Fitri</a></td>
-													<td>
-														<div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar bg-danger" style="width: 80%">80%</div>
-														  </div>
-													</td>
-													<td>
-                                                        <span class="align-items-center">
-                                                            <a href="javascript:void()" data-bs-toggle="tooltip" data-placement="top" title="btn-close" class="px-3">
-                                                                <i class="fa fa-trash hover-icon"></i>
-                                                            </a>
-                                                            <a href="/AnnouncementUpdate" data-bs-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                                                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                                                                </svg>
-                                                            </a>
-                                                            
-                                                        </span>
-                                                    </td>
-                                                    
-                                                    
-													
-																						
-												</tr>
-												<tr class="text-center">
-													
-													<td>2</td>
-													<td>Momo</td>
-													<td>Cuti Idhul Adha</td>
-													<td>
-														<div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar bg-danger" style="width: 100%">100%</div>
-														  </div>
-													</td>
-													<td>
-                                                        <span class="align-items-center">
-                                                            <a href="javascript:void()" data-bs-toggle="tooltip" data-placement="top" title="btn-close" class="px-3">
-                                                                <i class="fa fa-trash hover-icon"></i>
-                                                            </a>
-                                                            <a href="AnnouncementUpdate" data-bs-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                                                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                                                                </svg>
-                                                            </a>
-                                                        </span>
-                                                    </td>
-                                                    
-													
-													
-												</tr>
-												<tr class="text-center">
-													
-													<td>3</td>
-													<td>Lisa</td>
-													<td>Acara</td>
-													<td>
-														<div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar bg-danger" style="width: 100%">100%</div>
-														  </div>
-													</td>
-													<td>
-                                                        <span class="align-items-center">
-                                                            <a href="javascript:void()" data-bs-toggle="tooltip" data-placement="top" title="btn-close" class="px-3">
-                                                                <i class="fa fa-trash hover-icon"></i>
-                                                            </a>
-                                                            <a href="/AnnouncementUpdate" data-bs-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                                                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                                                                </svg>
-                                                            </a>
-                                                        </span>
-                                                    </td>
-												</tr>
-											
-											</tbody>
-										</table>
-									</div>
-									<nav class="mt-3">
-                                    <ul class="pagination pagination-xs" style="float: right">
-                                      <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                          <i
-                                            class="fa fa-angle-double-left"
-                                            aria-hidden="true"
-                                          ></i
-                                        ></a>
-                                      </li>
-                                      <li class="page-item active">
-                                        <a class="page-link" href="javascript:void(0)">1</a>
-                                      </li>
-                                      <li class="page-item">
-                                        <a class="page-link" href="javascript:void(0)">2</a>
-                                      </li>
+                                <p></p>
+                                <div class="row g-0">
+									<h6 class="modal-title">Lampiran</h6><br>
+									<div class="col-12">
+										<input type="file" class="form-control btn-xs" value="Upload" placeholder="Nama"  multiple>
+									</div>		
+								</div>
+                                <p></p>
+                                <a href="/Announcement" class="btn btn-danger btn-xs" style="float:right;">Simpan</a>
 
-                                      <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                          <i
-                                            class="fa fa-angle-double-right"
-                                            aria-hidden="true"
-                                          ></i
-                                        ></a>
-                                      </li>
-                                    </ul>
-                                </nav>
-                                </div>
+                            </div>
                         	</div>
                     </div>
-				</div>
-
-				{{-- modal tambah pengumuman --}}
-				<div class="modal modal-6 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered modal-lg">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title">Tambah Pengumuman</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal">
-								</button>
-							</div>
-							<div class="modal-body">
-								<div class="row g-0">
-									<h6 class="modal-title">Isi Pengumuman</h6><br>
-									<div class="col">
-										<textarea class="form-control " id="editor" name="isi" cols="30"
-                                        rows="10"></textarea>
-									</div>
-												
-								</div>
-								<br>
-								<div class="row g-0">
-									<h6 class="modal-title">Lampiran</h6><br>
-									<div class="col">
-										<input type="file" class="form-control btn-xs" value="Upload" placeholder="Nama"  multiple>
-									</div>
-												
-								</div>
-											
-								<br>
-											
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
-								<button type="button" class="btn btn-danger btn-xs">Simpan</button>
-							</div>
-						</div>
-					</div>
-				 </div>
-
-				 {{-- modal lihat pengumuman --}}
-				 <div class="modal fade" id="lihat-pengumuman">
-					<div class="modal-dialog modal-dialog-centered" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title">Cuti Idhul Fitri</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal">
-								</button>
-							</div>
-							<div class="modal-body">
-								<div class="row g-0">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, odio, repellendus magnam culpa corrupti placeat cupiditate alias id assumenda, aspernatur ab corporis sunt! Earum sunt quibusdam perspiciatis eum culpa illum veritatis, labore animi, quos incidunt saepe? Inventore mollitia dolor quae?</p>
-								</div>
-								<div class="row g-0">
-									{{-- <h6 class="modal-title">Lampiran</h6><br> --}}
-									<a href="" target="_blank">Lampiran</a>
-												
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
             </div>
         </div>

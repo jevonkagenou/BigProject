@@ -40,6 +40,11 @@ class RouteController extends Controller
             'tittle'=>'Pengumuman'
         ]);
     }
+    public function AnnouncementUpdate(){
+        return view('Admin.AnnouncementUpdate',[    
+            'tittle'=>'Edit Pengumuman'
+        ]);
+    }
     public function AdminProfile(){
         return view('Admin.ProfilAdmin',[
             'tittle'=>'Profil Admin'
