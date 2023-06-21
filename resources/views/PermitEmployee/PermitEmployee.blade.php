@@ -411,7 +411,7 @@
                                             </tr>
                                         </thead>
                                         <tbody class="text-center">
-                                            <tr>    
+                                            <tr>
 
                                                 <td>1</td>
                                                 <td>26/02/2020</td>
@@ -479,6 +479,13 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
                                 <div class="modal-body">
+                                    <div class="mb-3 row g-0">
+                                        <h6 class="modal-title col-sm-2 col-form-label col-form-label">Sisa Cuti Anda! :</h6><br>
+                                        <div class="col-sm-10">
+                                            <button type="button" class="btn btn-danger btn-xs">2 Hari</button>
+                                        </div>
+                                    </div>
+                                    <hr>
                                     <div class="row g-0">
                                         <h6 class="modal-title">Tanggal Izin</h6><br>
                                         <div class="col-xl-6 col-sm-6  col-6">
@@ -714,10 +721,10 @@
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-    
+
         function changeLogo() {
             var logo = document.getElementById("logo");
-    
+
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;
                 isAlternateLogo = false;
