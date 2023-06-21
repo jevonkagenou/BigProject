@@ -160,9 +160,9 @@
                             </div>
                         </a>
                     </li>
-                    <li class="mm-active"><a class="ai-icon hover-red  mm-active" href="/"
+                    <li><a class="ai-icon hover-red" href="/"
                             aria-expanded="false">
-                            <svg class="red-icon" xmlns="http://www.w3.org/2000/svg"
+                            <svg xmlns="http://www.w3.org/2000/svg"
                                 style="font-size: 80px !important" height="100" viewBox="0 -960 960 960"
                                 width="100">
                                 <path
@@ -184,7 +184,7 @@
 
                     </li>
                     <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                            <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
                             <span class="nav-text ">Izin Cuti</span>
                         </a>
                     </li>
@@ -401,7 +401,7 @@
                                     </button>
                                 </div>
                                 <div class="table-responsive">
-                                    <table id="example5" class="display" style="min-width: 845px">
+                                    <table id="example7" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
                                                 <th>
@@ -513,46 +513,46 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                {{-- modal ubah jadwal --}}
-                <div class="modal modal-6 fade bd-example-modal-lg" tabindex="-1" role="dialog"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Ubah Jadwal</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal">
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row g-0">
-                                    <h6 class="modal-title">Ubah Jadwal Karyawan dengan Jadwal Kerja sbb</h6><br>
-                                    <select id="jadwalSelect" class="default-select form-control wide w-100">
-                                        <option selected>Pilih Jadwal</option>
-                                        <option value="1">Shift Pagi</option>
-                                        <option value="2">Shift Malam</option>
-                                        <hr>
-                                        <option value="3" data-url="/WorkSchedule">Tambah Jadwal</option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        Please select a valid country.
-                                    </div>
-                                </div>
-                                <br>
-
-                                <br>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default btn-xs"
-                                    data-bs-dismiss="modal">Batal</button>
-                                <button type="button" class="btn btn-danger btn-xs">Simpan</button>
+        {{-- modal ubah jadwal --}}
+        <div class="modal modal-6 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ubah Jadwal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-0">
+                            <h6 class="modal-title">Ubah Jadwal Karyawan dengan Jadwal Kerja sbb</h6><br>
+                            <select id="jadwalSelect" class="default-select form-control wide w-100">
+                                <option selected>Pilih Jadwal</option>
+                                <option value="1">Shift Pagi</option>
+                                <option value="2">Shift Malam</option>
+                                <hr>
+                                <option value="3" data-url="/WorkSchedule">Tambah Jadwal</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
                             </div>
                         </div>
+                        <br>
+
+                        <br>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-danger btn-xs">Simpan</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <div class="footer">
 
