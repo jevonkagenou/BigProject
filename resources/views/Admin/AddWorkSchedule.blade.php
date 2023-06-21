@@ -296,7 +296,6 @@
                                                                 <button class="btn btn-outline-danger btn-xs" id="btn-1-hari" type="button">1 Hari</button>
                                                             </div>
                                                         </div>
-                                                        
                                                         <hr>
                                                         <label class="mb-2">Keterangan Cuti</label>
                                                         <div class="">
@@ -454,20 +453,21 @@
     // Mendapatkan tombol 1 Hari
     const tombol1Hari = document.getElementById('btn-1-hari');
 
-    // Menambahkan event listener pada tombol 1 Hari    
-    inputTanggal.addEventListener('change', function() {
+    // Menambahkan event listener pada tombol 1 Hari
+    tombol1Hari.addEventListener('click', function() {
         // Mendapatkan tanggal awal dan akhir dari input
         const tanggalArray = inputTanggal.value.split(' - ');
         const tanggalAwal = new Date(tanggalArray[0]);
         const tanggalAkhir = new Date(tanggalArray[1]);
 
         // Menghitung selisih dalam milidetik
-        const selisihHari = Math.round((tanggalAkhir - tanggalAwal) / (1000 * 60 * 60 * 24)) + 1;
+        const selisihHari = Math.abs(tanggalAkhir - tanggalAwal) / (1000 * 60 * 60 * 24);
 
         // Mengubah teks pada tombol menjadi jumlah hari
         tombol1Hari.textContent = selisihHari + ' Hari';
     });
 </script>
+
 
   
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
