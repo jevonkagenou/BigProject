@@ -18,13 +18,13 @@
     <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png"  />
+
     <!-- Datatable -->
-    <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- Custom Stylesheet -->
-    <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+    <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 
 </head>
 
@@ -405,9 +405,8 @@
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    <div class="form-check custom-checkbox ms-2 ">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="checkAll" required="">
+                                                    <div class="form-check custom-checkbox ms-2">
+                                                        <input type="checkbox" class="form-check-input" id="checkAll" required="">
                                                         <label class="form-check-label" for="checkAll"></label>
                                                     </div>
                                                 </th>
@@ -421,8 +420,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="customCheckBox2" required="">
+                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
                                                         <label class="form-check-label" for="customCheckBox2"></label>
                                                     </div>
                                                 </td>
@@ -431,20 +429,19 @@
                                                 <td>Male</td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="#"
-                                                            class="btn btn-danger shadow btn-xs sharp me-1"><i
-                                                                class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#"
-                                                            class="btn btn-danger shadow btn-xs sharp"><i
-                                                                class="fa fa-trash"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <div class="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="customCheckBox2">
+                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2">
                                                         <label class="form-check-label" for="customCheckBox2"></label>
                                                     </div>
                                                 </td>
@@ -453,20 +450,19 @@
                                                 <td>Female</td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="#"
-                                                            class="btn btn-danger shadow btn-xs sharp me-1"><i
-                                                                class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#"
-                                                            class="btn btn-danger shadow btn-xs sharp"><i
-                                                                class="fa fa-trash"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <div class="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="customCheckBox2">
+                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2">
                                                         <label class="form-check-label" for="customCheckBox2"></label>
                                                     </div>
                                                 </td>
@@ -475,20 +471,19 @@
                                                 <td>Male</td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="#"
-                                                            class="btn btn-danger shadow btn-xs sharp me-1"><i
-                                                                class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#"
-                                                            class="btn btn-danger shadow btn-xs sharp"><i
-                                                                class="fa fa-trash"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <div class="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="customCheckBox2" required="">
+                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
                                                         <label class="form-check-label" for="customCheckBox2"></label>
                                                     </div>
                                                 </td>
@@ -497,18 +492,19 @@
                                                 <td>Male</td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="#"
-                                                            class="btn btn-danger shadow btn-xs sharp me-1"><i
-                                                                class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#"
-                                                            class="btn btn-danger shadow btn-xs sharp"><i
-                                                                class="fa fa-trash"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -682,6 +678,22 @@
     <script>
         new TomSelect('#tom-select-it');
     </script>
+           <!-- Required vendors -->
+           <script src="vendor/global/global.min.js"></script>
+           <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+           <!-- Apex Chart -->
+           <script src="vendor/apexchart/apexchart.js"></script>
+   
+           <!-- Datatable -->
+           <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+           <script src="js/plugins-init/datatables.init.js"></script>
+   
+           <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+   
+           <script src="js/custom.min.js"></script>
+           <script src="js/dlabnav-init.js"></script>
+           <script src="js/demo.js"></script>
+           <script src="js/styleSwitcher.js"></script>
 
 </body>
 </head>
