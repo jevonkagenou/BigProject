@@ -815,7 +815,7 @@
 
                     </li>
                     <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                        <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
                             <span class="nav-text ">Izin Cuti</span>
                         </a>
                     </li>
@@ -870,7 +870,7 @@
         <li class="breadcrumb-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f72b50" class="bi bi-play-fill" viewBox="0 0 16 16">
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
           </svg></li>
-          <li class="breadcrumb-item active"><a href="">Sip Gaji</a></li>
+          <li class="breadcrumb-item active"><a href="">Payroll</a></li>
     </ol>
 </div>
 				<div class="row">
