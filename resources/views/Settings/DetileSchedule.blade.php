@@ -1001,7 +1001,7 @@
                                                         </svg>
                                                     </div>
                                                     <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#"><i class="bi bi-pencil px-2"></i>Edit</a>
+                                                        <a class="dropdown-item" href="/EditSchedule"><i class="bi bi-pencil px-2"></i>Edit</a>
                                                         <a class="dropdown-item" href="#"><i class="bi bi-trash px-2"></i>Hapus</a>
                                                     </div>
                                                 </div>
