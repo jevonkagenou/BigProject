@@ -40,6 +40,7 @@ Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeave
 Route::get('/WorkSchedule', [RouteController::class, 'WorkSchedule'])->name('WorkSchedule');
 Route::get('/SalaryPaymentReport', [RouteController::class, 'SalaryPaymentReport'])->name('SalaryPaymentReport');
 Route::get('/Announcement', [RouteController::class, 'Announcement'])->name('Announcement');
+Route::get('/AnnouncementUpdate', [RouteController::class, 'AnnouncementUpdate'])->name('AnnouncementUpdate');
 Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
 Route::get('/PayrolEmployee', [RouteController::class, 'PayrolEmployee'])->name('PayrolEmployee');
 Route::get('/PresenceApproval', [RouteController::class, 'PresenceApproval'])->name('PresenceApproval');
@@ -63,8 +64,6 @@ Route::get('/ProfileEmployee', [ViewEmployeeController::class, 'ProfileEmployee'
 Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
-
-
 Route::get('/SettingSchedule', [RouteController::class, 'SettingSchedule'])->name('SettingSchedule');
 Route::get('/DetileSchedule', [RouteController::class, 'DetileSchedule'])->name('DetileSchedule');
 Route::get('/AnnualLeave', [RouteController::class, 'AnnualLeave'])->name('AnnualLeave');
