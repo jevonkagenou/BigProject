@@ -53,7 +53,7 @@ tr:hover {
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -878,18 +878,18 @@ tr:hover {
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-				
-				
+
+
                 <!-- row -->
                 <div class="row">
-				
+
 					<style>
 					.custom-btn {
 						border-radius: 1;
 						height: 40px;
 						padding: 12px 8px;
 						background: #fff;
-						border: 1px solid #464444; 
+						border: 1px solid #464444;
 						text-align: center;
 					}
 					.hover-icon:hover{
@@ -900,27 +900,26 @@ tr:hover {
 					}
 					</style>
 
-<div class="row page-titles">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/Setting">Pengaturan</a></li>
-        <li class="breadcrumb-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f72b50" class="bi bi-play-fill" viewBox="0 0 16 16">
-            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-          </svg></li>
-          <li class="breadcrumb-item active"><a href="">Jadwal Kerja</a></li>
-    </ol>
-</div>
-
+                    <div class="row page-titles">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Setting">Pengaturan</a></li>
+                            <li class="breadcrumb-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f72b50" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                            </svg></li>
+                            <li class="breadcrumb-item active"><a href="">Jadwal Kerja</a></li>
+                        </ol>
+                    </div>
 					<div class="col-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Jadwal Kerja</h4>
                             </div>
-                            
+
                             <div class="card-body">
 								<div class="row mb-3">
-                                        <div class="col-sm-1 col-md-2 col-lg-12 text-end">
-                                                <button class="btn btn-danger btn-xs" href=""><i class="bi bi-plus"></i>Tambah Jadwal Kerja</button>
-                                        </div>
+                                    <div class="col-sm-1 col-md-2 col-lg-12 text-end">
+                                        <a type="button" class="btn btn-danger btn-xs" href="/AddWorkSchedule"><i class="bi bi-plus"></i>Tambah Jadwal Kerja</a>
+                                    </div>
 								</div>
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
@@ -996,7 +995,7 @@ tr:hover {
 										<textarea class="form-control " id="editor" name="isi" cols="30"
                                         rows="10"></textarea>
 									</div>
-												
+
 								</div>
 								<br>
 								<div class="row g-0">
@@ -1004,11 +1003,11 @@ tr:hover {
 									<div class="col">
 										<input type="file" class="form-control btn-xs" value="Upload" placeholder="Nama"  multiple>
 									</div>
-												
+
 								</div>
-											
+
 								<br>
-											
+
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
@@ -1034,7 +1033,7 @@ tr:hover {
 								<div class="row g-0">
 									{{-- <h6 class="modal-title">Lampiran</h6><br> --}}
 									<a href="" target="_blank">Lampiran</a>
-												
+
 								</div>
 							</div>
 						</div>
@@ -1049,7 +1048,7 @@ tr:hover {
         ***********************************-->
 
 
-			
+
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -1062,7 +1061,7 @@ tr:hover {
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
-	
+
     <!-- Datatable -->
     <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins-init/datatables.init.js"></script>
@@ -1083,10 +1082,10 @@ tr:hover {
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-    
+
         function changeLogo() {
             var logo = document.getElementById("logo");
-    
+
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;
                 isAlternateLogo = false;

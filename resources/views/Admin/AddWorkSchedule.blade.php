@@ -23,24 +23,7 @@
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-    <!-- Daterange picker -->
-    <link href="vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-    <!-- Clockpicker -->
-    <link href="vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
-    <!-- asColorpicker -->
-    <link href="vendor/jquery-asColorPicker/css/asColorPicker.min.css" rel="stylesheet">
-    <!-- Material color picker -->
-    <link href="vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
-	
-    <!-- Pick date -->
-    <link rel="stylesheet" href="vendor/pickadate/themes/default.css">
-    <link rel="stylesheet" href="vendor/pickadate/themes/default.date.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Custom Stylesheet -->
-	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -61,7 +44,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
          .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -81,7 +64,7 @@
         .baris {
     margin-bottom: 10px; /* Jarak antara setiap baris */
   }
-  
+
   .tambah-baris {
     margin-bottom: 20px;/* Jarak antara tombol "Tambah Baris" dan baris pertama */
   }
@@ -197,9 +180,9 @@
 
                     </li>
                     <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                        <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
-                            <span class="nav-text ">Izin Cuti</span>
-                        </a>
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
+                        <span class="nav-text ">Izin Cuti</span>
+                    </a>
                     </li>
                     <li><a class=" ai-icon hover-red" href="AdminReport" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M349-250h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-310H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-250Zm0-170h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-480H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-420ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.444 0 23.722 5T599-862l183 183q8 8 13 19.278 5 11.278 5 23.722v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.375-8.625T551-664ZM220-820v186-186 680-680Z"/></svg>
@@ -217,8 +200,8 @@
 
                         </ul>
                     </li>
-                    <li class="mm-active"><a class=" ai-icon hover-red  mm-active" href="/EmployeeAdmin" aria-expanded="false">
-                        <svg class="red-icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M68-160q-13 0-21.5-8.5T38-190v-64q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v64q0 13-8.5 21.5T648-160H68Zm648 0q10-2 16-10.5t6-21.5v-62q0-63-32-103.5T622-423q69 8 130 23.5t99 35.5q33 19 52 47t19 63v64q0 13-8.5 21.5T892-160H716ZM358-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42Zm360-150q0 66-42 108t-108 42q-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm260-321q39 0 64.5-25.5T448-631q0-39-25.5-64.5T358-721q-39 0-64.5 25.5T268-631q0 39 25.5 64.5T358-541Zm0-90Zm0 271Z"/></svg>
+                    <li><a class=" ai-icon hover-red  mm-active" href="/EmployeeAdmin" aria-expanded="false">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M68-160q-13 0-21.5-8.5T38-190v-64q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v64q0 13-8.5 21.5T648-160H68Zm648 0q10-2 16-10.5t6-21.5v-62q0-63-32-103.5T622-423q69 8 130 23.5t99 35.5q33 19 52 47t19 63v64q0 13-8.5 21.5T892-160H716ZM358-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42Zm360-150q0 66-42 108t-108 42q-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm260-321q39 0 64.5-25.5T448-631q0-39-25.5-64.5T358-721q-39 0-64.5 25.5T268-631q0 39 25.5 64.5T358-541Zm0-90Zm0 271Z"/></svg>
                             <span class="nav-text ">Karyawan</span>
                         </a>
 
@@ -228,8 +211,8 @@
                             <span class="nav-text ">Payroll</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon hover-red" href="/Setting " aria-expanded="true">
-                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M546-80H414q-11 0-19.5-7T384-105l-16-101q-19-7-40-19t-37-25l-93 43q-11 5-22 1.5T159-220L93-337q-6-10-3-21t12-18l86-63q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521l-86-63q-9-7-12-18t3-21l66-117q6-11 17-14.5t22 1.5l93 43q16-13 37-25t40-18l16-102q2-11 10.5-18t19.5-7h132q11 0 19.5 7t10.5 18l16 101q19 7 40.5 18.5T669-710l93-43q11-5 22-1.5t17 14.5l66 116q6 10 3.5 21.5T858-584l-86 61q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l86 62q9 7 12 18t-3 21l-66 117q-6 11-17 14.5t-22-1.5l-93-43q-16 13-36.5 25.5T592-206l-16 101q-2 11-10.5 18T546-80Zm-66-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-60q-29 0-49.5-20.5T410-480q0-29 20.5-49.5T480-550q29 0 49.5 20.5T550-480q0 29-20.5 49.5T480-410Zm0-70Zm-44 340h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Z"/></svg>
+                    <li  class="mm-active"><a class=" ai-icon hover-red" href="/Setting " aria-expanded="true">
+                        <svg class="red-icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M546-80H414q-11 0-19.5-7T384-105l-16-101q-19-7-40-19t-37-25l-93 43q-11 5-22 1.5T159-220L93-337q-6-10-3-21t12-18l86-63q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521l-86-63q-9-7-12-18t3-21l66-117q6-11 17-14.5t22 1.5l93 43q16-13 37-25t40-18l16-102q2-11 10.5-18t19.5-7h132q11 0 19.5 7t10.5 18l16 101q19 7 40.5 18.5T669-710l93-43q11-5 22-1.5t17 14.5l66 116q6 10 3.5 21.5T858-584l-86 61q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l86 62q9 7 12 18t-3 21l-66 117q-6 11-17 14.5t-22-1.5l-93-43q-16 13-36.5 25.5T592-206l-16 101q-2 11-10.5 18T546-80Zm-66-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-60q-29 0-49.5-20.5T410-480q0-29 20.5-49.5T480-550q29 0 49.5 20.5T550-480q0 29-20.5 49.5T480-410Zm0-70Zm-44 340h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Z"/></svg>
                             <span class="nav-text">Pengaturan</span>
                         </a>
 
@@ -251,86 +234,24 @@
                                 <div class="row">
                                     <div class="col-lg-12   order-lg-2 mb-4">
                                         <div class="d-flex justify-content-end">
-                                            <button type="button" class="btn btn-danger btn-xs">
-                                              <i class="fa fa-arrow-left"></i> Keluar
-                                            </button>
+                                            <a href="/SettingSchedule" type="button" class="btn btn-danger btn-xs"><i class="fa fa-arrow-left"></i> Keluar</a>
                                           </div>
-                                          <div class="" style="margin-right: 3%; ">
-											<button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#tambahpengajuan"data-bs-toggle="modal" data-bs-target=".modal-6"><i class="fa fa-plus color-info"></i>
-												<span class="text-center px-1">
-												Tambah Pengajuan
-												</span>
-											</button>
-										</div>
-                                        {{-- Modal --}}
-                                        <div class="modal fade" id="tambahpengajuan">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Ubah Pengajuan Cuti Khusus</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="row g-0">
-                                                            <p>Nama karyawan</p>
-                                                        </div>
-                                                        <label for="jenis-cuti">Jenis Cuti</label>
-                                                        <div>
-                                                            <select class="form-control" id="jenis-cuti">
-                                                                <option value="cuti-mengkhitankan-anak">Cuti Mengkhitankan Anak</option>
-                                                                <option value="cuti-lainnya">Cuti Lainnya</option>
-                                                            </select>
-                                                        </div>
-                                                        <label class="">Tanggal Pengajuan</label>
-                                                        <div class="">
-                                                            <input type="date" class="form-control" placeholder="20/6/2023">
-                                                        </div>
-                                                        <label class="mb-2">Tanggal Izin</label>
-                                                        <div class="row">
-                                                            <div class="col-xl-9 mb-3">
-                                                                <div class="example">
-                                                                    <input class="form-control input-daterange-datepicker" type="text" name="daterange" id="tanggal">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-3 col-6 text-end">
-                                                                <button class="btn btn-outline-danger btn-xs" id="btn-1-hari" type="button">1 Hari</button>
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                        <label class="mb-2">Keterangan Cuti</label>
-                                                        <div class="">
-                                                            <textarea class="form-control" placeholder="Mohon Izin"></textarea>
-                                                        </div>
-                                                        <label class="mb-2">Keterangan Persetujuan/Penolakan</label>
-                                                        <div class="">
-                                                            <textarea class="form-control" placeholder="Undangan jangan lupa"></textarea>
-                                                        </div>
-                                                        <div class="row g-0">
-                                                            <a href="" target="_blank">Lampiran</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger">Batalkan Persetujuan</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
+
                                         <p></p>
-                                        
+
                                         <div class="mb-3">
                                             <label for="address" class="form-label">Nama Jadwal</label>
                                             <input type="text" class="form-control" id="nama_lengkap" placeholder="Nama Lengkap" required="">
                                             <div class="invalid-feedback">Nama</div>
                                         </div>
-                                        
+
                                         <div id="container">
                                             <div class="baris">
                                                 <button type="button" class="btn btn-outline-danger btn-xs tambah-baris">
                                                     <i class="fa fa-plus"></i> Tambah Baris
                                                 </button>
                                             </div>
-                                        
+
                                             <div class="baris " style="display: flex; justify-content: align-items: center;">
                                                 <span>Hari ke 1</span>
                                                 <select class="shift" style="width: 200px;">
@@ -341,13 +262,13 @@
                                                 <i class="fa fa-trash hapus-baris"></i>
                                             </div>
                                         </div>
-                                        
+
                                         <p></p>
-                                        
+
                                         <div class="text-center d-flex justify-content-center">
                                             <button type="button" class="btn btn-danger btn-xs">Simpan</button>
                                         </div>
-                                        
+
                             </div>
                         </div>
                     </div>
@@ -362,7 +283,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-       
+
         <!--**********************************
             Footer end
         ***********************************-->
@@ -374,7 +295,7 @@
         <!--**********************************
            Support ticket button end
         ***********************************-->
-
+            </div>
 
     </div>
     <!--**********************************
@@ -446,66 +367,6 @@
       }
     });
   </script>
-<script>
-    // Mendapatkan elemen input tanggal
-    const inputTanggal = document.getElementById('tanggal');
-
-    // Mendapatkan tombol 1 Hari
-    const tombol1Hari = document.getElementById('btn-1-hari');
-
-    // Menambahkan event listener pada tombol 1 Hari
-    tombol1Hari.addEventListener('click', function() {
-        // Mendapatkan tanggal awal dan akhir dari input
-        const tanggalArray = inputTanggal.value.split(' - ');
-        const tanggalAwal = new Date(tanggalArray[0]);
-        const tanggalAkhir = new Date(tanggalArray[1]);
-
-        // Menghitung selisih dalam milidetik
-        const selisihHari = Math.abs(tanggalAkhir - tanggalAwal) / (1000 * 60 * 60 * 24);
-
-        // Mengubah teks pada tombol menjadi jumlah hari
-        tombol1Hari.textContent = selisihHari + ' Hari';
-    });
-</script>
-
-
-  
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment"></script>
-<script src="https://cdn.jsdelivr.net/npm/daterangepicker"></script>
-
-
-<!-- Daterangepicker -->
-    <!-- momment js is must -->
-    <script src="vendor/moment/moment.min.js"></script>
-    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- clockpicker -->
-    <script src="vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
-    <!-- asColorPicker -->
-    <script src="vendor/jquery-asColor/jquery-asColor.min.js"></script>
-    <script src="vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
-    <script src="vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
-    <!-- Material color picker -->
-    <script src="vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-    <!-- pickdate -->
-    <script src="vendor/pickadate/picker.js"></script>
-    <script src="vendor/pickadate/picker.time.js"></script>
-    <script src="vendor/pickadate/picker.date.js"></script>
-
-
-
-    <!-- Daterangepicker -->
-    <script src="js/plugins-init/bs-daterange-picker-init.js"></script>
-    <!-- Clockpicker init -->
-    <script src="js/plugins-init/clock-picker-init.js"></script>
-    <!-- asColorPicker init -->
-    <script src="js/plugins-init/jquery-asColorPicker.init.js"></script>
-    <!-- Material color picker init -->
-    <script src="js/plugins-init/material-date-picker-init.js"></script>
-    <!-- Pickdate -->
-    <script src="js/plugins-init/pickadate-init.js"></script>
 
 </body>
 

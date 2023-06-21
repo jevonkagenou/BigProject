@@ -15,14 +15,28 @@
 	<title>Kalopsia</title>
 
 	<!-- FAVICONS ICON -->
-
 	<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png"  />
     <!-- Datatable -->
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
-	<link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!-- Daterange picker -->
+    <link href="vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Clockpicker -->
+    <link href="vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+    <!-- asColorpicker -->
+    <link href="vendor/jquery-asColorPicker/css/asColorPicker.min.css" rel="stylesheet">
+    <!-- Material color picker -->
+    <link href="vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 
+    <!-- Pick date -->
+    <link rel="stylesheet" href="vendor/pickadate/themes/default.css">
+    <link rel="stylesheet" href="vendor/pickadate/themes/default.date.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <style>
         .brand-logo img {
         max-width: 80%;
@@ -822,9 +836,9 @@
 
                     </li>
                     <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                        <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
-                            <span class="nav-text ">Izin Cuti</span>
-                        </a>
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
+                        <span class="nav-text ">Izin Cuti</span>
+                    </a>
                     </li>
                     <li><a class=" ai-icon hover-red" href="AdminReport" aria-expanded="false">
                         <svg class="svg" class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M349-250h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-310H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-250Zm0-170h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-480H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-420ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.444 0 23.722 5T599-862l183 183q8 8 13 19.278 5 11.278 5 23.722v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.375-8.625T551-664ZM220-820v186-186 680-680Z"/></svg>
@@ -907,7 +921,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Cuti Tahunan</h4>
-                                <button type="button" class="btn btn-danger btn-xs"><i class="fa fa-plus color-info"></i>
+                                <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#tambahpengajuan"data-bs-toggle="modal" data-bs-target=".modal-6"><i class="fa fa-plus color-info"></i>
                                     <span class="text-center px-1">
                                         Tambah Pengajuan
                                     </span>
@@ -931,7 +945,7 @@
                                                     <label class="btn btn-xs btn-outline-danger" for="btnradio3">Cuti Khusus</label>
 
                                                     <input type="radio" class="btn-check" id="cutiTahunan"
-                                                        data-url="/WorkSchedule" name="btnradio" value="cuti_tahunan">
+                                                        data-url="/WorkSchedule" name="btnradio" value="cuti_tahunan"  checked>
                                                     <label class="btn btn-xs btn-outline-danger" for="cutiTahunan">Cuti
                                                         Tahunan</label>
                                                 </div>
@@ -1020,6 +1034,58 @@
                                 </nav>
                                 </div>
                         	</div>
+                            <div class="modal fade" id="tambahpengajuan">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Ubah Pengajuan Cuti Khusus</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <p>Nama karyawan</p>
+                                            </div>
+                                            <label for="jenis-cuti">Jenis Cuti</label>
+                                            <div>
+                                                <select class="form-control" id="jenis-cuti">
+                                                    <option value="cuti-mengkhitankan-anak">Cuti Mengkhitankan Anak</option>
+                                                    <option value="cuti-lainnya">Cuti Lainnya</option>
+                                                </select>
+                                            </div>
+                                            <label class="">Tanggal Pengajuan</label>
+                                            <div class="">
+                                                <input type="date" class="form-control" placeholder="20/6/2023">
+                                            </div>
+                                            <label class="mb-2">Tanggal Izin</label>
+                                            <div class="row">
+                                                <div class="col-xl-9 mb-3">
+                                                    <div class="example">
+                                                        <input class="form-control input-daterange-datepicker" type="text" name="daterange" id="tanggal">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-6 text-end">
+                                                    <button class="btn btn-outline-danger btn-xs" id="btn-1-hari" type="button">1 Hari</button>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <label class="mb-2">Keterangan Cuti</label>
+                                            <div class="">
+                                                <textarea class="form-control" placeholder="Mohon Izin"></textarea>
+                                            </div>
+                                            <label class="mb-2">Keterangan Persetujuan/Penolakan</label>
+                                            <div class="">
+                                                <textarea class="form-control" placeholder="Undangan jangan lupa"></textarea>
+                                            </div>
+                                            <div class="row g-0">
+                                                <a href="" target="_blank">Lampiran</a>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger">Batalkan Persetujuan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
 				</div>
 
@@ -1058,6 +1124,24 @@
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
 
+    <script>
+        var isAlternateLogo = false;
+        var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
+        var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
+
+        function changeLogo() {
+            var logo = document.getElementById("logo");
+
+            if (isAlternateLogo) {
+                logo.src = originalLogoSrc;
+                isAlternateLogo = false;
+            } else {
+                logo.src = alternateLogoSrc;
+                isAlternateLogo = true;
+            }
+        }
+    </script>
+
 	<script>
         const icon = document.getElementById('icon');
         const inputField = document.getElementById('inputField');
@@ -1091,6 +1175,58 @@
             inputField3.style.display = 'none';
         });
     </script>
+    <script>
+        // Mendapatkan elemen input tanggal
+        const inputTanggal = document.getElementById('tanggal');
+
+        // Mendapatkan tombol 1 Hari
+        const tombol1Hari = document.getElementById('btn-1-hari');
+
+        // Menambahkan event listener pada tombol 1 Hari
+        tombol1Hari.addEventListener('click', function() {
+            // Mendapatkan tanggal awal dan akhir dari input
+            const tanggalArray = inputTanggal.value.split(' - ');
+            const tanggalAwal = new Date(tanggalArray[0]);
+            const tanggalAkhir = new Date(tanggalArray[1]);
+
+            // Menghitung selisih dalam milidetik
+            const selisihHari = Math.abs(tanggalAkhir - tanggalAwal) / (1000 * 60 * 60 * 24);
+
+            // Mengubah teks pada tombol menjadi jumlah hari
+            tombol1Hari.textContent = selisihHari + ' Hari';
+        });
+    </script>
+
+    <!-- Daterangepicker -->
+        <!-- momment js is must -->
+        <script src="vendor/moment/moment.min.js"></script>
+        <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <!-- clockpicker -->
+        <script src="vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+        <!-- asColorPicker -->
+        <script src="vendor/jquery-asColor/jquery-asColor.min.js"></script>
+        <script src="vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
+        <script src="vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+        <!-- Material color picker -->
+        <script src="vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+        <!-- pickdate -->
+        <script src="vendor/pickadate/picker.js"></script>
+        <script src="vendor/pickadate/picker.time.js"></script>
+        <script src="vendor/pickadate/picker.date.js"></script>
+
+
+
+        <!-- Daterangepicker -->
+        <script src="js/plugins-init/bs-daterange-picker-init.js"></script>
+        <!-- Clockpicker init -->
+        <script src="js/plugins-init/clock-picker-init.js"></script>
+        <!-- asColorPicker init -->
+        <script src="js/plugins-init/jquery-asColorPicker.init.js"></script>
+        <!-- Material color picker init -->
+        <script src="js/plugins-init/material-date-picker-init.js"></script>
+        <!-- Pickdate -->
+        <script src="js/plugins-init/pickadate-init.js"></script>
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
