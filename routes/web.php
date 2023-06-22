@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\ViewEmployeeController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\RouteKaryawanController;
+use App\Http\Controllers\DataEmployeeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -68,3 +69,7 @@ Route::get('/SettingSchedule', [RouteController::class, 'SettingSchedule'])->nam
 Route::get('/DetileSchedule', [RouteController::class, 'DetileSchedule'])->name('DetileSchedule');
 Route::get('/AnnualLeave', [RouteController::class, 'AnnualLeave'])->name('AnnualLeave');
 Route::get('/EditSchedule', [RouteController::class, 'EditSchedule'])->name('EditSchedule');
+
+
+// Add Data Employee Route
+Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
