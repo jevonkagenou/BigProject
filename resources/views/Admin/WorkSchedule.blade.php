@@ -65,6 +65,13 @@
         .red-icon path {
             fill: red;
         }
+        
+    /* Ganti warna checkbox saat dicentang */
+    .other-checkbox:checked + label::before {
+        border-color: red;
+        background-color: red;
+    }                                                                                                                                                            
+
     </style>
 
     <div id="main-wrapper">
@@ -406,8 +413,7 @@
                                             <tr>
                                                 <th>
                                                     <div class="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" class="form-check-input" id="checkAll" required="">
-                                                        <label class="form-check-label" for="checkAll"></label>
+                                                        <input type="checkbox" id="select-all-checkbox" class="form-check-input" style="color: #f84062;">                                                        <label class="form-check-label" for="selectall"></label>
                                                     </div>
                                                 </th>
                                                 <th>Name</th>
@@ -420,8 +426,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
-                                                        <label class="form-check-label" for="customCheckBox2"></label>
+                                                        <input type="checkbox" class="other-checkbox form-check-input" style="color: #f84062;">                                                        <label class="form-check-label" for="customCheckBox2"></label>
                                                     </div>
                                                 </td>
                                                 <td>Tiger Nixon</td>
@@ -441,8 +446,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2">
-                                                        <label class="form-check-label" for="customCheckBox2"></label>
+                                                        <input type="checkbox" class="other-checkbox form-check-input" style="color: #f84062;">                                                        <label class="form-check-label" for="customCheckBox2"></label>
                                                     </div>
                                                 </td>
                                                 <td>Garrett Winters</td>
@@ -462,8 +466,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2">
-                                                        <label class="form-check-label" for="customCheckBox2"></label>
+                                                        <input type="checkbox" class="other-checkbox form-check-input" style="color: #f84062;">                                                        <label class="form-check-label" for="customCheckBox2"></label>
                                                     </div>
                                                 </td>
                                                 <td>Ashton Cox</td>
@@ -483,8 +486,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
-                                                        <label class="form-check-label" for="customCheckBox2"></label>
+                                                        <input type="checkbox" class="other-checkbox form-check-input" style="color: #f84062;">                                                        <label class="form-check-label" for="customCheckBox2"></label>
                                                     </div>
                                                 </td>
                                                 <td>Cedric Kelly</td>
@@ -529,7 +531,7 @@
                                 <option value="1">Shift Pagi</option>
                                 <option value="2">Shift Malam</option>
                                 <hr>
-                                <option value="3" data-url="/WorkSchedule">Tambah Jadwal</option>
+                                <option value="3" data-url="/AddWorkSchedule">Tambah Jadwal</option>
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid country.
@@ -558,24 +560,22 @@
         </div>
     </div>
     <!-- Required vendors -->
-    <script src="{{ asset('vendor/global/global.min.js') }}"></script>
-    <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
-    <script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
-
-    <!-- Apex Chart -->
-    <script src="{{ asset('vendor/apexchart/apexchart.js') }}"></script>
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
     <script src="{{ asset('vendor/nouislider/nouislider.min.js') }}"></script>
     <script src="{{ asset('vendor/wnumb/wNumb.js') }}"></script>
+ <!-- Datatable -->
+ <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+ <script src="js/plugins-init/datatables.init.js"></script>
 
-    <!-- Dashboard 1 -->
-    <script src="{{ asset('js/dashboard/dashboard-1.js') }}"></script>
+ <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
 
-    <script src="{{ asset('js/custom.min.js') }}"></script>
-    <script src="{{ asset('js/dlabnav-init.js') }}"></script>
-    <script src="{{ asset('js/demo.js') }}"></script>
-    <script src="{{ asset('js/styleSwitcher.js') }}"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+ <script src="js/custom.min.js"></script>
+ <script src="js/dlabnav-init.js"></script>
+ <script src="js/demo.js"></script>
+ <script src="js/styleSwitcher.js"></script>
 
     <script>
         var options = {
@@ -654,48 +654,91 @@
         var chart = new ApexCharts(document.querySelector("#chart_pie"), options);
         chart.render();
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
-    <script>
-        var isAlternateLogo = false;
-        var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
-        var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-        function changeLogo() {
-            var logo = document.getElementById("logo");
+	<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var checkboxes = document.querySelectorAll("input[type=checkbox]");
+    var button = document.getElementById("actionButton");
 
-            if (isAlternateLogo) {
-                logo.src = originalLogoSrc;
-                isAlternateLogo = false;
-            } else {
-                logo.src = alternateLogoSrc;
-                isAlternateLogo = true;
-            }
+   
+
+    checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+        var checkedCheckboxes = document.querySelectorAll("input[type='checkbox']:checked");
+        if (checkedCheckboxes.length > 0) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
         }
-    </script>
+      });
+    });
+  });
+</script><script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var selectElement = document.getElementById("jadwalSelect");
 
-    <link rel="stylesheet" href="/css/tom-select.default.css">
-    <script src="/js/tom-select.complete.js"></script>
-    <script>
-        new TomSelect('#tom-select-it');
-    </script>
-           <!-- Required vendors -->
-           <script src="vendor/global/global.min.js"></script>
-           <script src="vendor/chart.js/Chart.bundle.min.js"></script>
-           <!-- Apex Chart -->
-           <script src="vendor/apexchart/apexchart.js"></script>
-   
-           <!-- Datatable -->
-           <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-           <script src="js/plugins-init/datatables.init.js"></script>
-   
-           <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-   
-           <script src="js/custom.min.js"></script>
-           <script src="js/dlabnav-init.js"></script>
-           <script src="js/demo.js"></script>
-           <script src="js/styleSwitcher.js"></script>
+    selectElement.addEventListener('change', function() {
+      var selectedOption = selectElement.options[selectElement.selectedIndex];
+      var url = selectedOption.getAttribute('data-url');
 
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  });
+</script>
+<script>
+// Ambil elemen-elemen yang diperlukan
+            const checkboxes = document.querySelectorAll('.other-checkbox');
+            const selectAllCheckbox = document.querySelector('#select-all-checkbox');
+            const hiddenMenu = document.querySelector('.hidden-menu');
+            const countDisplay = document.querySelector('#count-display');
+
+            // Function to count the number of checked checkboxes
+            function countCheckedCheckboxes() {
+                const checkedCheckboxes = document.querySelectorAll('.other-checkbox:checked');
+                return checkedCheckboxes.length;
+            }
+
+            // Function to update the count display
+            function updateCountDisplay() {
+                const totalCount = countCheckedCheckboxes();
+                countDisplay.textContent = totalCount + ' Item Yang dipilih : ';
+            }
+
+            // Add event listener to each checkbox
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        hiddenMenu.style.display = 'block'; // Show the hidden menu
+                    } else {
+                        const checkedCount = countCheckedCheckboxes();
+                        if (checkedCount === 0) {
+                            hiddenMenu.style.display = 'none'; // Hide the hidden menu if no checkboxes are checked
+                        }
+                    }
+
+                    updateCountDisplay(); // Update the count display
+                });
+            });
+
+            // Add event listener to the "Select All" checkbox
+            selectAllCheckbox.addEventListener('change', function() {
+                checkboxes.forEach(function(checkbox) {
+                    checkbox.checked = selectAllCheckbox.checked; // Set the state of each checkbox based on the "Select All" checkbox
+                });
+
+                if (this.checked) {
+                    hiddenMenu.style.display = 'block'; // Show the hidden menu
+                } else {
+                    hiddenMenu.style.display = 'none'; // Hide the hidden menu
+                }
+
+                updateCountDisplay(); // Update the count display
+            });
+        </script>
 </body>
 </head>
-
+<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
 </html>
