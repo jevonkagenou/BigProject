@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:32 GMT -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,13 +21,12 @@
     <title>Kalopsia</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png"  />
-
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
     <!-- Datatable -->
-    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
-    <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -44,11 +46,13 @@
         </div>
     </div>
     <style>
-        .hover-red:hover .svg {
+        .hover-red:hover {
             color: #EE3232 !important;
             fill: red !important;
         }
-
+        .red-icon path {
+            fill: red;
+        }
         .dlabnav .metismenu a {
             color: #9FA4A6;
         }
@@ -61,16 +65,6 @@
             max-width: 80%;
             height: auto;
         }
-
-        .red-icon path {
-            fill: red;
-        }
-        
-    /* Ganti warna checkbox saat dicentang */
-    .other-checkbox:checked + label::before {
-        border-color: red;
-        background-color: red;
-    }                                                                                                                                                            
 
     </style>
 
@@ -134,8 +128,9 @@
                                                 <path
                                                     d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                             </svg> Profil</a></li>
-                                    <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="24" height="24" fill="#969ba0" viewBox="0 0 512 512"
+                                    <li><a class="dropdown-item" href="#"><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="#969ba0" viewBox="0 0 512 512"
                                                 style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
                                                 <path
                                                     d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
@@ -167,9 +162,8 @@
                             </div>
                         </a>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg"
+                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg"
                                 style="font-size: 80px !important" height="100" viewBox="0 -960 960 960"
                                 width="100">
                                 <path
@@ -177,8 +171,6 @@
                             </svg>
                             <span class="nav-text ">Dashboard</span>
                         </a>
-
-
                     </li>
                     <li><a class="ai-icon hover-red" href="/ApprovalAdmin" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
@@ -188,7 +180,6 @@
                             </svg>
                             <span class="nav-text ">Approval</span>
                         </a>
-
                     </li>
                     <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
                         <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
@@ -257,7 +248,7 @@
             Sidebar end
         ***********************************-->
 
-        <Style>
+        <style>
             .border {
                 display: inline-block;
                 width: 5rem;
@@ -541,7 +532,7 @@
 
                         <br>
 
-                    </div>
+                    </div> 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
                         <button type="button" class="btn btn-danger btn-xs">Simpan</button>
@@ -560,6 +551,7 @@
         </div>
     </div>
     <!-- Required vendors -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="vendor/global/global.min.js"></script>
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
@@ -577,84 +569,6 @@
  <script src="js/demo.js"></script>
  <script src="js/styleSwitcher.js"></script>
 
-    <script>
-        var options = {
-            series: [{
-                data: [21, 22, 10, 28, 16, 21, 13, 30]
-            }],
-            chart: {
-                height: 350,
-                type: 'bar',
-                events: {
-                    click: function(chart, w, e) {}
-                }
-            },
-            colors: ['#EE3232'],
-            plotOptions: {
-                bar: {
-                    columnWidth: '45%',
-                    distributed: true,
-                }
-            },
-            dataLabels: {
-                enabled: false
-            },
-            legend: {
-                show: false
-            },
-            xaxis: {
-                categories: [
-                    'John',
-                    'Joe',
-                    'Jake',
-                    'Amber',
-                    'Peter',
-                    'Mary',
-                    'David',
-                    'Lily'
-                ],
-                labels: {
-                    style: {
-                        colors: ['#000000'],
-                        // Dalam Code ini Length: 8 berfungsi untuk mengulangi warna sebanyak jumlah data dalam Categories //
-                        // colors: Array.from({
-                        //     length: 8
-                        // }, (_, index) => ['#CF0000', '#890596', '#1CC5DC'][index % 3]),
-                        fontSize: '12px'
-                    }
-                }
-            }
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-    </script>
-
-    <script>
-        var options = {
-            series: [44, 55, 13, 43, 22],
-            chart: {
-                width: 380,
-                type: 'pie',
-            },
-            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-            legend: {
-                position: 'bottom'
-            },
-            responsive: [{
-                breakpoint: 480,
-                options: {
-                    chart: {
-                        width: 200
-                    }
-                }
-            }]
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chart_pie"), options);
-        chart.render();
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 	<script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -674,22 +588,10 @@
       });
     });
   });
-</script><script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var selectElement = document.getElementById("jadwalSelect");
-
-    selectElement.addEventListener('change', function() {
-      var selectedOption = selectElement.options[selectElement.selectedIndex];
-      var url = selectedOption.getAttribute('data-url');
-
-      if (url) {
-        window.location.href = url;
-      }
-    });
-  });
 </script>
-<script>
-// Ambil elemen-elemen yang diperlukan
+
+            <script>
+            // Ambil elemen-elemen yang diperlukan
             const checkboxes = document.querySelectorAll('.other-checkbox');
             const selectAllCheckbox = document.querySelector('#select-all-checkbox');
             const hiddenMenu = document.querySelector('.hidden-menu');
@@ -737,7 +639,7 @@
 
                 updateCountDisplay(); // Update the count display
             });
-        </script>
+            </script>
 </body>
 </head>
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
