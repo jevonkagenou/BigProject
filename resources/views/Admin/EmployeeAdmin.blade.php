@@ -933,7 +933,7 @@
                                                 <tr onclick="window.location='/Employee/{{ $employee->id }}'" class="text-center">
                                                     <td>{{ $employee->longname }}</td>
                                                     <td>{{ $employee->gender }}</td>
-                                                    <td>{{ $employee->address }}</td>
+                                                    <td>{{ $employee->place_birth }}</td>
                                                     <td>{{ $employee->date }}</td>
                                                     <td>{{ $employee->marry }}</td>
                                                     <td>{{ $employee->region }}</td>
