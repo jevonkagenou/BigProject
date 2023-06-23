@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('name');
             $table->bigInteger('notelp');
             $table->string('password');
-            $table->string('foto') ->nullable();
-            $table->string('role');
+            $table->longText('foto') ->nullable();
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('role')->default('karyawan')->nullable();
             $table->timestamps();
         });
     }

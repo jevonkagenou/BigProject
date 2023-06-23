@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\DashboardAdminController;
-use App\Http\Controllers\ViewEmployeeController;
-use App\Http\Controllers\RouteController;
-use App\Http\Controllers\RouteKaryawanController;
-use App\Http\Controllers\DataEmployeeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\DataEmployeeController;
+use App\Http\Controllers\ViewEmployeeController;
+use App\Http\Controllers\RouteKaryawanController;
+use App\Http\Controllers\DashboardAdminController;
 
 
 /*
@@ -18,6 +20,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/login',[LoginController::class,'login'])->name('Login');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Route::post('/loginuser',[LoginController::class,'loginuser'])->name('Loginuser');
+Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
 
 // Admin Route
 Route::get('/DashboardEmployee', [ViewEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
@@ -64,7 +71,8 @@ Route::get('/AddWorkSchedule', [RouteController::class, 'AddWorkSchedule'])->nam
 Route::get('/ProfileEmployee', [ViewEmployeeController::class, 'ProfileEmployee'])->name('ProfileEmployee');
 Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
-Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
+
+
 Route::get('/SettingSchedule', [RouteController::class, 'SettingSchedule'])->name('SettingSchedule');
 Route::get('/DetileSchedule', [RouteController::class, 'DetileSchedule'])->name('DetileSchedule');
 Route::get('/AnnualLeave', [RouteController::class, 'AnnualLeave'])->name('AnnualLeave');

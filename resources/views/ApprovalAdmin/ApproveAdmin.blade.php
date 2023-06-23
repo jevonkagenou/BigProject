@@ -1086,6 +1086,7 @@
         }
     }
     </script>
+
     <script src="{{ asset('vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
 	<!-- Apex Chart -->
