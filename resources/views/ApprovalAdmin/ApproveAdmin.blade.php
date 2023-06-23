@@ -909,7 +909,6 @@
 														<label class="form-check-label" for="checkAll"></label>
 													</div>
 												</th>
-                                                <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Tipe</th>
                                                 <th>Tanggal Pengajuan</th>
@@ -924,11 +923,9 @@
 														<label class="form-check-label" for="customCheckBox2"></label>
 													</div>
 												</td>
-                                                <td>1</td>
                                                 <td>Amel</td>
                                                 <td>Izin</td>
                                                 <td>2 Juni 2023</td>
-
                                                 <td>
                                                     <span>
                                                         <a href="javascript:void()" class="me-4" data-bs-toggle="tooltip"
@@ -938,49 +935,6 @@
                                                     </span>
                                                 </td>
                                             </tr>
-                                            <tr>
-												<td>
-													<div class="form-check custom-checkbox ms-2">
-														<input type="checkbox" class="form-check-input" id="customCheckBox3" required="">
-														<label class="form-check-label" for="customCheckBox3"></label>
-													</div>
-												</td>
-                                                <td>2</td>
-                                                <td>Momo</td>
-												<td>Cuti</td>
-                                                <td>30 Mei 2023</td>
-
-                                                <td>
-                                                    <span>
-                                                        <a href="javascript:void()" class="me-4" data-bs-toggle="tooltip"
-                                                            data-placement="top" title="Terima"><i class="bi bi-person-check-fill text-success"></i> </a>
-                                                        <a href="javascript:void()" data-bs-toggle="tooltip"
-                                                            data-placement="top" title="Tolak"><i class="bi bi-person-x-fill text-danger"></i></a>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-												<td>
-													<div class="form-check custom-checkbox ms-2">
-														<input type="checkbox" class="form-check-input" id="customCheckBox4" required="">
-														<label class="form-check-label" for="customCheckBox4"></label>
-													</div>
-												</td>
-                                                <td>3</td>
-                                                <td>Lisa</td>
-												<td>Cuti</td>
-                                                <td>8 Juni 2023</td>
-
-                                                <td>
-                                                    <span>
-                                                        <a href="javascript:void()" class="me-4" data-bs-toggle="tooltip"
-                                                            data-placement="top" title="Terima"><i class="bi bi-person-check-fill text-success"></i> </a>
-                                                        <a href="javascript:void()" data-bs-toggle="tooltip"
-                                                            data-placement="top" title="Tolak"><i class="bi bi-person-x-fill text-danger"></i></a>
-                                                    </span>
-                                                </td>
-                                            </tr>
-
                                         </tbody>
                                     </table>
                                 </div>

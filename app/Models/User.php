@@ -42,4 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function ApproveAdmin(){
+        return $this ->hasMany(ApproveAdmin::class);
+    }
+
+    public function Permit_Leave(){
+        return $this ->hasMany(PermitEmployee::class);
+    }
 }

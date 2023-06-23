@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataEmployee;
+use App\Models\PermitEmployee;
 use Illuminate\Http\Request;
 
 class RouteController extends Controller
@@ -21,9 +23,9 @@ class RouteController extends Controller
         ]);
     }
     public function PermitLeaveAdmin(){
-        return view('Admin.PermitLeaveAdmin',[
-            'tittle'=>'Izin Cuti Admin'
-        ]);
+
+        $approve_admin = PermitEmployee::all();
+        return view('Admin.PermitLeaveAdmin',compact('approve_admin'),['tittle'=>'Izin Cuti Admin']);
     }
     public function WorkSchedule(){
         return view('Admin.WorkSchedule',[
@@ -64,9 +66,8 @@ class RouteController extends Controller
         ]);
     }
     public function EmployeeAdmin(){
-        return view('Admin.EmployeeAdmin',[
-            'tittle'=>'Karyawan'
-        ]);
+        $data = DataEmployee::all();
+        return view('Admin.EmployeeAdmin', ['tittle'=>'Karyawan'], compact('data'));
     }
     public function PayrolEmployee(){
         return view('EmployeeDetails.PayrolEmployee',[

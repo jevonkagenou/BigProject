@@ -42,49 +42,30 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Tanggal Pengajuan</th>
+                                        <th>Tanggal Cuti</th>
                                         <th>Jumlah Hari</th>
                                         <th>Jenis Cuti</th>
-                                        <th>Tanggal Cuti</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($approve_admin as $approve)   
                                     <tr class="text-center">
-                                        <td>1</td>
-                                        <td>Bayu</td>
-                                        <td>02 Januari 2023</td>
-                                        <td>2</td>
-                                        <td>Cuti Khusus</td>
-                                        <td>5 Januari 2023</td>
+                                        <td>{{ $approve->id }}</td>
+                                        <td>{{ $approve->User->name }}</td>
+                                        <td>{{ $approve->submission_date }}</td>
+                                        <td>{{ $approve->date_leave }}</td>
+                                        <td>{{ $approve->total_day }}</td>
+                                        <td>{{ $approve->tipe }}</td>
                                         <td>
-                                            <span class="badge badge-warning">Menunggu
-                                            </span>
+                                            <span
+                                                class="badge light
+                                                @if ($approve->status == 'Menunggu') badge-warning
+                                                @elseif ($approve->status == 'Diterima') badge-success
+                                                @elseif ($approve->status == 'Ditolak') badge-danger @endif">{{ $approve->status }}</span>
                                         </td>
                                     </tr>
-                                    <tr class="text-center">
-                                        <td>2</td>
-                                        <td>Nino</td>
-                                        <td>03 Januari 2023</td>
-                                        <td>1</td>
-                                        <td>Cuti Khusus</td>
-                                        <td>10 Januari 2023</td>
-                                        <td>
-                                            <span class="badge badge-warning">Menunggu
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr class="text-center">
-                                        <td>3</td>
-                                        <td>Anggi</td>
-                                        <td>20 Februari 2023</td>
-                                        <td>3</td>
-                                        <td>Cuti Khusus</td>
-                                        <td>22 Februari 2023</td>
-                                        <td>
-                                            <span class="badge badge-warning">Menunggu
-                                            </span>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

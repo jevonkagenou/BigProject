@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PermitEmployee;
 use Illuminate\Http\Request;
 
 class ViewEmployeeController extends Controller
@@ -19,9 +20,9 @@ class ViewEmployeeController extends Controller
     }
 
     public function PermitEmployee(){
-        return view ('PermitEmployee.PermitEmployee',[
-            'title'=>'Izin Cuti'
-        ]);
+        $data = PermitEmployee::all();
+        $title = 'Izin Cuti';
+        return view ('PermitEmployee.PermitEmployee', compact('data', 'title'));
     }
 
     public function ApprovalEmployee(){

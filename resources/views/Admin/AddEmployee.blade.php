@@ -289,11 +289,6 @@
                                                         Lengkap</label>
                                                     <input type="text" class="form-control" name="longname"
                                                         id="longname" placeholder="Nama Lengkap" required="">
-                                                        @if ($errors->has('longname'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('longname') }}
-                                                        </div>
-                                                    @endif
                                                     <div class="invalid-feedback">
                                                         Please enter your shipping address.
                                                     </div>
@@ -306,11 +301,6 @@
                                                         <input type="text" class="form-control" name="place_birth"
                                                             id="place_birth" placeholder="Tempat Lahir"
                                                             value="" required="">
-                                                            @if ($errors->has('place_birth'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('place_birth') }}
-                                                        </div>
-                                                    @endif
                                                         <div class="invalid-feedback">
                                                             Valid first name is required.
                                                         </div>
@@ -321,11 +311,6 @@
                                                         <input type="date" class="form-control" name="date"
                                                             id="date" placeholder="" value=""
                                                             required="">
-                                                            @if ($errors->has('date'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('date') }}
-                                                        </div>
-                                                    @endif
                                                         <div class="invalid-feedback">
                                                             Valid last name is required.
                                                         </div>
@@ -348,11 +333,6 @@
                                                             <label class="form-check-label"
                                                                 for="debit">Perempuan</label>
                                                         </div>
-                                                        @if ($errors->has('gender'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('gender') }}
-                                                        </div>
-                                                    @endif
                                                     </div>
                                                     <div class="col-md-6 mb-3">
                                                         <label for="firstName" class="form-label text-black">Status
@@ -360,14 +340,9 @@
                                                         <select name="marry" class="default-select form-control"
                                                             id="">
                                                             <option value="" selected>Status</option>
-                                                            <option value="sudah Menikah">Sudah Menikah</option>
+                                                            <option value="Sudah Menikah">Sudah Menikah</option>
                                                             <option value="Belum Menikah">Belum Menikah</option>
                                                         </select>
-                                                        @if ($errors->has('marry'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('marry') }}
-                                                        </div>
-                                                    @endif
                                                         <div class="invalid-feedback">
                                                             Valid first name is required.
                                                         </div>
@@ -384,11 +359,6 @@
                                                             <option value="AB">AB</option>
                                                             <option value="O">O</option>
                                                         </select>
-                                                        @if ($errors->has('blood_group'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('blood_group') }}
-                                                        </div>
-                                                    @endif
                                                         <div class="invalid-feedback">
                                                             Valid first name is required.
                                                         </div>
@@ -404,11 +374,6 @@
                                                             <option value="Hindu">Hindu</option>
                                                             <option value="Konghucu">Konghucu</option>
                                                         </select>
-                                                        @if ($errors->has('region'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('region') }}
-                                                        </div>
-                                                    @endif
                                                         <div class="invalid-feedback">
                                                             Please select a valid country.
                                                         </div>
@@ -422,11 +387,6 @@
                                                             class="text-muted">(Optional)</span></label>
                                                     <input type="email" name="email" class="form-control"
                                                         id="email" placeholder="Email Anda">
-                                                        @if ($errors->has('email'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('email') }}
-                                                        </div>
-                                                    @endif
                                                     <div class="invalid-feedback">
                                                         Please enter a valid email address for shipping updates.
                                                     </div>
@@ -436,11 +396,6 @@
                                                     <label for="address"class="form-label text-black">No.HP</label>
                                                     <input type="number" class="form-control" name="numberphone"
                                                         id="numberphone" placeholder="Nomor Anda" required="">
-                                                        @if ($errors->has('numberphone'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('numberphone') }}
-                                                        </div>
-                                                    @endif
                                                     <div class="invalid-feedback">
                                                         Please enter your shipping address.
                                                     </div>
@@ -450,11 +405,6 @@
                                                     <label for="address"class="form-label text-black">Alamat</label>
                                                     <input type="text" class="form-control" name="address"
                                                         id="address" placeholder="Alamat Anda" required="">
-                                                        @if ($errors->has('address'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('address') }}
-                                                        </div>
-                                                    @endif
                                                     <div class="invalid-feedback">
                                                         Please enter your shipping address.
                                                     </div>
@@ -468,11 +418,6 @@
                                                     <input type="text" class="form-control text-muted"
                                                         name="last_study" id="last_study"
                                                         placeholder="Pendidikan Terakhir">
-                                                        @if ($errors->has('last_study'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('last_study') }}
-                                                        </div>
-                                                    @endif
                                                 </div>
 
                                                 <div class="mb-3">
@@ -482,11 +427,6 @@
                                                         name="educational_institution"
                                                         id="educational_institution"
                                                         placeholder="Nama Institusi Pendidikan">
-                                                        @if ($errors->has('educational_institutio'))
-                                                            <div class="alert alert-danger" role="alert">
-                                                                <i class="bi bi-x-lg"></i> {{ $errors->first('educational_institutio') }}
-                                                            </div>
-                                                        @endif
                                                 </div>
 
                                                 <div class="mb-3">
@@ -494,11 +434,6 @@
                                                     <input type="text" class="form-control text-muted"
                                                         name="study_program" id="study_program"
                                                         placeholder="Program Studi">
-                                                        @if ($errors->has('study_program'))
-                                                            <div class="alert alert-danger" role="alert">
-                                                                <i class="bi bi-x-lg"></i> {{ $errors->first('study_program') }}
-                                                            </div>
-                                                        @endif
                                                 </div>
 
                                                 <hr class="mb-2">

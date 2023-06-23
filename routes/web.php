@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\ApproveAdminController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -6,8 +7,10 @@ use App\Http\Controllers\RouteController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\DataEmployeeController;
 use App\Http\Controllers\ViewEmployeeController;
+
 use App\Http\Controllers\RouteKaryawanController;
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\PermitEmployeeController;
 
 
 /*
@@ -63,7 +66,7 @@ Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
 Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
 Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
 Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
-Route::get('/Employee', [RouteController::class, 'Employee'])->name('Employee');
+Route::get('/Employee/{id}', [DataEmployeeController::class, 'Employee'])->name('Employee');
 Route::get('/SalaryAdjustment', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
 Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
 Route::get('/ProfilAdmin', [RouteController::class, 'ProfilAdmin'])->name('ProfilAdmin');
@@ -81,3 +84,7 @@ Route::get('/EditSchedule', [RouteController::class, 'EditSchedule'])->name('Edi
 
 // Add Data Employee Route
 Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
+
+// Permit Employee and Approve
+Route::post('/Approve/{user_id}', [ApproveAdminController::class, 'Approve'])->name('Approve');
+Route::post('/Add_Permit', [PermitEmployeeController::class, 'Add_Permit'])->name('Add_Permit');

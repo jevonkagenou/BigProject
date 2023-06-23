@@ -42,4 +42,8 @@ class DataEmployeeController extends Controller
         ]);
         return redirect()->route('EmployeeAdmin')->with('success', 'Data Anda Telah Ditambahkan');
     }
+    public function Employee($id){
+        $order = DataEmployee::find($id);
+        return view('EmployeeDetails.Employee', compact('order'));
+    }
 }

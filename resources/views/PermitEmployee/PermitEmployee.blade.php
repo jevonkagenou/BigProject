@@ -43,11 +43,13 @@
 
         .red-hover:hover {
             color: #EE3232 !important;
-            fill:red !important
+            fill: red !important
         }
+
         .red-icon path {
             fill: red;
         }
+
         .btn-outline-danger:checked {
             color: white !important;
         }
@@ -94,7 +96,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo" >
+            <a href="index.html" class="brand-logo">
                 <img id="logo" src="https://i.postimg.cc/MpM0gDDQ/Logo-kal.png">
             </a>
             <div class="nav-control" onclick="changeLogo()">
@@ -119,9 +121,13 @@
                         <div class="justify-content-end">
                             <ul class="navbar-nav header-right">
                                 <li class="nav-item dropdown notification_dropdown">
-                                    <a class="nav-link  ai-icon" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                                       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.638 4.9936V2.3C12.638 1.5824 13.2484 1 14.0006 1C14.7513 1 15.3631 1.5824 15.3631 2.3V4.9936C17.3879 5.2718 19.2805 6.1688 20.7438 7.565C22.5329 9.2719 23.5384 11.5872 23.5384 14V18.8932L24.6408 20.9966C25.1681 22.0041 25.1122 23.2001 24.4909 24.1582C23.8709 25.1163 22.774 25.7 21.5941 25.7H15.3631C15.3631 26.4176 14.7513 27 14.0006 27C13.2484 27 12.638 26.4176 12.638 25.7H6.40705C5.22571 25.7 4.12888 25.1163 3.50892 24.1582C2.88759 23.2001 2.83172 22.0041 3.36039 20.9966L4.46268 18.8932V14C4.46268 11.5872 5.46691 9.2719 7.25594 7.565C8.72068 6.1688 10.6119 5.2718 12.638 4.9936ZM14.0006 7.5C12.1924 7.5 10.4607 8.1851 9.18259 9.4045C7.90452 10.6226 7.18779 12.2762 7.18779 14V19.2C7.18779 19.4015 7.13739 19.6004 7.04337 19.7811C7.04337 19.7811 6.43703 20.9381 5.79662 22.1588C5.69171 22.3603 5.70261 22.6008 5.82661 22.7919C5.9506 22.983 6.16996 23.1 6.40705 23.1H21.5941C21.8298 23.1 22.0492 22.983 22.1732 22.7919C22.2972 22.6008 22.3081 22.3603 22.2031 22.1588C21.5627 20.9381 20.9564 19.7811 20.9564 19.7811C20.8624 19.6004 20.8133 19.4015 20.8133 19.2V14C20.8133 12.2762 20.0953 10.6226 18.8172 9.4045C17.5391 8.1851 15.8073 7.5 14.0006 7.5Z" fill="#4f7086"/>
+                                    <a class="nav-link  ai-icon" href="javascript:void(0);" role="button"
+                                        data-bs-toggle="dropdown">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.638 4.9936V2.3C12.638 1.5824 13.2484 1 14.0006 1C14.7513 1 15.3631 1.5824 15.3631 2.3V4.9936C17.3879 5.2718 19.2805 6.1688 20.7438 7.565C22.5329 9.2719 23.5384 11.5872 23.5384 14V18.8932L24.6408 20.9966C25.1681 22.0041 25.1122 23.2001 24.4909 24.1582C23.8709 25.1163 22.774 25.7 21.5941 25.7H15.3631C15.3631 26.4176 14.7513 27 14.0006 27C13.2484 27 12.638 26.4176 12.638 25.7H6.40705C5.22571 25.7 4.12888 25.1163 3.50892 24.1582C2.88759 23.2001 2.83172 22.0041 3.36039 20.9966L4.46268 18.8932V14C4.46268 11.5872 5.46691 9.2719 7.25594 7.565C8.72068 6.1688 10.6119 5.2718 12.638 4.9936ZM14.0006 7.5C12.1924 7.5 10.4607 8.1851 9.18259 9.4045C7.90452 10.6226 7.18779 12.2762 7.18779 14V19.2C7.18779 19.4015 7.13739 19.6004 7.04337 19.7811C7.04337 19.7811 6.43703 20.9381 5.79662 22.1588C5.69171 22.3603 5.70261 22.6008 5.82661 22.7919C5.9506 22.983 6.16996 23.1 6.40705 23.1H21.5941C21.8298 23.1 22.0492 22.983 22.1732 22.7919C22.2972 22.6008 22.3081 22.3603 22.2031 22.1588C21.5627 20.9381 20.9564 19.7811 20.9564 19.7811C20.8624 19.6004 20.8133 19.4015 20.8133 19.2V14C20.8133 12.2762 20.0953 10.6226 18.8172 9.4045C17.5391 8.1851 15.8073 7.5 14.0006 7.5Z"
+                                                fill="#4f7086" />
                                         </svg>
                                         <span class="badge light text-white bg-primary rounded-circle">12</span>
                                     </a>
@@ -131,11 +137,10 @@
                                                 <li>
                                                     <div class="timeline-panel">
                                                         <div class="media me-2 media-info">
-                                                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
-                                                                width="24">
+                                                            <svg class="svg" xmlns="http://www.w3.org/2000/svg"
+                                                                height="24" viewBox="0 -960 960 960" width="24">
                                                                 <path
-                                                                    d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z"
-                                                                    />
+                                                                    d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z" />
                                                             </svg></i>
                                                         </div>
                                                         <div class="media-body">
@@ -147,11 +152,10 @@
                                                 <li>
                                                     <div class="timeline-panel">
                                                         <div class="media me-2 media-info">
-                                                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
-                                                                width="24">
+                                                            <svg class="svg" xmlns="http://www.w3.org/2000/svg"
+                                                                height="24" viewBox="0 -960 960 960" width="24">
                                                                 <path
-                                                                    d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z"
-                                                                    />
+                                                                    d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z" />
                                                             </svg></i>
                                                         </div>
                                                         <div class="media-body">
@@ -163,9 +167,12 @@
                                                 <li>
                                                     <div class="timeline-panel">
                                                         <div class="media me-2 media-success">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-balloon" viewBox="0 0 16 16">
-                                                                <path fill-rule="evenodd" d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z"/>
-                                                              </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" class="bi bi-balloon"
+                                                                viewBox="0 0 16 16">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z" />
+                                                            </svg>
                                                         </div>
                                                         <div class="media-body">
                                                             <h6 class="mb-1">Ulang tahun perusahaan</h6>
@@ -175,7 +182,8 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <a class="all-notification" href="javascript:void(0);">Lihat semua notifikasi <i class="ti-arrow-end"></i></a>
+                                        <a class="all-notification" href="javascript:void(0);">Lihat semua notifikasi
+                                            <i class="ti-arrow-end"></i></a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -230,66 +238,60 @@
 
                     </li>
                     <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
-                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                                    width="48">
-                                    <path
-                                        d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"
-                                        />
-                                </svg></i>
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" />
+                            </svg></i>
                             <span class="nav-text">Beranda</span>
                         </a>
 
 
                     </li>
                     <li><a class="ai-icon red-hover" href="/EmployeePresence" aria-expanded="false">
-                            <svg class="svg" class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                                    width="48">
-                                    <path
-                                        d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z"
-                                        />
-                                </svg></i>
+                            <svg class="svg" class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="M140-80q-24 0-42-18t-18-42v-172h60v172h172v60H140ZM80-648v-172q0-24 18-42t42-18h172v60H140v172H80ZM648-80v-60h172v-172h60v172q0 24-18 42t-42 18H648Zm172-568v-172H648v-60h172q24 0 42 18t18 42v172h-60ZM480-480q-51 0-85.5-34.5T360-600q0-50 34.5-85t85.5-35q50 0 85 35t35 85q0 51-35 85.5T480-480Zm-.351-60Q505-540 522.5-557.149t17.5-42.5Q540-625 522.649-642.5t-43-17.5Q454-660 437-642.649t-17 43Q420-574 437.149-557t42.5 17ZM240-240v-76q0-27 17.5-47.5T300-397q42-22 86.943-32.5 44.942-10.5 93-10.5Q528-440 573-429.5t87 32.5q25 13 42.5 33.5T720-316v76H240Zm240-140q-47.546 0-92.773 13T300-328v28h360v-28q-42-26-87.227-39-45.227-13-92.773-13Zm0-220Zm0 300h180-360 180Z" />
+                            </svg></i>
                             <span class="nav-text">Presensi</span>
                         </a>
 
                     </li>
                     <li><a class=" ai-icon red-hover" href="/PermitEmployee" aria-expanded="false">
                             <svg class="red-icon" class="icon" xmlns="http://www.w3.org/2000/svg" height="48"
-                                    viewBox="0 -960 960 960" width="48">
-                                    <path
-                                        d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z"
-                                        />
-                                </svg></i>
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="M733-229q27.917 0 47.458-19.559Q800-268.118 800-296.059T780.458-343Q760.917-362 733-362q-27.5 0-46.75 19.353t-19.25 47Q667-268 686.25-248.5T733-229Zm-.214 133Q766-96 795-111.5t47-42.5q-26-14-53-22.5t-56-8.5q-29 0-56 8.5T624-154q18 27 46.786 42.5 28.785 15.5 62 15.5ZM180-120q-24.75 0-42.375-17.625T120-180v-600q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v329q-14-8-29.5-13t-30.5-8v-308H180v600h309q4 16 9.023 31.172Q503.045-133.655 510-120H180Zm0-107v47-600 308-4 249Zm100-53h211q4-16 9-31t13-29H280v60Zm0-170h344q14-7 27-11.5t29-8.5v-40H280v60Zm0-170h400v-60H280v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41Z" />
+                            </svg></i>
                             <span class="nav-text">Izin Cuti</span>
                         </a>
 
                     </li>
                     <li><a class="ai-icon red-hover" href="/ApprovalEmployee" aria-expanded="false">
-                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                                    width="48">
-                                    <path
-                                        d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z"
-                                        />
-                                </svg></i>
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="M132-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h696q24 0 42 18t18 42v600q0 24-18 42t-42 18H132Zm0-60h696v-600H132v600Zm68-100h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-68 420v-600 600Z" />
+                            </svg></i>
                             <span class="nav-text">Approval</span>
                         </a>
                     </li>
                     <li><a href="/SalaryEmployee" class="ai-icon red-hover" aria-expanded="false">
-                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                                    width="48">
-                                    <path
-                                        d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z"
-                                        />
-                                </svg></i>
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z" />
+                            </svg></i>
                             <span class="nav-text">Gaji</span>
                         </a>
                     </li>
                     <li><a class=" ai-icon red-hover" href="/Calendar" aria-expanded="false">
-                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                                    width="48">
-                                    <path
-                                        d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"
-                                        />
-                                </svg></i>
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z" />
+                            </svg></i>
                             <span class="nav-text">Kalender</span>
                         </a>
 
@@ -353,101 +355,66 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                        <!-- <div class="btn-group col-12"> -->
-                                            <!-- <div class="btn-group  col-lg-8  col-12"> -->
-                                            <div
-                                                class="size-filter col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 btn-group btn-xs ">
-                                                <div class="btn-group btn-xs" role="group"
-                                                    aria-label="Basic radio toggle button group">
-                                                    <input type="radio" class="btn-check" name="btnradio"
-                                                        id="btnradio1" checked>
-                                                    <label class="btn btn-outline-danger btn-xs btn-hover"
-                                                        for="btnradio1">Cuti Khusus</label>
+                                    <!-- <div class="btn-group col-12"> -->
+                                    <!-- <div class="btn-group  col-lg-8  col-12"> -->
+                                    <div
+                                        class="size-filter col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 btn-group btn-xs ">
+                                        <div class="btn-group btn-xs" role="group"
+                                            aria-label="Basic radio toggle button group">
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
+                                                checked>
+                                            <label class="btn btn-outline-danger btn-xs btn-hover"
+                                                for="btnradio1">Cuti Khusus</label>
 
-                                                    <input type="radio" class="btn-check" name="btnradio"
-                                                        id="btnradio2">
-                                                    <label class="btn btn-outline-danger btn-xs btn-hover"
-                                                        for="btnradio2">Izin</label>
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
+                                            <label class="btn btn-outline-danger btn-xs btn-hover"
+                                                for="btnradio2">Izin</label>
 
-                                                    <input type="radio" class="btn-check" name="btnradio"
-                                                        id="btnradio3">
-                                                    <label class="btn btn-outline-danger btn-xs"
-                                                        for="btnradio3">Sakit</label>
-                                                </div>
-                                            </div>
-                                            {{-- <div class="col-xl-3 col-12 btn-xs justify-content-end">
-                                                <select class="default-select form-control wide align-items-center ">
-                                                    <option>Semua</option>
-                                                    <option>Menunggu</option>
-                                                    <option>Ditolak</option>
-                                                    <option>Diterima</option>
-                                                </select>
-                                            </div> --}}
-                                            <div class="col-md-3 col-12 text-end">
-                                              <div class="d-flex mt-3">
-                                                <div class="flex-grow-1">
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
+                                            <label class="btn btn-outline-danger btn-xs" for="btnradio3">Sakit</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-12 text-end">
+                                        <div class="d-flex mt-3">
+                                            <div class="flex-grow-1">
                                                 <select class="form-select">
-                                                  <option>Semua</option>
-                                                  <option>Menunggu</option>
-                                                  <option>Ditolak</option>
-                                                  <option>Diterima</option>
+                                                    <option>Semua</option>
+                                                    <option value="pending">Menunggu</option>
+                                                    <option value="rejected">Ditolak</option>
+                                                    <option value="accepted">Diterima</option>
                                                 </select>
                                             </div>
-                                              </div>
-                                            </div>
-                                  </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr class="text-center">
-
-                                                <th>No</th>
                                                 <th>Tanggal Pengajuan</th>
-                                                <th>Tipe</th>
-                                                <th>Jumlah Hari</th>
                                                 <th>Tanggal Cuti</th>
+                                                <th>Jumlah Hari</th>
+                                                <th>Tipe</th>
                                                 <th>Status</th>
 
                                             </tr>
                                         </thead>
                                         <tbody class="text-center">
-                                            <tr>
-
-                                                <td>1</td>
-                                                <td>26/02/2020</td>
-                                                <td>sakit</td>
-                                                <td>3</td>
-                                                <td>28/02/2020</td>
-                                                <td>
-                                                    <span class="badge light badge-warning">Menunggu</span>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-
-                                                <td>2</td>
-                                                <td>26/02/2020</td>
-                                                <td>izin</td>
-                                                <td>2</td>
-                                                <td>28/02/2020</td>
-                                                <td>
-                                                    <span class="badge light badge-danger">Ditolak</span>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-
-                                                <td>3</td>
-                                                <td>26/02/2020</td>
-                                                <td>cuti</td>
-                                                <td>4</td>
-                                                <td>28/02/2020</td>
-                                                <td>
-                                                    <span class="badge light badge-success">Diterima</span>
-                                                </td>
-
-                                            </tr>
-
+                                            @foreach ($data as $approve)
+                                                <tr>
+                                                    <td>{{ $approve->submission_date }}</td>
+                                                    <td>{{ $approve->date_leave }}</td>
+                                                    <td>{{ $approve->total_day }}</td>
+                                                    <td>{{ $approve->tipe }}</td>
+                                                    <td>
+                                                        <span
+                                                            class="badge light
+                                                            @if ($approve->status == 'Menunggu') badge-warning
+                                                            @elseif ($approve->status == 'Diterima') badge-success
+                                                            @elseif ($approve->status == 'Ditolak') badge-danger @endif">{{ $approve->status }}</span>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                     <nav class="mt-4">
@@ -470,7 +437,11 @@
                             </div>
                         </div>
                     </div>
+
+
                     <!-- Large modal -->
+                   <form method="POST" action="{{ route('Add_Permit') }}">
+                    @csrf
                     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content">
@@ -480,7 +451,8 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3 row g-0">
-                                        <h6 class="modal-title col-sm-2 col-form-label col-form-label">Sisa Cuti Anda! :</h6><br>
+                                        <h6 class="modal-title col-sm-2 col-form-label col-form-label">Sisa Cuti Anda!
+                                            :</h6><br>
                                         <div class="col-sm-10">
                                             <button type="button" class="btn btn-danger btn-xs">2 Hari</button>
                                         </div>
@@ -489,173 +461,41 @@
                                     <div class="row g-0">
                                         <h6 class="modal-title">Tanggal Izin</h6><br>
                                         <div class="col-xl-6 col-sm-6  col-6">
-                                            <input type="date" class="form-control btn-xs">
-                                        </div>
-                                        <div class="col-xl-6 col-6 col-sm-6 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-danger btn-xs">0 Hari</button>
+                                            <input type="date" name="submission_date" class="form-control btn-xs">
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="row g-0">
-                                        <h6 class="modal-title">Tanggal Izin</h6><br>
-                                        <div class="col-xl-6  col-6">
-                                            <input type="date" class="form-control btn-xs">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h6 class="modal-title">Tanggal Izin</h6>
                                         </div>
-                                        <div class="col-xl-6 col-6 d-flex justify-content-end">
+                                        <div class="col-xl-6 col-12">
+                                            <input type="date" name="date_leave" class="form-control">
+                                        </div>
+                                        <div class="col-xl-6 col-12">
+                                            <h6 class="modal-title">Tipe</h6>
+                                            <select name="tipe" class="default-select form-control">
+                                                <option value="" selected>Tipe</option>
+                                                <option value="Izin">Izin</option>
+                                                <option value="Sakit">Sakit</option>
+                                                <option value="Cuti">Cuti</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <hr>
                                     <h6 class="modal-title">Keterangan</h6><br>
-                                    <textarea class="form-control" name="" id="editor" cols="30" rows="10"></textarea>
-
+                                    <textarea class="form-control" name="description" id="editor" cols="30" rows="10"></textarea>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default btn-xs"
                                         data-bs-dismiss="modal">Batal</button>
-                                    <button type="button" class="btn btn-danger btn-xs">Simpan</button>
+                                    <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                   </form>
 
-                    <div class="modal modal-2 fade bd-example-modal-lg" tabindex="-1" role="dialog"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Tambah Pengajuan Izin</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row g-0">
-                                        <h6 class="modal-title">Tanggal Izin</h6><br>
-                                        <div class="col-xl-6 col-sm-6  col-6">
-                                            <input type="date" class="form-control btn-xs">
-                                        </div>
-                                        <div class="col-xl-6 col-6 col-sm-6 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-danger btn-xs">0 Hari</button>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row g-0">
-                                        <h6 class="modal-title">Tanggal Izin</h6><br>
-                                        <div class="col-xl-6  col-6">
-                                            <input type="date" class="form-control btn-xs">
-                                        </div>
-                                        <div class="col-xl-6 col-6 d-flex justify-content-end">
-                                            <h6 class="modal-title ">Maks 2 Hari</h6><br>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <h6 class="modal-title">Keterangan</h6><br>
-                                    <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger light btn-xs"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-success btn-xs">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal modal-3 fade bd-example-modal-lg" tabindex="-1" role="dialog"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Tambah Pengajuan Sakit</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row g-0">
-                                        <h6 class="modal-title">Tanggal Izin</h6><br>
-                                        <div class="col-xl-6 col-sm-6  col-6">
-                                            <input type="date" class="form-control btn-xs">
-                                        </div>
-                                        <div class="col-xl-6 col-6 col-sm-6 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-danger btn-xs">0 Hari</button>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row g-0">
-                                        <h6 class="modal-title">Tanggal Izin</h6><br>
-                                        <div class="col-xl-6  col-6">
-                                            <input type="date" class="form-control btn-xs">
-                                        </div>
-                                        <div class="col-xl-6 col-6 d-flex justify-content-end">
-                                            <h6 class="modal-title ">Maks 2 Hari</h6><br>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <h6 class="modal-title">Keterangan</h6><br>
-                                    <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger light btn-xs"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-success btn-xs">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Pengumuman</h4>
-                            </div>
-
-                            <div class="card-body">
-
-                                <div class="table-responsive">
-                                    <table id="example8" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Waktu</th>
-                                                <th>Pengumuman</th>
-                                                <th>Dibaca</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Amel</td>
-                                                <td>Tiger Nixon</td>
-                                                <td>
-             <div class="row col-12">
-             <div class="progress" style="background: rgba(127, 99, 244, .1)">
-                                                        <div class="progress-bar" style="width: 70%;" role="progressbar"><span class="sr-only">70% Complete</span>
-                                                        </div>
-                                                    </div>
-             <span class="badge badge-primary light">70%</span>
-             </div>
-            </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Momo</td>
-            <td>Garrett Winters</td>
-                                                <td>Dr. Cedric</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Lisa</td>
-            <td>Ashton Cox</td>
-                                                <td>Dr. Rhona</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -674,27 +514,8 @@
                 2023</p>
         </div>
     </div>
-    <!--**********************************
-            Footer end
-        ***********************************-->
-
-    <!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-    <!--**********************************
-           Support ticket button end
-        ***********************************-->
 
 
-
-    <!--**********************************
-        Main wrapper end
-    ***********************************-->
-
-    <!--**********************************
-        Scripts
-    ***********************************-->
     <!-- Required vendors -->
     <script src="vendor/global/global.min.js"></script>
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
@@ -716,7 +537,7 @@
     <script>
         CKEDITOR.replace('editor');
     </script>
-     <script>
+    <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
