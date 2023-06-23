@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('blood_group');
             $table->string('region');
             $table->string('email');
-            $table->integer('numberphone');
+            $table->bigInteger('numberphone');
             $table->string('address');
             $table->string('last_study');
             $table->string('educational_institution');

@@ -322,14 +322,14 @@
                                                         <label for="lastName" class="form-label text-black">Jenis
                                                             Kelamin</label>
                                                         <div class="form-check custom-radio mb-2">
-                                                            <input id="credit" name="gender" id="gender"
-                                                                type="radio" class="" required>
+                                                            <input name="gender" id="gender"
+                                                                type="radio" class="" required value="Laki-Laki">
                                                             <label class="form-check-label"
                                                                 for="credit">Laki-Laki</label>
                                                         </div>
                                                         <div class="form-check custom-radio mb-2">
-                                                            <input id="debit" name="gender" id="gender"
-                                                                type="radio" class="" required>
+                                                            <input name="gender" id="gender"
+                                                                type="radio" class="" required value="Perempuan">
                                                             <label class="form-check-label"
                                                                 for="debit">Perempuan</label>
                                                         </div>
