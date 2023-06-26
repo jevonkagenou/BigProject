@@ -8,12 +8,18 @@ use Illuminate\Http\Request;
 
 class ApproveAdminController extends Controller
 {
-    public function Approve($user_id, Request $request){
-        $approve_admin = PermitEmployee::all();
-        $approve_admin = ApproveAdmin::where('user_id', $user_id)->FindOrFail();
-        $approve_admin->status = $request->status;
-        $approve_admin->save();
-
+    public function Accepted($user_id){
+        $data = PermitEmployee::Find($user_id);
+        $data->Update([
+            'status' => 'Diterima'
+        ]);
+        return redirect()->back();
+    }
+    public function Rejected($user_id){
+        $data = PermitEmployee::Find($user_id);
+        $data->Update([
+            'status' => 'Ditolak'
+        ]);
         return redirect()->back();
     }
 }

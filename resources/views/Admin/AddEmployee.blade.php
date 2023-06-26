@@ -25,6 +25,9 @@
     <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+    {{-- Toaster --}}\
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 </head>
 
 <body>
@@ -125,8 +128,9 @@
                                                 <path
                                                     d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                             </svg> Profil</a></li>
-                                    <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="24" height="24" fill="#969ba0" viewBox="0 0 512 512"
+                                    <li><a class="dropdown-item" href="#"><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="#969ba0" viewBox="0 0 512 512"
                                                 style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
                                                 <path
                                                     d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
@@ -257,197 +261,280 @@
                         <div class="col-xl-3">
                             <div class="card" style="max-height: 250px;">
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="profile-info" style="display: flex; justify-content: center;">
-                                            <div class="profile-photo">
-                                                <img src="images/profile/profile.png" class="img-fluid rounded-circle"
-                                                    style="width: 120px; height: 120px;" alt="">
+                                    <form method="POST" action="{{ route('Add_Employee') }}" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="profile-info" style="display: flex; justify-content: center;">
+                                                <div class="profile-photo">
+                                                    <img src="images/profile/user.png"
+                                                        class="img-fluid rounded-circle"
+                                                        style="width: 120px; height: 120px;" alt="">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="profile-statistics">
                                             <div class="input-group">
                                                 <div class="form-file">
-                                                    <input type="file" class="form-file-input form-control">
+                                                    <input type="file" class="form-file-input form-control"
+                                                        name="images" value="{{ old('images') }}" id="images">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
+                                @if ($errors->has('images'))
+                                    <div class="alert alert-danger" role="alert">
+                                        <i class="bi bi-x-lg"></i> {{ $errors->first('images') }}
+                                    </div>
+                                @endif
                             </div>
                         </div>
                         <div class="card col-xl-8">
                             <div class="card-body">
-                                <form method="POST" action="{{ route('Add_Employee') }}">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-lg-12 order-lg-2 mb-4">
-                                            <h4 class="mb-3">Informasi Pribadi</h4>
-                                            <form class="needs-validation" novalidate="">
-
-                                                <div class="mb-3">
-                                                    <label for="address" class="form-label text-black">Nama
-                                                        Lengkap</label>
-                                                    <input type="text" class="form-control" name="longname"
-                                                        id="longname" placeholder="Nama Lengkap" required="">
-                                                    <div class="invalid-feedback">
-                                                        Please enter your shipping address.
-                                                    </div>
+                                <div class="row">
+                                    <div class="col-lg-12 order-lg-2 mb-4">
+                                        <h4 class="mb-3">Informasi Pribadi</h4>
+                                        <div class="mb-3">
+                                            @if ($errors->has('longname'))
+                                                <div class="alert alert-danger" role="alert">
+                                                    <i class="bi bi-x-lg"></i> {{ $errors->first('longname') }}
                                                 </div>
+                                            @endif
+                                            <label for="address" class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>Nama
+                                                Lengkap</label>
+                                            <input type="text" class="form-control" value="{{ old('longname') }}"
+                                                name="longname" id="longname" placeholder="Nama Lengkap"
+                                                required="">
+                                            <div class="invalid-feedback">
+                                                Please enter your shipping address.
+                                            </div>
 
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="firstName" class="form-label text-black">Tempat
-                                                            Lahir</label>
-                                                        <input type="text" class="form-control" name="place_birth"
-                                                            id="place_birth" placeholder="Tempat Lahir"
-                                                            value="" required="">
-                                                        <div class="invalid-feedback">
-                                                            Valid first name is required.
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="lastName" class="form-label text-black">Tanggal
-                                                            Lahir</label>
-                                                        <input type="date" class="form-control" name="date"
-                                                            id="date" placeholder="" value=""
-                                                            required="">
-                                                        <div class="invalid-feedback">
-                                                            Valid last name is required.
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="lastName" class="form-label text-black">Jenis
-                                                            Kelamin</label>
-                                                        <div class="form-check custom-radio mb-2">
-                                                            <input name="gender" id="gender"
-                                                                type="radio" class="" required value="Laki-Laki">
-                                                            <label class="form-check-label"
-                                                                for="credit">Laki-Laki</label>
-                                                        </div>
-                                                        <div class="form-check custom-radio mb-2">
-                                                            <input name="gender" id="gender"
-                                                                type="radio" class="" required value="Perempuan">
-                                                            <label class="form-check-label"
-                                                                for="debit">Perempuan</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="firstName" class="form-label text-black">Status
-                                                            Perkawinan</label>
-                                                        <select name="marry" class="default-select form-control"
-                                                            id="">
-                                                            <option value="" selected>Status</option>
-                                                            <option value="Sudah Menikah">Sudah Menikah</option>
-                                                            <option value="Belum Menikah">Belum Menikah</option>
-                                                        </select>
-                                                        <div class="invalid-feedback">
-                                                            Valid first name is required.
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label text-black">Golongan Darah</label>
-                                                        <select name="blood_group" id="region"
-                                                            class="default-select form-control">
-                                                            <option value="A">A</option>
-                                                            <option value="B">B</option>
-                                                            <option value="AB">AB</option>
-                                                            <option value="O">O</option>
-                                                        </select>
-                                                        <div class="invalid-feedback">
-                                                            Valid first name is required.
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label text-black">Agama</label>
-                                                        <select name="region" id="region"
-                                                            class="default-select form-control wide w-100">
-                                                            <option selected>Agama</option>
-                                                            <option value="Islam">Islam</option>
-                                                            <option value="Kristen">Kristen</option>
-                                                            <option value="Buddha">Buddha</option>
-                                                            <option value="Hindu">Hindu</option>
-                                                            <option value="Konghucu">Konghucu</option>
-                                                        </select>
-                                                        <div class="invalid-feedback">
-                                                            Please select a valid country.
-                                                        </div>
-                                                    </div>
-                                                </div><br>
-
-                                                <h4 class="mb-3">Informasi Tambahan</h4>
-
-                                                <div class="mb-3">
-                                                    <label for="email" class="form-label text-black">E-mail <span
-                                                            class="text-muted">(Optional)</span></label>
-                                                    <input type="email" name="email" class="form-control"
-                                                        id="email" placeholder="Email Anda">
-                                                    <div class="invalid-feedback">
-                                                        Please enter a valid email address for shipping updates.
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address"class="form-label text-black">No.HP</label>
-                                                    <input type="number" class="form-control" name="numberphone"
-                                                        id="numberphone" placeholder="Nomor Anda" required="">
-                                                    <div class="invalid-feedback">
-                                                        Please enter your shipping address.
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address"class="form-label text-black">Alamat</label>
-                                                    <input type="text" class="form-control" name="address"
-                                                        id="address" placeholder="Alamat Anda" required="">
-                                                    <div class="invalid-feedback">
-                                                        Please enter your shipping address.
-                                                    </div>
-                                                </div><br>
-
-                                                <h4 class="mb-3">Pendidikan Terakhir</h4>
-
-                                                <div class="mb-3">
-                                                    <label for="address2" class="text-black">Pendidikan
-                                                        Terakhir</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        name="last_study" id="last_study"
-                                                        placeholder="Pendidikan Terakhir">
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address2" class="text-black">Nama Institusi
-                                                        Pendidikan</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        name="educational_institution"
-                                                        id="educational_institution"
-                                                        placeholder="Nama Institusi Pendidikan">
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address2" class="text-black">Program Studi</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        name="study_program" id="study_program"
-                                                        placeholder="Program Studi">
-                                                </div>
-
-                                                <hr class="mb-2">
-                                                <button class="btn btn-danger btn-xs" type="submit"
-                                                    style="width: 100%;">
-                                                    <span
-                                                        style="display: inline-block; vertical-align: middle;">Simpan</span>
-                                                </button>
-                                            </form>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                @if ($errors->has('place_birth'))
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('place_birth') }}
+                                                    </div>
+                                                @endif
+                                                <label for="firstName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Tempat
+                                                    Lahir</label>
+                                                <input type="text" class="form-control" name="place_birth"
+                                                    id="place_birth" placeholder="Tempat Lahir"
+                                                    value="{{ old('place_birth') }}" required="">
+                                                <div class="invalid-feedback">
+                                                    Valid first name is required.
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                @if ($errors->has('date'))
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('date') }}
+                                                    </div>
+                                                @endif
+                                                <label for="lastName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Tanggal
+                                                    Lahir</label>
+                                                <input type="date" class="form-control" name="date"
+                                                    id="date" placeholder="" value="{{ old('date') }}"
+                                                    required>
+                                                <div class="invalid-feedback">
+                                                    Valid last name is required.
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                @if ($errors->has('gender'))
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('gender') }}
+                                                    </div>
+                                                @endif
+                                                <label for="lastName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Jenis
+                                                    Kelamin</label>
+                                                <div class="form-check custom-radio mb-2">
+                                                    <input name="gender" id="gender" type="radio"
+                                                        class="" required value="Laki-Laki">
+                                                    <label class="form-check-label" for="credit">Laki-Laki</label>
+                                                </div>
+                                                <div class="form-check custom-radio mb-2">
+                                                    <input name="gender" id="gender" type="radio"
+                                                        class="" required value="Perempuan">
+                                                    <label class="form-check-label" for="debit">Perempuan</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                @if ($errors->has('marry'))
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('marry') }}
+                                                    </div>
+                                                @endif
+                                                <label for="firstName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Status
+                                                    Perkawinan</label>
+                                                <select value="{{ old('marry') }}" name="marry"
+                                                    class="default-select form-control" id="">
+                                                    <option value="" selected>Status</option>
+                                                    <option value="Sudah Menikah">Sudah Menikah</option>
+                                                    <option value="Belum Menikah">Belum Menikah</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Valid first name is required.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Golongan
+                                                    Darah</label>
+                                                @if ($errors->has('blood_group'))
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('blood_group') }}
+                                                    </div>
+                                                @endif
+                                                <select value="{{ old('blood_group') }}" name="blood_group"
+                                                    class="default-select form-control">
+                                                    <option value="" selected>Pilih</option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="AB">AB</option>
+                                                    <option value="O">O</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Valid first name is required.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                @if ($errors->has('region'))
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('region') }}
+                                                    </div>
+                                                @endif
+                                                <label class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Agama</label>
+                                                <select value="{{ old('region') }}" name="region" id="region"
+                                                    class="default-select form-control wide w-100">
+                                                    <option selected>Agama</option>
+                                                    <option value="Islam">Islam</option>
+                                                    <option value="Kristen">Kristen</option>
+                                                    <option value="Buddha">Buddha</option>
+                                                    <option value="Hindu">Hindu</option>
+                                                    <option value="Konghucu">Konghucu</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please select a valid country.
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <h4 class="mb-3">Informasi Tambahan</h4>
+                                        <div class="mb-3">
+                                            @if ($errors->has('email'))
+                                                <div class="alert alert-danger" role="alert">
+                                                    <i class="bi bi-x-lg"></i> {{ $errors->first('email') }}
+                                                </div>
+                                            @endif
+                                            <label for="email" class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>E-mail <span
+                                                    class="text-muted"></span></label>
+                                            <input type="email" value="{{ old('email') }}" name="email"
+                                                class="form-control" id="email" placeholder="Email Anda">
+                                            <div class="invalid-feedback">
+                                                Please enter a valid email address for shipping updates.
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            @if ($errors->has('numberphone'))
+                                                <div class="alert alert-danger" role="alert">
+                                                    <i class="bi bi-x-lg"></i> {{ $errors->first('numberphone') }}
+                                                </div>
+                                            @endif
+                                            <label for="address"class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>Number Phone</label>
+                                            <input type="number" class="form-control"
+                                                value="{{ old('numberphone') }}" name="numberphone" id="numberphone"
+                                                placeholder="Nomor Anda" required="">
+                                            <div class="invalid-feedback">
+                                                Please enter your shipping address.
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            @if ($errors->has('address'))
+                                                <div class="alert alert-danger" role="alert">
+                                                    <i class="bi bi-x-lg"></i> {{ $errors->first('address') }}
+                                                </div>
+                                            @endif
+                                            <label for="address"class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>Alamat</label>
+                                            <input type="text" class="form-control" value="{{ old('address') }}"
+                                                name="address" id="address" placeholder="Alamat Anda"
+                                                required="">
+                                            <div class="invalid-feedback">
+                                                Please enter your shipping address.
+                                            </div>
+                                        </div><br>
+
+                                        <h4 class="mb-3">Pendidikan Terakhir</h4>
+
+                                        <div class="mb-3">
+                                            @if ($errors->has('last_study'))
+                                                <div class="alert alert-danger" role="alert">
+                                                    <i class="bi bi-x-lg"></i> {{ $errors->first('last_study') }}
+                                                </div>
+                                            @endif
+                                            <label for="address2" class="text-black"><label
+                                                    class="text-danger form-label">*</label>Pendidikan
+                                                Terakhir</label>
+                                            <input type="text" class="form-control text-muted"
+                                                value="{{ old('last_study') }}" name="last_study" id="last_study"
+                                                placeholder="Pendidikan Terakhir">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            @if ($errors->has('educational_institution'))
+                                                <div class="alert alert-danger" role="alert">
+                                                    <i class="bi bi-x-lg"></i>
+                                                    {{ $errors->first('educational_institution') }}
+                                                </div>
+                                            @endif
+                                            <label for="address2" class="text-black"><label
+                                                    class="text-danger form-label">*</label>Nama Institusi
+                                                Pendidikan</label>
+                                            <input type="text" class="form-control text-muted"
+                                                value="{{ old('educational_institution') }}"
+                                                name="educational_institution" id="educational_institution"
+                                                placeholder="Nama Institusi Pendidikan">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            @if ($errors->has('study_program'))
+                                                <div class="alert alert-danger" role="alert">
+                                                    <i class="bi bi-x-lg"></i> {{ $errors->first('study_program') }}
+                                                </div>
+                                            @endif
+                                            <label for="address2" class="text-black"><label
+                                                    class="text-danger form-label">*</label>Program Studi</label>
+                                            <input type="text" class="form-control text-muted"
+                                                value="{{ old('study_program') }}" name="study_program"
+                                                id="study_program" placeholder="Program Studi">
+                                        </div>
+
+                                        <hr class="mb-2">
+                                        <button class="btn btn-danger btn-xs" type="submit" style="width: 100%;">
+                                            <span style="display: inline-block; vertical-align: middle;">Simpan</span>
+                                        </button>
+                                        </form>
                                     </div>
+                                </div>
                             </div>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -501,6 +588,21 @@
     <script src="{{ asset('js/demo.js') }}"></script>
     <script src="{{ asset('js/styleSwitcher.js') }}"></script>
     <script src="https://kit.fontawesome.com/399218ad26.js" crossorigin="anonymous"></script>
+
+
+
+
+    @if (Session::has('success'))
+        <script>
+            toastr.options = {
+                "timeOut": 0, // Set timeOut to 0 to make it sticky
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.error("{{ session('success') }}");
+        </script>
+    @endif
+
     <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
@@ -518,6 +620,10 @@
             }
         }
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/ecom-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:53:29 GMT -->
