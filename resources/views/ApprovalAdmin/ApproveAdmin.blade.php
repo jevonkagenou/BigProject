@@ -916,6 +916,7 @@
                                             </tr>
                                         </thead>
                                         <tbody class="text-center">
+                                            @foreach ($approval as $data)
                                             <tr>
                                                 <td style="width: 5%">
 													<div class="form-check custom-checkbox ms-2">
@@ -923,18 +924,19 @@
 														<label class="form-check-label" for="customCheckBox2"></label>
 													</div>
 												</td>
-                                                <td>Amel</td>
-                                                <td>Izin</td>
-                                                <td>2 Juni 2023</td>
+                                                <td>{{ $data->User->name }}</td>
+                                                <td>{{ $data->tipe }}</td>
+                                                <td>{{ $data->submission_date }}</td>
                                                 <td>
                                                     <span>
-                                                        <a href="javascript:void()" class="me-4" data-bs-toggle="tooltip"
+                                                        <a href="/Accepted/{{ $data->id }}" class="me-4" data-bs-toggle="tooltip"
                                                             data-placement="top" title="Terima"><i class="bi bi-person-check-fill text-success"></i> </a>
-                                                        <a href="javascript:void()" data-bs-toggle="tooltip"
+                                                        <a href="/Rejected/{{$data->id}}" data-bs-toggle="tooltip"
                                                             data-placement="top" title="Tolak"><i class="bi bi-person-x-fill text-danger"></i></a>
                                                     </span>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

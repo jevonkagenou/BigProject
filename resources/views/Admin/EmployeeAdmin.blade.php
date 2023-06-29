@@ -20,7 +20,11 @@
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">'
+
+    {{-- Toaster --}}
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <style>
         tr:hover {
             cursor: pointer;
@@ -1009,6 +1013,22 @@
     <!-- Datatable -->
     <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('js/plugins-init/datatables.init.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @if(Session::has('success'))
+        <script>
+
+        toastr.options =
+        {
+            "timeOut"       : 5000, // Set timeOut to 0 to make it sticky
+            "closeButton"   : true,
+            "progressBar"   : true
+        }
+        toastr.success("{{ session('success') }}");
+        </script>
+        @endif
+
     <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";

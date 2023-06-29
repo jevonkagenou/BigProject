@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DataEmployeeController extends Controller
 {
     public function Add_Employee(Request $request){
-        dd($request);
+        // dd($request); 
         $request->validate([
             'longname' => 'required',
             'place_birth' => 'required',
@@ -51,22 +51,24 @@ class DataEmployeeController extends Controller
         return redirect()->route('EmployeeAdmin', compact('data'))->with('success', 'Data Anda Telah Ditambahkan');
     }
 
-    public function Add_Image(Request $request){
-        $request ->validate([
-            'images' => 'required|image|file|'
-        ]);
-        if ($files = $request->file('images')) {
-            $extension = $files->getClientOriginalExtension();
-            $name = hash('sha256', time()) . '.' . $extension;
-            $files->move('images', $name);
-        }
-        
-        $data = DataEmployee::create([
-            'images' => $name
-        ]); 
+    public function Add_Image(Request $request)
+{
+    $request->validate([
+        'images' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    ]);
 
-        return redirect()->back()->with('success','');
+    if ($request->hasFile('images')) {
+        $image = $request->file('images');
+        $name = time() . '_' . $image->getClientOriginalName();
+        $image->move(public_path('images'), $name);
     }
+        
+    $data = DataEmployee::create([
+        'images' => $name
+    ]); 
+
+    return redirect()->back()->with('success', 'Image uploaded successfully.');
+}
 
     public function Update_Image(Request $request, $id){
         $request ->validate([

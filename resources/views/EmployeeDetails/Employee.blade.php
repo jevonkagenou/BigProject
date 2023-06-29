@@ -48,7 +48,7 @@
             }
         .hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -315,24 +315,14 @@
                                       <div class="edit-icon">
                                         <i class="fas fa-pencil-alt"></i>
                                       </div>
-                                      <img src="images/profile/user.png" class="edit-image" style="width: 120px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
+                                      <img src="{{ asset('image/'.$order->images) }}" class="edit-image" style="width: 120px; height: 120px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
                                     </div>
                                     <div class="dropdown-content">
-                                        <a href="#">Ganti Foto Profil</a>
-                                        <a href="#">Edit Foto Profil</a>
+                                        <input type="file" name="images" id="images" hidden>
+                                        <a href="#imageinput">Edit Foto Profil</a>
                                         <a href="#">Hapus Foto Profil</a>
                                     </div>
                                   </div>
-                                  
-                                
-                                <br>
-                                <!-- <div class="d-flex justify-content-center">
-                                    <div class="input-group" style="width: 240px;">
-                                        <div class="form-file">
-                                            <input type="file" class="form-file-input form-control">
-                                        </div>
-                                    </div>
-                                </div> -->
                                 <br>
                                 <div style="text-align: center;">
                                     <h4><a href="post-details.html" class="text-black">Arya Kurniawan</a></h4>
@@ -346,16 +336,16 @@
                                             checked>
                                             <a href="/PayrolEmployee" type="button" class="btn btn-outline-danger btn-xs hoverbtn mb-2"
                                             style="width: 200px;">Personal</a>
-                                         
+
                                         <input type="radio" class="btn-check" name="btnradio1a" id="btnradio2a">
-                                        <a href="/PayrolEmployee" type="button"
-                                            class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a> 
+                                        <a href="/PayrolEmployee/{{ $order->id }}" type="button"
+                                            class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card-body tab-pane fade active show col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12"
+                        <div class="card-body tab-pane fade active show col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
                             <div class="row">
                                 <div class="col-lg-12 order-lg-1">
                                     <h4 class="mb-1 text-md-start text-center">Profil Karyawan</h4>

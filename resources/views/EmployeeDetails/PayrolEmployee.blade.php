@@ -48,7 +48,7 @@
             }
         .hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -882,6 +882,8 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">
+                    {{-- @foreach ( as ) --}}
+                        
                     <div class="row">
 
                         {{-- Button --}}
@@ -909,11 +911,11 @@
                                     <div class="row justify-content-center"
                                         aria-label="Basic radio toggle button group">
                                         <input type="radio" class="btn-check" name="btnradio1a" id="btnradio1a">
-                                        <a href="/Employee" type="button" class="btn btn-outline-danger btn-xs hoverbtn mb-2" style="width: 200px;">Personal</a>
+                                        <a href="/Employee/{{ $data->id }}"type="button" class="btn btn-outline-danger btn-xs hoverbtn mb-2" style="width: 200px;">Personal</a>
 
                                         <input type="radio" class="btn-check" name="btnradio1a" id="btnradio2a"
                                             checked>
-                                        <a href="/PayrolEmployee" type="button"
+                                        <a href="/PayrolEmployee/{{ $data->id }}" type="button"
                                             class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a>
                                     </div>
                                 </div>
@@ -1009,7 +1011,7 @@
                                         class="btn-icon-start text-danger btn-sm"><i class="fa fa-plus color-danger"></i>
                                     </span>Penyesuaian</a>
                                     </div>
-                                
+
                                     <div class="table-responsive">
                                         <table class="table table-responsive-sm">
                                             <thead>
@@ -1047,6 +1049,7 @@
                         </div>
                         {{-- End --}}
                     </div>
+                    {{-- @endforeach --}}
                 </div>
             </div>
         </div>

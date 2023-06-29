@@ -13,16 +13,15 @@ class RouteController extends Controller
         'tittle'=>'Laporan']);
     }
     public function ApprovalAdmin(){
-        return view('ApprovalAdmin.ApproveAdmin',[
-            'tittle'=>'Approval'
-        ]);
+        $approval = PermitEmployee::where('status', 'Menunggu')->get();
+        return view('ApprovalAdmin.ApproveAdmin', compact('approval'),['tittle'=>'Approval']);
     }
     public function SalarySummary(){
         return view('Admin.SalarySummary',[
             'tittle'=>'Ringkasan Gaji'
         ]);
     }
-    public function PermitLeaveAdmin(){
+public function PermitLeaveAdmin(){
 
         $approve_admin = PermitEmployee::all();
         return view('Admin.PermitLeaveAdmin',compact('approve_admin'),['tittle'=>'Izin Cuti Admin']);
@@ -43,7 +42,7 @@ class RouteController extends Controller
         ]);
     }
     public function AnnouncementUpdate(){
-        return view('Admin.AnnouncementUpdate',[    
+        return view('Admin.AnnouncementUpdate',[
             'tittle'=>'Edit Pengumuman'
         ]);
     }
@@ -69,11 +68,7 @@ class RouteController extends Controller
         $data = DataEmployee::all();
         return view('Admin.EmployeeAdmin', ['tittle'=>'Karyawan'], compact('data'));
     }
-    public function PayrolEmployee(){
-        return view('EmployeeDetails.PayrolEmployee',[
-            'tittle'=>'Detail Karyawan'
-        ]);
-    }
+    
     public function SummaryofComponentSalary(){
         return view('Admin.SummaryofComponentSalary',[
             'tittle'=>'Ringkasan Gaji Perkomponen'

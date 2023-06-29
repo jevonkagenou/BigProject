@@ -10,6 +10,7 @@ use App\Http\Controllers\ViewEmployeeController;
 
 use App\Http\Controllers\RouteKaryawanController;
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DataPayrollController;
 use App\Http\Controllers\PermitEmployeeController;
 
 
@@ -53,7 +54,7 @@ Route::get('/SalaryPaymentReport', [RouteController::class, 'SalaryPaymentReport
 Route::get('/Announcement', [RouteController::class, 'Announcement'])->name('Announcement');
 Route::get('/AnnouncementUpdate', [RouteController::class, 'AnnouncementUpdate'])->name('AnnouncementUpdate');
 Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
-Route::get('/PayrolEmployee', [RouteController::class, 'PayrolEmployee'])->name('PayrolEmployee');
+Route::get('/PayrolEmployee/{id}', [DataPayrollController::class, 'PayrolEmployee'])->name('PayrolEmployee');
 Route::get('/PresenceApproval', [RouteController::class, 'PresenceApproval'])->name('PresenceApproval');
 Route::get('/Presence', [RouteController::class, 'Presence'])->name('Presence');
 Route::get('/Setting', [RouteController::class, 'Setting'])->name('Setting');
@@ -84,7 +85,14 @@ Route::get('/EditSchedule', [RouteController::class, 'EditSchedule'])->name('Edi
 
 // Add Data Employee Route
 Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
+Route::post('/Update_Image', [DataEmployeeController::class, 'Update_Image'])->name('Update_Image');
+Route::post('/Delete_Image', [DataEmployeeController::class, 'Delete_Image'])->name('Delete_Image');
 
 // Permit Employee and Approve
-Route::post('/Approve/{user_id}', [ApproveAdminController::class, 'Approve'])->name('Approve');
+Route::get('/Accepted/{user_id}', [ApproveAdminController::class, 'Accepted'])->name('Accepted');
+Route::get('/Rejected/{user_id}', [ApproveAdminController::class, 'Rejected'])->name('Rejected');
 Route::post('/Add_Permit', [PermitEmployeeController::class, 'Add_Permit'])->name('Add_Permit');
+
+// Data Payroll {{Id_User}}
+Route::post('/Data_Payroll', [DataPayrollController::class, 'Data_Payroll'])->name('Data_Payroll');
+
