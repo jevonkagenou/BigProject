@@ -51,7 +51,7 @@
             max-width: 80%;
             height: auto;
         }
-        
+
     </style>
 
 
@@ -249,7 +249,7 @@
                             <span class="nav-text">Approval</span>
                         </a>
                     </li>
-                   
+
                     <li><a href="/SalaryEmployee" class="ai-icon red-hover" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z"/></svg></i>
                             <span class="nav-text">Gaji</span>
@@ -283,7 +283,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Presensi Karyawan</h4>
-                                <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#basicModal"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path fill="white" d="M480.5-260q76.5 0 129-52.5T662-441q0-76-52.5-128.5t-129-52.5Q404-622 352-569.5T300-441q0 76 52 128.5T480.5-260Zm0-84q-41.5 0-69-28.183t-27.5-69Q384-482 411.5-510q27.5-28 69-28t69.5 28.183q28 28.183 28 69T550-372q-28 28-69.5 28ZM164-120q-34.65 0-59.325-24.675Q80-169.35 80-204v-473q0-34.65 24.675-59.325Q129.35-761 164-761h122l73-79h241.529L675-761h121q34.65 0 59.325 24.675Q880-711.65 880-677v473q0 34.65-24.675 59.325Q830.65-120 796-120H164Zm632-84v-473H639l-74-79H396l-74 79H164v473h632ZM480-441Z"/></svg> Tambah Presensi</button>
+                                <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#basicModal">Tambah Presensi</button>
                             </div>
                             <div class="mt-4 container-fluid">
                                 <div class="button-container d-flex justify-content-end">
@@ -300,7 +300,8 @@
 													<div class="row">
 														<div class="col-md-6 col-6">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
-																<center><img src="{{ asset('images/foto1.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<center>
+                                                                    <a href="#"><img src="{{ asset('images/foto1.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
 																<span class="online_icon"></span>
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
@@ -311,7 +312,7 @@
 														  </div>
 														  <div class="col-md-6 col-6">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
-																<center><img src="{{ asset('images/foto2.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<center><a href=""><img src="{{ asset('images/foto2.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
 																<span class="online_icon"></span>
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
@@ -322,7 +323,7 @@
 														  </div>
 														  <div class="col-md-6 col-6">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
-																<center><img src="{{ asset('images/foto3.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+																<center><a href=""><img src="{{ asset('images/foto3.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
 																<span class="online_icon"></span>
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
@@ -357,25 +358,15 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th>No</th>
-
                                                 <th>Tipe</th>
                                                 <th>Waktu</th>
-                                                
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="text-center">
                                                 <td>1</td>
-
                                                 <td>Absen Masuk</td>
                                                 <td>08/05/2023 08:45</td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>2</td>
-
-                                                <td>Absen Keluar</td>
-                                                <td>08/05/2023 07:45</td>
-
                                             </tr>
                                              </tbody>
                                     </table>
@@ -455,10 +446,10 @@
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-    
+
         function changeLogo() {
             var logo = document.getElementById("logo");
-    
+
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;
                 isAlternateLogo = false;
