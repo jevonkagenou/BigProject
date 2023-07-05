@@ -22,6 +22,11 @@
     <!-- Custom Stylesheet -->
 	<link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    {{-- Toaster --}}
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    {{-- sweetalert --}}
+    <link href="vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+
     <style>
         .brand-logo img {
         max-width: 80%;
@@ -49,7 +54,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -61,6 +66,10 @@
         .red-icon path {
             fill: red;
         }
+        .form-control1:hover, .form-control1:focus, .form-control1.active {
+    box-shadow: active;
+    background: red;
+}
 	</style>
     <div id="main-wrapper">
 		<div class="nav-header">
@@ -874,18 +883,18 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-				
-				
+
+
                 <!-- row -->
                 <div class="row">
-				
+
 					<style>
 					.custom-btn {
 						border-radius: 1;
 						height: 40px;
 						padding: 12px 8px;
 						background: #fff;
-						border: 1px solid #464444; 
+						border: 1px solid #464444;
 						text-align: center;
 					}
 					.hover-icon:hover{
@@ -894,22 +903,22 @@
 					.paging_simple_numbers.dataTables_paginate{
 						background: transparent !important;
 					}
-					</style>
-<div class="row page-titles">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/Setting">Pengaturan</a></li>
-        <li class="breadcrumb-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f72b50" class="bi bi-play-fill" viewBox="0 0 16 16">
-            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-          </svg></li>
-          <li class="breadcrumb-item active"><a href="">Pengumuman</a></li>
-    </ol>
-</div>
+                    </style>
+                    <div class="row page-titles">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/Setting">Pengaturan</a></li>
+                            <li class="breadcrumb-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f72b50" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                            </svg></li>
+                            <li class="breadcrumb-item active"><a href="">Pengumuman</a></li>
+                        </ol>
+                    </div>
 					<div class="col-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Pengumuman</h4>
                             </div>
-                            
+
                             <div class="card-body">
 								<div class="row">
 									<div class="btn-group ">
@@ -929,94 +938,150 @@
 										<table id="example6" class="display" style="min-width: 845px">
 											<thead>
 												<tr class="text-center">
-													
-													<th>No</th>
-													<th>Waktu</th>
-													<th>Pengumuman</th>
-													<th>Dibaca</th>
-													<th>Aksi</th>
-													
+
+													<th scope="col">No</th>
+													<th scope="col">Waktu</th>
+													<th scope="col">Pengumuman</th>
+													{{-- <th scope="col">Dibaca</th> --}}
+													<th scope="col">Aksi</th>
+
 												</tr>
 											</thead>
 											<tbody>
-												<tr class="text-center">
-													
-													<td>1</td>
-													<td>Amel</td>
-													<td><a data-bs-toggle="modal" data-bs-target="#lihat-pengumuman" type="button">Cuti Idhul Fitri</a></td>
-													<td>
-														<div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar bg-danger" style="width: 80%">80%</div>
-														  </div>
-													</td>
-													<td>
-                                                        <span class="align-items-center">
-                                                            <a href="javascript:void()" data-bs-toggle="tooltip" data-placement="top" title="btn-close" class="px-3">
+                                            @php
+                                                $no = 1;
+                                            @endphp
+
+                                            @foreach ($data as $row)
+                                                <tr class="text-center">
+                                                    <td scope="row">{{ $no++ }}</td>
+                                                    <td>{{ $row->created_at->format('D M Y') }}</td>
+                                                    <td><a data-bs-toggle="modal" data-bs-target="#lihat-pengumuman{{$row->id}}" type="button">{!! $row->judul !!}</a></td>
+                                                    {{-- <td>
+                                                        <div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                                            <div class="progress-bar bg-danger" style="width: 80%">80%</div>
+                                                        </div>
+                                                    </td> --}}
+                                                    <td>
+                                                        <span class="align-items-center sweetalert">
+                                                            <a type="button" class="px-3 btn" data-bs-target="#hapus-pengumuman{{$row->id}}" data-bs-toggle="modal">
                                                                 <i class="fa fa-trash hover-icon"></i>
                                                             </a>
-                                                            <a href="/AnnouncementUpdate" data-bs-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                                            <a type="button" data-bs-toggle="modal" data-bs-target=".modal{{$row->id}}">
+                                                                <svg class="hover-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
                                                                     <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                                                                </svg>
-                                                            </a>
-                                                            
-                                                        </span>
-                                                    </td>
-                                                    
-                                                    
-													
-																						
-												</tr>
-												<tr class="text-center">
-													
-													<td>2</td>
-													<td>Momo</td>
-													<td>Cuti Idhul Adha</td>
-													<td>
-														<div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar bg-danger" style="width: 100%">100%</div>
-														  </div>
-													</td>
-													<td>
-                                                        <span class="align-items-center">
-                                                            <a href="javascript:void()" data-bs-toggle="tooltip" data-placement="top" title="btn-close" class="px-3">
-                                                                <i class="fa fa-trash hover-icon"></i>
-                                                            </a>
-                                                            <a href="AnnouncementUpdate" data-bs-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                                                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                                                                </svg>
+                                                                  </svg>
                                                             </a>
                                                         </span>
                                                     </td>
-                                                    
-													
-													
-												</tr>
-												<tr class="text-center">
-													
-													<td>3</td>
-													<td>Lisa</td>
-													<td>Acara</td>
-													<td>
-														<div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar bg-danger" style="width: 100%">100%</div>
-														  </div>
-													</td>
-													<td>
-                                                        <span class="align-items-center">
-                                                            <a href="javascript:void()" data-bs-toggle="tooltip" data-placement="top" title="btn-close" class="px-3">
-                                                                <i class="fa fa-trash hover-icon"></i>
-                                                            </a>
-                                                            <a href="/AnnouncementUpdate" data-bs-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                                                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                                                                </svg>
-                                                            </a>
-                                                        </span>
-                                                    </td>
-												</tr>
-											
+                                                </tr>
+                                                {{-- modal Edit pengumuman --}}
+                                                <div class="modal modal{{$row->id}} fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                                        <div class="modal-content">
+                                                            <form action="/update/{{$row->id}}" method="POST" enctype="multipart/form-data">
+                                                                @csrf
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Edit Pengumuman</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                                </button>
+                                                            </div>
+                                                             <div class="modal-body">
+                                                                <div class="row g-0">
+                                                                    <h6 class="modal-title d-flex justify-content-start">Judul</h6><br>
+                                                                    <div class="col">
+                                                                        <input type="text" class="form-control btn-xs" name="judul" value="{{$row->judul}}">
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                <div class="row g-0">
+                                                                    <h6 class="modal-title d-flex justify-content-start">Isi Pengumuman</h6><br>
+                                                                    <div class="col">
+                                                                        <textarea class="form-control" id="edit{{ $row->id }}" name="isi" cols="30"
+                                                                        rows="10">{!! $row->isi !!}</textarea>
+                                                                    </div>
+
+                                                                </div>
+                                                                <br>
+                                                                <div class="row g-0">
+                                                                    <h6 class="modal-title d-flex justify-content-start">Lampiran</h6><br>
+                                                                    <div class="col">
+                                                                        <input type="file" class="form-control btn-xs" id="lampian" name="lampiran" multiple>
+                                                                        <div id="fileName"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                @if ($row->lampiran)
+                                                                <div class="row g-0">
+                                                                    <a href="/blank/{{ $row->id }}" class="d-flex justify-content-start" target="_blank">Lihat Lampiran</a>
+                                                                </div>
+
+                                                                @endif
+
+                                                                <br>
+
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                                                <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                                            </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{-- modal lihat pengumuman --}}
+                                                <div class="modal fade" id="lihat-pengumuman{{$row->id}}">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">{{$row->judul}}</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                                </button>
+                                                            </div>
+                                                            <div class="row g-0">
+                                                                <div style="text-align: left; padding-left: 35px;">
+                                                                    <p>{!! $row->isi !!}</p>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="modal-body">
+                                                                @if ($row->lampiran)
+                                                                <div class="row g-0">
+                                                                    <div class="d-flex justify-content-end">
+                                                                        <a href="/blank/{{ $row->id }}" target="_blank">Lampiran</a>
+                                                                    </div>
+                                                                </div>
+
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{-- modal konfirmaso hapus pengumuman --}}
+                                                <div class="modal fade" id="hapus-pengumuman{{$row->id}}">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <form action="/destroy/{{$row->id}}" method="GET">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"></h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                                </button>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                              <h4 style="font-size: 19px">Apakah Anda Yakin Ingin Menghapus Pengumuman Ini</h4>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button class="btn btn-secondary btn-xs hover-red">Batal</button>
+                                                                <button type="submit" class="btn btn-primary btn-xs form-control1">Hapus</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            @endforeach
 											</tbody>
 										</table>
 									</div>
@@ -1056,62 +1121,57 @@
 				<div class="modal modal-6 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered modal-lg">
 						<div class="modal-content">
+                            <form action="/Createp" method="POST" enctype="multipart/form-data">
+                                @csrf
 							<div class="modal-header">
 								<h5 class="modal-title">Tambah Pengumuman</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal">
-								</button>
+                                </button>
 							</div>
 							<div class="modal-body">
+                                <div class="row g-0">
+                                    <h6 class="modal-title"><label
+                                        class="text-danger form-label">*</label>Judul</h6><br>
+                                    <div class="col">
+                                        <input type="text" class="form-control btn-xs @error('judul') is-invalid @enderror" name="judul" placeholder="Masukkan Judul">
+                                    </div>
+                                    <br>
+                                    @error('judul')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <br>
 								<div class="row g-0">
-									<h6 class="modal-title">Isi Pengumuman</h6><br>
+									<h6 class="modal-title"><label
+                                        class="text-danger form-label">*</label>Isi Pengumuman</h6><br>
 									<div class="col">
-										<textarea class="form-control " id="editor" name="isi" cols="30"
+                                        <textarea class="form-control @error('isi') is-invalid @enderror" id="editor" name="isi" cols="30"
                                         rows="10"></textarea>
-									</div>
-												
+                                    </div>
+                                    <br>
+                                    @error('isi')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+
 								</div>
 								<br>
 								<div class="row g-0">
 									<h6 class="modal-title">Lampiran</h6><br>
 									<div class="col">
-										<input type="file" class="form-control btn-xs" value="Upload" placeholder="Nama"  multiple>
+										<input type="file" class="form-control btn-xs" id="lampian" name="lampiran" value="Upload" multiple>
 									</div>
-												
 								</div>
-											
 								<br>
-											
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
-								<button type="button" class="btn btn-danger btn-xs">Simpan</button>
+								<button type="submit" class="btn btn-danger btn-xs">Simpan</button>
 							</div>
-						</div>
-					</div>
-				 </div>
-
-				 {{-- modal lihat pengumuman --}}
-				 <div class="modal fade" id="lihat-pengumuman">
-					<div class="modal-dialog modal-dialog-centered" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title">Cuti Idhul Fitri</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal">
-								</button>
-							</div>
-							<div class="modal-body">
-								<div class="row g-0">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, odio, repellendus magnam culpa corrupti placeat cupiditate alias id assumenda, aspernatur ab corporis sunt! Earum sunt quibusdam perspiciatis eum culpa illum veritatis, labore animi, quos incidunt saepe? Inventore mollitia dolor quae?</p>
-								</div>
-								<div class="row g-0">
-									{{-- <h6 class="modal-title">Lampiran</h6><br> --}}
-									<a href="" target="_blank">Lampiran</a>
-												
-								</div>
-							</div>
+                            </form>
 						</div>
 					</div>
 				</div>
+
             </div>
         </div>
 	</div>
@@ -1121,7 +1181,7 @@
         ***********************************-->
 
 
-			
+
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -1130,14 +1190,19 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
     <script src="vendor/global/global.min.js"></script>
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
-	
+
     <!-- Datatable -->
     <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins-init/datatables.init.js"></script>
+
+    {{-- sweetalert --}}
+    <script src="vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="path/to/sweetalert.min.js"></script>
 
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
 
@@ -1151,14 +1216,23 @@
     <script>
         CKEDITOR.replace('editor');
     </script>
+
+    {{-- text editor --}}
+	<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+        @foreach($data as $row)
+            CKEDITOR.replace('edit{{ $row->id }}');
+        @endforeach
+    </script>
+
     <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-    
+
         function changeLogo() {
             var logo = document.getElementById("logo");
-    
+
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;
                 isAlternateLogo = false;
@@ -1168,6 +1242,27 @@
             }
         }
     </script>
+    {{-- toaster --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @if (Session::has('success'))
+    <script>
+        toastr.options = {
+            "timeOut": 5000, // Set timeOut to 0 to make it sticky
+            "closeButton": true,
+            "progressBar": true
+        }
+        toastr.success("{{ session('success') }}");
+    </script>
+    @endif
+    {{-- sweet alert --}}
+    <script src="js/plugins-init/sweetalert.init.js"></script>
+
+    {{-- <script>
+        $('.sweet-confirm').click(function() {
+          swal("Hello world!");
+        });
+      </script> --}}
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->

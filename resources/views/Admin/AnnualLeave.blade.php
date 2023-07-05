@@ -37,6 +37,8 @@
     <!-- Custom Stylesheet -->
 	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    {{-- Toaster --}}
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style>
         .brand-logo img {
         max-width: 80%;
@@ -835,8 +837,8 @@
                         </a>
 
                     </li>
-                    <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
+                    <li class="mm-active"><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
+                        <svg class="red-icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
                         <span class="nav-text ">Izin Cuti</span>
                     </a>
                     </li>
@@ -866,8 +868,8 @@
                             <span class="nav-text ">Payroll</span>
                         </a>
                     </li>
-                    <li class="mm-active"><a class=" ai-icon hover-red" href="/Setting" aria-expanded="false">
-                        <svg class="red-icon" class="red-icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M546-80H414q-11 0-19.5-7T384-105l-16-101q-19-7-40-19t-37-25l-93 43q-11 5-22 1.5T159-220L93-337q-6-10-3-21t12-18l86-63q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521l-86-63q-9-7-12-18t3-21l66-117q6-11 17-14.5t22 1.5l93 43q16-13 37-25t40-18l16-102q2-11 10.5-18t19.5-7h132q11 0 19.5 7t10.5 18l16 101q19 7 40.5 18.5T669-710l93-43q11-5 22-1.5t17 14.5l66 116q6 10 3.5 21.5T858-584l-86 61q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l86 62q9 7 12 18t-3 21l-66 117q-6 11-17 14.5t-22-1.5l-93-43q-16 13-36.5 25.5T592-206l-16 101q-2 11-10.5 18T546-80Zm-66-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-60q-29 0-49.5-20.5T410-480q0-29 20.5-49.5T480-550q29 0 49.5 20.5T550-480q0 29-20.5 49.5T480-410Zm0-70Zm-44 340h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Z"/></svg>
+                    <li><a class=" ai-icon hover-red" href="/Setting" aria-expanded="false">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M546-80H414q-11 0-19.5-7T384-105l-16-101q-19-7-40-19t-37-25l-93 43q-11 5-22 1.5T159-220L93-337q-6-10-3-21t12-18l86-63q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521l-86-63q-9-7-12-18t3-21l66-117q6-11 17-14.5t22 1.5l93 43q16-13 37-25t40-18l16-102q2-11 10.5-18t19.5-7h132q11 0 19.5 7t10.5 18l16 101q19 7 40.5 18.5T669-710l93-43q11-5 22-1.5t17 14.5l66 116q6 10 3.5 21.5T858-584l-86 61q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l86 62q9 7 12 18t-3 21l-66 117q-6 11-17 14.5t-22-1.5l-93-43q-16 13-36.5 25.5T592-206l-16 101q-2 11-10.5 18T546-80Zm-66-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-60q-29 0-49.5-20.5T410-480q0-29 20.5-49.5T480-550q29 0 49.5 20.5T550-480q0 29-20.5 49.5T480-410Zm0-70Zm-44 340h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Z"/></svg>
                             <span class="nav-text ">Pengaturan</span>
                         </a>
 
@@ -1034,6 +1036,7 @@
                                 </nav>
                                 </div>
                         	</div>
+                            {{-- tambah pengajuan --}}
                             <div class="modal fade" id="tambahpengajuan">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -1041,48 +1044,95 @@
                                             <h5 class="modal-title">Ubah Pengajuan Cuti Khusus</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                         </div>
+                                    <form action="/Create" method="POST" enctype="multipart/form-data">
                                         <div class="modal-body">
+                                                @csrf
                                             <div class="row g-0">
-                                                <p>Nama karyawan</p>
-                                            </div>
-                                            <label for="jenis-cuti">Jenis Cuti</label>
-                                            <div>
-                                                <select class="form-control" id="jenis-cuti">
-                                                    <option value="cuti-mengkhitankan-anak">Cuti Mengkhitankan Anak</option>
-                                                    <option value="cuti-lainnya">Cuti Lainnya</option>
+                                                <label class="">Nama Karyawan</label>
+                                                <div class="">
+                                                    <input type="text" name="namakaryawan" class="form-control  @error('namakaryawan') is-invalid @enderror" placeholder="Isikan Nama Karyawan">
+                                                    @error('namakaryawan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                            </div><br>
+
+                                            <div class="">
+                                                <label for="firstName" class="form-label">enis Cuti</label>
+                                                <select name="jenis"
+                                                    class="default-select form-control @error('jenis') is-invalid @enderror" id="">
+                                                    <option value="" selected>Jenis</option>
+                                                    <option value="Cuti Melahirkan">Cuti Melahirkan</option>
+                                                    <option value="Cuti Menikah">Cuti Menikah</option>
                                                 </select>
+                                                @error('jenis')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
+                                            <br>
+
                                             <label class="">Tanggal Pengajuan</label>
                                             <div class="">
-                                                <input type="date" class="form-control" placeholder="20/6/2023">
+                                                <input type="date" name="tglpengajuan" class="form-control @error('tglpengajuan') is-invalid @enderror" placeholder="20/6/2023">
+                                                @error('tglpengajuan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
-                                            <label class="mb-2">Tanggal Izin</label>
+                                            <br>
+
+                                            <label class="">Tanggal Awal Cuti</label>
+                                            <div class="">
+                                                <input type="date" name="tglawal" class="form-control @error('tglawal') is-invalid @enderror" placeholder="22/6/2023">
+                                                @error('tglawal')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <br>
+
+                                            <label class="">Tanggal Akhir Cuti</label>
+                                            <div class="">
+                                                <input type="date" name="tglakhir" class="form-control  @error('tglakhir') is-invalid @enderror" placeholder="25/6/2023">
+                                                @error('tglakhir')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <br>
+                                            {{-- <label class="mb-2">Tanggal Izin</label>
                                             <div class="row">
                                                 <div class="col-xl-9 mb-3">
                                                     <div class="example">
-                                                        <input class="form-control input-daterange-datepicker" type="text" name="daterange" id="tanggal">
+                                                        <input class="form-control input-daterange-datepicker" type="text" name="tglizin" id="tanggal">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-3 col-6 text-end">
                                                     <button class="btn btn-outline-danger btn-xs" id="btn-1-hari" type="button">1 Hari</button>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <hr>
                                             <label class="mb-2">Keterangan Cuti</label>
                                             <div class="">
-                                                <textarea class="form-control" placeholder="Mohon Izin"></textarea>
+                                                <textarea class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" placeholder="Mohon Izin"></textarea>
+                                                @error('ketarangan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
-                                            <label class="mb-2">Keterangan Persetujuan/Penolakan</label>
+                                            <br>
+                                            {{-- <div class="row g-0">
+                                                <a href="" name="lampiran" target="_blank">Lampiran</a>
+                                            </div> --}}
+                                            <label class="">Lampiran</label>
                                             <div class="">
-                                                <textarea class="form-control" placeholder="Undangan jangan lupa"></textarea>
+                                                <input type="file" name="lampiran" class="form-control @error('lampiran') is-invalid @enderror" placeholder="20/6/2023">
+                                                @error('lampiran')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
-                                            <div class="row g-0">
-                                                <a href="" target="_blank">Lampiran</a>
-                                            </div>
+
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger">Batalkan Persetujuan</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
                                         </div>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
@@ -1226,6 +1276,21 @@
         <script src="js/plugins-init/material-date-picker-init.js"></script>
         <!-- Pickdate -->
         <script src="js/plugins-init/pickadate-init.js"></script>
+
+        {{-- toaster --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        @if (Session::has('success'))
+            <script>
+                toastr.options = {
+                    "timeOut": 5000, // Set timeOut to 0 to make it sticky
+                    "closeButton": true,
+                    "progressBar": true
+                }
+                toastr.success("{{ session('success') }}");
+            </script>
+        @endif
 
 </body>
 

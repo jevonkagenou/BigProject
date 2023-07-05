@@ -15,7 +15,11 @@ use App\Http\Controllers\ViewEmployeeController;
 use App\Http\Controllers\RouteKaryawanController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DataPayrollController;
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\PermitEmployeeController;
+use App\Http\Controllers\DashboardEmployeeController;
+use App\Http\Controllers\AnnualLeaveController;
+
 
 
 /*
@@ -66,7 +70,7 @@ Route::get('/deleteWorkSchedule/{id}', [WorkScheduleController::class, 'deleteWo
 
 
 Route::get('/SalaryPaymentReport', [RouteController::class, 'SalaryPaymentReport'])->name('SalaryPaymentReport');
-Route::get('/Announcement', [RouteController::class, 'Announcement'])->name('Announcement');
+
 Route::get('/AnnouncementUpdate', [RouteController::class, 'AnnouncementUpdate'])->name('AnnouncementUpdate');
 Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
 Route::get('/PayrolEmployee/{id}', [DataPayrollController::class, 'PayrolEmployee'])->name('PayrolEmployee');
@@ -96,12 +100,15 @@ Route::get('/SettingSchedule', [RouteController::class, 'SettingSchedule'])->nam
 Route::get('/DetileSchedule', [RouteController::class, 'DetileSchedule'])->name('DetileSchedule');
 Route::get('/AnnualLeave', [RouteController::class, 'AnnualLeave'])->name('AnnualLeave');
 Route::get('/EditSchedule', [RouteController::class, 'EditSchedule'])->name('EditSchedule');
+Route::get('/blank/{id}', [RouteController::class, 'showBlankImageDocument']);
+Route::get('/file/{id}', [RouteController::class, 'DownloadFile']);
 
 
 // Add Data Employee Route
 Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
 Route::post('/Update_Image', [DataEmployeeController::class, 'Update_Image'])->name('Update_Image');
 Route::post('/Delete_Image', [DataEmployeeController::class, 'Delete_Image'])->name('Delete_Image');
+
 
 // Permit Employee and Approve
 Route::get('/Accepted/{user_id}', [ApproveAdminController::class, 'Accepted'])->name('Accepted');
@@ -110,4 +117,15 @@ Route::post('/Add_Permit', [PermitEmployeeController::class, 'Add_Permit'])->nam
 
 // Data Payroll {{Id_User}}
 Route::post('/Data_Payroll', [DataPayrollController::class, 'Data_Payroll'])->name('Data_Payroll');
+// pengummuman
+Route::get('/Announcement', [AnnouncementController::class, 'index'])->name('Announcement');
+Route::post('/Createp', [AnnouncementController::class, 'Create'])->name('Createp');
+route::post('/update/{id}', [AnnouncementController::class, 'update'])->name('update');
+route::get('/destroy/{id}', [AnnouncementController::class, 'destroy'])->name('destroy');
+
+//dashboard employee
+route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
+
+//Cuti Tahunan
+Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create');
 

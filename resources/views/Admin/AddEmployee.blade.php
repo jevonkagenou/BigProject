@@ -290,237 +290,201 @@
                         </div>
                         <div class="card col-xl-8">
                             <div class="card-body">
-                                <form method="POST" action="{{ route('Add_Employee') }}">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-lg-12 order-lg-2 mb-4">
-                                            <h4 class="mb-3" style="font-weight: bold;">Informasi Pribadi</h4>
-                                            <form class="needs-validation" novalidate="">
-
-                                                <div class="mb-3">
-                                                    <label for="address" class="form-label text-black">Nama
-                                                        Lengkap</label>
-                                                    <input type="text" class="form-control" name="longname"
-                                                        id="longname" placeholder="Nama Lengkap" required="">
-                                                        @if ($errors->has('longname'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('longname') }}
-                                                        </div>
-                                                    @endif
-                                                    <div class="invalid-feedback">
-                                                        Please enter your shipping address.
+                                <div class="row">
+                                    <div class="col-lg-12 order-lg-2 mb-4">
+                                        <h4 class="mb-3">Informasi Pribadi</h4>
+                                        <div class="mb-3">
+                                            {{-- @if ($errors->has('longname'))
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('longname') }}
                                                     </div>
-                                                </div>
+                                                @endif --}}
+                                            <label for="address" class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>Nama
+                                                Lengkap</label>
+                                                <input type="text" class="form-control @error('longname') is-invalid @enderror" name="longname" id="longname" placeholder="Nama Lengkap">
 
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="firstName" class="form-label text-black">Tempat
-                                                            Lahir</label>
-                                                        <input type="text" class="form-control" name="place_birth"
-                                                            id="place_birth" placeholder="Tempat Lahir"
-                                                            value="" required="">
-                                                            @if ($errors->has('place_birth'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('place_birth') }}
-                                                        </div>
-                                                    @endif
-                                                        <div class="invalid-feedback">
-                                                            Valid first name is required.
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="lastName" class="form-label text-black">Tanggal
-                                                            Lahir</label>
-                                                        <input type="date" class="form-control" name="date"
-                                                            id="date" placeholder="" value=""
-                                                            required="">
-                                                            @if ($errors->has('date'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('date') }}
-                                                        </div>
-                                                    @endif
-                                                        <div class="invalid-feedback">
-                                                            Valid last name is required.
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="lastName" class="form-label text-black">Jenis
-                                                            Kelamin</label>
-                                                        <div class="form-check custom-radio mb-2">
-                                                            <input id="credit" name="gender" id="gender"
-                                                                type="radio" class="" required>
-                                                            <label class="form-check-label"
-                                                                for="credit">Laki-Laki</label>
-                                                        </div>
-                                                        <div class="form-check custom-radio mb-2">
-                                                            <input id="debit" name="gender" id="gender"
-                                                                type="radio" class="" required>
-                                                            <label class="form-check-label"
-                                                                for="debit">Perempuan</label>
-                                                        </div>
-                                                        @if ($errors->has('gender'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('gender') }}
-                                                        </div>
-                                                    @endif
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="firstName" class="form-label text-black">Status
-                                                            Perkawinan</label>
-                                                        <select name="marry" class="default-select form-control"
-                                                            id="">
-                                                            <option value="" selected>Status</option>
-                                                            <option value="sudah Menikah">Sudah Menikah</option>
-                                                            <option value="Belum Menikah">Belum Menikah</option>
-                                                        </select>
-                                                        @if ($errors->has('marry'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('marry') }}
-                                                        </div>
-                                                    @endif
-                                                        <div class="invalid-feedback">
-                                                            Valid first name is required.
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @error('longname')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
 
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label text-black">Golongan Darah</label>
-                                                        <select name="blood_group" id="region"
-                                                            class="default-select form-control">
-                                                            <option value="A">A</option>
-                                                            <option value="B">B</option>
-                                                            <option value="AB">AB</option>
-                                                            <option value="O">O</option>
-                                                        </select>
-                                                        @if ($errors->has('blood_group'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('blood_group') }}
-                                                        </div>
-                                                    @endif
-                                                        <div class="invalid-feedback">
-                                                            Valid first name is required.
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label text-black">Agama</label>
-                                                        <select name="region" id="region"
-                                                            class="default-select form-control wide w-100">
-                                                            <option selected>Agama</option>
-                                                            <option value="Islam">Islam</option>
-                                                            <option value="Kristen">Kristen</option>
-                                                            <option value="Buddha">Buddha</option>
-                                                            <option value="Hindu">Hindu</option>
-                                                            <option value="Konghucu">Konghucu</option>
-                                                        </select>
-                                                        @if ($errors->has('region'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('region') }}
-                                                        </div>
-                                                    @endif
-                                                        <div class="invalid-feedback">
-                                                            Please select a valid country.
-                                                        </div>
-                                                    </div>
-                                                </div><br>
-
-                                                <h4 class="mb-3" style="font-weight: bold;">Informasi Tambahan</h4>
-
-                                                <div class="mb-3">
-                                                    <label for="email" class="form-label text-black">E-mail <span
-                                                            class="text-muted">(Optional)</span></label>
-                                                    <input type="email" name="email" class="form-control"
-                                                        id="email" placeholder="Email Anda">
-                                                        @if ($errors->has('email'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('email') }}
-                                                        </div>
-                                                    @endif
-                                                    <div class="invalid-feedback">
-                                                        Please enter a valid email address for shipping updates.
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address"class="form-label text-black">No HP</label>
-                                                    <input type="text" class="form-control" name="numberphone"
-                                                        id="numberphone" placeholder="Nomor Anda" required="">
-                                                        @if ($errors->has('numberphone'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('numberphone') }}
-                                                        </div>
-                                                    @endif
-                                                    <div class="invalid-feedback">
-                                                        Please enter your shipping address.
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address"class="form-label text-black">Alamat</label>
-                                                    <input type="text" class="form-control" name="address"
-                                                        id="address" placeholder="Alamat Anda" required="">
-                                                        @if ($errors->has('address'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('address') }}
-                                                        </div>
-                                                    @endif
-                                                    <div class="invalid-feedback">
-                                                        Please enter your shipping address.
-                                                    </div>
-                                                </div><br>
-
-                                                <h4 class="mb-3" style="font-weight: bold;">Pendidikan Terakhir</h4>
-
-                                                <div class="mb-3">
-                                                    <label for="address2" class="text-black">Pendidikan
-                                                        Terakhir</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        name="last_study" id="last_study"
-                                                        placeholder="Pendidikan Terakhir">
-                                                        @if ($errors->has('last_study'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('last_study') }}
-                                                        </div>
-                                                    @endif
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address2" class="text-black">Nama Institusi
-                                                        Pendidikan</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        name="educational_institution"
-                                                        id="educational_institution"
-                                                        placeholder="Nama Institusi Pendidikan">
-                                                        @if ($errors->has('educational_institutio'))
-                                                            <div class="alert alert-danger" role="alert">
-                                                                <i class="bi bi-x-lg"></i> {{ $errors->first('educational_institutio') }}
-                                                            </div>
-                                                        @endif
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address2" class="text-black">Program Studi</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        name="study_program" id="study_program"
-                                                        placeholder="Program Studi">
-                                                        @if ($errors->has('study_program'))
-                                                            <div class="alert alert-danger" role="alert">
-                                                                <i class="bi bi-x-lg"></i> {{ $errors->first('study_program') }}
-                                                            </div>
-                                                        @endif
-                                                </div>
-
-                                                <button class="btn btn-danger btn-xs" type="submit"
-                                                    style="width: 100%;">
-                                                    <span
-                                                        style="display: inline-block; vertical-align: middle;">Simpan</span>
-                                                </button>
-                                            </form>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="firstName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Tempat
+                                                    Lahir</label>
+                                                <input type="text" class="form-control @error('place_birth') is-invalid @enderror" name="place_birth"
+                                                    id="place_birth" placeholder="Tempat Lahir">
+
+                                                @error('place_birth')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="lastName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Tanggal
+                                                    Lahir</label>
+                                                <input type="date" class="form-control @error('date') is-invalid @enderror" name="date"
+                                                    id="date" placeholder="">
+
+                                                @error('date')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+
+                                                <label for="lastName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Jenis
+                                                    Kelamin</label>
+                                                <div class="form-check custom-radio mb-2  @error('gender') is-invalid @enderror">
+                                                    <input name="gender" id="gender" type="radio"
+                                                        class="" value="Laki-Laki">
+                                                    <label class="form-check-label" for="credit">Laki-Laki</label>
+                                                </div>
+                                                <div class="form-check custom-radio mb-2">
+                                                    <input name="gender" id="gender" type="radio"
+                                                        class="" value="Perempuan">
+                                                    <label class="form-check-label" for="debit">Perempuan</label>
+                                                </div>
+                                                @error('gender')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="firstName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Status
+                                                    Perkawinan</label>
+                                                <select name="marry"
+                                                    class="default-select form-control @error('marry') is-invalid @enderror" id="">
+                                                    <option value="" selected>Status</option>
+                                                    <option value="Sudah Menikah">Sudah Menikah</option>
+                                                    <option value="Belum Menikah">Belum Menikah</option>
+                                                </select>
+
+                                                @error('marry')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Golongan
+                                                    Darah</label>
+                                                <select name="blood_group"
+                                                    class="default-select form-control @error('blood_group') is-invalid @enderror">
+                                                    <option value="" selected>Pilih</option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="AB">AB</option>
+                                                    <option value="O">O</option>
+                                                </select>
+
+                                                @error('blood_group')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Golongan
+                                                    Darah</label>
+                                                <select name="blood_group"
+                                                    class="default-select form-control @error('region') is-invalid @enderror">
+                                                    <option value="" selected>Agama</option>
+                                                    <option value="Islam">Islam</option>
+                                                    <option value="Kristen">Kristen</option>
+                                                    <option value="Hindu">Hindu</option>
+                                                    <option value="Buddha">Buddha</option>
+                                                    <option value="Konghucu">Konghucu</option>
+                                                </select>
+
+                                                @error('region')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div><br>
+                                        <h4 class="mb-3">Informasi Tambahan</h4>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>E-mail <span
+                                                    class="text-muted"></span></label>
+                                            <input type="email" name="email"
+                                                class="form-control  @error('email') is-invalid @enderror" id="email" placeholder="Email Anda">
+
+                                            @error('email')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="address"class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>Number Phone</label>
+                                            <input type="number" class="form-control @error('numberphone') is-invalid @enderror"
+                                                 name="numberphone" id="numberphone"
+                                                placeholder="Nomor Anda" >
+
+                                            @error('numberphone')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="address"class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>Alamat</label>
+                                            <input type="text" class="form-control @error('address') is-invalid @enderror"
+                                                name="address" id="address" placeholder="Alamat Anda">
+
+                                            @error('address')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div><br>
+
+                                        <h4 class="mb-3">Pendidikan Terakhir</h4>
+
+                                        <div class="mb-3">
+                                            <label for="address2" class="text-black"><label
+                                                    class="text-danger form-label">*</label>Pendidikan
+                                                Terakhir</label>
+                                            <input type="text" class="form-control text-muted @error('last_study') is-invalid @enderror"
+                                                name="last_study" id="last_study"
+                                                placeholder="Pendidikan Terakhir">
+                                            @error('last_study')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="address2" class="text-black"><label
+                                                    class="text-danger form-label">*</label>Nama Institusi
+                                                Pendidikan</label>
+                                            <input type="text" class="form-control text-muted @error('educational_institution') is-invalid @enderror"
+                                                name="educational_institution" id="educational_institution"
+                                                placeholder="Nama Institusi Pendidikan">
+                                            @error('educational_institution')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="address2" class="text-black"><label
+                                                    class="text-danger form-label">*</label>Program Studi</label>
+                                            <input type="text" class="form-control text-muted @error('study_program') is-invalid @enderror" name="study_program"
+                                                id="study_program" placeholder="Program Studi">
+                                            @error('study_program')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <hr class="mb-2">
+                                        <button class="btn btn-danger btn-xs" type="submit" style="width: 100%;">
+                                            <span style="display: inline-block; vertical-align: middle;">Simpan</span>
+                                        </button>
+                                        </form>
                                     </div>
                             </div>
                         </div>

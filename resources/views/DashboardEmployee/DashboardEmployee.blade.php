@@ -387,9 +387,10 @@
                                     <div class="card-header d-block">
                                         <h4 class="card-title" style="text-align: center; font-weight: bold;">
                                             Pengumuman</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                            @foreach ($data as $row)
                                             <div class="col-xl-6 mt-3">
                                                 <div class="alert alert-warning alert-dismissible fade show">
 
@@ -397,17 +398,17 @@
                                                         <div class="media-body" style="color: black;">
                                                             <div class="row">
                                                                 <div class="col-7 mt-1">
-                                                                    <h5 class="">Pengumuman</h5>
+                                                                    <h5 class="">{{$row->judul}}</h5>
                                                                 </div>
                                                                 <div class="col-5 text-end mt-1">
-                                                                    <span style="color: gray;">21/06/23</span>
+                                                                    <span style="color: gray;">{{$row->created_at->format('D M Y') }}</span>
                                                                 </div>
                                                             </div>
 
                                                             <hr>
-                                                            <p class="mb-0">Hari ini di karenakan perusahaan...</p>
+                                                            <p class="mb-0">{!!$row->isi!!}</p>
                                                             <a data-bs-toggle="modal"
-                                                                data-bs-target="#lihat-pengumuman"
+                                                                data-bs-target="#lihat-pengumuman{{$row->id}}"
                                                                 class="text-red d-flex justify-content-end"
                                                                 type="button">Lihat</a>
 
@@ -415,64 +416,40 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-6 mt-3">
-                                                <div class="alert alert-warning alert-dismissible fade show">
-
-                                                    <div class="media">
-                                                        <div class="media-body" style="color: black;">
-                                                            <div class="row">
-                                                                <div class="col-7 mt-1">
-                                                                    <h5 class="">Pengumuman</h5>
-                                                                </div>
-                                                                <div class="col-5 text-end mt-1">
-                                                                    <span style="color: gray;">21/06/23</span>
+                                            {{-- modal lihat pengumuman --}}
+                                            <div class="modal fade" id="lihat-pengumuman{{$row->id}}">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">{{$row->judul}}</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                            </button>
+                                                        </div>
+                                                        <p class="mb-0 text-red" style="text-align: left; padding-left: 30px;">{{$row->created_at->format('D M Y')}}</p>
+                                                        <div class="modal-body">
+                                                            <div class="row g-0">
+                                                                <p>{!!$row->isi!!}</p>
+                                                            </div>
+                                                            @if ($row->lampiran)
+                                                            <div class="row g-0">
+                                                                <div class="d-flex justify-content-end">
+                                                                    <a href="/blank/{{ $row->id }}" target="_blank">Lampiran</a>
                                                                 </div>
                                                             </div>
-                                                            <hr>
-                                                            <p class="mb-0">Hari ini di karenakan perusahaan...</p>
-                                                            <a data-bs-toggle="modal"
-                                                                data-bs-target="#lihat-pengumuman"
-                                                                class="text-red d-flex justify-content-end"
-                                                                type="button">Lihat</a>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endforeach
+                                            </div>
                                         </div>
 
-                                    </div>
                                 </div>
                             </div>
                         </div>
 
 
-
-                        <div class="modal fade" id="lihat-pengumuman">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Cuti Idhul Fitri</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="mb-0 text-red">21/06/23</p>
-                                        <div class="row g-0">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, odio,
-                                                repellendus magnam culpa corrupti placeat cupiditate alias id assumenda,
-                                                aspernatur ab corporis sunt! Earum sunt quibusdam perspiciatis eum culpa
-                                                illum veritatis, labore animi, quos incidunt saepe? Inventore mollitia
-                                                dolor quae?</p>
-                                        </div>
-                                        <div class="row g-0">
-                                            {{-- <h6 class="modal-title">Lampiran</h6><br> --}}
-                                            <a href="" target="_blank">Lampiran</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     {{-- chart rekap gaji --}}
