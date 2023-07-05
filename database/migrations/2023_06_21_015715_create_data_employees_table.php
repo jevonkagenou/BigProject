@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('last_study');
             $table->string('educational_institution');
             $table->string('study_program');
-            $table->string('images');
+            $table->string('images')->default('user.png');
             $table->timestamps();
         });
     }

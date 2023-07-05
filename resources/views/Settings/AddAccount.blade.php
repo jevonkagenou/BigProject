@@ -857,53 +857,80 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-
                 <div class="row page-titles">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/Setting">Pengaturan</a></li>
                         <li class="breadcrumb-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f72b50" class="bi bi-play-fill" viewBox="0 0 16 16">
-                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                          </svg></li>
-                          <li class="breadcrumb-item active"><a href="">Payroll</a></li>
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                            </svg></li>
+                        <li class="breadcrumb-item active"><a href="">Payroll</a></li>
                     </ol>
                 </div>
-
-				<div class="card">
+        
+                <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Tambah Rekening</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-1  btn-group btn-xs">                                
+                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-1 btn-group btn-xs">
                                 <div class="btn-group btn-xs">
                                     <div class="size-filter">
                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" >
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1">
                                             <a href="/PayrollSalarySlip" class="btn btn-xs btn-outline-danger" role="button" aria-pressed="true">Slip Gaji</a>
-
+        
                                             <input type="radio" class="btn-check" name="btnradio" id="btnradio2" checked>
                                             <a class="btn btn-xs btn-outline-danger" for="btnradio1">Tambah Rekening</a>
-
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                <!-- row -->
+                        </div>
+                        <!-- row -->
                         <div class="row">
-
-                    <div class="container-fluid">
-
-                                <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12 mb-2 text-center" style="border: solid black 1px; padding: 2px;" >
-                                    <a data-bs-toggle="modal" data-bs-target="#tambahrekening" type="button">
-                                        <svg xmlns="http://www.w3.org/2000/svg"  width="80" height="80" fill="currentColor"  class="bi bi-plus-lg mt-3" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/><p>Tambah Rekening</p>
-                                      </svg>
-                                    </a>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    @foreach ($rekeningList as $rek)
+                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
+                                        <div class="card h-100 text-center" style="border: solid black 1px;">
+                                            <div class="card-body d-flex flex-column justify-content-between align-items-center" style="height: 150px;">
+                                                @if ($rek->namabank =='BRI')
+                                                <img src="{{ asset('gambar/BRI.jpg') }}" alt="BRI" class="login-image" style="max-width: 100px; max-height: 100px;">
+                                            @endif
+                                            @if ($rek->namabank == 'BCA')
+                                                <img src="{{ asset('gambar/BCA.png') }}" alt="BCA" class="login-image" style="max-width: 100px; max-height: 100px;">
+                                            @endif
+                                            @if ($rek->namabank == 'Bank Jatim')
+                                                <img src="{{ asset('gambar/BANK JATIM.png') }}" alt="BANK JATIM" class="login-image" style="max-width: 100px; max-height: 100px;">
+                                            @endif
+                                            @if ($rek->namabank == 'Mandiri')
+                                                <img src="{{ asset('gambar/MANDIRI.png') }}" alt="MANDIRI" class="login-image" style="max-width: 100px; max-height: 100px;">
+                                            @endif
+                                            {{-- <h5 class="card-title" style="margin-top: 5px; margin-bottom: 0;">{{$rek->namabank}}</h5> --}}
+                                            <p class="card-text">{{$rek->norekening}}</p>
+                                            <div class="flex-wrap">
+                                                <p class="card-text text-truncate" style="max-height: 3.6em; overflow: hidden; margin-top: 0; margin-bottom: 0; padding-bottom: 0; display: flex; flex-wrap: wrap; align-items: flex-start;">{{$rek->namapemegang}}</p>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
+                                        <div class="card h-100 text-center" style="border: solid black 1px;">
+                                            <div class="card-body d-flex flex-column justify-content-center">
+                                                <a data-bs-toggle="modal" data-bs-target="#tambahrekening" type="button">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-plus-lg mb-3" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                                    </svg>
+                                                    <p class="card-text">Tambah Rekening</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-xl-3 mt-3 ms-auto mb-5">
+                                <div class="card-footer justify-contend-end">
                                     <div class="alert alert bg-danger alert-dismissible fade show">
-
                                         <div class="media">
                                             <div class="media-body" style="color: white;">
                                                 <p class="mb-0">Masukkan nomor rekening bank sesuai dengan perusahaan, guna untuk membayar gaji kepada karyawan.</p>
@@ -913,60 +940,62 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
-                   
-
-
-            </div>
-             {{-- modal tambahrekening --}}
-				 <div class="modal fade" id="tambahrekening">
-					<div class="modal-dialog modal-dialog-centered" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title">Tambah Rekening</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal">
-								</button>
-							</div>
-							<div class="modal-body">
-								<div class="mb-3">
-                                    <label for="address"  class="form-label">Nama Bank</label>
-                                    <input type="text" class="form-control" id="nama bank" placeholder="Nama Bank" required="">
-                                    <div class="invalid-feedback">
-                                        Nama Bank
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="address"  class="form-label">Nama Rekening Bank</label>
-                                    <input type="text" class="form-control" id="nama rekening bank" placeholder="Nama Rekening Bank" required="">
-                                    <div class="invalid-feedback">
-                                        Nama Rekening Bank
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="address"  class="form-label">Nama Pemegang Rekening</label>
-                                    <input type="text" class="form-control" id="nama pemegang rekening" placeholder="Nama Pemegang Rekening" required="">
-                                    <div class="invalid-feedback">
-                                        Nama Pemegang Rekening
-                                    </div>
-                                </div>
-                                <div class="row">
-                                <div class="col-sm-2 col-md-2 col-lg-2">
-                                    <button class="btn btn-outline-light btn-xs ms-3" style="white-space: nowrap;">Batal</button>
-                                </div>
-                                    <div class="col-sm-1 col-md-2 col-lg-2">
-                                        <button class="btn btn-outline-danger btn-xs ms-1" style="white-space: nowrap;">Simpan</button>
-                                    </div>
-                               
-                            </div>
-							</div>
-						</div>
-					</div>
-				</div>
-                   
-        </div>
                 </div>
-        <!--**********************************
+        
+                <!-- modal tambahrekening -->
+                <div class="modal fade" id="tambahrekening">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Tambah Rekening</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <form action="/insertrekening" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">Nama Bank</label>
+                                        <select class="default-select form-control wide mb-3" name="namabank" id="namabank">
+                                            <option selected disabled>Pilih jenis Bank</option>
+                                            <option value="BRI">BRI</option>
+                                            <option value="Mandiri">Mandiri</option>
+                                            <option value="Bank Jatim">Bank Jatim</option>
+                                            <option value="BCA">BCA</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">Nomor Rekening Bank</label>
+                                        <input type="number" class="form-control" name="norekening" placeholder="Nomor Rekening Bank" required="">
+                                        <div class="invalid-feedback">
+                                            Nomor Rekening Bank
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">Nama Pemegang Rekening</label>
+                                        <input type="text" class="form-control" name="namapemegang" placeholder="Nama Pemegang Rekening" required="">
+                                        <div class="invalid-feedback">
+                                            Nama Pemegang Rekening
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                            <button class="btn btn-outline-light btn-xs ms-3" style="white-space: nowrap;">Batal</button>
+                                        </div>
+                                        <div class="col-sm-1 col-md-2 col-lg-2">
+                                            <button class="btn btn-outline-danger btn-xs ms-1" style="white-space: nowrap;">Simpan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!--**********************************
             Content body end
         ***********************************-->
 
@@ -1034,6 +1063,14 @@
                 isAlternateLogo = true;
             }
         }
+    </script>
+    <script>
+        @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
     </script>
 </body>
 

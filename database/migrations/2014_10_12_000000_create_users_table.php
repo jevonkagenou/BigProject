@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->bigInteger('notelp');
             $table->string('password');
-            $table->longText('foto') ->nullable();
+            $table->string('foto')->default('user.png');
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('role')->default('karyawan')->nullable();

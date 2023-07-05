@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rekening;
 use App\Models\DataEmployee;
 use App\Models\PermitEmployee;
 use Illuminate\Http\Request;
@@ -44,11 +45,6 @@ public function PermitLeaveAdmin(){
     public function AnnouncementUpdate(){
         return view('Admin.AnnouncementUpdate',[
             'tittle'=>'Edit Pengumuman'
-        ]);
-    }
-    public function AdminProfile(){
-        return view('Admin.ProfilAdmin',[
-            'tittle'=>'Profil Admin'
         ]);
     }
     public function AddPayslips(){
@@ -133,16 +129,16 @@ public function PermitLeaveAdmin(){
             'tittle'=>'Detail Karyawan'
     ]);
     }
-    public function AddAccount(){
-        return view('Settings.AddAccount',[
+
+    public function AddAccount(Request $request)
+    {
+        $rekeningList = Rekening::all(); 
+    
+        return view('Settings.AddAccount', compact('rekeningList'),[
             'tittle'=>'Tambah Rekening'
         ]);
     }
-    public function ProfilAdmin(){
-        return view('Admin.ProfilAdmin',[
-            'tittle'=>'Profil'
-        ]);
-    }
+
     public function AddWorkSchedule(){
         return view('Admin.AddWorkSchedule',[
             'tittle'=>'Tambah Jadwal Kerja'

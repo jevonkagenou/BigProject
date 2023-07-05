@@ -40,12 +40,12 @@ class DataEmployeeController extends Controller
             'study_program.required' => 'Program studi Wajib Diisi',
         ]);
 
-        if ($files = $request->file('image')) {
+        if ($files = $request->file('images')) {
             $extension = $files->getClientOriginalExtension();
             $name = hash('sha256', time()) . '.' . $extension;
-            $files->move('image', $name);
+            $files->move('images', $name);
         }
-
+       
         $data = DataEmployee::create([
             'longname' => $request->longname,
             'place_birth' => $request->place_birth,
@@ -92,30 +92,37 @@ class DataEmployeeController extends Controller
     return redirect()->back()->with('success', 'Image uploaded successfully.');
 }
 
-    public function Update_Image(Request $request, $id){
-        $request ->validate([
-            'images' => 'required|image|file|'
+    public function Update_Image(Request $request, $id)
+    {
+        $request->validate([
+            'images' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
-        if ($files = $request->file('images')) {
-            $extension = $files->getClientOriginalExtension();
-            $name = hash('sha256', time()) . '.' . $extension;
-            $files->move('images', $name);
+        $data = DataEmployee::findOrFail($id);
+        // dd($admin);
+        
+        if ($request->hasFile('images')) {
+            $file = $request->file('images');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('images/', $filename);
+            $data->images = $filename;
         }
-        $data = DataEmployee::where('id', $id)->update([
-            'images' => $name
-        ]);
-
-        return redirect()->back()->with('success', 'Data Berhasil Diupdate');
+        
+        $data->save();
+        
+        return redirect()->back()->with('success', 'Gambar profil berhasil diperbarui');
+        
     }
-
-    public function Delete_Image($id){
-        DataEmployee::where('id', $id)->update(['images/' => null]);
-
-        return redirect()->back()->with('success', 'Data Berhasil Dihapus');
-    }
-
     public function Employee($id){
         $order = DataEmployee::find($id);
         return view('EmployeeDetails.Employee', compact('order'));
     }
+    public function delete3($id)
+    {
+        $order = DataEmployee::find($id);
+        $order->delete();
+        return redirect()->back()->with('success', 'Profile berhasil di hapus');
+    }
+
 }
+

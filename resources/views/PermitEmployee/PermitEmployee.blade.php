@@ -228,14 +228,13 @@
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
-                        <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
+                        <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
+                            <img src="{{ asset('gambar/' . $karyawan->foto) }}" width="20" alt="" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
-                                <small class="text-end font-w400">Anggie@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>{{$karyawan->name}}</b></span>
+                                <small class="text-end font-w400 ">admin@gmail.com</small>
                             </div>
                         </a>
-
                     </li>
                     <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
@@ -355,36 +354,50 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <!-- <div class="btn-group col-12"> -->
-                                    <!-- <div class="btn-group  col-lg-8  col-12"> -->
-                                    <div
-                                        class="size-filter col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 btn-group btn-xs ">
-                                        <div class="btn-group btn-xs" role="group"
-                                            aria-label="Basic radio toggle button group">
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
-                                                checked>
-                                            <label class="btn btn-outline-danger btn-xs btn-hover"
-                                                for="btnradio1">Cuti Khusus</label>
+                                    <div class="col-xl-8">
+                                        <div class="col mb-10">
+                                            <div class="size-filter btn-group btn-xs">
+                                                {{-- <div class="btn-group btn-xs" role="group"
+                                                    aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="btn-check" name="btnradio"
+                                                        id="btnradio1" value="cuti-khusus" checked>
+                                                    <label class="btn btn-outline-danger btn-xs btn-hover"
+                                                        for="btnradio1">Cuti Khusus</label>
 
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
-                                            <label class="btn btn-outline-danger btn-xs btn-hover"
-                                                for="btnradio2">Izin</label>
+                                                    <input type="radio" class="btn-check" name="btnradio"
+                                                        id="btnradio2" value="izin">
+                                                    <label class="btn btn-outline-danger btn-xs btn-hover"
+                                                        for="btnradio2">Izin</label>
 
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
-                                            <label class="btn btn-outline-danger btn-xs" for="btnradio3">Sakit</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-12 text-end">
-                                        <div class="d-flex mt-3">
-                                            <div class="flex-grow-1">
-                                                <select class="form-select">
-                                                    <option>Semua</option>
-                                                    <option value="pending">Menunggu</option>
-                                                    <option value="rejected">Ditolak</option>
-                                                    <option value="accepted">Diterima</option>
-                                                </select>
+                                                    <input type="radio" class="btn-check" name="btnradio"
+                                                        id="btnradio3" value="sakit">
+                                                    <label class="btn btn-outline-danger btn-xs"
+                                                        for="btnradio3">Sakit</label>
+                                                </div> --}}
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-xl-4 mb-4 d-flex justify-content-end mt-3">
+                                        <form action="{{ route('PermitEmployee') }}" method="GET" class="d-flex">
+                                            <div class="flex-grow-5">
+                                                <select class="form-select" name="status" id="status">
+                                                    <option value="">Semua</option>
+                                                    <option value="Menunggu"
+                                                        {{ isset($_GET['status']) && $_GET['status'] == 'Menunggu' ? 'selected' : '' }}>
+                                                        Menunggu</option>
+                                                    <option value="Ditolak"
+                                                        {{ isset($_GET['status']) && $_GET['status'] == 'Ditolak' ? 'selected' : '' }}>
+                                                        Ditolak</option>
+                                                    <option value="Diterima"
+                                                        {{ isset($_GET['status']) && $_GET['status'] == 'Diterima' ? 'selected' : '' }}>
+                                                        Diterima</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xl-4 ms-3">
+                                                <button class="btn btn-xs btn-danger" type="submit"><i
+                                                        class="fas fa-search"></i></button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -408,11 +421,12 @@
                                                     <td>{{ $approve->tipe }}</td>
                                                     <td>
                                                         <span
-                                                            class="badge light
+                                                            class="badge light 
                                                             @if ($approve->status == 'Menunggu') badge-warning
                                                             @elseif ($approve->status == 'Diterima') badge-success
                                                             @elseif ($approve->status == 'Ditolak') badge-danger @endif">{{ $approve->status }}</span>
                                                     </td>
+
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -440,61 +454,64 @@
 
 
                     <!-- Large modal -->
-                   <form method="POST" action="{{ route('Add_Permit') }}">
-                    @csrf
-                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Tambah Pengajuan Cuti Khusus</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mb-3 row g-0">
-                                        <h6 class="modal-title col-sm-2 col-form-label col-form-label">Sisa Cuti Anda!
-                                            :</h6><br>
-                                        <div class="col-sm-10">
-                                            <button type="button" class="btn btn-danger btn-xs">2 Hari</button>
-                                        </div>
+                    <form method="POST" action="{{ route('Add_Permit') }}">
+                        @csrf
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tambah Pengajuan Cuti Khusus</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                     </div>
-                                    <hr>
-                                    <div class="row g-0">
-                                        <h6 class="modal-title">Tanggal Izin</h6><br>
-                                        <div class="col-xl-6 col-sm-6  col-6">
-                                            <input type="date" name="submission_date" class="form-control btn-xs">
+                                    <div class="modal-body">
+                                        <div class="mb-3 row g-0">
+                                            <h6 class="modal-title col-sm-2 col-form-label col-form-label">Sisa Cuti
+                                                Anda!
+                                                :</h6><br>
+                                            <div class="col-sm-10">
+                                                <button type="button" class="btn btn-danger btn-xs">2 Hari</button>
+                                            </div>
                                         </div>
+                                        <hr>
+                                        <div class="row g-0">
+                                            <h6 class="modal-title">Tanggal Izin</h6><br>
+                                            <div class="col-xl-6 col-sm-6  col-6">
+                                                <input type="date" name="submission_date"
+                                                    class="form-control btn-xs">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6 class="modal-title">Tanggal Izin</h6>
+                                            </div>
+                                            <div class="col-xl-6 col-12">
+                                                <input type="date" name="date_leave" class="form-control">
+                                            </div>
+                                            <div class="col-xl-6 col-12">
+                                                <h6 class="modal-title">Tipe</h6>
+                                                <select name="tipe" class="default-select form-control">
+                                                    <option value="" selected>Tipe</option>
+                                                    <option value="Izin">Izin</option>
+                                                    <option value="Sakit">Sakit</option>
+                                                    <option value="Cuti">Cuti</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <h6 class="modal-title">Keterangan</h6><br>
+                                        <textarea class="form-control" name="description" id="editor" cols="30" rows="10"></textarea>
                                     </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h6 class="modal-title">Tanggal Izin</h6>
-                                        </div>
-                                        <div class="col-xl-6 col-12">
-                                            <input type="date" name="date_leave" class="form-control">
-                                        </div>
-                                        <div class="col-xl-6 col-12">
-                                            <h6 class="modal-title">Tipe</h6>
-                                            <select name="tipe" class="default-select form-control">
-                                                <option value="" selected>Tipe</option>
-                                                <option value="Izin">Izin</option>
-                                                <option value="Sakit">Sakit</option>
-                                                <option value="Cuti">Cuti</option>
-                                            </select>
-                                        </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default btn-xs"
+                                            data-bs-dismiss="modal">Batal</button>
+                                        <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
                                     </div>
-                                    <hr>
-                                    <h6 class="modal-title">Keterangan</h6><br>
-                                    <textarea class="form-control" name="description" id="editor" cols="30" rows="10"></textarea>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default btn-xs"
-                                        data-bs-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                   </form>
+                    </form>
 
                 </div>
             </div>
@@ -554,6 +571,62 @@
             }
         }
     </script>
+    <script>
+        var checkboxes = document.getElementsByName('pilihan');
+        var currentChecked = null;
+
+        function checkboxClicked() {
+            if (currentChecked != this) {
+                currentChecked = this;
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i] != currentChecked) {
+                        checkboxes[i].checked = false;
+                    }
+                }
+            }
+        }
+
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].addEventListener('click', checkboxClicked);
+        }
+    </script>
+<script>
+    // Mendapatkan elemen radio button
+    var radios = document.querySelectorAll('input[name="btnradio"]');
+
+    // Menambahkan event listener pada setiap radio button
+    radios.forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            // Mendapatkan nilai radio button yang dipilih
+            var value = this.value;
+
+            // Mendapatkan elemen-elemen terkait yang perlu diperbarui
+            var btnradio1 = document.getElementById('btnradio1');
+            var btnradio2 = document.getElementById('btnradio2');
+            var btnradio3 = document.getElementById('btnradio3');
+
+            // Memperbarui tampilan sesuai dengan tipe izin yang dipilih
+            if (value === 'cuti-khusus') {
+                // Menampilkan elemen terkait untuk tipe cuti khusus
+                btnradio1.style.display = 'block';
+                btnradio2.style.display = 'none';
+                btnradio3.style.display = 'none';
+            } else if (value === 'izin') {
+                // Menampilkan elemen terkait untuk tipe izin
+                btnradio1.style.display = 'none';
+                btnradio2.style.display = 'block';
+                btnradio3.style.display = 'none';
+            } else if (value === 'sakit') {
+                // Menampilkan elemen terkait untuk tipe sakit
+                btnradio1.style.display = 'none';
+                btnradio2.style.display = 'none';
+                btnradio3.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->

@@ -19,11 +19,14 @@ class ViewEmployeeController extends Controller
         ]);
     }
 
-    public function PermitEmployee(){
-        $data = PermitEmployee::all();
+    public function PermitEmployee(Request $request){
+
+        $data = PermitEmployee::where('status', 'LIKE', '%' . $request->status . '%')->get();
         $title = 'Izin Cuti';
-        return view ('PermitEmployee.PermitEmployee', compact('data', 'title'));
+
+        return view('PermitEmployee.PermitEmployee', compact('data', 'title'));
     }
+    
 
     public function ApprovalEmployee(){
         return view ('ApprovalEmployee.ApprovalEmployee',[
@@ -46,12 +49,6 @@ class ViewEmployeeController extends Controller
     public function Calendar(){
         return view ('karyawan.KalenderKaryawan',[
             'title'=>'Kalender'
-        ]);
-    }
-
-    public function ProfileEmployee(){
-        return view ('Karyawan.ProfileEmployee',[
-            'tittle'=>'Profil Karyawan'
         ]);
     }
     public function Schedule(){

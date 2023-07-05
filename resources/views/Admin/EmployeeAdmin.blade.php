@@ -25,11 +25,7 @@
     {{-- Toaster --}}
     <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    <style>
-        tr:hover {
-            cursor: pointer;
-        }
-    </style>
+    <
 
 </head>
 
@@ -923,6 +919,7 @@
                                     <table id="example7" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr class="text-center">
+                                                <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Jenis Kelamin</th>
                                                 <th>Tempat Lahir</th>
@@ -930,43 +927,33 @@
                                                 <th>Status Perkawinan</th>
                                                 <th>Agama</th>
                                                 <th>Pendidikan Terakhir</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($data as $employee)
-                                                <tr onclick="window.location='/Employee/{{ $employee->id }}'" class="text-center">
-                                                    <td>{{ $employee->longname }}</td>
-                                                    <td>{{ $employee->gender }}</td>
-                                                    <td>{{ $employee->place_birth }}</td>
-                                                    <td>{{ $employee->date }}</td>
-                                                    <td>{{ $employee->marry }}</td>
-                                                    <td>{{ $employee->region }}</td>
-                                                    <td>{{ $employee->last_study }}</td>
-                                                </tr>
-                                            @endforeach
+                                            <tr>
+                                                <td>{{ $employee->id }}</td>
+                                                <td><a href="/Employee/{{$employee->id}}">{{ $employee->longname }}</a></td>
+                                                <td>{{ $employee->gender }}</td>
+                                                <td>{{ $employee->place_birth }}</td>
+                                                <td>{{ $employee->date }}</td>
+                                                <td>{{ $employee->marry }}</td>
+                                                <td>{{ $employee->region }}</td>
+                                                <td>{{ $employee->last_study }}</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-outline-danger btn-xs">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-outline-danger btn-xs">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
-                                <br>
-                                <nav>
-                                    <ul class="pagination pagination-xs" style="float: right">
-                                        <li class="page-item page-indicator">
-                                            <a class="page-link" href="javascript:void(0)">
-                                                <i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="javascript:void(0)">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="javascript:void(0)">2</a>
-                                        </li>
-
-                                        <li class="page-item page-indicator">
-                                            <a class="page-link" href="javascript:void(0)">
-                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </nav>
                             </div>
                         </div>
                     </div>

@@ -315,13 +315,53 @@
                                       <div class="edit-icon">
                                         <i class="fas fa-pencil-alt"></i>
                                       </div>
-                                      <img src="{{ asset('image/'.$order->images) }}" class="edit-image" style="width: 120px; height: 120px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
+                                      <img src="{{ asset('images/'.$order->images) }}" class="edit-image" style="width: 120px; height: 120px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
                                     </div>
                                     <div class="dropdown-content">
-                                        <input type="file" name="images" id="images" hidden>
-                                        <a href="#imageinput">Edit Foto Profil</a>
-                                        <a href="#">Hapus Foto Profil</a>
+                                        <a data-bs-toggle="modal" data-bs-target="#editprofilkaryawan"
+                                            class="text-red d-flex" type="button">Edit Foto Profil</a>
                                     </div>
+                                    <form action="/Update_Image/{{ $order->id }}" method="POST"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="modal fade" id="editprofilkaryawan">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Edit Foto Profil</h5>
+                                                        <button type="button" class="btn-close"
+                                                            data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row g-0 mb-3 justify-content-center">
+                                                            <img src="{{ asset('images/' . $order->images) }}"
+                                                                class="edit-image"
+                                                                style="width: 90px; float: left; border-radius: 50%;"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="row g-0">
+                                                            <br>
+                                                            <div class="profile-statistics mb-3">
+                                                                <div class="input-group">
+                                                                    <div class="form-file">
+                                                                        <input type="file"
+                                                                            class="form-file-input form-control"
+                                                                            id="foto" name="images" multiple>
+                                                                        <div id="fileName"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end">
+                                                            <button type="submit"
+                                                                class="btn btn-danger btn-xs ms-auto mb-3"
+                                                                style="margin-left: auto !important">Simpan</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                   </div>
                                 <br>
                                 <div style="text-align: center;">
@@ -340,6 +380,40 @@
                                         <input type="radio" class="btn-check" name="btnradio1a" id="btnradio2a">
                                         <a href="/PayrolEmployee/{{ $order->id }}" type="button"
                                             class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a>
+                                    </div>
+                                </div>
+                                <p></p>
+                                <div class="container d-flex justify-content-center">
+                                    <div class="" role="group" aria-label="Basic radio toggle button group">
+                                        <input type="radio" class="btn-check">
+                                        <a href="3hapus-detailkaryawan" type="button" class="btn btn-outline-danger btn-xs hoverbtn">
+                                            <i class="fas fa-trash-alt"></i> <!-- Ikon hapus -->
+                                        </a>
+                                        <input type="radio" class="btn-check mb-1">
+                                        <a href="#" type="button" class="btn btn-outline-danger btn-xs hoverbtn">
+                                            <i class="fas fa-edit"></i> <!-- Ikon edit -->
+                                        </a>
+                                    </div>
+                                </div>
+                                {{-- modal konfirmaso hapus pengumuman --}}
+                                <div class="modal fade" id="hapus-detailkaryawan{{$order->id}}">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <form action="/delete3/{{$order->id}}" method="GET">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title"></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <h4 style="font-size: 19px">Apakah Anda Yakin Ingin Menghapus Data Karyawan?</h4>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-secondary btn-xs hover-red">Batal</button>
+                                                <button type="submit" class="btn btn-primary btn-xs form-control1">Hapus</button>
+                                            </div>
+                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\SystemAdminController;
 use App\Http\Controllers\ViewEmployeeController;
-
 use App\Http\Controllers\RouteKaryawanController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DataPayrollController;
@@ -86,12 +86,9 @@ Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
 Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
 Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
 Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
-Route::get('/Employee/{id}', [DataEmployeeController::class, 'Employee'])->name('Employee');
 Route::get('/SalaryAdjustment', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
 Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
-Route::get('/ProfilAdmin', [RouteController::class, 'ProfilAdmin'])->name('ProfilAdmin');
 Route::get('/AddWorkSchedule', [RouteController::class, 'AddWorkSchedule'])->name('AddWorkSchedule');
-Route::get('/ProfileEmployee', [ViewEmployeeController::class, 'ProfileEmployee'])->name('ProfileEmployee');
 Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 
@@ -105,15 +102,40 @@ Route::get('/file/{id}', [RouteController::class, 'DownloadFile']);
 
 
 // Add Data Employee Route
+Route::get('/Employee/{id}', [DataEmployeeController::class, 'Employee'])->name('Employee');
 Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
-Route::post('/Update_Image', [DataEmployeeController::class, 'Update_Image'])->name('Update_Image');
-Route::post('/Delete_Image', [DataEmployeeController::class, 'Delete_Image'])->name('Delete_Image');
+Route::post('/Update_Image/{id}', [DataEmployeeController::class, 'Update_Image'])->name('Update_Image');
+Route::GET('/Delete_image/{id}', [DataEmployeeController::class, 'Delete_image'])->name('Delete_image');
 
 
 // Permit Employee and Approve
 Route::get('/Accepted/{user_id}', [ApproveAdminController::class, 'Accepted'])->name('Accepted');
 Route::get('/Rejected/{user_id}', [ApproveAdminController::class, 'Rejected'])->name('Rejected');
 Route::post('/Add_Permit', [PermitEmployeeController::class, 'Add_Permit'])->name('Add_Permit');
+// system update profile admin Jihan
+
+Route::get('/ProfilAdmin/{id}', [SystemAdminController::class, 'ProfilAdmin'])->name('ProfilAdmin');
+Route::post('/updateProfile/{id}', [SystemAdminController::class, 'updateProfile'])->name('ProfilAdmin.updateProfile');
+Route::post('/updateFotoadmin/{id}', [SystemAdminController::class, 'updateFotoadmin'])->name('ProfilAdmin.updateFotoadmin');
+Route::get('/delete/{id}', [SystemAdminController::class, 'delete'])->name('ProfilAdmin.delete');
+
+Route::get('/ProfileEmployee/{id}', [SystemAdminController::class, 'ProfileEmployee'])->name('ProfileEmployee');
+Route::post('/updateProfileEmployee/{id}', [SystemAdminController::class, 'updateProfileEmployee'])->name('ProfileEmployee.updateProfileEmployee');
+Route::post('/updateFotoEmployee/{id}', [SystemAdminController::class, 'updateFotoEmployee'])->name('ProfilAdmin.updateFotoEmployee');
+
+
+Route::post('/updategambarProfile/{id}', [SystemAdminController::class, 'updategambarProfile'])->name('ProfilAdmin.updategambarProfile');
+Route::post('/insertrekening', [SystemAdminController::class, 'insertrekening'])->name('insertrekening');
+
+Route::get('/gantipassword', [SystemAdminController::class, 'gantipassword']);
+Route::post('/changePassword/{id}', [SystemAdminController::class, 'changePassword']);
+
+Route::get('/gantipasswordEmployee', [SystemAdminController::class, 'gantipasswordEmployee']);
+Route::post('/changePasswordEmployee/{id}', [SystemAdminController::class, 'changePasswordEmployee']);
+Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter');
+    
+
+//System
 
 // Data Payroll {{Id_User}}
 Route::post('/Data_Payroll', [DataPayrollController::class, 'Data_Payroll'])->name('Data_Payroll');
