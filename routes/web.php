@@ -1,11 +1,15 @@
 <?php
 use App\Http\Controllers\ApproveAdminController;
 
+
+use App\Http\Controllers\DataEmployeeController;
+use App\Http\Controllers\WorkScheduleController;
+use App\Http\Controllers\ApprovalEmployeeController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\DataEmployeeController;
 use App\Http\Controllers\ViewEmployeeController;
 
 use App\Http\Controllers\RouteKaryawanController;
@@ -32,7 +36,8 @@ Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('
 
 // Admin Route
 Route::get('/DashboardEmployee', [ViewEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
-Route::get('/ApprovalEmployee', [ViewEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
+// Approval Employee
+Route::get('/ApprovalEmployee', [ApprovalEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
 Route::get('/EmployeePresence', [ViewEmployeeController::class, 'EmployeePresence'])->name('EmployeePresence');
 Route::get('/PermitEmployee', [ViewEmployeeController::class, 'PermitEmployee'])->name('PermitEmployee');
 Route::get('/CompanyEmployee', [ViewEmployeeController::class, 'CompanyEmployee'])->name('CompanyEmployee');
@@ -49,7 +54,17 @@ Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('A
 Route::get('/SalarySummary', [RouteController::class, 'SalarySummary'])->name('SalarySummary');
 Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
 Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
-Route::get('/WorkSchedule', [RouteController::class, 'WorkSchedule'])->name('WorkSchedule');
+//Work Schedule
+Route::get('/WorkSchedule', [WorkScheduleController::class, 'WorkSchedule'])->name('WorkSchedule');
+Route::get('/tampiledit/{id}/edit', [WorkScheduleController::class, 'tampiledit'])->name('tampiledit.edit');
+Route::post('/updatejadwalkerja/{id}', [WorkScheduleController::class, 'updatejadwalkerja'])->name('updatejadwalkerja');
+Route::post('/updatejadwal', [WorkScheduleController::class, 'updatejadwal'])->name('updatejadwal');
+
+Route::get('/deleteWorkSchedule/{id}', [WorkScheduleController::class, 'deleteWorkSchedule'])->name('deleteWorkSchedule');
+
+
+
+
 Route::get('/SalaryPaymentReport', [RouteController::class, 'SalaryPaymentReport'])->name('SalaryPaymentReport');
 Route::get('/Announcement', [RouteController::class, 'Announcement'])->name('Announcement');
 Route::get('/AnnouncementUpdate', [RouteController::class, 'AnnouncementUpdate'])->name('AnnouncementUpdate');

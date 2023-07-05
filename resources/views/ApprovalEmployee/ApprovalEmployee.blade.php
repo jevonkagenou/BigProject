@@ -58,6 +58,16 @@
         max-width: 80%;
         height: auto;
         }
+
+
+    .pagination .page-link {
+        font-size: 12px; /* Ubah ukuran font sesuai kebutuhan */
+        padding: 2px 6px; /* Ubah padding sesuai kebutuhan */
+    }
+
+
+
+
     </style>
 
 
@@ -111,7 +121,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                {{ $title }}
+                                Approval Karyawan
                             </div>
                         </div>
                         <div class="justify-content-end">
@@ -295,23 +305,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php
+                                            $no = 1;
+                                            @endphp
+                                            @foreach ($data as $row)
                                             <tr class="text-center">
-                                                <td>1</td>
-                                                <td>Cuti</td>
-                                                <td>08/05/2023 07:45</td>
+                                                <td>{{ $row->id }}</td>
+                                                <td>{{ $row->tipe }}</td>
+                                                <td>{{ $row->waktu }}</td>
                                                 <td><span
-                                                        class="badge light badge-warning">Proses</span></td>
+                                                        class="badge light badge-warning">{{ $row->status }}</span></td>
                                             </tr>
-                                            <tr class="text-center">
-                                                <td>2</td>
-                                                <td>Izin Sakit</td>
-                                                <td>08/05/2023 07:45</td>
-                                                <td><span
-                                                        class="badge light badge-warning">Proses</span></td>
-
-                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
+{{--                                     
                                     <nav class="mt-4">
                                         <ul class="pagination pagination-xs" style="float: right">
                                             <li class="page-item page-indicator">
@@ -326,9 +334,12 @@
                                                     <i class="fa fa-angle-double-right"
                                                         aria-hidden="true"></i></a>
                                             </li>
-                                        </ul>
-                                    </nav>
+                                        </ul> 
+                                        
+                                    </nav> --}}
                                 </div>
+                    {{-- {{ $data->links() }} --}}
+
                             </div>
                         </div>
                     </div>

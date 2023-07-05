@@ -26178,15 +26178,15 @@ table.dataTable tfoot th {
     font-size: 18px;
     margin: 0 2px;
     border: 0 !important;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     padding: 0;
     border-radius: 1rem;
-    line-height: 54px;
+    line-height: 45px;
     display: inline-block;
     color: var(--primary) !important; }
     .dataTables_wrapper .dataTables_paginate .paginate_button.previous i, .dataTables_wrapper .dataTables_paginate .paginate_button.next i {
-      font-size: 28px; }
+      font-size: 22px; }
     .dataTables_wrapper .dataTables_paginate .paginate_button.previous.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.previous.previous:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.previous.next:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.next.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.next.previous:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.next.next:hover {
       color: #fff !important;
       background: var(--primary) !important; }
@@ -26194,18 +26194,18 @@ table.dataTable tfoot th {
       color: var(--primary) !important; }
     @media only screen and (max-width: 575px) {
       .dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next {
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         line-height: 54px; } }
   .dataTables_wrapper .dataTables_paginate span .paginate_button {
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     padding: 0;
     margin-left: 0px;
     margin: 0 2px;
-    line-height: 50px;
+    line-height: 25px;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 1rem;
     color: var(--primary) !important;
     border: 0 !important; }

@@ -132,7 +132,7 @@ let dataSet = [
 	// dataTable5
 	var table = $('#example5').DataTable({
 		searching: true,
-		paging:false,
+		paging:true,
 		select: false,
 		info: false,
 		lengthChange:false ,
@@ -148,7 +148,7 @@ let dataSet = [
 	// dataTable6
 		var table = $('#example6').DataTable({
 			searching: false,
-			paging:false,
+			paging:true,
 			select: false,
 			info: false,
 			lengthChange:false ,
@@ -164,7 +164,7 @@ let dataSet = [
 		// dataTable7
 		var table = $('#example7').DataTable({
 			searching: true,
-			paging:false,
+			paging:true,
 			select: false,
 			info: false,
 			lengthChange:false ,

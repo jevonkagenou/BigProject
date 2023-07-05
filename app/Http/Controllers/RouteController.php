@@ -28,7 +28,7 @@ public function PermitLeaveAdmin(){
     }
     public function WorkSchedule(){
         return view('Admin.WorkSchedule',[
-            'tittle'=>'Jadwal Kerja'
+            'title'=>'Jadwal Kerja'
         ]);
     }
     public function SalaryPaymentReport(){
