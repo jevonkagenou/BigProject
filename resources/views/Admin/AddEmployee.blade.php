@@ -391,9 +391,8 @@
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label class="form-label text-black"><label
-                                                        class="text-danger form-label">*</label>Golongan
-                                                    Darah</label>
-                                                <select name="blood_group"
+                                                        class="text-danger form-label">*</label>Agama</label>
+                                                <select name="region"
                                                     class="default-select form-control @error('region') is-invalid @enderror">
                                                     <option value="" selected>Agama</option>
                                                     <option value="Islam">Islam</option>

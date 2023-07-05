@@ -382,19 +382,6 @@
                                             class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a>
                                     </div>
                                 </div>
-                                <p></p>
-                                <div class="container d-flex justify-content-center">
-                                    <div class="" role="group" aria-label="Basic radio toggle button group">
-                                        <input type="radio" class="btn-check">
-                                        <a href="3hapus-detailkaryawan" type="button" class="btn btn-outline-danger btn-xs hoverbtn">
-                                            <i class="fas fa-trash-alt"></i> <!-- Ikon hapus -->
-                                        </a>
-                                        <input type="radio" class="btn-check mb-1">
-                                        <a href="#" type="button" class="btn btn-outline-danger btn-xs hoverbtn">
-                                            <i class="fas fa-edit"></i> <!-- Ikon edit -->
-                                        </a>
-                                    </div>
-                                </div>
                                 {{-- modal konfirmaso hapus pengumuman --}}
                                 <div class="modal fade" id="hapus-detailkaryawan{{$order->id}}">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
