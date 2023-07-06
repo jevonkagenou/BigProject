@@ -64,7 +64,7 @@ public function PermitLeaveAdmin(){
         $data = DataEmployee::all();
         return view('Admin.EmployeeAdmin', ['tittle'=>'Karyawan'], compact('data'));
     }
-    
+
     public function SummaryofComponentSalary(){
         return view('Admin.SummaryofComponentSalary',[
             'tittle'=>'Ringkasan Gaji Perkomponen'
@@ -132,18 +132,14 @@ public function PermitLeaveAdmin(){
 
     public function AddAccount(Request $request)
     {
-        $rekeningList = Rekening::all(); 
-    
+        $rekeningList = Rekening::all();
+
         return view('Settings.AddAccount', compact('rekeningList'),[
             'tittle'=>'Tambah Rekening'
         ]);
     }
 
-    public function AddWorkSchedule(){
-        return view('Admin.AddWorkSchedule',[
-            'tittle'=>'Tambah Jadwal Kerja'
-        ]);
-    }
+   
     public function SettingSchedule(){
         return view('Settings.SettingSchedule',[
             'tittle'=>'Jadwal Kerja'
