@@ -941,8 +941,8 @@
                                                 <td>{{ $employee->marry }}</td>
                                                 <td>{{ $employee->region }}</td>
                                                 <td>{{ $employee->last_study }}</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-outline-danger btn-xs">
+                                                <td class="d-flex">
+                                                    <a href="#" class="btn btn-outline-danger btn-xs" style="margin-right: 3px">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
                                                     <a href="#" class="btn btn-outline-danger btn-xs">

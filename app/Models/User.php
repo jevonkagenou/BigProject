@@ -54,4 +54,8 @@ class User extends Authenticatable
     public function Permit_Leave(){
         return $this ->hasMany(PermitEmployee::class);
     }
+    public function presence()
+    {
+        return $this->hasMany(Presence::class);
+    }
 }

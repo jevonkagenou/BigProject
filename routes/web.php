@@ -22,6 +22,7 @@ use App\Http\Controllers\AnnualLeaveController;
 
 
 use Illuminate\Routing\RouteGroup;
+use App\Http\Controllers\EmployeePresence;
 
 /*
 |--------------------------------------------------------------------------
@@ -163,3 +164,5 @@ route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'Dashboard
 //Cuti Tahunan
 Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create');
 
+//presence
+Route::post('PresenceCreate/{jenis}', [EmployeePresence::class, 'presence'])->name('PresenceCreate');

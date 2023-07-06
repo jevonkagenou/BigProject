@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PermitEmployee;
+use App\Models\Presence;
 use Illuminate\Http\Request;
 
 class ViewEmployeeController extends Controller
@@ -14,7 +15,8 @@ class ViewEmployeeController extends Controller
     }
 
     public function EmployeePresence(){
-        return view ('EmployeePresence.EmployeePresence',[
+        $presence = Presence::all();
+        return view ('EmployeePresence.EmployeePresence',compact('presence'),[
             'title'=>'Presensi'
         ]);
     }

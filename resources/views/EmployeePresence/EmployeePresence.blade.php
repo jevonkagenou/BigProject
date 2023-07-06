@@ -27,6 +27,7 @@
     <!-- Custom Stylesheet -->
     <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 </head>
 
@@ -189,7 +190,7 @@
                                                     <path
                                                         d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                                 </svg> Profil</a></li>
-                                        <li><a class="dropdown-item" href="#"><svg
+                                        <li><a class="dropdown-item" href="{{url('logout')}}"><svg
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     fill="#969ba0" viewBox="0 0 512 512"
                                                     style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
@@ -299,6 +300,7 @@
 												 <div class="modal-body">
 													<div class="row">
 														<div class="col-md-6 col-6">
+                                                            <button type="button" data-bs-toggle="modal" data-bs-target=".PresensiMasuk" style="border: none; background-color: white">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
 																<center>
                                                                     <a href="#"><img src="{{ asset('images/foto1.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
@@ -309,10 +311,12 @@
 																  <center><h4 class="card-title">Presensi Masuk</h4></center>
 																</div>
 															  </div>
+                                                            </button>
 														  </div>
 														  <div class="col-md-6 col-6">
+                                                            <button type="button" data-bs-toggle="modal" data-bs-target=".PresensiPulang" style="border: none; background-color: white">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
-																<center><a href=""><img src="{{ asset('images/foto2.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
+																<center><a href="#"><img src="{{ asset('images/foto2.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
 																<span class="online_icon"></span>
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
@@ -320,10 +324,12 @@
 																  <center><h4 class="card-title">Presensi Pulang</h4></center>
 																</div>
 															  </div>
+                                                            </button>
 														  </div>
 														  <div class="col-md-6 col-6">
+                                                            <button type="button" data-bs-toggle="modal" data-bs-target=".PresensiLembur" style="border: none; background-color: white">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
-																<center><a href=""><img src="{{ asset('images/foto3.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
+																<center><a href="#"><img src="{{ asset('images/foto3.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
 																<span class="online_icon"></span>
 															  </div>
 															  <div class="card-body d-flex justify-content-center">
@@ -331,8 +337,10 @@
 																  <center><h4 class="card-title">Presensi Masuk Lembur</h4></center>
 																</div>
 															  </div>
+                                                            </button>
 														  </div>
 														  <div class="col-md-6 col-6">
+                                                            <button type="button" data-bs-toggle="modal" data-bs-target=".PresensiPulangLembur" style="border: none; background-color: white">
 															  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
 																<center><img src="{{ asset('images/foto4.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
 																<span class="online_icon"></span>
@@ -342,6 +350,7 @@
 																  <center><h4 class="card-title">Presensi Pulang Lembur</h4></center>
 																</div>
 															  </div>
+                                                            </button>
 														  </div>
 													</div>
 												  </div>
@@ -363,31 +372,137 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="text-center">
-                                                <td>1</td>
-                                                <td>Absen Masuk</td>
-                                                <td>08/05/2023 08:45</td>
-                                            </tr>
-                                             </tbody>
+                                            @foreach ($presence->reverse() as $data)
+                                                <tr class="text-center">
+                                                    <td>{{ $loop->count - $loop->iteration + 1 }}</td>
+                                                    <td>{{ $data->type }}</td>
+                                                    <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>                                        
                                     </table>
-                                    <nav class="mt-4">
-                                        <ul class="pagination pagination-xs" style="float: right">
-                                            <li class="page-item page-indicator">
-                                                <a class="page-link" href="javascript:void(0)">
-                                                    <i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-                                            </li>
-                                            <li class="page-item active">
-                                                <a class="page-link" href="javascript:void(0)">1</a>
-                                            </li>
-                                            <li class="page-item page-indicator">
-                                                <a class="page-link" href="javascript:void(0)">
-                                                    <i class="fa fa-angle-double-right"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
                             </div>
+                            <!-- Modal Absens -->
+                            <div class="modal PresensiMasuk fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form action="{{Route('PresenceCreate',['jenis' => 'Masuk'])}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Masuk</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <h6 class="modal-title">Presensi Masuk</h6><br>
+                                                <div class="col">
+                                                    <input type="file" class="form-control btn-xs" id="lampian" name="picture" value="Upload" multiple>
+                                                    <input type="hidden" name="type" value="masuk">
+                                            </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal-->
+                            <!-- Modal Absens -->
+                            <div class="modal PresensiPulang fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form action="{{Route('PresenceCreate',['jenis' => 'Pulang'])}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Pulang</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <h6 class="modal-title">Presensi Pulang</h6><br>
+                                                <div class="col">
+                                                    <input type="file" class="form-control btn-xs" id="lampian" name="picture" value="Upload" multiple>
+                                                    <input type="hidden" name="type" value="masuk">
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal-->
+                            <!-- Modal Absens -->
+                            <div class="modal PresensiLembur fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form action="{{Route('PresenceCreate',['jenis' => 'Lembur'])}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Lembur</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <h6 class="modal-title">Presensi Lembur</h6><br>
+                                                <div class="col">
+                                                    <input type="file" class="form-control btn-xs" id="lampian" name="picture" value="Upload" multiple>
+                                                    <input type="hidden" name="type" value="masuk">
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal-->
+                            <!-- Modal Absens -->
+                            <div class="modal PresensiPulangLembur fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form action="{{Route('PresenceCreate',['jenis' => 'Pulang Lembur'])}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Pulang Lembur</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <h6 class="modal-title">Presensi Pulang Lembur</h6><br>
+                                                <div class="col">
+                                                    <input type="file" class="form-control btn-xs" id="lampian" name="picture" value="Upload" multiple>
+                                                    <input type="hidden" name="type" value="masuk">
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal-->
                         </div>
                     </div>
             </div>
@@ -459,6 +574,17 @@
             }
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @if (Session::has('success'))
+    <script>
+        toastr.options = {
+            "timeOut": 5000, // Set timeOut to 0 to make it sticky
+            "closeButton": true,
+            "progressBar": true
+        }
+        toastr.success("{{ session('success') }}");
+    </script>
+    @endif
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
