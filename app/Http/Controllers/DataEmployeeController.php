@@ -8,9 +8,8 @@ use Illuminate\Http\Request;
 class DataEmployeeController extends Controller
 {
     public function Add_Employee(Request $request){
-        // dd($request);
-        $this->validate($request,[
-            'longname' => 'required|string|min:3|max:255',
+        $request->validate([
+            'longname' => 'required',
             'place_birth' => 'required',
             'date' => 'required',
             'gender' => 'required',
@@ -23,29 +22,15 @@ class DataEmployeeController extends Controller
             'last_study' => 'required',
             'educational_institution' => 'required',
             'study_program' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|'
-        ],[
-            'longname.required' => 'Nama Wajib Diisi',
-            'place_birth.required' => 'Tempat Lahir Wajib Diisi',
-            'date.required' => 'Tanggal Lahir Wajib Diisi',
-            'gender.required' => 'Jenis Kelamin Wajib Diisi',
-            'marry.required' => 'Status Perkawinan Wajib Diisi',
-            'blood_group.required' => 'Golongan Darah Wajib Diisi',
-            'region.required' => 'Agama Wajib Diisi',
-            'email.required' => 'email Wajib Diisi',
-            'numberphone.required' => 'Nomor Telepon Wajib Diisi',
-            'addres.required' => 'Alamat Wajib Diisi',
-            'last_study.required' => 'Pendidikan Terakhir Wajib Diisi',
-            'educational_institution.required' => 'Nama Institusi Pendidikan Terakhir Wajib Diisi',
-            'study_program.required' => 'Program studi Wajib Diisi',
+            'images' => 'required|image|mimes:jpeg,png,jpg,gif|'
         ]);
 
         if ($files = $request->file('images')) {
-            $extension = $files->getClientOriginalExtension();
-            $name = hash('sha256', time()) . '.' . $extension;
-            $files->move('images', $name);
-        }
-       
+        $extension = $files->getClientOriginalExtension();
+        $name = hash('sha256', time()) . '.' . $extension;
+        $files->move('images', $name);
+            }
+
         $data = DataEmployee::create([
             'longname' => $request->longname,
             'place_birth' => $request->place_birth,
