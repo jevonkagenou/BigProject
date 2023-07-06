@@ -76,6 +76,8 @@ Route::get('/WorkSchedule', [WorkScheduleController::class, 'WorkSchedule'])->na
 Route::get('/tampiledit/{id}/edit', [WorkScheduleController::class, 'tampiledit'])->name('tampiledit.edit');
 Route::post('/updatejadwalkerja/{id}', [WorkScheduleController::class, 'updatejadwalkerja'])->name('updatejadwalkerja');
 Route::post('/updatejadwal', [WorkScheduleController::class, 'updatejadwal'])->name('updatejadwal');
+Route::get('/AddWorkSchedule', [WorkScheduleController::class, 'AddWorkSchedule'])->name('AddWorkSchedule');
+Route::post('/InsertWorkSchedule', [WorkScheduleController::class, 'InsertWorkSchedule'])->name('InsertWorkSchedule');
 
 Route::get('/deleteWorkSchedule/{id}', [WorkScheduleController::class, 'deleteWorkSchedule'])->name('deleteWorkSchedule');
 
@@ -101,7 +103,6 @@ Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('E
 Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
 Route::get('/SalaryAdjustment', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
 Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
-Route::get('/AddWorkSchedule', [RouteController::class, 'AddWorkSchedule'])->name('AddWorkSchedule');
 Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
 Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 
