@@ -62,19 +62,28 @@ class WorkScheduleController extends Controller
     public function InsertWorkSchedule(Request $request)
     {
         $data = $request->all();
-
+    
         $AddWorkSchedule = new AddWorkSchedule;
         $AddWorkSchedule->nama_jadwal = $data['nama_jadwal'];
         $AddWorkSchedule->save();
-
-        foreach ($data['date'] as $date) {
-            $DateWorkSchedule = new DateWorkSchedule();
-            $DateWorkSchedule->date = $date;
-            $DateWorkSchedule->nama_jadwal_id = $AddWorkSchedule->id;
-            $DateWorkSchedule->save();
+    
+        if (isset($data['date'])) {
+            foreach ($data['date'] as $key => $date) {
+                if (isset($data['shift'][$key])) {
+                    $DateWorkSchedule = new DateWorkSchedule();
+                    $DateWorkSchedule->date = $date;
+                    $DateWorkSchedule->shift = $data['shift'][$key];
+                    $DateWorkSchedule->nama_jadwal_id = $AddWorkSchedule->id;
+                    $DateWorkSchedule->save();
+                }
+            }
         }
-
+    
         return redirect()->back()->with('status', 'Data berhasil ditambahkan');
     }
+    
+    
+    
+    
 
 }
