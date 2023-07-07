@@ -9,5 +9,5 @@ class DateWorkSchedule extends Model
 {
     use HasFactory;
     protected $guarded =[];
-    protected $fillable = ['nama_jadwal','date'];
+    protected $fillable = ['nama_jadwal','shift','date'];
 }

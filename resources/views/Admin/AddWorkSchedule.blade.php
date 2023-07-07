@@ -264,11 +264,13 @@
 
                                             <div class="baris " style="display: flex; justify-content: align-items: center;">
                                                 <span>Hari ke 1</span>
-                                                <select class="shift" style="width: 200px;" name="date[]">
-                                                    <option value="Pagi 06.00-07.00">Pagi 06.00-07.00</option>
-                                                    <option value="Siang 12.00-21.00">Siang 12.00-21.00</option>
-                                                    <option value="Malam 21.00-06.00">Malam 21.00-06.00</option>
+                                                <select class="shift" style="width: 200px;" name="shift[]">
+                                                    <option value="Pagi">Pagi</option>
+                                                    <option value="Siang ">Siang</option>
+                                                    <option value="Malam ">Malam</option>
                                                 </select>
+                                                &nbsp;
+                                                <input type="date" name="date[]">
                                                 <i class="fa fa-trash hapus-baris"></i>
                                             </div>
                                         </div>
@@ -362,11 +364,13 @@
                     var htmlBaris =
                         '<div class="baris" style="display: flex; justify-content: align-items: center;">' +
                         '<span>Hari ke ' + jumlahBaris + '</span>' +
-                        '<select class="shift" style="width: 200px;" name="date[]">' +
-                        '<option>Pagi        06.00-07.00</option>' +
-                        '<option>Siang       12.00-21.00</option>' +
-                        '<option>Malam       21.00-06.00</option>' +
+                        '<select class="shift" style="width: 200px;" name="shift[]">' +
+                        '<option>Pagi</option>' +
+                        '<option>Siang</option>' +
+                        '<option>Malam</option>' +
                         '</select>' +
+                        '&nbsp;'+
+                        '<input type="date" name="date[]">'+
                         '<i class="fa fa-trash hapus-baris"></i>' +
                         '</div>';
 
