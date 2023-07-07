@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Rekening;
 use App\Models\DataEmployee;
 use App\Models\PermitEmployee;
+use App\Models\Presence;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RouteController extends Controller
@@ -75,9 +77,19 @@ public function PermitLeaveAdmin(){
             'tittle'=>'Approval Presensi'
         ]);
     }
-    public function Presence(){
-        return view('PresenceAdmin.Presence');
+    public function Presence() {
+        $presence = User::query()
+            ->with(['presence' => function ($query) {
+                $query->whereDate('created_at', '=', now()->toDateString());
+            }])
+            ->where('role', '!=', 'admin')
+            ->get();
+    
+        $users = User::all();
+    
+        return view('PresenceAdmin.Presence', compact('presence'));
     }
+    
     public function Setting(){
         return view('Settings.Setting',[
             'tittle'=>'Pengaturan'

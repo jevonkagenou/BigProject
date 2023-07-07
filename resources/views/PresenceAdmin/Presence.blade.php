@@ -851,7 +851,7 @@
                                                 <path
                                                     d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                             </svg> Profil</a></li>
-                                    <li><a class="dropdown-item" href="#"><svg
+                                    <li><a class="dropdown-item" href="{{url('logout')}}"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 fill="#969ba0" viewBox="0 0 512 512"
                                                 style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
@@ -1007,15 +1007,16 @@
                                                 <th class="text-center">Nama</th>
                                                 <th class="text-center">Shift</th>
                                                 <th class="text-center">Status</th>
-                                                <th class="text-center">Masuk</th>
-                                                <th class="text-center">Pulang</th>
-                                                <th class="text-center">Lembur Masuk</th>
-                                                <th class="text-center">Lembur Pulang</th>
+                                                <th class="text-center px-5">Masuk</th>
+                                                <th class="text-center px-5">Pulang</th>
+                                                <th class="text-center px-4">Lembur Masuk</th>
+                                                <th class="text-center px-4">Lembur Pulang</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($presence as $data)
                                             <tr>
-                                                <td class="text-center">Tina</td>
+                                                <td class="text-center">{{ $data->name }}</td>
                                                 <td class="text-center">
                                                     <div class="card-body">
                                                         <div class="basic-form">
@@ -1042,48 +1043,15 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="text-center">00.00 <span class="px-1">
-                                                        
-                                                    </span>
-                                                </td>
-                                                <td class="text-center">00.00
-                                                    <span class="px-1">
-                                                        
-                                                    </span>
-                                                </td>
-                                                <td class="text-center">00.00
-                                                    <span class="px-1">
-                                                        
-                                                    </span>
-                                                </td>
-                                                <td class="text-center">00.00
-                                                    <span class="px-1">
-                                                        
-                                                    </span>
-                                                </td>
+                                                @foreach ($data->presence as $p)
+                                                    <td class="text-center">{{ $p->time }}<span class="px-1"></span></td>
+                                                @endforeach
                                             </tr>
+                                        @endforeach
+
                                         </tbody>
                                     </table>
                                 </div>
-                                <nav class="mt-3">
-                                    <ul class="pagination pagination-xs" style="float: right">
-                                        <li class="page-item page-indicator">
-                                            <a class="page-link" href="javascript:void(0)">
-                                                <i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="javascript:void(0)">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="javascript:void(0)">2</a>
-                                        </li>
-
-                                        <li class="page-item page-indicator">
-                                            <a class="page-link" href="javascript:void(0)">
-                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </nav>
 
 
 

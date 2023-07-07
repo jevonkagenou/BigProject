@@ -12,14 +12,15 @@ class EmployeePresence extends Controller
 {
     public function presence(Request $request, $jenis)
     {
+        $time = $request->date ? date("Y-m-d H:i", strtotime(str_replace('/', '-', $request->time))) : date("Y-m-d H:i");
 
         $validatedData = $request->validate([
             'type' => 'required',
             'picture' => 'required',
         ]);
-
         Presence::create([
             'type' => $jenis,
+            'time' => $time,
             'user_id' => Auth()->user()->id,
             'picture' => $request->file('picture')->store('presence','public')
         ]);

@@ -400,6 +400,7 @@
                                                 <div class="col">
                                                     <input type="file" class="form-control btn-xs" id="lampian" name="picture" value="Upload" multiple>
                                                     <input type="hidden" name="type" value="masuk">
+                                                    <input type="hidden" name="time">
                                             </div>
                                             </div>
                                             <br>
@@ -430,6 +431,7 @@
                                                 <div class="col">
                                                     <input type="file" class="form-control btn-xs" id="lampian" name="picture" value="Upload" multiple>
                                                     <input type="hidden" name="type" value="masuk">
+                                                    <input type="hidden" name="time">
                                                 </div>
                                             </div>
                                             <br>
@@ -460,6 +462,7 @@
                                                 <div class="col">
                                                     <input type="file" class="form-control btn-xs" id="lampian" name="picture" value="Upload" multiple>
                                                     <input type="hidden" name="type" value="masuk">
+                                                    <input type="hidden" name="time">
                                                 </div>
                                             </div>
                                             <br>
@@ -490,6 +493,7 @@
                                                 <div class="col">
                                                     <input type="file" class="form-control btn-xs" id="lampian" name="picture" value="Upload" multiple>
                                                     <input type="hidden" name="type" value="masuk">
+                                                    <input type="hidden" name="time">
                                                 </div>
                                             </div>
                                             <br>
