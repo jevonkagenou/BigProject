@@ -10,7 +10,7 @@ class Presence extends Model
     use HasFactory;
 
     protected $table = 'presence';
-    protected $fillable = ['type','user_id','picture'];
+    protected $fillable = ['type','user_id','picture','time'];
 
     public function user()
     {
