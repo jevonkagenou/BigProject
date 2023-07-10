@@ -28,6 +28,7 @@
     <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 </head>
 
@@ -379,7 +380,7 @@
                                                     <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
                                                 </tr>
                                             @endforeach
-                                        </tbody>                                        
+                                        </tbody>                             
                                     </table>
                                 </div>
                             </div>
@@ -588,6 +589,19 @@
         }
         toastr.success("{{ session('success') }}");
     </script>
+    @endif
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @if(Session::has('error'))
+        <script>
+
+        toastr.options =
+        {
+            "timeOut"       : 0, // Set timeOut to 0 to make it sticky
+            "closeButton"   : true,
+            "progressBar"   : true
+        }
+        toastr.error("{{ session('error') }}");
+        </script>
     @endif
 </body>
 
