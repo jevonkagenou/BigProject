@@ -230,6 +230,7 @@
                     <li class="dropdown header-profile">
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
                             <img src="" width="20" alt="" />
+                            <img src="" width="20" alt="" />
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
@@ -421,7 +422,7 @@
                                                     <td>{{ $approve->tipe }}</td>
                                                     <td>
                                                         <span
-                                                            class="badge light 
+                                                            class="badge light
                                                             @if ($approve->status == 'Menunggu') badge-warning
                                                             @elseif ($approve->status == 'Diterima') badge-success
                                                             @elseif ($approve->status == 'Ditolak') badge-danger @endif">{{ $approve->status }}</span>

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class DataEmployeeController extends Controller
 {
     public function Add_Employee(Request $request){
+        // dd($request);
         $request->validate([
             'longname' => 'required',
             'place_birth' => 'required',
@@ -50,19 +51,11 @@ class DataEmployeeController extends Controller
         return redirect()->route('EmployeeAdmin', compact('data'))->with('success', 'Data Anda Telah Ditambahkan');
     }
 
-    public function Add_Image(Request $request){
-        $request ->validate([
-            'images' => 'required|image|file|'
-        ]);
-        if ($files = $request->file('images')) {
-            $extension = $files->getClientOriginalExtension();
-            $name = hash('sha256', time()) . '.' . $extension;
-            $files->move('images', $name);
-        }
-
-        $data = DataEmployee::create([
-            'images' => $name
-        ]);
+    public function Add_Image(Request $request)
+{
+    $request->validate([
+        'images' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    ]);
 
     if ($request->hasFile('images')) {
         $image = $request->file('images');
@@ -77,37 +70,30 @@ class DataEmployeeController extends Controller
     return redirect()->back()->with('success', 'Image uploaded successfully.');
 }
 
-    public function Update_Image(Request $request, $id)
-    {
-        $request->validate([
-            'images' => 'image|mimes:jpeg,png,jpg|max:2048',
+    public function Update_Image(Request $request, $id){
+        $request ->validate([
+            'images' => 'required|image|file|'
         ]);
-        $data = DataEmployee::findOrFail($id);
-        // dd($admin);
-        
-        if ($request->hasFile('images')) {
-            $file = $request->file('images');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('images/', $filename);
-            $data->images = $filename;
+        if ($files = $request->file('images')) {
+            $extension = $files->getClientOriginalExtension();
+            $name = hash('sha256', time()) . '.' . $extension;
+            $files->move('images', $name);
         }
-        
-        $data->save();
-        
-        return redirect()->back()->with('success', 'Gambar profil berhasil diperbarui');
-        
+        $data = DataEmployee::where('id', $id)->update([
+            'images' => $name
+        ]);
+
+        return redirect()->back()->with('success', 'Data Berhasil Diupdate');
     }
+
+    public function Delete_Image($id){
+        DataEmployee::where('id', $id)->update(['images/' => null]);
+
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus');
+    }
+
     public function Employee($id){
         $order = DataEmployee::find($id);
         return view('EmployeeDetails.Employee', compact('order'));
     }
-    public function delete3($id)
-    {
-        $order = DataEmployee::find($id);
-        $order->delete();
-        return redirect()->back()->with('success', 'Profile berhasil di hapus');
-    }
-
 }
-

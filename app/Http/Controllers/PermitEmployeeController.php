@@ -8,8 +8,11 @@ use Carbon\Carbon;
 
 class PermitEmployeeController extends Controller
 {
-    public function Add_Permit(Request $request)
-    {
+    public function Add_Permit(Request $request){
+        if (!auth()->check()) {
+            return redirect('/Login');
+        }
+
         $request->validate([
             'submission_date' => 'required',
             'date_leave' => 'required',
@@ -31,8 +34,6 @@ class PermitEmployeeController extends Controller
             'description' => $request->input('description')
         ]);
 
-        return response()->json(['message' => 'Permit added successfully', 'data' => $data], 201);
+        return redirect()->back();
     }
-
-
 }

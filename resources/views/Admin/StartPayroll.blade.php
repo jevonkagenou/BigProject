@@ -62,7 +62,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .brand-logo img {
         max-width: 80%;
@@ -918,7 +918,7 @@
                                         </thead>
                                         <tbody class="text-center">
                                             <tr>
-                                                @foreach ($collection as $item)                                                    
+                                                {{-- @foreach ($collection as $item)                                                     --}}
                                                 <td>1</td>
                                                 <td>Gaji Bulanan</td>
                                                 <td>Bulan Mei 2023</td>
@@ -929,7 +929,7 @@
 												<td><div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
 													<div class="progress-bar bg-danger" style="width: 100%">100%</div>
 												  </div></td>
-                                                @endforeach
+                                                {{-- @endforeach --}}
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -939,7 +939,7 @@
                     </div>
 
                 </div>
-               
+
             </div>
 		</div>
             <!--**********************************
@@ -950,7 +950,7 @@
         <!--**********************************
             Footer start
    ***********************************-->
-        
+
         <!--**********************************
             Footer end
         ***********************************-->
@@ -997,10 +997,10 @@
             var isAlternateLogo = false;
             var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
             var alternateLogoSrc =  "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-        
+
             function changeLogo() {
                 var logo = document.getElementById("logo");
-        
+
                 if (isAlternateLogo) {
                     logo.src = originalLogoSrc;
                     isAlternateLogo = false;

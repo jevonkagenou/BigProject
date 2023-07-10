@@ -10,4 +10,9 @@ class DataPayroll extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function DataEmployee()
+    {
+        return $this->belongsTo(DataEmployee::class);
+    }
 }

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rekenings', function (Blueprint $table) {
+        Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
-            $table->enum('namabank',['BRI','Mandiri','Bank Jatim','BCA']);                           
-            $table->bigInteger('norekening');
-            $table->string('namapemegang');
-            $table->string('foto') ->nullable();
+            $table->unsignedBigInteger('data_employee_id');
+            $table->foreign('data_employee_id')->references('id')->on('data_employees')->onDelete('cascade');
+            $table->string('status')->default('Belum Siap');
+            $table->bigInteger('total');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rekening');
+        Schema::dropIfExists('payrolls');
     }
 };

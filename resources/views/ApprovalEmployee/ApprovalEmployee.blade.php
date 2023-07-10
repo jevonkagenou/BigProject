@@ -274,7 +274,7 @@
                     </li>
 
                 </ul>
-                
+
             </div>
         </div>
 
@@ -305,7 +305,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @php
+                                            {{-- @php
                                             $no = 1;
                                             @endphp
                                             @foreach ($data as $row)
@@ -316,10 +316,10 @@
                                                 <td><span
                                                         class="badge light badge-warning">{{ $row->status }}</span></td>
                                             </tr>
-                                            @endforeach
+                                            @endforeach --}}
                                         </tbody>
                                     </table>
-{{--                                     
+{{--
                                     <nav class="mt-4">
                                         <ul class="pagination pagination-xs" style="float: right">
                                             <li class="page-item page-indicator">
@@ -334,8 +334,8 @@
                                                     <i class="fa fa-angle-double-right"
                                                         aria-hidden="true"></i></a>
                                             </li>
-                                        </ul> 
-                                        
+                                        </ul>
+
                                     </nav> --}}
                                 </div>
                     {{-- {{ $data->links() }} --}}
@@ -377,10 +377,10 @@
             var isAlternateLogo = false;
             var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
             var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-        
+
             function changeLogo() {
                 var logo = document.getElementById("logo");
-        
+
                 if (isAlternateLogo) {
                     logo.src = originalLogoSrc;
                     isAlternateLogo = false;

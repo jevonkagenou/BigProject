@@ -13,7 +13,7 @@ class DataPayrollController extends Controller
     }
 
     public function Data_Salary(Request $request,$id){
-        
+
         $request->validate([
             'basic_salary' => 'required',
             'overtime_pay' => 'required',

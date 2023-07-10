@@ -1,7 +1,6 @@
 <?php
 use App\Http\Controllers\ApproveAdminController;
 
-
 use App\Http\Controllers\DataEmployeeController;
 use App\Http\Controllers\WorkScheduleController;
 use App\Http\Controllers\ApprovalEmployeeController;
@@ -19,6 +18,7 @@ use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\PermitEmployeeController;
 use App\Http\Controllers\DashboardEmployeeController;
 use App\Http\Controllers\AnnualLeaveController;
+use App\Http\Controllers\PayrollController;
 
 
 use Illuminate\Routing\RouteGroup;
@@ -97,7 +97,6 @@ Route::get('/PayrollSalarySlip', [RouteController::class, 'PayrollSalarySlip'])-
 Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
 Route::get('/StartPayroll', [RouteController::class, 'StartPayroll'])->name('StartPayroll');
 Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
-Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
 Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
 Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
 Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
@@ -125,7 +124,7 @@ Route::GET('/Delete_image/{id}', [DataEmployeeController::class, 'Delete_image']
 // Permit Employee and Approve
 Route::get('/Accepted/{user_id}', [ApproveAdminController::class, 'Accepted'])->name('Accepted');
 Route::get('/Rejected/{user_id}', [ApproveAdminController::class, 'Rejected'])->name('Rejected');
-Route::post('/Add_Permit', [PermitEmployeeController::class, 'Add_Permit'])->name('Add_Permit');
+Route::post('/Add_Permit', [PermitEmployeeController::class, 'Add_Permit'])->middleware('auth')->name('Add_Permit');
 // system update profile admin Jihan
 
 Route::get('/ProfilAdmin/{id}', [SystemAdminController::class, 'ProfilAdmin'])->name('ProfilAdmin');
@@ -167,3 +166,10 @@ Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create')
 
 //presence
 Route::post('PresenceCreate/{jenis}', [EmployeePresence::class, 'presence'])->name('PresenceCreate');
+
+//Payroll
+Route::get('/Payroll', [PayrollController::class, 'Payroll'])->name('Payroll');
+Route::post('/UpdatePayrollStatus', [PayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
+Route::post('/MidtransCallback',[RouteController::class, 'Callback'])->name('Callback');
+
+
