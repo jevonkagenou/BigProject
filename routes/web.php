@@ -95,7 +95,8 @@ Route::get('/Setting', [RouteController::class, 'Setting'])->name('Setting');
 Route::get('/Company', [RouteController::class, 'Company'])->name('Company');
 Route::get('/PayrollSalarySlip', [RouteController::class, 'PayrollSalarySlip'])->name('PayrollSalarySlip');
 Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
-Route::get('/StartPayroll', [RouteController::class, 'StartPayroll'])->name('StartPayroll');
+// start payroll
+Route::get('/StartPayroll', [StartPayrollController::class, 'StartPayroll'])->name('StartPayroll');
 Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
 Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
 Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');

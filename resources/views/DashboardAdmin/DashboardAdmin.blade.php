@@ -105,7 +105,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                {{ $tittle }}
+                        Izin & Cuti Karyawan
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -398,23 +398,18 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
+                                                                    @foreach ($data as $i)
+                                                                        
                                                                     <tr>
-                                                                        <th>1</th>
-                                                                        <td>Shido</td>
-                                                                        <td class="text-center">Cuti</td>
+                                                                        <td>{{ $loop->iteration }}</td>
+                                                                        <td>{{ $i ->User->name }} </td>
+                                                                        <td class="text-center">{{ $i->tipe}}</td>
                                                                     </tr>
-                                                                    <tr>
-                                                                        <th>2</th>
-                                                                        <td>Shun</td>
-                                                                        <td class="text-center">Izin</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>3</th>
-                                                                        <td>Kamijou Touma</td>
-                                                                        <td class="text-center">Cuti</td>
-                                                                    </tr>
+                                                                    @endforeach
+                                                                    
                                                                 </tbody>
                                                             </table>
+                                                              
                                                         </div>
                                                     </div>
                                                 </div>

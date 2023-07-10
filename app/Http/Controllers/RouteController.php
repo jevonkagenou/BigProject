@@ -24,11 +24,29 @@ class RouteController extends Controller
             'tittle'=>'Ringkasan Gaji'
         ]);
     }
-public function PermitLeaveAdmin(){
+  
+    
+    public function PermitLeaveAdmin(Request $request)
+    {
+        $tipe = $request->input('tipe');
+        $status = $request->input('status');
 
-        $approve_admin = PermitEmployee::all();
-        return view('Admin.PermitLeaveAdmin',compact('approve_admin'),['tittle'=>'Izin Cuti Admin']);
+        $query = PermitEmployee::query();
+
+        if ($tipe) {
+            $query->where('tipe', $tipe);
+        }
+
+        if ($status) {
+            $query->where('status', $status);
+        }
+
+        $approve_admin = $query->get();
+
+        return view('Admin.PermitLeaveAdmin', compact('approve_admin'))->with(['tittle' => 'Izin Cuti Karyawan']);
     }
+    
+    
     public function WorkSchedule(){
         return view('Admin.WorkSchedule',[
             'title'=>'Jadwal Kerja'

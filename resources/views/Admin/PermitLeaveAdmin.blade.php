@@ -11,30 +11,59 @@
                         <h4 class="card-title">Izin & Cuti</h4>
                     </div>
                     <div class="card-body">
-                        <div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                            <div class="col-xl-9 col-lg-8 col-md-8 col-sm-7 col-12 mb-3">
-                                <div class="btn-group btn-xs">
-                                    <div class="size-filter">
-                                        <div class="btn-group" role="group"
+                        {{-- <div class="row"> --}}
+                            <div class="col-xl-8">
+                                <div class="col mb-10">
+                                    <div class="size-filter btn-group btn-xs">
+                                        {{-- <div class="btn-group btn-xs" role="group"
                                             aria-label="Basic radio toggle button group">
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
-                                            <label class="btn btn-xs btn-outline-danger" for="btnradio1">Izin</label>
+                                            <input type="radio" class="btn-check" name="btnradio"
+                                                id="btnradio1" value="cuti-khusus" checked>
+                                            <label class="btn btn-outline-danger btn-xs btn-hover"
+                                                for="btnradio1">Cuti Khusus</label>
 
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
-                                            <label class="btn btn-xs btn-outline-danger" for="btnradio2">Sakit</label>
+                                            <input type="radio" class="btn-check" name="btnradio"
+                                                id="btnradio2" value="izin">
+                                            <label class="btn btn-outline-danger btn-xs btn-hover"
+                                                for="btnradio2">Izin</label>
 
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
-                                            <label class="btn btn-xs btn-outline-danger" for="btnradio3">Cuti Khusus</label>
-
-                                            <input type="radio" class="btn-check" id="cutiTahunan"
-                                                data-url="/WorkSchedule" name="btnradio" value="cuti_tahunan">
-                                            <label class="btn btn-xs btn-outline-danger" for="cutiTahunan">Cuti
-                                                Tahunan</label>
-                                        </div>
+                                            <input type="radio" class="btn-check" name="btnradio"
+                                                id="btnradio3" value="sakit">
+                                            <label class="btn btn-outline-danger btn-xs"
+                                                for="btnradio3">Sakit</label>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="row ms-auto">
+                                    <form action="{{ route('PermitLeaveAdmin') }}" method="GET" class="d-flex" style="justify-content: end">
+                                        <div class="col-lg-2 px-1">
+                                            <select class="form-select" name="tipe" id="tipe">
+                                                <option value="">Semua</option>
+                                                <option value="Izin" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Izin') selected @endif>Izin</option>
+                                                <option value="Sakit" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Sakit') selected @endif>Sakit</option>
+                                                <option value="Cuti_Khusus" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Cuti_Khusus') selected @endif>Cuti Khusus</option>
+                                                <option value="Cuti_Tahunan" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Cuti_Tahunan') selected @endif>Cuti Tahunan</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2 px-1">
+                                            <select class="form-select" name="status" id="status">
+                                                <option value="">Semua</option>
+                                                <option value="Menunggu" @if(isset($_GET['status']) && $_GET['status'] == 'Menunggu') selected @endif>Menunggu</option>
+                                                <option value="Ditolak" @if(isset($_GET['status']) && $_GET['status'] == 'Ditolak') selected @endif>Ditolak</option>
+                                                <option value="Diterima" @if(isset($_GET['status']) && $_GET['status'] == 'Diterima') selected @endif>Diterima</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-1">
+                                            <button class="btn btn-xs btn-danger" type="submit"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </form>
+                            </div>
+                            
+                            
+                            
+                        {{-- </div> --}}
+
                         <div class="table-responsive">
                             <table id="example5" class="display" style="min-width: 845px">
                                 <thead>
@@ -69,25 +98,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <nav class="mt-3">
-                            <ul class="pagination pagination-xs" style="float: right">
-                                <li class="page-item page-indicator">
-                                    <a class="page-link" href="javascript:void(0)">
-                                        <i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="javascript:void(0)">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:void(0)">2</a>
-                                </li>
-
-                                <li class="page-item page-indicator">
-                                    <a class="page-link" href="javascript:void(0)">
-                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
+                       
                     </div>
                 </div>
             </div>
