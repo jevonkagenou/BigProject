@@ -18,7 +18,7 @@ class PayrollController extends Controller
             $payroll->status_label = $statuses[$payroll->status];
         }
 
-        return view('Admin.Payroll', ['payrolls' => $payrolls]);
+        return view('Admin.Payroll', compact('payrolls'));
     }
 
     public function UpdatePayrollStatus(Request $request)
