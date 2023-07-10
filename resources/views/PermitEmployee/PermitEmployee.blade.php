@@ -477,17 +477,15 @@
                                         <hr>
                                         <div class="row g-0">
                                             <h6 class="modal-title">Tanggal Izin</h6><br>
-                                            <div class="col-xl-6 col-sm-6  col-6">
+                                            <div class="col-xl-12 col-sm-12  col-12">
                                                 <input type="date" name="submission_date"
                                                     class="form-control btn-xs">
                                             </div>
                                         </div>
                                         <hr>
-                                        <div class="row">
-                                            <div class="col-12">
+                                        <div class="row d-flex">
+                                            <div class="col-6">
                                                 <h6 class="modal-title">Tanggal Izin</h6>
-                                            </div>
-                                            <div class="col-xl-6 col-12">
                                                 <input type="date" name="date_leave" class="form-control">
                                             </div>
                                             <div class="col-xl-6 col-12">

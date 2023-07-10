@@ -131,6 +131,11 @@
             fill: red;
         }
     </style>
+    <style>
+        .align-right {
+        margin-left: auto;
+    }
+    </style>
 </head>
 
 <body>
@@ -989,18 +994,14 @@
                                                 Kebijakan Presensi</a>
                                         </div> --}}
                                     </div>
-                                    <div class="col-xl-9 col-lg-3 col-md-6 col-sm- mt-2 me-auto">
+                                    <div class="col-xl-2 col-lg-3 col-md-6 me-auto">
                                         <div class="button-group text-end">
-                                            <button type="button" class="btn btn-outline-light custom-btn btn-xs">
-                                                05/05/2023<span style="margin-left: 10px;"><i
-                                                        class="bi bi-calendar-check"></i></span>
-                                            </button>
-                                         
+                                            <input type="date" name="submission_date" id="submission_date" class="form-control btn-xs align-right" style="margin-left: 406%">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="table-responsive mt-3">
+                                <div id="data-container" class="table-responsive mt-3">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
@@ -1047,11 +1048,11 @@
                                                     <td class="text-center">{{ $p->time }}<span class="px-1"></span></td>
                                                 @endforeach
                                             </tr>
-                                        @endforeach
-
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
+                            
 
 
 
