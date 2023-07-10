@@ -205,7 +205,7 @@
                                                     <path
                                                         d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                                 </svg> Profil</a></li>
-                                        <li><a class="dropdown-item" href="#"><svg
+                                        <li><a class="dropdown-item" href="{{url('logout')}}"><svg
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     fill="#969ba0" viewBox="0 0 512 512"
                                                     style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
@@ -229,9 +229,10 @@
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('gambar/' . $karyawan->foto) }}" width="20" alt="" />
+                            <img src="" width="20" alt="" />
+                            <img src="" width="20" alt="" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>{{$karyawan->name}}</b></span>
+                                <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
                             </div>
                         </a>
@@ -421,7 +422,7 @@
                                                     <td>{{ $approve->tipe }}</td>
                                                     <td>
                                                         <span
-                                                            class="badge light 
+                                                            class="badge light
                                                             @if ($approve->status == 'Menunggu') badge-warning
                                                             @elseif ($approve->status == 'Diterima') badge-success
                                                             @elseif ($approve->status == 'Ditolak') badge-danger @endif">{{ $approve->status }}</span>
@@ -431,7 +432,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    <nav class="mt-4">
+                                    {{-- <nav class="mt-4">
                                         <ul class="pagination pagination-xs" style="float: right">
                                             <li class="page-item page-indicator">
                                                 <a class="page-link" href="javascript:void(0)">
@@ -444,9 +445,9 @@
                                                 <a class="page-link" href="javascript:void(0)">
                                                     <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                                             </li>
-                                        </ul>
+                                        </ul>P
 
-                                    </nav>
+                                    </nav> --}}
                                 </div>
                             </div>
                         </div>
@@ -476,17 +477,15 @@
                                         <hr>
                                         <div class="row g-0">
                                             <h6 class="modal-title">Tanggal Izin</h6><br>
-                                            <div class="col-xl-6 col-sm-6  col-6">
+                                            <div class="col-xl-12 col-sm-12  col-12">
                                                 <input type="date" name="submission_date"
                                                     class="form-control btn-xs">
                                             </div>
                                         </div>
                                         <hr>
-                                        <div class="row">
-                                            <div class="col-12">
+                                        <div class="row d-flex">
+                                            <div class="col-6">
                                                 <h6 class="modal-title">Tanggal Izin</h6>
-                                            </div>
-                                            <div class="col-xl-6 col-12">
                                                 <input type="date" name="date_leave" class="form-control">
                                             </div>
                                             <div class="col-xl-6 col-12">

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rekening;
+use App\Models\Payroll;
 use App\Models\DataEmployee;
 use App\Models\PermitEmployee;
+use App\Models\Presence;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RouteController extends Controller
@@ -22,11 +24,29 @@ class RouteController extends Controller
             'tittle'=>'Ringkasan Gaji'
         ]);
     }
-public function PermitLeaveAdmin(){
+  
+    
+    public function PermitLeaveAdmin(Request $request)
+    {
+        $tipe = $request->input('tipe');
+        $status = $request->input('status');
 
-        $approve_admin = PermitEmployee::all();
-        return view('Admin.PermitLeaveAdmin',compact('approve_admin'),['tittle'=>'Izin Cuti Admin']);
+        $query = PermitEmployee::query();
+
+        if ($tipe) {
+            $query->where('tipe', $tipe);
+        }
+
+        if ($status) {
+            $query->where('status', $status);
+        }
+
+        $approve_admin = $query->get();
+
+        return view('Admin.PermitLeaveAdmin', compact('approve_admin'))->with(['tittle' => 'Izin Cuti Karyawan']);
     }
+    
+    
     public function WorkSchedule(){
         return view('Admin.WorkSchedule',[
             'title'=>'Jadwal Kerja'
@@ -75,9 +95,20 @@ public function PermitLeaveAdmin(){
             'tittle'=>'Approval Presensi'
         ]);
     }
-    public function Presence(){
-        return view('PresenceAdmin.Presence');
+    public function Presence() {
+        $presence = User::query()
+            ->with(['presence' => function ($query) {
+                $query->whereDate('created_at', '=', now()->toDateString());
+            }])
+            ->where('role', '!=', 'admin')
+            ->get();
+    
+        $users = User::all();
+    
+        return view('PresenceAdmin.Presence', compact('presence'));
     }
+
+    
     public function Setting(){
         return view('Settings.Setting',[
             'tittle'=>'Pengaturan'
@@ -109,10 +140,46 @@ public function PermitLeaveAdmin(){
         ]);
     }
     public function PayrollStep(){
-        return view('Admin.PayrollStep',[
-            'tittle'=>'Langkah Langkah Pembayaran Gaji'
-        ]);
+
+        $data = Payroll::all();
+        $total = $data->first()->total;
+        // Set your Merchant Server Key
+        // \Midtrans\Config::$serverKey = config('midtrans.server_key');
+        // // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        // \Midtrans\Config::$isProduction = false;
+        // // Set sanitization on (default)
+        // \Midtrans\Config::$isSanitized = true;
+        // // Set 3DS transaction for credit card to true
+        // \Midtrans\Config::$is3ds = true;
+
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => $data->id(),
+                'gross_amount' => $total,
+            ),
+            'customer_details' => array(
+                'first_name' => 'budi',
+                'last_name' => 'pratama',
+                'email' => 'budi.pra@example.com',
+                'phone' => '08111222333',
+            ),
+        );
+
+        // $snapToken = \Midtrans\Snap::getSnapToken($params);
+        return view('Admin.PayrollStep',compact('snapToken','data'),['tittle'=>'Langkah Langkah Pembayaran Gaji']);
     }
+    public function Callback(Request $request){
+        $serverKey = config('midtrans.server_key');
+        $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
+
+        if($hashed == $request->signature_key)
+            if($request->transaction_status == 'capture'){
+                $data = Payroll::find($request->order_id);
+                $data->update(['status' => 'Sudah Bayar']);
+            }
+    }
+
+
     public function Detailkaryawan(){
         return view('Admin.Detailkaryawan',[
                 'tittle'=>'Detail Karyawan'
@@ -132,14 +199,14 @@ public function PermitLeaveAdmin(){
 
     public function AddAccount(Request $request)
     {
-        $rekeningList = Rekening::all();
+        // $rekeningList = Rekening::all();
 
         return view('Settings.AddAccount', compact('rekeningList'),[
             'tittle'=>'Tambah Rekening'
         ]);
     }
 
-   
+
     public function SettingSchedule(){
         return view('Settings.SettingSchedule',[
             'tittle'=>'Jadwal Kerja'

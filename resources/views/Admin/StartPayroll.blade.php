@@ -62,7 +62,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .brand-logo img {
         max-width: 80%;
@@ -759,7 +759,7 @@
                                                 <path
                                                     d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                             </svg> Profil</a></li>
-                                    <li><a class="dropdown-item" href="#"><svg
+                                    <li><a class="dropdown-item" href="{{url('logout')}}"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 fill="#969ba0" viewBox="0 0 512 512"
                                                 style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
@@ -918,6 +918,7 @@
                                         </thead>
                                         <tbody class="text-center">
                                             <tr>
+                                                @foreach ($payrolls as $item)                                      
                                                 <td>1</td>
                                                 <td>Gaji Bulanan</td>
                                                 <td>Bulan Mei 2023</td>
@@ -928,6 +929,7 @@
 												<td><div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
 													<div class="progress-bar bg-danger" style="width: 100%">100%</div>
 												  </div></td>
+                                                @endforeach
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -937,7 +939,7 @@
                     </div>
 
                 </div>
-               
+
             </div>
 		</div>
             <!--**********************************
@@ -948,7 +950,7 @@
         <!--**********************************
             Footer start
    ***********************************-->
-        
+
         <!--**********************************
             Footer end
         ***********************************-->
@@ -995,10 +997,10 @@
             var isAlternateLogo = false;
             var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
             var alternateLogoSrc =  "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-        
+
             function changeLogo() {
                 var logo = document.getElementById("logo");
-        
+
                 if (isAlternateLogo) {
                     logo.src = originalLogoSrc;
                     isAlternateLogo = false;

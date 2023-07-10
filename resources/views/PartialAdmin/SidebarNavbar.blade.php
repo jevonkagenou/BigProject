@@ -745,7 +745,7 @@
                                             <path
                                                 d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                         </svg> Profil</a></li>
-                                <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                                <li><a class="dropdown-item" href="{{url('logout')}}"><svg xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" fill="#969ba0" viewBox="0 0 512 512"
                                             style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
                                             <path
@@ -799,14 +799,14 @@
                     </a>
 
                 </li>
-                @if ($tittle == "Izin Cuti Admin")
+                @if ($tittle == "Izin Cuti Karyawan")
                 <li class="mm-active"><a class="ai-icon red-hover " href="/PermitLeaveAdmin" aria-expanded="false">
                     <svg class="svg red-icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
                     <span class="nav-text ">Izin Cuti</span>
                     </a>
                 </li>
                 @endif
-                @if ($tittle !== "Izin Cuti Admin")
+                @if ($tittle !== "Izin Cuti Karyawan")
                 <li><a class="ai-icon red-hover" href="/PermitLeaveAdmin" aria-expanded="false">
                     <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
                     <span class="nav-text ">Izin Cuti</span>

@@ -167,3 +167,5 @@ Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create')
 
 //presence
 Route::post('PresenceCreate/{jenis}', [EmployeePresence::class, 'presence'])->name('PresenceCreate');
+Route::post('/PresenceCreate/{jenis}', [EmployeePresence::class, 'presence'])->name('PresenceCreate');
+Route::get('/Date', [RouteController::class, 'tampilkanData'])->name('Date');

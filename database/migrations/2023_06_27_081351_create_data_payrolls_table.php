@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('data_payrolls', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('data_employee_id');
+            $table->foreign('data_employee_id')->references('id')->on('data_employees')->onDelete('cascade');
             $table->bigInteger('basic_salary');
             $table->bigInteger('overtime_pay');
             $table->bigInteger('credit_allowance');
