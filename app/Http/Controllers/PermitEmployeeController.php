@@ -8,6 +8,7 @@ use Carbon\Carbon;
 
 class PermitEmployeeController extends Controller
 {
+   
     public function Add_Permit(Request $request)
     {
         $request->validate([

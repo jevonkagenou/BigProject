@@ -799,14 +799,14 @@
                     </a>
 
                 </li>
-                @if ($tittle == "Izin Cuti Admin")
+                @if ($tittle == "Izin Cuti Karyawan")
                 <li class="mm-active"><a class="ai-icon red-hover " href="/PermitLeaveAdmin" aria-expanded="false">
                     <svg class="svg red-icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
                     <span class="nav-text ">Izin Cuti</span>
                     </a>
                 </li>
                 @endif
-                @if ($tittle !== "Izin Cuti Admin")
+                @if ($tittle !== "Izin Cuti Karyawan")
                 <li><a class="ai-icon red-hover" href="/PermitLeaveAdmin" aria-expanded="false">
                     <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
                     <span class="nav-text ">Izin Cuti</span>
