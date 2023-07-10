@@ -9,5 +9,11 @@ class AddWorkSchedule extends Model
 {
     use HasFactory;
     protected $guarded =[];
-    protected $fillable = ['nama_jadwal'];
+    protected $fillable = ['user_id'];
+
+    public function Dateworkschedule()
+    {
+        return $this->belongsTo(DateWorkSchedule::class);
+    }
+
 }

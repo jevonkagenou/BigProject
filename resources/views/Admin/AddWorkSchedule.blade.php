@@ -19,6 +19,7 @@
 
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Datatable -->
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
@@ -241,49 +242,53 @@
                             <div class="card-body">
                                 <form action="InsertWorkSchedule" method="post">
                                     @csrf
-                                <div class="row">
-                                    <div class="col-lg-12   order-lg-2 mb-4">
-                                        <div class="d-flex justify-content-end">
-                                            <a href="/SettingSchedule" type="button" class="btn btn-danger btn-xs"><i class="fa fa-arrow-left"></i> Keluar</a>
-                                        </div>
-
-                                        <p></p>
-
-                                        <div class="mb-3">
-                                            <label for="address" class="form-label">Nama Jadwal</label>
-                                            <input type="text" class="form-control" id="nama_lengkap" name="nama_jadwal" placeholder="Nama Lengkap" required="">
-                                            <div class="invalid-feedback">Nama</div>
-                                        </div>
-
-                                        <div id="container">
-                                            <div class="baris">
-                                                <button type="button" class="btn btn-outline-danger btn-xs tambah-baris">
-                                                    <i class="fa fa-plus"></i> Tambah Baris
-                                                </button>
+                                    <div class="row">
+                                        <div class="col-lg-12   order-lg-2 mb-4">
+                                            <div class="d-flex justify-content-end">
+                                                <a href="/SettingSchedule" type="button" class="btn btn-danger btn-xs"><i class="fa fa-arrow-left"></i> Keluar</a>
                                             </div>
 
-                                            <div class="baris " style="display: flex; justify-content: align-items: center;">
-                                                <span>Hari ke 1</span>
-                                                <select class="shift" style="width: 200px;" name="shift[]">
-                                                    <option value="Pagi">Pagi</option>
-                                                    <option value="Siang ">Siang</option>
-                                                    <option value="Malam ">Malam</option>
+                                            <p></p>
+
+                                            <div class="mb-3">
+                                                <label for="address" class="form-label">Nama Lengkap</label>
+                                                <select class="js-example-basic-single" name="user_id" placeholder="Nama Lengkap">
+                                                 @foreach ($data as $row)
+                                                 <option value="{{ $row->id }}">{{ $row->name }}</option>
+                                                 @endforeach
                                                 </select>
-                                                &nbsp;
-                                                <input type="date" name="date[]">
-                                                <i class="fa fa-trash hapus-baris"></i>
+                                                <div class="invalid-feedback">Nama</div>
                                             </div>
+
+                                            <div id="container">
+                                                <div class="baris">
+                                                    <button type="button" class="btn btn-outline-danger btn-xs tambah-baris">
+                                                        <i class="fa fa-plus"></i> Tambah Baris
+                                                    </button>
+                                                </div>
+
+                                                <div class="baris " style="display: flex; justify-content: align-items: center;">
+                                                    <span>Hari ke 1</span>
+                                                    <select class="shift" style="width: 200px;" name="shift[]">
+                                                        <option value="Pagi">Pagi</option>
+                                                        <option value="Siang ">Siang</option>
+                                                        <option value="Malam ">Malam</option>
+                                                    </select>
+                                                    &nbsp;
+                                                    <input type="date" name="date[]">
+                                                    <i class="fa fa-trash hapus-baris"></i>
+                                                </div>
+                                            </div>
+
+                                            <p></p>
+
+                                            <div class="text-center d-flex justify-content-center">
+                                                <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                            </div>
+
                                         </div>
-
-                                        <p></p>
-
-                                        <div class="text-center d-flex justify-content-center">
-                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
-                                        </div>
-
                                     </div>
-                                </div>
-                            </form>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -332,6 +337,7 @@
         <script src="{{ asset('js/demo.js') }}"></script>
         <script src="{{ asset('js/styleSwitcher.js') }}"></script>
         <script src="https://kit.fontawesome.com/399218ad26.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script>
             var isAlternateLogo = false;
             var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
@@ -369,8 +375,8 @@
                         '<option>Siang</option>' +
                         '<option>Malam</option>' +
                         '</select>' +
-                        '&nbsp;'+
-                        '<input type="date" name="date[]">'+
+                        '&nbsp;' +
+                        '<input type="date" name="date[]">' +
                         '<i class="fa fa-trash hapus-baris"></i>' +
                         '</div>';
 
@@ -380,6 +386,11 @@
                         $(this).closest('.baris').remove();
                     });
                 }
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('.js-example-basic-single').select2();
             });
         </script>
 

@@ -11,8 +11,8 @@ $.ajax({
         $.each(response, function(index, item) {
             if (item) {
               tanggal.push({
-                title: item.shift,
-                start: item.date,
+                title: item.user_id,
+                start: item.created_at,
                 color: 'green'
               });
             }
@@ -55,6 +55,24 @@ $.ajax({
               editable: true,
               dayMaxEvents: true, // allow "more" link when too many events
               events:tanggal,
+              eventClick: function(info) {
+                switch(info.event.backgroundColor){
+                    case "blue":
+                        alert(info.event.title)
+                        $('#exampleModalCenterhapus').modal('show')
+                        break
+                    case "green":
+                        alert(info.event.title)
+                        break
+
+                }
+                // alert('Event: ' + info.event.title);
+                // alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+                // alert('View: ' + info.view.type);
+
+                // change the border color just for fun
+                info.el.style.borderColor = 'red';
+              }
             });
 
             calendar.render();

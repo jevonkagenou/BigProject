@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AddWorkSchedule;
+use App\Models\DateWorkSchedule;
 use App\Models\PermitEmployee;
 use App\Models\Presence;
 use Illuminate\Http\Request;
@@ -28,7 +30,7 @@ class ViewEmployeeController extends Controller
 
         return view('PermitEmployee.PermitEmployee', compact('data', 'title'));
     }
-    
+
 
     public function ApprovalEmployee(){
         return view ('ApprovalEmployee.ApprovalEmployee',[
@@ -48,10 +50,14 @@ class ViewEmployeeController extends Controller
         ]);
     }
 
-    public function Calendar(){
-        return view ('karyawan.KalenderKaryawan',[
-            'title'=>'Kalender'
-        ]);
+    public function Calendar(Request $request)
+    {
+        if($request->ajax()){
+            $data = DateWorkSchedule::all();
+            return response($data);
+        }
+
+        return view ('karyawan.KalenderKaryawan');
     }
     public function Schedule(){
         return view ('Admin.Schedule',[

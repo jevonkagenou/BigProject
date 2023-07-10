@@ -115,7 +115,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                {{ $title }}
+                            Kalender
                             </div>
                         </div>
                         <div class="justify-content-end">
@@ -295,7 +295,7 @@
                     <p></p>
 
                 </ul>
-                
+
             </div>
         </div>
 
@@ -312,8 +312,9 @@
                 </div> --}}
                 <!-- row -->
                         <div class="row">
-                            <div class="card">
+                            <div class="card"  {{ (Auth::User()->id) }}>
                                 <div class="card-body">
+
                                     <div id="calendar" class="app-fullcalendar"></div>
                                     <div id="external-events" class="my-3">
                                         <div class="external-event btn-success light" data-class="bg-success"><i class="fa fa-move"></i><span>Hari Kerja</span></div>
@@ -423,10 +424,10 @@
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-    
+
         function changeLogo() {
             var logo = document.getElementById("logo");
-    
+
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;
                 isAlternateLogo = false;

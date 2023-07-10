@@ -6,6 +6,7 @@ use App\Models\WorkSchedule;
 use App\Http\Controllers\Controller;
 use App\Models\AddWorkSchedule;
 use App\Models\DateWorkSchedule;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class WorkScheduleController extends Controller
@@ -56,17 +57,17 @@ class WorkScheduleController extends Controller
 
     public function AddWorkSchedule()
     {
-
-        return view('Admin.AddWorkSchedule');
+        $data = User::all();
+        return view('Admin.AddWorkSchedule',compact('data'));
     }
     public function InsertWorkSchedule(Request $request)
     {
         $data = $request->all();
-    
+
         $AddWorkSchedule = new AddWorkSchedule;
-        $AddWorkSchedule->nama_jadwal = $data['nama_jadwal'];
+        $AddWorkSchedule->user_id = $data['user_id'];
         $AddWorkSchedule->save();
-    
+
         if (isset($data['date'])) {
             foreach ($data['date'] as $key => $date) {
                 if (isset($data['shift'][$key])) {
@@ -78,12 +79,12 @@ class WorkScheduleController extends Controller
                 }
             }
         }
-    
+
         return redirect()->back()->with('status', 'Data berhasil ditambahkan');
     }
-    
-    
-    
-    
+
+
+
+
 
 }
