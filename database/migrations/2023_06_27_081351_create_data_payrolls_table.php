@@ -18,12 +18,10 @@ return new class extends Migration
             $table->bigInteger('basic_salary');
             $table->bigInteger('overtime_pay');
             $table->bigInteger('credit_allowance');
-            $table->bigInteger('other_allowances');
-            $table->bigInteger('cooperative');
-            $table->bigInteger('salary_cut');
-            $table->bigInteger('lateness');
-            $table->bigInteger('total_home_pay');
-            $table->bigInteger('total');
+            $table->bigInteger('cooperative')->nullable();
+            $table->bigInteger('salary_cut')->nullable();
+            $table->bigInteger('lateness')->nullable();
+            $table->bigInteger('total')->default(0);
             $table->timestamps();
         });
     }

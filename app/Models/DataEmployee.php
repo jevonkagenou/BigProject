@@ -12,13 +12,15 @@ class DataEmployee extends Model
     protected $table = 'data_employees';
     protected $fillable = ['longname', 'place_birth', 'date', 'gender', 'marry', 'blood_group', 'email', 'region', 'numberphone', 'address', 'last_study', 'educational_institution', 'study_program', 'images'];
 
-    public function DataPayroll()
-    {
+    public function DataPayroll(){
         return $this->hasMany(DataPayroll::class);
     }
 
-    public function Payroll()
-    {
+    public function Payroll(){
         return $this->hasMany(DataPayroll::class);
+    }
+
+    public function OtherAllowances(){
+        return $this->hasMany(OtherAllowances::class);
     }
 }

@@ -24,8 +24,8 @@ class RouteController extends Controller
             'tittle'=>'Ringkasan Gaji'
         ]);
     }
-  
-    
+
+
     public function PermitLeaveAdmin(Request $request)
     {
         $tipe = $request->input('tipe');
@@ -45,8 +45,8 @@ class RouteController extends Controller
 
         return view('Admin.PermitLeaveAdmin', compact('approve_admin'))->with(['tittle' => 'Izin Cuti Karyawan']);
     }
-    
-    
+
+
     public function WorkSchedule(){
         return view('Admin.WorkSchedule',[
             'title'=>'Jadwal Kerja'
@@ -102,13 +102,13 @@ class RouteController extends Controller
             }])
             ->where('role', '!=', 'admin')
             ->get();
-    
+
         $users = User::all();
-    
+
         return view('PresenceAdmin.Presence', compact('presence'));
     }
 
-    
+
     public function Setting(){
         return view('Settings.Setting',[
             'tittle'=>'Pengaturan'
@@ -144,17 +144,17 @@ class RouteController extends Controller
         $data = Payroll::all();
         $total = $data->first()->total;
         // Set your Merchant Server Key
-        // \Midtrans\Config::$serverKey = config('midtrans.server_key');
-        // // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        // \Midtrans\Config::$isProduction = false;
-        // // Set sanitization on (default)
-        // \Midtrans\Config::$isSanitized = true;
-        // // Set 3DS transaction for credit card to true
-        // \Midtrans\Config::$is3ds = true;
+        \Midtrans\Config::$serverKey = config('midtrans.server_key');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        \Midtrans\Config::$isProduction = false;
+        // Set sanitization on (default)
+        \Midtrans\Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        \Midtrans\Config::$is3ds = true;
 
         $params = array(
             'transaction_details' => array(
-                'order_id' => $data->id(),
+                'order_id' => rand(),
                 'gross_amount' => $total,
             ),
             'customer_details' => array(
@@ -165,7 +165,7 @@ class RouteController extends Controller
             ),
         );
 
-        // $snapToken = \Midtrans\Snap::getSnapToken($params);
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
         return view('Admin.PayrollStep',compact('snapToken','data'),['tittle'=>'Langkah Langkah Pembayaran Gaji']);
     }
     public function Callback(Request $request){
@@ -191,10 +191,10 @@ class RouteController extends Controller
             'tittle'=>'Detail Karyawan'
     ]);
     }
-    public function SalaryAdjustment(){
-        return view('EmployeeDetails.SalaryAdjustment',[
-            'tittle'=>'Detail Karyawan'
-    ]);
+
+    public function SalaryAdjustment($id){
+        $data = DataEmployee::find($id);
+        return view('EmployeeDetails.SalaryAdjustment',compact('data'),['tittle'=>'Detail Karyawan']);
     }
 
     public function AddAccount(Request $request)

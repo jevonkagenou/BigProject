@@ -967,12 +967,8 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <hr />
-                                                                                    <div class="row">
-                                                                                        <button type="button" class="tambah-pendapatan text-red" style="border: none; background: none;">
-                                                                                            <i class="bi bi-plus"></i> Tambah Pendapatan
-                                                                                        </button>
-                                                                                        <div id="container"></div>
-                                                                                    </div>
+
+                                                                                    
                                                                                     <hr>
                                                                                     <div class="row baris">
                                                                                         <div class="col-xl-5 col-12">

@@ -918,7 +918,7 @@
                                         </thead>
                                         <tbody class="text-center">
                                             <tr>
-                                                @foreach ($payrolls as $item)                                      
+                                                {{-- @foreach ($payrolls as $item)        --}}
                                                 <td>1</td>
                                                 <td>Gaji Bulanan</td>
                                                 <td>Bulan Mei 2023</td>
@@ -929,7 +929,7 @@
 												<td><div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
 													<div class="progress-bar bg-danger" style="width: 100%">100%</div>
 												  </div></td>
-                                                @endforeach
+                                                {{-- @endforeach --}}
                                                 </tr>
                                         </tbody>
                                     </table>

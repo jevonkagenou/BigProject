@@ -8,7 +8,7 @@ class PayrollController extends Controller
     public function Payroll()
     {
         $payrolls = Payroll::all();
-        $statuses = [
+    $statuses = [
             'Belum Siap' => 'btnradio14',
             'Siap Bayar' => 'btnradio15',
             'Sudah Bayar' => 'btnradio16'
@@ -35,6 +35,7 @@ class PayrollController extends Controller
         $payroll->status = $newStatus;
         $payroll->save();
 
-        return response()->json(['message' => 'Status payroll berhasil diperbarui'], 200);
+        return response()->json(['message' => 'Status payroll berhasil diperbarui'], 200);
+
     }
 }
