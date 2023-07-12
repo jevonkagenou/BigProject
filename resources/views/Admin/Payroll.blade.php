@@ -19,11 +19,27 @@
 
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="admin, dashboard" />
+    <meta name="author" content="DexignZone" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dompet : Payment Admin Template" />
+    <meta property="og:title" content="Dompet : Payment Admin Template" />
+    <meta property="og:description" content="Dompet : Payment Admin Template" />
+    <meta property="og:image" content="social-image.png" />
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- PAGE TITLE HERE -->
+    <title>Kalopsia</title>
+
+    <!-- FAVICONS ICON -->
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
     <!-- Datatable -->
-    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
-    <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 </head>
 
@@ -861,32 +877,32 @@
                                                 <td style="text-align: center;">
                                                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                         @if ($item->status == 'Belum Siap')
-                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}" checked>
-                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
+                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}" checked>
+                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
 
-                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}">
-                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
+                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}">
+                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
 
-                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" disabled>
-                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
+                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" disabled>
+                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
                                                         @elseif ($item->status == 'Siap Bayar')
-                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}">
-                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
+                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}">
+                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
 
-                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}" checked>
-                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
+                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}" checked>
+                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
 
-                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" disabled>
-                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
+                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" disabled>
+                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
                                                         @elseif ($item->status == 'Sudah Bayar')
-                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}" disabled>
-                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
+                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}" disabled>
+                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
 
-                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}" disabled>
-                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
+                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}" disabled>
+                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
 
-                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" checked>
-                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
+                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" checked>
+                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
                                                         @endif
                                                     </div>
                                                 </td>
@@ -1165,24 +1181,22 @@
         </div>
     </div>
     <!-- Required vendors -->
-    <script src="{{ asset('vendor/global/global.min.js') }}"></script>
-    <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
-    <script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
-
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
     <!-- Apex Chart -->
-    <script src="{{ asset('vendor/apexchart/apexchart.js') }}"></script>
-    <script src="{{ asset('vendor/nouislider/nouislider.min.js') }}"></script>
-    <script src="{{ asset('vendor/wnumb/wNumb.js') }}"></script>
+    <script src="vendor/apexchart/apexchart.js"></script>
 
-    <!-- Dashboard 1 -->
-    <script src="{{ asset('js/dashboard/dashboard-1.js') }}"></script>
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
 
-    <script src="{{ asset('js/custom.min.js') }}"></script>
-    <script src="{{ asset('js/dlabnav-init.js') }}"></script>
-    <script src="{{ asset('js/demo.js') }}"></script>
-    <script src="{{ asset('js/styleSwitcher.js') }}"></script>
+    <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/dlabnav-init.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         const radioButtons = document.querySelectorAll('.btn-check');
         radioButtons.forEach(function(button) {
