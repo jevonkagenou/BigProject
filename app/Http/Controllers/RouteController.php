@@ -69,9 +69,6 @@ class RouteController extends Controller
             'tittle'=>'Tambah Slip Gaji'
         ]);
     }
-    public function Payroll(){
-        return view('Admin.Payroll');
-    }
     public function Validation(){
         return view('Admin.Validation',[
             'tittle'=>'Validasi'

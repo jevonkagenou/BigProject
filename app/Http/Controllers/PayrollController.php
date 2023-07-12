@@ -3,22 +3,23 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Payroll;
+
 class PayrollController extends Controller
 {
     public function Payroll()
     {
-        $payrolls = Payroll::all();
+        $payroll = Payroll::all();
     $statuses = [
             'Belum Siap' => 'btnradio14',
             'Siap Bayar' => 'btnradio15',
             'Sudah Bayar' => 'btnradio16'
         ];
 
-        foreach ($payrolls as $payroll) {
-            $payroll->status_label = $statuses[$payroll->status];
+        foreach ($payroll as $payrollId) {
+            $payrollId->status_label = $statuses[$payrollId->status];
         }
 
-        return view('Admin.Payroll', compact('payrolls'));
+        return view('Admin.Payroll', compact('payroll'));
     }
 
     public function UpdatePayrollStatus(Request $request)

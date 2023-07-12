@@ -15,6 +15,7 @@ use App\Http\Controllers\ViewEmployeeController;
 use App\Http\Controllers\RouteKaryawanController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DataPayrollController;
+use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\PermitEmployeeController;
 use App\Http\Controllers\DashboardEmployeeController;
@@ -114,31 +115,7 @@ Route::post('/InsertWorkSchedule', [WorkScheduleController::class, 'InsertWorkSc
 
 Route::get('/deleteWorkSchedule/{id}', [WorkScheduleController::class, 'deleteWorkSchedule'])->name('deleteWorkSchedule');
 
-
-
-
 Route::get('/SalaryPaymentReport', [RouteController::class, 'SalaryPaymentReport'])->name('SalaryPaymentReport');
-
-Route::get('/AnnouncementUpdate', [RouteController::class, 'AnnouncementUpdate'])->name('AnnouncementUpdate');
-Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
-Route::get('/PayrolEmployee/{id}', [DataPayrollController::class, 'PayrolEmployee'])->name('PayrolEmployee');
-Route::get('/PresenceApproval', [RouteController::class, 'PresenceApproval'])->name('PresenceApproval');
-Route::get('/Presence', [RouteController::class, 'Presence'])->name('Presence');
-Route::get('/Setting', [RouteController::class, 'Setting'])->name('Setting');
-Route::get('/Company', [RouteController::class, 'Company'])->name('Company');
-Route::get('/PayrollSalarySlip', [RouteController::class, 'PayrollSalarySlip'])->name('PayrollSalarySlip');
-Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
-Route::get('/StartPayroll', [RouteController::class, 'StartPayroll'])->name('StartPayroll');
-Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
-Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
-Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
-Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
-Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
-Route::get('/SalaryAdjustment', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
-Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
-Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
-Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
-
 
 Route::get('/SettingSchedule', [RouteController::class, 'SettingSchedule'])->name('SettingSchedule');
 Route::get('/DetileSchedule', [RouteController::class, 'DetileSchedule'])->name('DetileSchedule');

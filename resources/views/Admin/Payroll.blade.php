@@ -878,7 +878,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($payrolls as $item)
+                                                @foreach ($payroll as $item)
                                                 <tr class="text-center">
                                                     <td>{{$loop->iteration}}</td>
                                                     <td class="accordion" id="accord-11One" data-bs-toggle="collapse" data-bs-target="#collapse11One" aria-controls="collapse11One" aria-expanded="true" role="button">
@@ -895,7 +895,7 @@
                                                             <input type="radio" class="btn-check" name="btnradio" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" {{ $item->status == 'Sudah Bayar' ? 'checked' : '' }}>
                                                             <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
                                                         </div>
-                                                    </td>
+                                                    </td>
                                                     <td>Rp.{{ number_format($item->total, 0, ',', '.') }}</td>
                                                 </tr>
                                                 @endforeach
@@ -968,7 +968,7 @@
                                                                                     </div>
                                                                                     <hr />
 
-                                                                                    
+
                                                                                     <hr>
                                                                                     <div class="row baris">
                                                                                         <div class="col-xl-5 col-12">
