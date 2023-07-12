@@ -399,17 +399,17 @@
                                                                 </thead>
                                                                 <tbody>
                                                                     @foreach ($data as $i)
-                                                                        
+
                                                                     <tr>
                                                                         <td>{{ $loop->iteration }}</td>
                                                                         <td>{{ $i ->User->name }} </td>
                                                                         <td class="text-center">{{ $i->tipe}}</td>
                                                                     </tr>
                                                                     @endforeach
-                                                                    
+
                                                                 </tbody>
                                                             </table>
-                                                              
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -537,8 +537,8 @@
     <script>
         var options = {
             series: [{
-                data: [{{$belumbayar}}, 
-                {{$bayar}},] 
+                data: [{{$belumbayar}},
+                {{$bayar}},]
             }],
             chart: {
                 height: 350,

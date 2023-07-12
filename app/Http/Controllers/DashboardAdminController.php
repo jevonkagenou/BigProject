@@ -15,7 +15,7 @@ class DashboardAdminController extends Controller
             ->limit(5)
             ->get();
 $belumbayar=Payroll::where('status', 'Belum Siap')->count();
-$bayar=Payroll::where('status', 'Sudah Siap')->count();
+$bayar=Payroll::where('status', 'Sudah Bayar')->count();
     return view('DashboardAdmin.DashboardAdmin', compact('data', 'belumbayar', 'bayar'), [
         'title' => 'Beranda'
     ]);

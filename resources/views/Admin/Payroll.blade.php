@@ -671,33 +671,23 @@
                     </div>
                     <ul class="navbar-nav header-right">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30"
-                                    height="30" viewBox="0 0 24 24" fill="none" stroke="black"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather feather-user">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                <li><a class="dropdown-item" href="/ProfilAdmin"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="20" height="20" fill="#969ba0" viewBox="0 0 448 512"
-                                            style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
-                                            <path
-                                                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                                <li><a class="dropdown-item" href="/ProfilAdmin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#969ba0" viewBox="0 0 448 512" style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
+                                            <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                         </svg> Profil</a></li>
-                                <li><a class="dropdown-item" href="{{url('logout')}}"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" fill="#969ba0" viewBox="0 0 512 512"
-                                            style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
-                                            <path
-                                                d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+                                <li><a class="dropdown-item" href="{{url('logout')}}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#969ba0" viewBox="0 0 512 512" style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
+                                            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
                                         </svg> Keluar</a></li>
                             </ul>
                         </li>
                     </ul>
-                </div>
+            </div>
             </nav>
         </div>
 
@@ -817,268 +807,287 @@
                                                 </svg>
                                                 Bayar Gaji
                                             </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- baris dua -->
+                            <div class="row mt-2">
+                                <div class="col-md-2 col-sm-3 col-4">
+                                    <button class="btn btn-outline-light btn-xs">
+                                        Bulan ini
+                                    </button>
+                                </div>
+                                <div class="col-md-1 col-sm-5 col-3" style="margin-left: -8%">
+                                    <div class="dropdown-basic">
+                                        <button class="btn btn-outline-light btn-xs dropdown-toggle" data-bs-toggle="dropdown">
+                                            Mei
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Juni</a>
+                                            <a class="dropdown-item" href="#">Juli</a>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- baris dua -->
-                                <div class="row mt-2">
-                                    <div class="col-md-2 col-sm-3 col-4">
-                                        <button class="btn btn-outline-light btn-xs">
-                                            Bulan ini
+                                <div class="col-lg-9 col-md-9 col-sm-2 col-6 ">
+                                    <div class="responsive-button text-end">
+                                        <button type="button" class="btn btn-outline-light btn-xs">
+                                            <span>
+                                                <i class="bi bi-download px-1"></i>
+                                            </span>
+                                            Import
                                         </button>
                                     </div>
-                                    <div class="col-md-1 col-sm-5 col-3" style="margin-left: -8%">
-                                        <div class="dropdown-basic">
-                                            <button class="btn btn-outline-light btn-xs dropdown-toggle" data-bs-toggle="dropdown">
-                                                Mei
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Juni</a>
-                                                <a class="dropdown-item" href="#">Juli</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-9 col-md-9 col-sm-2 col-6 ">
-                                        <div class="responsive-button text-end">
-                                            <button type="button" class="btn btn-outline-light btn-xs">
-                                                <span>
-                                                    <i class="bi bi-download px-1"></i>
-                                                </span>
-                                                Import
-                                            </button>
-                                        </div>
-                                    </div>
                                 </div>
+                            </div>
 
-                                <div class="accordion" id="accordion-eleven">
-                                    <div class="table-responsive mb-2">
-                                        <table id="example8" class="display align-content-end" style="min-width: 845px" data-paging="false">
-                                            <thead>
-                                                <tr class="text-center">
-                                                    <th>No</th>
-                                                    <th>Nama</th>
-                                                    <th>Status</th>
-                                                    <th>Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($payroll as $item)
-                                                <tr class="text-center">
-                                                    <td>{{$loop->iteration}}</td>
-                                                    <td class="accordion" id="accord-11One" data-bs-toggle="collapse" data-bs-target="#collapse11One" aria-controls="collapse11One" aria-expanded="true" role="button">
-                                                        {{ $item->dataEmployee->longname }}
-                                                    </td>
-                                                    <td style="text-align: center;">
-                                                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}" {{ $item->status == 'Belum Siap' ? 'checked' : '' }}>
+                            <div class="accordion" id="accordion-eleven">
+                                <div class="table-responsive mb-2">
+                                    <table id="example8" class="display align-content-end" style="min-width: 845px" data-paging="false">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th>No</th>
+                                                <th>Nama</th>
+                                                <th>Status</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($payroll as $item)
+                                            <tr class="text-center">
+                                                <td>{{$loop->iteration}}</td>
+                                                <td class="accordion" id="accord-11One" data-bs-toggle="collapse" data-bs-target="#collapse11One" aria-controls="collapse11One" aria-expanded="true" role="button">
+                                                    {{ $item->dataEmployee->longname }}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                        @if ($item->status == 'Belum Siap')
+                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}" checked>
                                                             <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
 
-                                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}" {{ $item->status == 'Siap Bayar' ? 'checked' : '' }}>
+                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}">
                                                             <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
 
-                                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" {{ $item->status == 'Sudah Bayar' ? 'checked' : '' }}>
+                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" disabled>
                                                             <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Rp.{{ number_format($item->total, 0, ',', '.') }}</td>
-                                                </tr>
-                                                @endforeach
-                                                <tr>
-                                                    <td colspan="5">
-                                                        <div id="collapse11One" class="collapse accordion__body" aria-labelledby="accord-11One" data-bs-parent="#accordion-eleven">
-                                                            <div class="accordion-body-text">
-                                                                <div id="collapse11One" class="collapse accordion__body" aria-labelledby="accord-11One" data-bs-parent="#accordion-eleven">
-                                                                    <div class="accordion-body-text">
-                                                                        <div class="row mb-2">
-                                                                            <div class="col-xl-6 col-12 mb-2">
-                                                                                <div class="card-body" style="
+                                                        @elseif ($item->status == 'Siap Bayar')
+                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}">
+                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
+
+                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}" checked>
+                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
+
+                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" disabled>
+                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
+                                                        @elseif ($item->status == 'Sudah Bayar')
+                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}" disabled>
+                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
+
+                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}" disabled>
+                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
+
+                                                            <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" checked>
+                                                            <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
+                                                        @endif
+                                                    </div>
+                                                </td>
+                                                <td>Rp.{{ number_format($item->total, 0, ',', '.') }}</td>
+                                            </tr>
+                                            @endforeach
+                                            <tr>
+                                                <td colspan="5">
+                                                    <div id="collapse11One" class="collapse accordion__body" aria-labelledby="accord-11One" data-bs-parent="#accordion-eleven">
+                                                        <div class="accordion-body-text">
+                                                            <div id="collapse11One" class="collapse accordion__body" aria-labelledby="accord-11One" data-bs-parent="#accordion-eleven">
+                                                                <div class="accordion-body-text">
+                                                                    <div class="row mb-2">
+                                                                        <div class="col-xl-6 col-12 mb-2">
+                                                                            <div class="card-body" style="
 														  border: 1px solid
 															rgb(181, 178, 178);
 														  border-radius: 1rem;
 														">
-                                                                                    <h5 class="strong text-center" data-bs-toggle="tab">
-                                                                                        Pendapatan
-                                                                                    </h5>
-                                                                                    <hr />
-                                                                                    <div class="row">
-                                                                                        <div class="col-xl-8 col-8">
-                                                                                            <p>Gaji Pokok</p>
-                                                                                        </div>
-                                                                                        <div class="col-xl-4 col-4">
-                                                                                            <p>Rp. 4.500.000</p>
-                                                                                        </div>
+                                                                                <h5 class="strong text-center" data-bs-toggle="tab">
+                                                                                    Pendapatan
+                                                                                </h5>
+                                                                                <hr />
+                                                                                <div class="row">
+                                                                                    <div class="col-xl-8 col-8">
+                                                                                        <p>Gaji Pokok</p>
                                                                                     </div>
-                                                                                    <hr />
-                                                                                    <div class="row">
-                                                                                        <div class="col-xl-3 col-3">
-                                                                                            <p>Uang Lembur</p>
-                                                                                        </div>
-                                                                                        <div class="col-xl-3 col-3">
-                                                                                            <input type="text" class="form-control" placeholder="" style="
+                                                                                    <div class="col-xl-4 col-4">
+                                                                                        <p>Rp. 4.500.000</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr />
+                                                                                <div class="row">
+                                                                                    <div class="col-xl-3 col-3">
+                                                                                        <p>Uang Lembur</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-3">
+                                                                                        <input type="text" class="form-control" placeholder="" style="
                                                                                             border: 0.035rem solid
                                                                                             rgb(195, 195, 195);
                                                                                         " />
-                                                                                        </div>
-                                                                                        <div class="col-xl-3 col-3">
-                                                                                            <p>Jam x 26.001</p>
-                                                                                        </div>
-                                                                                        <div class="col-xl-3 col-3">
-                                                                                            <p>0</p>
-                                                                                        </div>
                                                                                     </div>
-                                                                                    <hr />
-                                                                                    <div class="row">
-                                                                                        <div class="col-xl-9 col-8">
-                                                                                            <p>Tunjangan Pulsa</p>
-                                                                                        </div>
-                                                                                        <div class="col-xl-3 col-4">
-                                                                                            <input type="text" class="form-control" placeholder="" style="
+                                                                                    <div class="col-xl-3 col-3">
+                                                                                        <p>Jam x 26.001</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-3">
+                                                                                        <p>0</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr />
+                                                                                <div class="row">
+                                                                                    <div class="col-xl-9 col-8">
+                                                                                        <p>Tunjangan Pulsa</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-4">
+                                                                                        <input type="text" class="form-control" placeholder="" style="
 																border: 0.035rem solid
 																  rgb(195, 195, 195);
 															  " />
-                                                                                        </div>
                                                                                     </div>
-                                                                                    <hr />
-                                                                                    <div class="row">
-                                                                                        <div class="col-xl-9 col-8">
-                                                                                            <p>Tunjangan Lainnya</p>
-                                                                                        </div>
-                                                                                        <div class="col-xl-3 col-4">
-                                                                                            <input type="text" class="form-control" placeholder="" style="
+                                                                                </div>
+                                                                                <hr />
+                                                                                <div class="row">
+                                                                                    <div class="col-xl-9 col-8">
+                                                                                        <p>Tunjangan Lainnya</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-4">
+                                                                                        <input type="text" class="form-control" placeholder="" style="
 																border: 0.035rem solid
 																  rgb(195, 195, 195);
 															  " />
-                                                                                        </div>
                                                                                     </div>
-                                                                                    <hr />
+                                                                                </div>
+                                                                                <hr />
 
 
-                                                                                    <hr>
-                                                                                    <div class="row baris">
-                                                                                        <div class="col-xl-5 col-12">
-                                                                                            <p>Masukkan Nama Pendapatan</p>
-                                                                                            <input type="text" class="form-control" placeholder="" style="
+                                                                                <hr>
+                                                                                <div class="row baris">
+                                                                                    <div class="col-xl-5 col-12">
+                                                                                        <p>Masukkan Nama Pendapatan</p>
+                                                                                        <input type="text" class="form-control" placeholder="" style="
 																border: 0.035rem solid
 																  rgb(195, 195, 195);
 															  " />
-                                                                                        </div>
-                                                                                        <div class="col-xl-5 col-12">
-                                                                                            <p>
-                                                                                                Masukkan Jumlah Pendapatan
-                                                                                            </p>
-                                                                                            <input type="text" class="form-control" placeholder="" style="
+                                                                                    </div>
+                                                                                    <div class="col-xl-5 col-12">
+                                                                                        <p>
+                                                                                            Masukkan Jumlah Pendapatan
+                                                                                        </p>
+                                                                                        <input type="text" class="form-control" placeholder="" style="
 																border: 0.035rem solid
 																  rgb(195, 195, 195);
 															  " />
-                                                                                        </div>
-                                                                                        <div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">
-                                                                                            <a href=""><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>
-                                                                                        </div>
-
+                                                                                    </div>
+                                                                                    <div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">
+                                                                                        <a href=""><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>
                                                                                     </div>
 
-                                                                                    <hr />
-                                                                                    <div class="row">
-                                                                                        <div class="col-lg-8 col-8">
-                                                                                            <p class="strong">
-                                                                                                Total Pendapatan
-                                                                                            </p>
-                                                                                        </div>
-                                                                                        <div class="col-lg-4 col-4">
-                                                                                            <p class="strong">Rp. 5.000.000
-                                                                                            </p>
-                                                                                        </div>
+                                                                                </div>
+
+                                                                                <hr />
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-8 col-8">
+                                                                                        <p class="strong">
+                                                                                            Total Pendapatan
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    <div class="col-lg-4 col-4">
+                                                                                        <p class="strong">Rp. 5.000.000
+                                                                                        </p>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
+                                                                        </div>
 
-                                                                            <div class="col-xl-6 col-12 ms-auto">
-                                                                                <div class="card-body" style="
+                                                                        <div class="col-xl-6 col-12 ms-auto">
+                                                                            <div class="card-body" style="
 														  border: 1px solid
 															rgb(181, 178, 178);
 														  border-radius: 1rem;
 														">
-                                                                                    <h5 class="strong text-center" data-bs-toggle="tab">
-                                                                                        Potongan
-                                                                                    </h5>
-                                                                                    <hr />
-                                                                                    <div class="row">
-                                                                                        <div class="col-xl-8 col-8">
-                                                                                            <p>Koperasi</p>
-                                                                                        </div>
-                                                                                        <div class="col-xl-4 col-4">
-                                                                                            <p>Rp. 450.000</p>
-                                                                                        </div>
+                                                                                <h5 class="strong text-center" data-bs-toggle="tab">
+                                                                                    Potongan
+                                                                                </h5>
+                                                                                <hr />
+                                                                                <div class="row">
+                                                                                    <div class="col-xl-8 col-8">
+                                                                                        <p>Koperasi</p>
                                                                                     </div>
-                                                                                    <hr />
-                                                                                    <div class="row">
-                                                                                        <div class="col-xl-3 col-3">
-                                                                                            <p>Denda Keterlambatan</p>
-                                                                                        </div>
-                                                                                        <div class="col-xl-3 col-3">
-                                                                                            <input type="text" class="form-control" placeholder="" style="
+                                                                                    <div class="col-xl-4 col-4">
+                                                                                        <p>Rp. 450.000</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr />
+                                                                                <div class="row">
+                                                                                    <div class="col-xl-3 col-3">
+                                                                                        <p>Denda Keterlambatan</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-3">
+                                                                                        <input type="text" class="form-control" placeholder="" style="
 																border: 0.035rem solid
 																  rgb(195, 195, 195);
 															  " />
-                                                                                        </div>
-                                                                                        <div class="col-xl-3 col-3">
-                                                                                            <p>Jam x 26.001</p>
-                                                                                        </div>
-                                                                                        <div class="col-xl-3 col-3">
-                                                                                            <p>0</p>
-                                                                                        </div>
                                                                                     </div>
-                                                                                    <hr />
-                                                                                    <div class="row">
-                                                                                        <div class="col-xl-9 col-8">
-                                                                                            <p>Potongan Lainnya</p>
-                                                                                        </div>
-                                                                                        <div class="col-xl-3 col-4">
-                                                                                            <input type="text" class="form-control" placeholder="" style="
+                                                                                    <div class="col-xl-3 col-3">
+                                                                                        <p>Jam x 26.001</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-3">
+                                                                                        <p>0</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr />
+                                                                                <div class="row">
+                                                                                    <div class="col-xl-9 col-8">
+                                                                                        <p>Potongan Lainnya</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-4">
+                                                                                        <input type="text" class="form-control" placeholder="" style="
 																border: 0.035rem solid
 																  rgb(195, 195, 195);
 															  " />
-                                                                                        </div>
                                                                                     </div>
-                                                                                    <hr />
-                                                                                    <div class="row baris">
-                                                                                        <button type="button" class="tambah-pemotongan text-red" style="border: none; background: none;">
-                                                                                            <i class="bi bi-plus"></i> Tambah Potongan
-                                                                                        </button>
-                                                                                        <div id="container-pemotongan"></div>
-                                                                                    </div>
-                                                                                    <hr>
-                                                                                    <div class="row">
-                                                                                        <div class="col-xl-5 col-12">
-                                                                                            <p>Masukkan Nama Potongan</p>
-                                                                                            <input type="text" class="form-control" placeholder="" style="
+                                                                                </div>
+                                                                                <hr />
+                                                                                <div class="row baris">
+                                                                                    <button type="button" class="tambah-pemotongan text-red" style="border: none; background: none;">
+                                                                                        <i class="bi bi-plus"></i> Tambah Potongan
+                                                                                    </button>
+                                                                                    <div id="container-pemotongan"></div>
+                                                                                </div>
+                                                                                <hr>
+                                                                                <div class="row">
+                                                                                    <div class="col-xl-5 col-12">
+                                                                                        <p>Masukkan Nama Potongan</p>
+                                                                                        <input type="text" class="form-control" placeholder="" style="
 																  border: 0.035rem solid
 																	rgb(195, 195, 195);
 																" />
-                                                                                        </div>
-                                                                                        <div class="col-xl-5 col-12">
-                                                                                            <p>
-                                                                                                Masukkan Jumlah Potongan
-                                                                                            </p>
-                                                                                            <input type="text" class="form-control" placeholder="" style="
+                                                                                    </div>
+                                                                                    <div class="col-xl-5 col-12">
+                                                                                        <p>
+                                                                                            Masukkan Jumlah Potongan
+                                                                                        </p>
+                                                                                        <input type="text" class="form-control" placeholder="" style="
 																  border: 0.035rem solid
 																	rgb(195, 195, 195);
 																" />
-                                                                                        </div>
-                                                                                        <div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">
-                                                                                            <a href=""><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>
-                                                                                        </div>
                                                                                     </div>
-                                                                                    <hr>
-                                                                                    <div class="row">
-                                                                                        <div class="col-lg-8 col-8">
-                                                                                            <p class="strong">
-                                                                                                Total Potongan
-                                                                                            </p>
-                                                                                        </div>
-                                                                                        <div class="col-lg-4 col-4">
-                                                                                            <p>Rp. 500.000</p>
-                                                                                        </div>
+                                                                                    <div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">
+                                                                                        <a href=""><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-8 col-8">
+                                                                                        <p class="strong">
+                                                                                            Total Potongan
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    <div class="col-lg-4 col-4">
+                                                                                        <p>Rp. 500.000</p>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1087,38 +1096,39 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <nav>
-                                    <ul class="pagination pagination-xs" style="float: right">
-                                        <li class="page-item page-indicator">
-                                            <a class="page-link" href="javascript:void(0)">
-                                                <i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="javascript:void(0)">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="javascript:void(0)">2</a>
-                                        </li>
-
-                                        <li class="page-item page-indicator">
-                                            <a class="page-link" href="javascript:void(0)">
-                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </nav>
                             </div>
+                            <nav>
+                                <ul class="pagination pagination-xs" style="float: right">
+                                    <li class="page-item page-indicator">
+                                        <a class="page-link" href="javascript:void(0)">
+                                            <i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="javascript:void(0)">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0)">2</a>
+                                    </li>
 
+                                    <li class="page-item page-indicator">
+                                        <a class="page-link" href="javascript:void(0)">
+                                            <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!--**********************************
             Content body end
@@ -1177,24 +1187,34 @@
         const radioButtons = document.querySelectorAll('.btn-check');
         radioButtons.forEach(function(button) {
             button.addEventListener('click', function(event) {
-            const payrollId = this.getAttribute('data-payroll-id');
-            const newStatus = event.target.value;
-
+                const payrollId = this.getAttribute('data-payroll-id');
+                const newStatus = event.target.value;
                 $.ajax({
-                    url: '/UpdatePayrollStatus',
-                    method: 'POST',
-                    data: {
-                        payrollId: payrollId,
-                        newStatus: newStatus,
-                        _token: '{{ csrf_token() }}'
-                    },
-                    success: function(response) {
-                    },
-                    error: function(xhr, status, error) {
+                    url: '/UpdatePayrollStatus'
+                    , method: 'POST'
+                    , data: {
+                        payrollId: payrollId
+                        , newStatus: newStatus
+                        , _token: '{{ csrf_token() }}'
                     }
+                    , success: function(response) {}
+                    , error: function(xhr, status, error) {}
                 });
             });
         });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('input[name="btnradio-{{ $item->id }}-3"]').change(function() {
+                if ($(this).val() == 'Sudah Bayar') {
+                    $('input[name="btnradio-{{ $item->id }}-1"],input[name="btnradio-{{ $item->id }}-2"]').not(':checked').attr('disabled', true);
+                } else {
+                    $('input[name="btnradio-{{ $item->id }}-1"]input[name="btnradio-{{ $item->id }}-2"]').attr('disabled', false);
+                }
+            });
+        });
+
     </script>
     <script>
         $(document).ready(function() {

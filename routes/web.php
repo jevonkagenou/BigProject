@@ -151,6 +151,8 @@ Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter')
 // Data Payroll {{Id_User}}
 Route::post('/Data_Payroll', [DataPayrollController::class, 'Data_Payroll'])->name('Data_Payroll');
 Route::post('/Data_Salary/{id}', [DataPayrollController::class, 'Data_Salary'])->name('Data_Salary');
+Route::post('/UpdatePayrollStatus', [PayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
+
 
 // pengummuman
 Route::get('/Announcement', [AnnouncementController::class, 'index'])->name('Announcement');
