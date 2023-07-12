@@ -895,9 +895,7 @@ tr:hover {
 					.hover-icon:hover{
 						color: #f72b50 !important;
 					}
-					.paging_simple_numbers.dataTables_paginate{
-						background: transparent !important;
-					}
+					
 					</style>
 
                     <div class="row page-titles">
@@ -947,7 +945,7 @@ tr:hover {
                                         </tbody>
                                     </table>
                                 </div>
-									<nav class="mt-3">
+									{{-- <nav class="mt-3">
                                     <ul class="pagination pagination-xs" style="float: right">
                                       <li class="page-item page-indicator">
                                         <a class="page-link" href="javascript:void(0)">
@@ -973,7 +971,7 @@ tr:hover {
                                         ></a>
                                       </li>
                                     </ul>
-                                </nav>
+                                </nav> --}}
                                 </div>
                         	</div>
                     </div>

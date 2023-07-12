@@ -2673,7 +2673,7 @@ textarea.form-control {
       box-shadow: 0 0 0 0.25rem rgba(104, 227, 101, 0.5); }
   .btn-outline-success:disabled, .btn-outline-success.disabled {
     color: #68e365;
-    background-color: transparent; }
+    background-color: #f0f0f0; }
 
 .btn-outline-info {
   color: #b48dd3;
