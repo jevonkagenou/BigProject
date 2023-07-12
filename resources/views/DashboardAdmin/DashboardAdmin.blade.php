@@ -483,7 +483,7 @@
                                 <div class="col-xl-6 col-lg-12 col-sm-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4 class="card-title">Jumlah Karyawan Per Jabatan</h4>
+                                            <h4 class="card-title">Data Penggajian Karyawan</h4>
                                         </div>
                                         <div class="card-body">
                                             <div id="chart"></div>
@@ -537,7 +537,8 @@
     <script>
         var options = {
             series: [{
-                data: [21, 22, 10, 28, 16, 21, 13, 30]
+                data: [{{$belumbayar}}, 
+                {{$bayar}},] 
             }],
             chart: {
                 height: 350,
@@ -561,14 +562,14 @@
             },
             xaxis: {
                 categories: [
-                    'John',
-                    'Joe',
-                    'Jake',
-                    'Amber',
-                    'Peter',
-                    'Mary',
-                    'David',
-                    'Lily'
+                    'Belum dibayar',
+                    'Sudah dibayar',
+                    // 'Jake',
+                    // 'Amber',
+                    // 'Peter',
+                    // 'Mary',
+                    // 'David',
+                    // 'Lily'
                 ],
                 labels: {
                     style: {
