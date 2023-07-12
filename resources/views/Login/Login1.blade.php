@@ -15,9 +15,9 @@
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
 
-    <title>Payroll Kalopsia</title>
+    <title>Login Kalopsia</title>
 
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
