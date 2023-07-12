@@ -8,6 +8,7 @@ use App\Models\PermitEmployee;
 use App\Models\Presence;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Announcement;
 
 class RouteController extends Controller
 {
@@ -57,11 +58,7 @@ class RouteController extends Controller
             'tittle'=>'Pembayaran Gaji'
         ]);
     }
-    public function Announcement(){
-        return view('Admin.Announcement',[
-            'tittle'=>'Pengumuman'
-        ]);
-    }
+    
     public function AnnouncementUpdate(){
         return view('Admin.AnnouncementUpdate',[
             'tittle'=>'Edit Pengumuman'
@@ -119,11 +116,11 @@ class RouteController extends Controller
             'tittle'=>'Perusahaan'
         ]);
     }
-    public function PayrollSalarySlip(){
-        return view('Settings.PayrollSalarySlip',[
-            'tittle'=>'Slip Gaji'
-        ]);
-    }
+    // public function PayrollSalarySlip(){
+    //     return view('Settings.PayrollSalarySlip',[
+    //         'tittle'=>'Slip Gaji'
+    //     ]);
+    // }
     public function AccountsUsers(){
         return view('Settings.AccountsUsers',[
             'tittle'=>'Akun dan Pengguna'
@@ -228,4 +225,13 @@ class RouteController extends Controller
             'tittle'=>'Edit Jadwal Kerja'
         ]);
     }
+
+    public function showBlankImageDocument($id)
+    {
+        $data = Announcement::findOrFail($id);
+        $imagePath = 'gambar/' . $data->lampiran;
+        // dd($imagePath);
+        return response()->file(public_path($imagePath));
+    }
+
 }
