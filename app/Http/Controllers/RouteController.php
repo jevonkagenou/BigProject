@@ -58,7 +58,7 @@ class RouteController extends Controller
             'tittle'=>'Pembayaran Gaji'
         ]);
     }
-    
+
     public function AnnouncementUpdate(){
         return view('Admin.AnnouncementUpdate',[
             'tittle'=>'Edit Pengumuman'
