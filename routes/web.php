@@ -104,19 +104,6 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
-
-//Work Schedule
-Route::get('/WorkSchedule', [WorkScheduleController::class, 'WorkSchedule'])->name('WorkSchedule');
-Route::get('/tampiledit/{id}/edit', [WorkScheduleController::class, 'tampiledit'])->name('tampiledit.edit');
-Route::post('/updatejadwalkerja/{id}', [WorkScheduleController::class, 'updatejadwalkerja'])->name('updatejadwalkerja');
-Route::post('/updatejadwal', [WorkScheduleController::class, 'updatejadwal'])->name('updatejadwal');
-Route::get('/AddWorkSchedule', [WorkScheduleController::class, 'AddWorkSchedule'])->name('AddWorkSchedule');
-Route::post('/InsertWorkSchedule', [WorkScheduleController::class, 'InsertWorkSchedule'])->name('InsertWorkSchedule');
-
-Route::get('/deleteWorkSchedule/{id}', [WorkScheduleController::class, 'deleteWorkSchedule'])->name('deleteWorkSchedule');
-
-Route::get('/SalaryPaymentReport', [RouteController::class, 'SalaryPaymentReport'])->name('SalaryPaymentReport');
-
 Route::get('/SettingSchedule', [RouteController::class, 'SettingSchedule'])->name('SettingSchedule');
 Route::get('/DetileSchedule', [RouteController::class, 'DetileSchedule'])->name('DetileSchedule');
 Route::get('/AnnualLeave', [RouteController::class, 'AnnualLeave'])->name('AnnualLeave');
