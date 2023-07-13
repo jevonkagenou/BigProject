@@ -364,6 +364,12 @@
 
                             <div class="card-body" style="margin-top: -6%;">
                                 <div class="table-responsive">
+                                    <!-- Tampilkan alert Absen Terlambat jika ada -->
+                                    {{-- @if (session('alert'))
+                                    <div class="alert alert-danger">
+                                        {{ session('alert') }}
+                                    </div>
+                                    @endif --}}
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr class="text-center">
@@ -376,7 +382,7 @@
                                             @foreach ($presence->reverse() as $data)
                                                 <tr class="text-center">
                                                     <td>{{ $loop->count - $loop->iteration + 1 }}</td>
-                                                    <td>{{ $data->type }}</td>
+                                                    <td @if ($data->type == 'Masuk' && $data->late) style="color: red;" @endif>{{ $data->type }}</td>
                                                     <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
                                                 </tr>
                                             @endforeach
@@ -603,6 +609,7 @@
         toastr.error("{{ session('error') }}");
         </script>
     @endif
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
