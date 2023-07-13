@@ -901,7 +901,7 @@
                             <div class="card-header">
                                 <h4 class="card-title">Tambah Slip Gaji</h4>
                             </div>
-                            <form action="/Create" method="POST">
+                            <form action="/CreateSlips" method="GET">
                                 @csrf
                             <div class="card-body">
                                 <div class="row">

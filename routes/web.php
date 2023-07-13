@@ -20,7 +20,9 @@ use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\PermitEmployeeController;
 use App\Http\Controllers\DashboardEmployeeController;
 use App\Http\Controllers\AnnualLeaveController;
-
+use App\Http\Controllers\SalaryConclusionController;
+use App\Http\Controllers\SlipGajiKomponenController;
+use App\Http\Controllers\StartPayrollController;
 
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\EmployeePresence;
@@ -41,9 +43,7 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
 
 });
-Route::middleware(['auth',
-
- 'admin'])->group(function () {
+Route::middleware(['auth','admin'])->group(function () {
     // Admin Route
     Route::get('/DashboardEmployee', [ViewEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
     // Approval Employee
@@ -72,11 +72,11 @@ Route::middleware(['auth',
     Route::get('/Presence', [RouteController::class, 'Presence'])->name('Presence');
     Route::get('/Setting', [RouteController::class, 'Setting'])->name('Setting');
     Route::get('/Company', [RouteController::class, 'Company'])->name('Company');
-    Route::get('/PayrollSalarySlip', [RouteController::class, 'PayrollSalarySlip'])->name('PayrollSalarySlip');
+    Route::get('/PayrollSalarySlip', [SlipGajiKomponenController::class, 'PayrollSalarySlip'])->name('PayrollSalarySlip');
     Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
-    Route::get('/StartPayroll', [RouteController::class, 'StartPayroll'])->name('StartPayroll');
+    Route::get('/StartPayroll', [StartPayrollController::class, 'StartPayroll'])->name('StartPayroll');
     Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
-    Route::get('/Payroll', [PayrollController::class, 'Payroll'])->name('Payroll');
+    Route::get('/Payroll/{id}', [PayrollController::class, 'Payroll'])->name('Payroll');
     Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
     Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
@@ -94,9 +94,11 @@ Route::middleware(['auth', 'karyawan'])->group(function () {
     Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
     Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
     Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
-    Route::get('/SalarySummary', [RouteController::class, 'SalarySummary'])->name('SalarySummary');
+    Route::get('/SalarySummary', [SalaryConclusionController::class, 'SalarySummary'])->name('SalarySummary');
     Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
     Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
+
+    Route::get('/CreateSlips', [SlipGajiKomponenController::class, 'CreateSlips'])->name('CreateSlips');
 
 });
 Route::middleware(['auth'])->group(function () {
@@ -152,6 +154,7 @@ Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter')
 Route::post('/Data_Payroll', [DataPayrollController::class, 'Data_Payroll'])->name('Data_Payroll');
 Route::post('/Data_Salary/{id}', [DataPayrollController::class, 'Data_Salary'])->name('Data_Salary');
 Route::post('/UpdatePayrollStatus', [PayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
+Route::get('/SelectedMonth', [SalaryConclusionController::class, 'SelectedMonth'])->name('SelectedMonth');
 
 
 // pengummuman
@@ -170,3 +173,4 @@ Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create')
 
 //presence
 Route::post('PresenceCreate/{jenis}', [EmployeePresence::class, 'presence'])->name('PresenceCreate');
+Route::get('/DetailSalary.', [RouteController::class, 'DetailSalary'])->name('DetailSalary.');

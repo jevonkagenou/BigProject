@@ -9,6 +9,7 @@ use App\Models\Presence;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Announcement;
+use App\Models\slip_gaji;
 
 class RouteController extends Controller
 {
@@ -128,11 +129,6 @@ class RouteController extends Controller
             'tittle'=>'Tambah Karyawan'
         ]);
     }
-    public function StartPayroll(){
-        return view('Admin.StartPayroll',[
-            'tittle'=>'Siap Bayar'
-        ]);
-    }
     public function PayrollStep(){
 
         $data = Payroll::all();
@@ -180,16 +176,28 @@ class RouteController extends Controller
         ]);
     }
 
+    public function DetailSalary(){
+        return view('Admin.EmployeeDetailSalarySummary',[
+                'tittle'=>'Detail Summary'
+        ]);
+    }
+
     public function Employee(){
         return view('EmployeeDetails.Employee',[
             'tittle'=>'Detail Karyawan'
     ]);
     }
 
-    public function SalaryAdjustment($id){
-        $data = DataEmployee::find($id);
-        return view('EmployeeDetails.SalaryAdjustment',compact('data'),['tittle'=>'Detail Karyawan']);
-    }
+    public function SalaryAdjustment($id)
+{
+    $data = DataEmployee::find($id);
+    $slipGaji = slip_gaji::all();
+
+    return view('EmployeeDetails.SalaryAdjustment', [
+        'data' => $data,
+        'slipGaji' => $slipGaji
+    ], ['tittle' => 'Detail Karyawan']);
+}
 
     public function AddAccount(Request $request)
     {
