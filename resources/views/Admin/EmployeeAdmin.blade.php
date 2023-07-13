@@ -873,15 +873,28 @@
 ***********************************-->
 
 <style>
-            .fa {
-                line-height: 1.5rem !important;
-            }
-
-            .paging_simple_numbers.dataTables_paginate {
-                background: transparent !important;
-            }
-        </style>
-
+    .custom-btn {
+        border-radius: 1px;
+        height: 40px;
+        padding: 12px 8px;
+        background: #fff;
+        border: 1px solid #464444;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hover-icon:hover {
+        color: #f72b50 !important;
+    }
+    
+    .fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
+        line-height: 3.0rem;
+    }
+    </style>
+    
+    
         <div class="content-body">
             <div class="container-fluid">
                 <div class="row">

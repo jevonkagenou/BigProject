@@ -874,9 +874,7 @@
         .search-area {
           padding: 5px;
         }
-     .paging_simple_numbers.dataTables_paginate{
-				background: transparent !important;
-			}
+     
 
 		</style>
         <div class="content-body">

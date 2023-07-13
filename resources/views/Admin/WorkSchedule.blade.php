@@ -961,9 +961,6 @@
                             color: #f72b50 !important;
                         }
 
-                        .paging_simple_numbers.dataTables_paginate {
-                            background: transparent !important;
-                        }
                     </style>
 
                     <div class="col-12">
