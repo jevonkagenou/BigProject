@@ -7,6 +7,7 @@ use App\Models\DateWorkSchedule;
 use App\Models\PermitEmployee;
 use App\Models\Presence;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ViewEmployeeController extends Controller
 {
@@ -17,7 +18,8 @@ class ViewEmployeeController extends Controller
     }
 
     public function EmployeePresence(){
-        $presence = Presence::all();
+
+        $presence = Presence::where('user_id',Auth::user()->id)->get();
         return view ('EmployeePresence.EmployeePresence',compact('presence'),[
             'title'=>'Presensi'
         ]);
