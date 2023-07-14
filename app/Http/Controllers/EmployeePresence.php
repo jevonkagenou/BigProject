@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Presence;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
+
 
 class EmployeePresence extends Controller
 {
@@ -25,27 +24,61 @@ class EmployeePresence extends Controller
 
         if ($jenis == 'Pulang') {
             // Pengecekan untuk absen pulang
-            if ($now->lt($pulangThreshold) || $now->gt($pulangLemburThreshold)) {
+            if ($now->lt($pulangThreshold)) {
                 // Jika waktu saat ini lebih awal dari batas waktu pulang (jam 16) atau lebih dari batas waktu pulang lembur (jam 00:00)
                 $errorMessage = 'Waktu absen ' . $jenis . ' belum tiba atau telah berakhir.';
                 return redirect()->back()->with('error', $errorMessage);
             }
 
-            // Cek apakah sudah ada absen masuk dan lembur sebelumnya
+            // Cek apakah sudah ada absen masuk sebelumnya
             $existingMasuk = Presence::where('type', 'Masuk')
                 ->where('user_id', $userId)
                 ->whereDate('created_at', Carbon::today())
                 ->first();
 
+            if (!$existingMasuk) {
+                $errorMessage = 'Anda belum melakukan absen masuk.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada absen pulang hari ini
+            $existingPulang = Presence::where('type', 'Pulang')
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if ($existingPulang) {
+                $errorMessage = 'Anda sudah melakukan absen pulang hari ini.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada absen lembur hari ini
             $existingLembur = Presence::where('type', 'Lembur')
                 ->where('user_id', $userId)
                 ->whereDate('created_at', Carbon::today())
                 ->first();
 
-            if (!$existingMasuk || !$existingLembur) {
-                $errorMessage = 'Anda belum melakukan absen masuk dan lembur hari ini.';
-                return redirect()->back()->with('error', $errorMessage);
+            if ($existingLembur) {
+                // Cek apakah sudah melewati batas waktu pulang lembur (jam 00:00)
+                $pulangLemburThresholdToday = Carbon::today()->setTimeFromTimeString($pulangLemburThreshold->toTimeString());
+                if ($now->gt($pulangLemburThresholdToday)) {
+                    $errorMessage = 'Lembur berlebihan. Tidak bisa melakukan absen pulang lembur setelah jam 00:00.';
+                    return redirect()->back()->with('error', $errorMessage);
+                }
             }
+
+            $presenceData = [
+                'type' => $jenis,
+                'time' => $time,
+                'user_id' => $userId,
+                'picture' => $request->file('picture')->store('presence', 'public'),
+                'late' => 0, // Set nilai kolom terlambat menjadi 0 untuk absen pulang
+            ];
+
+            Presence::create($presenceData);
+
+            $successMessage = 'Absen ' . $jenis . ' Berhasil';
+            return redirect()->back()->with('success', $successMessage);
         } elseif ($jenis == 'Lembur') {
             // Pengecekan untuk absen lembur
             if ($now->lt($lemburThreshold)) {
@@ -64,23 +97,58 @@ class EmployeePresence extends Controller
                 $errorMessage = 'Anda belum melakukan absen masuk hari ini.';
                 return redirect()->back()->with('error', $errorMessage);
             }
-        } elseif ($jenis == 'Masuk') {
-            // Pengecekan untuk absen masuk
-            if ($now->lt($masukThreshold) || $now->gt($lateThreshold)) {
-                // Jika waktu saat ini lebih awal dari batas waktu masuk (jam 7) atau lebih dari batas waktu terlambat (jam 8)
-                $errorMessage = 'Waktu absen ' . $jenis . ' belum tiba atau telah berakhir.';
+
+            // Cek apakah sudah ada absen lembur hari ini
+            $existingLembur = Presence::where('type', 'Lembur')
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if ($existingLembur) {
+                $errorMessage = 'Anda sudah melakukan absen lembur hari ini.';
                 return redirect()->back()->with('error', $errorMessage);
             }
-        }
 
-        // Cek apakah sudah ada absensi pada hari ini untuk pengguna yang sedang login
-        $existingPresence = Presence::whereDate('created_at', Carbon::today())
-            ->where('user_id', $userId)
-            ->first();
+            // Cek apakah sudah ada absen pulang lembur hari ini
+            $existingPulangLembur = Presence::where('type', 'Pulang Lembur')
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
 
-        if ($existingPresence) {
-            $errorMessage = 'Anda telah melakukan absensi hari ini.';
-            return redirect()->back()->with('error', $errorMessage);
+            if ($existingPulangLembur) {
+                $errorMessage = 'Anda sudah melakukan absen pulang lembur hari ini.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            $presenceData = [
+                'type' => $jenis,
+                'time' => $time,
+                'user_id' => $userId,
+                'picture' => $request->file('picture')->store('presence', 'public'),
+                'late' => 0, // Set nilai kolom terlambat menjadi 0 untuk absen lembur
+            ];
+
+            Presence::create($presenceData);
+
+            $successMessage = 'Absen ' . $jenis . ' Berhasil';
+            return redirect()->back()->with('success', $successMessage);
+        } elseif ($jenis == 'Masuk') {
+            // Pengecekan untuk absen masuk
+            if ($now->gt($lateThreshold)) {
+                // Jika waktu saat ini lebih dari batas waktu terlambat (jam 8)
+                $errorMessage = 'Absen ' . $jenis . ' Terlambat';
+                return redirect()->back()->with('success', $errorMessage);
+            }
+
+            // Cek apakah sudah ada absensi pada hari ini untuk pengguna yang sedang login
+            $existingPresence = Presence::whereDate('created_at', Carbon::today())
+                ->where('user_id', $userId)
+                ->first();
+
+            if ($existingPresence) {
+                $errorMessage = 'Anda telah melakukan absensi hari ini.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
         }
 
         $terlambat = $jenis == 'Masuk' && $now > $lateThreshold; // Cek jika absen terlambat
@@ -110,12 +178,21 @@ class EmployeePresence extends Controller
                 return redirect()->back()->with('error', $errorMessage);
             }
 
-            $pulangLemburThresholdToday = Carbon::today()->add($pulangLemburThreshold->diff($pulangLemburThreshold)->invert ? 1 : 0, 'day')->setTimeFromTimeString($pulangLemburThreshold->toTimeString());
-            $pulangLemburThresholdToday->subMinutes(1);
-
+            // Cek apakah sudah melewati batas waktu pulang lembur (jam 00:00)
+            $pulangLemburThresholdToday = Carbon::today()->setTimeFromTimeString($pulangLemburThreshold->toTimeString());
             if ($now->gt($pulangLemburThresholdToday)) {
-                // Jika waktu saat ini lebih dari batas waktu pulang lembur pada hari ini
-                $errorMessage = 'Waktu absen ' . $jenis . ' telah berakhir.';
+                $errorMessage = 'Absen Gagal. Tidak bisa melakukan absen pulang lembur pada jam ini.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada absen pulang lembur hari ini
+            $existingPulangLembur = Presence::where('type', 'Pulang Lembur')
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if ($existingPulangLembur) {
+                $errorMessage = 'Anda sudah melakukan absen pulang lembur hari ini.';
                 return redirect()->back()->with('error', $errorMessage);
             }
 
@@ -126,8 +203,9 @@ class EmployeePresence extends Controller
 
         if ($terlambat) {
             // Jika absen terlambat
-            $errorMessage = 'Absen ' . $jenis . ' Terlambat';
-            return redirect()->back()->with('error', $errorMessage);
+            $presenceData['late'] = 1; // Set nilai kolom late menjadi 1
+            $successMessage = 'Absen ' . $jenis . ' Terlambat';
+            return redirect()->back()->with('success', $successMessage);
         } else {
             // Jika absen tepat waktu
             $successMessage = 'Absen ' . $jenis . ' Berhasil';
@@ -135,5 +213,6 @@ class EmployeePresence extends Controller
         }
     }
 
-    
+
+   
 }
