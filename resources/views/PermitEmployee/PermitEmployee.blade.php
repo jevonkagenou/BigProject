@@ -326,10 +326,7 @@
                             text-align: center;
                         }
 
-                        .paging_simple_numbers.dataTables_paginate {
-                            background: transparent !important;
-                        }
-
+                      
                         .responsive-button {
                             padding: 5px;
                         }

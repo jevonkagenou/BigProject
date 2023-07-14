@@ -949,33 +949,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <nav class="mt-3">
-                                    <ul class="pagination pagination-xs" style="float: right">
-                                      <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                          <i
-                                            class="fa fa-angle-double-left"
-                                            aria-hidden="true"
-                                          ></i
-                                        ></a>
-                                      </li>
-                                      <li class="page-item active">
-                                        <a class="page-link" href="javascript:void(0)">1</a>
-                                      </li>
-                                      <li class="page-item">
-                                        <a class="page-link" href="javascript:void(0)">2</a>
-                                      </li>
-
-                                      <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                          <i
-                                            class="fa fa-angle-double-right"
-                                            aria-hidden="true"
-                                          ></i
-                                        ></a>
-                                      </li>
-                                    </ul>
-                                  </nav>
+                       
                     </div>
                 </div>
             </div>

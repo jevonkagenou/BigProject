@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('presence', function (Blueprint $table) {
+        Schema::create('komppotongs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('type');
-            $table->datetime('time');
-            $table->boolean('late');
-            $table->string('picture');
+            $table->foreignId('nama_id')->references('id')->on('slip_gajis')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('nama_komponenptg')->nullable();
+            $table->string('tipe_komponenptg')->nullable();
+            $table->string('uang_potong')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('presence');
+        Schema::dropIfExists('komppotongs');
     }
 };

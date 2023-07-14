@@ -60,7 +60,6 @@ class AnnualLeaveController extends Controller
         }
         $data->save();
 
-        $data->save();
         // dd($data);
         return redirect()->route('AnnualLeave')->with('success','Data Berhasil Di Tambah');
     }

@@ -10,10 +10,10 @@
 	<meta property="og:description" content="Dompet : Payment Admin Template" />
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Kalopsia</title>
-	
+
 	<!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png"  />
     <!-- Datatable -->
@@ -42,7 +42,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .brand-logo img {
         max-width: 80%;
@@ -69,7 +69,7 @@
             Nav header end
         ***********************************-->
 
-   
+
         <!--**********************************
             Chat box start
         ***********************************-->
@@ -853,7 +853,7 @@
                     </li>
 
                 </ul>
-               
+
             </div>
         </div>
         <!--**********************************
@@ -863,7 +863,7 @@
             <div class="container-fluid">
                 <!-- row -->
 				<!-- payroll slip gaji -->
-                
+
 <div class="row page-titles">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/Setting">Pengaturan</a></li>
@@ -881,25 +881,25 @@
                             </div>
                             <div class="card-body">
 								<div class="row">
-									<div class="col-xl-6 col-lg-8 col-md-7 col-sm-1  btn-group btn-xs">                                
+									<div class="col-xl-6 col-lg-8 col-md-7 col-sm-1  btn-group btn-xs">
                                         <div class="btn-group btn-xs">
                                             <div class="size-filter">
                                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
                                                     <a class="btn btn-xs btn-outline-danger" for="btnradio1">Slip Gaji</a>
-        
+
                                                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
                                                     <a href="/AddAccount" class="btn btn-xs btn-outline-danger" role="button" aria-pressed="true">Tambah Rekening</a>
-        
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-									<div class="col-xl-6 col-lg-4 col-md-5 col-sm-3 mt-8 btn-xs text-end">                                
+									<div class="col-xl-6 col-lg-4 col-md-5 col-sm-3 mt-8 btn-xs text-end">
 										<div class="responsive-button">
 											<a href="AddPaySlips" type="button" class="btn btn-danger btn-xs"><i class="bi bi-plus me-1"></i>Tambah Slip Gaji</a>
 											<button type="button" class="btn btn-outline-light btn-xs" ><i class="bi bi-download me-2"></i>Print </button>
-											
+
 										</div>
 									</div>
 								</div>
@@ -907,63 +907,34 @@
                                     <table id="example5" class="display" style="min-width: 845px">
 										<thead>
                                             <tr class="text-center">
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Periode</th>
-                                                <th>Lama Periode</th>
+                                                <th scope="col">No</th>
+                                                <th scope="col">Nama</th>
+                                                <th scope="col">Periode</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php
+                                                $no = 1;
+                                            @endphp
+
+                                            @foreach ($data as $row)
                                             <tr class="text-center">
-                                                <td>01</td>
-                                                <td>Gaji Bulanan</td>
-                                                <td>Tetap</td>
-                                                <td>1 Bulan</td>											
+                                                <td scope="row">{{ $no++ }}</td>
+                                                <td>{{$row->name}}</td>
+                                                <td>{{$row->periode}}</td>
                                             </tr>
-                                            <tr class="text-center">
-                                                <td>02</td>
-                                                <td>Gaji Bulanan</td>
-                                                <td>Tetap</td>
-                                                <td>2 Bulan</td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>03</td>
-                                                <td>Gaji Bulanan</td>
-                                                <td>Tetap</td>
-                                                <td>3 Bulan</td>		
-                                            </tr>
-										
-                                        </tbody>
+                                            @endforeach
+                                           </tbody>
                                     </table>
-									
+
 								</div>
-								<nav>
-										
-									<ul class="pagination pagination-xs" style="float: right;">
-										<li class="page-item page-indicator">
-											<a class="page-link" href="javascript:void(0)">
-												<i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-										</li>
-										<li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a>
-										</li>
-										<li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
-										
-										<li class="page-item page-indicator">
-											<a class="page-link" href="javascript:void(0)">
-												<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-										</li>
-									</ul>
-									
-								</nav> 	
-								
-						
-                            </div>
+								</div>
                         </div>
-						
+
                     </div>
-					
-                    
-                    
+
+
+
 				</div>
             </div>
         </div>
@@ -975,7 +946,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        
+
         <!--**********************************
             Footer end
         ***********************************-->
@@ -988,7 +959,7 @@
            Support ticket button end
         ***********************************-->
 
-        
+
     </div>
     <!--**********************************
         Main wrapper end
@@ -1007,7 +978,7 @@
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
-	
+
     <!-- Datatable -->
     <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins-init/datatables.init.js"></script>
@@ -1022,10 +993,10 @@
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-    
+
         function changeLogo() {
             var logo = document.getElementById("logo");
-    
+
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;
                 isAlternateLogo = false;

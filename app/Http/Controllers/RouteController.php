@@ -8,6 +8,8 @@ use App\Models\PermitEmployee;
 use App\Models\Presence;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Announcement;
+use App\Models\slip_gaji;
 
 class RouteController extends Controller
 {
@@ -24,8 +26,8 @@ class RouteController extends Controller
             'tittle'=>'Ringkasan Gaji'
         ]);
     }
-  
-    
+
+
     public function PermitLeaveAdmin(Request $request)
     {
         $tipe = $request->input('tipe');
@@ -45,8 +47,8 @@ class RouteController extends Controller
 
         return view('Admin.PermitLeaveAdmin', compact('approve_admin'))->with(['tittle' => 'Izin Cuti Karyawan']);
     }
-    
-    
+
+
     public function WorkSchedule(){
         return view('Admin.WorkSchedule',[
             'title'=>'Jadwal Kerja'
@@ -57,11 +59,7 @@ class RouteController extends Controller
             'tittle'=>'Pembayaran Gaji'
         ]);
     }
-    public function Announcement(){
-        return view('Admin.Announcement',[
-            'tittle'=>'Pengumuman'
-        ]);
-    }
+
     public function AnnouncementUpdate(){
         return view('Admin.AnnouncementUpdate',[
             'tittle'=>'Edit Pengumuman'
@@ -71,9 +69,6 @@ class RouteController extends Controller
         return view('Admin.AddPayslips',[
             'tittle'=>'Tambah Slip Gaji'
         ]);
-    }
-    public function Payroll(){
-        return view('Admin.Payroll');
     }
     public function Validation(){
         return view('Admin.Validation',[
@@ -102,13 +97,13 @@ class RouteController extends Controller
             }])
             ->where('role', '!=', 'admin')
             ->get();
-    
+
         $users = User::all();
-    
+
         return view('PresenceAdmin.Presence', compact('presence'));
     }
 
-    
+
     public function Setting(){
         return view('Settings.Setting',[
             'tittle'=>'Pengaturan'
@@ -119,11 +114,11 @@ class RouteController extends Controller
             'tittle'=>'Perusahaan'
         ]);
     }
-    public function PayrollSalarySlip(){
-        return view('Settings.PayrollSalarySlip',[
-            'tittle'=>'Slip Gaji'
-        ]);
-    }
+    // public function PayrollSalarySlip(){
+    //     return view('Settings.PayrollSalarySlip',[
+    //         'tittle'=>'Slip Gaji'
+    //     ]);
+    // }
     public function AccountsUsers(){
         return view('Settings.AccountsUsers',[
             'tittle'=>'Akun dan Pengguna'
@@ -134,27 +129,22 @@ class RouteController extends Controller
             'tittle'=>'Tambah Karyawan'
         ]);
     }
-    public function StartPayroll(){
-        return view('Admin.StartPayroll',[
-            'tittle'=>'Siap Bayar'
-        ]);
-    }
     public function PayrollStep(){
 
         $data = Payroll::all();
         $total = $data->first()->total;
         // Set your Merchant Server Key
-        // \Midtrans\Config::$serverKey = config('midtrans.server_key');
-        // // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        // \Midtrans\Config::$isProduction = false;
-        // // Set sanitization on (default)
-        // \Midtrans\Config::$isSanitized = true;
-        // // Set 3DS transaction for credit card to true
-        // \Midtrans\Config::$is3ds = true;
+        \Midtrans\Config::$serverKey = config('midtrans.server_key');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        \Midtrans\Config::$isProduction = false;
+        // Set sanitization on (default)
+        \Midtrans\Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        \Midtrans\Config::$is3ds = true;
 
         $params = array(
             'transaction_details' => array(
-                'order_id' => $data->id(),
+                'order_id' => rand(),
                 'gross_amount' => $total,
             ),
             'customer_details' => array(
@@ -165,7 +155,7 @@ class RouteController extends Controller
             ),
         );
 
-        // $snapToken = \Midtrans\Snap::getSnapToken($params);
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
         return view('Admin.PayrollStep',compact('snapToken','data'),['tittle'=>'Langkah Langkah Pembayaran Gaji']);
     }
     public function Callback(Request $request){
@@ -186,16 +176,28 @@ class RouteController extends Controller
         ]);
     }
 
+    public function DetailSalary(){
+        return view('Admin.EmployeeDetailSalarySummary',[
+                'tittle'=>'Detail Summary'
+        ]);
+    }
+
     public function Employee(){
         return view('EmployeeDetails.Employee',[
             'tittle'=>'Detail Karyawan'
     ]);
     }
-    public function SalaryAdjustment(){
-        return view('EmployeeDetails.SalaryAdjustment',[
-            'tittle'=>'Detail Karyawan'
-    ]);
-    }
+
+    public function SalaryAdjustment($id)
+{
+    $data = DataEmployee::find($id);
+    $slipGaji = slip_gaji::all();
+
+    return view('EmployeeDetails.SalaryAdjustment', [
+        'data' => $data,
+        'slipGaji' => $slipGaji
+    ], ['tittle' => 'Detail Karyawan']);
+}
 
     public function AddAccount(Request $request)
     {
@@ -228,4 +230,13 @@ class RouteController extends Controller
             'tittle'=>'Edit Jadwal Kerja'
         ]);
     }
+
+    public function showBlankImageDocument($id)
+    {
+        $data = Announcement::findOrFail($id);
+        $imagePath = 'gambar/' . $data->lampiran;
+        // dd($imagePath);
+        return response()->file(public_path($imagePath));
+    }
+
 }

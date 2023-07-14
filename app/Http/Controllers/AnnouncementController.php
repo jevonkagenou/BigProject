@@ -10,7 +10,7 @@ class AnnouncementController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = Announcement::all();
         return view('Admin.Announcement',[
@@ -50,6 +50,22 @@ class AnnouncementController extends Controller
 
         return redirect()->route('Announcement')->with('success','Data Berhasil Di Tambah');
     }
+
+    public function search(Request $request)
+    {
+        $date = $request->created_at;
+        // $formattedDate = \Carbon\Carbon::createFromFormat($date);
+
+        $data = Announcement::where('created_at', 'like', '%' . $date . '%')->get();
+
+        // return view('Admin.Announcement')->with('results', $results)->withInput();
+        return view('Admin.Announcement',[
+            'tittle' => 'Pengumuman'
+        ] ,compact('data'));
+    }
+
+
+
 
     /**
      * Store a newly created resource in storage.

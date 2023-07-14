@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('presence', function (Blueprint $table) {
+        Schema::create('komponen_potongs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('type');
-            $table->datetime('time');
-            $table->boolean('late');
-            $table->string('picture');
+            $table->string('nama_komponenptg');
+            $table->string('tipe_komponenptg');
+            $table->string('uang_potong')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('presence');
+        Schema::dropIfExists('komponen_potong');
     }
 };

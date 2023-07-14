@@ -28,9 +28,6 @@
         max-width: 80%;
         height: auto;
         }
-tr:hover {
-    cursor: pointer;
-  }
         </style>
 
 </head>
@@ -719,7 +716,6 @@ tr:hover {
 
 
 
-
         <!--**********************************
             Header start
         ***********************************-->
@@ -745,7 +741,7 @@ tr:hover {
                                     </svg>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                    <li><a class="dropdown-item" href="/ProfilAdmin"><svg
+                                    <li><a class="dropdown-item" href="#"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 fill="#969ba0" viewBox="0 0 448 512"
                                                 style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
@@ -828,7 +824,7 @@ tr:hover {
 
                     </li>
                     <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z"/></svg>
+                        <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
                             <span class="nav-text ">Izin Cuti</span>
                         </a>
                     </li>
@@ -843,6 +839,7 @@ tr:hover {
                             <span class="nav-text ">Kehadiran</span>
                         </a>
                         <ul aria-expanded="false">
+                            <li><a href="/PresenceApproval" class="hover-red">Approval Presensi</a></li>
                             <li><a href="/WorkSchedule" class="hover-red">Jadwal Kerja</a></li>
                             <li><a href="/Presence" class="hover-red">Presensi</a></li>
                         </ul>
@@ -851,7 +848,6 @@ tr:hover {
                         <svg class="svg" class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M68-160q-13 0-21.5-8.5T38-190v-64q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v64q0 13-8.5 21.5T648-160H68Zm648 0q10-2 16-10.5t6-21.5v-62q0-63-32-103.5T622-423q69 8 130 23.5t99 35.5q33 19 52 47t19 63v64q0 13-8.5 21.5T892-160H716ZM358-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42Zm360-150q0 66-42 108t-108 42q-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm260-321q39 0 64.5-25.5T448-631q0-39-25.5-64.5T358-721q-39 0-64.5 25.5T268-631q0 39 25.5 64.5T358-541Zm0-90Zm0 271Z"/></svg>
                             <span class="nav-text ">Karyawan</span>
                         </a>
-
                     </li>
                     <li><a href="/StartPayroll" class="ai-icon hover-red" aria-expanded="false">
                         <svg class="svg" class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M324-358q21 46 51.5 72.5T451-247v27q0 11 8.5 19t19.5 8q11 0 19-8.5t8-19.5v-24q61-7 95-37.5t34-81.5q0-51-29-83t-98-61q-58-24-84-43t-26-51q0-31 22.5-49t61.5-18q30 0 52 14t37 42l48-23q-17-35-45-55t-66-24v-24q0-11-8-19t-19-8q-11 0-19.5 8t-8.5 19v24q-51 7-80.5 37.5T343-602q0 49 30 78t90 54q67 28 92 50.5t25 55.5q0 32-26.5 51.5T487-293q-39 0-69.5-22T375-375l-51 17ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z"/></svg>
@@ -895,116 +891,175 @@ tr:hover {
 					.hover-icon:hover{
 						color: #f72b50 !important;
 					}
-					
+					.paging_simple_numbers.dataTables_paginate{
+						background: transparent !important;
+					}
 					</style>
 
-                    <div class="row page-titles">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/Setting">Pengaturan</a></li>
-                            <li class="breadcrumb-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f72b50" class="bi bi-play-fill" viewBox="0 0 16 16">
-                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                            </svg></li>
-                            <li class="breadcrumb-item active"><a href="">Jadwal Kerja</a></li>
-                        </ol>
+                <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                    <h4 class="card-title">Profile Datatable</h4>
                     </div>
-					<div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Jadwal Kerja</h4>
-                            </div>
-
-                            <div class="card-body">
-								<div class="row mb-3">
-                                    <div class="col-sm-1 col-md-2 col-lg-12 text-end">
-                                        <a type="button" class="btn btn-danger btn-xs" href="/AddWorkSchedule"><i class="bi bi-plus"></i>Tambah Jadwal Kerja</a>
-                                    </div>
+                    <div class="card-body">
+                        <!-- <button id="actionButton" style="display: none;">Tombol</button> -->
+                        <div class="" style="margin-right: 3%; ">
+							<button type="button" class="btn btn-danger btn-xs" id="actionButton" style="display: none;" data-bs-toggle="modal" data-bs-target=".modal-6">
+								<span class="text-center px-1">
+								Ubah Jadwal
+								</span>
+							</button>
+						</div>
+                    <div class="table-responsive">
+                        <table id="example5" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+                            <th>
+								<div class="form-check custom-checkbox ms-2 ">
+									<input type="checkbox" class="form-check-input" id="checkAll" required="">
+									<label class="form-check-label" for="checkAll"></label>
 								</div>
-                                <div class="table-responsive">
-                                    <table id="example5" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>Nama</th>
-                                                <th>Hari Kerja</th>
-                                                <th>Hari Libur</th>
-                                                <th>Terakhir Di Update</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr onclick="window.location='/DetileSchedule'">
-                                                <td>Pagi</td>
-                                                <td>1</td>
-                                                <td>0</td>
-                                                <td>04/06/2023</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jadwal Kantor</td>
-                                                <td>5</td>
-												<td>2</td>
-                                                <td>08/06/2023</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-									{{-- <nav class="mt-3">
-                                    <ul class="pagination pagination-xs" style="float: right">
-                                      <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                          <i
-                                            class="fa fa-angle-double-left"
-                                            aria-hidden="true"
-                                          ></i
-                                        ></a>
-                                      </li>
-                                      <li class="page-item active">
-                                        <a class="page-link" href="javascript:void(0)">1</a>
-                                      </li>
-                                      <li class="page-item">
-                                        <a class="page-link" href="javascript:void(0)">2</a>
-                                      </li>
-
-                                      <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                          <i
-                                            class="fa fa-angle-double-right"
-                                            aria-hidden="true"
-                                          ></i
-                                        ></a>
-                                      </li>
-                                    </ul>
-                                </nav> --}}
-                                </div>
-                        	</div>
+							</th>
+                            <th>Name</th>
+                            <th>Jabatan</th>
+                            <th>Jadwal</th>
+                            <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+									<div class="form-check custom-checkbox ms-2">
+										<input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
+										<label class="form-check-label" for="customCheckBox2"></label>
+									</div>
+								</td>
+                                <td>Tiger Nixon</td>
+                                <td>Architect</td>
+                                <td>Male</td>
+                                <td>
+                                    <div class="d-flex">
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary shadow btn-xs sharp me-1"
+                                        ><i class="fas fa-pencil-alt"></i
+                                    ></a>
+                                    <a
+                                        href="#"
+                                        class="btn btn-danger shadow btn-xs sharp"
+                                        ><i class="fa fa-trash"></i
+                                    ></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+									<div class="form-check custom-checkbox ms-2">
+										<input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
+										<label class="form-check-label" for="customCheckBox2"></label>
+									</div>
+								</td>
+                                <td>Garrett Winters</td>
+                                <td>Accountant</td>
+                                <td>Female</td>
+                                <td>
+                                    <div class="d-flex">
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary shadow btn-xs sharp me-1"
+                                        ><i class="fas fa-pencil-alt"></i
+                                    ></a>
+                                    <a
+                                        href="#"
+                                        class="btn btn-danger shadow btn-xs sharp"
+                                        ><i class="fa fa-trash"></i
+                                    ></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+									<div class="form-check custom-checkbox ms-2">
+										<input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
+										<label class="form-check-label" for="customCheckBox2"></label>
+									</div>
+								</td>
+                                <td>Ashton Cox</td>
+                                <td>Junior Technical</td>
+                                <td>Male</td>
+                                <td>
+                                    <div class="d-flex">
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary shadow btn-xs sharp me-1"
+                                        ><i class="fas fa-pencil-alt"></i
+                                    ></a>
+                                    <a
+                                        href="#"
+                                        class="btn btn-danger shadow btn-xs sharp"
+                                        ><i class="fa fa-trash"></i
+                                    ></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+									<div class="form-check custom-checkbox ms-2">
+										<input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
+										<label class="form-check-label" for="customCheckBox2"></label>
+									</div>
+								</td>
+                                <td>Cedric Kelly</td>
+                                <td>Developer</td>
+                                <td>Male</td>
+                                <td>
+                                    <div class="d-flex">
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary shadow btn-xs sharp me-1"
+                                        ><i class="fas fa-pencil-alt"></i
+                                    ></a>
+                                    <a
+                                        href="#"
+                                        class="btn btn-danger shadow btn-xs sharp"
+                                        ><i class="fa fa-trash"></i
+                                    ></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
                     </div>
+                    </div>
+                </div>
+                </div>
 				</div>
 
-				{{-- modal tambah pengumuman --}}
+				{{-- modal ubah jadwal --}}
 				<div class="modal modal-6 fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered modal-lg">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title">Tambah Pengumuman</h5>
+								<h5 class="modal-title">Ubah Jadwal</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal">
 								</button>
 							</div>
 							<div class="modal-body">
 								<div class="row g-0">
-									<h6 class="modal-title">Isi Pengumuman</h6><br>
-									<div class="col">
-										<textarea class="form-control " id="editor" name="isi" cols="30"
-                                        rows="10"></textarea>
+									<h6 class="modal-title">Ubah Jadwal Karyawan dengan Jadwal Kerja sbb</h6><br>
+									<select  id="jadwalSelect" class="default-select form-control wide w-100">
+										<option selected >Pilih Jadwal</option>
+										<option value="1">Shift Pagi</option>
+										<option value="2">Shift Malam</option>
+                                        <hr>
+                                        <option value="3" data-url="/WorkSchedule">Tambah Jadwal</option>									</select>
+									<div class="invalid-feedback">
+										Please select a valid country.
 									</div>
-
 								</div>
 								<br>
-								<div class="row g-0">
-									<h6 class="modal-title">Lampiran</h6><br>
-									<div class="col">
-										<input type="file" class="form-control btn-xs" value="Upload" placeholder="Nama"  multiple>
-									</div>
 
-								</div>
-
-								<br>
+                                <br>
 
 							</div>
 							<div class="modal-footer">
@@ -1013,30 +1068,7 @@ tr:hover {
 							</div>
 						</div>
 					</div>
-				 </div>
-
-				 {{-- modal lihat pengumuman --}}
-				 <div class="modal fade" id="lihat-pengumuman">
-					<div class="modal-dialog modal-dialog-centered" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title">Cuti Idhul Fitri</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal">
-								</button>
-							</div>
-							<div class="modal-body">
-								<div class="row g-0">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, odio, repellendus magnam culpa corrupti placeat cupiditate alias id assumenda, aspernatur ab corporis sunt! Earum sunt quibusdam perspiciatis eum culpa illum veritatis, labore animi, quos incidunt saepe? Inventore mollitia dolor quae?</p>
-								</div>
-								<div class="row g-0">
-									{{-- <h6 class="modal-title">Lampiran</h6><br> --}}
-									<a href="" target="_blank">Lampiran</a>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                </div>
             </div>
         </div>
 	</div>
@@ -1071,28 +1103,41 @@ tr:hover {
 	<script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
 
-	{{-- text editor --}}
-	<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-    <script>
-        CKEDITOR.replace('editor');
-    </script>
-    <script>
-        var isAlternateLogo = false;
-        var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
-        var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-        function changeLogo() {
-            var logo = document.getElementById("logo");
+	<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var checkboxes = document.querySelectorAll("input[type=checkbox]");
+    var button = document.getElementById("actionButton");
 
-            if (isAlternateLogo) {
-                logo.src = originalLogoSrc;
-                isAlternateLogo = false;
-            } else {
-                logo.src = alternateLogoSrc;
-                isAlternateLogo = true;
-            }
+    checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+        var checkedCheckboxes = document.querySelectorAll("input[type=checkbox]:checked");
+
+        if (checkedCheckboxes.length > 0) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
         }
-    </script>
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var selectElement = document.getElementById("jadwalSelect");
+
+    selectElement.addEventListener('change', function() {
+      var selectedOption = selectElement.options[selectElement.selectedIndex];
+      var url = selectedOption.getAttribute('data-url');
+
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  });
+</script>
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->

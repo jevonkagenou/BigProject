@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('presence', function (Blueprint $table) {
+        Schema::create('other_allowances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('type');
-            $table->datetime('time');
-            $table->boolean('late');
-            $table->string('picture');
+            $table->foreignId('data_payroll_id')->references('id')->on('data_payrolls')->onDelete('cascade');
+            $table->string('other_allwonce_name');
+            $table->string('large_ammount_allowance');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('presence');
+        Schema::dropIfExists('other_allowances');
     }
 };

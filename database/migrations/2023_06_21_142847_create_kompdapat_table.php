@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('presence', function (Blueprint $table) {
+        Schema::create('kompdapats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('type');
-            $table->datetime('time');
-            $table->boolean('late');
-            $table->string('picture');
+            $table->foreignId('nama_id')->references('id')->on('slip_gajis')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('nama_komponendpt')->nullable();
+            $table->string('tipe_komponendpt')->nullable();
+            $table->string('uang_dapat')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('presence');
+        Schema::dropIfExists('kompdapat');
     }
 };

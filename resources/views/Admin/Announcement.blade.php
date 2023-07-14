@@ -900,9 +900,7 @@
 					.hover-icon:hover{
 						color: #f72b50 !important;
 					}
-					.paging_simple_numbers.dataTables_paginate{
-						background: transparent !important;
-					}
+					
                     </style>
                     <div class="row page-titles">
                         <ol class="breadcrumb">
@@ -929,9 +927,17 @@
 												</span>
 											</button>
 										</div>
-										<div class="" style="margin-left: 63%;" >
-											<input type="date" class="form-control btn-xm" >
-										</div>
+										<form action="{{ route('search') }}" method="GET" class="" style="margin-left: 63%;">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <input type="date" class="form-control btn-xm" name="created_at">
+                                                </div>
+                                                <div class="col-4">
+                                                    <button class="btn btn-danger btn-xs" type="submit">Cari</button
+                                                </div>
+                                            </div>
+                                        </form>
+
 									</div>
 								</div>
 									<div class="table-responsive text-center">
@@ -955,7 +961,7 @@
                                             @foreach ($data as $row)
                                                 <tr class="text-center">
                                                     <td scope="row">{{ $no++ }}</td>
-                                                    <td>{{ $row->created_at->format('D M Y') }}</td>
+                                                    <td>{{ $row->created_at->format('d M Y') }}</td>
                                                     <td><a data-bs-toggle="modal" data-bs-target="#lihat-pengumuman{{$row->id}}" type="button">{!! $row->judul !!}</a></td>
                                                     {{-- <td>
                                                         <div class="progress" role="progressbar" style="height: 15px !important;" aria-label="Danger example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
@@ -1085,33 +1091,7 @@
 											</tbody>
 										</table>
 									</div>
-									<nav class="mt-3">
-                                    <ul class="pagination pagination-xs" style="float: right">
-                                      <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                          <i
-                                            class="fa fa-angle-double-left"
-                                            aria-hidden="true"
-                                          ></i
-                                        ></a>
-                                      </li>
-                                      <li class="page-item active">
-                                        <a class="page-link" href="javascript:void(0)">1</a>
-                                      </li>
-                                      <li class="page-item">
-                                        <a class="page-link" href="javascript:void(0)">2</a>
-                                      </li>
 
-                                      <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                          <i
-                                            class="fa fa-angle-double-right"
-                                            aria-hidden="true"
-                                          ></i
-                                        ></a>
-                                      </li>
-                                    </ul>
-                                </nav>
                                 </div>
                         	</div>
                     </div>
@@ -1262,6 +1242,33 @@
           swal("Hello world!");
         });
       </script> --}}
+
+<script>
+    document.getElementById('searchDate').addEventListener('change', function() {
+    var selectedDate = this.value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/search?date=' + selectedDate, true);
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            console.log(response);
+        } else {
+            console.error('Error:', xhr.status);
+        }
+    };
+
+    xhr.onerror = function() {
+        console.error('Request failed');
+    };
+
+    xhr.send();
+});
+
+</script>
+
 
 </body>
 
