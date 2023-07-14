@@ -74,7 +74,7 @@ class WorkScheduleController extends Controller
                     $DateWorkSchedule = new DateWorkSchedule();
                     $DateWorkSchedule->date = $date;
                     $DateWorkSchedule->shift = $data['shift'][$key];
-                    $DateWorkSchedule->nama_jadwal_id = $AddWorkSchedule->id;
+                    $DateWorkSchedule->user_id = auth()->id();
                     $DateWorkSchedule->save();
                 }
             }

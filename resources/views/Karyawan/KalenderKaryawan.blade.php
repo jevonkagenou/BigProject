@@ -312,7 +312,7 @@
                 </div> --}}
                 <!-- row -->
                         <div class="row">
-                            <div class="card"  {{ (Auth::User()->id) }}>
+                            <div class="card">
                                 <div class="card-body">
 
                                     <div id="calendar" class="app-fullcalendar"></div>

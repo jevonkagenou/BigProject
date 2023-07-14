@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('date_work_schedules', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('nama_jadwal_id')->references('id')->on('add_work_schedules')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('add_work_schedules')->onUpdate('cascade')->onDelete('cascade');
             $table->string('shift');
             $table->string('date');
             $table->timestamps();

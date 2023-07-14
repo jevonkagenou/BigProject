@@ -53,9 +53,11 @@ class ViewEmployeeController extends Controller
     public function Calendar(Request $request)
     {
         if($request->ajax()){
-            $data = DateWorkSchedule::all();
+            $data = DateWorkSchedule::where('user_id', auth()->id()
+        )->get();
             return response($data);
         }
+
 
         return view ('karyawan.KalenderKaryawan');
     }
