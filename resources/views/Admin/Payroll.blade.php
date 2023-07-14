@@ -1265,20 +1265,6 @@
         });
 
     </script>
-    @foreach ($payrolls as $item)
-    <script>
-        $(document).ready(function() {
-            $('input[name="btnradio-{{ $item->id }}-3"]').change(function() {
-                if ($(this).val() == 'Sudah Bayar') {
-                    $('input[name="btnradio-{{ $item->id }}-1"],input[name="btnradio-{{ $item->id }}-2"]').not(':checked').attr('disabled', true);
-                } else {
-                    $('input[name="btnradio-{{ $item->id }}-1"]input[name="btnradio-{{ $item->id }}-2"]').attr('disabled', false);
-                }
-            });
-        });
-
-    </script>
-    @endforeach
     <script>
         $(document).ready(function() {
             $('.tambah-pendapatan').click(function() {

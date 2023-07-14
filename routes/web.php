@@ -153,7 +153,7 @@ Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter')
 // Data Payroll {{Id_User}}
 Route::post('/Data_Payroll', [DataPayrollController::class, 'Data_Payroll'])->name('Data_Payroll');
 Route::post('/Data_Salary/{id}', [DataPayrollController::class, 'Data_Salary'])->name('Data_Salary');
-Route::post('/UpdatePayrollStatus', [PayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
+Route::post('/UpdatePayrollStatus', [DataPayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
 Route::get('/SelectedMonth', [SalaryConclusionController::class, 'SelectedMonth'])->name('SelectedMonth');
 Route::post('/GetData/{id}', [PayrollController::class, 'GetData'])->name('GetData');
 

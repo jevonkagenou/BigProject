@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Payroll;
+use App\Models\DataPayroll;
 
 class PayrollController extends Controller
 {
@@ -36,10 +37,18 @@ class PayrollController extends Controller
             return response()->json(['message' => 'Data payroll tidak ditemukan'], 404);
         }
 
+        $dataPayroll = DataPayroll::where('payroll_id', $payrollId)->first();
+
+        if (!$dataPayroll) {
+            return response()->json(['message' => 'Data payroll tidak ditemukan'], 404);
+        }
+
         $payroll->status = $newStatus;
         $payroll->save();
 
-        return response()->json(['message' => 'Status payroll berhasil diperbarui'], 200);
+        $dataPayroll->status = $newStatus;
+        $dataPayroll->save();
 
+        return response()->json(['message' => 'Status payroll berhasil diperbarui'], 200);
     }
 }
