@@ -8,17 +8,24 @@ use Illuminate\Http\Request;
 
 class SlipGajiKomponenController extends Controller
 {
-    public function index(){
-
-        return view('Admin.AddPaySlips',[
-            'tittle' => 'Tambah Slip Gaji'
-        ]);
+    public function PayrollSalarySlip(){
+        $data = slip_gaji::all();
+        return view('Settings.PayrollSalarySlip',[
+            'tittle' => 'Slip Gaji'
+        ] ,compact('data'));
     }
+
+    // public function index(Request $request){
+
+    //     return view('Admin.AddPaySlips',[
+    //         'tittle' => 'Tambah Slip Gaji'
+    //     ]);
+    // }
 
     public function CreateSlips(Request $request){
 
 
-// dd($request);
+        // dd($request);
         $data = $request->all();
 
         $slip = new slip_gaji;
@@ -75,14 +82,7 @@ class SlipGajiKomponenController extends Controller
             }
         }
 
-        return redirect()->route('AddPayslips')->with('success', 'Data Anda Telah Ditambahkan');
-    }
-
-    public function PayrollSalarySlip(){
-        $data = slip_gaji::all();
-        return view('Settings.PayrollSalarySlip',[
-            'tittle' => 'Slip Gaji'
-        ] ,compact('data'));
+        return redirect()->route('PayrollSalarySlip')->with('success', 'Data Anda Telah Ditambahkan');
     }
 
 }

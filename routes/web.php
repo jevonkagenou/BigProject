@@ -76,7 +76,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
     Route::get('/StartPayroll', [StartPayrollController::class, 'StartPayroll'])->name('StartPayroll');
     Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
-    Route::get('/Payroll/{id}', [PayrollController::class, 'Payroll'])->name('Payroll');
+    Route::get('/Payroll', [PayrollController::class, 'Payroll'])->name('Payroll');
     Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
     Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
@@ -155,6 +155,7 @@ Route::post('/Data_Payroll', [DataPayrollController::class, 'Data_Payroll'])->na
 Route::post('/Data_Salary/{id}', [DataPayrollController::class, 'Data_Salary'])->name('Data_Salary');
 Route::post('/UpdatePayrollStatus', [PayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
 Route::get('/SelectedMonth', [SalaryConclusionController::class, 'SelectedMonth'])->name('SelectedMonth');
+Route::post('/GetData/{id}', [PayrollController::class, 'GetData'])->name('GetData');
 
 
 // pengummuman
@@ -173,4 +174,4 @@ Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create')
 
 //presence
 Route::post('PresenceCreate/{jenis}', [EmployeePresence::class, 'presence'])->name('PresenceCreate');
-Route::get('/DetailSalary.', [RouteController::class, 'DetailSalary'])->name('DetailSalary.');
+Route::get('/DetailSalary', [RouteController::class, 'DetailSalary'])->name('DetailSalary.');

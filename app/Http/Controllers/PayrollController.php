@@ -6,20 +6,23 @@ use App\Models\Payroll;
 
 class PayrollController extends Controller
 {
-    public function Payroll()
+    public function Payroll(Request $request)
     {
-        $payroll = Payroll::all();
+    $payrolls = Payroll::when($request->created_at,function($query) use ($request){
+            $query->whereMonth('created_at', $request->created_at);
+        })
+        ->get();
     $statuses = [
             'Belum Siap' => 'btnradio14',
             'Siap Bayar' => 'btnradio15',
             'Sudah Bayar' => 'btnradio16'
         ];
 
-        foreach ($payroll as $payrollId) {
-            $payrollId->status_label = $statuses[$payrollId->status];
+        foreach ($payrolls as $datapayroll) {
+            $datapayroll->status_label = $statuses[$datapayroll->status];
         }
 
-        return view('Admin.Payroll', compact('payroll'));
+        return view('Admin.Payroll', compact('payrolls'));
     }
 
     public function UpdatePayrollStatus(Request $request)

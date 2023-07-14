@@ -11,4 +11,7 @@ class slip_gaji extends Model
     protected $guarded=[];
     protected $fillable = ['name','periode','periode_dimulai'];
 
+    public function DataPayroll(){
+        return $this->HasMany(DataPayroll::class);
+    }
 }

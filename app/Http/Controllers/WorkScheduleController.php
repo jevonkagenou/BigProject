@@ -20,7 +20,7 @@ class WorkScheduleController extends Controller
     public function tampiledit(Request $request, $id)
     {
         $data = WorkSchedule::find($id);
-        return redirect()->route('WorkSchedule')->with('Sukses', 'Data Berhasil Di Update');
+        return redirect()->route('WorkSchedule')->with('success', 'Data Berhasil Di Update');
     }
 
     public function updatejadwalkerja(Request $request, $id)

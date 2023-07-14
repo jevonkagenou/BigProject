@@ -40,6 +40,7 @@
     <!-- Custom Stylesheet -->
     <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
 
 </head>
 
@@ -828,22 +829,29 @@
                             </div>
                             <!-- baris dua -->
                             <div class="row mt-2">
-                                <div class="col-md-2 col-sm-3 col-4">
+                                <div class="col-md-2 col-sm-5 col-3" style="margin-left:2%;">
                                     <button class="btn btn-outline-light btn-xs">
                                         Bulan ini
                                     </button>
                                 </div>
-                                <div class="col-md-1 col-sm-5 col-3" style="margin-left: -8%">
-                                    <div class="dropdown-basic">
-                                        <button class="btn btn-outline-light btn-xs dropdown-toggle" data-bs-toggle="dropdown">
-                                            Mei
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Juni</a>
-                                            <a class="dropdown-item" href="#">Juli</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <form action="/Payroll" class="col-md-3 col-sm-3 col-12" style="margin-left:-9%; display:flex;">
+                                    <select name="created_at" id="tom-select-it" data-placeholder="Select" style="width: 800px; margin-right: 10px;">
+                                        <option value="">None</option>
+                                        <option value="1">Januari</option>
+                                        <option value="2">Februari</option>
+                                        <option value="3">Maret</option>
+                                        <option value="4">April</option>
+                                        <option value="5">Mei</option>
+                                        <option value="6">Juni</option>
+                                        <option value="7">Juli</option>
+                                        <option value="8">Agustus</option>
+                                        <option value="9">September</option>
+                                        <option value="10">Oktober</option>
+                                        <option value="11">November</option>
+                                        <option value="12">Desember</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary btn-xs" style="width: 100px; margin-left:8%;">Cari</button>
+                                </form>
                                 <div class="col-lg-9 col-md-9 col-sm-2 col-6 ">
                                     <div class="responsive-button text-end">
                                         <button type="button" class="btn btn-outline-light btn-xs">
@@ -868,7 +876,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($payroll as $item)
+                                            @foreach ($payrolls as $item)
                                             <tr class="text-center">
                                                 <td>{{$loop->iteration}}</td>
                                                 <td class="accordion" id="accord-11One" data-bs-toggle="collapse" data-bs-target="#collapse11One" aria-controls="collapse11One" aria-expanded="true" role="button">
@@ -1197,6 +1205,29 @@
     <script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    <script>
+        var settings = {};
+        new TomSelect('#tom-select-it', settings);
+
+    </script>
+    <script>
+        // mengambil data dari server menggunakan AJAX
+        $.ajax({
+            url: "/GetData/" + id, // ganti dengan URL yang sesuai dengan route yang Anda buat di file web.php
+            method: "GET"
+            , dataType: "json"
+            , success: function(data) {
+                // menampilkan data di halaman
+                $("#nama").text(data.nama);
+                $("#email").text(data.email);
+            }
+            , error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+
+    </script>
     <script>
         const radioButtons = document.querySelectorAll('.btn-check');
         radioButtons.forEach(function(button) {
@@ -1218,6 +1249,7 @@
         });
 
     </script>
+    @foreach ($payrolls as $item)
     <script>
         $(document).ready(function() {
             $('input[name="btnradio-{{ $item->id }}-3"]').change(function() {
@@ -1230,6 +1262,7 @@
         });
 
     </script>
+    @endforeach
     <script>
         $(document).ready(function() {
             $('.tambah-pendapatan').click(function() {
@@ -1302,7 +1335,6 @@
         });
 
     </script>
-
     <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";

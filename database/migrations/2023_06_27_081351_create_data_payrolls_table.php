@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('data_employee_id');
             $table->foreign('data_employee_id')->references('id')->on('data_employees')->onDelete('cascade');
+            $table->unsignedBigInteger('slip_gaji_id');
+            $table->foreign('slip_gaji_id')->references('id')->on('slip_gajis')->onDelete('cascade');
             $table->bigInteger('basic_salary');
             $table->bigInteger('overtime_pay');
             $table->bigInteger('credit_allowance');

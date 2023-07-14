@@ -6,6 +6,7 @@ use App\Models\DataPayroll;
 use App\Models\OtherAllowances;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
+use App\Models\slip_gaji;
 
 class DataPayrollController extends Controller
 {
@@ -14,11 +15,14 @@ class DataPayrollController extends Controller
     return view('EmployeeDetails.PayrolEmployee', compact('data'),['tittle'=>'Data Payroll' ]);
     }
 
-        public function Data_Salary(Request $request, $id){
+    public function Data_Salary(Request $request, $id){
             $data = DataEmployee::find($id);
+            $periode = slip_gaji::latest()->first()->periode;
+
             // dd($request);
             $payroll = DataPayroll::create([
                 'data_employee_id' => $data->id,
+                'slip_gaji_id' => $request->slip_gaji_id,
                 'basic_salary' => $request->basic_salary,
                 'overtime_pay' => $request->overtime_pay,
                 'credit_allowance' => $request->credit_allowance,
@@ -33,6 +37,6 @@ class DataPayrollController extends Controller
                     'large_ammount_allowance' => $request->large_ammount_allowance[$i]
                 ]);
             }
-        return redirect()->route('SalaryAdjustment',$data->id)->with('success', 'Data Anda Telah Ditambahkan');
+            return redirect()->route('PayrolEmployee', ['id' => $data->id, 'periode' => $periode])->with('success', 'Data Anda Telah Ditambahkan');
     }
 }

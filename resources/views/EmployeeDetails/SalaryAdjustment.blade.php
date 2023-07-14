@@ -873,64 +873,50 @@
                                 {{-- End --}}
 
                                 {{-- Add Payrol --}}
-                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+                                <form method="POST" action="/Data_Salary/{{$data->id}}" enctype="multipart/form-data" class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+                                    @csrf
                                     <div class="card-body">
-                                        <form method="POST" action="/Data_Salary/{{$data->id}}" enctype="multipart/form-data">
-                                            @csrf
-                                            <h5 class="strong text-center" data-bs-toggle="tab">
-                                                Setting Gaji
-                                            </h5>
-                                            <hr />
-                                            <div class="basic-form">
-                                                <form>
-                                                    <div class="mb-3">
-                                                        <div class="form-check mb-2">
-                                                            <input type="radio" class="form-check-input" id="gajiBulanan" name="gaji" value="bulanan" onclick="checkedOnClick(this);">
-                                                            <label class="form-check-label" for="gajiBulanan">Gaji
-                                                                Bulanan</label>
-                                                        </div>
-                                                        <div class="form-check mb-2">
-                                                            <input type="radio" class="form-check-input" id="gajiMingguan" name="gaji" value="mingguan" onclick="checkedOnClick(this);">
-                                                            <label class="form-check-label" for="gajiMingguan">Gaji
-                                                                Mingguan</label>
-                                                        </div>
-                                                        <div class="form-check mb-2">
-                                                            <input type="radio" class="form-check-input" id="gajiHarian" name="gaji" value="harian" onclick="checkedOnClick(this);">
-                                                            <label class="form-check-label" for="gajiHarian">Gaji
-                                                                Harian</label>
-                                                        </div>
-                                                    </div>
-                                                </form>
+                                        <h5 class="strong text-center" data-bs-toggle="tab">
+                                            Setting Gaji
+                                        </h5>
+                                        <hr />
+                                        <div class="basic-form">
+                                            <div class="mb-3">
+                                                @foreach ($slipGaji as $item)
+                                                <div class="form-check mb-2">
+                                                    <input type="radio" class="form-check-input" id="gaji{{ $item->id }}" name="slip_gaji_id" value="{{ $item->id }}" onclick="checkedOnClick(this);">
+                                                    <label class="form-check-label" for="gaji{{ $item->id }}">{{ $item->periode }}</label>
+                                                </div>
+                                                @endforeach
                                             </div>
-                                            <hr />
-                                        </form>
+                                        </div>
+                                        <hr />
                                     </div>
                                     <div class="card-body">
                                         <div class="card-header">
                                             <h4 class="card-title">Gaji Bulanan</h4>
                                         </div>
                                     </div>
-                                    <form action="/Data_Salary/{{$data->id}}" method="post">
-                                        @csrf
-                                        <div class="card-body">
-                                            <h5 class="strong text-center" data-bs-toggle="tab">
-                                                Pendapatan
-                                            </h5>
-                                            <hr>
 
-                                            <div class="row">
-                                                <div class="col-xl-6 col-6">
-                                                    <p>Gaji Pokok</p>
-                                                </div>
-                                                <div class="col-xl-6 col-6">
-                                                    <input type="number" id="basicSalaryInput" name="basic_salary" class="form-control @error('basic_salary') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                                    @error('basic_salary')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
+                                    <div class="card-body">
+                                        <h5 class="strong text-center" data-bs-toggle="tab">
+                                            Pendapatan
+                                        </h5>
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col-xl-6 col-6">
+                                                <p>Gaji Pokok</p>
                                             </div>
-                                            <hr>
-                                            {{-- <div class="row">
+                                            <div class="col-xl-6 col-6">
+                                                <input type="number" id="basicSalaryInput" name="basic_salary" class="form-control @error('basic_salary') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                                @error('basic_salary')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        {{-- <div class="row">
                                                 <div class="col-xl-6 col-6">
                                                     <p>Employee</p>
                                                 </div>
@@ -941,163 +927,163 @@
                                                         style="border: 0.035rem solid rgb(195, 195, 195);" />
                                                     @error('data_employee_id')
                                                         <div class="invalid-feedback">{{ $message }}
-                                        </div>
-                                        @enderror
+                                    </div>
+                                    @enderror
+                            </div>
+                        </div> --}}
+                        <div class="row">
+                            <div class="col-xl-3 col-3">
+                                <p>Uang Lembur</p>
+                            </div>
+                            <div class="col-xl-3 col-3">
+                                {{-- <p>0</p> --}}
+                            </div>
+                            <div class="col-xl-6 col-6">
+                                <input type="number" id="overtimePayInput" name="overtime_pay" class="form-control @error('overtime_pay') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                @error('overtime_pay')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-5 ms-auto">
+                            <p>(Berapa Kali Lembur x Uang Lembur)</p>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-xl-6 col-6">
+                                <p>Tunjangan Pulsa</p>
+                            </div>
+                            <div class="col-xl-6 col-6">
+                                <input type="number" id="creditAllowanceInput" name="credit_allowance" class="form-control @error('credit_allowance') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                @error('credit_allowance')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <hr />
+                        <hr>
+                        <div class="row">
+                            <button type="button" class="tambah-pendapatan text-red" style="border: none; background: none;">
+                                <i class="bi bi-plus"></i> Tambah Tunjangan
+                            </button>
+                            <div id="container"></div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xl-6 col-6">
+                                <input type="text" id="creditAllowanceInput" name="other_allwonce_name[]" placeholder="Nama Inputan" class="form-control @error('other_allwonce_name') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                @error('other_allwonce_name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="col-xl-6 col-6">
+                                <input type="number" id="creditAllowanceInput" name="large_ammount_allowance[]" placeholder="Besar Tunjangan" class="form-control @error('large_ammount_allowance') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                @error('large_ammount_allowance')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <hr />
+                        <p></p>
+                        <div class="row">
+                            <div class="col-lg-9 col-6">
+                                <b>
+                                    <p class="strong">Total</p>
+                                </b>
+                            </div>
+                            <div class="col-lg-3 col-4">
+                                <b>
+                                    <p class="strong" id="totalSalary">Rp. 0</p>
+                                </b>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="strong text-center" data-bs-toggle="tab">
+                                Potongan
+                            </h5>
+                            <hr />
+                            <div class="row">
+                                <div class="col-xl-6 col-6">
+                                    <p>Koperasi</p>
                                 </div>
-                            </div> --}}
+                                <div class="col-xl-6 col-6">
+                                    <input type="number" name="salary_cut" class="form-control @error('salary_cut') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                    @error('salary_cut')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <hr />
                             <div class="row">
                                 <div class="col-xl-3 col-3">
-                                    <p>Uang Lembur</p>
+                                    <p>Keterlambatan</p>
                                 </div>
                                 <div class="col-xl-3 col-3">
                                     {{-- <p>0</p> --}}
                                 </div>
                                 <div class="col-xl-6 col-6">
-                                    <input type="number" id="overtimePayInput" name="overtime_pay" class="form-control @error('overtime_pay') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                    @error('overtime_pay')
+                                    <input type="number" name="lateness" class="form-control @error('lateness') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                    @error('lateness')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-xl-5 col-5 ms-auto">
-                                <p>(Berapa Kali Lembur x Uang Lembur)</p>
+                                <p>(Berapa Kali Terlambat x Uang Denda)</p>
                             </div>
                             <hr />
                             <div class="row">
                                 <div class="col-xl-6 col-6">
-                                    <p>Tunjangan Pulsa</p>
+                                    <p>Potongan Lainnya</p>
                                 </div>
                                 <div class="col-xl-6 col-6">
-                                    <input type="number" id="creditAllowanceInput" name="credit_allowance" class="form-control @error('credit_allowance') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                    @error('credit_allowance')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
+                                    <p>Dimasukkan ketika melakukan pembayaran</p>
                                 </div>
                             </div>
                             <hr />
-                            <hr>
-                            <div class="row">
-                                <button type="button" class="tambah-pendapatan text-red" style="border: none; background: none;">
-                                    <i class="bi bi-plus"></i> Tambah Tunjangan
-                                </button>
-                                <div id="container"></div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-xl-6 col-6">
-                                    <input type="text" id="creditAllowanceInput" name="other_allwonce_name[]" placeholder="Nama Inputan" class="form-control @error('other_allwonce_name') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                    @error('other_allwonce_name')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="col-xl-6 col-6">
-                                    <input type="number" id="creditAllowanceInput" name="large_ammount_allowance[]" placeholder="Besar Tunjangan" class="form-control @error('large_ammount_allowance') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                    @error('large_ammount_allowance')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <hr />
-                            <p></p>
                             <div class="row">
                                 <div class="col-lg-9 col-6">
-                                    <b>
-                                        <p class="strong">Total</p>
-                                    </b>
+                                    <p>Total</p>
                                 </div>
                                 <div class="col-lg-3 col-4">
                                     <b>
                                         <p class="strong" id="totalSalary">Rp. 0</p>
                                     </b>
                                 </div>
+                                <hr />
                             </div>
-                            <div class="card-body">
-                                <h5 class="strong text-center" data-bs-toggle="tab">
-                                    Potongan
-                                </h5>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-xl-6 col-6">
-                                        <p>Koperasi</p>
-                                    </div>
-                                    <div class="col-xl-6 col-6">
-                                        <input type="number" name="salary_cut" class="form-control @error('salary_cut') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                        @error('salary_cut')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                            <div class="row mt-2">
+                                <div class="col-lg-9 col-6">
+                                    <b>
+                                        <label class="strong">Total Home Pay</label>
+                                    </b>
                                 </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-xl-3 col-3">
-                                        <p>Keterlambatan</p>
-                                    </div>
-                                    <div class="col-xl-3 col-3">
-                                        {{-- <p>0</p> --}}
-                                    </div>
-                                    <div class="col-xl-6 col-6">
-                                        <input type="number" name="lateness" class="form-control @error('lateness') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
-                                        @error('lateness')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-xl-5 col-5 ms-auto">
-                                    <p>(Berapa Kali Terlambat x Uang Denda)</p>
-                                </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-xl-6 col-6">
-                                        <p>Potongan Lainnya</p>
-                                    </div>
-                                    <div class="col-xl-6 col-6">
-                                        <p>Dimasukkan ketika melakukan pembayaran</p>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-lg-9 col-6">
-                                        <p>Total</p>
-                                    </div>
-                                    <div class="col-lg-3 col-4">
-                                        <b>
-                                            <p class="strong" id="totalSalary">Rp. 0</p>
-                                        </b>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-lg-9 col-6">
-                                        <b>
-                                            <label class="strong">Total Home Pay</label>
-                                        </b>
-                                    </div>
-                                    <div class="col-lg-3 col-4">
-                                        <b>
-                                            <label class="strong">Rp. 6.000.000</label>
-                                        </b>
-                                    </div>
+                                <div class="col-lg-3 col-4">
+                                    <b>
+                                        <label class="strong">Rp. 6.000.000</label>
+                                    </b>
                                 </div>
                             </div>
-                            {{-- End --}}
-                            <div class="row justify-content-end">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="card-body">
-                                        <div class="row justify-content-end">
-                                            <div class="col-lg-8 col-12 text-end">
-                                                <button type="submit" class="btn btn-rounded btn-danger btn-xs">Simpan
-                                                    Perubahan</button>
-                                            </div>
+                        </div>
+                        {{-- End --}}
+                        <div class="row justify-content-end">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="card-body">
+                                    <div class="row justify-content-end">
+                                        <div class="col-lg-8 col-12 text-end">
+                                            <button type="submit" class="btn btn-rounded btn-danger btn-xs">Simpan
+                                                Perubahan</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
     </div>
@@ -1229,38 +1215,43 @@
     </script>
 
     <script>
-            $(document).ready(function() {
-                $('.tambah-pendapatan').click(function() {
-                    tambahPendapatan();
-                });
+        $(document).ready(function() {
+            $('.tambah-pendapatan').click(function() {
+                tambahPendapatan();
+            });
 
-                function tambahPendapatan() {
-                    var jumlahBaris = $('.baris').length + 0;
-                    if (jumlahBaris >= 8) {
-                        return;
-                    }
-                    var htmlBaris =
+            function tambahPendapatan() {
+                var jumlahBaris = $('.baris').length + 0;
+                if (jumlahBaris >= 8) {
+                    return;
+                }
+                var htmlBaris =
                     '<div class="row baris">' +
                     '<div class="col-xl-6 col-6">' +
-                    '<input type="text" id="creditAllowanceInput" name="other_allwonce_name[]" placeholder="Nama Inputan" class="form-control @error('other_allwonce_name') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />' +
-                    '@error('other_allwonce_name')' +
+                    '<input type="text" id="creditAllowanceInput" name="other_allwonce_name[]" placeholder="Nama Inputan" class="form-control @error('
+                other_allwonce_name ') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />' +
+                    '@error('
+                other_allwonce_name ')' +
                     '<div class="invalid-feedback">{{ $message }}</div>' +
                     '@enderror' +
                     '</div>' +
                     '<div class="col-xl-6 col-6">' +
-                    '<input type="number" id="creditAllowanceInput" name="large_ammount_allowance[]" placeholder="Besar Tunjangan" class="form-control @error('large_ammount_allowance') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" /> <a><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>' +
-                    '@error('large_ammount_allowance')' +
+                    '<input type="number" id="creditAllowanceInput" name="large_ammount_allowance[]" placeholder="Besar Tunjangan" class="form-control @error('
+                large_ammount_allowance ') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" /> <a><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>' +
+                    '@error('
+                large_ammount_allowance ')' +
                     '<div class="invalid-feedback">{{ $message }}</div>' +
                     '@enderror' +
                     '</div>' +
                     '</div>' +
                     '<hr>';
 
-                    $('#container').append(htmlBaris);
+                $('#container').append(htmlBaris);
 
-                    $('.fa-trash').off().click(function() {
-                        $(this).closest('.baris').remove();
-                    });
-                }
-            });
-        </script>
+                $('.fa-trash').off().click(function() {
+                    $(this).closest('.baris').remove();
+                });
+            }
+        });
+
+    </script>
