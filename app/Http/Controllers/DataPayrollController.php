@@ -18,6 +18,10 @@ class DataPayrollController extends Controller
     public function Data_Salary(Request $request, $id){
             $data = DataEmployee::find($id);
             $periode = slip_gaji::latest()->first()->periode;
+            // $dataEmployee = DataEmployee::count();
+            // $slipgaji = slip_gaji::count();
+            // $tetap =  DataEmployee::where('slip_gaji_id', 1)->count();
+
 
             // dd($request);
             $payroll = DataPayroll::create([
