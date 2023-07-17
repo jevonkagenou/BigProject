@@ -76,11 +76,11 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
     Route::get('/StartPayroll', [StartPayrollController::class, 'StartPayroll'])->name('StartPayroll');
     Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
-    Route::get('/Payroll', [PayrollController::class, 'Payroll'])->name('Payroll');
+    Route::get('/Payroll/{id}', [PayrollController::class, 'Payroll'])->name('Payroll');
     Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
     Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
-    Route::get('/SalaryAdjustment/{id}', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
+    Route::get('/SalaryAdjustment', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
     Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
     Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
     Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
