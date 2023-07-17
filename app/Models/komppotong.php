@@ -11,4 +11,8 @@ class komppotong extends Model
     protected $guarded=[];
     protected $fillable = ['nama_id','nama_komponenptg','tipe_komponenptg','uang_potong'];
 
+    public function slip()
+    {
+        return $this->belongsTo(slip_gaji::class);
+    }
 }
