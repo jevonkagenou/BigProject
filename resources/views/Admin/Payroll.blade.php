@@ -667,24 +667,6 @@
                                 Payroll
                             </div>
                         </div>
-                        <ul class="navbar-nav header-right">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                    <li><a class="dropdown-item" href="/ProfilAdmin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#969ba0" viewBox="0 0 448 512" style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
-                                                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
-                                            </svg> Profil</a></li>
-                                    <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#969ba0" viewBox="0 0 512 512" style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
-                                                <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
-                                            </svg> Keluar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                     <ul class="navbar-nav header-right">
                         <li class="nav-item dropdown">
@@ -817,7 +799,7 @@
                                 <!-- baris satu -->
                                 <div class="row">
                                     <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-6">
-                                        <dv class="responsive-button">
+                                        <div class="responsive-button">
                                             <a href="/PayrollStep" class="btn btn-danger btn-xs">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
                                                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
@@ -873,6 +855,7 @@
                                                 <th>Nama</th>
                                                 <th>Status</th>
                                                 <th>Total</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -915,214 +898,11 @@
                                                     </div>
                                                 </td>
                                                 <td>Rp.{{ number_format($item->total, 0, ',', '.') }}</td>
-                                            </tr>
-                                            @endforeach
-                                            <tr>
-                                                <td colspan="5">
-                                                    <div id="collapse11One" class="collapse accordion__body" aria-labelledby="accord-11One" data-bs-parent="#accordion-eleven">
-                                                        <div class="accordion-body-text">
-                                                            <div id="collapse11One" class="collapse accordion__body" aria-labelledby="accord-11One" data-bs-parent="#accordion-eleven">
-                                                                <div class="accordion-body-text">
-                                                                    <div class="row mb-2">
-                                                                        <div class="col-xl-6 col-12 mb-2">
-                                                                            <div class="card-body" style="
-														  border: 1px solid
-															rgb(181, 178, 178);
-														  border-radius: 1rem;
-														">
-                                                                                <h5 class="strong text-center" data-bs-toggle="tab">
-                                                                                    Pendapatan
-                                                                                </h5>
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-xl-8 col-8">
-                                                                                        <p>Gaji Pokok</p>
-                                                                                    </div>
-                                                                                    <div class="col-xl-4 col-4">
-                                                                                        <p>Rp. 4.500.000</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-xl-3 col-3">
-                                                                                        <p>Uang Lembur</p>
-                                                                                    </div>
-                                                                                    <div class="col-xl-3 col-3">
-                                                                                        <input type="text" class="form-control" placeholder="" style="
-                                                                                            border: 0.035rem solid
-                                                                                            rgb(195, 195, 195);
-                                                                                        " />
-                                                                                    </div>
-                                                                                    <div class="col-xl-3 col-3">
-                                                                                        <p>Jam x 26.001</p>
-                                                                                    </div>
-                                                                                    <div class="col-xl-3 col-3">
-                                                                                        <p>0</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-xl-9 col-8">
-                                                                                        <p>Tunjangan Pulsa</p>
-                                                                                    </div>
-                                                                                    <div class="col-xl-3 col-4">
-                                                                                        <input type="text" class="form-control" placeholder="" style="
-																border: 0.035rem solid
-																  rgb(195, 195, 195);
-															  " />
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-xl-9 col-8">
-                                                                                        <p>Tunjangan Lainnya</p>
-                                                                                    </div>
-                                                                                    <div class="col-xl-3 col-4">
-                                                                                        <input type="text" class="form-control" placeholder="" style="
-																border: 0.035rem solid
-																  rgb(195, 195, 195);
-															  " />
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr />
-
-
-                                                                                <hr>
-                                                                                <div class="row baris">
-                                                                                    <div class="col-xl-5 col-12">
-                                                                                        <p>Masukkan Nama Pendapatan</p>
-                                                                                        <input type="text" class="form-control" placeholder="" style="
-																border: 0.035rem solid
-																  rgb(195, 195, 195);
-															  " />
-                                                                                    </div>
-                                                                                    <div class="col-xl-5 col-12">
-                                                                                        <p>
-                                                                                            Masukkan Jumlah Pendapatan
-                                                                                        </p>
-                                                                                        <input type="text" class="form-control" placeholder="" style="
-																border: 0.035rem solid
-																  rgb(195, 195, 195);
-															  " />
-                                                                                    </div>
-                                                                                    <div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">
-                                                                                        <a href=""><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>
-                                                                                    </div>
-
-                                                                                </div>
-
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-8 col-8">
-                                                                                        <p class="strong">
-                                                                                            Total Pendapatan
-                                                                                        </p>
-                                                                                    </div>
-                                                                                    <div class="col-lg-4 col-4">
-                                                                                        <p class="strong">Rp. 5.000.000
-                                                                                        </p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-xl-6 col-12 ms-auto">
-                                                                            <div class="card-body" style="
-														  border: 1px solid
-															rgb(181, 178, 178);
-														  border-radius: 1rem;
-														">
-                                                                                <h5 class="strong text-center" data-bs-toggle="tab">
-                                                                                    Potongan
-                                                                                </h5>
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-xl-8 col-8">
-                                                                                        <p>Koperasi</p>
-                                                                                    </div>
-                                                                                    <div class="col-xl-4 col-4">
-                                                                                        <p>Rp. 450.000</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-xl-3 col-3">
-                                                                                        <p>Denda Keterlambatan</p>
-                                                                                    </div>
-                                                                                    <div class="col-xl-3 col-3">
-                                                                                        <input type="text" class="form-control" placeholder="" style="
-																border: 0.035rem solid
-																  rgb(195, 195, 195);
-															  " />
-                                                                                    </div>
-                                                                                    <div class="col-xl-3 col-3">
-                                                                                        <p>Jam x 26.001</p>
-                                                                                    </div>
-                                                                                    <div class="col-xl-3 col-3">
-                                                                                        <p>0</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr />
-                                                                                <div class="row">
-                                                                                    <div class="col-xl-9 col-8">
-                                                                                        <p>Potongan Lainnya</p>
-                                                                                    </div>
-                                                                                    <div class="col-xl-3 col-4">
-                                                                                        <input type="text" class="form-control" placeholder="" style="
-																border: 0.035rem solid
-																  rgb(195, 195, 195);
-															  " />
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr />
-                                                                                <div class="row baris">
-                                                                                    <button type="button" class="tambah-pemotongan text-red" style="border: none; background: none;">
-                                                                                        <i class="bi bi-plus"></i> Tambah Potongan
-                                                                                    </button>
-                                                                                    <div id="container-pemotongan"></div>
-                                                                                </div>
-                                                                                <hr>
-                                                                                <div class="row">
-                                                                                    <div class="col-xl-5 col-12">
-                                                                                        <p>Masukkan Nama Potongan</p>
-                                                                                        <input type="text" class="form-control" placeholder="" style="
-																  border: 0.035rem solid
-																	rgb(195, 195, 195);
-																" />
-                                                                                    </div>
-                                                                                    <div class="col-xl-5 col-12">
-                                                                                        <p>
-                                                                                            Masukkan Jumlah Potongan
-                                                                                        </p>
-                                                                                        <input type="text" class="form-control" placeholder="" style="
-																  border: 0.035rem solid
-																	rgb(195, 195, 195);
-																" />
-                                                                                    </div>
-                                                                                    <div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">
-                                                                                        <a href=""><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <hr>
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-8 col-8">
-                                                                                        <p class="strong">
-                                                                                            Total Potongan
-                                                                                        </p>
-                                                                                    </div>
-                                                                                    <div class="col-lg-4 col-4">
-                                                                                        <p>Rp. 500.000</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                <td>
+                                                    <a href="/gaji/{{$item->id}}" class="btn btn-danger btn-xs sharp" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg"><i class="fa fa-eye"></i></a>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -1147,6 +927,177 @@
                                 </ul>
                             </nav>
                         </div>
+
+                        {{-- @foreach ($payrolls as $row) --}}
+                        @foreach ($Gaji as $modal)
+                            
+                        
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="" aria-hidden="true">
+                            <div class="modal-dialog modal-lg ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Gaji</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row mb-2">
+                                            <div class="col-xl-6 col-12 mb-2">
+                                                <div class="card-body" style="
+                      border: 1px solid
+                        rgb(181, 178, 178);
+                      border-radius: 1rem;
+                    ">
+                                                    <h5 class="strong text-center" data-bs-toggle="tab">
+                                                        Pendapatan
+                                                    </h5>
+                                                    <hr />
+                                                    <div class="row">
+                                                        <div class="col-xl-5 col-5">
+                                                            <p>Gaji Pokok</p>
+                                                        </div>
+                                                        <div class="col-xl-7 col-7">
+                                                            <p>{{$modal->basic_salary}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="row">
+                                                        <div class="col-xl-5 col-5">
+                                                            <p>Uang Lembur</p>
+                                                        </div>
+                                                        <div class="col-xl-7 col-7">
+                                                            <p>Rp. 10.000</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-5 col-5">
+                                                            <p>Jam x 26.001</p>
+                                                        </div>
+                                                        <div class="col-xl-7 col-7">
+                                                            <p>0</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="row">
+                                                        <div class="col-xl-5 col-5">
+                                                            <p>Tunjangan Pulsa</p>
+                                                        </div>
+                                                        <div class="col-xl-7 col-7">
+                                                            <p>Rp. 5.000</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="row">
+                                                        <div class="col-xl-5 col-5">
+                                                            <p>Tunjangan Lainnya</p>
+                                                        </div>
+                                                        <div class="col-xl-7 col-7">
+                                                            <p>Rp. 10.000</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr />                                                    
+                                                    <div class="row">
+                                                        <div class="col-lg-5 col-5">
+                                                            <p class="strong">
+                                                                Total Pendapatan
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-47 col-7">
+                                                            <p class="strong">Rp. 5.000.000</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-6 col-12 ms-auto">
+                                                <div class="card-body" style="border: 1px solid rgb(181, 178, 178); border-radius: 1rem;">
+                                                    <h5 class="strong text-center" data-bs-toggle="tab">
+                                                        Potongan
+                                                    </h5>
+                                                    <hr />
+                                                    <div class="row">
+                                                        <div class="col-xl-5 col-5">
+                                                            <p>Koperasi</p>
+                                                        </div>
+                                                        <div class="col-xl-7 col-7">
+                                                            <p>Rp. 450.000</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="row">
+                                                        <div class="col-xl-5 col-5">
+                                                            <p>Denda Keterlambatan</p>
+                                                        </div>
+                                                        <div class="col-xl-7 col-7">
+                                                            <p>Rp. 10.000</p>
+                                                        </div>
+                                                        <div class="col-xl-5 col-5">
+                                                            <p>Jam x 26.001</p>
+                                                        </div>
+                                                        <div class="col-xl-7 col-7">
+                                                            <p>0</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="row">
+                                                        <div class="col-xl-5 col-5">
+                                                            <p>Potongan Lainnya</p>
+                                                        </div>
+                                                        <div class="col-xl-7 col-7">
+                                                            <p>Rp. 10.000</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-lg-5 col-5">
+                                                            <p class="strong">
+                                                                Total Potongan
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-7 col-7">
+                                                            <p>Rp. 500.000</p>
+                                                        </div>
+                                                    </div>                                                  
+
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="d-flex col-xl-12 col-12">
+                                                <div class="col-lg-6 col-12">
+                                                    <h5 class="strong">
+                                                        Total Take Home Pay
+                                                    </h5>
+                                                </div>
+                                                <div class="col-lg-6 col-12">
+                                                    <div class="d-flex">
+                                                        <div class="col-lg-4 col-4">
+                                                            <p style="font-size: 11pt; color:black">Nama</p>
+                                                        </div>
+                                                        <div class="col-lg-8 col-8">
+                                                            <p style="font-size: 11pt; color:black">Adi</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <div class="col-lg-4 col-4">
+                                                            <p style="font-size: 11pt; color:black">Total</p>
+                                                        </div>
+                                                        <div class="col-lg-8 col-8">
+                                                            <p style="font-size: 11pt; color:black">Rp. 4.250.000</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                                                                                                                                                    
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        {{-- @endforeach --}}
 
                     </div>
                 </div>
@@ -1249,20 +1200,6 @@
         });
 
     </script>
-    @foreach ($payrolls as $item)
-    <script>
-        $(document).ready(function() {
-            $('input[name="btnradio-{{ $item->id }}-3"]').change(function() {
-                if ($(this).val() == 'Sudah Bayar') {
-                    $('input[name="btnradio-{{ $item->id }}-1"],input[name="btnradio-{{ $item->id }}-2"]').not(':checked').attr('disabled', true);
-                } else {
-                    $('input[name="btnradio-{{ $item->id }}-1"]input[name="btnradio-{{ $item->id }}-2"]').attr('disabled', false);
-                }
-            });
-        });
-
-    </script>
-    @endforeach
     <script>
         $(document).ready(function() {
             $('.tambah-pendapatan').click(function() {

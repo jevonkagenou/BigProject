@@ -30,4 +30,9 @@ class DataPayroll extends Model
     public function slip_gaji(){
         return $this->belongsTo(slip_gaji::class);
     }
+    public function payroll()
+    {
+        return $this->belongsTo(Payroll::class);
+    }
+
 }

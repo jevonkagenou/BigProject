@@ -23,6 +23,7 @@ return new class extends Migration
             $table->bigInteger('cooperative')->nullable();
             $table->bigInteger('salary_cut')->nullable();
             $table->bigInteger('lateness')->nullable();
+            $table->string('status')->default('Belum Siap');
             $table->bigInteger('total')->default(0);
             $table->timestamps();
         });

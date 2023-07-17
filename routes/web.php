@@ -76,11 +76,11 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
     Route::get('/StartPayroll', [StartPayrollController::class, 'StartPayroll'])->name('StartPayroll');
     Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
-    Route::get('/Payroll', [PayrollController::class, 'Payroll'])->name('Payroll');
+    Route::get('/Payroll/{id}', [PayrollController::class, 'Payroll'])->name('Payroll');
     Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
     Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
-    Route::get('/SalaryAdjustment/{id}', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
+    Route::get('/SalaryAdjustment', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
     Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
     Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
     Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
@@ -153,7 +153,7 @@ Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter')
 // Data Payroll {{Id_User}}
 Route::post('/Data_Payroll', [DataPayrollController::class, 'Data_Payroll'])->name('Data_Payroll');
 Route::post('/Data_Salary/{id}', [DataPayrollController::class, 'Data_Salary'])->name('Data_Salary');
-Route::post('/UpdatePayrollStatus', [PayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
+Route::post('/UpdatePayrollStatus', [DataPayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
 Route::get('/SelectedMonth', [SalaryConclusionController::class, 'SelectedMonth'])->name('SelectedMonth');
 Route::post('/GetData/{id}', [PayrollController::class, 'GetData'])->name('GetData');
 
@@ -174,4 +174,5 @@ Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create')
 
 //presence
 Route::post('PresenceCreate/{jenis}', [EmployeePresence::class, 'presence'])->name('PresenceCreate');
-Route::get('/DetailSalary', [RouteController::class, 'DetailSalary'])->name('DetailSalary.');
+Route::get('/DetailSalary.', [RouteController::class, 'DetailSalary'])->name('DetailSalary.');
+

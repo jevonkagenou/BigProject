@@ -14,4 +14,9 @@ class Payroll extends Model
     {
         return $this->belongsTo(DataEmployee::class, 'data_employee_id');
     }
+    public function dataPayroll()
+    {
+        return $this->hasOne(DataPayroll::class);
+    }
+
 }
