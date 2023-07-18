@@ -15,12 +15,12 @@ class slip_gaji extends Model
     public function DataPayroll(){
         return $this->HasMany(DataPayroll::class);
     }
+    public function kompdapats()
+    {
+        return $this->hasMany(kompdapat::class, 'id');
+    }
     public function komppotong()
     {
         return $this->hasMany(komppotong::class,'id');
-    }
-    public function kompdapats() :HasMany
-    {
-        return $this->hasMany(kompdapat::class, 'id');
     }
 }

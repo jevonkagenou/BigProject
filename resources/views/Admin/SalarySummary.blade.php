@@ -837,12 +837,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($name as $row)
+                                            @foreach ($name as $i => $row)
+                                            @php
+                                            $jumlah = 0;
+                                            @endphp
                                             <tr class="text-center">
                                                 <td>{{ \Carbon\Carbon::parse($row->periode_dimulai)->isoFormat('DD MMMM YYYY') }}</td>
-                                                <td>{{ $row->salary }}</td>
-                                                <td>{{ $row->kompdapats[0]->uang_dapat }}</td>
-                                                <td>{{ $row->komppotong[0]->uang_potong }}</td>
+                                                <td>{{ $row->slip->periode }}</td>
+                                                <td>{{ $row->uang_dapat}} </td>
+                                                <td>{{ $nama[$i]->uang_potong }} </td>
                                             </tr>
                                             @endforeach
 
