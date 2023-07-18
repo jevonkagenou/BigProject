@@ -1014,7 +1014,7 @@
                                                 </td>
                                                 <td>Rp.{{ number_format($item->total, 0, ',', '.') }}</td>
                                                 <td>
-                                                    <a href="/gaji/{{$item->id}}" class="btn btn-danger btn-xs sharp" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg"><i class="fa fa-eye"></i></a>
+                                                    <button data-id="{{$item->id}}" class="btn btn-danger btn-xs sharp" data-toggle="modal" data-target="#myModal-1"><i class="fa fa-eye"></i></button>
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -1044,10 +1044,10 @@
                         </div>
 
                         {{-- @foreach ($payrolls as $row) --}}
-                        @foreach ($Gaji as $modal)
-                            
-                        
-                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="" aria-hidden="true">
+                        {{-- @foreach ($Gaji as $modal) --}}
+
+
+                        <div class="modal" id="myModal-1" tabindex="-1" role="" aria-hidden="true">
                             <div class="modal-dialog modal-lg ">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -1072,7 +1072,7 @@
                                                             <p>Gaji Pokok</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p>{{$modal->basic_salary}}</p>
+                                                            <p></p>
                                                         </div>
                                                     </div>
                                                     <hr />
@@ -1110,7 +1110,7 @@
                                                             <p>Rp. 10.000</p>
                                                         </div>
                                                     </div>
-                                                    <hr />                                                    
+                                                    <hr />
                                                     <div class="row">
                                                         <div class="col-lg-5 col-5">
                                                             <p class="strong">
@@ -1172,7 +1172,7 @@
                                                         <div class="col-lg-7 col-7">
                                                             <p>Rp. 500.000</p>
                                                         </div>
-                                                    </div>                                                  
+                                                    </div>
 
                                                 </div>
                                             </div>
@@ -1201,7 +1201,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>                                                                                                                                                                    
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -1211,7 +1211,7 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                        {{-- @endforeach --}}
                         {{-- @endforeach --}}
 
                     </div>
@@ -1284,21 +1284,17 @@
 
     </script>
     <script>
-        // mengambil data dari server menggunakan AJAX
-        $.ajax({
-            url: "/GetData/" + id, // ganti dengan URL yang sesuai dengan route yang Anda buat di file web.php
-            method: "GET"
-            , dataType: "json"
-            , success: function(data) {
-                // menampilkan data di halaman
-                $("#nama").text(data.nama);
-                $("#email").text(data.email);
-            }
-            , error: function(xhr, status, error) {
-                console.error(error);
-            }
-        });
+        function showModal(button) {
+          // Ambil nilai id dari atribut data-id pada elemen yang diklik
+          const id = button.getAttribute('data-id');
 
+          // Ubah nilai atribut data-target pada elemen modal
+          const modal = document.querySelector('#myModal');
+          modal.setAttribute('data-target', `#modal-${id}`);
+
+          // Tampilkan modal
+          $(modal).modal('show');
+        }
     </script>
     <script>
         const radioButtons = document.querySelectorAll('.btn-check');
@@ -1320,7 +1316,8 @@
             });
         });
 
-    </script>
+    </script>
+
     <script>
         $(document).ready(function() {
             $('.tambah-pendapatan').click(function() {

@@ -20,6 +20,7 @@ class DataPayrollController extends Controller
 
     public function Data_Salary(Request $request, $id){
             $data = DataEmployee::find($id);
+            $dataPayroll = DataPayroll::findorfail($id);
             $periode = slip_gaji::latest()->first()->periode;
 
 
