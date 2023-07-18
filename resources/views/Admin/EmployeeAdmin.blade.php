@@ -914,21 +914,23 @@
                                                 class="bi bi-plus-square"></i> Tambahkan Karyawan</a>
 
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-6 col-md-4">
-                                            <form action="{{ route('ExportEmployee') }}" method="post" enctype="multipart/form-data">
+                                        <div class="col-sm-10 col-md-8">
+                                            <div class="row d-flex">
+                                                <div class="col-sm-6 col-md-4">
+                                            <form action="{{ route('ExportEmployee') }}" method="get" enctype="multipart/form-data">
                                                 @csrf
-                                                <button class="btn btn-outline-light btn-xs ms-1 mt-3" style="white-space: nowrap;" name="import">
+                                                        <button class="btn btn-outline-light btn-xs mt-3" style="white-space: nowrap;" name="import">
                                                     <i class="bi bi-upload"></i> Export
                                                 </button>
                                             </form>
                                         </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <button class="btn btn-outline-light btn-xs ms-1 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="white-space: nowrap;">
+                                                <div class="col-sm-6 col-md-2" style="margin-left: -90px;">
+                                                    <button class="btn btn-outline-light btn-xs mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="white-space: nowrap;">
                                                 <i class="bi bi-upload"></i> Import
                                             </button>
                                         </div>
                                     </div>
+                                        </div>                          
                                     
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
