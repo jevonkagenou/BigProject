@@ -833,15 +833,18 @@
                                         <tbody class="text-center">
                                             <tr>
                                                 @foreach ($PayrollSalarySlip as $payroll)
-                                                @foreach ($dataEmployee as $employee)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $payroll->periode }}</td>
                                                 <td>{{ $payroll->periode_dimulai }}</td>
-                                                <td>5</td>
-                                                {{-- @foreach($payrolls as $payroll)
+                                                @if ($payroll->periode == 'Tetap (Gaji Bulanan, Mingguan, per Sekian Gaji)')
+                                                <td>{{$tetap}}</td>
+                                                @else
+                                                <td>{{$tdk_tetap}}</td>
+                                                @endif
+                                                @foreach($payrolls as $payroll)
                                                 <td>
-                                                    <a href="/Payroll" class="progress" role="progressbar" style="height: 15px !important;" aria-label="Belum Siap" aria-valuenow="{{ 100 - $persentasi_sudah_bayar }}" aria-valuemin="0" aria-valuemax="100">
+                                                    <a href="/Payroll/{id}" class="progress" role="progressbar" style="height: 15px !important;" aria-label="Belum Siap" aria-valuenow="{{ 100 - $persentasi_sudah_bayar }}" aria-valuemin="0" aria-valuemax="100">
                                                       <div class="progress-bar bg-danger" style="width: {{ 100 - $persentasi_sudah_bayar }}%;">{{ 100 - $persentasi_sudah_bayar }}%</div>
                                                     </a>
                                                   </td>
@@ -850,9 +853,8 @@
                                                       <div class="progress-bar bg-success" style="width: {{ $persentasi_sudah_bayar }}%;">{{ $persentasi_sudah_bayar }}%</div>
                                                     </div>
                                                   </td>
-                                                @endforeach --}}
+                                                @endforeach
                                             </tr>
-                                            @endforeach
                                             @endforeach
                                             </tr>
                                         </tbody>
