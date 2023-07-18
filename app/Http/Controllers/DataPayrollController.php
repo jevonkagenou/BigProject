@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\DataEmployee;
 use App\Models\DataPayroll;
 use App\Models\OtherAllowances;
+use App\Models\Presence;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
 use App\Models\slip_gaji;
@@ -12,7 +13,9 @@ class DataPayrollController extends Controller
 {
     public function PayrolEmployee($id){
     $data = DataEmployee::find($id);
-    return view('EmployeeDetails.PayrolEmployee', compact('data'),['tittle'=>'Data Payroll' ]);
+    $pay = DataPayroll::find($id);
+    $pre = Presence::find($id);
+    return view('EmployeeDetails.PayrolEmployee', compact('data','pay','pre'),['tittle'=>'Data Payroll' ]);
     }
 
     public function Data_Salary(Request $request, $id){

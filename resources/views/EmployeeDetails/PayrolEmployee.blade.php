@@ -83,7 +83,7 @@
                                         <p>Gaji Pokok</p>
                                     </div>
                                     <div class="col-xl-3 col-4">
-                                        <p>Rp. 4.500.000</p>
+                                        <p>Rp. {{ $pay->basic_salary }}</p>
                                     </div>
                                 </div>
                                 <hr />
@@ -92,13 +92,13 @@
                                         <p>Uang Lembur</p>
                                     </div>
                                     <div class="col-xl-3 col-3">
-                                        <p>0</p>
+                                        <p></p>
                                     </div>
                                     <div class="col-xl-3 col-3">
-                                        <p>Jam x 26.001</p>
+                                        <p>Jam x {{ $pay->overtime_pay }}</p>
                                     </div>
                                     <div class="col-xl-3 col-3">
-                                        <p>0</p>
+                                        <p>Rp. </p>
                                     </div>
                                 </div>
                                 <hr />
@@ -107,16 +107,7 @@
                                         <p>Tunjangan Pulsa</p>
                                     </div>
                                     <div class="col-xl-3 col-4">
-                                        <p>Rp. 500.000</p>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-xl-9 col-8">
-                                        <p>Tunjangan Pulsa</p>
-                                    </div>
-                                    <div class="col-xl-3 col-4">
-                                        <p>Rp. 500.000</p>
+                                        <p>Rp. {{ $pay->credit_allowance }}</p>
                                     </div>
                                 </div>
                                 <hr />
@@ -128,7 +119,7 @@
                                     </div>
                                     <div class="col-lg-3 col-4">
                                         <b>
-                                            <p class="text-danger">Rp. 500.000</p>
+                                            <p class="text-danger">Rp. {{ $pay->cooperative }}</p>
                                         </b>
                                     </div>
                                 </div>
@@ -141,7 +132,7 @@
                                     </div>
                                     <div class="col-lg-3 col-4">
                                         <b>
-                                            <p>Rp. 6.000.000</p>
+                                            <p>Rp. {{ $pay->basic_salary + $pay->credit_allowance + $pay->cooperative }}</p>
                                         </b>
                                     </div>
                                 </div>
