@@ -82,7 +82,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
     Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
-    Route::get('/SalaryAdjustment', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
+    // Route::get('/SalaryAdjustment', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
     Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
     Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
     Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
@@ -194,7 +194,6 @@ route::get('/destroy/{id}', [AnnouncementController::class, 'destroy'])->name('d
 Route::get('/search', [AnnouncementController::class, 'search'])->name('search');
 
 route::get('/hapus/{id}', [DataEmployeeController::class, 'hapus'])->name('hapus');
-
 //dashboard employee
 route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
 
@@ -211,7 +210,8 @@ Route::get('/SalaryAdjustment/{id}', [RouteController::class, 'SalaryAdjustment'
 Route::post('/importData', [ImportEmployeeController::class, 'import'])->name('importData');
 
 //Export
-Route::post('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
+Route::get('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
+Route::post('/SummaryofcomponentsalaryExport', [ImportEmployeeController::class, 'Export2'])->name('SummaryofcomponentsalaryExport');
 
 //SALARY ADJUSTMENT
 
