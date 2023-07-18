@@ -15,7 +15,7 @@ class karyawan
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!empty(auth()->user()) && auth()->user()->level === 'karyawan'){
+        if(!empty(auth()->user()) && auth()->user()->role === 'karyawan'){
             return $next($request);
          }
         return $next($request);
