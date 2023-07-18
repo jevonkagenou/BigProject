@@ -22,12 +22,12 @@
     <!-- Custom Stylesheet -->
 	<link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .brand-logo img {
         max-width: 80%;
         height: auto;
-        }
+    }
 tr:hover {
     cursor: pointer;
   }
@@ -912,35 +912,38 @@ tr:hover {
                             <div class="card-header">
                                 <h4 class="card-title">Jadwal Kerja</h4>
                             </div>
-
                             <div class="card-body">
 								<div class="row mb-3">
-                                    <div class="col-sm-1 col-md-2 col-lg-12 text-end">
-                                        <a type="button" class="btn btn-danger btn-xs" href="/AddWorkSchedule"><i class="bi bi-plus"></i>Tambah Jadwal Kerja</a>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 text-start">
+                                        <a type="button" class="btn btn-danger btn-xs" href="/AddWorkSchedule">
+                                            <i class="bi bi-plus"></i>Tambah Jadwal Kerja
+                                        </a>
                                     </div>
-								</div>
+                                </div>                                
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
+                                                <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Hari Kerja</th>
                                                 <th>Hari Libur</th>
                                                 <th>Terakhir Di Update</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr onclick="window.location='/DetileSchedule'">
+                                            <tr>
+                                                <td>1</td>
                                                 <td>Pagi</td>
                                                 <td>1</td>
                                                 <td>0</td>
                                                 <td>04/06/2023</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jadwal Kantor</td>
-                                                <td>5</td>
-												<td>2</td>
-                                                <td>08/06/2023</td>
+                                                <td>    
+                                                    <a class="btn-xs" href="/DetileSchedule">
+                                                        <i class="fa-regular fa-eye hover-icon"></i>
+                                                    </a>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>

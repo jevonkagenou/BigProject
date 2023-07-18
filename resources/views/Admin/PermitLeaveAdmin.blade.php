@@ -59,11 +59,7 @@
                                         </div>
                                     </form>
                             </div>
-                            
-                            
-                            
                         {{-- </div> --}}
-
                         <div class="table-responsive">
                             <table id="example5" class="display" style="min-width: 845px">
                                 <thead>

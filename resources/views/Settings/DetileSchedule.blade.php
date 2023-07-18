@@ -1030,17 +1030,15 @@
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item">
                                                     <div class="row">
-                                                        <div class="col-lg-2 col-2">
-                                                            <p>
-                                                                Hari 1
-                                                            </p>
+                                                        <div class="col-lg-2 col-4 col-sm-2">
+                                                            <p>Hari 4</p>
                                                         </div>
-                                                        <div class="col-lg-10 col-10">
+                                                        <div class="col-lg-10 col-8 col-sm-10">
                                                             <div class="row shift1 align-items-center">
-                                                                <div class="col-lg-6 col-4">
+                                                                <div class="col-lg-6 col-6 col-sm-6">
                                                                     Jam Kantor
                                                                 </div>
-                                                                <div class="col-lg-6 col-4 text-end">
+                                                                <div class="col-lg-6 col-6 col-sm-6 text-end">
                                                                     <i class="bi bi-clock px-1"></i>08:00 - 17:00
                                                                 </div>
                                                             </div>
@@ -1049,17 +1047,15 @@
                                                 </li>
                                                 <li class="list-group-item">
                                                     <div class="row">
-                                                        <div class="col-lg-2 col-2">
-                                                            <p>
-                                                                Hari 2
-                                                            </p>
+                                                        <div class="col-lg-2 col-4 col-sm-2">
+                                                            <p>Hari 5</p>
                                                         </div>
-                                                        <div class="col-lg-10 col-10">
+                                                        <div class="col-lg-10 col-8 col-sm-10">
                                                             <div class="row shift1 align-items-center">
-                                                                <div class="col-lg-6 col-4">
+                                                                <div class="col-lg-6 col-6 col-sm-6">
                                                                     Jam Kantor
                                                                 </div>
-                                                                <div class="col-lg-6 col-4 text-end">
+                                                                <div class="col-lg-6 col-6 col-sm-6 text-end">
                                                                     <i class="bi bi-clock px-1"></i>08:00 - 17:00
                                                                 </div>
                                                             </div>
@@ -1068,93 +1064,15 @@
                                                 </li>
                                                 <li class="list-group-item">
                                                     <div class="row">
-                                                        <div class="col-lg-2 col-2">
-                                                            <p>
-                                                                Hari 3
-                                                            </p>
+                                                        <div class="col-lg-2 col-4 col-sm-2">
+                                                            <p>Hari 6</p>
                                                         </div>
-                                                        <div class="col-lg-10 col-10">
-                                                            <div class="row shift1 align-items-center">
-                                                                <div class="col-lg-6 col-4">
-                                                                    Jam Kantor
-                                                                </div>
-                                                                <div class="col-lg-6 col-4 text-end">
-                                                                    <i class="bi bi-clock px-1"></i>08:00 - 17:00
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="row">
-                                                        <div class="col-lg-2 col-2">
-                                                            <p>
-                                                                Hari 4
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-lg-10 col-10">
-                                                            <div class="row shift1 align-items-center">
-                                                                <div class="col-lg-6 col-4">
-                                                                    Jam Kantor
-                                                                </div>
-                                                                <div class="col-lg-6 col-4 text-end">
-                                                                    <i class="bi bi-clock px-1"></i>08:00 - 17:00
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="row">
-                                                        <div class="col-lg-2 col-2">
-                                                            <p>
-                                                                Hari 5
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-lg-10 col-10">
-                                                            <div class="row shift1 align-items-center">
-                                                                <div class="col-lg-6 col-4">
-                                                                    Jam Kantor
-                                                                </div>
-                                                                <div class="col-lg-6 col-4 text-end">
-                                                                    <i class="bi bi-clock px-1"></i>08:00 - 17:00
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="row">
-                                                        <div class="col-lg-2 col-2">
-                                                            <p>
-                                                                Hari 6
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-lg-10 col-10">
+                                                        <div class="col-lg-10 col-8 col-sm-10">
                                                             <div class="row shift2 align-items-center">
-                                                                <div class="col-lg-6 col-4">
+                                                                <div class="col-lg-6 col-6 col-sm-6">
                                                                     Hari Libur
                                                                 </div>
-                                                                <div class="col-lg-6 col-4 text-end">
-                                                                    <i class="bi bi-clock px-1"></i>00:00 - 23:59
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="row">
-                                                        <div class="col-lg-2 col-2">
-                                                            <p>
-                                                                Hari 7
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-lg-10 col-10">
-                                                            <div class="row shift2 align-items-center">
-                                                                <div class="col-lg-6 col-4">
-                                                                    Hari Libur
-                                                                </div>
-                                                                <div class="col-lg-6 col-4 text-end">
+                                                                <div class="col-lg-6 col-6 col-sm-6 text-end">
                                                                     <i class="bi bi-clock px-1"></i>00:00 - 23:59
                                                                 </div>
                                                             </div>

@@ -24,6 +24,8 @@ use App\Http\Controllers\SalaryConclusionController;
 use App\Http\Controllers\SlipGajiKomponenController;
 use App\Http\Controllers\StartPayrollController;
 
+use App\Http\Controllers\ImportEmployeeController;
+
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\EmployeePresence;
 
@@ -105,6 +107,30 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 });
+Route::get('/SalaryPaymentReport', [RouteController::class, 'SalaryPaymentReport'])->name('SalaryPaymentReport');
+
+// Route::get('/AnnouncementUpdate', [RouteController::class, 'AnnouncementUpdate'])->name('AnnouncementUpdate');
+// Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
+// Route::get('/PayrolEmployee/{id}', [DataPayrollController::class, 'PayrolEmployee'])->name('PayrolEmployee');
+// Route::get('/PresenceApproval', [RouteController::class, 'PresenceApproval'])->name('PresenceApproval');
+// Route::get('/Presence', [RouteController::class, 'Presence'])->name('Presence');
+// Route::get('/Setting', [RouteController::class, 'Setting'])->name('Setting');
+// Route::get('/Company', [RouteController::class, 'Company'])->name('Company');
+// Route::get('/PayrollSalarySlip', [RouteController::class, 'PayrollSalarySlip'])->name('PayrollSalarySlip');
+// Route::get('/AccountsUsers', [RouteController::class, 'AccountsUsers'])->name('AccountsUsers');
+// Route::get('/StartPayroll', [RouteController::class, 'StartPayroll'])->name('StartPayroll');
+// Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
+// Route::get('/Payroll', [RouteController::class, 'Payroll'])->name('Payroll');
+// Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
+// Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
+// Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
+// Route::get('/SalaryAdjustment/{id}', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
+// Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
+// Route::get('/AddWorkSchedule', [RouteController::class, 'AddWorkSchedule'])->name('AddWorkSchedule');
+// Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
+// Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
+
+
 
 Route::get('/SettingSchedule', [RouteController::class, 'SettingSchedule'])->name('SettingSchedule');
 Route::get('/DetileSchedule', [RouteController::class, 'DetileSchedule'])->name('DetileSchedule');
@@ -117,6 +143,8 @@ Route::get('/file/{id}', [RouteController::class, 'DownloadFile']);
 // Add Data Employee Route
 Route::get('/Employee/{id}', [DataEmployeeController::class, 'Employee'])->name('Employee');
 Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
+Route::post('/Update_Employee/{id}', [DataEmployeeController::class, 'Update_Employee'])->name('Update_Employee');
+Route::get('/UpdateEmployee/{id}', [RouteController::class, 'UpdateEmployee'])->name('UpdateEmployee');
 Route::post('/Update_Image/{id}', [DataEmployeeController::class, 'Update_Image'])->name('Update_Image');
 Route::GET('/Delete_image/{id}', [DataEmployeeController::class, 'Delete_image'])->name('Delete_image');
 
@@ -165,6 +193,7 @@ route::post('/update/{id}', [AnnouncementController::class, 'update'])->name('up
 route::get('/destroy/{id}', [AnnouncementController::class, 'destroy'])->name('destroy');
 Route::get('/search', [AnnouncementController::class, 'search'])->name('search');
 
+route::get('/hapus/{id}', [DataEmployeeController::class, 'hapus'])->name('hapus');
 
 //dashboard employee
 route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
@@ -174,5 +203,17 @@ Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create')
 
 //presence
 Route::post('PresenceCreate/{jenis}', [EmployeePresence::class, 'presence'])->name('PresenceCreate');
-Route::get('/DetailSalary.', [RouteController::class, 'DetailSalary'])->name('DetailSalary.');
+Route::get('/DetailSalary', [RouteController::class, 'DetailSalary'])->name('DetailSalary.');
+Route::get('/Date', [RouteController::class, 'tampilkanData'])->name('Date');
+
+Route::get('/SalaryAdjustment/{id}', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
+//Import
+Route::post('/importData', [ImportEmployeeController::class, 'import'])->name('importData');
+
+//Export
+Route::post('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
+
+//SALARY ADJUSTMENT
+
+Route::post('/Data_Salary/{id}', [DataPayrollController::class, 'Data_Salary'])->name('Data_Salary');
 

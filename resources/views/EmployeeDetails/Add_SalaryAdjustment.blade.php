@@ -19,47 +19,14 @@
 
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="admin, dashboard" />
-    <meta name="author" content="DexignZone" />
-    <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Dompet : Payment Admin Template" />
-    <meta property="og:title" content="Dompet : Payment Admin Template" />
-    <meta property="og:description" content="Dompet : Payment Admin Template" />
-    <meta property="og:image" content="social-image.png" />
-    <meta name="format-detection" content="telephone=no">
-
-    <!-- PAGE TITLE HERE -->
-    <title>Kalopsia</title>
-
-    <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="admin, dashboard" />
-    <meta name="author" content="DexignZone" />
-    <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Dompet : Payment Admin Template" />
-    <meta property="og:title" content="Dompet : Payment Admin Template" />
-    <meta property="og:description" content="Dompet : Payment Admin Template" />
-    <meta property="og:image" content="social-image.png" />
-    <meta name="format-detection" content="telephone=no">
-
-    <!-- PAGE TITLE HERE -->
-    <title>Kalopsia</title>
-
-    <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
     <!-- Datatable -->
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
-
 
 </head>
+
 <body>
     <div id="preloader">
         <div class="waviy">
@@ -85,6 +52,10 @@
             color: #9FA4A6;
         }
 
+        [data-sidebar-style="full"] [data-layout=":vertical"] .dlabnav .metismenu {
+            padding: 0 30px !important;
+        }
+
         .brand-logo img {
             max-width: 80%;
             height: auto;
@@ -94,14 +65,15 @@
             fill: red;
         }
     </style>
+
     <div id="main-wrapper">
-        <div class="nav-header ">
+
+        <div class="nav-header">
             <a href="index.html" class="brand-logo">
                 <img id="logo" src="https://i.postimg.cc/MpM0gDDQ/Logo-kal.png">
             </a>
-
-            <div class="nav-control">
-                <div class="hamburger" onclick="changeLogo()">
+            <div class="nav-control" onclick="changeLogo()">
+                <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
                 </div>
             </div>
@@ -758,31 +730,43 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                Payroll
+                                {{ $tittle }}
                             </div>
                         </div>
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30"
+                                        height="30" viewBox="0 0 24 24" fill="none" stroke="black"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-user">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
+                                    <li><a class="dropdown-item" href="/ProfilAdmin"><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                fill="#969ba0" viewBox="0 0 448 512"
+                                                style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
+                                                <path
+                                                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                                            </svg> Profil</a></li>
+                                    <li><a class="dropdown-item" href="#"><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="#969ba0" viewBox="0 0 512 512"
+                                                style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
+                                                <path
+                                                    d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+                                            </svg> Keluar</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
                     </div>
-                    <ul class="navbar-nav header-right">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg id="icon-customers" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                <li><a class="dropdown-item" href="/ProfilAdmin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#969ba0" viewBox="0 0 448 512" style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
-                                            <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
-                                        </svg> Profil</a></li>
-                                <li><a class="dropdown-item" href="{{url('logout')}}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#969ba0" viewBox="0 0 512 512" style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
-                                            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
-                                        </svg> Keluar</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                </nav>
             </div>
-            </div>
-            </nav>
         </div>
 
         <!--**********************************
@@ -793,8 +777,8 @@
             Sidebar start
         ***********************************-->
         <div class="dlabnav">
-            <div class="dlabnav-scroll">
-                <ul class="metismenu" id="menu">
+            <div class="dlabnav-scroll mm-active ps ps--active-y">
+                <ul class="metismenu mm-show" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
@@ -826,11 +810,7 @@
 
                     </li>
                     <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
-                                viewBox="0 -960 960 960" width="48">
-                                <path
-                                    d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z" />
-                            </svg>
+                            <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
                             <span class="nav-text ">Izin Cuti</span>
                         </a>
                     </li>
@@ -840,7 +820,7 @@
                                 <path
                                     d="M349-250h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-310H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-250Zm0-170h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-480H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-420ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.444 0 23.722 5T599-862l183 183q8 8 13 19.278 5 11.278 5 23.722v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.375-8.625T551-664ZM220-820v186-186 680-680Z" />
                             </svg>
-                            <span class="nav-text ">Laporan</span>
+                            <span class="nav-text">Laporan</span>
                         </a>
 
                     </li>
@@ -855,10 +835,12 @@
                         <ul aria-expanded="false">
                             <li><a href="/WorkSchedule" class="hover-red">Jadwal Kerja</a></li>
                             <li><a href="/Presence" class="hover-red">Presensi</a></li>
+
+
                         </ul>
                     </li>
-                    <li><a class=" ai-icon hover-red" href="/EmployeeAdmin" aria-expanded="false">
-                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
+                    <li class="mm-active"><a class=" ai-icon hover-red" href="/EmployeeAdmin" aria-expanded="false">
+                            <svg class="red-icon" xmlns="http://www.w3.org/2000/svg" height="48"
                                 viewBox="0 -960 960 960" width="48">
                                 <path
                                     d="M68-160q-13 0-21.5-8.5T38-190v-64q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v64q0 13-8.5 21.5T648-160H68Zm648 0q10-2 16-10.5t6-21.5v-62q0-63-32-103.5T622-423q69 8 130 23.5t99 35.5q33 19 52 47t19 63v64q0 13-8.5 21.5T892-160H716ZM358-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42Zm360-150q0 66-42 108t-108 42q-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm260-321q39 0 64.5-25.5T448-631q0-39-25.5-64.5T358-721q-39 0-64.5 25.5T268-631q0 39 25.5 64.5T358-541Zm0-90Zm0 271Z" />
@@ -867,8 +849,8 @@
                         </a>
 
                     </li>
-                    <li class="mm-active"><a href="/StartPayroll" class="ai-icon hover-red" aria-expanded="false">
-                            <svg class="red-icon" xmlns="http://www.w3.org/2000/svg" height="48"
+                    <li><a href="/StartPayroll" class="ai-icon hover-red" aria-expanded="false">
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
                                 viewBox="0 -960 960 960" width="48">
                                 <path
                                     d="M324-358q21 46 51.5 72.5T451-247v27q0 11 8.5 19t19.5 8q11 0 19-8.5t8-19.5v-24q61-7 95-37.5t34-81.5q0-51-29-83t-98-61q-58-24-84-43t-26-51q0-31 22.5-49t61.5-18q30 0 52 14t37 42l48-23q-17-35-45-55t-66-24v-24q0-11-8-19t-19-8q-11 0-19.5 8t-8.5 19v24q-51 7-80.5 37.5T343-602q0 49 30 78t90 54q67 28 92 50.5t25 55.5q0 32-26.5 51.5T487-293q-39 0-69.5-22T375-375l-51 17ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z" />
@@ -876,13 +858,13 @@
                             <span class="nav-text ">Payroll</span>
                         </a>
                     </li>
-                    <li><a class=" ai-icon  hover-red" href="/Setting" aria-expanded="false">
+                    <li><a class=" ai-icon hover-red" href="/Setting " aria-expanded="true">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
                                 viewBox="0 -960 960 960" width="48">
                                 <path
                                     d="M546-80H414q-11 0-19.5-7T384-105l-16-101q-19-7-40-19t-37-25l-93 43q-11 5-22 1.5T159-220L93-337q-6-10-3-21t12-18l86-63q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521l-86-63q-9-7-12-18t3-21l66-117q6-11 17-14.5t22 1.5l93 43q16-13 37-25t40-18l16-102q2-11 10.5-18t19.5-7h132q11 0 19.5 7t10.5 18l16 101q19 7 40.5 18.5T669-710l93-43q11-5 22-1.5t17 14.5l66 116q6 10 3.5 21.5T858-584l-86 61q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l86 62q9 7 12 18t-3 21l-66 117q-6 11-17 14.5t-22-1.5l-93-43q-16 13-36.5 25.5T592-206l-16 101q-2 11-10.5 18T546-80Zm-66-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-60q-29 0-49.5-20.5T410-480q0-29 20.5-49.5T480-550q29 0 49.5 20.5T550-480q0 29-20.5 49.5T480-410Zm0-70Zm-44 340h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Z" />
                             </svg>
-                            <span class="nav-text ">Pengaturan</span>
+                            <span class="nav-text">Pengaturan</span>
                         </a>
 
                     </li>
@@ -894,528 +876,495 @@
             Sidebar end
         ***********************************-->
 
-        <!--**********************************
-            Content body start
-        ***********************************-->
+        <Style>
+            .border {
+                display: inline-block;
+                width: 5rem;
+                height: 5rem;
+                margin: 0.25rem;
+                background-color: transparent;
+                margin: -5%;
+                margin-top: 8%;
+                width: 433px;
+                height: 147px;
+                border-radius: 10px;
+            }
+
+            @media (max-width: 768px) {
+                .border {
+                    width: 100%;
+                    height: auto;
+                    margin: 0.5rem 0;
+                    margin-left: 0;
+                    margin-top: 0;
+                }
+            }
+
+            @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+            body {
+                font-family: Roboto, sans-serif;
+            }
+
+            #chart {
+                max-width: 650px;
+                margin: 35px auto;
+            }
+
+
+            .border-secondary {
+                color: #969ba0 !important;
+                width: 100%;
+            }
+
+            .text {
+                margin-top: 12px !important;
+            }
+
+            .profile-tab .nav-item .nav-link.active {
+                border: 0;
+                background: transparent;
+                background: transparent;
+                border-bottom: 0.0125rem solid #F72B50 !important;
+                color: #F72B50 !important;
+            }
+
+            .hover-red:hover {
+                color: #EE3232 !important;
+                border-color: #EE3232 !important;
+            }
+        </Style>
+
         <div class="content-body">
             <div class="container-fluid">
-                <!-- row -->
-
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-xl-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Payroll</h4>
-                            </div>
-                            <div class="card-body">
-                                <!-- baris satu -->
-                                <div class="row">
-                                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-6">
-                                        <div class="responsive-button">
-                                            <a href="/PayrollStep" class="btn btn-danger btn-xs">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
-                                                    fill="white" class="bi bi-caret-right-fill"
-                                                    viewBox="0 0 16 16">
-                                                    <path
-                                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                                </svg>
-                                                Bayar Gaji
-                                            </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- baris dua -->
-                            <div class="row mt-2">
-                                <div class="col-md-2 col-sm-5 col-3" style="margin-left:2%;">
-                                    <button class="btn btn-outline-light btn-xs">
-                                        Bulan ini
-                                    </button>
-                                </div>
-                                <form action="/Payroll" class="col-md-3 col-sm-3 col-12" style="margin-left:-9%; display:flex;">
-                                    <select name="created_at" id="tom-select-it" data-placeholder="Select" style="width: 800px; margin-right: 10px;">
-                                        <option value="">None</option>
-                                        <option value="1">Januari</option>
-                                        <option value="2">Februari</option>
-                                        <option value="3">Maret</option>
-                                        <option value="4">April</option>
-                                        <option value="5">Mei</option>
-                                        <option value="6">Juni</option>
-                                        <option value="7">Juli</option>
-                                        <option value="8">Agustus</option>
-                                        <option value="9">September</option>
-                                        <option value="10">Oktober</option>
-                                        <option value="11">November</option>
-                                        <option value="12">Desember</option>
-                                    </select>
-                                    <button type="submit" class="btn btn-primary btn-xs" style="width: 100px; margin-left:8%;">Cari</button>
-                                </form>
-                                <div class="col-lg-9 col-md-9 col-sm-2 col-6 ">
-                                    <div class="responsive-button text-end">
-                                        <button type="button" class="btn btn-outline-light btn-xs">
-                                            <span>
-                                                <i class="bi bi-download px-1"></i>
-                                            </span>
-                                            Import
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="row">
 
-                            <div class="accordion" id="accordion-eleven">
-                                <div class="table-responsive mb-2">
-                                    <table id="example8" class="display align-content-end" style="min-width: 845px" data-paging="false">
-                                        <thead>
-                                            <tr class="text-center">
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Status</th>
-                                                <th>Total</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($payrolls as $item)
-                                            <tr class="text-center">
-                                                <td>{{$loop->iteration}}</td>
-                                                <td class="accordion" id="accord-11One" data-bs-toggle="collapse" data-bs-target="#collapse11One" aria-controls="collapse11One" aria-expanded="true" role="button">
-                                                    {{ $item->dataEmployee->longname }}
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                        @if ($item->status == 'Belum Siap')
-                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}" checked>
-                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
-
-                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}">
-                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
-
-                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" disabled>
-                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
-                                                        @elseif ($item->status == 'Siap Bayar')
-                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}">
-                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
-
-                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}" checked>
-                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
-
-                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" disabled>
-                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
-                                                        @elseif ($item->status == 'Sudah Bayar')
-                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-1" value="Belum Siap" data-payroll-id="{{ $item->id }}" disabled>
-                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-1">Belum Siap</label>
-
-                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-2" value="Siap Bayar" data-payroll-id="{{ $item->id }}" disabled>
-                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-2">Siap Bayar</label>
-
-                                                        <input type="radio" class="btn-check" name="btnradio-{{ $item->id }}" id="btnradio-{{ $item->id }}-3" value="Sudah Bayar" data-payroll-id="{{ $item->id }}" checked>
-                                                        <label class="btn btn-outline-danger btn-xs" for="btnradio-{{ $item->id }}-3">Sudah Bayar</label>
-                                                        @endif
-                                                    </div>
-                                                </td>
-                                                <td>Rp.{{ number_format($item->total, 0, ',', '.') }}</td>
-                                                <td>
-                                                    <a href="/gaji/{{$item->id}}" class="btn btn-danger btn-xs sharp" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg"><i class="fa fa-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <nav>
-                                <ul class="pagination pagination-xs" style="float: right">
-                                    <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                            <i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="javascript:void(0)">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="javascript:void(0)">2</a>
-                                    </li>
-
-                                    <li class="page-item page-indicator">
-                                        <a class="page-link" href="javascript:void(0)">
-                                            <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-
-                        {{-- @foreach ($payrolls as $row) --}}
-                        @foreach ($Gaji as $modal)
-                            
-                        
-                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="" aria-hidden="true">
-                            <div class="modal-dialog modal-lg ">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Gaji</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row mb-2">
-                                            <div class="col-xl-6 col-12 mb-2">
-                                                <div class="card-body" style="
-                      border: 1px solid
-                        rgb(181, 178, 178);
-                      border-radius: 1rem;
-                    ">
-                                                    <h5 class="strong text-center" data-bs-toggle="tab">
-                                                        Pendapatan
-                                                    </h5>
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col-xl-5 col-5">
-                                                            <p>Gaji Pokok</p>
-                                                        </div>
-                                                        <div class="col-xl-7 col-7">
-                                                            <p>{{$modal->basic_salary}}</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col-xl-5 col-5">
-                                                            <p>Uang Lembur</p>
-                                                        </div>
-                                                        <div class="col-xl-7 col-7">
-                                                            <p>Rp. 10.000</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-xl-5 col-5">
-                                                            <p>Jam x 26.001</p>
-                                                        </div>
-                                                        <div class="col-xl-7 col-7">
-                                                            <p>0</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col-xl-5 col-5">
-                                                            <p>Tunjangan Pulsa</p>
-                                                        </div>
-                                                        <div class="col-xl-7 col-7">
-                                                            <p>Rp. 5.000</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col-xl-5 col-5">
-                                                            <p>Tunjangan Lainnya</p>
-                                                        </div>
-                                                        <div class="col-xl-7 col-7">
-                                                            <p>Rp. 10.000</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr />                                                    
-                                                    <div class="row">
-                                                        <div class="col-lg-5 col-5">
-                                                            <p class="strong">
-                                                                Total Pendapatan
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-lg-47 col-7">
-                                                            <p class="strong">Rp. 5.000.000</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                {{-- Button --}}
+                                <div class="card-body col-xl-3 col-lg-4 col-md-4 col-sm-4 ml-8">
+                                    <div style="">
+                                        <div class="profile-photo d-flex justify-content-center">
+                                            <img src="images/profile/profile.png" class="img-fluid rounded-circle "
+                                                alt="">
+                                        </div>
+                                        <br>
+                                        <!-- <div class="d-flex justify-content-center">
+                                                <div class="input-group" style="width: 240px;">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control">
                                             </div>
-
-                                            <div class="col-xl-6 col-12 ms-auto">
-                                                <div class="card-body" style="border: 1px solid rgb(181, 178, 178); border-radius: 1rem;">
-                                                    <h5 class="strong text-center" data-bs-toggle="tab">
-                                                        Potongan
-                                                    </h5>
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col-xl-5 col-5">
-                                                            <p>Koperasi</p>
-                                                        </div>
-                                                        <div class="col-xl-7 col-7">
-                                                            <p>Rp. 450.000</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col-xl-5 col-5">
-                                                            <p>Denda Keterlambatan</p>
-                                                        </div>
-                                                        <div class="col-xl-7 col-7">
-                                                            <p>Rp. 10.000</p>
-                                                        </div>
-                                                        <div class="col-xl-5 col-5">
-                                                            <p>Jam x 26.001</p>
-                                                        </div>
-                                                        <div class="col-xl-7 col-7">
-                                                            <p>0</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col-xl-5 col-5">
-                                                            <p>Potongan Lainnya</p>
-                                                        </div>
-                                                        <div class="col-xl-7 col-7">
-                                                            <p>Rp. 10.000</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        <div class="col-lg-5 col-5">
-                                                            <p class="strong">
-                                                                Total Potongan
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-lg-7 col-7">
-                                                            <p>Rp. 500.000</p>
-                                                        </div>
-                                                    </div>                                                  
-
                                                 </div>
+                                            </div> -->
+                                        <br>
+                                        <div style="text-align: center;">
+                                            <h4><a href="post-details.html" class="text-black">Arya Kurniawan</a></h4>
+                                            <p class="mb-0">IT Manager</p>
+                                        </div>
+                                        <br>
+                                        <div class="container">
+                                            <div class="row justify-content-center"
+                                                aria-label="Basic radio toggle button group">
+                                                <input type="radio" class="btn-check" name="btnradio1a"
+                                                    id="btnradio1a">
+                                                <a href="/PayrolEmployee" type="button"
+                                                    class="btn btn-outline-danger btn-xs hoverbtn mb-2"
+                                                    style="width: 200px;">Personal</a>
+
+                                                <input type="radio" class="btn-check" name="btnradio1a"
+                                                    id="btnradio2a" checked>
+                                                <a href="/PayrolEmployee" type="button"
+                                                    class="btn btn-outline-danger btn-xs hoverbtn"
+                                                    style="width: 200px;">Payroll</a>
                                             </div>
-                                            <hr>
-                                            <div class="d-flex col-xl-12 col-12">
-                                                <div class="col-lg-6 col-12">
-                                                    <h5 class="strong">
-                                                        Total Take Home Pay
-                                                    </h5>
-                                                </div>
-                                                <div class="col-lg-6 col-12">
-                                                    <div class="d-flex">
-                                                        <div class="col-lg-4 col-4">
-                                                            <p style="font-size: 11pt; color:black">Nama</p>
-                                                        </div>
-                                                        <div class="col-lg-8 col-8">
-                                                            <p style="font-size: 11pt; color:black">Adi</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex">
-                                                        <div class="col-lg-4 col-4">
-                                                            <p style="font-size: 11pt; color:black">Total</p>
-                                                        </div>
-                                                        <div class="col-lg-8 col-8">
-                                                            <p style="font-size: 11pt; color:black">Rp. 4.250.000</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>                                                                                                                                                                    
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                                {{-- End --}}
+
+                                {{-- Add Payrol --}}
+                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+                                    <div class="card-body">
+                                        <form method="POST" action="{{ route('Data_Payroll') }}"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <h5 class="strong text-center" data-bs-toggle="tab">
+                                                Setting Gaji
+                                            </h5>
+                                            <hr />
+                                            <div class="basic-form">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <div class="form-check mb-2">
+                                                            <input type="radio" class="form-check-input"
+                                                                id="gajiBulanan" name="gaji" value="bulanan"
+                                                                onclick="checkedOnClick(this);">
+                                                            <label class="form-check-label" for="gajiBulanan">Gaji
+                                                                Bulanan</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input type="radio" class="form-check-input"
+                                                                id="gajiMingguan" name="gaji" value="mingguan"
+                                                                onclick="checkedOnClick(this);">
+                                                            <label class="form-check-label" for="gajiMingguan">Gaji
+                                                                Mingguan</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input type="radio" class="form-check-input"
+                                                                id="gajiHarian" name="gaji" value="harian"
+                                                                onclick="checkedOnClick(this);">
+                                                            <label class="form-check-label" for="gajiHarian">Gaji
+                                                                Harian</label>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <hr />
+                                        </form>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Gaji Bulanan</h4>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="strong text-center" data-bs-toggle="tab">
+                                            Pendapatan
+                                        </h5>
+                                        <hr>
+                                        <form action="{{route('Data_Salary')}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="row">
+                                                <div class="col-xl-6 col-6">
+                                                    <p>Gaji Pokok</p>
+                                                </div>
+                                                <div class="col-xl-6 col-6">
+                                                    <input type="number" id="basicSalaryInput" name="basic_salary" class="form-control @error('basic_salary') is-invalid @enderror" placeholder=""
+                                                        style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                                    @error('basic_salary')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-xl-3 col-3">
+                                                    <p>Uang Lembur</p>
+                                                </div>
+                                                <div class="col-xl-3 col-3">
+                                                    <p>0</p>
+                                                </div>
+                                                <div class="col-xl-6 col-6">
+                                                    <input type="number" id="overtimePayInput" name="overtime_pay" class="form-control @error('overtime_pay') is-invalid @enderror" placeholder=""
+                                                        style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                                    @error('overtime_pay')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-5 col-5 ms-auto">
+                                                <p>(Berapa Kali Lembur x Uang Lembur)</p>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-xl-6 col-6">
+                                                    <p>Tunjangan Pulsa</p>
+                                                </div>
+                                                <div class="col-xl-6 col-6">
+                                                    <input type="number" id="creditAllowanceInput" name="credit_allowance" class="form-control @error('credit_allowance') is-invalid @enderror" placeholder=""
+                                                        style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                                    @error('credit_allowance')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <button type="button" class="tambah-pendapatan text-red" style="border: none; background: none;">
+                                                    <i class="bi bi-plus"></i> Tambah Pendapatan
+                                                </button>
+                                                <div id="container"></div>
+                                            </div>
+                                            <hr />
+                                            <p></p>
+                                            <div class="row">
+                                                <div class="col-lg-9 col-6">
+                                                    <b>
+                                                        <p class="strong">Total</p>
+                                                    </b>
+                                                </div>
+                                                <div class="col-lg-3 col-4">
+                                                    <b>
+                                                        <p class="strong" id="totalSalary">Rp. 0</p>
+                                                    </b>
+                                                </div>
+                                            </div>
+                                    <div class="card-body">
+                                        <h5 class="strong text-center" data-bs-toggle="tab">
+                                            Potongan
+                                        </h5>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-xl-6 col-6">
+                                                <p>Gaji Pokok</p>
+                                            </div>
+                                            <div class="col-xl-6 col-6">
+                                                <input type="number" name="salary_cut" class="form-control @error('credit_allowance') is-invalid @enderror" placeholder=""
+                                                    style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                                    @error('credit_allowance')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-xl-3 col-3">
+                                                <p>Keterlambatan</p>
+                                            </div>
+                                            <div class="col-xl-3 col-3">
+                                                <p>0</p>
+                                            </div>
+                                            <div class="col-xl-6 col-6">
+                                                <input type="number" class="form-control @error('credit_allowance') is-invalid @enderror" placeholder=""
+                                                    style="border: 0.035rem solid rgb(195, 195, 195);" />
+                                                    @error('credit_allowance')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-5 col-5 ms-auto">
+                                            <p>(Berapa Kali Terlambat x Uang Denda)</p>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-xl-6 col-6">
+                                                <p>Potongan Lainnya</p>
+                                            </div>
+                                            <div class="col-xl-6 col-6">
+                                                <p>Dimasukkan ketika melakukan pembayaran</p>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-lg-9 col-6">
+                                                <p>Total</p>
+                                            </div>
+                                            <div class="col-lg-3 col-4">
+                                                <p>Rp. 6.000.000</p>
+                                            </div>
+                                            <hr />
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-lg-9 col-6">
+                                                <b>
+                                                    <p class="strong">Total Home Pay</p>
+                                                </b>
+                                            </div>
+                                            <div class="col-lg-3 col-4">
+                                                <b>
+                                                    <p class="strong">Rp. 6.000.000</p>
+                                                </b>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            {{-- End --}}
+                            <div class="row justify-content-end">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="card-body">
+                                        <div class="row justify-content-end">
+                                            <div class="col-lg-8 col-12 text-end">
+                                                <button type="submit"
+                                                        class="btn btn-rounded btn-danger btn-xs" >Simpan 
+                                                        Perubahan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                         </div>
-                        @endforeach
-                        {{-- @endforeach --}}
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!--**********************************
-            Content body end
-        ***********************************-->
-
-
-    <!--**********************************
-            Footer start
-        ***********************************-->
-
-    <!--**********************************
-            Footer end
-        ***********************************-->
-
-    <!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-    <!--**********************************
-           Support ticket button end
-        ***********************************-->
-
-
-    <!--**********************************
-        Main wrapper end
-    ***********************************-->
-
-    <!--**********************************
-        Scripts
-    ***********************************-->
     <div class="footer">
+
         <div class="copyright">
             <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a>
                 2022</p>
         </div>
     </div>
     <!-- Required vendors -->
-    <script src="vendor/global/global.min.js"></script>
-    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="{{ asset('vendor/global/global.min.js') }}"></script>
+    <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
+
     <!-- Apex Chart -->
-    <script src="vendor/apexchart/apexchart.js"></script>
+    <script src="{{ asset('vendor/apexchart/apexchart.js') }}"></script>
+    <script src="{{ asset('vendor/nouislider/nouislider.min.js') }}"></script>
+    <script src="{{ asset('vendor/wnumb/wNumb.js') }}"></script>
 
-    <!-- Datatable -->
-    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="js/plugins-init/datatables.init.js"></script>
+    <!-- Dashboard 1 -->
+    <script src="{{ asset('js/dashboard/dashboard-1.js') }}"></script>
 
-    <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="{{ asset('js/custom.min.js') }}"></script>
+    <script src="{{ asset('js/dlabnav-init.js') }}"></script>
+    <script src="{{ asset('js/demo.js') }}"></script>
+    <script src="{{ asset('js/styleSwitcher.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
 
-    <script src="js/custom.min.js"></script>
-    <script src="js/dlabnav-init.js"></script>
-    <script src="js/demo.js"></script>
-    <script src="js/styleSwitcher.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
     <script>
-        var settings = {};
-        new TomSelect('#tom-select-it', settings);
-
-    </script>
-    <script>
-        // mengambil data dari server menggunakan AJAX
-        $.ajax({
-            url: "/GetData/" + id, // ganti dengan URL yang sesuai dengan route yang Anda buat di file web.php
-            method: "GET"
-            , dataType: "json"
-            , success: function(data) {
-                // menampilkan data di halaman
-                $("#nama").text(data.nama);
-                $("#email").text(data.email);
-            }
-            , error: function(xhr, status, error) {
-                console.error(error);
-            }
-        });
-
-    </script>
-    <script>
-        const radioButtons = document.querySelectorAll('.btn-check');
-        radioButtons.forEach(function(button) {
-            button.addEventListener('click', function(event) {
-                const payrollId = this.getAttribute('data-payroll-id');
-                const newStatus = event.target.value;
-                $.ajax({
-                    url: '/UpdatePayrollStatus'
-                    , method: 'POST'
-                    , data: {
-                        payrollId: payrollId
-                        , newStatus: newStatus
-                        , _token: '{{ csrf_token() }}'
+        var options = {
+            series: [{
+                data: [21, 22, 10, 28, 16, 21, 13, 30]
+            }],
+            chart: {
+                height: 350,
+                type: 'bar',
+                events: {
+                    click: function(chart, w, e) {}
+                }
+            },
+            colors: ['#EE3232'],
+            plotOptions: {
+                bar: {
+                    columnWidth: '45%',
+                    distributed: true,
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            legend: {
+                show: false
+            },
+            xaxis: {
+                categories: [
+                    'John',
+                    'Joe',
+                    'Jake',
+                    'Amber',
+                    'Peter',
+                    'Mary',
+                    'David',
+                    'Lily'
+                ],
+                labels: {
+                    style: {
+                        colors: ['#000000'],
+                        // Dalam Code ini Length: 8 berfungsi untuk mengulangi warna sebanyak jumlah data dalam Categories //
+                        // colors: Array.from({
+                        //     length: 8
+                        // }, (_, index) => ['#CF0000', '#890596', '#1CC5DC'][index % 3]),
+                        fontSize: '12px'
                     }
-                    , success: function(response) {}
-                    , error: function(xhr, status, error) {}
-                });
-            });
-        });
+                }
+            }
+        };
 
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
     </script>
+
     <script>
-        $(document).ready(function() {
-            $('.tambah-pendapatan').click(function() {
-                tambahPendapatan();
-            });
+        var options = {
+            series: [44, 55, 13, 43, 22],
+            chart: {
+                width: 380,
+                type: 'pie',
+            },
+            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+            legend: {
+                position: 'bottom'
+            },
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    }
+                }
+            }]
+        };
 
-          function tambahPendapatan() {
-              var jumlahBaris = $('.baris').length + 0;
-              if (jumlahBaris >= 8) {
-                  return;
-              }
-              var htmlBaris =
-                  '<div class="row">' +
-                  '<div class="col-xl-5 col-12">' +
-                  '<p>Masukkan Nama Pendapatan</p>' +
-                  '<input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />' +
-                  '</div>' +
-                  '<div class="col-xl-5 col-12">' +
-                  '<p>Masukkan Jumlah Pendapatan</p>' +
-                  '<input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />' +
-                  '</div>' +
-                  '<div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">' +
-                  '<a><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>' +
-                  '</div>'
-              '</div>'
-              '</div>';
-
-              $('#container').append(htmlBaris);
-
-              $('.fa-trash').off().click(function() {
-                  $(this).closest('.baris').remove();
-              });
-          }
-      });
-
-  </script>
-  <script>
-      $(document).ready(function() {
-          $('.tambah-pemotongan').click(function() {
-              tambahPemotongan();
-          });
-
-          function tambahPemotongan() {
-              var jumlahBaris = $('.baris').length + 0;
-              if (jumlahBaris >= 8) {
-                  return;
-              }
-              var htmlBaris =
-                  '<div class="row">' +
-                  '<div class="col-xl-5 col-12">' +
-                  '<p>Masukkan Nama Potongan</p>' +
-                  '<input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />' +
-                  '</div>' +
-                  '<div class="col-xl-5 col-12">' +
-                  '<p>Masukkan Jumlah Potongan</p>' +
-                  '<input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />' +
-                  '</div>' +
-                  '<div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">' +
-                  '<a><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>' +
-                  '</div>'
-              '</div>'
-              '</div>';
-
-              $('#container-pemotongan').append(htmlBaris);
-
-              $('.fa-trash').off().click(function() {
-                  $(this).closest('.baris').remove();
-              });
-          }
-      });
-
+        var chart = new ApexCharts(document.querySelector("#chart_pie"), options);
+        chart.render();
     </script>
     <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
 
-      function changeLogo() {
-          var logo = document.getElementById("logo");
+        function changeLogo() {
+            var logo = document.getElementById("logo");
 
-          if (isAlternateLogo) {
-              logo.src = originalLogoSrc;
-              isAlternateLogo = false;
-          } else {
-              logo.src = alternateLogoSrc;
-              isAlternateLogo = true;
-          }
-      }
+            if (isAlternateLogo) {
+                logo.src = originalLogoSrc;
+                isAlternateLogo = false;
+            } else {
+                logo.src = alternateLogoSrc;
+                isAlternateLogo = true;
+            }
+        }
+    </script>
 
-  </script>
+<script>
+    $(document).ready(function() {
+        $('.tambah-pendapatan').click(function() {
+            tambahPendapatan();
+        });
 
+        function tambahPendapatan() {
+            var jumlahBaris = $('.baris').length + 0;
+            if (jumlahBaris >= 8) {
+                return;
+            }
+            var htmlBaris =
+                '<div class="row">' +
+                '<div class="col-xl-5 col-12">' +
+                '<p>Masukkan Nama Pendapatan</p>' +
+                '<input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />' +
+                '</div>' +
+                '<div class="col-xl-5 col-12">' +
+                '<p>Masukkan Jumlah Pendapatan</p>' +
+                '<input type="text" class="form-control" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />' +
+                '</div>' +
+                '<div class="col-xl-1 col-1 mt-2 mb-2 d-flex align-items-end ms-2">' +
+                '<a><i class="fa fa-trash hapus-baris font-18 align-middle me-2"></i></a>' +
+                '</div>'
+            '</div>'
+            '</div>';
 
-    
-</body>
+            $('#container').append(htmlBaris);
 
-<!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
+            $('.fa-trash').off().click(function() {
+                $(this).closest('.baris').remove();
+            });
+        }
+    });
 
-</html>
+</script>
+
+<script>
+    function calculateTotalSalary() {
+        var basicSalary = document.getElementById('basicSalaryInput').value;
+        var overtimePay = document.getElementById('overtimePayInput').value;
+        var creditAllowance = document.getElementById('creditAllowanceInput').value;
+
+        var total = parseInt(basicSalary) + (parseInt(overtimePay) * 50000) + parseInt(creditAllowance);
+
+        document.getElementById('totalSalary').textContent = 'Rp. ' + total.toLocaleString();
+    }
+
+    // Panggil fungsi calculateTotalSalary saat nilai input berubah
+    document.getElementById('basicSalaryInput').addEventListener('input', calculateTotalSalary);
+    document.getElementById('overtimePayInput').addEventListener('input', calculateTotalSalary);
+    document.getElementById('creditAllowanceInput').addEventListener('input', calculateTotalSalary);
+</script>

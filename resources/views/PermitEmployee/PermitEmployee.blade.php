@@ -233,9 +233,11 @@
                             <img src="" width="20" alt="" />
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
+                                <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
                             </div>
                         </a>
+
                     </li>
                     <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
