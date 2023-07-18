@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataEmployee; 
+use App\Models\DataEmployee;
 use Illuminate\Http\Request;
 use App\Exports\EmployeeExport;
 use App\Imports\EmployeeImport;
@@ -62,7 +62,7 @@ class DataEmployeeController extends Controller
     }
 
     public function Update_Employee(Request $request, $id){
-        
+
     $data = DataEmployee::find($id);
     $data->update([
         'longname' => $request->longname,
@@ -152,5 +152,5 @@ class DataEmployeeController extends Controller
         return Excel::download(new EmployeeExport,'employee.xlsx');
     }
 
-    
+
 }

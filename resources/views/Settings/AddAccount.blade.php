@@ -10,10 +10,10 @@
 	<meta property="og:description" content="Dompet : Payment Admin Template" />
 	<meta property="og:image" content="social-image.png" />
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Kalopsia</title>
-	
+
 	<!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png"  />
     <!-- Datatable -->
@@ -65,7 +65,7 @@
             Nav header end
         ***********************************-->
 
-   
+
         <!--**********************************
             Chat box start
         ***********************************-->
@@ -849,7 +849,7 @@
                     </li>
 
                 </ul>
-               
+
             </div>
         </div>
         <!--**********************************
@@ -866,7 +866,7 @@
                         <li class="breadcrumb-item active"><a href="">Payroll</a></li>
                     </ol>
                 </div>
-        
+
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Tambah Rekening</h4>
@@ -879,7 +879,7 @@
                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                             <input type="radio" class="btn-check" name="btnradio" id="btnradio1">
                                             <a href="/PayrollSalarySlip" class="btn btn-xs btn-outline-danger" role="button" aria-pressed="true">Slip Gaji</a>
-        
+
                                             <input type="radio" class="btn-check" name="btnradio" id="btnradio2" checked>
                                             <a class="btn btn-xs btn-outline-danger" for="btnradio1">Tambah Rekening</a>
                                         </div>
@@ -944,7 +944,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- modal tambahrekening -->
                 <div class="modal fade" id="tambahrekening">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1003,7 +1003,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        
+
         <!--**********************************
             Footer end
         ***********************************-->
@@ -1016,7 +1016,7 @@
            Support ticket button end
         ***********************************-->
 
-        
+
     </div>
         </div>
     <!--**********************************
@@ -1036,7 +1036,7 @@
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
-	
+
     <!-- Datatable -->
     <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins-init/datatables.init.js"></script>
@@ -1051,10 +1051,10 @@
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-    
+
         function changeLogo() {
             var logo = document.getElementById("logo");
-    
+
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;
                 isAlternateLogo = false;
