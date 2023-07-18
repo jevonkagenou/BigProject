@@ -25,7 +25,11 @@
     {{-- Toaster --}}
     <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    <
+    <style>
+        td a:hover{
+            color: inherit;
+        }
+    </style>
 
 </head>
 
@@ -910,23 +914,56 @@
                                                 class="bi bi-plus-square"></i> Tambahkan Karyawan</a>
 
                                     </div>
-                                    <div class="col-sm-1 col-md-2 col-lg-2 text-end" style="white-space: nowrap;">
-                                        <div class="basic-dropdown">
-                                            <button class="btn btn-outline-light btn-xs" data-bs-toggle="dropdown"><i
-                                                    class="bi bi-download"></i> Export</button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">CSV</a>
-                                                <a class="dropdown-item" href="#">XLSX</a>
-
-                                            </div>
-
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-4">
+                                            <form action="{{ route('ExportEmployee') }}" method="post" enctype="multipart/form-data">
+                                                @csrf
+                                                <button class="btn btn-outline-light btn-xs ms-1 mt-3" style="white-space: nowrap;" name="import">
+                                                    <i class="bi bi-upload"></i> Export
+                                                </button>
+                                            </form>
                                         </div>
+                                        <div class="col-sm-6 col-md-4">
+                                            <button class="btn btn-outline-light btn-xs ms-1 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="white-space: nowrap;">
+                                                <i class="bi bi-upload"></i> Import
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Import Data</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form id="importForm" action="{{ route('importData') }}" method="post" enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="form-group">
+                                                            <input type="file" name="myFile" class="form-control" required="required">
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-danger">Import</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Add a separate form outside the modal -->
+                                    <form id="importFormOutside" action="{{ route('importData') }}" method="post" enctype="multipart/form-data" style="display: none;">
+                                        @csrf
+                                        <div class="form-group">
+                                            <input type="file" name="myFile" class="form-control" required="required">
+                                        </div>
+                                        <button type="submit" class="btn btn-danger">Import</button>
+                                    </form>
+                                    
 
-                                    </div>
-                                    <div class="col-sm-1 col-md-2 col-lg-1 text-end">
-                                        <button class="btn btn-outline-light btn-xs ms-1"
-                                            style="white-space: nowrap;"><i class="bi bi-upload"></i> Import</button>
-                                    </div>
                                 </div>
                                 <div class="table-responsive text-center mt-3">
                                     <table id="example7" class="display" style="min-width: 845px">
@@ -934,40 +971,44 @@
                                             <tr class="text-center">
                                                 <th>No</th>
                                                 <th>Nama</th>
-                                                <th>Jenis Kelamin</th>
-                                                <th>Tempat Lahir</th>
-                                                <th>Tanggal Lahir</th>
-                                                <th>Status Perkawinan</th>
-                                                <th>Agama</th>
-                                                <th>Pendidikan Terakhir</th>
+                                                <th>Alamat</th>
+                                                <th>Email</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="text-center">
+                                            @php
+                                                $no = 1;
+                                            @endphp
                                             @foreach ($data as $employee)
                                             <tr>
                                                 <td>{{ $employee->id }}</td>
                                                 <td>{{ $employee->longname }}</td>
                                                 <td>{{ $employee->gender }}</td>
                                                 <td>{{ $employee->place_birth }}</td>
-                                                <td>{{ $employee->date }}</td>
-                                                <td>{{ $employee->marry }}</td>
-                                                <td>{{ $employee->region }}</td>
-                                                <td>{{ $employee->last_study }}</td>
-                                                <td class="d-flex">
-                                                    <a href="#" class="btn btn-outline-danger btn-xs" style="margin-right: 3px">
-                                                        <i class="fas fa-edit"></i>
+                                                    {{-- <td>{{ $employee->date }}</td>
+                                                    <td>{{ $employee->marry }}</td>
+                                                    <td>{{ $employee->region }}</td>
+                                                    <td>{{ $employee->last_study }}</td> --}}
+                                                <td class="display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center;">
+                                                    <a href="/Update_Employee/{{ $employee->id }}" class="btn-xs" style="margin-right: 3px">
+                                                        <i class="fas fa-edit hover-icon"></i>
                                                     </a>
-                                                    <a href="#" class="btn btn-outline-danger btn-xs">
-                                                        <i class="fas fa-trash-alt"></i>
+                                                    {{-- Tombol hapus --}}
+                                                    <a type="button" class="px-3 btn" data-bs-target="#hapus-karyawan{{ $employee->id }}" data-bs-toggle="modal">
+                                                        <i class="fa fa-trash hover-icon"></i>
                                                     </a>
-                                                    <a href="/Employee/{{$employee->id}}" class="btn btn-danger btn-xs">
-                                                        <i class="fa fa-eye"></i></a>
-
+                                                    <a class="btn-xs" href="/Employee/{{$employee->id}}">
+                                                        <i class="fa-regular fa-eye hover-icon"></i>
+                                                    </a>
                                                 </td>
                                             </tr>
-                                        @endforeach
+                                            <div class="modal fade" id="hapus-karyawan{{ $employee->id }}">
+                                                {{-- Konten modal --}}
+                                            </div>
+                                            @endforeach
                                         </tbody>
+                                        
                                     </table>
                                 </div>
                             </div>

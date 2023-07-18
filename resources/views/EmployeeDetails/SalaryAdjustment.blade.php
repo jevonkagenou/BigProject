@@ -716,10 +716,14 @@
 
                     </li>
                     <li><a class="ai-icon hover-red" href="/PermitLeaveAdmin" aria-expanded="false">
-                            <img class="img-responsive" src="images/pesawat.svg" style="width:30px" alt="">
-                            <span class="nav-text ">Izin Cuti</span>
-                        </a>
-                    </li>
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"
+                            viewBox="0 -960 960 960" width="48">
+                            <path
+                                d="M121-120v-60h720v60H121Zm63-208L81-503l43-8 70 62 226-61-171-287 58-17 285 257 216-58q27-8 49 9.5t22 46.5q0 19-11.5 34T838-505L184-328Z" />
+                        </svg>
+                        <span class="nav-text ">Izin Cuti</span>
+                    </a>
+                </li>
                     <li><a class=" ai-icon hover-red" href="AdminReport" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
                                 <path d="M349-250h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-310H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-250Zm0-170h262q12.75 0 21.375-8.675 8.625-8.676 8.625-21.5 0-12.825-8.625-21.325T611-480H349q-12.75 0-21.375 8.675-8.625 8.676-8.625 21.5 0 12.825 8.625 21.325T349-420ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.444 0 23.722 5T599-862l183 183q8 8 13 19.278 5 11.278 5 23.722v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.375-8.625T551-664ZM220-820v186-186 680-680Z" />
@@ -838,12 +842,11 @@
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="row">
-
-                                {{-- Button --}}
                                 <div class="card-body col-xl-3 col-lg-4 col-md-4 col-sm-4 ml-8">
                                     <div style="">
                                         <div class="profile-photo d-flex justify-content-center">
-                                            <img src="images/profile/profile.png" class="img-fluid rounded-circle " alt="">
+                                            <img src="{{ asset('images/' . $data->images) }}" class="edit-image" style="width: 120px; height: 120px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
+
                                         </div>
                                         <br>
                                         <!-- <div class="d-flex justify-content-center">
@@ -855,17 +858,17 @@
                                             </div> -->
                                         <br>
                                         <div style="text-align: center;">
-                                            <h4><a href="post-details.html" class="text-black">Arya Kurniawan</a></h4>
+                                            <h4 class="text-black">Arya Kurniawan</h4>
                                             <p class="mb-0">IT Manager</p>
                                         </div>
                                         <br>
                                         <div class="container">
                                             <div class="row justify-content-center" aria-label="Basic radio toggle button group">
                                                 <input type="radio" class="btn-check" name="btnradio1a" id="btnradio1a">
-                                                <a href="/PayrolEmployee" type="button" class="btn btn-outline-danger btn-xs hoverbtn mb-2" style="width: 200px;">Personal</a>
+                                                <a href="/Employee/{{$data->id}}" type="button" class="btn btn-outline-danger btn-xs hoverbtn mb-2" style="width: 200px;">Personal</a>
 
                                                 <input type="radio" class="btn-check" name="btnradio1a" id="btnradio2a" checked>
-                                                <a href="/PayrolEmployee" type="button" class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a>
+                                                <a href="/PayrolEmployee/{{$data->id}}" type="button" class="btn btn-outline-danger btn-xs hoverbtn" style="width: 200px;">Payroll</a>
                                             </div>
                                         </div>
                                     </div>
@@ -879,7 +882,6 @@
                                         <h5 class="strong text-center" data-bs-toggle="tab">
                                             Setting Gaji
                                         </h5>
-                                        <hr />
                                         <div class="basic-form">
                                             <div class="mb-3">
                                                 @foreach ($slipGaji as $item)
@@ -892,12 +894,6 @@
                                         </div>
                                         <hr />
                                     </div>
-                                    <div class="card-body">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Gaji Bulanan</h4>
-                                        </div>
-                                    </div>
-
                                     <div class="card-body">
                                         <h5 class="strong text-center" data-bs-toggle="tab">
                                             Pendapatan
@@ -960,7 +956,6 @@
                                 @enderror
                             </div>
                         </div>
-                        <hr />
                         <hr>
                         <div class="row">
                             <button type="button" class="tambah-pendapatan text-red" style="border: none; background: none;">
@@ -968,7 +963,6 @@
                             </button>
                             <div id="container"></div>
                         </div>
-                        <hr>
                         <div class="row">
                             <div class="col-xl-6 col-6">
                                 <input type="text" id="creditAllowanceInput" name="other_allwonce_name[]" placeholder="Nama Inputan" class="form-control @error('other_allwonce_name') is-invalid @enderror" placeholder="" style="border: 0.035rem solid rgb(195, 195, 195);" />
@@ -1089,32 +1083,33 @@
     </div>
     <div class="footer">
 
-        <div class="copyright">
-            <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">Kalopsia</a>
-                2022</p>
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/"
+                        target="_blank">Kalopsia</a>
+                    2022</p>
+            </div>
         </div>
-    </div>
-    <!-- Required vendors -->
-    <script src="{{ asset('vendor/global/global.min.js') }}"></script>
-    <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
-    <script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
+        <!-- Required vendors -->
+        <script src="{{ asset('vendor/global/global.min.js') }}"></script>
+        <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
+        <script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
 
-    <!-- Apex Chart -->
-    <script src="{{ asset('vendor/apexchart/apexchart.js') }}"></script>
-    <script src="{{ asset('vendor/nouislider/nouislider.min.js') }}"></script>
-    <script src="{{ asset('vendor/wnumb/wNumb.js') }}"></script>
+        <!-- Apex Chart -->
+        <script src="{{ asset('vendor/apexchart/apexchart.js') }}"></script>
+        <script src="{{ asset('vendor/nouislider/nouislider.min.js') }}"></script>
+        <script src="{{ asset('vendor/wnumb/wNumb.js') }}"></script>
 
-    <!-- Dashboard 1 -->
-    <script src="{{ asset('js/dashboard/dashboard-1.js') }}"></script>
+        <!-- Dashboard 1 -->
+        <script src="{{ asset('js/dashboard/dashboard-1.js') }}"></script>
 
-    <script src="{{ asset('js/custom.min.js') }}"></script>
-    <script src="{{ asset('js/dlabnav-init.js') }}"></script>
-    <script src="{{ asset('js/demo.js') }}"></script>
-    <script src="{{ asset('js/styleSwitcher.js') }}"></script>
-    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('js/custom.min.js') }}"></script>
+        <script src="{{ asset('js/dlabnav-init.js') }}"></script>
+        <script src="{{ asset('js/demo.js') }}"></script>
+        <script src="{{ asset('js/styleSwitcher.js') }}"></script>
+        <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
     <script>
         var options = {
@@ -1200,8 +1195,8 @@
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
 
-        function changeLogo() {
-            var logo = document.getElementById("logo");
+            function changeLogo() {
+                var logo = document.getElementById("logo");
 
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;

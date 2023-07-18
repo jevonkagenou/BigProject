@@ -938,9 +938,9 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                
-
+                                <p></p>
 								<button type="button" class="btn btn-success btn-xs">Konfirmasi Data yang Dipilih   </button>
+                                <p></p>
 								<button type="button" class="btn btn-danger btn-xs" >Tolak Data yang Dipilih   </button>
                                 <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 ">
                                     <div class="btn-group d-flex responsive-button">

@@ -26175,14 +26175,14 @@ table.dataTable tfoot th {
   flex-flow: wrap; }
   .dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next {
     margin-left: 0px;
-    font-size: 18px;
+    font-size: 15px;
     margin: 0 2px;
     border: 0 !important;
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
     padding: 0;
     border-radius: 1rem;
-    line-height: 45px;
+    line-height: 25px;
     display: inline-block;
     color: var(--primary) !important; }
     .dataTables_wrapper .dataTables_paginate .paginate_button.previous i, .dataTables_wrapper .dataTables_paginate .paginate_button.next i {
@@ -26194,8 +26194,8 @@ table.dataTable tfoot th {
       color: var(--primary) !important; }
     @media only screen and (max-width: 575px) {
       .dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next {
-        height: 40px;
-        width: 40px;
+        height: 20px;
+        width: 50px;
         line-height: 54px; } }
   .dataTables_wrapper .dataTables_paginate span .paginate_button {
     height: 25px;

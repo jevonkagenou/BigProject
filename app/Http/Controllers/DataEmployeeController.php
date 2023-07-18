@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataEmployee;
+use App\Models\DataEmployee; 
 use Illuminate\Http\Request;
-
+use App\Exports\EmployeeExport;
+use App\Imports\EmployeeImport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 class DataEmployeeController extends Controller
 {
+    public function UpdateEmployee(){
+        return view('Admin.UpdateEmployee',[
+            'tittle'=>'Edit Karyawan'
+        ]);
+    }
+
     public function Add_Employee(Request $request){
         // dd($request);
         $request->validate([
@@ -22,6 +31,7 @@ class DataEmployeeController extends Controller
             'address' => 'required',
             'last_study' => 'required',
             'educational_institution' => 'required',
+            'study_program' => 'required',
             'study_program' => 'required',
             'images' => 'required|image|mimes:jpeg,png,jpg,gif|'
         ]);
@@ -51,11 +61,45 @@ class DataEmployeeController extends Controller
         return redirect()->route('EmployeeAdmin', compact('data'))->with('success', 'Data Anda Telah Ditambahkan');
     }
 
-    public function Add_Image(Request $request)
-{
-    $request->validate([
-        'images' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    public function Update_Employee(Request $request, $id){
+        
+    $data = DataEmployee::find($id);
+    $data->update([
+        'longname' => $request->longname,
+        'place_birth' => $request->place_birth,
+        'date' => $request->date,
+        'gender' => $request->gender,
+        'marry' => $request->marry,
+        'blood_group'=> $request->blood_group,
+        'region' => $request->region,
+        'email' => $request->email,
+        'numberphone' => $request->numberphone,
+        'address' => $request->address,
+        'last_study' => $request->last_study,
+        'educational_institution' => $request->educational_institution,
+        'study_program' => $request->study_program,
     ]);
+
+    $data->save();
+
+    return redirect()->route('EmployeeAdmin')->with('success', 'Data karyawan berhasil diperbarui');
+}
+
+
+
+    public function Add_Image(Request $request){
+        $request ->validate([
+            'images' => 'required|image|file|'
+        ]);
+        if ($files = $request->file('images')) {
+            $extension = $files->getClientOriginalExtension();
+            $name = hash('sha256', time()) . '.' . $extension;
+            $files->move('images', $name);
+        }
+
+        $data = DataEmployee::create([
+            'images' => $name
+        ]);
 
     if ($request->hasFile('images')) {
         $image = $request->file('images');
@@ -96,4 +140,17 @@ class DataEmployeeController extends Controller
         $order = DataEmployee::find($id);
         return view('EmployeeDetails.Employee', compact('order'));
     }
+    public function hapus($id)
+    {
+        $data = DataEmployee::find($id);
+        $data->delete();
+        return redirect()->route('EmployeeAdmin');
+    }
+
+
+    public function empoyeeexport(){
+        return Excel::download(new EmployeeExport,'employee.xlsx');
+    }
+
+    
 }

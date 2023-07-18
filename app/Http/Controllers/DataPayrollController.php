@@ -43,4 +43,9 @@ class DataPayrollController extends Controller
             }
             return redirect()->route('PayrolEmployee', ['id' => $data->id, 'periode' => $periode])->with('success', 'Data Anda Telah Ditambahkan');
     }
+
+    public function gaji(){
+        $gaji = DataEmployee::find();
+        return view ('admin.payroll')->with('gaji',$gaji);
+    }
 }
