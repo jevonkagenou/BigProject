@@ -20,7 +20,6 @@ class LoginController extends Controller
                 return redirect()->route('DashboardAdmin');
             }elseif($user->role === "karyawan"){
                 return redirect()->route('DashboardEmployee');
-
             }
         }
         return redirect()->route('Login')->with(

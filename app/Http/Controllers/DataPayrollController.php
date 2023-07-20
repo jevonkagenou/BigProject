@@ -22,7 +22,7 @@ class DataPayrollController extends Controller
             $data = DataEmployee::find($id);
             $dataPayroll = DataPayroll::findorfail($id);
             $periode = slip_gaji::latest()->first()->periode;
-
+            
 
             // dd($request);
             $payroll = DataPayroll::create([

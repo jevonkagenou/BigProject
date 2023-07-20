@@ -24,7 +24,7 @@ class User extends Authenticatable
         'notelp',
         'role',
         'remember_token',
-        
+
     ];
 
     /**

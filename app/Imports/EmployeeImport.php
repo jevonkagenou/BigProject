@@ -16,7 +16,7 @@ class EmployeeImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new DataEmployee([
-            'longname' => $row['longname'],
+            'name' => $row['name'],
             'place_birth' => $row['place_birth'],
             'date' => $row['date'],
             'gender'  => $row['gender'],
@@ -24,7 +24,7 @@ class EmployeeImport implements ToModel, WithHeadingRow
             'blood_group'  => $row['blood_group'],
             'email'  => $row['email'],
             'region'  => $row['region'],
-            'numberphone'  => $row['numberphone'],
+            'notelp'  => $row['notelp'],
             'address'  => $row['address'],
             'last_study'  => $row['last_study'],
             'educational_institution'  => $row['educational_institution'],

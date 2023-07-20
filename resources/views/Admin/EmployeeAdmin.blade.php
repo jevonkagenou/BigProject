@@ -891,7 +891,7 @@
     .fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
         line-height: -10% !important;
     }
-    
+
     </style>
 
         <div class="content-body">
@@ -924,8 +924,8 @@
                                             </button>
                                         </div>
                                     </div>
-                                        </div>                          
-                                    
+                                        </div>
+
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -949,7 +949,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Add a separate form outside the modal -->
                                     <form id="importFormOutside" action="{{ route('importData') }}" method="post" enctype="multipart/form-data" style="display: none;">
                                         @csrf
@@ -977,7 +977,7 @@
                                             @foreach ($data as $employee)
                                             <tr>
                                                 <td>{{ $employee->id }}</td>
-                                                <td>{{ $employee->longname }}</td>
+                                                <td>{{ $employee->name }}</td>
                                                 <td>{{ $employee->gender }}</td>
                                                 <td>{{ $employee->place_birth }}</td>
                                                     {{-- <td>{{ $employee->date }}</td>
@@ -996,7 +996,7 @@
                                                             <i class="fa-regular fa-eye fa-lg hover-icon"></i>
                                                         </a>
                                                     </td>
-                                                    
+
                                             </tr>
                                             <div class="modal fade" id="hapus-karyawan{{$employee->id}}">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1021,7 +1021,7 @@
                                             </div>
                                             @endforeach
                                         </tbody>
-                                        
+
                                     </table>
                                 </div>
                             </div>
