@@ -906,7 +906,7 @@
                                                 <div class="col-8">
                                                     <div class="form-check custom-checkbox ml-8 ">
                                                         <label class="form-check-label"
-                                                            for="save-info">{{ $order->longname }}</label>
+                                                            for="save-info">{{ $order->name }}</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1063,7 +1063,7 @@
                                                 <div class="col-7">
                                                     <div class="form-check custom-checkbox ml-8 ">
                                                         <label class="form-check-label"
-                                                            for="save-info">{{ $order->numberphone }}</label>
+                                                            for="save-info">{{ $order->notelp }}</label>
                                                     </div>
                                                 </div>
                                             </div>

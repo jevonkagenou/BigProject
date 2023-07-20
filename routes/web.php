@@ -1,11 +1,8 @@
 <?php
 use App\Http\Controllers\ApproveAdminController;
-
-
 use App\Http\Controllers\DataEmployeeController;
 use App\Http\Controllers\WorkScheduleController;
 use App\Http\Controllers\ApprovalEmployeeController;
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RouteController;
@@ -24,9 +21,8 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\SalaryConclusionController;
 use App\Http\Controllers\SlipGajiKomponenController;
 use App\Http\Controllers\StartPayrollController;
-
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ImportEmployeeController;
-
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\EmployeePresence;
 
@@ -43,6 +39,8 @@ use App\Http\Controllers\EmployeePresence;
 Route::middleware(['guest'])->group(function () {
     Route::get('/login',[LoginController::class,'login'])->name('Login');
     Route::post('/loginuser',[LoginController::class,'loginuser'])->name('Loginuser');
+    Route::get('/users/set-password/{user}', [PasswordController::class, 'setPassword'])->name('users.setPassword');
+    Route::get('/users/update-password/{user}', [PasswordController::class, 'updatePassword'])->name('updatePassword');
     Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
 
 });
@@ -96,7 +94,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::post('/UpdatePayrollStatus', [DataPayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
     Route::get('/SelectedMonth', [SalaryConclusionController::class, 'SelectedMonth'])->name('SelectedMonth');
     Route::post('/GetData/{id}', [PayrollController::class, 'GetData'])->name('GetData');
-
+    
     // Add Data Employee Route
     Route::get('/Employee/{id}', [DataEmployeeController::class, 'Employee'])->name('Employee');
     Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
@@ -127,6 +125,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::post('/updateProfile/{id}', [SystemAdminController::class, 'updateProfile'])->name('ProfilAdmin.updateProfile');
     Route::post('/updateFotoadmin/{id}', [SystemAdminController::class, 'updateFotoadmin'])->name('ProfilAdmin.updateFotoadmin');
     Route::get('/delete/{id}', [SystemAdminController::class, 'delete'])->name('ProfilAdmin.delete');
+    Route::get('/delete2/{id}', [SystemAdminController::class, 'delete'])->name('ProfilAdmin.delete');
 
     Route::post('/updategambarProfile/{id}', [SystemAdminController::class, 'updategambarProfile'])->name('ProfilAdmin.updategambarProfile');
     Route::get('/gantipassword', [SystemAdminController::class, 'gantipassword']);
@@ -135,8 +134,19 @@ Route::middleware(['auth','admin'])->group(function () {
 
 });
 Route::middleware(['auth', 'karyawan'])->group(function () {
+    // Karyawan Route
+    // Route::view('/', 'Pengaturan.Perusahaan');
+    Route::get('/', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
+    Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
+    Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
+    Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
+    Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
+    Route::get('/SalarySummary', [SalaryConclusionController::class, 'SalarySummary'])->name('SalarySummary');
+    Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
+    Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
+    Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
 
-    Route::get('/DashboardEmployee', [ViewEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
+    Route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
     // Approval Employee
     Route::get('/ApprovalEmployee', [ApprovalEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
     Route::get('/EmployeePresence', [ViewEmployeeController::class, 'EmployeePresence'])->name('EmployeePresence');

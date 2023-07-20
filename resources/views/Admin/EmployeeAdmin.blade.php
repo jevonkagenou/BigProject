@@ -877,28 +877,23 @@
 ***********************************-->
 
 <style>
-    .custom-btn {
-        border-radius: 1px;
+            .custom-btn {
+        border-radius: 1;
         height: 40px;
         padding: 12px 8px;
         background: #fff;
         border: 1px solid #464444;
         text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
-    
-    .hover-icon:hover {
+    .hover-icon:hover{
         color: #f72b50 !important;
     }
-    
     .fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
-        line-height: 3.0rem;
+        line-height: -10% !important;
     }
+
     </style>
-    
-    
+
         <div class="content-body">
             <div class="container-fluid">
                 <div class="row">
@@ -912,26 +907,25 @@
                                     <div class="col-sm-2 col-md-4 col-lg-9 justify-content-start">
                                         <a href='/AddEmployee' class="btn btn-danger btn-xs "><i
                                                 class="bi bi-plus-square"></i> Tambahkan Karyawan</a>
-
                                     </div>
                                         <div class="col-sm-10 col-md-8">
                                             <div class="row d-flex">
                                                 <div class="col-sm-6 col-md-4">
-                                            <form action="{{ route('ExportEmployee') }}" method="get" enctype="multipart/form-data">
+                                            <form action="{{ route('ExportEmployee') }}" method="post" enctype="multipart/form-data">
                                                 @csrf
                                                         <button class="btn btn-outline-light btn-xs mt-3" style="white-space: nowrap;" name="import">
                                                     <i class="bi bi-upload"></i> Export
                                                 </button>
                                             </form>
                                         </div>
-                                                <div class="col-sm-6 col-md-2" style="margin-left: -90px;">
-                                                    <button class="btn btn-outline-light btn-xs mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="white-space: nowrap;">
-                                                <i class="bi bi-upload"></i> Import
+                                        <div class="col-sm-6 col-md-2" style="margin-left: -90px;">
+                                            <button class="btn btn-outline-light btn-xs mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="white-space: nowrap;">
+                                            <i class="bi bi-upload"></i> Import
                                             </button>
                                         </div>
                                     </div>
-                                        </div>                          
-                                    
+                                        </div>
+
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -955,7 +949,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Add a separate form outside the modal -->
                                     <form id="importFormOutside" action="{{ route('importData') }}" method="post" enctype="multipart/form-data" style="display: none;">
                                         @csrf
@@ -964,8 +958,6 @@
                                         </div>
                                         <button type="submit" class="btn btn-danger">Import</button>
                                     </form>
-                                    
-
                                 </div>
                                 <div class="table-responsive text-center mt-3">
                                     <table id="example7" class="display" style="min-width: 845px">
@@ -985,32 +977,51 @@
                                             @foreach ($data as $employee)
                                             <tr>
                                                 <td>{{ $employee->id }}</td>
-                                                <td>{{ $employee->longname }}</td>
+                                                <td>{{ $employee->name }}</td>
                                                 <td>{{ $employee->gender }}</td>
                                                 <td>{{ $employee->place_birth }}</td>
                                                     {{-- <td>{{ $employee->date }}</td>
                                                     <td>{{ $employee->marry }}</td>
                                                     <td>{{ $employee->region }}</td>
                                                     <td>{{ $employee->last_study }}</td> --}}
-                                                <td class="display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center;">
-                                                    <a href="/Update_Employee/{{ $employee->id }}" class="btn-xs" style="margin-right: 3px">
-                                                        <i class="fas fa-edit hover-icon"></i>
-                                                    </a>
-                                                    {{-- Tombol hapus --}}
-                                                    <a type="button" class="px-3 btn" data-bs-target="#hapus-karyawan{{ $employee->id }}" data-bs-toggle="modal">
-                                                        <i class="fa fa-trash hover-icon"></i>
-                                                    </a>
-                                                    <a class="btn-xs" href="/Employee/{{$employee->id}}">
-                                                        <i class="fa-regular fa-eye hover-icon"></i>
-                                                    </a>
-                                                </td>
+                                                    <td class="display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center;">
+                                                        <a href="/Update_Employee/{{ $employee->id }}" class="btn-xs" style="margin-right: 3px">
+                                                            <i class="fas fa-edit fa-lg hover-icon"></i>
+                                                        </a>
+                                                        {{-- Tombol hapus --}}
+                                                        <a type="button" class="px-3 btn" data-bs-target="#hapus-karyawan{{ $employee->id }}" data-bs-toggle="modal">
+                                                            <i class="fa fa-trash fa-lg hover-icon"></i>
+                                                        </a>
+                                                        <a class="btn-xs" href="/Employee/{{$employee->id}}">
+                                                            <i class="fa-regular fa-eye fa-lg hover-icon"></i>
+                                                        </a>
+                                                    </td>
+
                                             </tr>
-                                            <div class="modal fade" id="hapus-karyawan{{ $employee->id }}">
-                                                {{-- Konten modal --}}
+                                            <div class="modal fade" id="hapus-karyawan{{$employee->id}}">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <form action="/delete2/{{$employee->id}}" method="GET">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"></h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                          <h4 style="font-size: 19px">Apakah Anda Yakin Ingin Menghapus Pengumuman Ini</h4>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-secondary btn-xs hover-red">Batal</button>
+                                                            <button type="submit" class="btn btn-primary btn-xs form-control1">Hapus</button>
+                                                        </div>
+                                                    </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                             @endforeach
                                         </tbody>
-                                        
+
                                     </table>
                                 </div>
                             </div>

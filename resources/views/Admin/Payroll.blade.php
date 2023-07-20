@@ -978,7 +978,7 @@
                                             <tr class="text-center">
                                                 <td>{{$loop->iteration}}</td>
                                                 <td class="accordion" id="accord-11One" data-bs-toggle="collapse" data-bs-target="#collapse11One" aria-controls="collapse11One" aria-expanded="true" role="button">
-                                                    {{ $item->dataEmployee->longname }}
+                                                    {{ $item->dataEmployee->name }}
                                                 </td>
                                                 <td style="text-align: center;">
                                                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
@@ -1410,7 +1410,7 @@
   </script>
 
 
-    
+
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->

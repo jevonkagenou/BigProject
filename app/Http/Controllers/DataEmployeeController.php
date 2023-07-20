@@ -6,8 +6,10 @@ use App\Models\DataEmployee;
 use Illuminate\Http\Request;
 use App\Exports\EmployeeExport;
 use App\Imports\EmployeeImport;
+use App\Models\User;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
+
 class DataEmployeeController extends Controller
 {
     public function UpdateEmployee(){
@@ -19,7 +21,7 @@ class DataEmployeeController extends Controller
     public function Add_Employee(Request $request){
         // dd($request);
         $request->validate([
-            'longname' => 'required',
+            'name' => 'required|string|min:3|max:255',
             'place_birth' => 'required',
             'date' => 'required',
             'gender' => 'required',
@@ -27,23 +29,47 @@ class DataEmployeeController extends Controller
             'blood_group' => 'required',
             'region' => 'required',
             'email' => 'required',
-            'numberphone' => 'required',
+            'notelp' => 'required',
             'address' => 'required',
             'last_study' => 'required',
             'educational_institution' => 'required',
             'study_program' => 'required',
-            'study_program' => 'required',
-            'images' => 'required|image|mimes:jpeg,png,jpg,gif|'
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|'
+        ],[
+            'name.required' => 'Nama Wajib Diisi',
+            'place_birth.required' => 'Tempat Lahir Wajib Diisi',
+            'date.required' => 'Tanggal Lahir Wajib Diisi',
+            'gender.required' => 'Jenis Kelamin Wajib Diisi',
+            'marry.required' => 'Status Perkawinan Wajib Diisi',
+            'blood_group.required' => 'Golongan Darah Wajib Diisi',
+            'region.required' => 'Agama Wajib Diisi',
+            'email.required' => 'email Wajib Diisi',
+            'notelp.required' => 'Nomor Telepon Wajib Diisi',
+            'address.required' => 'Alamat Wajib Diisi',
+            'last_study.required' => 'Pendidikan Terakhir Wajib Diisi',
+            'educational_institution.required' => 'Nama Institusi Pendidikan Terakhir Wajib Diisi',
+            'study_program.required' => 'Program studi Wajib Diisi',
         ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
 
-        if ($files = $request->file('images')) {
+        if ($files = $request->file('foto')) {
         $extension = $files->getClientOriginalExtension();
         $name = hash('sha256', time()) . '.' . $extension;
-        $files->move('images', $name);
-            }
+        $files->move('foto', $name);
+        }
+
+        $user = User::create([
+            'email' => $request->input('email'),
+            'password' => \Hash::make('12345'),
+            'name' => $request->input('name'),
+            'notelp' => $request->input('notelp'),
+            'foto' => $request->input('foto'),
+        ]);
 
         $data = DataEmployee::create([
-            'longname' => $request->longname,
+            'name' => $request->name,
             'place_birth' => $request->place_birth,
             'date' => $request->date,
             'gender' => $request->gender,
@@ -51,12 +77,12 @@ class DataEmployeeController extends Controller
             'blood_group'=> $request->blood_group,
             'region' => $request->region,
             'email' => $request->email,
-            'numberphone' => $request->numberphone,
+            'notelp' => $request->notelp,
             'address' => $request->address,
             'last_study' => $request->last_study,
             'educational_institution' => $request->educational_institution,
             'study_program' => $request->study_program,
-            'images' => $name
+            'foto' => $name
         ]);
         return redirect()->route('EmployeeAdmin', compact('data'))->with('success', 'Data Anda Telah Ditambahkan');
     }
@@ -65,7 +91,7 @@ class DataEmployeeController extends Controller
 
     $data = DataEmployee::find($id);
     $data->update([
-        'longname' => $request->longname,
+        'name' => $request->name,
         'place_birth' => $request->place_birth,
         'date' => $request->date,
         'gender' => $request->gender,
@@ -73,7 +99,7 @@ class DataEmployeeController extends Controller
         'blood_group'=> $request->blood_group,
         'region' => $request->region,
         'email' => $request->email,
-        'numberphone' => $request->numberphone,
+        'notelp' => $request->notelp,
         'address' => $request->address,
         'last_study' => $request->last_study,
         'educational_institution' => $request->educational_institution,
@@ -89,26 +115,26 @@ class DataEmployeeController extends Controller
 
     public function Add_Image(Request $request){
         $request ->validate([
-            'images' => 'required|image|file|'
+            'foto' => 'required|image|file|'
         ]);
-        if ($files = $request->file('images')) {
+        if ($files = $request->file('foto')) {
             $extension = $files->getClientOriginalExtension();
             $name = hash('sha256', time()) . '.' . $extension;
-            $files->move('images', $name);
+            $files->move('foto', $name);
         }
 
         $data = DataEmployee::create([
-            'images' => $name
+            'foto' => $name
         ]);
 
-    if ($request->hasFile('images')) {
-        $image = $request->file('images');
+    if ($request->hasFile('foto')) {
+        $image = $request->file('foto');
         $name = time() . '_' . $image->getClientOriginalName();
-        $image->move(public_path('images'), $name);
+        $image->move(public_path('foto'), $name);
     }
 
     $data = DataEmployee::create([
-        'images' => $name
+        'foto' => $name
     ]);
 
     return redirect()->back()->with('success', 'Image uploaded successfully.');
@@ -116,22 +142,22 @@ class DataEmployeeController extends Controller
 
     public function Update_Image(Request $request, $id){
         $request ->validate([
-            'images' => 'required|image|file|'
+            'foto' => 'required|image|file|'
         ]);
-        if ($files = $request->file('images')) {
+        if ($files = $request->file('foto')) {
             $extension = $files->getClientOriginalExtension();
             $name = hash('sha256', time()) . '.' . $extension;
-            $files->move('images', $name);
+            $files->move('foto', $name);
         }
         $data = DataEmployee::where('id', $id)->update([
-            'images' => $name
+            'foto' => $name
         ]);
 
         return redirect()->back()->with('success', 'Data Berhasil Diupdate');
     }
 
     public function Delete_Image($id){
-        DataEmployee::where('id', $id)->update(['images/' => null]);
+        DataEmployee::where('id', $id)->update(['foto/' => null]);
 
         return redirect()->back()->with('success', 'Data Berhasil Dihapus');
     }

@@ -34,11 +34,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="{{ asset('css/marquee.css') }}">
 
-
-</head>
-
-<body>
-
     <style>
         .responsive-button {
             padding: 5px;
@@ -70,6 +65,15 @@
          white-space: nowrap;
         }
 
+        @media only screen and (max-width: 480px) {
+            marquee {
+            overflow: auto;
+            white-space: nowrap;
+            margin-left: -70% !important;
+            width: 600px !important;
+        }
+        }
+
         .marquee {
         animation: scroll 20s linear infinite;
         white-space: nowrap;
@@ -94,6 +98,11 @@
         }
 
     </style>
+
+</head>
+
+<body>
+
 
 
     <!--*******************
@@ -243,7 +252,7 @@
                 </nav>
             </div>
             {{-- <div class="container"> --}}
-                <marquee behavior="scroll" direction="left" scrollamount="4" style="font-size: 15px; font: 'Cairo' , sans-serif; margin-left:3px">
+                <marquee behavior="scroll" direction="left" scrollamount="4" style="font-size: 15px; font: 'Cairo' , sans-serif; margin-left:3px;">
                    <span> SISA CUTI ANDA TINGGAL 4 HARI LAGI </span> |
                     <span style="color: yellow; font-size: 15px; font: 'Cairo' , sans-serif;"> JANGAN LUPA PRESENSI UNTUK HARI INI!!</span>
                 </marquee>

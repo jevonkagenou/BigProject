@@ -155,7 +155,7 @@
                 <ul class="metismenu mm-show" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <img src="{{ asset('foto/profile/pic1.jpg') }}" width="20" alt="" />
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
@@ -266,7 +266,7 @@
                                     <div class="row">
                                         <div class="profile-info" style="display: flex; justify-content: center;">
                                             <div class="profile-photo">
-                                                <img src="images/profile/user.png" class="img-fluid rounded-circle"
+                                                <img src="foto/profile/user.png" class="img-fluid rounded-circle"
                                                     style="width: 120px; height: 120px;" alt="">
                                             </div>
                                         </div>
@@ -275,14 +275,14 @@
                                         <div class="input-group">
                                             <div class="form-file">
                                                 <input type="file" class="form-file-input form-control"
-                                                    name="images" value="{{ old('images') }}" id="images">
+                                                    name="foto" value="{{ old('foto') }}" id="foto">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                @if ($errors->has('images'))
+                                @if ($errors->has('foto'))
                                     <div class="alert alert-danger" role="alert">
-                                        <i class="bi bi-x-lg"></i> {{ $errors->first('images') }}
+                                        <i class="bi bi-x-lg"></i> {{ $errors->first('foto') }}
                                     </div>
                                 @endif
                             </div>
@@ -299,11 +299,11 @@
                                                 <div class="mb-3">
                                                     <label for="address" class="form-label text-black">Nama
                                                         Lengkap</label>
-                                                    <input type="text" class="form-control" name="longname"
-                                                        id="longname" placeholder="Nama Lengkap" required="">
-                                                    @if ($errors->has('longname'))
+                                                    <input type="text" class="form-control" name="name"
+                                                        id="name" placeholder="Nama Lengkap" required="">
+                                                    @if ($errors->has('name'))
                                                         <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('longname') }}
+                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('name') }}
                                                         </div>
                                                     @endif
                                                     <div class="invalid-feedback">
@@ -452,12 +452,12 @@
 
                                                 <div class="mb-3">
                                                     <label for="address"class="form-label text-black">No HP</label>
-                                                    <input type="text" class="form-control" name="numberphone"
-                                                        id="numberphone" placeholder="Nomor Anda" required="">
-                                                    @if ($errors->has('numberphone'))
+                                                    <input type="text" class="form-control" name="notelp"
+                                                        id="notelp" placeholder="Nomor Anda" required="">
+                                                    @if ($errors->has('notelp'))
                                                         <div class="alert alert-danger" role="alert">
                                                             <i class="bi bi-x-lg"></i>
-                                                            {{ $errors->first('numberphone') }}
+                                                            {{ $errors->first('notelp') }}
                                                         </div>
                                                     @endif
                                                     <div class="invalid-feedback">

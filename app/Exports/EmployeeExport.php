@@ -15,15 +15,15 @@ class EmployeeExport implements FromCollection, WithHeadings
      */
     public function collection()
     {
-        return DataEmployee::select('longname', 'place_birth', 'date', 'gender', 'marry', 'blood_group',
-         'email', 'region', 'numberphone', 'address', 'last_study', 'educational_institution', 'study_program',
+        return DataEmployee::select('name', 'place_birth', 'date', 'gender', 'marry', 'blood_group',
+         'email', 'region', 'notelp', 'address', 'last_study', 'educational_institution', 'study_program',
          'images')->get();
     }
 
     public function headings(): array
     {
-        return["longname", "place_birth", "date", "gender", "marry", "blood_group",
-        "email", "region", "numberphone", "address", "last_study", "educational_institution", "study_program",
+        return["name", "place_birth", "date", "gender", "marry", "blood_group",
+        "email", "region", "notelp", "address", "last_study", "educational_institution", "study_program",
         "images"];
     }
 }

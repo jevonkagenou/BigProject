@@ -10,7 +10,7 @@ class DataEmployee extends Model
     use HasFactory;
 
     protected $table = 'data_employees';
-    protected $fillable = ['longname', 'place_birth', 'date', 'gender', 'marry', 'blood_group', 'email', 'region', 'numberphone', 'address', 'last_study', 'educational_institution', 'study_program', 'images'];
+    protected $fillable = ['name', 'place_birth', 'date', 'gender', 'marry', 'blood_group', 'email', 'region', 'notelp', 'address', 'last_study', 'educational_institution', 'study_program', 'foto'];
 
     public function DataPayroll(){
         return $this->hasMany(DataPayroll::class);

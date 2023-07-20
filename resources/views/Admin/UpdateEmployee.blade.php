@@ -155,7 +155,7 @@
                 <ul class="metismenu mm-show" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <img src="{{ asset('foto/profile/pic1.jpg') }}" width="20" alt="" />
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
@@ -266,7 +266,7 @@
                                         <div class="row">
                                             <div class="profile-info" style="display: flex; justify-content: center;">
                                                 <div class="profile-photo">
-                                                    <img src="images/profile/user.png"
+                                                    <img src="foto/profile/user.png"
                                                         class="img-fluid rounded-circle"
                                                         style="width: 120px; height: 120px;" alt="">
                                                 </div>
@@ -276,14 +276,14 @@
                                             <div class="input-group">
                                                 <div class="form-file">
                                                     <input type="file" class="form-file-input form-control"
-                                                        name="images" value="{{ old('images') }}" id="images">
+                                                        name="foto" value="{{ old('foto') }}" id="foto">
                                                 </div>
                                             </div>
                                         </div>
                                 </div>
-                                @if ($errors->has('images'))
+                                @if ($errors->has('foto'))
                                     <div class="alert alert-danger" role="alert">
-                                        <i class="bi bi-x-lg"></i> {{ $errors->first('images') }}
+                                        <i class="bi bi-x-lg"></i> {{ $errors->first('foto') }}
                                     </div>
                                 @endif
                             </div>
@@ -294,15 +294,15 @@
                                     <div class="col-lg-12 order-lg-2 mb-4">
                                         <h4 class="mb-3">Informasi Pribadi</h4>
                                         <div class="mb-3">
-                                            {{-- @if ($errors->has('longname'))
+                                            {{-- @if ($errors->has('name'))
                                                     <div class="alert alert-danger" role="alert">
-                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('longname') }}
+                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('name') }}
                                                     </div>
                                                 @endif --}}
                                             <label for="address" class="form-label text-black"><label
                                                     class="text-danger form-label">*</label>Nama
                                                 Lengkap</label>
-                                                <input type="text" class="form-control" name="longname" id="longname" value="{{$data->longname}}" placeholder="Nama Lengkap">
+                                                <input type="text" class="form-control" name="name" id="name" value="{{$data->name}}" placeholder="Nama Lengkap">
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
@@ -388,8 +388,8 @@
                                             <label for="address"class="form-label text-black"><label
                                                     class="text-danger form-label">*</label>Number Phone</label>
                                             <input type="number" class="form-control"
-                                                 name="numberphone" id="numberphone"
-                                                placeholder="Nomor Anda" value="{{$data->numberphone}}" >
+                                                 name="notelp" id="notelp"
+                                                placeholder="Nomor Anda" value="{{$data->notelp}}" >
                                         </div>
 
                                         <div class="mb-3">
