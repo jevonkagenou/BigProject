@@ -914,29 +914,38 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label class="form-label">Periode</label>
-                                        <select class="default-select form-control wide w-100" name="periode"
-                                            id="periode">
-                                            <option selected>Tetap (Gaji Bulanan, Mingguan, per Sekian Gaji)</option>
-                                            <option value="Tetap (Gaji Bulanan, Mingguan, per Sekian Gaji)">Tetap (Gaji
-                                                Bulanan, Mingguan, per Sekian Gaji)</option>
-                                            <option value="Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)">Tidak Tetap (THR,
-                                                Bonus Lebih Dari 1 Bulan)</option>
+                                       <!-- <label class="form-label">Periode</label> -->
+                                    <label for="firstName" class="form-label">Tiope Komponen</label>
+                                    <select class="default-select form-control wide w-100 @error('tipe_komponenptg') is-invalid @enderror"
+                                                onchange="toggleAdditionalInputPotong(this)" name="tipe_komponenptg" id="tipe_komponenptg">
+                                        <option selected>Pilih Jenis Gaji</option>
+                                        <option value="Tetap (Gaji Bulanan, Mingguan, Persekian gaji)">Tetap (Gaji Bulanan, Mingguan, Persekian gaji)</option>
+                                        <option value="Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)">Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)</option>
+                                        @error('tipe_komponenptg')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </select>
+                            <div class="invalid-feedback">
+                            Please select a valid country.
+                            </div>
+                            </div>
 
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please select a valid country.
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
 
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="firstName" class="form-label">Periode Dimulai</label>
-                                        <input type="date" class="form-control" id="periode_dimulai"
-                                            placeholder="" name="periode_dimulai" value="">
-                                    </div>
+                            <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label" id="periodeLabel">Periode Dimulai</label>
+                                <input type="date" class="form-control" id="periode_dimulai" placeholder="" name="periode_dimulai" value="">
+                            </div>
+                            <div class="col-md-6 mb-3" id="additionalInputPotong" style="display: none;">
+                                <!-- Tambahkan formulir input tambahan di sini -->
+                                <div class="row g-0">
+                                <h6 class="modal-title">Lama Periode</h6><br>
+                                <div class="col">
+                                    <input type="text" class="form-control btn-xs" placeholder="" value="" name="uang_potong">
                                 </div>
+                                </div>
+                            </div>
                             </div>
 
                             <div class="card-header">
@@ -1241,6 +1250,31 @@
      toastr.success("{{ session('success') }}");
  </script>
  @endif
+
+ <script>
+    function toggleAdditionalInputPotong(selectElement) {
+      var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+      var additionalInputPotong = document.getElementById('additionalInputPotong');
+      var periodeLabel = document.getElementById('periodeLabel');
+      var periodeDimulaiInput = document.getElementById('periode_dimulai');
+
+      // Ubah label berdasarkan opsi yang dipilih
+      if (selectedOption === 'Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)') {
+        periodeLabel.textContent = 'Periode Gagal';
+        periodeDimulaiInput.name = 'periode_gagal'; // Ubah name untuk opsi Manual
+      } else {
+        periodeLabel.textContent = 'Periode Dimulai';
+        periodeDimulaiInput.name = 'periode_dimulai'; // Kembalikan name untuk opsi Berdasarkan Keterlambatan
+      }
+
+      // Tampilkan atau sembunyikan input tambahan berdasarkan opsi yang dipilih
+      if (selectedOption === 'Tetap (Gaji Bulanan, Mingguan, Persekian gaji)') {
+        additionalInputPotong.style.display = 'block';
+      } else {
+        additionalInputPotong.style.display = 'none';
+      }
+    }
+  </script>
 
 </body>
 
