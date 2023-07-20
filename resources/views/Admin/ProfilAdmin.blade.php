@@ -246,7 +246,7 @@
                         </div>
                         <div class="justify-content-end">
                             <ul class="navbar-nav header-right">
-                                <li class="nav-item dropdown notification_dropdown">
+                                {{-- <li class="nav-item dropdown notification_dropdown">
                                     <a class="nav-link  ai-icon" href="javascript:void(0);" role="button"
                                         data-bs-toggle="dropdown">
                                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
@@ -312,7 +312,7 @@
                                         <a class="all-notification" href="javascript:void(0);">Lihat semua notifikasi
                                             <i class="ti-arrow-end"></i></a>
                                     </div>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -614,7 +614,7 @@
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Email</label>
+                                                <label class="col-sm-3 col-form-label">E-mail</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" id="email" name="email"
                                                         class="form-control" placeholder="Email"
@@ -634,7 +634,7 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Nomer Telpon</label>
+                                                <label class="col-sm-3 col-form-label">Nomor Telepon</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" id="notelp" name="notelp"
                                                         class="form-control @error('notelp') is-invalid  @enderror"
