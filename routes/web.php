@@ -37,14 +37,14 @@ use App\Http\Controllers\EmployeePresence;
 |
 */
 Route::middleware(['guest'])->group(function () {
-    Route::get('/login',[LoginController::class,'login'])->name('Login');
+    Route::get('/login',[LoginController::class,'login'])->name('login');
     Route::post('/loginuser',[LoginController::class,'loginuser'])->name('Loginuser');
     Route::get('/users/set-password/{user}', [PasswordController::class, 'setPassword'])->name('users.setPassword');
     Route::get('/users/update-password/{user}', [PasswordController::class, 'updatePassword'])->name('updatePassword');
     Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
 
 });
-Route::middleware(['auth','admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
 
     Route::get('/', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
     Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
@@ -56,7 +56,6 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
 
     Route::get('/CreateSlips', [SlipGajiKomponenController::class, 'CreateSlips'])->name('CreateSlips');
-    Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
     Route::get('/AnnouncementUpdate', [RouteController::class, 'AnnouncementUpdate'])->name('AnnouncementUpdate');
     Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/PayrolEmployee/{id}', [DataPayrollController::class, 'PayrolEmployee'])->name('PayrolEmployee');
@@ -70,7 +69,6 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
     Route::get('/Payroll', [PayrollController::class, 'Payroll'])->name('Payroll');
     Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
-    Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
     Route::get('/SalaryAdjustment/{id}', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
     Route::get('/AddAccount', [BankController::class, 'AddAccount'])->name('AddAccount');
@@ -94,7 +92,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::post('/UpdatePayrollStatus', [DataPayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
     Route::get('/SelectedMonth', [SalaryConclusionController::class, 'SelectedMonth'])->name('SelectedMonth');
     Route::post('/GetData/{id}', [PayrollController::class, 'GetData'])->name('GetData');
-    
+
     // Add Data Employee Route
     Route::get('/Employee/{id}', [DataEmployeeController::class, 'Employee'])->name('Employee');
     Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
@@ -124,7 +122,6 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/ProfilAdmin/{id}', [SystemAdminController::class, 'ProfilAdmin'])->name('ProfilAdmin');
     Route::post('/updateProfile/{id}', [SystemAdminController::class, 'updateProfile'])->name('ProfilAdmin.updateProfile');
     Route::post('/updateFotoadmin/{id}', [SystemAdminController::class, 'updateFotoadmin'])->name('ProfilAdmin.updateFotoadmin');
-    Route::get('/delete/{id}', [SystemAdminController::class, 'delete'])->name('ProfilAdmin.delete');
     Route::get('/delete2/{id}', [SystemAdminController::class, 'delete'])->name('ProfilAdmin.delete');
 
     Route::post('/updategambarProfile/{id}', [SystemAdminController::class, 'updategambarProfile'])->name('ProfilAdmin.updategambarProfile');
@@ -133,20 +130,9 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter');
 
 });
-Route::middleware(['auth', 'karyawan'])->group(function () {
-    // Karyawan Route
-    // Route::view('/', 'Pengaturan.Perusahaan');
-    Route::get('/', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
-    Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
-    Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
-    Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
-    Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
-    Route::get('/SalarySummary', [SalaryConclusionController::class, 'SalarySummary'])->name('SalarySummary');
-    Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
-    Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
-    Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
-
+Route::middleware(['karyawan'])->group(function () {
     Route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
+    Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
     // Approval Employee
     Route::get('/ApprovalEmployee', [ApprovalEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
     Route::get('/EmployeePresence', [ViewEmployeeController::class, 'EmployeePresence'])->name('EmployeePresence');
@@ -164,8 +150,6 @@ Route::middleware(['auth', 'karyawan'])->group(function () {
 
     Route::get('/gantipasswordEmployee', [SystemAdminController::class, 'gantipasswordEmployee']);
     Route::post('/changePasswordEmployee/{id}', [SystemAdminController::class, 'changePasswordEmployee']);
-
-
 
 });
 Route::middleware(['auth'])->group(function () {

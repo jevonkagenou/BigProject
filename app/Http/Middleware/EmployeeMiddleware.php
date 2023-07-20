@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class admin
+class EmployeeMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,10 @@ class admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!empty(auth()->user()) && auth()->user()->role === 'admin'){
+        if (auth()->check() && auth()->user()->role === 'karyawan') {
             return $next($request);
-         }
-        return $next($request);
+        }
+        return redirect()->back()->with('error', 'Anda Tidak Diizinkan Mengakses Halaman Ini');
     }
+
 }
