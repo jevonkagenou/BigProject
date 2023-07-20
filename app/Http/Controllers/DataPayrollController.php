@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\DataEmployee;
 use App\Models\DataPayroll;
 use App\Models\OtherAllowances;
+use App\Models\Presence;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
 use App\Models\slip_gaji;
@@ -12,15 +13,15 @@ class DataPayrollController extends Controller
 {
     public function PayrolEmployee($id){
     $data = DataEmployee::find($id);
-    return view('EmployeeDetails.PayrolEmployee', compact('data'),['tittle'=>'Data Payroll' ]);
+    $pay = DataPayroll::find($id);
+    $pre = Presence::find($id);
+    return view('EmployeeDetails.PayrolEmployee', compact('data','pay','pre'),['tittle'=>'Data Payroll' ]);
     }
 
     public function Data_Salary(Request $request, $id){
             $data = DataEmployee::find($id);
+            $dataPayroll = DataPayroll::findorfail($id);
             $periode = slip_gaji::latest()->first()->periode;
-            // $dataEmployee = DataEmployee::count();
-            // $slipgaji = slip_gaji::count();
-            // $tetap =  DataEmployee::where('slip_gaji_id', 1)->count();
 
 
             // dd($request);
@@ -42,5 +43,10 @@ class DataPayrollController extends Controller
                 ]);
             }
             return redirect()->route('PayrolEmployee', ['id' => $data->id, 'periode' => $periode])->with('success', 'Data Anda Telah Ditambahkan');
+    }
+
+    public function gaji(){
+        $gaji = DataEmployee::find();
+        return view ('admin.payroll')->with('gaji',$gaji);
     }
 }

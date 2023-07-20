@@ -360,25 +360,25 @@
                                                                     <tr>
                                                                         <th>No.</th>
                                                                         <th>Nama</th>
-                                                                        <th class="text-center">Waktu Terlambat</th>
+                                                                        <th class="text-center">Kehadiran</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
+                                                                    @foreach ($late as $row)
                                                                     <tr>
-                                                                        <th>1</th>
-                                                                        <td>Shido</td>
-                                                                        <td class="text-center">5 menit</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>2</th>
-                                                                        <td>Shun</td>
-                                                                        <td class="text-center">10 menit</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>3</th>
-                                                                        <td>Kamijou Touma</td>
-                                                                        <td class="text-center">15 menit</td>
-                                                                    </tr>
+                                                                        <td>{{ $loop->iteration }}</td>
+                                                                        <td>{{ $row ->User->name}}</td>
+                                                                        <td class="text-center">
+                                                                            @if($row->late)
+                                                                                Terlambat
+                                                                            @else
+                                                                                Tidak Terlambat
+                                                                            @endif
+                                                                        </td>
+                                                                         </tr>
+                                                                    @endforeach
+                                                                    
+
                                                                 </tbody>
                                                             </table>
                                                         </div>

@@ -64,6 +64,11 @@
         .red-icon path {
             fill: red;
         }
+
+        .button-link:hover {
+            color: #969BA0;
+        }
+
     </style>
     <div id="main-wrapper">
         <div class="nav-header ">
@@ -775,6 +780,7 @@
             .fa {
                 line-height: 1.5rem !important;
             }
+
         </style>
 
         <div class="content-body">
@@ -837,15 +843,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($name as $row)
+                                            @foreach ($name as $i => $row)
+                                            @php
+                                            $jumlah = 0;
+                                            @endphp
                                             <tr class="text-center">
-                                                <td>{{ \Carbon\Carbon::parse($row->periode_dimulai)->isoFormat('DD MMMM YYYY') }}</td>
-                                                <td>{{ $row->salary }}</td>
-                                                <td>{{ $row->kompdapats[0]->uang_dapat }}</td>
-                                                <td>{{ $row->komppotong[0]->uang_potong }}</td>
+                                                <td><a class="button-link" href="/DetailSalary">{{ \Carbon\Carbon::parse($row->periode_dimulai)->isoFormat('DD MMMM YYYY') }}</a></td>
+                                                <td><a class="button-link" href="/DetailSalary">{{ $row->slip->periode }}</a></td>
+                                                <td><a class="button-link" href="/DetailSalary">{{ $row->uang_dapat}}</a></td>
+                                                <td><a class="button-link" href="/DetailSalary">{{ $nama[$i]->uang_potong }}</a></td>
                                             </tr>
                                             @endforeach
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -932,6 +940,7 @@
                 isAlternateLogo = true;
             }
         }
+
     </script>
 
 </body>

@@ -105,7 +105,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                {{ $tittle }}
+                                {{$tittle}}
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -128,7 +128,7 @@
                                                 <path
                                                     d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                             </svg> Profil</a></li>
-                                    <li><a class="dropdown-item" href="{{url('logout')}}"><svg
+                                    <li><a class="dropdown-item" href="#"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 fill="#969ba0" viewBox="0 0 512 512"
                                                 style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
@@ -257,222 +257,184 @@
         <div class="content-body">
             <div class="container-fluid">
                 <div class="col-xl-12 ">
-                    <form method="POST" action="{{ route('Add_Employee') }}" enctype="multipart/form-data"
-                        class="row guttter-sm">
-                        @csrf
+                    <div class="row guttter-sm">
                         <div class="col-xl-3">
                             <div class="card" style="max-height: 250px;">
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="profile-info" style="display: flex; justify-content: center;">
-                                            <div class="profile-photo">
-                                                <img src="foto/profile/user.png" class="img-fluid rounded-circle"
-                                                    style="width: 120px; height: 120px;" alt="">
+                                    <form method="POST" action="/Update_Employee/{{$data->id}}" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="profile-info" style="display: flex; justify-content: center;">
+                                                <div class="profile-photo">
+                                                    <img src="foto/profile/user.png"
+                                                        class="img-fluid rounded-circle"
+                                                        style="width: 120px; height: 120px;" alt="">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="profile-statistics">
-                                        <div class="input-group">
-                                            <div class="form-file">
-                                                <input type="file" class="form-file-input form-control"
-                                                    name="foto" value="{{ old('foto') }}" id="foto">
+                                        <div class="profile-statistics">
+                                            <div class="input-group">
+                                                <div class="form-file">
+                                                    <input type="file" class="form-file-input form-control"
+                                                        name="foto" value="{{ old('foto') }}" id="foto">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                                 @if ($errors->has('foto'))
                                     <div class="alert alert-danger" role="alert">
                                         <i class="bi bi-x-lg"></i> {{ $errors->first('foto') }}
                                     </div>
-                                @endif --}}
+                                @endif
                             </div>
                         </div>
                         <div class="card col-xl-8">
                             <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-12 order-lg-2 mb-4">
-                                            <h4 class="mb-3" style="font-weight: bold;">Informasi Pribadi</h4>
-                                                <div class="mb-3">
-                                                    <label for="address" class="form-label text-black">Nama
-                                                        Lengkap</label>
-                                                    <input type="text" class="form-control" name="name"
-                                                        id="name" placeholder="Nama Lengkap" required="">
-                                                    @if ($errors->has('name'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('name') }}
-                                                        </div>
-                                                    @endif
-                                                    <div class="invalid-feedback">
-                                                        Please enter your shipping address.
+                                <div class="row">
+                                    <div class="col-lg-12 order-lg-2 mb-4">
+                                        <h4 class="mb-3">Informasi Pribadi</h4>
+                                        <div class="mb-3">
+                                            {{-- @if ($errors->has('name'))
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <i class="bi bi-x-lg"></i> {{ $errors->first('name') }}
                                                     </div>
-                                                </div>
+                                                @endif --}}
+                                            <label for="address" class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>Nama
+                                                Lengkap</label>
+                                                <input type="text" class="form-control" name="name" id="name" value="{{$data->name}}" placeholder="Nama Lengkap">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="firstName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Tempat
+                                                    Lahir</label>
+                                                <input type="text" class="form-control" name="place_birth" value="{{$data->place_birth}}"
+                                                    id="place_birth" placeholder="Tempat Lahir">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="lastName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Tanggal
+                                                    Lahir</label>
+                                                <input type="date" class="form-control" name="date" value="{{$data->date}}"
+                                                    id="date" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
 
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="lastName" class="form-label text-black"><label
-                                                            class="text-danger form-label">*</label>Jenis
-                                                        Kelamin</label>
-                                                        <div class="form-check custom-radio mb-2  @error('gender') is-invalid @enderror">
-                                                            <input id="gender1" name="gender" value="Laki-Laki" type="radio" class="" required
-                                                            {{ old('gender') == 'Laki-Laki' ? 'checked' : '' }}>
-                                                        <label class="form-check-label" for="credit">Laki-Laki</label>
-                                                        </div>
-                                                        <div class="form-check custom-radio mb-2">
-                                                            <input id="gender2" name="gender" value="Perempuan" type="radio" class="" required
-                                                                {{ old('gender') == 'Perempuan' ? 'checked' : '' }}>
-                                                            <label class="form-check-label" for="debit">Perempuan</label>
-                                                        </div>
-                                                        @error('gender')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                    </div>
-                                                    
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="firstName" class="form-label text-black"><label
-                                                            class="text-danger form-label">*</label>Status
-                                                        Perkawinan</label>
-                                                        <select name="marry"
-                                                        class="default-select form-control @error('marry') is-invalid @enderror" id="">
-                                                        <option value="" selected>Status</option>
-                                                            <option value="sudah Menikah" {{ old('marry') == 'sudah Menikah' ? 'selected' : '' }}>
-                                                                Sudah Menikah
-                                                            </option>
-                                                            <option value="Belum Menikah" {{ old('marry') == 'Belum Menikah' ? 'selected' : '' }}>
-                                                                Belum Menikah
-                                                            </option>
-                                                    </select>
-                                                    @error('marry')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
-                                                    </div>
-                                                    
+                                                <label for="lastName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Jenis
+                                                    Kelamin</label>
+                                                <div class="form-check custom-radio mb-2">
+                                                    <input name="gender" id="gender" type="radio"
+                                                        class="" value="Laki-laki" <?php echo ($data['gender'] == "Laki-laki")?"checked":""?>>Laki-laki
                                                 </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label text-black"><label
-                                                            class="text-danger form-label">*</label>Golongan
-                                                        Darah</label>
-                                                        <select name="blood_group"
-                                                    class="default-select form-control @error('blood_group') is-invalid @enderror">
-                                                    <option value="" selected>Pilih</option>
-                                                    <option value="A" {{ old('blood_group') == 'A' ? 'selected' : '' }}>A</option>                                                    
-                                                    <option value="B" {{ old('blood_group') == 'B' ? 'selected' : '' }}>B</option>
-                                                    <option value="AB" {{ old('blood_group') == 'AB' ? 'selected' : '' }}>AB</option>
-                                                    <option value="O" {{ old('blood_group') == 'O' ? 'selected' : '' }}>O</option>
+                                                <div class="form-check custom-radio mb-2">
+                                                    <input name="gender" id="gender" type="radio"
+                                                        class="" value="Perempuan" <?php echo ($data['gender'] == "Perempuan")?"checked":""?>>Perempuan
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="firstName" class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Status
+                                                    Perkawinan</label>
+                                                <select name="marry"
+                                                    class="default-select form-control" id="">
+                                                    <option value="" selected>Status</option>
+                                                    <option value="Sudah Menikah" <?php echo ($data['marry'] == 'Sudah Menikah') ? 'selected="selected"':''?>>Sudah Menikah</option>
+                                                    <option value="Belum Menikah" <?php echo ($data['marry'] == 'Belum Menikah') ? 'selected="selected"':''?>>Belum Menikah</option>
                                                 </select>
-                                                @error('blood_group')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                                        
-                                                    </div>
-                                                    
-                                                    <div class="col-md-6 mb-3">
-                                                        <label class="form-label text-black"><label
-                                                            class="text-danger form-label">*</label>Agama</label>
-                                                        <select name="blood_group"
-                                                    class="default-select form-control @error('region') is-invalid @enderror">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Golongan
+                                                    Darah</label>
+                                                <select name="blood_group"
+                                                    class="default-select form-control">
                                                     <option value="" selected>Pilih</option>
-                                                    <option value="Islam"  {{ old('region') == 'Islam' ? 'selected' : ''}}>Islam</option>
-                                                    <option value="Kristen"  {{ old('region') == 'Kristen' ? 'selected' : ''}}>Kristen</option>
-                                                    <option value="Hindu"  {{ old('region') == 'Hindu' ? 'selected' : ''}}>Hindu</option>
-                                                    <option value="Buddha"  {{ old('region') == 'Buddha' ? 'selected' : ''}}>Buddha</option>
-                                                    <option value="Konghucu"  {{ old('region') == 'Konghucu' ? 'selected' : ''}}>Konghucu</option>
+                                                    <option value="A" <?php echo ($data['blood_group'] == 'A') ? 'selected="selected"':''?>>A</option>
+                                                    <option value="B" <?php echo ($data['blood_group'] == 'B') ? 'selected="selected"':''?>>B</option>
+                                                    <option value="AB"<?php echo ($data['blood_group'] == 'AB') ? 'selected="selected"':''?>>AB</option>
+                                                    <option value="O" <?php echo ($data['blood_group'] == 'O') ? 'selected="selected"':''?>>O</option>
                                                 </select>
-                                                @error('region')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                                        
-                                                    </div>
-                                                </div><br>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label text-black"><label
+                                                        class="text-danger form-label">*</label>Agama</label>
+                                                <select name="region"
+                                                    class="default-select form-control">
+                                                    <option value="" selected>Agama</option>
+                                                    <option value="Islam"   <?php echo ($data['region'] == 'Islam') ? 'selected="selected"':''?>>Islam</option>
+                                                    <option value="Kristen" <?php echo ($data['region'] == 'Kristen') ? 'selected="selected"':''?>>Kristen</option>
+                                                    <option value="Hindu"   <?php echo ($data['region'] == 'Hindu') ? 'selected="selected"':''?>>Hindu</option>
+                                                    <option value="Buddha"  <?php echo ($data['region'] == 'Buddha') ? 'selected="selected"':''?>>Buddha</option>
+                                                    <option value="Konghucu"<?php echo ($data['region'] == 'Konghucu') ? 'selected="selected"':''?>>Konghucu</option>
+                                                </select>
+                                            </div>
+                                        </div><br>
+                                        <h4 class="mb-3">Informasi Tambahan</h4>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>E-mail <span
+                                                    class="text-muted"></span></label>
+                                            <input type="email" name="email"
+                                                class="form-control" id="email" placeholder="Email Anda" value="{{$data->email}}">
+                                        </div>
 
-                                                <h4 class="mb-3" style="font-weight: bold;">Informasi Tambahan</h4>
+                                        <div class="mb-3">
+                                            <label for="address"class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>Number Phone</label>
+                                            <input type="number" class="form-control"
+                                                 name="notelp" id="notelp"
+                                                placeholder="Nomor Anda" value="{{$data->notelp}}" >
+                                        </div>
 
-                                                <div class="mb-3">
-                                                    <label for="email" class="form-label text-black"><label
-                                                        class="text-danger form-label">*</label>E-mail <span
-                                                        class="text-muted"></span></label>
-                                                        <input type="email" name="email"
-                                                        class="form-control  @error('email') is-invalid @enderror" id="email" placeholder="Email Anda" value="{{ old('email') }}">
-                                                        @error('email')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                   
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address"class="form-label text-black">No HP</label>
-                                                    <input type="text" class="form-control" name="notelp"
-                                                        id="notelp" placeholder="Nomor Anda" required="">
-                                                    @if ($errors->has('notelp'))
-                                                        <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i>
-                                                            {{ $errors->first('notelp') }}
-                                                        </div>
-                                                    @endif
-                                                    <div class="invalid-feedback">
-                                                        Please enter your shipping address.
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address"class="form-label text-black"><label
-                                                        class="text-danger form-label">*</label>Alamat</label>
-                                                        <input type="text" class="form-control @error('address') is-invalid @enderror"
-                                                        name="address" id="address" placeholder="Alamat Anda" value="{{old('address')}}">
-                                                        @error('address')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                    
-                                                </div><br>
+                                        <div class="mb-3">
+                                            <label for="address"class="form-label text-black"><label
+                                                    class="text-danger form-label">*</label>Alamat</label>
+                                            <input type="text" class="form-control"
+                                                name="address" id="address" placeholder="Alamat Anda" value="{{$data->address}}">
+                                        </div><br>
 
                                         <h4 class="mb-3">Pendidikan Terakhir</h4>
 
-                                                <div class="mb-3">
-                                                    <label for="address2" class="text-black"><label
-                                                        class="text-danger form-label">*</label>Pendidikan
-                                                    Terakhir</label>
-                                                    <input type="text" class="form-control text-muted @error('last_study') is-invalid @enderror"
+                                        <div class="mb-3">
+                                            <label for="address2" class="text-black"><label
+                                                    class="text-danger form-label">*</label>Pendidikan
+                                                Terakhir</label>
+                                            <input type="text" class="form-control text-muted"
                                                 name="last_study" id="last_study"
-                                                placeholder="Pendidikan Terakhir" value="{{old('last_study')}}">
-                                                @error('last_study')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address2" class="text-black"><label
-                                                        class="text-danger form-label">*</label>Nama Institusi
-                                                    Pendidikan</label>
-                                                    <input type="text" class="form-control text-muted @error('educational_institution') is-invalid @enderror"
-                                                    name="educational_institution" id="educational_institution"
-                                                    placeholder="Nama Institusi Pendidikan" value="{{old('educational_institution')}}">
-                                                    @error('educational_institution')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="address2" class="text-black"><label
-                                                        class="text-danger form-label">*</label>Program Studi</label>
-                                                        <input type="text" class="form-control text-muted @error('study_program') is-invalid @enderror" name="study_program"
-                                                        id="study_program" placeholder="Program Studi" value="{{old('study_program')}}">
-                                                        @error('study_program')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
-                                                <hr class="mb-2">
-                                                <button class="btn btn-danger btn-xs" type="submit"
-                                                    style="width: 100%;">
-                                                    <span
-                                                        style="display: inline-block; vertical-align: middle;">Simpan</span>
-                                                </button>
-                                            </form>
+                                                placeholder="Pendidikan Terakhir" value="{{$data->last_study}}">
                                         </div>
+
+                                        <div class="mb-3">
+                                            <label for="address2" class="text-black"><label
+                                                    class="text-danger form-label">*</label>Nama Institusi
+                                                Pendidikan</label>
+                                            <input type="text" class="form-control text-muted"
+                                                name="educational_institution" id="educational_institution"
+                                                placeholder="Nama Institusi Pendidikan" value="{{$data->educational_institution}}">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="address2" class="text-black"><label
+                                                    class="text-danger form-label">*</label>Program Studi</label>
+                                            <input type="text" class="form-control text-muted" name="study_program"
+                                                id="study_program" placeholder="Program Studi" value="{{$data->study_program}}">
+                                        </div>
+
+                                        <hr class="mb-2">
+                                        <button class="btn btn-danger btn-xs" type="submit" style="width: 100%;">
+                                            <span style="display: inline-block; vertical-align: middle;">Simpan</span>
+                                        </button>
+                                        </form>
                                     </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

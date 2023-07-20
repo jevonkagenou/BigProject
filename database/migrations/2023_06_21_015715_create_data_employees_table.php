@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('data_employees', function (Blueprint $table) {
             $table->id();
-            $table->string('longname');
+            $table->string('name');
             $table->string('place_birth');
             $table->date('date');
             $table->string('gender');
@@ -21,12 +21,12 @@ return new class extends Migration
             $table->string('blood_group');
             $table->string('region');
             $table->string('email');
-            $table->bigInteger('numberphone');
+            $table->bigInteger('notelp');
             $table->string('address');
             $table->string('last_study');
             $table->string('educational_institution');
             $table->string('study_program');
-            $table->string('images')->default('user.png');
+            $table->string('foto')->default('user.png');
             $table->timestamps();
         });
     }

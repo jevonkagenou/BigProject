@@ -228,14 +228,14 @@
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
-                        <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
-                            <img src="" width="20" alt="" />
-                            <img src="" width="20" alt="" />
+                        <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
+                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Admin</b></span>
-                                <small class="text-end font-w400 ">admin@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
+                                <small class="text-end font-w400">Anggie@gmail.com</small>
                             </div>
                         </a>
+
                     </li>
                     <li><a class="ai-icon red-hover" href=" /DashboardEmployee" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="48"

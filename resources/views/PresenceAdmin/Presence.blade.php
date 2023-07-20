@@ -1005,6 +1005,7 @@
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
+                                                <th class="text-center">No</th>
                                                 <th class="text-center">Nama</th>
                                                 <th class="text-center">Shift</th>
                                                 <th class="text-center">Status</th>
@@ -1017,6 +1018,7 @@
                                         <tbody>
                                             @foreach ($presence as $data)
                                             <tr>
+                                                <td class="text-center">{{ $data->id }}</td>
                                                 <td class="text-center">{{ $data->name }}</td>
                                                 <td class="text-center">
                                                     <div class="card-body">

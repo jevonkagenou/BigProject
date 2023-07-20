@@ -880,29 +880,27 @@
                                 <h4 class="card-title">Slip Gaji</h4>
                             </div>
                             <div class="card-body">
-								<div class="row">
-									<div class="col-xl-6 col-lg-8 col-md-7 col-sm-1  btn-group btn-xs">
+								<div class="row align-items-center">
+                                    <div class="col-xl-6 col-lg-8 col-md-7 col-sm-12">
                                         <div class="btn-group btn-xs">
                                             <div class="size-filter">
                                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
                                                     <a class="btn btn-xs btn-outline-danger" for="btnradio1">Slip Gaji</a>
-
+                                
                                                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
                                                     <a href="/AddAccount" class="btn btn-xs btn-outline-danger" role="button" aria-pressed="true">Tambah Rekening</a>
-
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-									<div class="col-xl-6 col-lg-4 col-md-5 col-sm-3 mt-8 btn-xs text-end">
-										<div class="responsive-button">
-											<a href="AddPaySlips" type="button" class="btn btn-danger btn-xs"><i class="bi bi-plus me-1"></i>Tambah Slip Gaji</a>
-											<button type="button" class="btn btn-outline-light btn-xs" ><i class="bi bi-download me-2"></i>Print </button>
-
-										</div>
-									</div>
-								</div>
+                                    <div class="col-xl-6 col-lg-4 col-md-5 col-sm-12 mt-2 mt-md-0 text-md-end">
+                                        <div class="responsive-button">
+                                            <a href="AddPaySlips" type="button" class="btn btn-danger btn-xs"><i class="bi bi-plus me-1"></i>Tambah Slip Gaji</a>
+                                            <button type="button" class="btn btn-outline-light btn-xs"><i class="bi bi-download me-2"></i>Print</button>
+                                        </div>
+                                    </div>
+                                </div>                                                                                    
                                 <div class="table-responsive mb-4">
                                     <table id="example5" class="display" style="min-width: 845px">
 										<thead>

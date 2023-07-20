@@ -198,17 +198,6 @@ class RouteController extends Controller
         'slipGaji' => $slipGaji
     ], ['tittle' => 'Detail Karyawan']);
 }
-
-    public function AddAccount(Request $request)
-    {
-        // $rekeningList = Rekening::all();
-
-        return view('Settings.AddAccount', compact('rekeningList'),[
-            'tittle'=>'Tambah Rekening'
-        ]);
-    }
-
-
     public function SettingSchedule(){
         return view('Settings.SettingSchedule',[
             'tittle'=>'Jadwal Kerja'

@@ -12,8 +12,12 @@ class Presence extends Model
     protected $table = 'presence';
     protected $fillable = ['type','user_id','picture','time','late'];
 
-    public function user()
-    {
-        return $this->belongsTo(user::class);
+    public function User(){
+        return $this->belongsTo(User::class,'user_id','id');
+    
+    }
+    public function EmployeePresence(){
+        return $this->hasOne(EmployeePresence::class);
+
     }
 }

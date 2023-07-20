@@ -104,6 +104,9 @@
             color: #EE3232 !important;
             border-color: #EE3232 !important;
         }
+    .rounded-image {
+        border-radius: 50%;
+    }
     </Style>
 </head>
 
@@ -163,7 +166,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                        Izin & Cuti Karyawan
+                        Detail Ringkasan Gaji
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -311,33 +314,35 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-
-				<div class="row page-titles">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Table</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Datatable</a></li>
-					</ol>
-                </div>
-                <!-- row -->
-
-
                 <div class="row">
 					<div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Profile Datatable</h4>
+                                <h6 class="card-title">Gaji Bulanan</h6>
+                                <h4 class="card-title">Periode Juli 2023</h4>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
+                                <div class="row justify-content-end">
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-outline-light btn-xs text-end"
+                                                data-bs-toggle="dropdown">
+                                            <span>
+                                                <i class="bi bi-arrow-bar-up px-1"></i>
+                                            </span>
+                                            Ekspor
+                                        </button>
+                                    </div>
+                                </div>                                
+                                <div class="table-responsive mt-3">
                                     <table id="example3" class="display" style="min-width: 845px">
-                                        <thead>
+                                        <thead class="text-center">
                                             <tr>
-                                                <th></th>
-                                                <th>Karyawan</th>
+                                                <th>No</th>
+                                                <th colspan="2">Nama Karyawan</th>
                                                 <th>ID Karyawan</th>
                                                 <th>Gaji Pokok</th>
                                                 <th>Uang Lembur</th>
-                                                <th>Tunjangan Transaportasi</th>
+                                                <th>Tunjangan Transportasi</th>
                                                 <th>Tunjangan Pulsa</th>
                                                 <th>Tunjangan Lainnya</th>
                                                 <th>Koperasi</th>
@@ -348,8 +353,39 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <tr class="text-center">
+                                                <td>1</td>
+                                                <td>
+                                                    <div style="display: flex; align-items: center;">
+                                                        <img src="images/avatar/1.jpg" width="40" alt="" class="rounded-image" />
+                                                    </div>
+                                                </td>
+                                                <td>Karyawan Satu</td>
+                                                <td>10101</td>
+                                                <td>10101</td>
+                                                <td>10101</td>
+                                                <td>10101</td>
+                                                <td>10101</td>
+                                                <td>10101</td>
+                                                <td>10101</td>
+                                                <td>10101</td>
+                                                <td>10101</td>
+                                                <td>10101</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center sweetalert">
+                                                        <a type="button" class="px-3 btn" data-bs-target="" data-bs-toggle="modal">
+                                                            <i class="fa fa-trash hover-icon"></i>
+                                                        </a>
+                                                        <a type="button" data-bs-toggle="modal" data-bs-target=".modal">
+                                                            <svg class="hover-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>                                                
+                                            </tr>
                                         </tbody>
-                                    </table>
+                                    </table>                                    
                                 </div>
                             </div>
                         </div>

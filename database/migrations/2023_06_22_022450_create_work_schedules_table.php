@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nama');
             $table->string('nama_jadwal');
             $table->string('hari_1');
-
             $table->timestamps();
         });
     }
