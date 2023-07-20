@@ -5,7 +5,6 @@ use App\Http\Controllers\ApproveAdminController;
 use App\Http\Controllers\DataEmployeeController;
 use App\Http\Controllers\WorkScheduleController;
 use App\Http\Controllers\ApprovalEmployeeController;
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RouteController;
@@ -133,6 +132,17 @@ Route::middleware(['auth','admin'])->group(function () {
 
 });
 Route::middleware(['auth', 'karyawan'])->group(function () {
+    // Karyawan Route
+    // Route::view('/', 'Pengaturan.Perusahaan');
+    Route::get('/', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
+    Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
+    Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
+    Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
+    Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
+    Route::get('/SalarySummary', [SalaryConclusionController::class, 'SalarySummary'])->name('SalarySummary');
+    Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
+    Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
+    Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
 
     Route::get('/DashboardEmployee', [ViewEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
     // Approval Employee

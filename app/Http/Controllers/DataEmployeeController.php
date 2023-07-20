@@ -21,7 +21,7 @@ class DataEmployeeController extends Controller
     public function Add_Employee(Request $request){
         // dd($request);
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|string|min:3|max:255',
             'place_birth' => 'required',
             'date' => 'required',
             'gender' => 'required',
@@ -34,9 +34,25 @@ class DataEmployeeController extends Controller
             'last_study' => 'required',
             'educational_institution' => 'required',
             'study_program' => 'required',
-            'study_program' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|'
+        ],[
+            'name.required' => 'Nama Wajib Diisi',
+            'place_birth.required' => 'Tempat Lahir Wajib Diisi',
+            'date.required' => 'Tanggal Lahir Wajib Diisi',
+            'gender.required' => 'Jenis Kelamin Wajib Diisi',
+            'marry.required' => 'Status Perkawinan Wajib Diisi',
+            'blood_group.required' => 'Golongan Darah Wajib Diisi',
+            'region.required' => 'Agama Wajib Diisi',
+            'email.required' => 'email Wajib Diisi',
+            'notelp.required' => 'Nomor Telepon Wajib Diisi',
+            'address.required' => 'Alamat Wajib Diisi',
+            'last_study.required' => 'Pendidikan Terakhir Wajib Diisi',
+            'educational_institution.required' => 'Nama Institusi Pendidikan Terakhir Wajib Diisi',
+            'study_program.required' => 'Program studi Wajib Diisi',
         ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
 
         if ($files = $request->file('foto')) {
         $extension = $files->getClientOriginalExtension();

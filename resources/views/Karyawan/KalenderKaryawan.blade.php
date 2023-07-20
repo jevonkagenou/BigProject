@@ -51,6 +51,20 @@
         .red-icon path {
             fill: red;
         }
+        .dlabnav {
+          z-index: 100;
+        }
+        @media (max-width:300px) {
+         .dlabnav {
+          width: 100%;
+    /* tambahkan properti CSS lain yang sesuai */
+  }
+}
+@media (max-width:300px) {
+  .kalender {
+    display: none;
+  }
+}
 </style>
 
 <body>
