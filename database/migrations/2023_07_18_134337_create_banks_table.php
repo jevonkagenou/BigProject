@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('banks', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_bank');
+            $table->string('no_reg');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

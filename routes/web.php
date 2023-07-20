@@ -20,6 +20,7 @@ use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\PermitEmployeeController;
 use App\Http\Controllers\DashboardEmployeeController;
 use App\Http\Controllers\AnnualLeaveController;
+use App\Http\Controllers\BankController;
 use App\Http\Controllers\SalaryConclusionController;
 use App\Http\Controllers\SlipGajiKomponenController;
 use App\Http\Controllers\StartPayrollController;
@@ -74,7 +75,8 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
     Route::get('/SalaryAdjustment/{id}', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
-    Route::get('/AddAccount', [RouteController::class, 'AddAccount'])->name('AddAccount');
+    Route::get('/AddAccount', [BankController::class, 'AddAccount'])->name('AddAccount');
+    Route::post('/InsertAccount', [BankController::class, 'InsertAccount'])->name('InsertAccount');
     Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
     Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
 

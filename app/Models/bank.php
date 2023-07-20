@@ -9,5 +9,10 @@ class bank extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['kjk'];
+    protected $guarded =[];
+    protected $fillable = [
+        'nama_bank',
+        'no_reg',
+        'foto',
+    ];
 }
