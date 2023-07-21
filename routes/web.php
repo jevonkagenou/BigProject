@@ -47,7 +47,7 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['admin'])->group(function () {
 
     Route::get('/', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
-    Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
+    Route::post('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
     Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
     Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
     Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
@@ -95,7 +95,9 @@ Route::middleware(['admin'])->group(function () {
 
     // Add Data Employee Route
     Route::get('/Employee/{id}', [DataEmployeeController::class, 'Employee'])->name('Employee');
+    Route::get('/editemployee/{id}', [DataEmployeeController::class, 'editemployee'])->name('editemployee');
     Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
+    Route::post('/Update_Employee/{id}', [DataEmployeeController::class, 'Update_Employee'])->name('Update_Employee');
     Route::post('/Update_Image/{id}', [DataEmployeeController::class, 'Update_Image'])->name('Update_Image');
     Route::GET('/Delete_image/{id}', [DataEmployeeController::class, 'Delete_image'])->name('Delete_image');
 
@@ -116,13 +118,15 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/Createp', [AnnouncementController::class, 'Create'])->name('Createp');
     route::post('/update/{id}', [AnnouncementController::class, 'update'])->name('update');
     route::get('/destroy/{id}', [AnnouncementController::class, 'destroy'])->name('destroy');
+    route::get('/delete2/{id}', [SystemAdminController  ::class, 'delete2'])->name('delete2');
     Route::get('/search', [AnnouncementController::class, 'search'])->name('search');
     Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create');
 
     Route::get('/ProfilAdmin/{id}', [SystemAdminController::class, 'ProfilAdmin'])->name('ProfilAdmin');
     Route::post('/updateProfile/{id}', [SystemAdminController::class, 'updateProfile'])->name('ProfilAdmin.updateProfile');
     Route::post('/updateFotoadmin/{id}', [SystemAdminController::class, 'updateFotoadmin'])->name('ProfilAdmin.updateFotoadmin');
-    Route::get('/delete2/{id}', [SystemAdminController::class, 'delete'])->name('ProfilAdmin.delete');
+    Route::get('/delete/{id}', [SystemAdminController::class, 'delete'])->name('delete');
+    // Route::get('/delete2/{id}', [SystemAdminController::class, 'delete'])->name('delete2');/
 
     Route::post('/updategambarProfile/{id}', [SystemAdminController::class, 'updategambarProfile'])->name('ProfilAdmin.updategambarProfile');
     Route::get('/gantipassword', [SystemAdminController::class, 'gantipassword']);
@@ -157,5 +161,7 @@ Route::middleware(['auth'])->group(function () {
 
 });
 Route::post('/importData', [ImportEmployeeController::class, 'import'])->name('importData');
-Route::get('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
-Route::get('/SummaryofcomponentsalaryExport', [ImportEmployeeController::class, 'Export2'])->name('SummaryofcomponentsalaryExport');
+Route::post('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
+Route::post('/SummaryofcomponentsalaryExport', [ImportEmployeeController::class, 'Export2'])->name('SummaryofcomponentsalaryExport');
+
+Route::get('/exportpdf', [ImportEmployeeController::class, 'exportpdf'])->name('exportpdf');

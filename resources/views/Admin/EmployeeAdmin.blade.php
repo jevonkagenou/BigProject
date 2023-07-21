@@ -985,7 +985,7 @@
                                                     <td>{{ $employee->region }}</td>
                                                     <td>{{ $employee->last_study }}</td> --}}
                                                     <td class="display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center;">
-                                                        <a href="/Update_Employee/{{ $employee->id }}" class="btn-xs" style="margin-right: 3px">
+                                                        <a href="/editemployee/{{ $employee->id }}" class="btn-xs" style="margin-right: 3px">
                                                             <i class="fas fa-edit fa-lg hover-icon"></i>
                                                         </a>
                                                         {{-- Tombol hapus --}}
@@ -1013,7 +1013,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button class="btn btn-secondary btn-xs hover-red">Batal</button>
-                                                            <button type="submit" class="btn btn-primary btn-xs form-control1">Hapus</button>
+                                                            <button type="submit" class="btn btn-danger btn-xs form-control1">Hapus</button>
                                                         </div>
                                                     </form>
                                                     </div>

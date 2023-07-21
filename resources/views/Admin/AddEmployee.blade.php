@@ -266,7 +266,7 @@
                                     <div class="row">
                                         <div class="profile-info" style="display: flex; justify-content: center;">
                                             <div class="profile-photo">
-                                                <img src="foto/profile/user.png" class="img-fluid rounded-circle"
+                                                <img src="{{asset('images/profile/user.png')}}" class="img-fluid rounded-circle"
                                                     style="width: 120px; height: 120px;" alt="">
                                             </div>
                                         </div>

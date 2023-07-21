@@ -845,8 +845,7 @@
                                 <div class="card-body col-xl-3 col-lg-4 col-md-4 col-sm-4 ml-8">
                                     <div style="">
                                         <div class="profile-photo d-flex justify-content-center">
-                                            <img src="{{ asset('images/' . $order->images) }}" class="edit-image" style="width: 120px; height: 120px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
-
+                                            <img src="{{ asset('images/profile/' . $order->foto) }}" class="edit-image" style="width: 120px; height: 120px; float: left; border-radius: 50%;" class="img-fluid rounded-circle" alt="">
                                         </div>
                                         <br>
                                         <!-- <div class="d-flex justify-content-center">

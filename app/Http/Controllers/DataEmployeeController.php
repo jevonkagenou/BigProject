@@ -9,6 +9,7 @@ use App\Imports\EmployeeImport;
 use App\Models\User;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class DataEmployeeController extends Controller
 {
@@ -18,9 +19,9 @@ class DataEmployeeController extends Controller
         ]);
     }
 
-    public function Add_Employee(Request $request){
-        // dd($request);
-        $request->validate([
+    public function Add_Employee(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:255',
             'place_birth' => 'required',
             'date' => 'required',
@@ -28,53 +29,48 @@ class DataEmployeeController extends Controller
             'marry' => 'required',
             'blood_group' => 'required',
             'region' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'notelp' => 'required',
             'address' => 'required',
             'last_study' => 'required',
             'educational_institution' => 'required',
             'study_program' => 'required',
-            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|'
-        ],[
-            'name.required' => 'Nama Wajib Diisi',
-            'place_birth.required' => 'Tempat Lahir Wajib Diisi',
-            'date.required' => 'Tanggal Lahir Wajib Diisi',
-            'gender.required' => 'Jenis Kelamin Wajib Diisi',
-            'marry.required' => 'Status Perkawinan Wajib Diisi',
-            'blood_group.required' => 'Golongan Darah Wajib Diisi',
-            'region.required' => 'Agama Wajib Diisi',
-            'email.required' => 'email Wajib Diisi',
-            'notelp.required' => 'Nomor Telepon Wajib Diisi',
-            'address.required' => 'Alamat Wajib Diisi',
-            'last_study.required' => 'Pendidikan Terakhir Wajib Diisi',
-            'educational_institution.required' => 'Nama Institusi Pendidikan Terakhir Wajib Diisi',
-            'study_program.required' => 'Program studi Wajib Diisi',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif',
+        ], [
+            // Pesan error untuk aturan validasi di sini sesuai kebutuhan
         ]);
+    
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput($request->all());
         }
-
-        if ($files = $request->file('foto')) {
-        $extension = $files->getClientOriginalExtension();
-        $name = hash('sha256', time()) . '.' . $extension;
-        $files->move('foto', $name);
+    
+        // Simpan foto yang diunggah oleh pengguna
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $extension = $file->getClientOriginalExtension();
+            $name = hash('sha256', time()) . '.' . $extension;
+            $file->move('foto', $name);
+        } else {
+            // Jika foto tidak diunggah, Anda dapat menentukan tindakan default di sini.
+            // Misalnya, jika foto wajib diunggah, Anda bisa mengembalikan pesan error atau menetapkan foto default.
+            $name = 'user.png'; // Nama file default
         }
-
+    
         $user = User::create([
             'email' => $request->input('email'),
             'password' => \Hash::make('12345'),
             'name' => $request->input('name'),
             'notelp' => $request->input('notelp'),
-            'foto' => $request->input('foto'),
+            'foto' => $name,
         ]);
-
+        $user->save();
         $data = DataEmployee::create([
             'name' => $request->name,
             'place_birth' => $request->place_birth,
             'date' => $request->date,
             'gender' => $request->gender,
             'marry' => $request->marry,
-            'blood_group'=> $request->blood_group,
+            'blood_group' => $request->blood_group,
             'region' => $request->region,
             'email' => $request->email,
             'notelp' => $request->notelp,
@@ -82,21 +78,35 @@ class DataEmployeeController extends Controller
             'last_study' => $request->last_study,
             'educational_institution' => $request->educational_institution,
             'study_program' => $request->study_program,
-            'foto' => $name
+            'foto' => $name,
         ]);
-        return redirect()->route('EmployeeAdmin', compact('data'))->with('success', 'Data Anda Telah Ditambahkan');
+
+    $data->save();
+    
+        return redirect()->route('EmployeeAdmin')->with('success', 'Data Anda Telah Ditambahkan');
     }
 
-    public function Update_Employee(Request $request, $id){
+    public function editemployee($id){
+        $data = DataEmployee::find($id);
+        return view('Admin.UpdateEmployee', compact('data'));
+    }
 
+    public function Update_Employee(Request $request, $id)
+{
     $data = DataEmployee::find($id);
+
+    if (!$data) {
+        // Jika data dengan ID yang dimaksud tidak ditemukan
+        return redirect()->route('EmployeeAdmin')->with('error', 'Data karyawan tidak ditemukan.');
+    }
+
     $data->update([
         'name' => $request->name,
         'place_birth' => $request->place_birth,
         'date' => $request->date,
         'gender' => $request->gender,
         'marry' => $request->marry,
-        'blood_group'=> $request->blood_group,
+        'blood_group' => $request->blood_group,
         'region' => $request->region,
         'email' => $request->email,
         'notelp' => $request->notelp,
@@ -106,12 +116,8 @@ class DataEmployeeController extends Controller
         'study_program' => $request->study_program,
     ]);
 
-    $data->save();
-
     return redirect()->route('EmployeeAdmin')->with('success', 'Data karyawan berhasil diperbarui');
 }
-
-
 
     public function Add_Image(Request $request){
         $request ->validate([
