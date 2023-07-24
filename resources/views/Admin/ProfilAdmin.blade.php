@@ -444,13 +444,13 @@
                                             <div class="edit-icon">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </div>
-                                            {{-- @guest
-                                                <a href="/" class="header-widget" title="Akun Saya">
+                                            @guest
+                                                <a href="/DashboardAdmin" class="header-widget" title="Akun Saya">
                                                     <img src="{{ asset('gambar/' . $admin->foto) }}" class="edit-image"
                                                         style="width: 90px; float: left; border-radius: 50%;"
                                                         alt="">
                                                 </a>
-                                            @else --}}
+                                            @else 
                                                 {{-- @if (Auth::user()->foto) --}}
                                                     <a href="/profile" class="header-widget ms-auto" title="Akun Saya">
                                                         <img src="{{ asset('images/profile/' . $admin->foto) }}"

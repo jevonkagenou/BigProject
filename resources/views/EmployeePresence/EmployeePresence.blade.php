@@ -221,8 +221,8 @@
                         <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
-                                <small class="text-end font-w400">Anggie@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>{{Auth()->user()->name}}</b></span>
+                                <small class="text-end font-w400">{{Auth()->user()->email}}</small>
                             </div>
                         </a>
 
@@ -386,7 +386,7 @@
                                                     <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
                                                 </tr>
                                             @endforeach
-                                        </tbody>                             
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>

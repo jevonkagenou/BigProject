@@ -1,9 +1,9 @@
 <?php
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApproveAdminController;
 use App\Http\Controllers\DataEmployeeController;
 use App\Http\Controllers\WorkScheduleController;
 use App\Http\Controllers\ApprovalEmployeeController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\LandingPageController;
@@ -37,17 +37,17 @@ use App\Http\Controllers\EmployeePresence;
 |
 */
 Route::middleware(['guest'])->group(function () {
+    Route::get('/',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
     Route::get('/login',[LoginController::class,'login'])->name('login');
     Route::post('/loginuser',[LoginController::class,'loginuser'])->name('Loginuser');
     Route::get('/users/set-password/{user}', [PasswordController::class, 'setPassword'])->name('users.setPassword');
     Route::get('/users/update-password/{user}', [PasswordController::class, 'updatePassword'])->name('updatePassword');
-    Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
 
 });
-Route::middleware(['admin'])->group(function () {
+Route::group(['middleware' => ['role:Admin']], function () {
 
-    Route::get('/', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
-    Route::post('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
+    Route::get('/DashboardAdmin', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
+    Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
     Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
     Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
     Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
@@ -120,7 +120,7 @@ Route::middleware(['admin'])->group(function () {
     route::get('/destroy/{id}', [AnnouncementController::class, 'destroy'])->name('destroy');
     route::get('/delete2/{id}', [SystemAdminController  ::class, 'delete2'])->name('delete2');
     Route::get('/search', [AnnouncementController::class, 'search'])->name('search');
-    Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create');   
+    Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create');
 
     Route::get('/ProfilAdmin/{id}', [SystemAdminController::class, 'ProfilAdmin'])->name('ProfilAdmin');
     Route::post('/updateProfile/{id}', [SystemAdminController::class, 'updateProfile'])->name('ProfilAdmin.updateProfile');
@@ -134,7 +134,7 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter');
 
 });
-Route::middleware(['karyawan'])->group(function () {
+Route::group(['middleware' => ['role:Karyawan']], function() {
     Route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
     Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
     // Approval Employee
@@ -162,7 +162,6 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::post('/importData', [ImportEmployeeController::class, 'import'])->name('importData');
 Route::post('/importPayroll', [ImportEmployeeController::class, 'import2'])->name('importPayroll');
-Route::post('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
-Route::post('/SummaryofcomponentsalaryExport', [ImportEmployeeController::class, 'Export2'])->name('SummaryofcomponentsalaryExport');
-
 Route::get('/exportpdf', [ImportEmployeeController::class, 'exportpdf'])->name('exportpdf');
+Route::get('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
+Route::get('/SummaryofcomponentsalaryExport', [ImportEmployeeController::class, 'Export2'])->name('SummaryofcomponentsalaryExport');

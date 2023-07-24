@@ -127,7 +127,7 @@ class RouteController extends Controller
         ]);
     }
     public function AddEmployee(){
-        return view('Admin.AddEmployee',[
+        return view('CreateEmployee.CreateEmployee',[
             'tittle'=>'Tambah Karyawan'
         ]);
     }

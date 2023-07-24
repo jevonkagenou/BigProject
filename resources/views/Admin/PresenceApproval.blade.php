@@ -45,7 +45,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -779,7 +779,7 @@
                             </div>
                         </a>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -993,7 +993,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-       
+
         <!--**********************************
             Footer end
         ***********************************-->

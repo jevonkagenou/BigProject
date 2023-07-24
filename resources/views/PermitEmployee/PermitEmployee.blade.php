@@ -231,8 +231,8 @@
                         <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
-                                <small class="text-end font-w400">Anggie@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>{{Auth()->user()->name}}</b></span>
+                                <small class="text-end font-w400">{{Auth()->user()->email}}</small>
                             </div>
                         </a>
 
@@ -326,7 +326,7 @@
                             text-align: center;
                         }
 
-                      
+
                         .responsive-button {
                             padding: 5px;
                         }
@@ -405,7 +405,7 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th>Tanggal Pengajuan</th>
-                                                <th>Tanggal Cuti</th>
+                                                <th>Taggal Selesai</th>
                                                 <th>Jumlah Hari</th>
                                                 <th>Tipe</th>
                                                 <th>Status</th>
@@ -475,7 +475,7 @@
                                         </div>
                                         <hr>
                                         <div class="row g-0">
-                                            <h6 class="modal-title">Tanggal Pengajuan Izin</h6><br>
+                                            <h6 class="modal-title">Tanggal Pengajuan</h6><br>
                                             <div class="col-xl-12 col-sm-12  col-12">
                                                 <input type="date" name="submission_date"
                                                     class="form-control btn-xs">
@@ -484,7 +484,7 @@
                                         <hr>
                                         <div class="row d-flex">
                                             <div class="col-6">
-                                                <h6 class="modal-title">Tanggal Izin</h6>
+                                                <h6 class="modal-title">Tanggal Selesai</h6>
                                                 <input type="date" name="date_leave" class="form-control">
                                             </div>
                                             <div class="col-xl-6 col-12">

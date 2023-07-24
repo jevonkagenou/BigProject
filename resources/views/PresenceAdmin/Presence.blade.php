@@ -97,7 +97,7 @@
     box-shadow: active;
     background: #e4c129;
     color: #000; }
-    
+
     /* .default-select {
         background-color: #da3b38;
         color: #fff;
@@ -110,7 +110,7 @@
     box-shadow: active;
     background: #ff0000;
     color: #000; }
-    
+
     /* .default-select {
         background-color: #a8aeab;
         color: #fff;
@@ -890,7 +890,7 @@
                             </div>
                         </a>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/"
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin"
                             aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg"
                                 style="font-size: 80px !important" height="100" viewBox="0 -960 960 960"
@@ -1054,7 +1054,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            
+
 
 
 
@@ -1071,7 +1071,7 @@
             <!--**********************************
             Footer start
         ***********************************-->
-            
+
             <!--**********************************
                             Footer end
                         ***********************************-->

@@ -157,14 +157,14 @@
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
 
                             <img src="{{ asset('gambar/' . auth()->user()->foto) }}" width="20" alt="" />
-                                
+
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
                             </div>
                         </a>
                     </li>
-                    <li class="mm-active"><a class="ai-icon hover-red  mm-active" href="/"
+                    <li class="mm-active"><a class="ai-icon hover-red  mm-active" href="/DashboardAdmin"
                             aria-expanded="false">
                             <svg class="red-icon" xmlns="http://www.w3.org/2000/svg"
                                 style="font-size: 80px !important" height="100" viewBox="0 -960 960 960"
@@ -379,7 +379,7 @@
                                                                         </td>
                                                                          </tr>
                                                                     @endforeach
-                                                                    
+
 
                                                                 </tbody>
                                                             </table>

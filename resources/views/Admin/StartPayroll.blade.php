@@ -705,7 +705,7 @@
                             </div>
                         </a>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important" height="100" viewBox="0 -960 960 960" width="100">
                                 <path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm0 60q-24.75 0-42.375-17.625T160-180v-390q0-14.25 6.375-27T184-618l260-195q8.295-6 17.344-9 9.049-3 18.853-3 9.803 0 18.717 3 8.915 3 17.086 9l260 195q11.25 8.25 17.625 21T800-570v390q0 24.75-17.625 42.375T740-120H530v-250H430v250H220Zm260-353Z" />
                             </svg>
@@ -839,7 +839,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>                                                               
+                                </div>
                                 <div class="table-responsive">
                                     <table id="example7" class="display" style="min-width: 845px">
                                         <thead>
@@ -864,9 +864,9 @@
                                                 @else
                                                 <td>{{$tdk_tetap}}</td>
                                                 @endif
-                                                @foreach($payrolls as $payroll)
+
                                                 <td>
-                                                    <a href="/Payroll/{id}" class="progress" role="progressbar" style="height: 15px !important;" aria-label="Belum Siap" aria-valuenow="{{ 100 - $persentasi_sudah_bayar }}" aria-valuemin="0" aria-valuemax="100">
+                                                    <a href="/Payroll" class="progress" role="progressbar" style="height: 15px !important;" aria-label="Belum Siap" aria-valuenow="{{ 100 - $persentasi_sudah_bayar }}" aria-valuemin="0" aria-valuemax="100">
                                                       <div class="progress-bar bg-danger" style="width: {{ 100 - $persentasi_sudah_bayar }}%;">{{ 100 - $persentasi_sudah_bayar }}%</div>
                                                     </a>
                                                   </td>
@@ -875,7 +875,6 @@
                                                       <div class="progress-bar bg-success" style="width: {{ $persentasi_sudah_bayar }}%;">{{ $persentasi_sudah_bayar }}%</div>
                                                     </div>
                                                   </td>
-                                                @endforeach
                                             </tr>
                                             @endforeach
                                             </tr>
