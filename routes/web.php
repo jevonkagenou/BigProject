@@ -134,8 +134,7 @@ Route::group(['middleware' => ['role:Admin']], function () {
     Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter');
 
 });
-Route::group(['middleware' => ['role:Karyawan']], function() {
-    Route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
+    Route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee')->middleware('role:Karyawan');
     Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
     // Approval Employee
     Route::get('/ApprovalEmployee', [ApprovalEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
@@ -155,7 +154,7 @@ Route::group(['middleware' => ['role:Karyawan']], function() {
     Route::get('/gantipasswordEmployee', [SystemAdminController::class, 'gantipasswordEmployee']);
     Route::post('/changePasswordEmployee/{id}', [SystemAdminController::class, 'changePasswordEmployee']);
 
-});
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 

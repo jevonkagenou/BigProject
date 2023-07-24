@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
         ]);
         $admin->assignRole($role);
 
-        
+
         $role = Role::create([
             'name' => 'Karyawan',
             'guard_name' => 'web'
@@ -37,12 +37,6 @@ class UserSeeder extends Seeder
             'name' => "Adi",
             'notelp' => "089637885692",
             'email' => 'karyawan@gmail.com',
-            'password' => bcrypt('12345'),
-        ]);
-        $employee = User::create([
-            'name' => "Gembes",
-            'notelp' => "089637885692",
-            'email' => 'gembes@gmail.com',
             'password' => bcrypt('12345'),
         ]);
         $employee->assignRole($role);
