@@ -13,8 +13,12 @@ return new class extends Migration {
         Schema::create('slip_gajis', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            //tetap tdk tetap
             $table->string('periode');
-            $table->date('periode_dimulai');
+
+            $table->date('periode_dimulai')->nullable();
+            $table->string('periode_tetap')->nullable();
+            $table->string('lamaperiode')->nullable();
 
             // $table->foreign('komponen_dapat')->references('id')
             //     ->on('komponen_dapats')

@@ -111,7 +111,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/EditSchedule', [RouteController::class, 'EditSchedule'])->name('EditSchedule');
     Route::get('/blank/{id}', [RouteController::class, 'showBlankImageDocument']);
     Route::get('/file/{id}', [RouteController::class, 'DownloadFile']);
-    Route::get('/DetailSalary', [RouteController::class, 'DetailSalary'])->name('DetailSalary.');
+    Route::get('/DetailSalary', [SalaryConclusionController::class, 'DetailSalary'])->name('DetailSalary.');
 
     // pengummuman
     Route::get('/Announcement', [AnnouncementController::class, 'index'])->name('Announcement');

@@ -901,7 +901,7 @@
                             <div class="card-header">
                                 <h4 class="card-title">Tambah Slip Gaji</h4>
                             </div>
-                            <form action="/CreateSlips" method="GET">
+                        <form action="/CreateSlips" method="GET">
                                 @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -914,38 +914,87 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                       <!-- <label class="form-label">Periode</label> -->
-                                    <label for="firstName" class="form-label">Tiope Komponen</label>
-                                    <select class="default-select form-control wide w-100 @error('tipe_komponenptg') is-invalid @enderror"
-                                                onchange="toggleAdditionalInputPotong(this)" name="tipe_komponenptg" id="tipe_komponenptg">
-                                        <option selected>Pilih Jenis Gaji</option>
-                                        <option value="Tetap (Gaji Bulanan, Mingguan, Persekian gaji)">Tetap (Gaji Bulanan, Mingguan, Persekian gaji)</option>
-                                        <option value="Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)">Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)</option>
-                                        @error('tipe_komponenptg')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </select>
-                            <div class="invalid-feedback">
-                            Please select a valid country.
-                            </div>
-                            </div>
+                                        <label for="firstName" class="form-label" id="periodeLabel">Tipe Komponen</label>
+                                        <select class="default-select form-control btn-xs wide w-100 @error('periode') is-invalid @enderror"
+                                                onchange="toggleAdditionalInputPotong(this)" name="periode" id="periode">
+                                          <option selected>Pilih Jenis Gaji</option>
+                                          <option value="Tetap (Gaji Bulanan, Mingguan, Persekian gaji)">Tetap (Gaji Bulanan, Mingguan, Persekian gaji)</option>
+                                          <option value="Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)">Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)</option>
+                                          @error('periode')
+                                          <div class="invalid-feedback">{{ $message }}</div>
+                                          @enderror
+                                        </select>
+                                        <div class="invalid-feedback">
+                                          Please select a valid country.
+                                        </div>
+                                    </div>
+
+                                      <div class="row">
+                                        <div class="col-md-6 mb-3" id="periodeDimulaiInput">
+                                          <label for="firstName" class="form-label" id="periodeDimulaiLabel">Periode </label>
+                                          <input type="date" class="form-control btn-xs" id="periode_dimulai" placeholder="" name="periode_dimulai" value="">
+                                        </div>
+                                        <div class="col-md-6 mb-3" id="periodeDimulaiDropdown" style="display: none;">
+                                          <label for="firstName" class="form-label" id="periodeDimulaiLabel">Periode Dimulai Pada Tanggal</label>
+                                          <select class="form-control btn-xs" name="periode_tetap" id="periode_dimulai_dropdown">
+                                            <!-- Tambahkan opsi dropdown sesuai kebutuhan -->
+                                            <option selected disabled>Pilih Tanggal Dimulai</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                          </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3" id="additionalInputPotong" style="display: none;">
+                                            <label for="firstName" class="form-label" >Lama Periode</label>
+                                            <select class="form-control btn-xs" name="lamaperiode" id="periode_dimulai_dropdown">
+                                              <!-- Tambahkan opsi dropdown sesuai kebutuhan -->
+                                              <option selected disabled>Pilih Lama Periode</option>
+                                              <option value="1 bulanan">1 bulanan</option>
+                                              <option value="1 mingguan">1 mingguan</option>
+                                            </select>
+                                            </div>
+                                      </div>
 
                             </div>
 
-                            <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="firstName" class="form-label" id="periodeLabel">Periode Dimulai</label>
-                                <input type="date" class="form-control" id="periode_dimulai" placeholder="" name="periode_dimulai" value="">
-                            </div>
-                            <div class="col-md-6 mb-3" id="additionalInputPotong" style="display: none;">
-                                <!-- Tambahkan formulir input tambahan di sini -->
-                                <div class="row g-0">
-                                <h6 class="modal-title">Lama Periode</h6><br>
-                                <div class="col">
-                                    <input type="text" class="form-control btn-xs" placeholder="" value="" name="uang_potong">
-                                </div>
-                                </div>
-                            </div>
+                                {{-- <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label" id="periodeLabel">Periode Dimulai</label>
+                                        <input type="date" class="form-control" id="periode_dimulai" placeholder="" name="periode_dimulai" value="">
+                                    </div>
+                                    <div class="col-md-6 mb-3" id="additionalInputPotong" style="display: none;">
+                                        <!-- Tambahkan formulir input tambahan di sini -->
+                                        <div class="row g-0">
+                                            <label for="firstName" class="form-label" >Lama periode</label>
+                                            <input type="text" class="form-control btn-xs" placeholder="" value="" name="lamaperiode">
+                                        </div>
+                                        </div>
+                                </div> --}}
                             </div>
 
                             <div class="card-header">
@@ -962,12 +1011,12 @@
                                         </button>
                                     </div>
 
-                                    <div id="container" class="mt-5">
+                                    <div id="container">
                                         <h6 class="mb-3">Komponen Pemotongan</h6>
 
                                     </div>
                                         <div class="baris mb-4">
-                                            <button type="button" class="btn btn-outline-danger btn-xs tambah-baris2">
+                                            <button type="button" class="btn btn-outline-danger btn-xs tambah-barisA">
                                                 <i class="fa fa-plus"></i> Tambah Komponen Pemotongan
                                             </button>
                                         </div>
@@ -1170,6 +1219,78 @@
 <script>
     $(document).ready(function() {
         // Memanggil fungsi toggleAdditionalInput saat halaman dimuat
+        toggleAdditionalInput($('.tipe-komponen'));
+
+        $('.tambah-barisA').click(function() {
+            tambahBaris();
+        });
+
+        function tambahBaris() {
+            var jumlahBaris = $('.row.mb-2').length;
+            // if (jumlahBaris >= 8) {
+            //     // Mencapai batas maksimal baris
+            //     return;
+            // }
+
+            var htmlBaris =
+                '<div class="row mb-2">' +
+                '<div class="col-3">' +
+                '<label for="inputEmail4" class="form-label fw-bold">Nama Komponen Pemotongan</label>' +
+                '<input type="text" class="form-control @error('nama_komponenptg') is-invalid @enderror" id="nama_komponenptg" name="nama_komponenptg[]" placeholder="Nama Komponen Potong">' +
+                '@error('nama_komponenptg')' +
+                '<div class="invalid-feedback">{{ $message }}</div>' +
+                '@enderror' +
+                '</div>' +
+                '<div class="col-3">' +
+                '<label for="inputEmail4" class="form-label fw-bold">Tipe Komponen</label>' +
+                '<select class="form-select tipe-komponen" onchange="toggleAdditionalInputPotongA(this)" name="tipe_komponenptg[]">' +
+                '<option value="Manual">Manual</option>' +
+                '<option value="Berdasarkan Keterlambatan">Berdasarkan Kehadiran</option>' +
+                '</select>' +
+                '@error('tipe_komponenptg')' +
+                '<div class="invalid-feedback">{{ $message }}</div>' +
+                '@enderror' +
+                '</div>' +
+                '<div class="col-3 additional-input" style="display: none;">' +
+                '<label for="inputAdditional" class="form-label fw-bold">Besar Uang</label>' +
+                '<input type="text" class="form-control @error('uang_potong') is-invalid @enderror" name="uang_potong[]">' +
+                '@error('uang_potong')' +
+                '<div class="invalid-feedback">{{ $message }}</div>' +
+                '@enderror' +
+                '</div>' +
+                '<div class="col-1 d-flex align-items-center mt-4">' +
+                '<i class="fa fa-trash hapus-barisA"></i>' +
+                '</div>' +
+                '</div>';
+
+                $(htmlBaris).insertBefore('.tambah-barisA');
+
+
+            $('.hapus-barisA').off().click(function() {
+                $(this).closest('.row.mb-2').remove();
+            });
+        }
+
+        $('.hapus-barisA').click(function() {
+            $(this).closest('.row.mb-2').remove();
+        });
+    });
+
+    function toggleAdditionalInputPotongA(selectElement) {
+        var selectedOption = selectElement.value;
+        var additionalInputPotong = $(selectElement).closest('.row.mb-2').find('.additional-input');
+
+        if (selectedOption === 'Berdasarkan Keterlambatan') {
+            additionalInputPotong.show();
+        } else {
+            additionalInputPotong.hide();
+        }
+    }
+</script>
+
+{{-- <script>
+    $(document).ready(function() {
+        // Memanggil fungsi toggleAdditionalInput saat halaman dimuat
         toggleAdditionalInputPotong($('.tipe-komponen'));
 
         $('.tambah-baris2').click(function() {
@@ -1237,7 +1358,7 @@
             additionalInputPotong.hide();
         }
     }
-</script>
+</script> --}}
  {{-- toaster --}}
  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  @if (Session::has('success'))
@@ -1255,16 +1376,19 @@
     function toggleAdditionalInputPotong(selectElement) {
       var selectedOption = selectElement.options[selectElement.selectedIndex].value;
       var additionalInputPotong = document.getElementById('additionalInputPotong');
-      var periodeLabel = document.getElementById('periodeLabel');
-      var periodeDimulaiInput = document.getElementById('periode_dimulai');
+      var periodeDimulaiInput = document.getElementById('periodeDimulaiInput');
+      var periodeDimulaiDropdown = document.getElementById('periodeDimulaiDropdown');
+      var periodeDimulaiLabel = document.getElementById('periodeDimulaiLabel');
 
       // Ubah label berdasarkan opsi yang dipilih
       if (selectedOption === 'Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)') {
-        periodeLabel.textContent = 'Periode Gagal';
-        periodeDimulaiInput.name = 'periode_gagal'; // Ubah name untuk opsi Manual
-      } else {
-        periodeLabel.textContent = 'Periode Dimulai';
-        periodeDimulaiInput.name = 'periode_dimulai'; // Kembalikan name untuk opsi Berdasarkan Keterlambatan
+        periodeDimulaiLabel.textContent = 'Periode ';
+        periodeDimulaiInput.style.display = 'block';
+        periodeDimulaiDropdown.style.display = 'none';
+      } else if (selectedOption === 'Tetap (Gaji Bulanan, Mingguan, Persekian gaji)') {
+        periodeDimulaiLabel.textContent = 'Periode Dimulai';
+        periodeDimulaiInput.style.display = 'none';
+        periodeDimulaiDropdown.style.display = 'block';
       }
 
       // Tampilkan atau sembunyikan input tambahan berdasarkan opsi yang dipilih

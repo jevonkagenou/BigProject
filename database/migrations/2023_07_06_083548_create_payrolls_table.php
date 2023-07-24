@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('data_employee_id');
             $table->foreign('data_employee_id')->references('id')->on('data_employees')->onDelete('cascade');
-            $table->string('status')->default('Belum Siap');
-            $table->bigInteger('total');
+            $table->foreignId('status_id')->references('id')->on('data_payrolls')->onUpdate('cascade')->onDelete('cascade');            $table->bigInteger('total');
             $table->timestamps();
         });
     }

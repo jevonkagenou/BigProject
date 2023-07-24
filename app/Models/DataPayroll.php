@@ -24,7 +24,7 @@ class DataPayroll extends Model
 
 
     public function DataEmployee(){
-        return $this->HasMany(DataPayroll::class);
+        return $this->belongsTo(DataEmployee::class, 'data_employee_id');
     }
 
     public function slip_gaji(){
@@ -34,5 +34,6 @@ class DataPayroll extends Model
     {
         return $this->belongsTo(Payroll::class);
     }
+    
 
 }
