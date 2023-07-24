@@ -61,38 +61,64 @@
                             </div>
                         {{-- </div> --}}
                         <div class="table-responsive">
-                            <table id="example5" class="display" style="min-width: 845px">
-                                <thead>
-                                    <tr class="text-center">
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Tanggal Pengajuan</th>
-                                        <th>Tanggal Cuti</th>
-                                        <th>Jumlah Hari</th>
-                                        <th>Jenis Cuti</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($approve_admin as $approve)   
-                                    <tr class="text-center">
-                                        <td>{{ $approve->id }}</td>
-                                        <td>{{ $approve->User->name }}</td>
-                                        <td>{{ $approve->submission_date }}</td>
-                                        <td>{{ $approve->date_leave }}</td>
-                                        <td>{{ $approve->total_day }}</td>
-                                        <td>{{ $approve->tipe }}</td>
-                                        <td>
-                                            <span
-                                                class="badge light
-                                                @if ($approve->status == 'Menunggu') badge-warning
-                                                @elseif ($approve->status == 'Diterima') badge-success
-                                                @elseif ($approve->status == 'Ditolak') badge-danger @endif">{{ $approve->status }}</span>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                            <table id="example6" class="display" style="min-width: 845px">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>Nama</th>
+                                            <th>Tanggal Pengajuan</th>
+                                            <th>Tanggal Cuti</th>
+                                            <th>Jumlah Hari</th>
+                                            <th>Jenis Cuti</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($approve_admin as $approve)
+                                        <tr class="text-center">
+                                            <td>{{ $approve->User->name }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($approve->submission_date)->format('d M Y') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($approve->date_leave)->format('d M Y') }}</td>
+                                            <td>{{ $approve->total_day }}</td>
+                                            <td>{{ $approve->tipe }}</td>
+                                            <td>
+                                                <span class="badge light
+                                                    @if ($approve->status == 'Menunggu') badge-warning
+                                                    @elseif ($approve->status == 'Diterima') badge-success
+                                                    @elseif ($approve->status == 'Ditolak') badge-danger
+                                                    @endif">{{ $approve->status }}</span>
+                                            </td>
+                                            <td>
+                                                <button data-id="{{$approve->id}}" class="btn btn-danger btn-xs sharp" data-bs-toggle="modal" data-bs-target="#lihat-pengumuman{{$approve->id}}"><i class="fa fa-eye"></i></button>
+                                            </td>
+                                        </tr>
+                                        <div class="modal fade" id="lihat-pengumuman{{$approve->id}}">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Detail Izin&Cuti Karyawan</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row g-0">
+                                                            <h6>Nama :</h6>
+                                                            <label>{{ \Illuminate\Support\Str::ucfirst($approve->User->name) }}</label>
+                                                            <h6>Tanggal Pengajuan :</h6>
+                                                            <label>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $approve->submission_date)->format('d M Y') }}</label>
+                                                            <h6>Tanggal Cuti :</h6>
+                                                            <label>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $approve->date_leave)->format('d M Y') }}</label>
+                                                            <h6>Jumlah hari :</h6>
+                                                            <label>{{ $approve->total_day }}</label> 
+                                                            <h6>Jenis Cuti :</h6>
+                                                            <label>{{ $approve->tipe }}</label> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </tbody>
+                                </table>                         
                         </div>
                        
                     </div>

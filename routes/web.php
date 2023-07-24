@@ -120,7 +120,7 @@ Route::middleware(['admin'])->group(function () {
     route::get('/destroy/{id}', [AnnouncementController::class, 'destroy'])->name('destroy');
     route::get('/delete2/{id}', [SystemAdminController  ::class, 'delete2'])->name('delete2');
     Route::get('/search', [AnnouncementController::class, 'search'])->name('search');
-    Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create');
+    Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create');   
 
     Route::get('/ProfilAdmin/{id}', [SystemAdminController::class, 'ProfilAdmin'])->name('ProfilAdmin');
     Route::post('/updateProfile/{id}', [SystemAdminController::class, 'updateProfile'])->name('ProfilAdmin.updateProfile');
@@ -161,6 +161,7 @@ Route::middleware(['auth'])->group(function () {
 
 });
 Route::post('/importData', [ImportEmployeeController::class, 'import'])->name('importData');
+Route::post('/importPayroll', [ImportEmployeeController::class, 'import2'])->name('importPayroll');
 Route::post('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
 Route::post('/SummaryofcomponentsalaryExport', [ImportEmployeeController::class, 'Export2'])->name('SummaryofcomponentsalaryExport');
 

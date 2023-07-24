@@ -812,14 +812,36 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-sm-6 text-sm-start text-md-end mt-2 mt-sm-0">
-                                        <button type="button" class="btn btn-outline-light btn-xs">
-                                            <span><i class="bi bi-download px-1"></i></span>
-                                            Import
-                                        </button>
+                                        <button class="btn btn-outline-light btn-xs" data-bs-toggle="modal" data-bs-target="#exampleModal" style="white-space: nowrap;">
+                                            <i class="bi bi-upload"></i> Import
+                                            </button>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Import Data</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form id="importForm" action="{{ route('importPayroll') }}" method="post" enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="form-group">
+                                                            <input type="file" name="myFile" class="form-control" required="required">
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-danger">Import</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>                                                               
                                 <div class="table-responsive">
-                                    <table id="example5" class="display" style="min-width: 845px">
+                                    <table id="example7" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr class="text-center">
                                                 <th>No</th>

@@ -22,7 +22,7 @@ class LoginController extends Controller
                 return redirect()->route('DashboardEmployee');
             }
         }
-        return redirect()->route('Login')->with(
+        return redirect()->route('login')->with(
             'error' ,'Email Atau Password Yang Anda Masukkan Salah',
         );
     }

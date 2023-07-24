@@ -375,28 +375,30 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 mb-4 d-flex justify-content-end mt-3">
-                                        <form action="{{ route('PermitEmployee') }}" method="GET" class="d-flex">
-                                            <div class="flex-grow-5">
-                                                <select class="form-select" name="status" id="status">
+                                    <div class="row ms-auto">
+                                        <form action="{{ route('PermitEmployee') }}" method="GET" class="d-flex" style="justify-content: end">
+                                            <div class="col-lg-2 px-1">
+                                                <select class="form-select" name="tipe" id="tipe">
                                                     <option value="">Semua</option>
-                                                    <option value="Menunggu"
-                                                        {{ isset($_GET['status']) && $_GET['status'] == 'Menunggu' ? 'selected' : '' }}>
-                                                        Menunggu</option>
-                                                    <option value="Ditolak"
-                                                        {{ isset($_GET['status']) && $_GET['status'] == 'Ditolak' ? 'selected' : '' }}>
-                                                        Ditolak</option>
-                                                    <option value="Diterima"
-                                                        {{ isset($_GET['status']) && $_GET['status'] == 'Diterima' ? 'selected' : '' }}>
-                                                        Diterima</option>
+                                                    <option value="Izin" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Izin') selected @endif>Izin</option>
+                                                    <option value="Sakit" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Sakit') selected @endif>Sakit</option>
+                                                    <option value="Cuti_Khusus" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Cuti_Khusus') selected @endif>Cuti Khusus</option>
+                                                    <option value="Cuti_Tahunan" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Cuti_Tahunan') selected @endif>Cuti Tahunan</option>
                                                 </select>
                                             </div>
-                                            <div class="col-xl-4 ms-3">
-                                                <button class="btn btn-xs btn-danger" type="submit"><i
-                                                        class="fas fa-search"></i></button>
+                                            <div class="col-lg-2 px-1">
+                                                <select class="form-select" name="status" id="status">
+                                                    <option value="">Semua</option>
+                                                    <option value="Menunggu" @if(isset($_GET['status']) && $_GET['status'] == 'Menunggu') selected @endif>Menunggu</option>
+                                                    <option value="Ditolak" @if(isset($_GET['status']) && $_GET['status'] == 'Ditolak') selected @endif>Ditolak</option>
+                                                    <option value="Diterima" @if(isset($_GET['status']) && $_GET['status'] == 'Diterima') selected @endif>Diterima</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-1">
+                                                <button class="btn btn-xs btn-danger" type="submit"><i class="fas fa-search"></i></button>
                                             </div>
                                         </form>
-                                    </div>
+                                </div>
                                 </div>
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
@@ -473,7 +475,7 @@
                                         </div>
                                         <hr>
                                         <div class="row g-0">
-                                            <h6 class="modal-title">Tanggal Izin</h6><br>
+                                            <h6 class="modal-title">Tanggal Pengajuan Izin</h6><br>
                                             <div class="col-xl-12 col-sm-12  col-12">
                                                 <input type="date" name="submission_date"
                                                     class="form-control btn-xs">
