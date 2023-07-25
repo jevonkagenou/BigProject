@@ -231,8 +231,8 @@
                         <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>{{Auth()->user()->name}}</b></span>
-                                <small class="text-end font-w400">{{Auth()->user()->email}}</small>
+                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
+                                <small class="text-end font-w400">Anggie@gmail.com</small>
                             </div>
                         </a>
 
@@ -475,22 +475,30 @@
                                         </div>
                                         <hr>
                                         <div class="row g-0">
-                                            <h6 class="modal-title">Tanggal Izin</h6><br>
-                                            <div class="col-xl-12 col-sm-12  col-12">
-                                                <input type="date" name="submission_date"
-                                                    class="form-control btn-xs">
-                                            </div>
+                                            <h6 class="modal-title">Tipe</h6>
+                                            <select id="tipeIzin" name="tipe" class="default-select form-control">
+                                                <option value="" selected>Tipe</option>
+                                                <option value="Izin">Izin</option>
+                                                <option value="Sakit">Sakit</option>
+                                                <option value="Cuti">Cuti</option>
+                                            </select>
                                         </div>
                                         <br>
+                                        <div class="row g-0" id="lampiranContainer" style="display: none;">
+                                            <h6 class="modal-title">Lampiran</h6><br>
+                                            <div class="col">
+                                                <input type="file" class="form-control btn-xs lampiran-input" id="lampian" name="lampiran" multiple>
+                                            </div>
+                                        </div>
                                         <hr>
                                         <div class="row d-flex">
                                             <div class="col-6">
-                                                <h6 class="modal-title">Tanggal Izin</h6>
-                                                <input type="date" name="date_leave" class="form-control">
+                                                <h6 class="modal-title">Awal Izin</h6>
+                                                <input type="date" name="start_date" class="form-control">
                                             </div>
                                             <div class="col-6">
-                                                <h6 class="modal-title">Mulai Izin</h6>
-                                                <input type="date" name="start_date"
+                                                <h6 class="modal-title">Akhir Izin</h6>
+                                                <input type="date" name="date_leave"
                                                     class="form-control">
                                             </div>
                                         </div>
@@ -548,6 +556,19 @@
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
     <script>
         CKEDITOR.replace('editor');
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Mendengarkan perubahan pada dropdown
+            $('#tipeIzin').on('change', function() {
+                var selectedTipe = $(this).val();
+                if (selectedTipe === 'Sakit') {
+                    $('#lampiranContainer').show();
+                } else {
+                    $('#lampiranContainer').hide();
+                }
+            });
+        });
     </script>
 <script>
     $(document).ready(function() {

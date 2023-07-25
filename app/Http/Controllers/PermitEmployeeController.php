@@ -23,6 +23,11 @@ class PermitEmployeeController extends Controller
 
         $total_day = $date2->diffInDays($date1);
 
+        $lampiranPath = null;
+
+        if ($request->hasFile('lampiran')) {
+            $lampiranPath = $request->file('lampiran')->store('/gambar', 'public');
+        }
 
         $data = PermitEmployee::create([
             'user_id' => Auth()->id(),
