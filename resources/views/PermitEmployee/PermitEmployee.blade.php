@@ -405,7 +405,7 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th>Tanggal Pengajuan</th>
-                                                <th>Taggal Selesai</th>
+                                                <th>Tanggal Cuti</th>
                                                 <th>Jumlah Hari</th>
                                                 <th>Tipe</th>
                                                 <th>Status</th>
@@ -415,8 +415,8 @@
                                         <tbody class="text-center">
                                             @foreach ($data as $approve)
                                                 <tr>
-                                                    <td>{{ $approve->submission_date }}</td>
-                                                    <td>{{ $approve->date_leave }}</td>
+                                                    <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $approve->start_date)->format('d M Y') }}</td>
+                                                    <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $approve->date_leave)->format('d M Y') }}</td>
                                                     <td>{{ $approve->total_day }}</td>
                                                     <td>{{ $approve->tipe }}</td>
                                                     <td>
@@ -475,26 +475,23 @@
                                         </div>
                                         <hr>
                                         <div class="row g-0">
-                                            <h6 class="modal-title">Tanggal Pengajuan</h6><br>
+                                            <h6 class="modal-title">Tanggal Izin</h6><br>
                                             <div class="col-xl-12 col-sm-12  col-12">
                                                 <input type="date" name="submission_date"
                                                     class="form-control btn-xs">
                                             </div>
                                         </div>
+                                        <br>
                                         <hr>
                                         <div class="row d-flex">
                                             <div class="col-6">
-                                                <h6 class="modal-title">Tanggal Selesai</h6>
+                                                <h6 class="modal-title">Tanggal Izin</h6>
                                                 <input type="date" name="date_leave" class="form-control">
                                             </div>
-                                            <div class="col-xl-6 col-12">
-                                                <h6 class="modal-title">Tipe</h6>
-                                                <select name="tipe" class="default-select form-control">
-                                                    <option value="" selected>Tipe</option>
-                                                    <option value="Izin">Izin</option>
-                                                    <option value="Sakit">Sakit</option>
-                                                    <option value="Cuti">Cuti</option>
-                                                </select>
+                                            <div class="col-6">
+                                                <h6 class="modal-title">Mulai Izin</h6>
+                                                <input type="date" name="start_date"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <hr>
@@ -552,6 +549,20 @@
     <script>
         CKEDITOR.replace('editor');
     </script>
+<script>
+    $(document).ready(function() {
+        // Mendengarkan perubahan pada dropdown
+        $('#tipeIzin').on('change', function() {
+            var selectedTipe = $(this).val();
+            if (selectedTipe === 'Sakit') {
+                $('#lampiranContainer').show();
+            } else {
+                $('#lampiranContainer').hide();
+            }
+        });
+    });
+</script>
+
     <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
