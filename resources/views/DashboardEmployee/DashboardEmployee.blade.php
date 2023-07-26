@@ -253,7 +253,7 @@
             </div>
             {{-- <div class="container"> --}}
                 <marquee behavior="scroll" direction="left" scrollamount="4" style="font-size: 15px; font: 'Cairo' , sans-serif; margin-left:3px;">
-                   <span> SISA CUTI ANDA TINGGAL 4 HARI LAGI </span> |
+                   {{-- <span> SISA CUTI ANDA TINGGAL 4 HARI LAGI </span> | --}}
                     <span style="color: yellow; font-size: 15px; font: 'Cairo' , sans-serif;"> JANGAN LUPA PRESENSI UNTUK HARI INI!!</span>
                 </marquee>
 

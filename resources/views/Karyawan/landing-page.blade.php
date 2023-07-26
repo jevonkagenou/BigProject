@@ -254,7 +254,9 @@
     <section class="row_am trusted_section">
       <!-- container start -->
       <div class="container">
-
+        <div class="section_title" data-aos="" data-aos-duration="1500" data-aos-delay="100">
+        <h2>Bank yang <span>Tersedia :</span></h2>
+        </div>
         <!-- logos slider start -->
         <div class="company_logos" >
           <div id="company_slider" class="owl-carousel owl-theme">
@@ -312,15 +314,16 @@
                       <div class="abt_side">
                         <div class="logo"> <img src="https://i.postimg.cc/0NVBwBW8/logoland.png" alt="image" ></div>
                         <ul>
-                          <li><a href="#">kalopsia@gmail.com</a></li>
-                          <li><a href="#">+62 0812 3456 789</a></li>
+                          <li><a href="mailto:kalopsia@gmail.com">kalopsia@gmail.com</a></li>
+                          <li><a href="https://api.whatsapp.com/send?phone=+628123456789">+62 0812 3456 789</a></li>
                           <li><a href="#">Hummasoft Technology</a></li>
                         </ul>
                         <ul class="social_media">
-                            <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="#"><i class="icofont-instagram"></i></a></li>
-                        </ul>
+                          <li><a href="#" id="facebook-link"><i class="icofont-facebook"></i></a></li>
+                          <li><a href="#" id="twitter-link"><i class="icofont-twitter"></i></a></li>
+                          <li><a href="#" id="instagram-link"><i class="icofont-instagram"></i></a></li>
+                      </ul>
+                      
                       </div>
                   </div>
 
@@ -330,9 +333,9 @@
                       <h3>Tentang</h3>
                         <ul style="text-align: justify;">
                           <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Tentang</a></li>
-                            <li><a href="#">Kontak</a></li>
-                            <li><a href="#">Login</a></li>
+                            <li><a href="#features">Tentang</a></li>
+                            <li><a href="#kontak">Kontak</a></li>
+                            <li><a href="/login">Login</a></li>
                         </ul>
                     </div>
                   </div>
@@ -350,7 +353,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <center>
-                    <p>© Copyrights 2023. All rights reserved.</p>
+                    <p>© Kalopsia</p>
                     </center>
                 </div>
             </div>
@@ -399,6 +402,23 @@
   <script src="{{asset('landingPage/js/aos.js')}}"></script>
   <!-- main-js-Link -->
   <script src="{{asset('landingPage/js/main.js')}}"></script>
+  <script>
+    // Fungsi untuk mengarahkan ke halaman Facebook
+    document.getElementById("facebook-link").addEventListener("click", function() {
+        window.location.href = "https://www.facebook.com/nama_akun_facebook";
+    });
+
+    // Fungsi untuk mengarahkan ke halaman Twitter
+    document.getElementById("twitter-link").addEventListener("click", function() {
+        window.location.href = "https://twitter.com/nama_akun_twitter";
+    });
+
+    // Fungsi untuk mengarahkan ke halaman Instagram
+    document.getElementById("instagram-link").addEventListener("click", function() {
+        window.location.href = "https://www.instagram.com/nama_akun_instagram";
+    });
+   
+</script>
 
 </body>
 

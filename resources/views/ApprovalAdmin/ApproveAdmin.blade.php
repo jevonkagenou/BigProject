@@ -720,7 +720,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                Approval Admin
+                                Approval Izin & Cuti Karyawan
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -927,10 +927,10 @@
                                                 <td>{{ $data->submission_date}}</td>
                                                 <td>
                                                     <span>
-                                                        <a href="/Accepted/{{ $data->id }}" class="me-4" data-bs-toggle="tooltip"
-                                                            data-placement="top" title="Terima"><i class="bi bi-person-check-fill text-success"></i> </a>
-                                                        <a href="/Rejected/{{$data->id}}" data-bs-toggle="tooltip"
-                                                            data-placement="top" title="Tolak"><i class="bi bi-person-x-fill text-danger"></i></a>
+                                                        <a href="#" class="me-4" data-bs-toggle="tooltip"
+                                                            data-placement="top" title="Terima"><i class="bi bi-person-check-fill text-success accept" data-id="{{ $data->id }}" data-user-nama="{{  $data->User->name }}"></i> </a>
+                                                        <a href="#" data-bs-toggle="tooltip"
+                                                            data-placement="top" title="Tolak"><i class="bi bi-person-x-fill text-danger reject" data-id="{{ $data->id }}" data-user-nama="{{  $data->User->name }}"></i></a>
                                                     </span>
                                                 </td>
                                             </tr>
@@ -1031,8 +1031,69 @@
 	<script src="{{ asset('js/dlabnav-init.js')}}"></script>
 	<script src="{{ asset('js/demo.js')}}"></script>
 	<script src="{{ asset('js/styleSwitcher.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
+<script>
+    $('.accept').click( function() {
+        var approveadminid = $(this).attr('data-id');
+        var nama = $(this).attr('data-user-nama');  
+        swal({
+                title: "Yakin?",
+                text: "Kamu akan menerima data pegawai dengan nama pegawai  "+nama+" ",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                })
+                .then((willAccept) => {
+                if (willAccept) {
+                    window.location = "/Accepted/"+approveadminid+""
+                    swal("Sukses! Data berhasil diterima", {
+                    icon: "success",
+                    });
+                } else {
+                    swal("Data tidak jadi diterima");
+                }
+                });
+    });
+                
+</script>
+<script>
+    // Fungsi click handler untuk tombol "Tolak"
+    $('.reject').click( function() {
+        var rejectadminid = $(this).attr('data-id');
+        var nama = $(this).attr('data-user-nama');
+        swal({
+            title: "Alasan Penolakan",
+            text: "Masukkan alasan penolakan data pegawai dengan nama " +nama+" ",
+            content: {
+                element: "input",
+                attributes: {
+                    placeholder: "Alasan penolakan...",
+                    type: "text",
+                },
+            },
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((inputValue) => {
+            if (inputValue) {
+                window.location = "/Rejected/"+rejectadminid+""
+                // Jika ada inputan alasan, tampilkan notifikasi kepada karyawan
+                var alasanPenolakan = inputValue;
+                swal("Sukses! Data telah ditolak dengan alasan: " + alasanPenolakan, {
+                    icon: "success",
+                });
+
+                // Disini, Anda dapat melakukan tindakan lain terkait alasan penolakan,
+                // misalnya menyimpan alasan penolakan di database dan mengirim notifikasi ke karyawan.
+            } else {
+                swal("Data tidak jadi ditolak");
+            }
+        });
+    });
+</script>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->
 </html>

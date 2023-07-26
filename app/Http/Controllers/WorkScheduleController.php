@@ -16,6 +16,13 @@ class WorkScheduleController extends Controller
         $data = WorkSchedule::all();
         return view('Admin.WorkSchedule', compact('data'));
     }
+    public function Create(Request $request)
+    {
+        // dd($request);
+        $this->validate($request,[
+            'judul' => 'required',
+            'isi' => 'required',
+
 
     public function tampiledit(Request $request, $id)
     {

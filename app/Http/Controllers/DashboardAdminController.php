@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\PermitEmployee;
 use App\Models\Presence;
-use App\Models\Payroll;
+use App\Models\DataPayroll;
 use App\Models\User;
 
 
@@ -21,8 +21,8 @@ class DashboardAdminController extends Controller
     $data = PermitEmployee::latest('created_at')
             ->limit(5)
             ->get();
-$belumbayar=Payroll::where('status', 'Belum Siap')->count();
-$bayar=Payroll::where('status', 'Sudah Bayar')->count();
+$belumbayar=DataPayroll::where('status', 'Belum Siap')->count();
+$bayar=DataPayroll::where('status', 'Sudah Bayar')->count();
     return view('DashboardAdmin.DashboardAdmin', compact('data', 'belumbayar', 'bayar', 'late', 'admin'), [
         'title' => 'Beranda'
     ]);
