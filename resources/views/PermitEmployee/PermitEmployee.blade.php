@@ -27,6 +27,8 @@
     <!-- Custom Stylesheet -->
     <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    {{-- toaster --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 
 </head>
 
@@ -345,7 +347,7 @@
                                     <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal"
                                         data-bs-target=".bd-example-modal-lg"><i class="fa fa-plus color-info"></i>
                                         <span class="text-center">
-                                            Tambah Pengajuan
+                                              Pengajuan
                                         </span>
                                     </button>
                                 </div>
@@ -404,8 +406,8 @@
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr class="text-center">
-                                                <th>Tanggal Pengajuan</th>
-                                                <th>Tanggal Cuti</th>
+                                                <th>Awal Izin</th>
+                                                <th>Akhir Izin</th>
                                                 <th>Jumlah Hari</th>
                                                 <th>Tipe</th>
                                                 <th>Status</th>
@@ -552,6 +554,7 @@
     <script src="js/dlabnav-init.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
     <script>
@@ -568,6 +571,13 @@
                     $('#lampiranContainer').hide();
                 }
             });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            @if ($errors->any())
+                toastr.error('{{ $errors->first('error') }}');
+            @endif
         });
     </script>
 <script>
