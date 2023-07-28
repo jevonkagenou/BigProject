@@ -382,11 +382,25 @@
                                             @foreach ($presence->reverse() as $data)
                                                 <tr class="text-center">
                                                     <td>{{ $loop->count - $loop->iteration + 1 }}</td>
-                                                    <td @if ($data->type == 'Masuk' && $data->late) style="color: red;" @endif>{{ $data->type }}</td>
+                                                    <td>
+                                                        @if ($data->enter)
+                                                            @if ($data->late)
+                                                                <span style="color: red;">{{ 'Masuk Terlambat' }}</span>
+                                                            @else
+                                                                {{ 'Masuk' }}
+                                                            @endif
+                                                        @elseif ($data->go_home)
+                                                            {{ 'Pulang' }}
+                                                        @elseif ($data->overtime)
+                                                            {{ 'Lembur' }}
+                                                        @elseif ($data->home_overtime)
+                                                            {{ 'Pulang Lembur' }}
+                                                        @endif
+                                                    </td>
                                                     <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
                                                 </tr>
                                             @endforeach
-                                        </tbody>
+                                        </tbody>                                                                                                                                                            
                                     </table>
                                 </div>
                             </div>

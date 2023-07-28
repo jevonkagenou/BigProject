@@ -30,6 +30,7 @@
     {{-- toaster --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body>
@@ -557,6 +558,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         CKEDITOR.replace('editor');
     </script>
@@ -665,7 +667,30 @@
         });
     });
 </script>
+    @if(Session::has('error'))
+        <script>
 
+        toastr.options =
+        {
+            "timeOut"       : 0, // Set timeOut to 0 to make it sticky
+            "closeButton"   : true,
+            "progressBar"   : true
+        }
+        toastr.error("{{ session('error') }}");
+        </script>
+    @endif
+    @if(Session::has('success'))
+        <script>
+
+        toastr.options =
+        {
+            "timeOut"       : 0, // Set timeOut to 0 to make it sticky
+            "closeButton"   : true,
+            "progressBar"   : true
+        }
+        toastr.success("{{ session('success') }}");
+        </script>
+    @endif
 
 </body>
 

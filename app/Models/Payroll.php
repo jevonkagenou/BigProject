@@ -18,5 +18,13 @@ class Payroll extends Model
     {
         return $this->hasOne(DataPayroll::class);
     }
+    public function kompdapat()
+    {
+        return $this->hasOne(kompdapat::class);
+    }
+    public function komppotong()
+    {
+        return $this->hasOne(komppotong::class);
+    }
 
 }

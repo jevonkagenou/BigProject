@@ -34,6 +34,12 @@ class DataPayroll extends Model
     {
         return $this->belongsTo(Payroll::class);
     }
-    
-
+    public function kompdapats()
+    {
+        return $this->hasMany(kompdapat::class, 'payroll_id');
+    }
+    public function Komppotong()
+    {
+        return $this->belongsTo(komppotong::class, 'uang_potong');
+    }
 }

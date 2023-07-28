@@ -949,8 +949,8 @@
                                     </select>
                                     <button type="submit" class="btn btn-primary btn-xs" style="width: 100px; margin-left:8%;">Cari</button>
                                 </form>
-                                <div class="col-lg-9 col-md-9 col-sm-2 col-6 ">
-                                    <div class="responsive-button text-end">
+                                <div class="col-lg-12 col-md-9 col-sm-2 col-6 ">
+                                    <div class="responsive-button text-end" style="margin-bottom: 3px">
                                         <button type="button" class="btn btn-outline-light btn-xs">
                                             <span>
                                                 <i class="bi bi-download px-1"></i>
@@ -1014,7 +1014,9 @@
                                                 </td>
                                                 <td>Rp.{{ number_format($item->total, 0, ',', '.') }}</td>
                                                 <td>
-                                                    <button data-id="{{$item->id}}" class="btn btn-danger btn-xs sharp" data-toggle="modal" data-target="#myModal-1"><i class="fa fa-eye"></i></button>
+                                                    <a class="btn btn-danger btn-xs sharp modal-button" data-bs-toggle="modal" data-bs-target="#modal-{{$item->id}}">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -1044,10 +1046,9 @@
                         </div>
 
                         {{-- @foreach ($payrolls as $row) --}}
-                        {{-- @foreach ($Gaji as $modal) --}}
-
-
-                        <div class="modal" id="myModal-1" tabindex="-1" role="" aria-hidden="true">
+                        @foreach ($payroll as $modal)                            
+                        
+                        <div class="modal fade bd-example-modal-lg" id="modal-{{$modal->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-{{$modal->id}}-label" aria-hidden="true">
                             <div class="modal-dialog modal-lg ">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -1072,7 +1073,7 @@
                                                             <p>Gaji Pokok</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p></p>
+                                                            <p>Rp. {{$modal->dataPayroll->basic_salary}}</p>
                                                         </div>
                                                     </div>
                                                     <hr />
@@ -1081,33 +1082,35 @@
                                                             <p>Uang Lembur</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p>Rp. 10.000</p>
+                                                            <p>Rp. {{$modal->dataPayroll->overtime_pay}}</p>
                                                         </div>
                                                     </div>
+                                                    @foreach ($data as $overtime)
                                                     <div class="row">
                                                         <div class="col-xl-5 col-5">
-                                                            <p>Jam x 26.001</p>
+                                                            <p>Jam x 26.000</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p>0</p>
+                                                            <p>{{ $overtime->time }}</p>
                                                         </div>
                                                     </div>
+                                                    @endforeach
                                                     <hr />
                                                     <div class="row">
                                                         <div class="col-xl-5 col-5">
                                                             <p>Tunjangan Pulsa</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p>Rp. 5.000</p>
+                                                            <p>Rp. {{$modal->dataPayroll->credit_allowance}}</p>
                                                         </div>
                                                     </div>
                                                     <hr />
                                                     <div class="row">
                                                         <div class="col-xl-5 col-5">
                                                             <p>Tunjangan Lainnya</p>
-                                                        </div>
+                                                        </div>  
                                                         <div class="col-xl-7 col-7">
-                                                            <p>Rp. 10.000</p>
+                                                            <p>Rp. {{$modal->kompdapat->uang_dapat}}</p>
                                                         </div>
                                                     </div>
                                                     <hr />
@@ -1118,7 +1121,7 @@
                                                             </p>
                                                         </div>
                                                         <div class="col-lg-47 col-7">
-                                                            <p class="strong">Rp. 5.000.000</p>
+                                                            <p class="strong">Rp. {{$modal->dataPayroll->total}}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1135,7 +1138,7 @@
                                                             <p>Koperasi</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p>Rp. 450.000</p>
+                                                            <p>Rp. {{$modal->dataPayroll->cooperative}}</p>
                                                         </div>
                                                     </div>
                                                     <hr />
@@ -1144,7 +1147,7 @@
                                                             <p>Denda Keterlambatan</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p>Rp. 10.000</p>
+                                                            <p>Rp. {{$modal->dataPayroll->salary_cut}}</p>
                                                         </div>
                                                         <div class="col-xl-5 col-5">
                                                             <p>Jam x 26.001</p>
@@ -1159,7 +1162,7 @@
                                                             <p>Potongan Lainnya</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p>Rp. 10.000</p>
+                                                            <p>Rp. {{$modal->komppotong->uang_potong}}</p>
                                                         </div>
                                                     </div>
                                                     <hr>
@@ -1170,10 +1173,9 @@
                                                             </p>
                                                         </div>
                                                         <div class="col-lg-7 col-7">
-                                                            <p>Rp. 500.000</p>
+                                                            <p>Rp. {{$modal->dataPayroll->total}}</p>
                                                         </div>
-                                                    </div>
-
+                                                    </div>                                                  
                                                 </div>
                                             </div>
                                             <hr>
@@ -1189,7 +1191,7 @@
                                                             <p style="font-size: 11pt; color:black">Nama</p>
                                                         </div>
                                                         <div class="col-lg-8 col-8">
-                                                            <p style="font-size: 11pt; color:black">Adi</p>
+                                                            <p style="font-size: 11pt; color:black">{{$modal->DataEmployee->name}}</p>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex">
@@ -1197,7 +1199,7 @@
                                                             <p style="font-size: 11pt; color:black">Total</p>
                                                         </div>
                                                         <div class="col-lg-8 col-8">
-                                                            <p style="font-size: 11pt; color:black">Rp. 4.250.000</p>
+                                                            <p style="font-size: 11pt; color:black">Rp. {{$modal->dataPayroll->cooperative + $modal->dataPayroll->salary_cut + $modal->dataPayroll->basic_salary + $modal->dataPayroll->overtime_pay + $modal->kompdapat->uang_dapat + $modal->dataPayroll->total + $modal->dataPayroll->lateness + $modal->dataPayroll->total + $modal->dataPayroll->credit_allowance}}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1209,9 +1211,9 @@
                                         <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div>  
                         </div>
-                        {{-- @endforeach --}}
+                        @endforeach
                         {{-- @endforeach --}}
 
                     </div>
@@ -1399,7 +1401,7 @@
           var logo = document.getElementById("logo");
 
           if (isAlternateLogo) {
-              logo.src = originalLogoSrc;
+                logo.src = originalLogoSrc;
               isAlternateLogo = false;
           } else {
               logo.src = alternateLogoSrc;

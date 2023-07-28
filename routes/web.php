@@ -18,8 +18,9 @@ use App\Http\Controllers\PermitEmployeeController;
 use App\Http\Controllers\DashboardEmployeeController;
 use App\Http\Controllers\AnnualLeaveController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\ClockSettingController;
 use App\Http\Controllers\SalaryConclusionController;
-use App\Http\Controllers\SlipGajiKomponenController;
+use App\Http\Controllers\SlipKomponenController;
 use App\Http\Controllers\StartPayrollController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ImportEmployeeController;
@@ -164,3 +165,4 @@ Route::post('/importPayroll', [ImportEmployeeController::class, 'import2'])->nam
 Route::get('/exportpdf', [ImportEmployeeController::class, 'exportpdf'])->name('exportpdf');
 Route::get('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
 Route::get('/SummaryofcomponentsalaryExport', [ImportEmployeeController::class, 'Export2'])->name('SummaryofcomponentsalaryExport');
+Route::put('/clock-settings/{id}', [ClockSettingController::class, 'update'])->name('UpdateClockSetting');

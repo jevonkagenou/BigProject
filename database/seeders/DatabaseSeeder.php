@@ -16,5 +16,12 @@ class DatabaseSeeder extends Seeder
         RoleSeeder::class,
         UserSeeder::class
        ]);
+        // \App\Models\User::factory(10)->create();
+        // $this->call(UserSeeder::class);
+        $this->call(PresenceSeeder::class);
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }

@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('komponen_potongs', function (Blueprint $table) {
+        Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_komponenptg');
-            $table->string('tipe_komponenptg');
-            $table->string('uang_potong')->nullable();            
+            $table->unsignedBigInteger('data_employee_id');
+            $table->foreign('data_employee_id')->references('id')->on('data_employees')->onDelete('cascade');
+            $table->string('status')->default('Belum Siap');
+            $table->bigInteger('total');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('komponen_potong');
+        Schema::dropIfExists('payrolls');
     }
 };

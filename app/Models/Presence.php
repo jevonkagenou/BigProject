@@ -10,7 +10,7 @@ class Presence extends Model
     use HasFactory;
 
     protected $table = 'presence';
-    protected $fillable = ['type','user_id','picture','time','late'];
+    protected $fillable = ['enter','go_home','overtime','home_overtime','user_id','picture','time','wages','late','employee_id'];
 
     public function User(){
         return $this->belongsTo(User::class,'user_id','id');

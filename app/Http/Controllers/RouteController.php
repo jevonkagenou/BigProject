@@ -9,6 +9,7 @@ use App\Models\Presence;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Announcement;
+use App\Models\ClockSetting;
 use App\Models\slip_gaji;
 
 
@@ -97,12 +98,13 @@ class RouteController extends Controller
             ->with(['presence' => function ($query) {
                 $query->whereDate('created_at', '=', now()->toDateString());
             }])
-            ->where('role', '!=', 'admin')
+            ->where('name', '!=', 'Admin')
             ->get();
+        $clockSetting = ClockSetting::findOrFail(1);
 
         $users = User::all();
 
-        return view('PresenceAdmin.Presence', compact('presence'));
+        return view('PresenceAdmin.Presence', compact('presence','clockSetting'));
     }
 
 

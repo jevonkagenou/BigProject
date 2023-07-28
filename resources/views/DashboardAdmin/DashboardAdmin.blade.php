@@ -105,7 +105,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                        Izin & Cuti Karyawan
+                        Dashboard Admin
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -314,7 +314,7 @@
             <!-- row -->
             <div class="container-fluid" style="padding:-5;">
                 <div class="row">
-                    <div class="col-xl-9 col-xxl-12">
+                    <div class="col-xl-12 col-xxl-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-xl-flex d-block align-items-start description-bx">
@@ -356,7 +356,7 @@
                                             <div id="terlambat" class="tab-pane fade active show">
                                                 <div class="my-post-content pt-3">
                                                     <div class="card-body">
-                                                        <div class="table-responsive">
+                                                        <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
                                                             <table class="table">
                                                                 <thead>
                                                                     <tr>
@@ -369,22 +369,21 @@
                                                                     @foreach ($late as $row)
                                                                     <tr>
                                                                         <td>{{ $loop->iteration }}</td>
-                                                                        <td>{{ $row ->User->name}}</td>
+                                                                        <td>{{ $row->User->name }}</td>
                                                                         <td class="text-center">
-                                                                            @if($row->late)
+                                                                            @if ($row->late)
                                                                                 Terlambat
                                                                             @else
                                                                                 Tidak Terlambat
                                                                             @endif
                                                                         </td>
-                                                                         </tr>
+                                                                    </tr>
                                                                     @endforeach
-
-
                                                                 </tbody>
                                                             </table>
                                                         </div>
                                                     </div>
+                                                    
                                                 </div>
                                             </div>
                                             <div id="izin" class="tab-pane fade">
