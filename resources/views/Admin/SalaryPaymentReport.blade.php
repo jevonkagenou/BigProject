@@ -732,7 +732,7 @@
                                     </svg>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                    <li><a class="dropdown-item" href="/ProfilAdmin"><svg
+                                    <li><a class="dropdown-item" href="/ProfilAdmin/1"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 fill="#969ba0" viewBox="0 0 448 512"
                                                 style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
