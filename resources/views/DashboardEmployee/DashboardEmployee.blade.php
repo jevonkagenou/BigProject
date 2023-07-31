@@ -231,7 +231,7 @@
                                         </svg>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                        <li><a class="dropdown-item" href="/ProfileEmployee"><svg
+                                        <li><a class="dropdown-item" href="/ProfileEmployee/{id}"><svg
                                                     xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="#969ba0" viewBox="0 0 448 512"
                                                     style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
@@ -275,7 +275,7 @@
                         <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
+                                <span class="font-w600 ">Hi,<b>{{Auth::User()->name}}</b></span>
                                 <small class="text-end font-w400">Anggie@gmail.com</small>
                             </div>
                         </a>
@@ -377,7 +377,7 @@
                                     <div class="col-xl-8 mt-5" style="margin-top: 5%;">
                                         <h6 class="card-title" style="font-weight: bold; font-size: 25px;">Selamat
                                             Datang
-                                            Anggie!</h6>
+                                            {{Auth::User()->name}}!</h6>
                                         <span class="" style="font-size: 16px;">Bekerja lebih mudah dan cepat
                                             bersama
                                             kami. Jangan lupa ikuti trainingnya.....</span>

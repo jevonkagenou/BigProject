@@ -125,7 +125,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::post('/updateProfile/{id}', [SystemAdminController::class, 'updateProfile'])->name('ProfilAdmin.updateProfile');
     Route::post('/updateFotoadmin/{id}', [SystemAdminController::class, 'updateFotoadmin'])->name('ProfilAdmin.updateFotoadmin');
     Route::get('/delete/{id}', [SystemAdminController::class, 'delete'])->name('ProfilAdmin.delete');
-    Route::get('/delete2/{id}', [SystemAdminController::class, 'delete'])->name('ProfilAdmin.delete');
+    Route::get('/delete2/{id}', [SystemAdminController::class, 'delete2'])->name('ProfilAdmin.delete2');
 
     Route::post('/updategambarProfile/{id}', [SystemAdminController::class, 'updategambarProfile'])->name('ProfilAdmin.updategambarProfile');
     Route::get('/gantipassword', [SystemAdminController::class, 'gantipassword']);
@@ -160,7 +160,7 @@ Route::middleware(['auth', 'karyawan'])->group(function () {
 
     Route::get('/ProfileEmployee/{id}', [SystemAdminController::class, 'ProfileEmployee'])->name('ProfileEmployee');
     Route::post('/updateProfileEmployee/{id}', [SystemAdminController::class, 'updateProfileEmployee'])->name('ProfileEmployee.updateProfileEmployee');
-    Route::post('/updateFotoEmployee/{id}', [SystemAdminController::class, 'updateFotoEmployee'])->name('ProfilAdmin.updateFotoEmployee');
+    Route::post('/UpdateFotoEmployee/{id}', [SystemAdminController::class, 'UpdateFotoEmployee'])->name('ProfilAdmin.UpdateFotoEmployee');
 
     Route::get('/gantipasswordEmployee', [SystemAdminController::class, 'gantipasswordEmployee']);
     Route::post('/changePasswordEmployee/{id}', [SystemAdminController::class, 'changePasswordEmployee']);

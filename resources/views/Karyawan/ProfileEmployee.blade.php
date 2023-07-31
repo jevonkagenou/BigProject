@@ -501,7 +501,7 @@
                                             <a href="#">Hapus Foto Profil</a>
                                         </div>
                                     </div>
-                                    <form action="/updateFotoemployee/{{ $karyawan->id }}" method="POST"
+                                    <form action="/UpdateFotoEmployee/{{ $karyawan->id }}" method="post"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="modal fade" id="editprofilkaryawan">
