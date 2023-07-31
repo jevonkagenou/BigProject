@@ -22,6 +22,8 @@ class WorkScheduleController extends Controller
         $this->validate($request,[
             'judul' => 'required',
             'isi' => 'required',
+        ]);
+    }
 
 
     public function tampiledit(Request $request, $id)

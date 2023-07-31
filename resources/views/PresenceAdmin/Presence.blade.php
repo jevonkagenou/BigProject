@@ -27,9 +27,9 @@
     <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
 
-    <!-- FAVICONS ICON -->	    
+    <!-- FAVICONS ICON -->
     <!-- Clockpicker -->
-    <link href="vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">    
+    <link href="vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style>
         /* kebijakan presensi */
@@ -993,8 +993,8 @@
                             <div class="card-body">
                                 <div class="row mb-1">
                                     <div class="col-xl-3 col-lg-9 col-md-6 col-sm-1 mt-2">
-                                        <div class="col-md-6 col-xl-6 col-xxl-6 mb-6">                                                                                                                                        
-                                                <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#basicModal">Atur Jam Presensi</button>                                            
+                                        <div class="col-md-6 col-xl-6 col-xxl-6 mb-6">
+                                                <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#basicModal">Atur Jam Presensi</button>
                                         </div>
                                     </div>
                                     <div class="col-xl-2 col-lg-3 col-md-6 me-auto">
@@ -1152,7 +1152,7 @@
                                             @csrf
                                             @method('PUT')
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Masuk</h5>                                            
+                                            <h5 class="modal-title">Masuk</h5>
                                             </button>
                                         </div>
                                         <div class="modal-body">
@@ -1161,7 +1161,7 @@
                                             <div class="col">
                                                     <div class="input-group clockpicker">
                                                         <input type="text" name="clock_in" class="form-control" value="{{$clockSetting->clock_in}}">
-                                                    </div>                                                          
+                                                    </div>
                                             </div>
                                             </div>
                                             <br>
@@ -1183,7 +1183,7 @@
                                             @csrf
                                             @method('PUT')
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Telat</h5>                                            
+                                            <h5 class="modal-title">Telat</h5>
                                             </button>
                                         </div>
                                         <div class="modal-body">
@@ -1192,7 +1192,7 @@
                                             <div class="col">
                                                     <div class="input-group clockpicker">
                                                         <input type="text" name="late_presence" class="form-control" value="{{$clockSetting->late_presence}}">
-                                                    </div>                                                          
+                                                    </div>
                                             </div>
                                             </div>
                                             <br>
@@ -1214,7 +1214,7 @@
                                             @csrf
                                             @method('PUT')
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Pulang</h5>                                            
+                                            <h5 class="modal-title">Pulang</h5>
                                             </button>
                                         </div>
                                         <div class="modal-body">
@@ -1245,7 +1245,7 @@
                                             @csrf
                                             @method('PUT')
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Lembur</h5>                                            
+                                            <h5 class="modal-title">Lembur</h5>
                                             </button>
                                         </div>
                                         <div class="modal-body">
@@ -1254,7 +1254,7 @@
                                                 <div class="col">
                                                     <div class="input-group clockpicker">
                                                         <input type="text" name="overtime_hours" class="form-control" value="{{$clockSetting->overtime_hours}}">
-                                                    </div> 
+                                                    </div>
                                                 </div>
                                             </div>
                                             <br>
@@ -1276,7 +1276,7 @@
                                             @csrf
                                             @method('PUT')
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Pulang Lembur</h5>                                            
+                                            <h5 class="modal-title">Pulang Lembur</h5>
                                             </button>
                                         </div>
                                         <div class="modal-body">
@@ -1285,7 +1285,7 @@
                                                 <div class="col">
                                                     <div class="input-group clockpicker">
                                                         <input type="text" name="overtime_hours_back" class="form-control" value="{{$clockSetting->overtime_hours_back}}">
-                                                    </div> 
+                                                    </div>
                                                 </div>
                                             </div>
                                             <br>
@@ -1423,7 +1423,7 @@
     <!-- asColorPicker init -->
     <script src="js/plugins-init/jquery-asColorPicker.init.js"></script>
     <!-- Material color picker init -->
-    <script src="js/plugins-init/material-date-picker-init.js"></script>    
+    <script src="js/plugins-init/material-date-picker-init.js"></script>
 
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
