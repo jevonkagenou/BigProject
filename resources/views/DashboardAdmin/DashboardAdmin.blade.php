@@ -389,7 +389,7 @@
                                             <div id="izin" class="tab-pane fade">
                                                 <div class="my-post-content pt-3">
                                                     <div class="card-body">
-                                                        <div class="table-responsive">
+                                                        <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
                                                             <table class="table">
                                                                 <thead>
                                                                     <tr>
