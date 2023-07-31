@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "apexcharts": "^3.40.0",
+        "smartwizard": "^6.0.6",
         "tom-select": "^2.2.2"
     }
 }
