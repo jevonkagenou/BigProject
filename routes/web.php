@@ -51,7 +51,7 @@ Route::group(['middleware' => ['role:Admin']], function () {
     Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
     Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
     Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
-    
+
     Route::get('/SalarySummary', [SalaryConclusionController::class, 'SalarySummary'])->name('SalarySummary');
     Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
     Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
@@ -150,7 +150,7 @@ Route::group(['middleware' => ['role:Admin']], function () {
 
     Route::get('/ProfileEmployee/{id}', [SystemAdminController::class, 'ProfileEmployee'])->name('ProfileEmployee');
     Route::post('/updateProfileEmployee/{id}', [SystemAdminController::class, 'updateProfileEmployee'])->name('ProfileEmployee.updateProfileEmployee');
-    Route::post('/updateFotoEmployee/{id}', [SystemAdminController::class, 'updateFotoEmployee'])->name('ProfilAdmin.updateFotoEmployee');
+    Route::post('/UpdateFotoEmployee/{id}', [SystemAdminController::class, 'UpdateFotoEmployee'])->name('ProfilAdmin.UpdateFotoEmployee');
 
     Route::get('/gantipasswordEmployee', [SystemAdminController::class, 'gantipasswordEmployee']);
     Route::post('/changePasswordEmployee/{id}', [SystemAdminController::class, 'changePasswordEmployee']);

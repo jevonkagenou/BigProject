@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\bank;
 use App\Models\Rekening;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
@@ -80,7 +81,7 @@ class SystemAdminController extends Controller
             return redirect()->back()->with('success', 'Profile berhasil di edit');
     }
 
-    public function updateFotoemployee(Request $request, string $id)
+    public function UpdateFotoEmployee(Request $request, string $id)
     {
         $karyawan = User::find($id);
     
@@ -185,14 +186,14 @@ class SystemAdminController extends Controller
 
     public function insertrekening(Request $request)
     {
-        $rekening = Rekening::where('norekening', $request->norekening)->first();
+        $rekening = bank::where('norekening', $request->norekening)->first();
         
         if ($rekening) {
             // Jika data rekening dengan nomor rekening yang sama sudah ada, tampilkan pesan error atau lakukan tindakan yang sesuai.
             return redirect()->back()->with('error', 'Data rekening dengan nomor rekening tersebut sudah ada.');
         }
         
-        $rekening = new Rekening;
+        $rekening = new bank;
         $rekening->namabank = $request->namabank;   
         $rekening->norekening = $request->norekening;
         $rekening->namapemegang = $request->namapemegang;
