@@ -231,8 +231,8 @@
                         <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
-                                <small class="text-end font-w400">Anggie@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>{{Auth()->user()->name}}</b></span>
+                                <small class="text-end font-w400">{{Auth()->user()->email}}</small>
                             </div>
                         </a>
 
@@ -305,18 +305,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- @php
+                                            @php
                                             $no = 1;
                                             @endphp
                                             @foreach ($data as $row)
                                             <tr class="text-center">
                                                 <td>{{ $row->id }}</td>
                                                 <td>{{ $row->tipe }}</td>
-                                                <td>{{ $row->waktu }}</td>
+                                                <td>{{ $row->submission_date}} - {{$row->date_leave }}</td>
                                                 <td><span
                                                         class="badge light badge-warning">{{ $row->status }}</span></td>
                                             </tr>
-                                            @endforeach --}}
+                                            @endforeach
                                         </tbody>
                                     </table>
 {{--

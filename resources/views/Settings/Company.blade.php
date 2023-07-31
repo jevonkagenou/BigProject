@@ -779,7 +779,7 @@
                             </div>
                         </a>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -834,7 +834,7 @@
                     </li>
 
                 </ul>
-                
+
             </div>
         </div>
         <!--**********************************
@@ -846,7 +846,7 @@
             position: relative;
             display: inline-block;
         }
-    
+
         .profile-photo .icon-pen {
             position: absolute;
             top: 90%;
@@ -854,7 +854,7 @@
             transform: translate(-50%, -50%);
             color: black;
         }
-        
+
     </style>
 <div class="content-body">
     <div class="container-fluid">
@@ -874,8 +874,8 @@
                                     </button>
                                 </div>
                             </div>
-                            
-                        </div>  
+
+                        </div>
                         <div class="modal fade" id="basicModal">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
@@ -900,7 +900,7 @@
                                      </div>
                                 </div>
                             </div>
-                        </div>          
+                        </div>
                     </div>
                 </div>
             </div>

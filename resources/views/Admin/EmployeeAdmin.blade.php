@@ -780,14 +780,14 @@
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <img src="{{ asset('gambar/' . auth()->user()->foto) }}" width="20" alt="" />
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
                             </div>
                         </a>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -985,7 +985,7 @@
                                                     <td>{{ $employee->region }}</td>
                                                     <td>{{ $employee->last_study }}</td> --}}
                                                     <td class="display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center;">
-                                                        <a href="/Update_Employee/{{ $employee->id }}" class="btn-xs" style="margin-right: 3px">
+                                                        <a href="/editemployee/{{ $employee->id }}" class="btn-xs" style="margin-right: 3px">
                                                             <i class="fas fa-edit fa-lg hover-icon"></i>
                                                         </a>
                                                         {{-- Tombol hapus --}}
@@ -1013,7 +1013,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button class="btn btn-secondary btn-xs hover-red">Batal</button>
-                                                            <button type="submit" class="btn btn-primary btn-xs form-control1">Hapus</button>
+                                                            <button type="submit" class="btn btn-danger btn-xs form-control1">Hapus</button>
                                                         </div>
                                                     </form>
                                                     </div>

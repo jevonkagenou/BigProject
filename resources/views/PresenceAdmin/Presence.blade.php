@@ -27,6 +27,10 @@
     <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
 
+    <!-- FAVICONS ICON -->	    
+    <!-- Clockpicker -->
+    <link href="vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style>
         /* kebijakan presensi */
         .btn-outline-danger:hover {
@@ -97,7 +101,7 @@
     box-shadow: active;
     background: #e4c129;
     color: #000; }
-    
+
     /* .default-select {
         background-color: #da3b38;
         color: #fff;
@@ -110,7 +114,7 @@
     box-shadow: active;
     background: #ff0000;
     color: #000; }
-    
+
     /* .default-select {
         background-color: #a8aeab;
         color: #fff;
@@ -883,14 +887,14 @@
                 <ul class="metismenu mm-show" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <img src="{{ asset('gambar/' . auth()->user()->foto) }}" width="20" alt="" />
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
                             </div>
                         </a>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/"
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin"
                             aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg"
                                 style="font-size: 80px !important" height="100" viewBox="0 -960 960 960"
@@ -989,15 +993,101 @@
                             <div class="card-body">
                                 <div class="row mb-1">
                                     <div class="col-xl-3 col-lg-9 col-md-6 col-sm-1 mt-2">
-                                        {{-- <div class="button-group text-start">
-                                            <a href="/Validation" class="btn w-100 btn-outline-danger btn-xs">Atur
-                                                Kebijakan Presensi</a>
-                                        </div> --}}
+                                        <div class="col-md-6 col-xl-6 col-xxl-6 mb-6">                                                                                                                                        
+                                                <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#basicModal">Atur Jam Presensi</button>                                            
+                                        </div>
                                     </div>
                                     <div class="col-xl-2 col-lg-3 col-md-6 me-auto">
                                         <div class="button-group text-end">
                                             <input type="date" name="submission_date" id="submission_date" class="form-control btn-xs align-right" style="margin-left: 406%">
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 container-fluid">
+                                    <div class="button-container d-flex justify-content-end">
+                                         <!-- Button trigger modal -->
+                                         <!-- Modal -->
+                                         <div class="modal fade" id="basicModal">
+                                             <div class="modal-dialog modal-dialog-centered" role="document">
+                                                 <div class="modal-content">
+                                                     <div class="modal-header">
+                                                         <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                         </button>
+                                                     </div>
+                                                     <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-6">
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target=".PresensiMasuk" style="border: none; background-color: white">
+                                                                  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+                                                                    <center>
+                                                                        <a href="#"><img src="{{ asset('images/foto1.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
+                                                                    <span class="online_icon"></span>
+                                                                  </div>
+                                                                  <div class="card-body d-flex justify-content-center">
+                                                                    <div class="me-auto">
+                                                                      <center><h4 class="card-title">Presensi Masuk</h4></center>
+                                                                    </div>
+                                                                  </div>
+                                                                </button>
+                                                              </div>
+                                                            <div class="col-md-6 col-6">
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target=".PresensiTelat" style="border: none; background-color: white">
+                                                                  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+                                                                    <center>
+                                                                        <a href="#"><img src="{{ asset('images/foto5.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
+                                                                    <span class="online_icon"></span>
+                                                                  </div>
+                                                                  <div class="card-body d-flex justify-content-center">
+                                                                    <div class="me-auto">
+                                                                      <center><h4 class="card-title">Presensi Telat</h4></center>
+                                                                    </div>
+                                                                  </div>
+                                                                </button>
+                                                              </div>
+                                                              <div class="col-md-6 col-6">
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target=".PresensiPulang" style="border: none; background-color: white">
+                                                                  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+                                                                    <center><a href="#"><img src="{{ asset('images/foto2.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
+                                                                    <span class="online_icon"></span>
+                                                                  </div>
+                                                                  <div class="card-body d-flex justify-content-center">
+                                                                    <div class="me-auto">
+                                                                      <center><h4 class="card-title">Presensi Pulang</h4></center>
+                                                                    </div>
+                                                                  </div>
+                                                                </button>
+                                                              </div>
+                                                              <div class="col-md-6 col-6">
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target=".PresensiLembur" style="border: none; background-color: white">
+                                                                  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+                                                                    <center><a href="#"><img src="{{ asset('images/foto3.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></a></center>
+                                                                    <span class="online_icon"></span>
+                                                                  </div>
+                                                                  <div class="card-body d-flex justify-content-center">
+                                                                    <div class="me-auto">
+                                                                      <center><h4 class="card-title">Presensi Masuk Lembur</h4></center>
+                                                                    </div>
+                                                                  </div>
+                                                                </button>
+                                                              </div>
+                                                              <div class="col-md-6 col-6">
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target=".PresensiPulangLembur" style="border: none; background-color: white">
+                                                                  <div class="img_cont mt-3" style="object-fit: cover; width: 100%; height: 50%;">
+                                                                    <center><img src="{{ asset('images/foto4.png') }}" class="rounded-circle user_img" alt="width=10%" style="width: 50%;"></center>
+                                                                    <span class="online_icon"></span>
+                                                                  </div>
+                                                                  <div class="card-body d-flex justify-content-center mb-3">
+                                                                    <div class="me-auto">
+                                                                      <center><h4 class="card-title">Presensi Pulang Lembur</h4></center>
+                                                                    </div>
+                                                                  </div>
+                                                                </button>
+                                                              </div>
+                                                        </div>
+                                                      </div>
+                                                 </div>
+                                             </div>
+                                         </div>
                                     </div>
                                 </div>
 
@@ -1018,7 +1108,7 @@
                                         <tbody>
                                             @foreach ($presence as $data)
                                             <tr>
-                                                <td class="text-center">{{ $data->id }}</td>
+                                                <td class="text-center">{{ $loop->count - $loop->iteration + 1 }}</td>
                                                 <td class="text-center">{{ $data->name }}</td>
                                                 <td class="text-center">
                                                     <div class="card-body">
@@ -1054,7 +1144,161 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            
+                            <!-- Modal Absens -->
+                            <div class="modal PresensiMasuk fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form action="clock-settings/1" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Masuk</h5>                                            
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <h6 class="modal-title">Jadwal Presensi Masuk</h6><br>
+                                            <div class="col">
+                                                    <div class="input-group clockpicker">
+                                                        <input type="text" name="clock_in" class="form-control" value="{{$clockSetting->clock_in}}">
+                                                    </div>                                                          
+                                            </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal-->
+                            <!-- Modal Absens -->
+                            <div class="modal PresensiTelat fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form action="clock-settings/1" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Telat</h5>                                            
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <h6 class="modal-title">Jadwal Presensi Telat</h6><br>
+                                            <div class="col">
+                                                    <div class="input-group clockpicker">
+                                                        <input type="text" name="late_presence" class="form-control" value="{{$clockSetting->late_presence}}">
+                                                    </div>                                                          
+                                            </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal-->
+                            <!-- Modal Absens -->
+                            <div class="modal PresensiPulang fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form action="clock-settings/1" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Pulang</h5>                                            
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <h6 class="modal-title">Jadwal Presensi Pulang</h6><br>
+                                                <div class="col">
+                                                    <div class="input-group clockpicker">
+                                                        <input type="text" name="home_time" class="form-control" value="{{$clockSetting->home_time}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal-->
+                            <!-- Modal Absens -->
+                            <div class="modal PresensiLembur fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form action="clock-settings/1" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Lembur</h5>                                            
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <h6 class="modal-title">Jadwal Presensi Lembur</h6><br>
+                                                <div class="col">
+                                                    <div class="input-group clockpicker">
+                                                        <input type="text" name="overtime_hours" class="form-control" value="{{$clockSetting->overtime_hours}}">
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal-->
+                            <!-- Modal Absens -->
+                            <div class="modal PresensiPulangLembur fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <form action="clock-settings/1" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Pulang Lembur</h5>                                            
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-0">
+                                                <h6 class="modal-title">Jadwal Presensi Pulang Lembur</h6><br>
+                                                <div class="col">
+                                                    <div class="input-group clockpicker">
+                                                        <input type="text" name="overtime_hours_back" class="form-control" value="{{$clockSetting->overtime_hours_back}}">
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-xs" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger btn-xs">Simpan</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal-->
 
 
 
@@ -1071,7 +1315,7 @@
             <!--**********************************
             Footer start
         ***********************************-->
-            
+
             <!--**********************************
                             Footer end
                         ***********************************-->
@@ -1116,6 +1360,8 @@
         <script src="js/dlabnav-init.js"></script>
         <script src="js/demo.js"></script>
         <script src="js/styleSwitcher.js"></script>
+        <!-- Clockpicker init -->
+        <script src="js/plugins-init/clock-picker-init.js"></script>
         <script>
             var isAlternateLogo = false;
             var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
@@ -1158,6 +1404,53 @@
                 });
             }
         </script> -->
+        <!-- Daterangepicker -->
+    <!-- clockpicker -->
+    <script src="vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+    <!-- asColorPicker -->
+    <script src="vendor/jquery-asColor/jquery-asColor.min.js"></script>
+    <script src="vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
+    <script src="vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+    <!-- Material color picker -->
+    <script src="vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+
+
+    <!-- Daterangepicker -->
+    <script src="js/plugins-init/bs-daterange-picker-init.js"></script>
+    <!-- Clockpicker init -->
+    <script src="js/plugins-init/clock-picker-init.js"></script>
+    <!-- asColorPicker init -->
+    <script src="js/plugins-init/jquery-asColorPicker.init.js"></script>
+    <!-- Material color picker init -->
+    <script src="js/plugins-init/material-date-picker-init.js"></script>    
+
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @if(Session::has('error'))
+        <script>
+
+        toastr.options =
+        {
+            "timeOut"       : 0, // Set timeOut to 0 to make it sticky
+            "closeButton"   : true,
+            "progressBar"   : true
+        }
+        toastr.error("{{ session('error') }}");
+        </script>
+    @endif
+    @if(Session::has('success'))
+        <script>
+
+        toastr.options =
+        {
+            "timeOut"       : 0, // Set timeOut to 0 to make it sticky
+            "closeButton"   : true,
+            "progressBar"   : true
+        }
+        toastr.success("{{ session('success') }}");
+        </script>
+    @endif
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:40 GMT -->

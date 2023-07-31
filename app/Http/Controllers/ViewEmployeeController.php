@@ -26,14 +26,26 @@ class ViewEmployeeController extends Controller
     }
 
     public function PermitEmployee(Request $request){
-
-        $data = PermitEmployee::where('status', 'LIKE', '%' . $request->status . '%')->get();
         $title = 'Izin Cuti';
-
+    
+        $tipe = $request->input('tipe');
+        $status = $request->input('status');
+    
+        $query = PermitEmployee::query();
+    
+        if ($tipe) {
+            $query->where('tipe', $tipe);
+        }
+    
+        if ($status) {
+            $query->where('status', $status);
+        }
+    
+        $data = $query->get();
+    
         return view('PermitEmployee.PermitEmployee', compact('data', 'title'));
     }
-
-
+    
     public function ApprovalEmployee(){
         return view ('ApprovalEmployee.ApprovalEmployee',[
             'title'=>'Approval'

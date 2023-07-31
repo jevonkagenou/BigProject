@@ -49,7 +49,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -806,7 +806,7 @@
                             </a>
                         </div>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
                             <svg class="svg" class="svg" xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -874,18 +874,18 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-				
-				
+
+
                 <!-- row -->
                 <div class="row">
-				
+
 					<style>
 					.custom-btn {
 						border-radius: 1;
 						height: 40px;
 						padding: 12px 8px;
 						background: #fff;
-						border: 1px solid #464444; 
+						border: 1px solid #464444;
 						text-align: center;
 					}
 					.hover-icon:hover{
@@ -909,7 +909,7 @@
                             <div class="card-header">
                                 <h4 class="card-title">Edit Pengumuman</h4>
                             </div>
-                            
+
                             <div class="card-body">
 								<div class="row">
 									<div class="btn-group ">
@@ -918,7 +918,7 @@
                                             <div class="col-12">
                                                 <textarea class="form-control " id="editor" name="isi" cols="30"
                                                 rows="10">Pengumuman Tanggal 29 Juni 2023 Libur bagi seluruh Karyawan. Karna Ada Hari Raya Idul Adha</textarea>
-                                            </div>   
+                                            </div>
                                         </div>
 									</div>
 								</div>
@@ -927,7 +927,7 @@
 									<h6 class="modal-title">Lampiran</h6><br>
 									<div class="col-12">
 										<input type="file" class="form-control btn-xs" value="Upload" placeholder="Nama"  multiple>
-									</div>		
+									</div>
 								</div>
                                 <p></p>
                                 <a href="/Announcement" class="btn btn-danger btn-xs" style="float:right;">Simpan</a>
@@ -945,7 +945,7 @@
         ***********************************-->
 
 
-			
+
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -958,7 +958,7 @@
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 	<!-- Apex Chart -->
 	<script src="vendor/apexchart/apexchart.js"></script>
-	
+
     <!-- Datatable -->
     <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins-init/datatables.init.js"></script>
@@ -979,10 +979,10 @@
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
         var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
-    
+
         function changeLogo() {
             var logo = document.getElementById("logo");
-    
+
             if (isAlternateLogo) {
                 logo.src = originalLogoSrc;
                 isAlternateLogo = false;

@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->date('submission_date');
+            $table->date('start_date');
             $table->date('date_leave');
             $table->string('tipe');
+            $table->string('lampiran')->nullable();
             $table->integer('total_day');
             $table->longText('description');
             $table->string('status')->default('Menunggu');

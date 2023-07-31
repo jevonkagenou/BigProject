@@ -16,4 +16,8 @@ class komppotong extends Model
     {
         return $this->belongsTo(slip_gaji::class,'nama_id');
     }
+    public function datapayroll()
+    {
+        return $this->hasMany(DataPayroll::class);
+    }
 }

@@ -785,7 +785,7 @@
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <img src="{{ asset('gambar/' . auth()->user()->foto) }}" width="20" alt="" />
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
@@ -816,7 +816,7 @@
                             </a>
                         </div>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
                             <svg class="svg" class="svg" xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -980,40 +980,46 @@
                                             <div class="modal-body">
                                                 <div class="row g-0">
                                                     <label for="tanggal">Pilih Tanggal:</label>
-                                                    <select id="tom-select-it">
-                                                        <option value="1">1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
-                                                        <option>6</option>
-                                                        <option>7</option>
-                                                        <option>8</option>
-                                                        <option>9</option>
-                                                        <option>10</option>
-                                                        <option>11</option>
-                                                        <option>12</option>
-                                                        <option>13</option>
-                                                        <option>14</option>
-                                                        <option>15</option>
-                                                        <option>16</option>
-                                                        <option>17</option>
-                                                        <option>18</option>
-                                                        <option>19</option>
-                                                        <option>20</option>
-                                                        <option>21</option>
-                                                        <option>22</option>
-                                                        <option>23</option>
-                                                        <option>24</option>
-                                                        <option>25</option>
-                                                        <option>26</option>
-                                                        <option>27</option>
-                                                        <option>28</option>
-                                                        <option>29</option>
-                                                        <option>30</option>
-                                                        <option>31</option>
-                                                    </select>
+                                                            <select id="tom-select-it">
+                                                                <option value="1">1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                                <option>5</option>
+                                                                <option>6</option>
+                                                                <option>7</option>
+                                                                <option>8</option>
+                                                                <option>9</option>
+                                                                <option>10</option>
+                                                                <option>11</option>
+                                                                <option>12</option>
+                                                                <option>13</option>
+                                                                <option>14</option>
+                                                                <option>15</option>
+                                                                <option>16</option>
+                                                                <option>17</option>
+                                                                <option>18</option>
+                                                                <option>19</option>
+                                                                <option>20</option>
+                                                                <option>21</option>
+                                                                <option>22</option>
+                                                                <option>23</option>
+                                                                <option>24</option>
+                                                                <option>25</option>
+                                                                <option>26</option>
+                                                                <option>27</option>
+                                                                <option>28</option>
+                                                                <option>29</option>
+                                                                <option>30</option>
+                                                                <option>31</option>
+                                                            </select>
                                                 </div>
+                                                <br>
+                                                <button class="btn btn-danger btn-xs" type="submit"
+                                                style="width: 100%;">
+                                                <span
+                                                    style="display: inline-block; vertical-align: middle;">Simpan</span>
+                                            </button>
                                             </div>
                                         </div>
                                     </div>

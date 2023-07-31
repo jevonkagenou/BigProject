@@ -2,180 +2,249 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClockSetting;
 use App\Models\Presence;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeePresence extends Controller
 {
     public function presence(Request $request, $jenis)
-{
-    $time = $request->date ? date("Y-m-d H:i", strtotime(str_replace('/', '-', $request->time))) : date("Y-m-d H:i");
-
-    $now = Carbon::now();
-    $masukThreshold = Carbon::parse('07:00:00'); // Waktu masuk (jam 7)
-    $lateThreshold = Carbon::parse('08:00:00'); // Batas waktu terlambat (jam 8)
-    $pulangThreshold = Carbon::parse('16:00:00'); // Batas waktu pulang (jam 16)
-    $lemburThreshold = Carbon::parse('19:00:00'); // Waktu mulai lembur (jam 19)
-    $pulangLemburThreshold = Carbon::parse('00:00:00'); // Batas waktu pulang lembur (jam 00:00)
-
-    $userId = Auth()->user()->id; // Mendapatkan ID pengguna yang sedang login
-
-    if ($jenis == 'Pulang') {
-        // Pengecekan untuk absen pulang
-        if ($now->lt($pulangThreshold)) {
-            // Jika waktu saat ini lebih awal dari batas waktu pulang (jam 16) atau lebih dari batas waktu pulang lembur (jam 00:00)
-            $errorMessage = 'Waktu absen ' . $jenis . ' belum tiba atau telah berakhir.';
+    {
+        $time = $request->date ? date("Y-m-d H:i", strtotime(str_replace('/', '-', $request->time))) : date("Y-m-d H:i");
+        // Mengambil pengaturan waktu presensi dari database
+        $presensiSetting = ClockSetting::first();
+        // Pastikan data pengaturan waktu telah ada di database
+        if (!$presensiSetting) {
+            // Tampilkan pesan peringatan jika data belum diatur
+            $errorMessage = 'Pengaturan waktu presensi belum tersedia.';
             return redirect()->back()->with('error', $errorMessage);
         }
+        $now = Carbon::now();
+        // Gunakan data pengaturan waktu dari database
+        $masukThreshold = Carbon::parse($presensiSetting->clock_in);
+        $lateThreshold = Carbon::parse($presensiSetting->late_presence);
+        $pulangThreshold = Carbon::parse($presensiSetting->home_time);  
+        $lemburThreshold = Carbon::parse($presensiSetting->overtime_hours);
+        $pulangLemburThreshold = Carbon::parse($presensiSetting->overtime_hours_back);
 
-        // Cek apakah sudah ada absen masuk sebelumnya
-        $existingMasuk = Presence::where('type', 'Masuk')
-            ->where('user_id', $userId)
-            ->whereDate('created_at', Carbon::today())
-            ->first();
+        $userId = Auth()->user()->id; // Mendapatkan ID pengguna yang sedang login
 
-        if (!$existingMasuk) {
-            $errorMessage = 'Anda belum melakukan absen masuk.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
+        if ($jenis == 'Masuk') {
+            // Validasi apakah sudah ada presensi masuk pada hari ini untuk pengguna yang sedang login
+            $existingMasuk = Presence::where('enter', 1)
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
 
-        // Cek apakah sudah ada absen pulang hari ini
-        $existingPulang = Presence::where('type', 'Pulang')
-            ->where('user_id', $userId)
-            ->whereDate('created_at', Carbon::today())
-            ->first();
-
-        if ($existingPulang) {
-            $errorMessage = 'Anda sudah melakukan absen pulang hari ini.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
-
-        // Cek apakah sudah ada absen lembur hari ini
-        $existingLembur = Presence::where('type', 'Lembur')
-            ->where('user_id', $userId)
-            ->whereDate('created_at', Carbon::today())
-            ->first();
-
-        if ($existingLembur) {
-            // Cek apakah sudah melewati batas waktu pulang lembur (jam 00:00)
-            $pulangLemburThresholdToday = Carbon::today()->setTimeFromTimeString($pulangLemburThreshold->toTimeString());
-            if ($now->gt($pulangLemburThresholdToday)) {
-                $errorMessage = 'Lembur berlebihan. Tidak bisa melakukan absen pulang lembur setelah jam 00:00.';
+            if ($existingMasuk) {
+                $errorMessage = 'Anda sudah melakukan presensi masuk hari ini.';
                 return redirect()->back()->with('error', $errorMessage);
             }
-        }
 
-        $presenceData = [
-            'type' => $jenis,
-            'time' => $time,
-            'user_id' => $userId,
-            'picture' => $request->file('picture')->store('presence', 'public'),
-            'late' => 0, // Set nilai kolom terlambat menjadi 0 untuk absen pulang
-        ];
+            // Pengecekan untuk presensi masuk
+            if ($now->gt($lateThreshold)) {
+                // Jika waktu saat ini lebih dari batas waktu terlambat (jam 8)
+                $presenceData = [
+                    'enter' => 1,
+                    'go_home' => 0,
+                    'overtime' => 0,
+                    'home_overtime' => 0,
+                    'time' => $time,
+                    'user_id' => $userId,
+                    'picture' => $request->file('picture')->store('presence', 'public'),
+                    'late' => 1, // Set nilai kolom terlambat menjadi 1 untuk presensi terlambat
+                ];
 
-        Presence::create($presenceData);
+                Presence::create($presenceData);
 
-        $successMessage = 'Absen ' . $jenis . ' Berhasil';
-        return redirect()->back()->with('success', $successMessage);
-    } elseif ($jenis == 'Lembur') {
-        // Pengecekan untuk absen lembur
-        if ($now->lt($lemburThreshold)) {
-            // Jika waktu saat ini lebih awal dari batas waktu lembur (jam 19)
-            $errorMessage = 'Waktu absen ' . $jenis . ' belum tiba.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
+                $successMessage = 'Presensi Masuk Terlambat';
+                return redirect()->back()->with('success', $successMessage);
+            }
 
-        // Cek apakah sudah ada absen masuk sebelumnya
-        $existingMasuk = Presence::where('type', 'Masuk')
-            ->where('user_id', $userId)
-            ->whereDate('created_at', Carbon::today())
-            ->first();
-
-        if (!$existingMasuk) {
-            $errorMessage = 'Anda belum melakukan absen masuk hari ini.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
-
-        // Cek apakah sudah ada absen lembur hari ini
-        $existingLembur = Presence::where('type', 'Lembur')
-            ->where('user_id', $userId)
-            ->whereDate('created_at', Carbon::today())
-            ->first();
-
-        if ($existingLembur) {
-            $errorMessage = 'Anda sudah melakukan absen lembur hari ini.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
-
-        // Cek apakah sudah ada absen pulang lembur hari ini
-        $existingPulangLembur = Presence::where('type', 'Pulang Lembur')
-            ->where('user_id', $userId)
-            ->whereDate('created_at', Carbon::today())
-            ->first();
-
-        if ($existingPulangLembur) {
-            $errorMessage = 'Anda sudah melakukan absen pulang lembur hari ini.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
-
-        $presenceData = [
-            'type' => $jenis,
-            'time' => $time,
-            'user_id' => $userId,
-            'picture' => $request->file('picture')->store('presence', 'public'),
-            'late' => 0, // Set nilai kolom terlambat menjadi 0 untuk absen lembur
-        ];
-
-        Presence::create($presenceData);
-
-        $successMessage = 'Absen ' . $jenis . ' Berhasil';
-        return redirect()->back()->with('success', $successMessage);
-    } elseif ($jenis == 'Masuk') {
-        // Pengecekan untuk absen masuk
-        if ($now->gt($lateThreshold)) {
-            // Jika waktu saat ini lebih dari batas waktu terlambat (jam 8)
+            // Presensi tepat waktu
             $presenceData = [
-                'type' => $jenis,
+                'enter' => 1,
+                'go_home' => 0,
+                'overtime' => 0,
+                'home_overtime' => 0,
                 'time' => $time,
                 'user_id' => $userId,
                 'picture' => $request->file('picture')->store('presence', 'public'),
-                'late' => 1, // Set nilai kolom terlambat menjadi 1 untuk absen terlambat
+                'late' => 0, // Set nilai kolom terlambat menjadi 0 untuk presensi tepat waktu
             ];
 
             Presence::create($presenceData);
 
-            $successMessage = 'Absen ' . $jenis . ' Terlambat';
+            $successMessage = 'Presensi Masuk Berhasil';
+            return redirect()->back()->with('success', $successMessage);
+        } elseif ($jenis == 'Pulang') {
+            // Pengecekan untuk presensi pulang
+            if ($now < $pulangThreshold) {
+                // Jika waktu saat ini lebih awal dari batas waktu pulang (jam 16) atau lebih dari batas waktu pulang lembur (jam 00:00)
+                $errorMessage = 'Presensi pulang belum tersedia sekarang.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada presensi masuk sebelumnya
+            $existingMasuk = Presence::where('enter', 1)
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if (!$existingMasuk) {
+                $errorMessage = 'Anda belum melakukan presensi masuk.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada presensi pulang hari ini
+            $existingPulang = Presence::where('go_home', 1)
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if ($existingPulang) {
+                $errorMessage = 'Anda sudah melakukan presensi pulang hari ini.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada presensi lembur hari ini
+            $existingLembur = Presence::where('overtime', 1)
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if ($existingLembur) {
+                // Cek apakah sudah melewati batas waktu pulang lembur (jam 00:00)
+                $pulangLemburThresholdToday = Carbon::today()->setTimeFromTimeString($pulangLemburThreshold->toTimeString());
+                if ($now->gt($pulangLemburThresholdToday)) {
+                    $errorMessage = 'Lembur berlebihan. Tidak bisa melakukan presensi pulang lembur setelah jam 00:00.';
+                    return redirect()->back()->with('error', $errorMessage);
+                }
+            }
+
+            $presenceData = [
+                'enter' => 0,
+                'go_home' => 1,
+                'overtime' => 0,
+                'home_overtime' => 0,
+                'time' => $time,
+                'user_id' => $userId,
+                'picture' => $request->file('picture')->store('presence', 'public'),
+                'late' => 0, // Set nilai kolom terlambat menjadi 0 untuk presensi pulang
+            ];
+
+            Presence::create($presenceData);
+
+            $successMessage = 'Presensi ' . $jenis . ' Berhasil';
+            return redirect()->back()->with('success', $successMessage);
+        } elseif ($jenis == 'Lembur') {
+            // Pengecekan untuk presensi lembur
+            if ($now < $lemburThreshold) {
+                // Jika waktu saat ini lebih awal dari batas waktu lembur (jam 19) atau lebih dari batas waktu pulang lembur (jam 00:00)
+                $errorMessage = 'Presensi lembur belum tersedia sekarang.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada presensi masuk sebelumnya
+            $existingMasuk = Presence::where('enter', 1)
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if (!$existingMasuk) {
+                $errorMessage = 'Anda belum melakukan presensi masuk.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada presensi lembur hari ini
+            $existingLembur = Presence::where('overtime', 1)
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if ($existingLembur) {
+                $errorMessage = 'Anda sudah melakukan presensi lembur hari ini.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            $presenceData = [
+                'enter' => 0,
+                'go_home' => 0,
+                'overtime' => 1,
+                'home_overtime' => 0,
+                'time' => $time,
+                'user_id' => $userId,
+                'picture' => $request->file('picture')->store('presence', 'public'),
+                'late' => 0, // Set nilai kolom terlambat menjadi 0 untuk presensi lembur
+            ];
+
+            Presence::create($presenceData);
+
+            $successMessage = 'Presensi ' . $jenis . ' Berhasil';
+            return redirect()->back()->with('success', $successMessage);
+        } elseif ($jenis == 'Pulang Lembur') {
+            // Pengecekan untuk presensi pulang lembur
+            if ($now < $pulangLemburThreshold) {
+                // Jika waktu saat ini lebih dari batas waktu pulang lembur (jam 00:00)
+                $errorMessage = 'Presensi pulang lembur belum tersedia sekarang.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada presensi masuk sebelumnya
+            $existingMasuk = Presence::where('enter', 1)
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if (!$existingMasuk) {
+                $errorMessage = 'Anda belum melakukan presensi masuk.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada presensi pulang hari ini
+            $existingPulang = Presence::where('go_home', 1)
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if (!$existingPulang) {
+                $errorMessage = 'Anda belum melakukan presensi pulang.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            // Cek apakah sudah ada presensi pulang lembur hari ini
+            $existingPulangLembur = Presence::where('home_overtime', 1)
+                ->where('user_id', $userId)
+                ->whereDate('created_at', Carbon::today())
+                ->first();
+
+            if ($existingPulangLembur) {
+                $errorMessage = 'Anda sudah melakukan presensi pulang lembur hari ini.';
+                return redirect()->back()->with('error', $errorMessage);
+            }
+
+            $presenceData = [
+                'enter' => 0,
+                'go_home' => 0,
+                'overtime' => 0,
+                'home_overtime' => 1,
+                'time' => $time,
+                'user_id' => $userId,
+                'picture' => $request->file('picture')->store('presence', 'public'),
+                'late' => 0, // Set presensi pulang lembur tidak terlambat
+            ];
+
+            Presence::create($presenceData);
+
+            $successMessage = 'Presensi ' . $jenis . ' Berhasil';
             return redirect()->back()->with('success', $successMessage);
         }
 
-        // Cek apakah sudah ada absensi pada hari ini untuk pengguna yang sedang login
-        $existingPresence = Presence::whereDate('created_at', Carbon::today())
-            ->where('user_id', $userId)
-            ->first();
-
-        if ($existingPresence) {
-            $errorMessage = 'Anda telah melakukan absensi hari ini.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
-
-        $presenceData = [
-            'type' => $jenis,
-            'time' => $time,
-            'user_id' => $userId,
-            'picture' => $request->file('picture')->store('presence', 'public'),
-            'late' => 0, // Set nilai kolom terlambat menjadi 0 untuk absen tepat waktu
-        ];
-
-        Presence::create($presenceData);
-
-        $successMessage = 'Absen ' . $jenis . ' Berhasil';
-        return redirect()->back()->with('success', $successMessage);
+        // Menampilkan pesan peringatan jika akses presensi di luar waktu yang ditentukan
+        $errorMessage = 'Waktu presensi ' . $jenis . ' belum tiba atau telah berakhir.';
+        return redirect()->back()->with('error', $errorMessage);
     }
-}
-
-
-
-   
 }

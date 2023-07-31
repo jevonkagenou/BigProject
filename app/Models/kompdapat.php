@@ -18,4 +18,11 @@ class kompdapat extends Model
         return $this->belongsTo(slip_gaji::class,'nama_id');
     }
 
+    public function datapayroll()
+    {
+        return $this->hasMany(DataPayroll::class);
+    }
+    public function slip_gaji(){
+        return $this->hasMany(slip_gaji::class);
+    }
 }

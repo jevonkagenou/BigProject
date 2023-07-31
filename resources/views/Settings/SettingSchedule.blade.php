@@ -779,7 +779,7 @@ tr:hover {
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <img src="{{ asset('gambar/' . auth()->user()->foto) }}" width="20" alt="" />
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
@@ -810,7 +810,7 @@ tr:hover {
                             </a>
                         </div>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
                             <svg class="svg" class="svg" xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -895,7 +895,7 @@ tr:hover {
 					.hover-icon:hover{
 						color: #f72b50 !important;
 					}
-					
+
 					</style>
 
                     <div class="row page-titles">
@@ -919,7 +919,7 @@ tr:hover {
                                             <i class="bi bi-plus"></i>Tambah Jadwal Kerja
                                         </a>
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
@@ -939,7 +939,7 @@ tr:hover {
                                                 <td>1</td>
                                                 <td>0</td>
                                                 <td>04/06/2023</td>
-                                                <td>    
+                                                <td>
                                                     <a class="btn-xs" href="/DetileSchedule">
                                                         <i class="fa-regular fa-eye hover-icon"></i>
                                                     </a>

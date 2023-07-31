@@ -48,7 +48,7 @@ class AnnouncementController extends Controller
         }
         $data->save();
 
-        return redirect()->route('Announcement')->with('success','Data Berhasil Di Tambah');
+        return redirect()->route('Announcement')->with('success','Pengumuman Berhasil Di Tambahkan');
     }
 
     public function search(Request $request)

@@ -9,7 +9,9 @@ use App\Models\Presence;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Announcement;
+use App\Models\ClockSetting;
 use App\Models\slip_gaji;
+
 
 class RouteController extends Controller
 {
@@ -18,8 +20,9 @@ class RouteController extends Controller
         'tittle'=>'Laporan']);
     }
     public function ApprovalAdmin(){
+        $admin = User::all();
         $approval = PermitEmployee::where('status', 'Menunggu')->get();
-        return view('ApprovalAdmin.ApproveAdmin', compact('approval'),['tittle'=>'Approval']);
+        return view('ApprovalAdmin.ApproveAdmin', compact('approval', 'admin'),['tittle'=>'Approval']);
     }
     public function SalarySummary(){
         return view('Admin.SalarySummary',[
@@ -95,12 +98,13 @@ class RouteController extends Controller
             ->with(['presence' => function ($query) {
                 $query->whereDate('created_at', '=', now()->toDateString());
             }])
-            ->where('role', '!=', 'admin')
+            ->where('name', '!=', 'Admin')
             ->get();
+        $clockSetting = ClockSetting::findOrFail(1);
 
         $users = User::all();
 
-        return view('PresenceAdmin.Presence', compact('presence'));
+        return view('PresenceAdmin.Presence', compact('presence','clockSetting'));
     }
 
 
@@ -125,7 +129,7 @@ class RouteController extends Controller
         ]);
     }
     public function AddEmployee(){
-        return view('Admin.AddEmployee',[
+        return view('CreateEmployee.CreateEmployee',[
             'tittle'=>'Tambah Karyawan'
         ]);
     }

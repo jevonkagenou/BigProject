@@ -31,7 +31,21 @@ class SlipGajiKomponenController extends Controller
         $slip = new slip_gaji;
         $slip->name = $data['name'];
         $slip->periode = $data['periode'];
-        $slip->periode_dimulai = $data['periode_dimulai'];
+        if ($request->input('periode') === 'Tetap (Gaji Bulanan, Mingguan, Persekian gaji)') {
+            $slip->periode_dimulai = null;
+        } else {
+            $slip->periode_dimulai = $request->input('periode_dimulai');
+        }
+
+        if ($request->input('periode') === 'Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)') {
+            // Jika tipe "Tidak Tetap", atur kolom periode_tetap dan lamaperiode menjadi NULL
+            $slip->periode_tetap = null;
+            $slip->lamaperiode = null;
+        } else {
+            // Jika bukan tipe "Tidak Tetap", tetapkan nilai kolom periode_tetap dan lamaperiode sesuai input pengguna
+            $slip->periode_tetap = $request->input('periode_tetap');
+            $slip->lamaperiode = $request->input('lamaperiode');
+        }
         $slip->save();
         $id = slip_gaji::latest()->first();
 

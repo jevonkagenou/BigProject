@@ -1,9 +1,9 @@
 <?php
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApproveAdminController;
 use App\Http\Controllers\DataEmployeeController;
 use App\Http\Controllers\WorkScheduleController;
 use App\Http\Controllers\ApprovalEmployeeController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\LandingPageController;
@@ -18,8 +18,9 @@ use App\Http\Controllers\PermitEmployeeController;
 use App\Http\Controllers\DashboardEmployeeController;
 use App\Http\Controllers\AnnualLeaveController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\ClockSettingController;
 use App\Http\Controllers\SalaryConclusionController;
-use App\Http\Controllers\SlipGajiKomponenController;
+use App\Http\Controllers\SlipKomponenController;
 use App\Http\Controllers\StartPayrollController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ImportEmployeeController;
@@ -37,26 +38,25 @@ use App\Http\Controllers\EmployeePresence;
 |
 */
 Route::middleware(['guest'])->group(function () {
-    Route::get('/login',[LoginController::class,'login'])->name('Login');
+    Route::get('/',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
+    Route::get('/login',[LoginController::class,'login'])->name('login');
     Route::post('/loginuser',[LoginController::class,'loginuser'])->name('Loginuser');
     Route::get('/users/set-password/{user}', [PasswordController::class, 'setPassword'])->name('users.setPassword');
     Route::get('/users/update-password/{user}', [PasswordController::class, 'updatePassword'])->name('updatePassword');
-    Route::get('/landing-page',[LandingPageController::class,'landingpage'])->name('Karyawan.landingpage');
 
 });
-Route::middleware(['auth','admin'])->group(function () {
+Route::group(['middleware' => ['role:Admin']], function () {
 
-    Route::get('/', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
+    Route::get('/DashboardAdmin', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
     Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
     Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
     Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
-    Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
+
     Route::get('/SalarySummary', [SalaryConclusionController::class, 'SalarySummary'])->name('SalarySummary');
     Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
     Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
 
     Route::get('/CreateSlips', [SlipGajiKomponenController::class, 'CreateSlips'])->name('CreateSlips');
-    Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
     Route::get('/AnnouncementUpdate', [RouteController::class, 'AnnouncementUpdate'])->name('AnnouncementUpdate');
     Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/PayrolEmployee/{id}', [DataPayrollController::class, 'PayrolEmployee'])->name('PayrolEmployee');
@@ -70,7 +70,6 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/Validation', [RouteController::class, 'Validation'])->name('Validation');
     Route::get('/Payroll', [PayrollController::class, 'Payroll'])->name('Payroll');
     Route::get('/PayrollStep', [RouteController::class, 'PayrollStep'])->name('PayrollStep');
-    Route::get('/EmployeeAdmin', [RouteController::class, 'EmployeeAdmin'])->name('EmployeeAdmin');
     Route::get('/Detailkaryawan', [RouteController::class, 'Detailkaryawan'])->name('Detailkaryawan');
     Route::get('/SalaryAdjustment/{id}', [RouteController::class, 'SalaryAdjustment'])->name('SalaryAdjustment');
     Route::get('/AddAccount', [BankController::class, 'AddAccount'])->name('AddAccount');
@@ -94,10 +93,12 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::post('/UpdatePayrollStatus', [DataPayrollController::class, 'UpdatePayrollStatus'])->name('UpdatePayrollStatus');
     Route::get('/SelectedMonth', [SalaryConclusionController::class, 'SelectedMonth'])->name('SelectedMonth');
     Route::post('/GetData/{id}', [PayrollController::class, 'GetData'])->name('GetData');
-    
+
     // Add Data Employee Route
     Route::get('/Employee/{id}', [DataEmployeeController::class, 'Employee'])->name('Employee');
+    Route::get('/editemployee/{id}', [DataEmployeeController::class, 'editemployee'])->name('editemployee');
     Route::post('/Add_Employee', [DataEmployeeController::class, 'Add_Employee'])->name('Add_Employee');
+    Route::post('/Update_Employee/{id}', [DataEmployeeController::class, 'Update_Employee'])->name('Update_Employee');
     Route::post('/Update_Image/{id}', [DataEmployeeController::class, 'Update_Image'])->name('Update_Image');
     Route::GET('/Delete_image/{id}', [DataEmployeeController::class, 'Delete_image'])->name('Delete_image');
 
@@ -111,21 +112,22 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/EditSchedule', [RouteController::class, 'EditSchedule'])->name('EditSchedule');
     Route::get('/blank/{id}', [RouteController::class, 'showBlankImageDocument']);
     Route::get('/file/{id}', [RouteController::class, 'DownloadFile']);
-    Route::get('/DetailSalary', [RouteController::class, 'DetailSalary'])->name('DetailSalary.');
+    Route::get('/DetailSalary', [SalaryConclusionController::class, 'DetailSalary'])->name('DetailSalary.');
 
     // pengummuman
     Route::get('/Announcement', [AnnouncementController::class, 'index'])->name('Announcement');
     Route::post('/Createp', [AnnouncementController::class, 'Create'])->name('Createp');
     route::post('/update/{id}', [AnnouncementController::class, 'update'])->name('update');
     route::get('/destroy/{id}', [AnnouncementController::class, 'destroy'])->name('destroy');
+    route::get('/delete2/{id}', [SystemAdminController  ::class, 'delete2'])->name('delete2');
     Route::get('/search', [AnnouncementController::class, 'search'])->name('search');
     Route::post('/Create', [AnnualLeaveController::class, 'Create'])->name('Create');
 
     Route::get('/ProfilAdmin/{id}', [SystemAdminController::class, 'ProfilAdmin'])->name('ProfilAdmin');
     Route::post('/updateProfile/{id}', [SystemAdminController::class, 'updateProfile'])->name('ProfilAdmin.updateProfile');
     Route::post('/updateFotoadmin/{id}', [SystemAdminController::class, 'updateFotoadmin'])->name('ProfilAdmin.updateFotoadmin');
-    Route::get('/delete/{id}', [SystemAdminController::class, 'delete'])->name('ProfilAdmin.delete');
-    Route::get('/delete2/{id}', [SystemAdminController::class, 'delete2'])->name('ProfilAdmin.delete2');
+    Route::get('/delete/{id}', [SystemAdminController::class, 'delete'])->name('delete');
+    // Route::get('/delete2/{id}', [SystemAdminController::class, 'delete'])->name('delete2');/
 
     Route::post('/updategambarProfile/{id}', [SystemAdminController::class, 'updategambarProfile'])->name('ProfilAdmin.updategambarProfile');
     Route::get('/gantipassword', [SystemAdminController::class, 'gantipassword']);
@@ -133,20 +135,8 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter');
 
 });
-Route::middleware(['auth', 'karyawan'])->group(function () {
-    // Karyawan Route
-    // Route::view('/', 'Pengaturan.Perusahaan');
-    Route::get('/', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
-    Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
-    Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
-    Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
-    Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
-    Route::get('/SalarySummary', [SalaryConclusionController::class, 'SalarySummary'])->name('SalarySummary');
-    Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
-    Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
+    Route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee')->middleware('role:Karyawan');
     Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
-
-    Route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
     // Approval Employee
     Route::get('/ApprovalEmployee', [ApprovalEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
     Route::get('/EmployeePresence', [ViewEmployeeController::class, 'EmployeePresence'])->name('EmployeePresence');
@@ -166,12 +156,13 @@ Route::middleware(['auth', 'karyawan'])->group(function () {
     Route::post('/changePasswordEmployee/{id}', [SystemAdminController::class, 'changePasswordEmployee']);
 
 
-
-});
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 });
 Route::post('/importData', [ImportEmployeeController::class, 'import'])->name('importData');
+Route::post('/importPayroll', [ImportEmployeeController::class, 'import2'])->name('importPayroll');
+Route::get('/exportpdf', [ImportEmployeeController::class, 'exportpdf'])->name('exportpdf');
 Route::get('/ExportEmployee', [ImportEmployeeController::class, 'Export'])->name('ExportEmployee');
 Route::get('/SummaryofcomponentsalaryExport', [ImportEmployeeController::class, 'Export2'])->name('SummaryofcomponentsalaryExport');
+Route::put('/clock-settings/{id}', [ClockSettingController::class, 'update'])->name('UpdateClockSetting');

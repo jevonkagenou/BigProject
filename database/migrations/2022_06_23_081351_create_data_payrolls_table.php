@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\kompdapat;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->bigInteger('cooperative')->nullable();
             $table->bigInteger('salary_cut')->nullable();
             $table->bigInteger('lateness')->nullable();
+            $table->foreignId('payroll_id')->references('id')->on('payrolls')->onUpdate('cascade')->onDelete('cascade');
             $table->string('status')->default('Belum Siap');
             $table->bigInteger('total')->default(0);
             $table->timestamps();

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('nama_id')->references('id')->on('slip_gajis')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama_komponendpt')->nullable();
             $table->string('tipe_komponendpt')->nullable();
-            $table->integer('uang_dapat')->nullable();
+            $table->foreignId('payroll_id')->references('data_employee_id')->on('data_payrolls')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('uang_dapat')->nullable();
             $table->timestamps();
         });
     }

@@ -253,7 +253,7 @@
             </div>
             {{-- <div class="container"> --}}
                 <marquee behavior="scroll" direction="left" scrollamount="4" style="font-size: 15px; font: 'Cairo' , sans-serif; margin-left:3px;">
-                   <span> SISA CUTI ANDA TINGGAL 4 HARI LAGI </span> |
+                   {{-- <span> SISA CUTI ANDA TINGGAL 4 HARI LAGI </span> | --}}
                     <span style="color: yellow; font-size: 15px; font: 'Cairo' , sans-serif;"> JANGAN LUPA PRESENSI UNTUK HARI INI!!</span>
                 </marquee>
 
@@ -275,8 +275,8 @@
                         <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>{{Auth::User()->name}}</b></span>
-                                <small class="text-end font-w400">Anggie@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>{{Auth()->user()->name}}</b></span>
+                                <small class="text-end font-w400">{{Auth()->user()->email}}</small>
                             </div>
                         </a>
 
@@ -377,7 +377,7 @@
                                     <div class="col-xl-8 mt-5" style="margin-top: 5%;">
                                         <h6 class="card-title" style="font-weight: bold; font-size: 25px;">Selamat
                                             Datang
-                                            {{Auth::User()->name}}!</h6>
+                                            {{Auth()->user()->name}}!</h6>
                                         <span class="" style="font-size: 16px;">Bekerja lebih mudah dan cepat
                                             bersama
                                             kami. Jangan lupa ikuti trainingnya.....</span>
@@ -466,7 +466,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-xl-8 col-lg-8 col-sm-8">
+                                    <div class="col-xl-12 col-lg-8 col-sm-8">
                                         <div class="card">
                                             <div class="card-header">
                                                 <h4 class="card-title">Statistik Gaji Per Bulan</h4>
@@ -476,7 +476,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-xxl-4 col-lg-4">
+                                    {{-- <div class="col-xl-4 col-xxl-4 col-lg-4">
                                         <div class="card">
                                             <div class="card-header border-0 pb-0">
                                                 <h4 class="card-title">Jam Kerja</h4>
@@ -536,7 +536,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

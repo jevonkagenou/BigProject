@@ -221,8 +221,8 @@
                         <a style="cursor: default;" class="nav-link" role="button" data-bs-toggle="dropdown">
                             <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="Profil" />
                             <div class="header-info ms-3">
-                                <span class="font-w600 ">Hi,<b>Anggie</b></span>
-                                <small class="text-end font-w400">Anggie@gmail.com</small>
+                                <span class="font-w600 ">Hi,<b>{{Auth()->user()->name}}</b></span>
+                                <small class="text-end font-w400">{{Auth()->user()->email}}</small>
                             </div>
                         </a>
 
@@ -382,11 +382,25 @@
                                             @foreach ($presence->reverse() as $data)
                                                 <tr class="text-center">
                                                     <td>{{ $loop->count - $loop->iteration + 1 }}</td>
-                                                    <td @if ($data->type == 'Masuk' && $data->late) style="color: red;" @endif>{{ $data->type }}</td>
+                                                    <td>
+                                                        @if ($data->enter)
+                                                            @if ($data->late)
+                                                                <span style="color: red;">{{ 'Masuk Terlambat' }}</span>
+                                                            @else
+                                                                {{ 'Masuk' }}
+                                                            @endif
+                                                        @elseif ($data->go_home)
+                                                            {{ 'Pulang' }}
+                                                        @elseif ($data->overtime)
+                                                            {{ 'Lembur' }}
+                                                        @elseif ($data->home_overtime)
+                                                            {{ 'Pulang Lembur' }}
+                                                        @endif
+                                                    </td>
                                                     <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
                                                 </tr>
                                             @endforeach
-                                        </tbody>                             
+                                        </tbody>                                                                                                                                                            
                                     </table>
                                 </div>
                             </div>

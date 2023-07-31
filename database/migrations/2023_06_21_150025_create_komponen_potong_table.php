@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_komponenptg');
             $table->string('tipe_komponenptg');
-            $table->string('uang_potong')->nullable();
+            $table->string('uang_potong')->nullable();            
             $table->timestamps();
         });
     }

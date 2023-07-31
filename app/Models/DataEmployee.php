@@ -23,4 +23,9 @@ class DataEmployee extends Model
     public function OtherAllowances(){
         return $this->hasMany(OtherAllowances::class);
     }
+
+    public function presence()
+    {
+        return $this->hasMany(Presence::class);
+    }
 }

@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\kompdapat;
 use App\Models\komppotong;
+use App\Models\DataEmployee;
 use Illuminate\Http\Request;
 use App\Models\Payroll;
 use App\Models\slip_gaji;
+use App\Models\DataPayroll;
 
 class SalaryConclusionController extends Controller
 {
@@ -31,4 +33,19 @@ class SalaryConclusionController extends Controller
         // dd($data);
         return view;
     }
+
+    public function DetailSalary(){
+        // $showData = DataEmployee::all();
+        // $employe =  $showData->id;
+        // $longname = DataPayroll::where('data_employee_id', $employe)->get();
+        $data_payrolls = DataPayroll::with('DataEmployee')->get();
+        $total = DataPayroll::with('kompdapat')->get();
+
+        $tittle = 'Detail Ringkasan Gaji';
+
+        return view('Admin.EmployeeDetailSalarySummary', compact('data_payrolls', 'tittle', 'total'));
+    }
+
+
+
 }

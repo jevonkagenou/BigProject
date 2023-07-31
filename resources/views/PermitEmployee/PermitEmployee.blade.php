@@ -27,7 +27,10 @@
     <!-- Custom Stylesheet -->
     <link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    {{-- toaster --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body>
@@ -326,7 +329,7 @@
                             text-align: center;
                         }
 
-                      
+
                         .responsive-button {
                             padding: 5px;
                         }
@@ -345,7 +348,7 @@
                                     <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal"
                                         data-bs-target=".bd-example-modal-lg"><i class="fa fa-plus color-info"></i>
                                         <span class="text-center">
-                                            Tambah Pengajuan
+                                              Pengajuan
                                         </span>
                                     </button>
                                 </div>
@@ -375,35 +378,37 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 mb-4 d-flex justify-content-end mt-3">
-                                        <form action="{{ route('PermitEmployee') }}" method="GET" class="d-flex">
-                                            <div class="flex-grow-5">
-                                                <select class="form-select" name="status" id="status">
+                                    <div class="row ms-auto">
+                                        <form action="{{ route('PermitEmployee') }}" method="GET" class="d-flex" style="justify-content: end">
+                                            <div class="col-lg-2 px-1">
+                                                <select class="form-select" name="tipe" id="tipe">
                                                     <option value="">Semua</option>
-                                                    <option value="Menunggu"
-                                                        {{ isset($_GET['status']) && $_GET['status'] == 'Menunggu' ? 'selected' : '' }}>
-                                                        Menunggu</option>
-                                                    <option value="Ditolak"
-                                                        {{ isset($_GET['status']) && $_GET['status'] == 'Ditolak' ? 'selected' : '' }}>
-                                                        Ditolak</option>
-                                                    <option value="Diterima"
-                                                        {{ isset($_GET['status']) && $_GET['status'] == 'Diterima' ? 'selected' : '' }}>
-                                                        Diterima</option>
+                                                    <option value="Izin" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Izin') selected @endif>Izin</option>
+                                                    <option value="Sakit" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Sakit') selected @endif>Sakit</option>
+                                                    <option value="Cuti_Khusus" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Cuti_Khusus') selected @endif>Cuti Khusus</option>
+                                                    <option value="Cuti_Tahunan" @if(isset($_GET['tipe']) && $_GET['tipe'] == 'Cuti_Tahunan') selected @endif>Cuti Tahunan</option>
                                                 </select>
                                             </div>
-                                            <div class="col-xl-4 ms-3">
-                                                <button class="btn btn-xs btn-danger" type="submit"><i
-                                                        class="fas fa-search"></i></button>
+                                            <div class="col-lg-2 px-1">
+                                                <select class="form-select" name="status" id="status">
+                                                    <option value="">Semua</option>
+                                                    <option value="Menunggu" @if(isset($_GET['status']) && $_GET['status'] == 'Menunggu') selected @endif>Menunggu</option>
+                                                    <option value="Ditolak" @if(isset($_GET['status']) && $_GET['status'] == 'Ditolak') selected @endif>Ditolak</option>
+                                                    <option value="Diterima" @if(isset($_GET['status']) && $_GET['status'] == 'Diterima') selected @endif>Diterima</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-1">
+                                                <button class="btn btn-xs btn-danger" type="submit"><i class="fas fa-search"></i></button>
                                             </div>
                                         </form>
-                                    </div>
+                                </div>
                                 </div>
                                 <div class="table-responsive">
                                     <table id="example5" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr class="text-center">
-                                                <th>Tanggal Pengajuan</th>
-                                                <th>Tanggal Cuti</th>
+                                                <th>Awal Izin</th>
+                                                <th>Akhir Izin</th>
                                                 <th>Jumlah Hari</th>
                                                 <th>Tipe</th>
                                                 <th>Status</th>
@@ -413,8 +418,8 @@
                                         <tbody class="text-center">
                                             @foreach ($data as $approve)
                                                 <tr>
-                                                    <td>{{ $approve->submission_date }}</td>
-                                                    <td>{{ $approve->date_leave }}</td>
+                                                    <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $approve->start_date)->format('d M Y') }}</td>
+                                                    <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $approve->date_leave)->format('d M Y') }}</td>
                                                     <td>{{ $approve->total_day }}</td>
                                                     <td>{{ $approve->tipe }}</td>
                                                     <td>
@@ -473,26 +478,31 @@
                                         </div>
                                         <hr>
                                         <div class="row g-0">
-                                            <h6 class="modal-title">Tanggal Izin</h6><br>
-                                            <div class="col-xl-12 col-sm-12  col-12">
-                                                <input type="date" name="submission_date"
-                                                    class="form-control btn-xs">
+                                            <h6 class="modal-title">Tipe</h6>
+                                            <select id="tipeIzin" name="tipe" class="default-select form-control">
+                                                <option value="" selected>Tipe</option>
+                                                <option value="Izin">Izin</option>
+                                                <option value="Sakit">Sakit</option>
+                                                <option value="Cuti">Cuti</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <div class="row g-0" id="lampiranContainer" style="display: none;">
+                                            <h6 class="modal-title">Lampiran</h6><br>
+                                            <div class="col">
+                                                <input type="file" class="form-control btn-xs lampiran-input" id="lampian" name="lampiran" multiple>
                                             </div>
                                         </div>
                                         <hr>
                                         <div class="row d-flex">
                                             <div class="col-6">
-                                                <h6 class="modal-title">Tanggal Izin</h6>
-                                                <input type="date" name="date_leave" class="form-control">
+                                                <h6 class="modal-title">Awal Izin</h6>
+                                                <input type="date" name="start_date" class="form-control">
                                             </div>
-                                            <div class="col-xl-6 col-12">
-                                                <h6 class="modal-title">Tipe</h6>
-                                                <select name="tipe" class="default-select form-control">
-                                                    <option value="" selected>Tipe</option>
-                                                    <option value="Izin">Izin</option>
-                                                    <option value="Sakit">Sakit</option>
-                                                    <option value="Cuti">Cuti</option>
-                                                </select>
+                                            <div class="col-6">
+                                                <h6 class="modal-title">Akhir Izin</h6>
+                                                <input type="date" name="date_leave"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <hr>
@@ -545,11 +555,47 @@
     <script src="js/dlabnav-init.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/styleSwitcher.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         CKEDITOR.replace('editor');
     </script>
+    <script>
+        $(document).ready(function() {
+            // Mendengarkan perubahan pada dropdown
+            $('#tipeIzin').on('change', function() {
+                var selectedTipe = $(this).val();
+                if (selectedTipe === 'Sakit') {
+                    $('#lampiranContainer').show();
+                } else {
+                    $('#lampiranContainer').hide();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            @if ($errors->any())
+                toastr.error('{{ $errors->first('error') }}');
+            @endif
+        });
+    </script>
+<script>
+    $(document).ready(function() {
+        // Mendengarkan perubahan pada dropdown
+        $('#tipeIzin').on('change', function() {
+            var selectedTipe = $(this).val();
+            if (selectedTipe === 'Sakit') {
+                $('#lampiranContainer').show();
+            } else {
+                $('#lampiranContainer').hide();
+            }
+        });
+    });
+</script>
+
     <script>
         var isAlternateLogo = false;
         var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
@@ -621,7 +667,30 @@
         });
     });
 </script>
+    @if(Session::has('error'))
+        <script>
 
+        toastr.options =
+        {
+            "timeOut"       : 0, // Set timeOut to 0 to make it sticky
+            "closeButton"   : true,
+            "progressBar"   : true
+        }
+        toastr.error("{{ session('error') }}");
+        </script>
+    @endif
+    @if(Session::has('success'))
+        <script>
+
+        toastr.options =
+        {
+            "timeOut"       : 0, // Set timeOut to 0 to make it sticky
+            "closeButton"   : true,
+            "progressBar"   : true
+        }
+        toastr.success("{{ session('success') }}");
+        </script>
+    @endif
 
 </body>
 

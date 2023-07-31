@@ -42,7 +42,7 @@
 	<style>
 		.hover-red:hover .svg{
             color: #EE3232 !important;
-            fill:red !important;        
+            fill:red !important;
         }
         .dlabnav .metismenu a{
             color: #9FA4A6;
@@ -55,7 +55,7 @@
             fill: red;
         }
 	</style>
-    
+
      <div id="main-wrapper">
         <div class="nav-header ">
             <a href="index.html" class="brand-logo">
@@ -766,14 +766,14 @@
                 <ul class="metismenu mm-show" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" style="cursor: default;" role="button" data-bs-toggle="dropdown">
-                            <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt="" />
+                            <img src="{{ asset('gambar/' . auth()->user()->foto) }}" width="20" alt="" />
                             <div class="header-info ms-3">
                                 <span class="font-w600 ">Hi,<b>Admin</b></span>
                                 <small class="text-end font-w400 ">admin@gmail.com</small>
                             </div>
                         </a>
                     </li>
-                    <li><a class="ai-icon hover-red" href="/" aria-expanded="false">
+                    <li><a class="ai-icon hover-red" href="/DashboardAdmin" aria-expanded="false">
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" style="font-size: 80px !important"
                                 height="100" viewBox="0 -960 960 960" width="100">
                                 <path
@@ -934,7 +934,7 @@
 											</tbody>
 										</table>
 									</div>
-                                   
+
                         	</div>
                     </div>
 					</div>
@@ -1002,7 +1002,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        
+
         <!--**********************************
             Footer end
         ***********************************-->

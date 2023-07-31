@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('foto')->default('user.png');
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('role')->default('karyawan')->nullable();
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- PAGE TITLE HERE -->
-	<title>Dompet : Payment Admin Template</title>
+	<title>Kalopsia</title>
 
 	<!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/P55dtZjM/Logo-A-1.png" />
@@ -222,7 +222,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="mm-active"><a class="ai-icon hover-red  mm-active" href="/"
+                    <li class="mm-active"><a class="ai-icon hover-red  mm-active" href="/DashboardAdmin"
                             aria-expanded="false">
                             <svg class="red-icon" xmlns="http://www.w3.org/2000/svg"
                                 style="font-size: 80px !important" height="100" viewBox="0 -960 960 960"
@@ -332,45 +332,50 @@
                                             Ekspor
                                         </button>
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="table-responsive mt-3">
                                     <table id="example3" class="display" style="min-width: 845px">
                                         <thead class="text-center">
                                             <tr>
-                                                <th>No</th>
-                                                <th colspan="2">Nama Karyawan</th>
-                                                <th>ID Karyawan</th>
-                                                <th>Gaji Pokok</th>
-                                                <th>Uang Lembur</th>
-                                                <th>Tunjangan Transportasi</th>
-                                                <th>Tunjangan Pulsa</th>
-                                                <th>Tunjangan Lainnya</th>
-                                                <th>Koperasi</th>
-                                                <th>Denda Keterlambatan</th>
-                                                <th>Total Tunjangan</th>
-                                                <th>Total Potongan</th>
-                                                <th>Action</th>
+                                                <th scope="col">No</th>
+                                                <th scope="col" colspan="2">Nama Karyawan</th>
+                                                <th scope="col">ID Karyawan</th>
+                                                <th scope="col">Gaji Pokok</th>
+                                                <th scope="col">Uang Lembur</th>
+                                                <th scope="col">Tunjangan Pulsa</th>
+                                                <th scope="col">Koperasi</th>
+                                                <th scope="col">Tunjangan Lainnya</th>
+                                                <th scope="col">Denda Keterlambatan</th>
+                                                <th scope="col">Total Tunjangan</th>
+                                                <th scope="col">Total Potongan</th>
+                                                <th scope="col">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php
+                                                $no = 1;
+                                            @endphp
+                                            @foreach ($data_payrolls as $row)
+                                            @foreach ($total as $data)
+
+
                                             <tr class="text-center">
-                                                <td>1</td>
+                                                <td scope="row">{{ $no++ }}</td>
                                                 <td>
                                                     <div style="display: flex; align-items: center;">
                                                         <img src="images/avatar/1.jpg" width="40" alt="" class="rounded-image" />
                                                     </div>
                                                 </td>
-                                                <td>Karyawan Satu</td>
-                                                <td>10101</td>
-                                                <td>10101</td>
-                                                <td>10101</td>
-                                                <td>10101</td>
-                                                <td>10101</td>
-                                                <td>10101</td>
-                                                <td>10101</td>
-                                                <td>10101</td>
-                                                <td>10101</td>
-                                                <td>10101</td>
+                                                <td>{{$row->DataEmployee->longname}}</td>
+                                                <td>{{$row->id}}</td>
+                                                <td>{{$row->basic_salary}}</td>
+                                                <td>{{$row->overtime_pay}}</td>
+                                                <td>{{$row->credit_allowance}}</td>
+                                                <td></td>
+                                                <td>{{$data->uang_dapat}}</td>
+                                                <td>{{$row->salary_cut}}</td>
+                                                <td></td>
+                                                <td></td>
                                                 <td>
                                                     <div class="d-flex align-items-center sweetalert">
                                                         <a type="button" class="px-3 btn" data-bs-target="" data-bs-toggle="modal">
@@ -382,10 +387,12 @@
                                                             </svg>
                                                         </a>
                                                     </div>
-                                                </td>                                                
+                                                </td>
+                                                @endforeach
+                                                @endforeach
                                             </tr>
                                         </tbody>
-                                    </table>                                    
+                                    </table>
                                 </div>
                             </div>
                         </div>
