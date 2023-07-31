@@ -102,25 +102,26 @@
                                                     <div class="modal-body">
                                                         <div class="row g-0">
                                                             <h6>Nama :</h6>
-                                                            <label>{{ \Illuminate\Support\Str::ucfirst($approve->User->name) }}</label>
+                                                            <label>{{ $approve->User->name }}</label>
                                                             <h6>Tanggal Pengajuan :</h6>
-                                                            <label>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $approve->submission_date)->format('d M Y') }}</label>
+                                                            <label>{{ \Carbon\Carbon::parse($approve->start_date)->format('d M Y') }}</label>
                                                             <h6>Tanggal Cuti :</h6>
-                                                            <label>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $approve->date_leave)->format('d M Y') }}</label>
+                                                            <label>{{ \Carbon\Carbon::parse($approve->date_leave)->format('d M Y') }}</label>
                                                             <h6>Jumlah hari :</h6>
-                                                            <label>{{ $approve->total_day }}</label> 
+                                                            <label>{{ $approve->total_day }}</label>
                                                             <h6>Jenis Cuti :</h6>
-                                                            <label>{{ $approve->tipe }}</label> 
+                                                            <label>{{ $approve->tipe }}</label>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                         @endforeach
                                     </tbody>
-                                </table>                         
+                                </table>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>

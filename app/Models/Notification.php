@@ -10,17 +10,17 @@ class Notification extends Model
     /**
      * Get the permit employee associated with the notification.
      */
-    public function permitEmployee()
-    {
-        return $this->belongsTo(PermitEmployee::class, 'status');
-    }
-
+    protected $fillable = ['reason', 'is_read', 'user_id', 'status'];
     /**
      * Get the data employee associated with the notification.
      */
     public function dataEmployee()
     {
         return $this->belongsTo(DataEmployee::class, 'user_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
 }

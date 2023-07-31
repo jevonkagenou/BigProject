@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Announcement;
 use App\Models\ClockSetting;
 use App\Models\slip_gaji;
+use Spatie\Permission\Models\Role;
 
 
 class RouteController extends Controller
@@ -80,7 +81,7 @@ class RouteController extends Controller
     }
     public function EmployeeAdmin(){
         $data = DataEmployee::all();
-        return view('Admin.EmployeeAdmin', ['tittle'=>'Karyawan'], compact('data'));
+        return view('CreateEmployee.CreateEmployee', ['tittle'=>'Karyawan'], compact('data'));
     }
 
     public function SummaryofComponentSalary(){
@@ -102,9 +103,22 @@ class RouteController extends Controller
             ->get();
         $clockSetting = ClockSetting::findOrFail(1);
 
-        $users = User::all();
+        if ($role) {
+            // Menggunakan eager loading untuk mengambil data kehadiran dari pengguna dengan peran "Karyawan"
+            $presence = User::query()
+                ->whereHas('roles', function ($query) use ($role) {
+                    $query->where('roles.id', $role->id);
+                })
+                ->with(['presence' => function ($query) {
+                    $query->whereDate('created_at', '=', now()->toDateString());
+                }])
+                ->get();
 
-        return view('PresenceAdmin.Presence', compact('presence','clockSetting'));
+            return view('PresenceAdmin.Presence', compact('presence'));
+        }
+
+        // Jika peran "Karyawan" tidak ditemukan, return data kosong atau berikan pesan kesalahan
+        return view('PresenceAdmin.Presence', compact('presence'))->withErrors('Peran "Karyawan" tidak ditemukan.');
     }
 
 
