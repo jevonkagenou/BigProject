@@ -13,15 +13,14 @@ return new class extends Migration
     {
         Schema::create('presence', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');            
+            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('enter');
             $table->string('go_home');
             $table->string('overtime');
             $table->string('home_overtime');
             $table->datetime('time');
             $table->boolean('late');
-            $table->string('wages')->nullable();
-            $table->string('picture');
+            $table->decimal('wages_per_hour', 10, 2)->nullable(); // Kolom untuk menyimpan tarif gaji lembur per jam
             $table->timestamps();
         });
     }

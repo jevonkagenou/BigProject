@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Notification::class);
     }
+    // Di dalam model User
+    public function DataEmployee()
+    {
+        return $this->hasOne(DataEmployee::class); // Misalnya, relasi one-to-one
+    }
 }

@@ -1046,7 +1046,7 @@
                         </div>
 
                         {{-- @foreach ($payrolls as $row) --}}
-                        @foreach ($payroll as $modal)                            
+                        @foreach ($payrolls as $modal)                            
                         
                         <div class="modal fade bd-example-modal-lg" id="modal-{{$modal->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-{{$modal->id}}-label" aria-hidden="true">
                             <div class="modal-dialog modal-lg ">
@@ -1085,16 +1085,16 @@
                                                             <p>Rp. {{$modal->dataPayroll->overtime_pay}}</p>
                                                         </div>
                                                     </div>
-                                                    @foreach ($data as $overtime)
+                                                    {{-- @foreach ($data as $overtime) --}}
                                                     <div class="row">
                                                         <div class="col-xl-5 col-5">
                                                             <p>Jam x 26.000</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p>{{ $overtime->time }}</p>
+                                                            <p>{{ $gajiTotal[$item->dataEmployee->user_id] }}</p>
                                                         </div>
                                                     </div>
-                                                    @endforeach
+                                                    {{-- @endforeach --}}
                                                     <hr />
                                                     <div class="row">
                                                         <div class="col-xl-5 col-5">
