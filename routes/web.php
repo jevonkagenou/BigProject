@@ -27,6 +27,8 @@ use App\Http\Controllers\ImportEmployeeController;
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\EmployeePresence;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\SlipGajiKomponenController;
+use App\Http\Controllers\SummaryofComponentSalaryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,7 +78,7 @@ Route::group(['middleware' => ['role:Admin']], function () {
     Route::get('/AddAccount', [BankController::class, 'AddAccount'])->name('AddAccount');
     Route::post('/InsertAccount', [BankController::class, 'InsertAccount'])->name('InsertAccount');
     Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
-    Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
+    Route::get('/SummaryofComponentSalary', [SummaryofComponentSalaryController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
     Route::post('/save_notifikasi/{id}', [NotificationController::class, 'saveNotifikasi'])->name('save.notifikasi');
 
     //Work Schedule
