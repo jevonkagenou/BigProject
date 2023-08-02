@@ -450,7 +450,7 @@
                                                         style="width: 90px; float: left; border-radius: 50%;"
                                                         alt="">
                                                 </a>
-                                            @else 
+                                            @else
                                                 {{-- @if (Auth::user()->foto) --}}
                                                     <a href="/profile" class="header-widget ms-auto" title="Akun Saya">
                                                         <img src="{{ asset('images/profile/' . $admin->foto) }}"

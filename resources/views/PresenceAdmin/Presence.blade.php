@@ -30,6 +30,7 @@
     <!-- FAVICONS ICON -->
     <!-- Clockpicker -->
     <link href="vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style>
         /* kebijakan presensi */
@@ -1331,7 +1332,7 @@
         <!--**********************************
                         Main wrapper end
                     ***********************************-->
-
+    </div>
         <!--**********************************
                         Scripts
                     ***********************************-->
@@ -1345,23 +1346,32 @@
                         </div>
                     </div>
         <!-- Required vendors -->
-        <script src="vendor/global/global.min.js"></script>
-        <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+        <script src="{{ asset('vendor/global/global.min.js')}}"></script>
+        <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js')}}"></script>
         <!-- Apex Chart -->
-        <script src="vendor/apexchart/apexchart.js"></script>
+        <script src="{{ asset('vendor/apexchart/apexchart.js')}}"></script>
 
         <!-- Datatable -->
-        <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-        <script src="js/plugins-init/datatables.init.js"></script>
+        <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{ asset('js/plugins-init/datatables.init.js')}}"></script>
+        <script>
+        $(document).ready(function() {
+            $('#nama-tabel').DataTable({
+                searching: true,
+                // tambahkan opsi lainnya di sini jika diperlukan
+            });
+            console.log('gembes kocak')
+        });
+    </script>
 
-        <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js')}}"></script>
 
-        <script src="js/custom.min.js"></script>
-        <script src="js/dlabnav-init.js"></script>
-        <script src="js/demo.js"></script>
-        <script src="js/styleSwitcher.js"></script>
+        <script src="{{ asset('js/custom.min.js')}}"></script>
+        <script src="{{ asset('js/dlabnav-init.js')}}"></script>
+        <script src="{{ asset('js/demo.js')}}"></script>
+        <script src="{{ asset('js/styleSwitcher.js')}}"></script>
         <!-- Clockpicker init -->
-        <script src="js/plugins-init/clock-picker-init.js"></script>
+        <script src="{{ asset('js/plugins-init/clock-picker-init.js')}}"></script>
         <script>
             var isAlternateLogo = false;
             var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
@@ -1406,27 +1416,29 @@
         </script> -->
         <!-- Daterangepicker -->
     <!-- clockpicker -->
-    <script src="vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+    <script src="{{ asset('vendor/clockpicker/js/bootstrap-clockpicker.min.js')}}"></script>
     <!-- asColorPicker -->
-    <script src="vendor/jquery-asColor/jquery-asColor.min.js"></script>
-    <script src="vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
-    <script src="vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+    <script src="{{ asset('vendor/jquery-asColor/jquery-asColor.min.js')}}"></script>
+    <script src="{{ asset('vendor/jquery-asGradient/jquery-asGradient.min.js')}}"></script>
+    <script src="{{ asset('vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js')}}"></script>
     <!-- Material color picker -->
-    <script src="vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="{{ asset('vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}"></script>
 
 
 
     <!-- Daterangepicker -->
-    <script src="js/plugins-init/bs-daterange-picker-init.js"></script>
+    <script src="{{ asset('js/plugins-init/bs-daterange-picker-init.js')}}"></script>
     <!-- Clockpicker init -->
-    <script src="js/plugins-init/clock-picker-init.js"></script>
+    <script src="{{ asset('js/plugins-init/clock-picker-init.js')}}"></script>
     <!-- asColorPicker init -->
-    <script src="js/plugins-init/jquery-asColorPicker.init.js"></script>
+    <script src="{{ asset('js/plugins-init/jquery-asColorPicker.init.js')}}"></script>
     <!-- Material color picker init -->
-    <script src="js/plugins-init/material-date-picker-init.js"></script>
+    <script src="{{ asset('js/plugins-init/material-date-picker-init.js')}}"></script>
 
-	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="{{ asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     @if(Session::has('error'))
         <script>
 
