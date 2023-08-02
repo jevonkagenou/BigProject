@@ -130,7 +130,7 @@ let dataSet = [
 	});
 
 	// dataTable5
-	var table = $('#example5').DataTable({
+	var table = $('#dataTable5').DataTable({
 		searching: true,
 		paging:true,
 		select: false,
@@ -145,7 +145,21 @@ let dataSet = [
 
 	});
 
-	// dataTable6
+	// dataTable5
+		var table = $('#example5').DataTable({
+			searching: true,
+			paging:true,
+			select: false,
+			info: false,
+			lengthChange:false ,
+			language: {
+			paginate: {
+			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
+			}
+		  }
+
+		});
 		var table = $('#example6').DataTable({
 			searching: true,
 			paging:true,
