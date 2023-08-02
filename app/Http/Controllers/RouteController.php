@@ -81,14 +81,14 @@ class RouteController extends Controller
     }
     public function EmployeeAdmin(){
         $data = DataEmployee::all();
-        return view('CreateEmployee.CreateEmployee', ['tittle'=>'Karyawan'], compact('data'));
+        return view('Admin.EmployeeAdmin', ['tittle'=>'Karyawan'], compact('data'));
     }
 
-    public function SummaryofComponentSalary(){
-        return view('Admin.SummaryofComponentSalary',[
-            'tittle'=>'Ringkasan Gaji Perkomponen'
-        ]);
-    }
+    // public function SummaryofComponentSalary(){
+    //     return view('Admin.SummaryofComponentSalary',[
+    //         'tittle'=>'Ringkasan Gaji Perkomponen'
+    //     ]);
+    // }
     public function PresenceApproval(){
         return view('Admin.PresenceApproval',[
             'tittle'=>'Approval Presensi'
@@ -143,7 +143,7 @@ class RouteController extends Controller
         ]);
     }
     public function AddEmployee(){
-        return view('CreateEmployee.CreateEmployee',[
+        return view('Admin.AddEmployee',[
             'tittle'=>'Tambah Karyawan'
         ]);
     }

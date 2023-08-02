@@ -67,6 +67,9 @@
         .red-icon path {
             fill: red;
         }
+        select.form-select {
+            font-family: "Cairo", sans-serif;
+        }
     </style>
     <div id="main-wrapper">
         <div class="nav-header ">
@@ -128,7 +131,7 @@
                                                 <path
                                                     d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                                             </svg> Profil</a></li>
-                                    <li><a class="dropdown-item" href="{{url('logout')}}"><svg
+                                    <li><a class="dropdown-item" href="{{ url('logout') }}"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 fill="#969ba0" viewBox="0 0 512 512"
                                                 style="margin-left: 10px; margin-bottom: 7px; padding-right:5px">
@@ -266,7 +269,8 @@
                                     <div class="row">
                                         <div class="profile-info" style="display: flex; justify-content: center;">
                                             <div class="profile-photo">
-                                                <img src="{{asset('images/profile/user.png')}}" class="img-fluid rounded-circle"
+                                                <img src="{{ asset('images/profile/user.png') }}"
+                                                    class="img-fluid rounded-circle"
                                                     style="width: 120px; height: 120px;" alt="">
                                             </div>
                                         </div>
@@ -299,8 +303,8 @@
                                                 <div class="mb-3">
                                                     <label for="address" class="form-label text-black">Nama
                                                         Lengkap</label>
-                                                    <input type="text" class="form-control" name="name"
-                                                        id="name" placeholder="Nama Lengkap" required="">
+                                                    <input type="text" class="form-control border-dark"
+                                                        name="name" value="{{ old('name') }}" id="name" placeholder="Nama Lengkap">
                                                     @if ($errors->has('name'))
                                                         <div class="alert alert-danger" role="alert">
                                                             <i class="bi bi-x-lg"></i> {{ $errors->first('name') }}
@@ -315,9 +319,9 @@
                                                     <div class="col-md-6 mb-3">
                                                         <label for="firstName" class="form-label text-black">Tempat
                                                             Lahir</label>
-                                                        <input type="text" class="form-control" name="place_birth"
-                                                            id="place_birth" placeholder="Tempat Lahir"
-                                                            value="" required="">
+                                                        <input type="text" class="form-control border-dark"
+                                                            name="place_birth" value="{{ old('place_birth') }}" id="place_birth"
+                                                            placeholder="Tempat Lahir" value="">
                                                         @if ($errors->has('place_birth'))
                                                             <div class="alert alert-danger" role="alert">
                                                                 <i class="bi bi-x-lg"></i>
@@ -331,9 +335,9 @@
                                                     <div class="col-md-6 mb-3">
                                                         <label for="lastName" class="form-label text-black">Tanggal
                                                             Lahir</label>
-                                                        <input type="date" class="form-control" name="date"
-                                                            id="date" placeholder="" value=""
-                                                            required="">
+                                                        <input type="date" class="form-control border-dark"
+                                                            name="date" value="{{ old('date') }}" id="date" placeholder=""
+                                                            value="">
                                                         @if ($errors->has('date'))
                                                             <div class="alert alert-danger" role="alert">
                                                                 <i class="bi bi-x-lg"></i>
@@ -351,14 +355,14 @@
                                                         <label for="lastName" class="form-label text-black">Jenis
                                                             Kelamin</label>
                                                         <div class="form-check custom-radio mb-2">
-                                                            <input id="gender1" name="gender" value="Laki-Laki"
-                                                                type="radio" class="" required>
+                                                            <input id="gender1" name="gender"
+                                                                type="radio" value="Laki-Laki" {{ "Laki-Laki" === old('gender') ? 'selected' : '' }} class="border-dark">
                                                             <label class="form-check-label"
                                                                 for="gender1">Laki-Laki</label>
                                                         </div>
                                                         <div class="form-check custom-radio mb-2">
-                                                            <input id="gender2" name="gender" value="Perempuan"
-                                                                type="radio" class="" required>
+                                                            <input id="gender2" name="gender"
+                                                                type="radio" value="Perempuan" {{ "Perempuan" === old('gender') ? 'selected' : '' }} class="border-dark">
                                                             <label class="form-check-label"
                                                                 for="gender2">Perempuan</label>
                                                         </div>
@@ -370,66 +374,61 @@
                                                         @endif
                                                     </div>
                                                     <div class="col-md-6 mb-3">
-                                                        <label for="firstName" class="form-label text-black">Status
+                                                        <label for="marry" class="form-label text-black">Status
                                                             Perkawinan</label>
-                                                        <select name="marry" class="default-select form-control"
-                                                            id="">
-                                                            <option value="" selected>Status</option>
+                                                        <select name="marry" class="form-select border border-dark"
+                                                            id="marry">
+                                                            <option value=""disabled selected>Status</option>
                                                             <option value="sudah Menikah">Sudah Menikah</option>
                                                             <option value="Belum Menikah">Belum Menikah</option>
                                                         </select>
                                                         @if ($errors->has('marry'))
-                                                            <div class="alert alert-danger" role="alert">
+                                                            <div class="alert alert-danger mt-2" role="alert">
                                                                 <i class="bi bi-x-lg"></i>
                                                                 {{ $errors->first('marry') }}
                                                             </div>
                                                         @endif
-                                                        <div class="invalid-feedback">
-                                                            Valid first name is required.
-                                                        </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="row">
                                                     <div class="col-md-6 mb-3">
-                                                        <label class="form-label text-black">Golongan Darah</label>
-                                                        <select name="blood_group" id="region"
-                                                            class="default-select form-control">
-                                                            <option value="A">A</option>
-                                                            <option value="B">B</option>
-                                                            <option value="AB">AB</option>
-                                                            <option value="O">O</option>
+                                                        <label for="blood_group"
+                                                            class="form-label text-black">Golongan Darah</label>
+                                                        <select name="blood_group" id="blood_group"
+                                                            class="form-select border border-dark">
+                                                            <option value=""disabled selected>Pilih Golongan Darah
+                                                            </option>
+                                                            <option value="A" {{ "A" === old('blood_group') ? 'selected' : '' }}>A</option>
+                                                            <option value="B" {{ "B" === old('blood_group') ? 'selected' : '' }}>B</option>
+                                                            <option value="AB" {{ "AB" === old('blood_group') ? 'selected' : '' }}>AB</option>
+                                                            <option value="O" {{ "O" === old('blood_group') ? 'selected' : '' }}>O</option>
                                                         </select>
                                                         @if ($errors->has('blood_group'))
-                                                            <div class="alert alert-danger" role="alert">
+                                                            <div class="alert alert-danger mt-2" role="alert">
                                                                 <i class="bi bi-x-lg"></i>
                                                                 {{ $errors->first('blood_group') }}
                                                             </div>
                                                         @endif
-                                                        <div class="invalid-feedback">
-                                                            Valid first name is required.
-                                                        </div>
                                                     </div>
                                                     <div class="col-md-6 mb-3">
-                                                        <label class="form-label text-black">Agama</label>
+                                                        <label for="region"
+                                                            class="form-label text-black">Agama</label>
                                                         <select name="region" id="region"
-                                                            class="default-select form-control wide w-100">
-                                                            <option selected>Agama</option>
-                                                            <option value="Islam">Islam</option>
-                                                            <option value="Kristen">Kristen</option>
-                                                            <option value="Buddha">Buddha</option>
-                                                            <option value="Hindu">Hindu</option>
-                                                            <option value="Konghucu">Konghucu</option>
+                                                            class="form-select wide w-100 border border-dark">
+                                                            <option value=""disabled selected>Pilih Agama</option>
+                                                            <option value="Islam"{{ "Islam" === old('region')? 'selected' : '' }}>Islam</option>
+                                                            <option value="Kristen"{{ "Kristen" === old('region')? 'selected' : '' }}>Kristen</option>
+                                                            <option value="Buddha"{{ "Buddha" === old('region')? 'selected' : '' }}>Buddha</option>
+                                                            <option value="Hindu"{{ "Hindu" === old('region')? 'selected' : '' }}>Hindu</option>
+                                                            <option value="Konghucu"{{ "Konghucu" === old('region')? 'selected' : '' }}>Konghucu</option>
                                                         </select>
                                                         @if ($errors->has('region'))
-                                                            <div class="alert alert-danger" role="alert">
+                                                            <div class="alert alert-danger mt-2" role="alert">
                                                                 <i class="bi bi-x-lg"></i>
                                                                 {{ $errors->first('region') }}
                                                             </div>
                                                         @endif
-                                                        <div class="invalid-feedback">
-                                                            Please select a valid country.
-                                                        </div>
                                                     </div>
                                                 </div><br>
 
@@ -438,8 +437,9 @@
                                                 <div class="mb-3">
                                                     <label for="email" class="form-label text-black">E-mail <span
                                                             class="text-muted">(Optional)</span></label>
-                                                    <input type="email" name="email" class="form-control"
-                                                        id="email" placeholder="Email Anda">
+                                                    <input type="email" value="{{ old('email') }}" name="email"
+                                                        class="form-control border-dark" id="email"
+                                                        placeholder="Email Anda">
                                                     @if ($errors->has('email'))
                                                         <div class="alert alert-danger" role="alert">
                                                             <i class="bi bi-x-lg"></i> {{ $errors->first('email') }}
@@ -449,11 +449,10 @@
                                                         Please enter a valid email address for shipping updates.
                                                     </div>
                                                 </div>
-
                                                 <div class="mb-3">
-                                                    <label for="address"class="form-label text-black">No HP</label>
-                                                    <input type="text" class="form-control" name="notelp"
-                                                        id="notelp" placeholder="Nomor Anda" required="">
+                                                    <label for="notelp"class="form-label text-black">No HP</label>
+                                                    <input type="text" class="form-control border-dark"
+                                                        name="notelp" value="{{ old('notelp') }}" id="notelp" placeholder="Nomor Anda">
                                                     @if ($errors->has('notelp'))
                                                         <div class="alert alert-danger" role="alert">
                                                             <i class="bi bi-x-lg"></i>
@@ -467,11 +466,12 @@
 
                                                 <div class="mb-3">
                                                     <label for="address"class="form-label text-black">Alamat</label>
-                                                    <input type="text" class="form-control" name="address"
-                                                        id="address" placeholder="Alamat Anda" required="">
+                                                    <input type="text" class="form-control border-dark"
+                                                        name="address" value="{{ old('address') }}" id="address" placeholder="Alamat">
                                                     @if ($errors->has('address'))
                                                         <div class="alert alert-danger" role="alert">
-                                                            <i class="bi bi-x-lg"></i> {{ $errors->first('address') }}
+                                                            <i class="bi bi-x-lg"></i>
+                                                            {{ $errors->first('address') }}
                                                         </div>
                                                     @endif
                                                     <div class="invalid-feedback">
@@ -479,13 +479,13 @@
                                                     </div>
                                                 </div><br>
 
-                                        <h4 class="mb-3">Pendidikan Terakhir</h4>
+                                                <h4 class="mb-3">Pendidikan Terakhir</h4>
 
                                                 <div class="mb-3">
                                                     <label for="address2" class="text-black">Pendidikan
                                                         Terakhir</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        name="last_study" id="last_study"
+                                                    <input type="text" class="form-control text-muted border-dark"
+                                                        name="last_study" value="{{ old('last_study') }}" id="last_study"
                                                         placeholder="Pendidikan Terakhir">
                                                     @if ($errors->has('last_study'))
                                                         <div class="alert alert-danger" role="alert">
@@ -498,21 +498,21 @@
                                                 <div class="mb-3">
                                                     <label for="address2" class="text-black">Nama Institusi
                                                         Pendidikan</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        name="educational_institution" id="educational_institution"
+                                                    <input type="text" class="form-control text-muted border-dark"
+                                                        name="educational_institution" value="{{ old('educational_institution') }}" id="educational_institution"
                                                         placeholder="Nama Institusi Pendidikan">
                                                     @if ($errors->has('educational_institutio'))
                                                         <div class="alert alert-danger" role="alert">
                                                             <i class="bi bi-x-lg"></i>
-                                                            {{ $errors->first('educational_institutio') }}
+                                                            {{ $errors->first('educational_institution') }}
                                                         </div>
                                                     @endif
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="address2" class="text-black">Program Studi</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        name="study_program" id="study_program"
+                                                    <input type="text" class="form-control text-muted border-dark"
+                                                        name="study_program" value="{{ old('study_program') }}" id="study_program"
                                                         placeholder="Program Studi">
                                                     @if ($errors->has('study_program'))
                                                         <div class="alert alert-danger" role="alert">
@@ -592,11 +592,21 @@
     @if (Session::has('success'))
         <script>
             toastr.options = {
-                "timeOut": 0, // Set timeOut to 0 to make it sticky
+                "timeOut": 500, // Set timeOut to 0 to make it sticky
                 "closeButton": true,
                 "progressBar": true
             }
-            toastr.error("{{ session('success') }}");
+            toastr.success("{{ session('success') }}");
+        </script>
+    @endif
+    @if (Session::has('error'))
+        <script>
+            toastr.options = {
+                "timeOut": 500, // Set timeOut to 0 to make it sticky
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.error("{{ session('error') }}");
         </script>
     @endif
 

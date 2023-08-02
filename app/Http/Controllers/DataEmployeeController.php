@@ -10,6 +10,7 @@ use App\Models\User;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class DataEmployeeController extends Controller
 {
@@ -29,61 +30,63 @@ class DataEmployeeController extends Controller
             'marry' => 'required',
             'blood_group' => 'required',
             'region' => 'required',
-            'email' => 'required|email',
-            'notelp' => 'required',
+            'email' => 'required|email|unique:users,email', // Memastikan email unik di tabel users
+            'notelp' => 'required|numeric',
             'address' => 'required',
             'last_study' => 'required',
             'educational_institution' => 'required',
             'study_program' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif',
-        ], [
-            // Pesan error untuk aturan validasi di sini sesuai kebutuhan
         ]);
-    
+
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput($request->all());
         }
-    
-        // Simpan foto yang diunggah oleh pengguna
-        if ($request->hasFile('foto')) {
-            $file = $request->file('foto');
-            $extension = $file->getClientOriginalExtension();
-            $name = hash('sha256', time()) . '.' . $extension;
-            $file->move('foto', $name);
-        } else {
-            // Jika foto tidak diunggah, Anda dapat menentukan tindakan default di sini.
-            // Misalnya, jika foto wajib diunggah, Anda bisa mengembalikan pesan error atau menetapkan foto default.
-            $name = 'user.png'; // Nama file default
-        }
-    
-        $user = User::create([
-            'email' => $request->input('email'),
-            'password' => \Hash::make('12345'),
-            'name' => $request->input('name'),
-            'notelp' => $request->input('notelp'),
-            'foto' => $name,
-        ]);
-        $user->save();
-        $data = DataEmployee::create([
-            'name' => $request->name,
-            'place_birth' => $request->place_birth,
-            'date' => $request->date,
-            'gender' => $request->gender,
-            'marry' => $request->marry,
-            'blood_group' => $request->blood_group,
-            'region' => $request->region,
-            'email' => $request->email,
-            'notelp' => $request->notelp,
-            'address' => $request->address,
-            'last_study' => $request->last_study,
-            'educational_institution' => $request->educational_institution,
-            'study_program' => $request->study_program,
-            'foto' => $name,
-        ]);
 
-    $data->save();
-    
-        return redirect()->route('EmployeeAdmin')->with('success', 'Data Anda Telah Ditambahkan');
+        try {
+            DB::beginTransaction();
+
+            // Simpan foto yang diunggah oleh pengguna
+            if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $extension = $file->getClientOriginalExtension();
+                $name = hash('sha256', time()) . '.' . $extension;
+                $file->move('foto', $name);
+            } else {
+                $name = 'user.png';
+            }
+
+            $user = User::create([
+                'email' => $request->input('email'),
+                'password' => \Hash::make('12345'),
+                'name' => $request->input('name'),
+                'notelp' => $request->input('notelp'),
+                'foto' => $name,
+            ]);
+
+            $data = DataEmployee::create([
+                'name' => $request->name,
+                'place_birth' => $request->place_birth,
+                'date' => $request->date,
+                'gender' => $request->gender,
+                'marry' => $request->marry,
+                'blood_group' => $request->blood_group,
+                'region' => $request->region,
+                'email' => $request->email,
+                'notelp' => $request->notelp,
+                'address' => $request->address,
+                'last_study' => $request->last_study,
+                'educational_institution' => $request->educational_institution,
+                'study_program' => $request->study_program,
+                'foto' => $name,
+            ]);
+            dd($data, $user);
+            DB::commit();
+            return redirect()->route('EmployeeAdmin')->with('success', 'Data Anda Telah Ditambahkan');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
+        }
     }
 
     public function editemployee($id){
