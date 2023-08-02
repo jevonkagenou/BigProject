@@ -751,7 +751,7 @@
                                     </svg>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                    <li><a class="dropdown-item" href="/ProfilAdmin"><svg
+                                    <li><a class="dropdown-item" href="/ProfilAdmin/1"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 fill="#969ba0" viewBox="0 0 448 512"
                                                 style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
@@ -967,9 +967,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Jadwal Kerja</h4>
-                                <button type="button" class="btn btn-danger btn-xs text-end" data-bs-toggle="modal"
-                                    data-bs-target="#lihat-kebijakan">Atur Kebijakan Cuti</button>
-                                <div class="modal fade" id="lihat-kebijakan">
+                                {{-- <button type="button" class="btn btn-danger btn-xs text-end" data-bs-toggle="modal"
+                                    data-bs-target="#lihat-kebijakan">Atur Kebijakan Cuti</button> --}}
+                                {{-- <div class="modal fade" id="lihat-kebijakan">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -1023,7 +1023,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="card-body">
                                 <!-- <button id="actionButton" style="display: none;">Tombol</button> -->

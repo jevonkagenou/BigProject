@@ -497,14 +497,14 @@
                                         <div class="row d-flex">
                                             <div class="col-6">
                                                 <h6 class="modal-title">Awal Izin</h6>
-                                                <input type="date" name="start_date" class="form-control">
+                                                <input type="date" name="start_date" class="form-control" min="{{ date('Y-m-d') }}">
                                             </div>
                                             <div class="col-6">
                                                 <h6 class="modal-title">Akhir Izin</h6>
-                                                <input type="date" name="date_leave"
-                                                    class="form-control">
+                                                <input type="date" name="date_leave" class="form-control" min="{{ date('Y-m-d') }}">
                                             </div>
                                         </div>
+                                        
                                         <hr>
                                         <h6 class="modal-title">Keterangan</h6><br>
                                         <textarea class="form-control" name="description" id="editor" cols="30" rows="10"></textarea>

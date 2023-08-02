@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('home_overtime');
             $table->datetime('time');
             $table->boolean('late');
-            $table->string('wages');
+            $table->string('wages')->nullable();
             $table->string('picture');
             $table->timestamps();
         });

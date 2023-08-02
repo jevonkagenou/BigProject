@@ -26,7 +26,7 @@ use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ImportEmployeeController;
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\EmployeePresence;
-
+use App\Http\Controllers\NotificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,11 +47,12 @@ Route::middleware(['guest'])->group(function () {
 });
 Route::group(['middleware' => ['role:Admin']], function () {
 
+
     Route::get('/DashboardAdmin', [DashboardAdminController::class, 'DashboardAdmin'])->name('DashboardAdmin');
     Route::get('/AddEmployee', [RouteController::class, 'AddEmployee'])->name('AddEmployee');
     Route::get('/AddPaySlips', [RouteController::class, 'AddPayslips'])->name('AddPayslips');
     Route::get('/AdminReport', [RouteController::class, 'adminreport'])->name('adminreport');
-
+    Route::get('/ApprovalAdmin', [RouteController::class, 'ApprovalAdmin'])->name('ApprovalAdmin');
     Route::get('/SalarySummary', [SalaryConclusionController::class, 'SalarySummary'])->name('SalarySummary');
     Route::get('/PermitLeaveAdmin', [RouteController::class, 'PermitLeaveAdmin'])->name('PermitLeaveAdmin');
     Route::get('/PermitLeaveEmployee', [RouteKaryawanController::class, 'PermitLeaveEmployee'])->name('PermitLeaveEmployee');
@@ -76,6 +77,7 @@ Route::group(['middleware' => ['role:Admin']], function () {
     Route::post('/InsertAccount', [BankController::class, 'InsertAccount'])->name('InsertAccount');
     Route::get('/Schedule', [ViewEmployeeController::class, 'Schedule'])->name('Schedule');
     Route::get('/SummaryofComponentSalary', [RouteController::class, 'SummaryofComponentSalary'])->name('SummaryofComponentSalary');
+    Route::post('/save_notifikasi/{id}', [NotificationController::class, 'saveNotifikasi'])->name('save.notifikasi');
 
     //Work Schedule
     Route::get('/WorkSchedule', [WorkScheduleController::class, 'WorkSchedule'])->name('WorkSchedule');
@@ -135,9 +137,14 @@ Route::group(['middleware' => ['role:Admin']], function () {
     Route::post('/filter', [SystemAdminController::class, 'filter'])->name('filter');
 
 });
-    Route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee')->middleware('role:Karyawan');
+Route::group(['middleware' => ['role:Karyawan']], function () {
+    Route::post('/markAsRead/{id}', [NotificationController::class, 'markAsRead'])->name('markAsRead');
+    Route::post('/read-all', [NotificationController::class, 'readAll'])->name('readAll');
+
+    Route::get('/DashboardEmployee', [DashboardEmployeeController::class, 'DashboardEmployee'])->name('DashboardEmployee');
+    Route::get('/NotifyReject/{$user_id}', [DashboardEmployeeController::class, 'NotifyReject'])->name('NotifyReject');
     Route::get('/SalaryEmployee', [ViewEmployeeController::class, 'SalaryEmployee'])->name('SalaryEmployee');
-    // Approval Employee
+
     Route::get('/ApprovalEmployee', [ApprovalEmployeeController::class, 'ApprovalEmployee'])->name('ApprovalEmployee');
     Route::get('/EmployeePresence', [ViewEmployeeController::class, 'EmployeePresence'])->name('EmployeePresence');
     Route::get('/PermitEmployee', [ViewEmployeeController::class, 'PermitEmployee'])->name('PermitEmployee');
@@ -154,7 +161,7 @@ Route::group(['middleware' => ['role:Admin']], function () {
 
     Route::get('/gantipasswordEmployee', [SystemAdminController::class, 'gantipasswordEmployee']);
     Route::post('/changePasswordEmployee/{id}', [SystemAdminController::class, 'changePasswordEmployee']);
-
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');

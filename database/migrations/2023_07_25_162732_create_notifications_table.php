@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->string('status')->refrences('id')->on('permit_employees')->onDelete('cascade'); 
-            $table->string('alasan');
-            $table->string('is_read');
-            $table->foreignId('user_id')->references('id')->on('data_employees')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('reason');
+            $table->string('status')->default('Ditolak');
+            $table->dateTime('is_read')->nullable();
             $table->timestamps();
         });
     }

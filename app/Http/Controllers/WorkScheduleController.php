@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\Permission\Models\Role;
 use App\Models\WorkSchedule;
 use App\Http\Controllers\Controller;
 use App\Models\AddWorkSchedule;
@@ -23,8 +24,8 @@ class WorkScheduleController extends Controller
             'judul' => 'required',
             'isi' => 'required',
         ]);
+        return redirect()->back();
     }
-
 
     public function tampiledit(Request $request, $id)
     {
@@ -66,7 +67,7 @@ class WorkScheduleController extends Controller
 
     public function AddWorkSchedule()
     {
-        $data = User::all();
+        $data = User::where('name', '!=', 'Admin')->get();
         return view('Admin.AddWorkSchedule',compact('data'));
     }
     public function InsertWorkSchedule(Request $request)
@@ -92,8 +93,14 @@ class WorkScheduleController extends Controller
         return redirect()->back()->with('status', 'Data berhasil ditambahkan');
     }
 
+    // public function showAddWorkScheduleForm()
+    // {
+    //     // Ambil role "Karyawan" dari database
+    //     $role = Role::where('name', 'Karyawan')->first();
 
+    //     // Ambil user dengan role "Karyawan" dari database
+    //     $users = $role->users;
 
-
-
+    //     return view('addworkschedule', compact('users'));
+    // }
 }

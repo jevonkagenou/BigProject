@@ -444,13 +444,13 @@
                                             <div class="edit-icon">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </div>
-                                            @guest
+                                            {{-- @guest
                                                 <a href="/DashboardAdmin" class="header-widget" title="Akun Saya">
                                                     <img src="{{ asset('gambar/' . $admin->foto) }}" class="edit-image"
                                                         style="width: 90px; float: left; border-radius: 50%;"
                                                         alt="">
                                                 </a>
-                                            @else
+                                            @else  --}}
                                                 {{-- @if (Auth::user()->foto) --}}
                                                     <a href="/profile" class="header-widget ms-auto" title="Akun Saya">
                                                         <img src="{{ asset('images/profile/' . $admin->foto) }}"
@@ -723,16 +723,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    @if (Session::has('success'))
-        <script>
-            toastr.options = {
-                "timeOut": 5000, // Set timeOut to 0 to make it sticky
-                "closeButton": true,
-                "progressBar": true
-            }
-            toastr.success("{{ session('success') }}");
-        </script>
-    @endif
+        @if (Session::has('success'))
+            <script>
+                toastr.options = {
+                    "timeOut": 5000, // Set timeOut to 0 to make it sticky
+                    "closeButton": true,
+                    "progressBar": true
+                }
+                toastr.success("{{ session('success') }}");
+            </script>
+        @endif
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

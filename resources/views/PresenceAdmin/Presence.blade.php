@@ -854,7 +854,7 @@
                                     </svg>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" style="margin-left:-100%;">
-                                    <li><a class="dropdown-item" href="/ProfilAdmin"><svg
+                                    <li><a class="dropdown-item" href="/ProfilAdmin/1"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 fill="#969ba0" viewBox="0 0 448 512"
                                                 style="margin-left: 10px; margin-bottom: 5px; padding-right:5px">
@@ -993,7 +993,7 @@
 
                             <div class="card-body">
                                 <div class="row mb-1">
-                                    <div class="col-xl-3 col-lg-9 col-md-6 col-sm-1 mt-2">
+                                    <div class="col-xl-6 col-lg-9 col-md-6 col-sm-1 mt-2">
                                         <div class="col-md-6 col-xl-6 col-xxl-6 mb-6">
                                                 <button type="button" class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#basicModal">Atur Jam Presensi</button>
                                         </div>
@@ -1098,7 +1098,7 @@
                                             <tr>
                                                 <th class="text-center">No</th>
                                                 <th class="text-center">Nama</th>
-                                                <th class="text-center">Shift</th>
+                                                {{-- <th class="text-center">Shift</th> --}}
                                                 <th class="text-center">Status</th>
                                                 <th class="text-center px-5">Masuk</th>
                                                 <th class="text-center px-5">Pulang</th>
@@ -1111,7 +1111,7 @@
                                             <tr>
                                                 <td class="text-center">{{ $loop->count - $loop->iteration + 1 }}</td>
                                                 <td class="text-center">{{ $data->name }}</td>
-                                                <td class="text-center">
+                                                {{-- <td class="text-center">
                                                     <div class="card-body">
                                                         <div class="basic-form">
                                                             <form>
@@ -1122,16 +1122,19 @@
                                                             </form>
                                                         </div>
                                                     </div>
-                                                </td>
+                                                </td> --}}
                                                 <td class="text-center">
                                                     <div class="card-body">
                                                         <div class="basic-form">
                                                             <form>
                                                                 <select class="default-select default-select1 form-control form-control1 wide mb-3">
-                                                                    <option>Belum Presensi</option>
-                                                                    <option>Sudah Presensi</option>
-                                                                    <option>Izin</option>
-                                                                    <option>Sakit</option>
+                                                                    @if (count($data->presence) > 0)
+                                                                        <option>Sudah Presensi</option>
+                                                                    @else
+                                                                        <option>Belum Presensi</option>
+                                                                        <option>Izin</option>
+                                                                        <option>Sakit</option>
+                                                                    @endif
                                                                 </select>
                                                             </form>
                                                         </div>

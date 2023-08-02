@@ -25,4 +25,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('add_work_schedules');
     }
+
 };

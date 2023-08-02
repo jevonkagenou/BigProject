@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Announcement;
 use App\Models\ClockSetting;
 use App\Models\slip_gaji;
+use Spatie\Permission\Models\Role;
 
 
 class RouteController extends Controller
@@ -80,7 +81,7 @@ class RouteController extends Controller
     }
     public function EmployeeAdmin(){
         $data = DataEmployee::all();
-        return view('Admin.EmployeeAdmin', ['tittle'=>'Karyawan'], compact('data'));
+        return view('CreateEmployee.CreateEmployee', ['tittle'=>'Karyawan'], compact('data'));
     }
 
     public function SummaryofComponentSalary(){
@@ -102,9 +103,22 @@ class RouteController extends Controller
             ->get();
         $clockSetting = ClockSetting::findOrFail(1);
 
-        $users = User::all();
+        if ($role) {
+            // Menggunakan eager loading untuk mengambil data kehadiran dari pengguna dengan peran "Karyawan"
+            $presence = User::query()
+                ->whereHas('roles', function ($query) use ($role) {
+                    $query->where('roles.id', $role->id);
+                })
+                ->with(['presence' => function ($query) {
+                    $query->whereDate('created_at', '=', now()->toDateString());
+                }])
+                ->get();
 
-        return view('PresenceAdmin.Presence', compact('presence','clockSetting'));
+            return view('PresenceAdmin.Presence', compact('presence'));
+        }
+
+        // Jika peran "Karyawan" tidak ditemukan, return data kosong atau berikan pesan kesalahan
+        return view('PresenceAdmin.Presence', compact('presence'))->withErrors('Peran "Karyawan" tidak ditemukan.');
     }
 
 
@@ -133,35 +147,35 @@ class RouteController extends Controller
             'tittle'=>'Tambah Karyawan'
         ]);
     }
-    public function PayrollStep(){
+    // public function PayrollStep(){
 
-        $data = Payroll::all();
-        $total = $data->first()->total;
-        // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = config('midtrans.server_key');
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = false;
-        // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = true;
-        // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = true;
+    //     $data = Payroll::all();
+    //     $total = $data->first()->total;
+    //     // Set your Merchant Server Key
+    //     \Midtrans\Config::$serverKey = config('midtrans.server_key');
+    //     // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+    //     \Midtrans\Config::$isProduction = false;
+    //     // Set sanitization on (default)
+    //     \Midtrans\Config::$isSanitized = true;
+    //     // Set 3DS transaction for credit card to true
+    //     \Midtrans\Config::$is3ds = true;
 
-        $params = array(
-            'transaction_details' => array(
-                'order_id' => rand(),
-                'gross_amount' => $total,
-            ),
-            'customer_details' => array(
-                'first_name' => 'budi',
-                'last_name' => 'pratama',
-                'email' => 'budi.pra@example.com',
-                'phone' => '08111222333',
-            ),
-        );
+    //     $params = array(
+    //         'transaction_details' => array(
+    //             'order_id' => rand(),
+    //             'gross_amount' => $total,
+    //         ),
+    //         'customer_details' => array(
+    //             'first_name' => 'budi',
+    //             'last_name' => 'pratama',
+    //             'email' => 'budi.pra@example.com',
+    //             'phone' => '08111222333',
+    //         ),
+    //     );
 
-        $snapToken = \Midtrans\Snap::getSnapToken($params);
-        return view('Admin.PayrollStep',compact('snapToken','data'),['tittle'=>'Langkah Langkah Pembayaran Gaji']);
-    }
+    //     $snapToken = \Midtrans\Snap::getSnapToken($params);
+    //     return view('Admin.PayrollStep',compact('snapToken','data'),['tittle'=>'Langkah Langkah Pembayaran Gaji']);
+    // }
     public function Callback(Request $request){
         $serverKey = config('midtrans.server_key');
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('kompdapats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('nama_id')->references('id')->on('slip_gajis')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('slip_id')->references('id')->on('slip_gajis')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama_komponendpt')->nullable();
             $table->string('tipe_komponendpt')->nullable();
             $table->foreignId('payroll_id')->references('data_employee_id')->on('data_payrolls')->onUpdate('cascade')->onDelete('cascade');
