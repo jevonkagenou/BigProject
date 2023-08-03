@@ -1091,7 +1091,7 @@
                                                             <p>Jam x 26.000</p>
                                                         </div>
                                                         <div class="col-xl-7 col-7">
-                                                            <p>{{ $gajiTotal[$item->dataEmployee->user_id] }}</p>
+                                                            <p>{{ $gajiTotal[$modal->dataEmployee->user_id] }}</p>
                                                         </div>
                                                     </div>
                                                     {{-- @endforeach --}}

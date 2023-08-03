@@ -21,6 +21,7 @@ return new class extends Migration
             $table->datetime('time');
             $table->boolean('late');
             $table->decimal('wages_per_hour', 10, 2)->nullable(); // Kolom untuk menyimpan tarif gaji lembur per jam
+            $table->string('picture');
             $table->timestamps();
         });
     }

@@ -95,6 +95,7 @@ class RouteController extends Controller
         ]);
     }
     public function Presence() {
+        $role = Role::where('name', 'Karyawan')->first();
         $presence = User::query()
             ->with(['presence' => function ($query) {
                 $query->whereDate('created_at', '=', now()->toDateString());
@@ -113,12 +114,10 @@ class RouteController extends Controller
                     $query->whereDate('created_at', '=', now()->toDateString());
                 }])
                 ->get();
-
-            return view('PresenceAdmin.Presence', compact('presence'));
         }
 
         // Jika peran "Karyawan" tidak ditemukan, return data kosong atau berikan pesan kesalahan
-        return view('PresenceAdmin.Presence', compact('presence'))->withErrors('Peran "Karyawan" tidak ditemukan.');
+        return view('PresenceAdmin.Presence', compact('presence', 'role','clockSetting'))->with('Peran "Karyawan" tidak ditemukan.');
     }
 
 
