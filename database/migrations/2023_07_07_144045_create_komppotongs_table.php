@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('komppotongs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('slip_id')->references('id')->on('slip_gajis')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('nama_id')->references('id')->on('slip_gajis')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama_komponenptg')->nullable();
             $table->string('tipe_komponenptg')->nullable();
             $table->string('uang_potong')->nullable();
-            $table->foreignId('payroll_id')->references('id')->on('data_payrolls')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -918,276 +918,275 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <!-- Required vendors -->
-    <script src="vendor/global/global.min.js"></script>
-    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
-    <!-- Apex Chart -->
-    <script src="vendor/apexchart/apexchart.js"></script>
+   <!-- Required vendors -->
+   <script src="vendor/global/global.min.js"></script>
+   <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+   <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+   <!-- Apex Chart -->
+   <script src="vendor/apexchart/apexchart.js"></script>
 
 
 
-    <!-- Daterangepicker -->
-    <!-- momment js is must -->
-    <script src="vendor/moment/moment.min.js"></script>
-    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- clockpicker -->
-    <script src="vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
-    <!-- asColorPicker -->
-    <script src="vendor/jquery-asColor/jquery-asColor.min.js"></script>
-    <script src="vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
-    <script src="vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
-    <!-- Material color picker -->
-    <script src="vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-    <!-- pickdate -->
-    <script src="vendor/pickadate/picker.js"></script>
-    <script src="vendor/pickadate/picker.time.js"></script>
-    <script src="vendor/pickadate/picker.date.js"></script>
+   <!-- Daterangepicker -->
+   <!-- momment js is must -->
+   <script src="vendor/moment/moment.min.js"></script>
+   <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+   <!-- clockpicker -->
+   <script src="vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+   <!-- asColorPicker -->
+   <script src="vendor/jquery-asColor/jquery-asColor.min.js"></script>
+   <script src="vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
+   <script src="vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+   <!-- Material color picker -->
+   <script src="vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+   <!-- pickdate -->
+   <script src="vendor/pickadate/picker.js"></script>
+   <script src="vendor/pickadate/picker.time.js"></script>
+   <script src="vendor/pickadate/picker.date.js"></script>
 
 
 
-    <!-- Daterangepicker -->
-    <script src="js/plugins-init/bs-daterange-picker-init.js"></script>
-    <!-- Clockpicker init -->
-    <script src="js/plugins-init/clock-picker-init.js"></script>
-    <!-- asColorPicker init -->
-    <script src="js/plugins-init/jquery-asColorPicker.init.js"></script>
-    <!-- Material color picker init -->
-    <script src="js/plugins-init/material-date-picker-init.js"></script>
-    <!-- Pickdate -->
-    <script src="js/plugins-init/pickadate-init.js"></script>
+   <!-- Daterangepicker -->
+   <script src="js/plugins-init/bs-daterange-picker-init.js"></script>
+   <!-- Clockpicker init -->
+   <script src="js/plugins-init/clock-picker-init.js"></script>
+   <!-- asColorPicker init -->
+   <script src="js/plugins-init/jquery-asColorPicker.init.js"></script>
+   <!-- Material color picker init -->
+   <script src="js/plugins-init/material-date-picker-init.js"></script>
+   <!-- Pickdate -->
+   <script src="js/plugins-init/pickadate-init.js"></script>
 
-    <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+   <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
 
-    <script src="js/custom.min.js"></script>
-    <script src="js/dlabnav-init.js"></script>
-    <script src="js/demo.js"></script>
-    <script src="js/styleSwitcher.js"></script>
-    <script>
-        var isAlternateLogo = false;
-        var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
-        var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
+   <script src="js/custom.min.js"></script>
+   <script src="js/dlabnav-init.js"></script>
+   <script src="js/demo.js"></script>
+   <script src="js/styleSwitcher.js"></script>
+   <script>
+       var isAlternateLogo = false;
+       var originalLogoSrc = "https://i.postimg.cc/MpM0gDDQ/Logo-kal.png";
+       var alternateLogoSrc = "https://i.postimg.cc/XNR73XHZ/Logo-A.png";
 
-        function changeLogo() {
-            var logo = document.getElementById("logo");
+       function changeLogo() {
+           var logo = document.getElementById("logo");
 
-            if (isAlternateLogo) {
-                logo.src = originalLogoSrc;
-                isAlternateLogo = false;
-            } else {
-                logo.src = alternateLogoSrc;
-                isAlternateLogo = true;
-            }
-        }
-    </script>
-
-
-    <script>
-        function toggleAdditionalInput() {
-            var selectedOption = document.querySelector('.shift').value;
-            var additionalInput = document.getElementById('additionalInput');
-
-            if (selectedOption === 'Berdasarkan Kehadiran') {
-                additionalInput.style.display = 'block';
-            } else {
-                additionalInput.style.display = 'none';
-            }
-        }
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            // Memanggil fungsi toggleAdditionalInput saat halaman dimuat
-            toggleAdditionalInput($('.tipe-komponen'));
-
-            $('.tambah-baris-pendapatan').click(function() {
-                tambahBarisPendapatan();
-            });
-
-            function tambahBarisPendapatan() {
-                var jumlahBaris = $('.row.mb-2').length;
-                // if (jumlahBaris >= 8) {
-                //     // Mencapai batas maksimal baris
-                //     return;
-                // }
-
-                var htmlBaris =
-                    '<div class="row mb-2">' +
-                    '<div class="col-3">' +
-                    '<label for="inputEmail4" class="form-label fw-bold">Nama Komponen Pendapatan</label>' +
-                    '<input type="text" class="form-control @error('
-                nama_komponendpt ') is-invalid @enderror" id="nama_komponendpt" name="nama_komponendpt[]" placeholder="Nama Komponen Dapat">' +
-                    '@error('
-                nama_komponendpt ')' +
-                    '<div class="invalid-feedback">{{ $message }}</div>' +
-                    '@enderror' +
-                    '</div>' +
-                    '<div class="col-3">' +
-                    '<label for="inputEmail4" class="form-label fw-bold">Tipe Komponen</label>' +
-                    '<select class="form-select tipe-komponen" onchange="toggleAdditionalInput(this)" name="tipe_komponendpt[]">' +
-                    '<option value="Manual">Manual</option>' +
-                    '<option value="Berdasarkan Kehadiran">Berdasarkan Kehadiran</option>' +
-                    '</select>' +
-                    '@error('
-                tipe_komponendpt ')' +
-                    '<div class="invalid-feedback">{{ $message }}</div>' +
-                    '@enderror' +
-                    '</div>' +
-                    '<div class="col-3 additional-input" style="display: none;">' +
-                    '<label for="inputAdditional" class="form-label fw-bold">Besar Uang</label>' +
-                    '<input type="text" class="form-control @error('
-                uang_dapat ') is-invalid @enderror" name="uang_dapat[]">' +
-                    '@error('
-                uang_dapat ')' +
-                    '<div class="invalid-feedback">{{ $message }}</div>' +
-                    '@enderror' +
-                    '</div>' +
-                    '<div class="col-1 d-flex align-items-center mt-4">' +
-                    '<i class="fa fa-trash hapus-baris"></i>' +
-                    '</div>' +
-                    '</div>';
-
-                $(htmlBaris).insertBefore('.tambah-baris-pendapatan');
+           if (isAlternateLogo) {
+               logo.src = originalLogoSrc;
+               isAlternateLogo = false;
+           } else {
+               logo.src = alternateLogoSrc;
+               isAlternateLogo = true;
+           }
+       }
+   </script>
 
 
-                $('.hapus-baris').off().click(function() {
-                    $(this).closest('.row.mb-2').remove();
-                });
-            }
+   <script>
+       function toggleAdditionalInput() {
+           var selectedOption = document.querySelector('.shift').value;
+           var additionalInput = document.getElementById('additionalInput');
 
-            $('.hapus-baris').click(function() {
-                $(this).closest('.row.mb-2').remove();
-            });
-        });
+           if (selectedOption === 'Berdasarkan Kehadiran') {
+               additionalInput.style.display = 'block';
+           } else {
+               additionalInput.style.display = 'none';
+           }
+       }
+   </script>
 
-        function toggleAdditionalInput(selectElement) {
-            var selectedOption = selectElement.value;
-            var additionalInput = $(selectElement).closest('.row.mb-2').find('.additional-input');
+   <script>
+       $(document).ready(function() {
+           // Memanggil fungsi toggleAdditionalInput saat halaman dimuat
+           toggleAdditionalInput($('.tipe-komponen'));
 
-            if (selectedOption === 'Berdasarkan Kehadiran') {
-                additionalInput.show();
-            } else {
-                additionalInput.hide();
-            }
-        }
-    </script>
+           $('.tambah-baris-pendapatan').click(function() {
+               tambahBarisPendapatan();
+           });
 
-    <script>
-        $(document).ready(function() {
-            // Memanggil fungsi toggleAdditionalInput saat halaman dimuat
-            toggleAdditionalInput($('.tipe-komponen'));
+           function tambahBarisPendapatan() {
+               var jumlahBaris = $('.row.mb-2').length;
+               // if (jumlahBaris >= 8) {
+               //     // Mencapai batas maksimal baris
+               //     return;
+               // }
 
-            $('.tambah-baris-potongan').click(function() {
-                tambahBarisPotongan();
-            });
+               var htmlBaris =
+                   '<div class="row mb-2">' +
+                   '<div class="col-3">' +
+                   '<label for="inputEmail4" class="form-label fw-bold">Nama Komponen Pendapatan</label>' +
+                   '<input type="text" class="form-control @error('
+               nama_komponendpt ') is-invalid @enderror" id="nama_komponendpt" name="nama_komponendpt[]" placeholder="Nama Komponen Dapat">' +
+                   '@error('
+               nama_komponendpt ')' +
+                   '<div class="invalid-feedback">{{ $message }}</div>' +
+                   '@enderror' +
+                   '</div>' +
+                   '<div class="col-3">' +
+                   '<label for="inputEmail4" class="form-label fw-bold">Tipe Komponen</label>' +
+                   '<select class="form-select tipe-komponen" onchange="toggleAdditionalInput(this)" name="tipe_komponendpt[]">' +
+                   '<option value="Manual">Manual</option>' +
+                   '<option value="Berdasarkan Kehadiran">Berdasarkan Kehadiran</option>' +
+                   '</select>' +
+                   '@error('
+               tipe_komponendpt ')' +
+                   '<div class="invalid-feedback">{{ $message }}</div>' +
+                   '@enderror' +
+                   '</div>' +
+                   '<div class="col-3 additional-input" style="display: none;">' +
+                   '<label for="inputAdditional" class="form-label fw-bold">Besar Uang</label>' +
+                   '<input type="text" class="form-control @error('
+               uang_dapat ') is-invalid @enderror" name="uang_dapat[]">' +
+                   '@error('
+               uang_dapat ')' +
+                   '<div class="invalid-feedback">{{ $message }}</div>' +
+                   '@enderror' +
+                   '</div>' +
+                   '<div class="col-1 d-flex align-items-center mt-4">' +
+                   '<i class="fa fa-trash hapus-baris"></i>' +
+                   '</div>' +
+                   '</div>';
 
-            function tambahBarisPotongan() {
-                var jumlahBaris = $('.row.mb-2').length;
-                // if (jumlahBaris >= 8) {
-                //     // Mencapai batas maksimal baris
-                //     return;
-                // }
-
-                var htmlBaris =
-                    '<div class="row mb-2">' +
-                    '<div class="col-3">' +
-                    '<label for="inputEmail4" class="form-label fw-bold">Nama Komponen Pemotongan</label>' +
-                    '<input type="text" class="form-control @error('
-            nama_komponenptg ') is-invalid @enderror" id="nama_komponenptg" name="nama_komponenptg[]" placeholder="Nama Komponen Potong">' +
-                    '@error('
-            nama_komponenptg ')' +
-                    '<div class="invalid-feedback">{{ $message }}</div>' +
-                    '@enderror' +
-                    '</div>' +
-                    '<div class="col-3">' +
-                    '<label for="inputEmail4" class="form-label fw-bold">Tipe Komponen</label>' +
-                    '<select class="form-select tipe-komponen" onchange="toggleAdditionalInput(this)" name="tipe_komponendpt[]">' +
-                    '<option value="Manual">Manual</option>' +
-                    '<option value="Berdasarkan Kehadiran">Berdasarkan Kehadiran</option>' +
-                    '</select>' +
-                    '@error('
-                tipe_komponenptg ')' +
-                    '<div class="invalid-feedback">{{ $message }}</div>' +
-                    '@enderror' +
-                    '</div>' +
-                    '<div class="col-3 additional-input" style="display: none;">' +
-                    '<label for="inputAdditional" class="form-label fw-bold">Besar Uang</label>' +
-                    '<input type="text" class="form-control @error('
-            uang_potong ') is-invalid @enderror" name="uang_potong[]">' +
-                    '@error('
-            uang_potong ')' +
-                    '<div class="invalid-feedback">{{ $message }}</div>' +
-                    '@enderror' +
-                    '</div>' +
-                    '<div class="col-1 d-flex align-items-center mt-4">' +
-                    '<i class="fa fa-trash hapus-baris"></i>' +
-                    '</div>' +
-                    '</div>';
-
-                $(htmlBaris).insertBefore('.tambah-baris-potongan');
+               $(htmlBaris).insertBefore('.tambah-baris-pendapatan');
 
 
-                $('.hapus-baris').off().click(function() {
-                    $(this).closest('.row.mb-2').remove();
-                });
-            }
+               $('.hapus-baris').off().click(function() {
+                   $(this).closest('.row.mb-2').remove();
+               });
+           }
 
-            $('.hapus-baris').click(function() {
-                $(this).closest('.row.mb-2').remove();
-            });
-        });
+           $('.hapus-baris').click(function() {
+               $(this).closest('.row.mb-2').remove();
+           });
+       });
 
-        function toggleAdditionalInput(selectElement) {
-            var selectedOption = selectElement.value;
-            var additionalInput = $(selectElement).closest('.row.mb-2').find('.additional-input');
+       function toggleAdditionalInput(selectElement) {
+           var selectedOption = selectElement.value;
+           var additionalInput = $(selectElement).closest('.row.mb-2').find('.additional-input');
 
-            if (selectedOption === 'Berdasarkan Kehadiran') {
-                additionalInput.show();
-            } else {
-                additionalInput.hide();
-            }
-        }
-    </script>
+           if (selectedOption === 'Berdasarkan Kehadiran') {
+               additionalInput.show();
+           } else {
+               additionalInput.hide();
+           }
+       }
+   </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    @if (Session::has('success'))
-        <script>
-            toastr.options = {
-                "timeOut": 5000, // Set timeOut to 0 to make it sticky
-                "closeButton": true,
-                "progressBar": true
-            }
-            toastr.success("{{ session('success') }}");
-        </script>
-    @endif
+   <script>
+       $(document).ready(function() {
+           // Memanggil fungsi toggleAdditionalInput saat halaman dimuat
+           toggleAdditionalInput($('.tipe-komponen'));
 
-    <script>
-        function toggleAdditionalInputPotong(selectElement) {
-            var selectedOption = selectElement.options[selectElement.selectedIndex].value;
-            var additionalInputPotong = document.getElementById('additionalInputPotong');
-            var periodeLabel = document.getElementById('periodeLabel');
-            var periodeDimulaiInput = document.getElementById('periode_dimulai');
+           $('.tambah-baris-potongan').click(function() {
+               tambahBarisPotongan();
+           });
 
-            // Ubah label berdasarkan opsi yang dipilih
-            if (selectedOption === 'Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)') {
-                periodeLabel.textContent = 'Periode Gagal';
-                periodeDimulaiInput.name = 'periode_gagal'; // Ubah name untuk opsi Manual
-            } else {
-                periodeLabel.textContent = 'Periode Dimulai';
-                periodeDimulaiInput.name = 'periode_dimulai'; // Kembalikan name untuk opsi Berdasarkan Keterlambatan
-            }
+           function tambahBarisPotongan() {
+               var jumlahBaris = $('.row.mb-2').length;
+               // if (jumlahBaris >= 8) {
+               //     // Mencapai batas maksimal baris
+               //     return;
+               // }
 
-            // Tampilkan atau sembunyikan input tambahan berdasarkan opsi yang dipilih
-            if (selectedOption === 'Tetap (Gaji Bulanan, Mingguan, Persekian gaji)') {
-                additionalInputPotong.style.display = 'block';
-            } else {
-                additionalInputPotong.style.display = 'none';
-            }
-        }
-    </script>
+               var htmlBaris =
+                   '<div class="row mb-2">' +
+                   '<div class="col-3">' +
+                   '<label for="inputEmail4" class="form-label fw-bold">Nama Komponen Pemotongan</label>' +
+                   '<input type="text" class="form-control @error('
+           nama_komponenptg ') is-invalid @enderror" id="nama_komponenptg" name="nama_komponenptg[]" placeholder="Nama Komponen Potong">' +
+                   '@error('
+           nama_komponenptg ')' +
+                   '<div class="invalid-feedback">{{ $message }}</div>' +
+                   '@enderror' +
+                   '</div>' +
+                   '<div class="col-3">' +
+                   '<label for="inputEmail4" class="form-label fw-bold">Tipe Komponen</label>' +
+                   '<select class="form-select tipe-komponen" onchange="toggleAdditionalInput(this)" name="tipe_komponendpt[]">' +
+                   '<option value="Manual">Manual</option>' +
+                   '<option value="Berdasarkan Kehadiran">Berdasarkan Kehadiran</option>' +
+                   '</select>' +
+                   '@error('
+               tipe_komponenptg ')' +
+                   '<div class="invalid-feedback">{{ $message }}</div>' +
+                   '@enderror' +
+                   '</div>' +
+                   '<div class="col-3 additional-input" style="display: none;">' +
+                   '<label for="inputAdditional" class="form-label fw-bold">Besar Uang</label>' +
+                   '<input type="text" class="form-control @error('
+           uang_potong ') is-invalid @enderror" name="uang_potong[]">' +
+                   '@error('
+           uang_potong ')' +
+                   '<div class="invalid-feedback">{{ $message }}</div>' +
+                   '@enderror' +
+                   '</div>' +
+                   '<div class="col-1 d-flex align-items-center mt-4">' +
+                   '<i class="fa fa-trash hapus-baris"></i>' +
+                   '</div>' +
+                   '</div>';
 
+               $(htmlBaris).insertBefore('.tambah-baris-potongan');
+
+
+               $('.hapus-baris').off().click(function() {
+                   $(this).closest('.row.mb-2').remove();
+               });
+           }
+
+           $('.hapus-baris').click(function() {
+               $(this).closest('.row.mb-2').remove();
+           });
+       });
+
+       function toggleAdditionalInput(selectElement) {
+           var selectedOption = selectElement.value;
+           var additionalInput = $(selectElement).closest('.row.mb-2').find('.additional-input');
+
+           if (selectedOption === 'Berdasarkan Kehadiran') {
+               additionalInput.show();
+           } else {
+               additionalInput.hide();
+           }
+       }
+   </script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+       integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   @if (Session::has('success'))
+       <script>
+           toastr.options = {
+               "timeOut": 5000, // Set timeOut to 0 to make it sticky
+               "closeButton": true,
+               "progressBar": true
+           }
+           toastr.success("{{ session('success') }}");
+       </script>
+   @endif
+
+   <script>
+       function toggleAdditionalInputPotong(selectElement) {
+           var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+           var additionalInputPotong = document.getElementById('additionalInputPotong');
+           var periodeLabel = document.getElementById('periodeLabel');
+           var periodeDimulaiInput = document.getElementById('periode_dimulai');
+
+           // Ubah label berdasarkan opsi yang dipilih
+           if (selectedOption === 'Tidak Tetap (THR, Bonus Lebih Dari 1 Bulan)') {
+               periodeLabel.textContent = 'Periode Gagal';
+               periodeDimulaiInput.name = 'periode_gagal'; // Ubah name untuk opsi Manual
+           } else {
+               periodeLabel.textContent = 'Periode Dimulai';
+               periodeDimulaiInput.name = 'periode_dimulai'; // Kembalikan name untuk opsi Berdasarkan Keterlambatan
+           }
+
+           // Tampilkan atau sembunyikan input tambahan berdasarkan opsi yang dipilih
+           if (selectedOption === 'Tetap (Gaji Bulanan, Mingguan, Persekian gaji)') {
+               additionalInputPotong.style.display = 'block';
+           } else {
+               additionalInputPotong.style.display = 'none';
+           }
+       }
+   </script>
 </body>
 
 <!-- Mirrored from dompet.dexignlab.com/xhtml/form-pickers.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 May 2023 08:54:32 GMT -->

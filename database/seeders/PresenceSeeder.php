@@ -17,7 +17,7 @@ class PresenceSeeder extends Seeder
     {
         ClockSetting::create([
             'id' => 1,
-            'user_id' => 'adi',
+            'user_id' => '0',
             'clock_in' => Carbon::createFromTime(7, 0, 0), // Jam 07:00:00
             'late_presence' => Carbon::createFromTime(8, 0, 0), // Jam 08:00:00
             'home_time' => Carbon::createFromTime(16, 0, 0), // Jam 16:00:00

@@ -73,28 +73,27 @@ class SlipGajiKomponenController extends Controller
             }
         }
 
-        if (isset($data['nama_komponenptg']) && count($data['nama_komponenptg']) > 0) {
-            foreach ($data['nama_komponenptg'] as $index => $komponenData) {
-                if($data['uang_potong'][$index]){
+       if (isset($data['nama_komponenptg']) && is_array($data['nama_komponenptg'])) {
+            $namaKomponenPtgCount = count($data['nama_komponenptg']);
+
+            for ($index = 0; $index < $namaKomponenPtgCount; $index++) {
+                if ($data['uang_potong'][$index]) {
                     $komponen = komppotong::create([
                         'nama_id' => $id->id,
                         'nama_komponenptg' => $data['nama_komponenptg'][$index],
-                        'tipe_komponenptg' => $data['tipe_komponenptg'][$index],
+                        'tipe_komponenptg' => isset($data['tipe_komponenptg'][$index]) ? $data['tipe_komponenptg'][$index] : null,
                         'uang_potong' => $data['uang_potong'][$index],
-
+                    ]);
+                } else {
+                    $komponen = komppotong::create([
+                        'nama_id' => $id->id,
+                        'nama_komponenptg' => $data['nama_komponenptg'][$index],
+                        'tipe_komponenptg' => isset($data['tipe_komponenptg'][$index]) ? $data['tipe_komponenptg'][$index] : null,
                     ]);
                 }
-                    else{
-                        $komponen = komppotong::create([
-                            'nama_id' => $id->id,
-                            'nama_komponenptg' => $data['nama_komponenptg'][$index],
-                            'tipe_komponenptg' => $data['tipe_komponenptg'][$index],
-
-
-                        ]);
-                    }
             }
         }
+
 
         return redirect()->route('PayrollSalarySlip')->with('success', 'Data Anda Telah Ditambahkan');
     }
