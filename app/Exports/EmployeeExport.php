@@ -17,13 +17,13 @@ class EmployeeExport implements FromCollection, WithHeadings
     {
         return DataEmployee::select('name', 'place_birth', 'date', 'gender', 'marry', 'blood_group',
          'email', 'region', 'notelp', 'address', 'last_study', 'educational_institution', 'study_program',
-         'images')->get();
+         'foto')->get();
     }
 
     public function headings(): array
     {
         return["name", "place_birth", "date", "gender", "marry", "blood_group",
         "email", "region", "notelp", "address", "last_study", "educational_institution", "study_program",
-        "images"];
+        "foto"];
     }
 }

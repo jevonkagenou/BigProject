@@ -29,7 +29,7 @@ class EmployeeImport implements ToModel, WithHeadingRow
             'last_study'  => $row['last_study'],
             'educational_institution'  => $row['educational_institution'],
             'study_program'  => $row['study_program'],
-            'images'  => $row['images'],
+            'foto'  => $row['foto'],
         ]);
     }
 }

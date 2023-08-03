@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\AddWorkSchedule;
 use App\Models\DateWorkSchedule;
-use App\Models\PermitEmployee;
 use App\Models\Presence;
+use App\Models\slip_gaji;
+use App\Models\PermitEmployee;
+use App\Models\DataPayroll;
+use App\Models\DataEmployee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,11 +62,21 @@ class ViewEmployeeController extends Controller
     }
 
     public function SalaryEmployee(){
-        return view ('karyawan.NotaGaji',[
+        $nota = DataPayroll::all();
+        $slip = slip_gaji::all();
+        // dd($nota);
+        return view ('karyawan.NotaGaji', compact('nota','slip'),[
             'title'=>'Riwayat Gaji'
         ]);
     }
-
+    public function cetak(){
+        $modal = DataPayroll::all();
+        $kalo = slip_gaji::all();
+        $sia = DataEmployee::all();
+        return view ('karyawan.cetak', compact('modal','kalo','sia'),[
+            'tittle'=>'Cetak'
+        ]);
+    }
     public function Calendar(Request $request)
     {
         if($request->ajax()){

@@ -65,19 +65,19 @@
                                     <thead>
                                         <tr class="text-center">
                                             <th>Nama</th>
-                                            <th>Tanggal Pengajuan</th>
+                                            {{-- <th>Tanggal Pengajuan</th> --}}
                                             <th>Tanggal Cuti</th>
                                             <th>Jumlah Hari</th>
                                             <th>Jenis Cuti</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
-                                    </thead>
+                                    </thead>x
                                     <tbody>
                                         @foreach ($approve_admin as $approve)
                                         <tr class="text-center">
                                             <td>{{ $approve->User->name }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($approve->submission_date)->format('d M Y') }}</td>
+                                            {{-- <td>{{ \Carbon\Carbon::parse($approve->created_at)->format('d M Y') }}</td> --}}
                                             <td>{{ \Carbon\Carbon::parse($approve->date_leave)->format('d M Y') }}</td>
                                             <td>{{ $approve->total_day }}</td>
                                             <td>{{ $approve->tipe }}</td>

@@ -911,7 +911,7 @@
                                         <div class="col-sm-10 col-md-8">
                                             <div class="row d-flex">
                                                 <div class="col-sm-6 col-md-4">
-                                            <form action="{{ route('ExportEmployee') }}" method="post" enctype="multipart/form-data">
+                                            <form action="{{ route('ExportEmployee') }}" method="get" enctype="multipart/form-data">
                                                 @csrf
                                                         <button class="btn btn-outline-light btn-xs mt-3" style="white-space: nowrap;" name="import">
                                                     <i class="bi bi-upload"></i> Export

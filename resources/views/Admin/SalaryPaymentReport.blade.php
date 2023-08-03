@@ -882,13 +882,6 @@
                             </div>
 
                             <div class="card-body">
-								<div class="row">
-									<div class="btn-group">
-										<div class="col-xl-2">
-											<input type="date" class="form-control btn-xs" >
-										</div>
-									</div>
-								</div>
 									<div class="table-responsive text-center">
 										<table id="example5" class="display" style="min-width: 845px">
 											<thead>
@@ -896,7 +889,6 @@
 
 													<th>No</th>
 													<th>Bulan</th>
-													<th>Bank</th>
 													<th>Jumlah Slip</th>
 													<th>Total</th>
 
@@ -904,37 +896,14 @@
 											</thead>
 											<tbody>
 												<tr  class="text-center">
-
 													<td>1</td>
 													<td>Mei</td>
-													<td>BCA</td>
 													<td>6</td>
 													<td>5.876.000</td>
-
 												</tr>
-												<tr  class="text-center">
-
-													<td>2</td>
-													<td>Juni</td>
-													<td>BRI</td>
-													<td>4</td>
-													<td>5.600.00</td>
-
-												</tr>
-												<tr  class="text-center">
-
-													<td>3</td>
-													<td>Juli</td>
-													<td>BCA</td>
-													<td>7</td>
-													<td>5.750.000</td>
-
-												</tr>
-
 											</tbody>
 										</table>
 									</div>
-
                         	</div>
                     </div>
 					</div>
